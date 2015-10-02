@@ -66,7 +66,7 @@ print "¡Hola mundo libre con Linux!\n";`
 * Se instala CDE `sudo apt-get install cde`
 
 * Empaquetamos el script con **cde** perl script.pl, ""creo"" que los ficheros 
-cde.options y cde-package se crearón al instalar **cde** 
+cde.options y cde-package se crearon al instalar **cde** 
 
 * Nos situamos al directorio creado:
 
