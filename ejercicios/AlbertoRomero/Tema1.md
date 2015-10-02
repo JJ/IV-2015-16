@@ -1,6 +1,7 @@
 #Tema 1
 
 ##Ejercicio 1.
+##Consultar en el catálogo de alguna tienda de informática el precio de un ordenador tipo servidor y calcular su coste de amortización a cuatro y siete años.
 
 Vamos a usar el servidor [HP ProLiant ML110 Gen9](http://www.pccomponentes.com/hp_proliant_ml110_gen9_e5_1620v3_4gb_1tb.html) de Pccomponentes.com.
 
@@ -31,6 +32,7 @@ Año 6:	1000€*0.05 = 50€
 Año 7:	1000€*0.05 = 50€
 
 ##Ejercicio 2.
+##Usando las tablas de precios de servicios de alojamiento en Internet y de proveedores de servicios en la nube, Comparar el coste durante un año de un ordenador con un procesador estándar (escogerlo de forma que sea el mismo tipo de procesador en los dos vendedores) y con el resto de las características similares (tamaño de disco duro equivalente a transferencia de disco duro) en el caso de que la infraestructura comprada se usa sólo el 1% o el 10% del tiempo.
 
 
 Hemos elegido [Hostalia](http://www.hostalia.com/dedicados) para nuestro servidor dedicado
@@ -59,15 +61,17 @@ Para un uso bajo, el precio del servicio en la nube es mucho más económico.
 
 
 ##Ejercicio 3.1
-
+##¿Qué tipo de virtualización usarías en cada caso? Comentar en el foro
 ![Comentario añadido]()
 
 ##Ejercicio 3.2
+##Crear un programa simple en cualquier lenguaje interpretado para Linux, empaquetarlo con CDE y probarlo en diferentes distribuciones.
 
 //hacer
 
 
 ##Ejercicio 4
+##Comprobar si el procesador o procesadores instalados tienen estos flags. ¿Qué modelo de procesador es? ¿Qué aparece como salida de esa orden?
 
 Usamos el siguiente comando:
 `egrep ' flags.*(vmx|svm)' /proc/cpuinfo`
@@ -81,13 +85,17 @@ Para saber el modelo del procesador, usaremos:
 ![CPU INFO](https://i.gyazo.com/a43bd4ff8094d24293c81749032e87cb.png "CPU INFO")
 
 #Ejercicio 5.1
+##Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
 
 Ya tenia todo instalado previamente en mi ordenador, por lo que solo necesito ejecutar
 `sudo kvm-ok`
 
 ![kvm-ok](https://i.gyazo.com/d1ab4c0e7c5ba7d30ecd7b7a52da3ac4.png "kvm-ok")
 
+#Ejercicio 5.2
+##Instalar un hipervisor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios.
 
+Hemos instalado el hipervisor [VirtualBox](http://www.virtualbox.org)
 
 
 
