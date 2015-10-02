@@ -62,6 +62,16 @@ Para un uso bajo, el precio del servicio en la nube es mucho más económico.
 
 ![Comentario añadido]()
 
+##Ejercicio 3.2
+
+//hacer
+
+
+##Ejercicio 4
+
+Usamos el siguiente comando:
+`egrep ' flags.*(vmx|svm)' /proc/cpuinfo`
+
 
 
 
