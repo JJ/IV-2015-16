@@ -13,7 +13,7 @@ El calculo del servidor que he elegido es
 
 Deduciendo una amortización máxima del 25% por cada año: 593.67 * 0.25 = 148.41€ a pagar por cada año de los cuatro años amortizados.
 
-**Amortización a 7 años**
+**Amortizacón a 7 años**
 
 Los dos primeros años comienzan pagando más que el resto de años y así sucesivamente hasta finalizar la amortización del servidor.
 
@@ -36,7 +36,7 @@ He escogido el siguiente server para alojamiento web dedicado en [STRATO](https:
 ![Strato](https://www.dropbox.com/s/2vqpnft1gf137v1/ServerLinux.png?dl=1)
 
 Y como proveedor de servicios en la nube he escogido [Azure](https://www.microsoft.com/es-es/search/result.aspx?q=azure) y precio de dos máquinas 
-virtuales con características que se acercan al escogido como PC y servidor dedicado:
+virtuales con características que se acercan al escogido como PC y servidor dedicado:  
 
 ![Azure](https://www.dropbox.com/s/ls4guvvfung7nb9/Azure.png?dl=1)
 
@@ -66,7 +66,7 @@ print "¡Hola mundo libre con Linux!\n";`
 * Se instala CDE `sudo apt-get install cde`
 
 * Empaquetamos el script con **cde** perl script.pl, ""creo"" que los ficheros 
-cde.options y cde-package se crearon al instalar **cde** 
+cde.options y cde-package se crearón al instalar **cde** 
 
 * Nos situamos al directorio creado:
 
@@ -102,9 +102,3 @@ para ver si tenemos instalado el módulo:
 ![kmu-ok](https://www.dropbox.com/s/pqglchxgixhf4z2/kvm-ok.png?dl=1)
 
 En mi caso si tengo instalado el módulo.
-
-### Ejercicio 5.2: Instalar un hipervisor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios.
-
-Yo también he elegido [Xen](https://es.wikipedia.org/wiki/Xen) como hipervisor `sudo apt-get install xen-hypervisor-4.4-amd64` pero
-en Linux tenemos más opciones como [Virtualbox](https://www.virtualbox.org/wiki/Linux_Downloads), [QUEMU](https://es.wikipedia.org/wiki/QEMU), [Bochs](https://es.wikipedia.org/wiki/BOCHS). También he encontrado está información por [IBM developerWorks](http://www.ibm.com/developerworks/ssa/library/l-hypervisor/).
-
