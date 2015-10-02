@@ -6,7 +6,7 @@ Me he deicidido para utilizar como servidor el [Lenovo Thinkserver ts440](http:/
 
 El coste de amortización se obtiene del precio final, pero sin I.V.A. El calculo se puede realizar en web que permitan dichas operaciones, como por ejemplo: [calcuworld.com](http://es.calcuworld.com/calculadoras-financieras/calculadora-iva/).
 
-El calculo del servidor que he elegido es [Precio sin IVA = 593.67 €](hhttps://www.dropbox.com/home/ImgCursoJJ?preview=calculadorIVA.png).
+El calculo del servidor que he elegido es ![Precio sin IVA = 593.67 €](hhttps://www.dropbox.com/home/ImgCursoJJ?preview=calculadorIVA.png).
 
 **Amortización a 4 años**
 
@@ -32,12 +32,12 @@ Céntimo arriba, céntimo abajo.
 
 He escogido el siguiente server para alojamiento web dedicado en [STRATO](https://www.strato.es)
 
-[Strato](https://www.dropbox.com/s/2vqpnft1gf137v1/ServerLinux.png?dl=0)
+![Strato](https://www.dropbox.com/s/2vqpnft1gf137v1/ServerLinux.png?dl=0)
 
 Y como proveedor de servicios en la nube he escogido [Azure](https://www.microsoft.com/es-es/search/result.aspx?q=azure) y precio de dos máquinas 
 virtuales con características que se acercan al escogido como PC y servidor dedicado:  
 
-[Azure](https://www.dropbox.com/s/ls4guvvfung7nb9/Azure.png?dl=0)
+![Azure](https://www.dropbox.com/s/ls4guvvfung7nb9/Azure.png?dl=0)
 
 **Se usa sólo el 1% del tiempo:**
 
@@ -69,7 +69,7 @@ cde.options y cde-package se crearón al instalar **cde**
 
 * Nos situamos al directorio creado:
 
-[](https://www.dropbox.com/s/t5rng11fxutthb5/scriptCDE.png?dl=0)
+![](https://www.dropbox.com/s/t5rng11fxutthb5/scriptCDE.png?dl=0)
 
 * Y se ejecuta el script `./perl.cde script.pl` y voilá, en pantalla:
 `Hola mundo libre con Linux`
@@ -98,6 +98,6 @@ para visualizar la CPU:
 2. Desde la misma terminal en la que hemos instalado `cpu-checker` ejecutamos el siguiente comando: `sudo kvm-ok` como administrador,
 para ver si tenemos instalado el módulo:
 
-[](https://www.dropbox.com/s/pqglchxgixhf4z2/kvm-ok.png?dl=0)
+![](https://www.dropbox.com/s/pqglchxgixhf4z2/kvm-ok.png?dl=0)
 
 En mi caso si tengo instalado el módulo.
