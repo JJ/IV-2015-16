@@ -33,12 +33,12 @@ Céntimo arriba, céntimo abajo.
 
 He escogido el siguiente server para alojamiento web dedicado en [STRATO](https://www.strato.es)
 
-![Strato](https://www.dropbox.com/s/2vqpnft1gf137v1/ServerLinux.png?dl=0)
+![Strato](https://www.dropbox.com/s/2vqpnft1gf137v1/ServerLinux.png?dl=1)
 
 Y como proveedor de servicios en la nube he escogido [Azure](https://www.microsoft.com/es-es/search/result.aspx?q=azure) y precio de dos máquinas 
 virtuales con características que se acercan al escogido como PC y servidor dedicado:  
 
-![Azure](https://www.dropbox.com/s/ls4guvvfung7nb9/Azure.png?dl=0)
+![Azure](https://www.dropbox.com/s/ls4guvvfung7nb9/Azure.png?dl=1)
 
 **Se usa sólo el 1% del tiempo:**
 
@@ -70,7 +70,7 @@ cde.options y cde-package se crearón al instalar **cde**
 
 * Nos situamos al directorio creado:
 
-![](https://www.dropbox.com/s/t5rng11fxutthb5/scriptCDE.png?dl=0)
+![](https://www.dropbox.com/s/t5rng11fxutthb5/scriptCDE.png?dl=1)
 
 * Y se ejecuta el script `./perl.cde script.pl` y voilá, en pantalla:
 `Hola mundo libre con Linux`
@@ -89,7 +89,7 @@ Con el comando [cat](https://www.hscripts.com/es/tutoriales/linux-commands/cat.h
 para visualizar la CPU:
 
 
-![cpuinfo](https://www.dropbox.com/s/oqksxvbkl1xvu4h/cpuinfo.png?dl=0)
+![cpuinfo](https://www.dropbox.com/s/oqksxvbkl1xvu4h/cpuinfo.png?dl=1)
 
 
 ### Ejercicio 5.1: Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
@@ -99,6 +99,6 @@ para visualizar la CPU:
 2. Desde la misma terminal en la que hemos instalado `cpu-checker` ejecutamos el siguiente comando: `sudo kvm-ok` como administrador,
 para ver si tenemos instalado el módulo:
 
-![kmu-ok](https://www.dropbox.com/s/pqglchxgixhf4z2/kvm-ok.png?dl=0)
+![kmu-ok](https://www.dropbox.com/s/pqglchxgixhf4z2/kvm-ok.png?dl=1)
 
 En mi caso si tengo instalado el módulo.
