@@ -1,8 +1,6 @@
 #Tema 1
 
 ##Ejercicio 1.
-##Consulta en el catálogo de alguna tienda de informática 
-##el precio de un ordenador tipo servidor y calcular su coste de amortización a cuatro y siete años.
 
 Vamos a usar el servidor [HP ProLiant ML110 Gen9](http://www.pccomponentes.com/hp_proliant_ml110_gen9_e5_1620v3_4gb_1tb.html) de Pccomponentes.com.
 
@@ -23,5 +21,61 @@ Año 3:	1000€*0.25 = 250€
 Año 4:	1000€*0.25 = 250€
 
 ##Amortización a 7 años
+
+Año 1:	1000€*0.25 = 250€
+Año 2:	1000€*0.25 = 250€
+Año 3:	1000€*0.15 = 150€
+Año 4:	1000€*0.15 = 150€
+Año 5:	1000€*0.10 = 100€
+Año 6:	1000€*0.05 = 50€
+Año 7:	1000€*0.05 = 50€
+
+##Ejercicio 2.
+
+
+Hemos elegido [Hostalia](http://www.hostalia.com/dedicados) para nuestro servidor dedicado
+
+![Servidor dedicado en hostinger.es](https://i.gyazo.com/8744a290041033716614c163379bada0.png)
+
+El precio por un año sería: 6.99/mes * 12 = 83,88€/año
+Su precio fijo, da igual que lo usemos el 1% del tiempo o el 100%.
+
+![Servidor en la nube de Microsoft Azure](https://i.gyazo.com/373232c757ac705dfbe4fa7c9c2be2b7.png)
+
+El precio varía según el uso que se le de:
+
+Precio por hora: 0.017€
+
+Precio por día : 0.017€ x 24 = 0.408€
+
+Precio por mes : 0.408€ x 30 = 12,24€
+
+Por año        : 12,24€ x 12 = 146,88€
+
+Si lo usamos el 1% del año = 1,4688€
+Si lo usamos el 10% del año = 14,688€
+
+Para un uso bajo, el precio del servicio en la nube es mucho más económico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
