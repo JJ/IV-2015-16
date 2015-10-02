@@ -72,6 +72,21 @@ Para un uso bajo, el precio del servicio en la nube es mucho más económico.
 Usamos el siguiente comando:
 `egrep ' flags.*(vmx|svm)' /proc/cpuinfo`
 
+![Flags](https://i.gyazo.com/8722665e59f3d4bf0d1758dd13517af4.png "flags")
+
+
+Para saber el modelo del procesador, usaremos:
+`cat /proc/cpuinfo` 
+
+![CPU INFO](https://i.gyazo.com/a43bd4ff8094d24293c81749032e87cb.png "CPU INFO")
+
+#Ejercicio 5.1
+
+Ya tenia todo instalado previamente en mi ordenador, por lo que solo necesito ejecutar
+`sudo kvm-ok`
+
+![kvm-ok](https://i.gyazo.com/d1ab4c0e7c5ba7d30ecd7b7a52da3ac4.png "kvm-ok")
+
 
 
 
