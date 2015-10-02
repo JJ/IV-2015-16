@@ -88,7 +88,7 @@ Con el comando [cat](https://www.hscripts.com/es/tutoriales/linux-commands/cat.h
 para visualizar la CPU:
 
 
-![](https://www.dropbox.com/s/oqksxvbkl1xvu4h/cpuinfo.png?dl=0)
+![cpuinfo](https://www.dropbox.com/s/oqksxvbkl1xvu4h/cpuinfo.png?dl=0)
 
 
 ### Ejercicio 5.1: Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
@@ -98,6 +98,6 @@ para visualizar la CPU:
 2. Desde la misma terminal en la que hemos instalado `cpu-checker` ejecutamos el siguiente comando: `sudo kvm-ok` como administrador,
 para ver si tenemos instalado el módulo:
 
-![](https://www.dropbox.com/s/pqglchxgixhf4z2/kvm-ok.png?dl=0)
+![kmu-ok](https://www.dropbox.com/s/pqglchxgixhf4z2/kvm-ok.png?dl=0)
 
 En mi caso si tengo instalado el módulo.
