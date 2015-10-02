@@ -13,7 +13,7 @@ El calculo del servidor que he elegido es
 
 Deduciendo una amortización máxima del 25% por cada año: 593.67 * 0.25 = 148.41€ a pagar por cada año de los cuatro años amortizados.
 
-**Amortizacón a 7 años**
+**Amortización a 7 años**
 
 Los dos primeros años comienzan pagando más que el resto de años y así sucesivamente hasta finalizar la amortización del servidor.
 
