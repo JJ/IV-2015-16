@@ -58,7 +58,9 @@ Si lo usamos el 10% del año = 14,688€
 Para un uso bajo, el precio del servicio en la nube es mucho más económico.
 
 
+##Ejercicio 3.1
 
+![Comentario añadido]()
 
 
 
