@@ -16,20 +16,20 @@ Le quitamos el IVA al precio del producto mediante una calculadora on-line fiabl
 
 25% por cada año, así que dividiremos entre 4 los 1000€ del precio sin iva.
 
-Año 1:	1000€*0.25 = 250€
-Año 2:	1000€*0.25 = 250€
-Año 3:	1000€*0.25 = 250€
-Año 4:	1000€*0.25 = 250€
+- Año 1:	1000€*0.25 = 250€
+- Año 2:	1000€*0.25 = 250€
+- Año 3:	1000€*0.25 = 250€
+- Año 4:	1000€*0.25 = 250€
 
 ##Amortización a 7 años
 
-Año 1:	1000€*0.25 = 250€
-Año 2:	1000€*0.25 = 250€
-Año 3:	1000€*0.15 = 150€
-Año 4:	1000€*0.15 = 150€
-Año 5:	1000€*0.10 = 100€
-Año 6:	1000€*0.05 = 50€
-Año 7:	1000€*0.05 = 50€
+- Año 1:	1000€*0.25 = 250€
+- Año 2:	1000€*0.25 = 250€
+- Año 3:	1000€*0.15 = 150€
+- Año 4:	1000€*0.15 = 150€
+- Año 5:	1000€*0.10 = 100€
+- Año 6:	1000€*0.05 = 50€
+- Año 7:	1000€*0.05 = 50€
 
 ##Ejercicio 2.
 ##Usando las tablas de precios de servicios de alojamiento en Internet y de proveedores de servicios en la nube, Comparar el coste durante un año de un ordenador con un procesador estándar (escogerlo de forma que sea el mismo tipo de procesador en los dos vendedores) y con el resto de las características similares (tamaño de disco duro equivalente a transferencia de disco duro) en el caso de que la infraestructura comprada se usa sólo el 1% o el 10% del tiempo.
@@ -96,6 +96,8 @@ Ya tenia todo instalado previamente en mi ordenador, por lo que solo necesito ej
 ##Instalar un hipervisor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios.
 
 Hemos instalado el hipervisor [VirtualBox](http://www.virtualbox.org)
+
+
 
 
 
