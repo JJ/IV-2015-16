@@ -1,6 +1,6 @@
-# Lista de objetivos de Rubén Martín Hidalgo
+# Objetivos Rafael Lachica Garrido
 ## Semana del 23 al 30 de septiembre de 2015
-### Objetivos a cubrir en la sesión
+==
 
 - [x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
 
@@ -11,7 +11,7 @@
 - [x] Vernos las caras.
 
 ## Semana del 30 de septiembre al 7 de octubre de 2015
-### Objetivos de la semana
+==
 
 - [x] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
 
@@ -31,7 +31,7 @@
 
 - [x] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (no https).
 
-- [x] Tener configurdos los dos repositorios (origin, el propio, upstream, el del resto de la clase).
+- [x] Tener configurados los dos repositorios (origin, el propio, upstream, el del resto de la clase).
 
 - [x] Tener a punto una instalación Linux para llevar a cabo las actividades de la asignatura.
 
@@ -48,3 +48,4 @@
 - [ ] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. 
 
 - [ ] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
+
