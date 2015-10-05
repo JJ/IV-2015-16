@@ -62,7 +62,7 @@ Para un uso bajo, el precio del servicio en la nube es mucho más económico.
 
 ##Ejercicio 3.1
 ##¿Qué tipo de virtualización usarías en cada caso? Comentar en el foro
-![Comentario añadido.](https://github.com/JJ/IV-2015-16/issues/1#issuecomment-144691470)
+[Comentario añadido.](https://github.com/JJ/IV-2015-16/issues/1#issuecomment-144691470)
 
 ##Ejercicio 3.2
 ##Crear un programa simple en cualquier lenguaje interpretado para Linux, empaquetarlo con CDE y probarlo en diferentes distribuciones.
