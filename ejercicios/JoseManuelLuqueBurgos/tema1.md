@@ -156,4 +156,5 @@ La salida de egrep '^flags.*(vmx|svm)' /proc/cpuinfo no muestra nada por lo que 
 
 Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
 
-Debido a que mi procesador no soporta la virtualización, [no dispongo](https://wiki.archlinux.org/index.php/KVM#Checking_support_for_KVM) de la orden kvm.
+    sudo kvm-ok
+    Su salida nos indica que no tenemos soporte para virtualización hardware.
