@@ -67,7 +67,14 @@ Para un uso bajo, el precio del servicio en la nube es mucho más económico.
 ##Ejercicio 3.2
 ##Crear un programa simple en cualquier lenguaje interpretado para Linux, empaquetarlo con CDE y probarlo en diferentes distribuciones.
 
-//hacer
+Instalamos cde con el comando:
+`sudo apt-get install cde`
+Hacemos un script básico en python:
+![script python](http://i.imgur.com/oaQRntA.png)
+
+Nos bajamos el cdepack desde la web oficial y ejecutamos el siguiente comando:
+![cdepack](http://i.imgur.com/GMWSEin.png)
+
 
 
 ##Ejercicio 4
