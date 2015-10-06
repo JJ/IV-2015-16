@@ -75,6 +75,7 @@ Hacemos un script básico en python:
 Nos bajamos el cdepack desde la web oficial y ejecutamos el siguiente comando:
 ![cdepack](http://i.imgur.com/GMWSEin.png)
 
+Este ejecutable lo hemos probado en otra distribucion linux y comprobamos que se ejecuta aun no teniendo el entorno de python.
 
 
 ##Ejercicio 4
@@ -91,7 +92,8 @@ Para saber el modelo del procesador, usaremos:
 
 ![CPU INFO](https://i.gyazo.com/a43bd4ff8094d24293c81749032e87cb.png "CPU INFO")
 
-#Ejercicio 5.1
+#Ejercicio 5.1la123
+
 ##Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
 
 Ya tenia todo instalado previamente en mi ordenador, por lo que solo necesito ejecutar
