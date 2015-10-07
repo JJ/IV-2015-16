@@ -116,7 +116,7 @@ Podemos ver que dispone del flag vmx
 
 Al intentar usar la orden nos pedirá instalar cpu-checker, tras esto podemos usarla sin nigun problema.
 
-[captura4](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/captura5_zps0v2jts8s.png)
+![captura4](http://i1045.photobucket.com/albums/b460/Alejandro_Casado/captura5_zps0v2jts8s.png)
 
 Podemos ver que mi ordenado contiene el módulo 
 
