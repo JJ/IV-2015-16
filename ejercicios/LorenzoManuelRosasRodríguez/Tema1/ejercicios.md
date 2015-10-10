@@ -22,7 +22,7 @@ Para más información consultar el enlace de arriba. Imagen del producto:
 
 ![Servidor](http://fotos.pccomponentes.com/ordenadores_sobremesa/servidores/hp_proliant_ml110_gen9_e5_2603v3_4gb.jpg)
 
-Para realizar el cálculo de la amortización hay hayar el precio del producto sin IVA, ya que este es amortizado el primer año. Este precio ya nos lo da la página, el cual es 1000 euros.
+Para realizar el cálculo de la amortización hay que hayar el precio del producto sin IVA, ya que este es amortizado el primer año. Este precio ya nos lo da la página, el cual es 1000 euros.
 
 Para la amortización en 4 años, en cada uno sería del 25%, por lo tanto nos saldría:
 
@@ -55,9 +55,18 @@ Para la amortización en 7 años tenemos dos opciones:
 |    Año     |   Precio   | Porcentaje | Total Anual |
 | ---------- | ---------- | ---------- | ----------- |
 |    1       |  1000      | 25%(aprox) |  250 euros  |
-|    2       |  1000      | 25%(aprox) |  250 euros  |
+|    2       |  1000      | 20%(aprox) |  200 euros  |
 |    3       |  1000      | 15%(aprox) |  150 euros  |
 |    4       |  1000      | 15%(aprox) |  150 euros  |
 |    5       |  1000      | 10%(aprox) |  100 euros  |
 |    6       |  1000      | 5%(aprox)  |  50 euros   |
 |    7       |  1000      | 5%(aprox)  |  50 euros   |
+
+
+###Ejercicio 2 : Usando las tablas de precios de servicios de alojamiento en Internet y de proveedores de servicios en la nube, Comparar el coste durante un año de un ordenador con un procesador estándar (escogerlo de forma que sea el mismo tipo de procesador en los dos vendedores) y con el resto de las características similares (tamaño de disco duro equivalente a transferencia de disco duro) en el caso de que la infraestructura comprada se usa sólo el 1% o el 10% del tiempo.
+
+Para realizar el ejercicio tendremos en cuenta dos propuestas:
+
+- [Azure](https://azure.microsoft.com/es-es/)
+- [1and1](http://www.1and1.es)
+
