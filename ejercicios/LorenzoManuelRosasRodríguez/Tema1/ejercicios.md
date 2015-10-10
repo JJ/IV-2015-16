@@ -70,3 +70,9 @@ Para realizar el ejercicio tendremos en cuenta dos propuestas:
 - [Azure](https://azure.microsoft.com/es-es/)
 - [1and1](http://www.1and1.es)
 
+En el caso de Azure:
+- Si lo usamos un 1%, equivaldría a 876 horas anuales:
+![img](https://github.com/jesusgn90/SWAP2015/blob/master/Practicas/Practica1/maquina1.png)
+
+
+
