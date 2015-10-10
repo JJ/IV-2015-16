@@ -21,3 +21,8 @@ Ahora indicamos características de nuestro producto:
 Para más información consultar el enlace de arriba. Imagen del producto:
 
 ![Servidor](http://fotos.pccomponentes.com/ordenadores_sobremesa/servidores/hp_proliant_ml110_gen9_e5_2603v3_4gb.jpg)
+
+Para realizar el cálculo de la amortización hay el precio del producto sin IVA, ya que este es amortizado el primer año. Este precio ya nos lo da la página, el cual es 1000 euros.
+
+Para los siguientes 4 años, la amortización en cada uno sería de 25% en cada uno, por lo tanto en cada uno sería:
+—  ** 1000*0.25 = 250 euros** 
