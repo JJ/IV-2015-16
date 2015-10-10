@@ -25,7 +25,13 @@ Para más información consultar el enlace de arriba. Imagen del producto:
 Para realizar el cálculo de la amortización hay hayar el precio del producto sin IVA, ya que este es amortizado el primer año. Este precio ya nos lo da la página, el cual es 1000 euros.
 
 Para la amortización en 4 años, en cada uno sería del 25%, por lo tanto nos saldría:
-— **1000 x 0.25 = 250 euros** 
+|    Año     |   Precio   | Porcentaje | Total Anual |
+| ---------- | ---------- | ---------- | ----------- |
+|    1       |  1000      |    0.25    |  250euros   |
+|    2       |  1000      |    0.25    |  250euros   |
+|    3       |  1000      |    0.15    |  250euros   |
+|    4       |  1000      |    0,15    |  250euros   |
+
 
 Para la amortización en 7 años tenemos dos opciones: 
 - O bien podríamos hacer como en el caso anterior y pagar lo mismo cada año, por lo que tendríamos en porcentaje en cada uno del 15%(aproximadamente). 
