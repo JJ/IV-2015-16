@@ -7,13 +7,13 @@ Para realizar el ejercicio he escogido el servidor [HP ProLiant ML110 Gen9 E5-16
 Ahora indicamos características de nuestro producto:
 - **Procesador** ==> *E5-1620V3 (3.5 GHz)*
 - **Disco duro** ==>  *1TB*
-- **Unidad Óptica* ==> *No incluye*
-- **Memoria* ==> *RAM 4GB*
+- **Unidad Óptica** ==> *No incluye*
+- **Memoria** ==> *RAM 4GB*
 - **Red**
-   -— ==> Ethernet
-   —- ==> LAN 10/100/1000Base
-   —- ==> Tipo de interfaz ethernet Gigabit
-   —- ==> Conexiones: 2 x USB 2.0,4 x USB 3.0,1 x VGA,2 x R-J45
-   —- ==> Dimensiones (Ancho x Profundidad x Altura): 19.5 cm x 48.05 cm x 44 cm
-   —- ==> Peso 12.5 kg
+   - ==> Ethernet
+   — ==> LAN 10/100/1000Base
+   — ==> Tipo de interfaz ethernet Gigabit
+   — ==> Conexiones: 2 x USB 2.0,4 x USB 3.0,1 x VGA,2 x R-J45
+   — ==> Dimensiones (Ancho x Profundidad x Altura): 19.5 cm x 48.05 cm x 44 cm
+   — ==> Peso 12.5 kg
 Para más información consultar el enlace de arriba.
