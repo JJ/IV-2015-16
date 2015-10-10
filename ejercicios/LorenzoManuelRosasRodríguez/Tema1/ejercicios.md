@@ -50,3 +50,14 @@ Para la amortización en 7 años tenemos dos opciones:
 
 - También podríamos realizar un pago descendente, de forma que en cada año pagaríamos: 25% primer año, 25% segundo año, 15% tercer año, 15% cuarto año, 10% quinto año, 5% sexto año, 
 5% séptimo año.
+
+
+|    Año     |   Precio   | Porcentaje | Total Anual |
+| ---------- | ---------- | ---------- | ----------- |
+|    1       |  1000      | 25%(aprox) |  250 euros  |
+|    2       |  1000      | 25%(aprox) |  250 euros  |
+|    3       |  1000      | 15%(aprox) |  150 euros  |
+|    4       |  1000      | 15%(aprox) |  150 euros  |
+|    5       |  1000      | 10%(aprox) |  100 euros  |
+|    6       |  1000      | 5%(aprox)  |  50 euros   |
+|    7       |  1000      | 5%(aprox)  |  50 euros   |
