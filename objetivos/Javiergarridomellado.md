@@ -25,7 +25,7 @@
 
 ### Otros objetivos
 
-- [ ] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige.
+- [X] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige.
 - [X] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (no https).
 - [X] Tener configurdos los dos repositorios (origin, el propio, upstream, el del resto de la clase).
 - [X] Tener a punto una instalación Linux para llevar a cabo las actividades de la asignatura. Si necesitas ayuda para instalarlo, los jueves a partir de las 12:30 está la OSL en la sala de reuniones.
