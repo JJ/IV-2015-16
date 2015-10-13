@@ -22,3 +22,4 @@ Lista de objetivos de Lorenzo Manuel Rosas Rodríguez
 ##Comprender los niveles de virtualización y sus denominaciones genéricas.
 
 ##Comprender el concepto de software as a service y comprender los criterios necesarios para su elección.
+
