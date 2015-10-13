@@ -68,9 +68,9 @@ Para la amortización en 7 años tenemos dos opciones:
 Para realizar el ejercicio tendremos en cuenta dos propuestas:
 
 - [Azure](https://azure.microsoft.com/es-es/)
-![img](https://github.com/lorenmanu/IV-2015-16/blob/master/ejercicios/LorenzoManuelRosasRodr%C3%ADguez/Tema1/imagen_azure_1.png)
+![img](https://drive.google.com/open?id=0B-bWKrTfDyPKbzcteHlHa0FsVUk)
 - [1and1](http://www.1and1.es)
-![img](https://github.com/lorenmanu/IV-2015-16/blob/master/ejercicios/LorenzoManuelRosasRodr%C3%ADguez/Tema1/1and1.png)
+![img](https://drive.google.com/open?id=0B-bWKrTfDyPKazBvdHBjWGVGYzQ)
 
 Por lo tanto, en el caso de Azure:
 - Si lo usamos un 1%, equivale 7,44 horas el mes, y su precio sería ===> **7,44x0,130€=0,9672 euros**
