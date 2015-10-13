@@ -1,16 +1,8 @@
 #Tema 1
 
-##Objetivos del tema 1
+##Ejercicios
 
-- [] Conocer diferentes tecnologías relacionadas con la virtualización (Computación nube, Utility Computing, Software as a Service o Google AppSpot)
-- [X] Conocer el concepto de software libre y su importancia dentro de la computación nube.
-- [X] Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
-- [] Usar el sistema de control de fuentes git para desarrollo colaborativo y para despliegue de aplicaciones en la nube.
-
-
-###Ejercicios
-
-####Ejercicio 1
+###Ejercicio 1
 Consultar en el catálogo de alguna tienda de informática el precio de un ordenador tipo servidor y calcular su coste de amortización a cuatro y siete años. Consultar este artículo en Infoautónomos sobre el tema.
 
 El servidor que he consultado en la tienda Dynos < www.dynos.es > ha sido:
@@ -35,7 +27,7 @@ Y para calcular su coste de amortización en **7 años**:
 	1557.85 * 1/7 = **222.55 €/año**
 	
 
-####Ejercicio 2
+###Ejercicio 2
 Usando las tablas de precios de servicios de alojamiento en Internet y de proveedores de servicios en la nube, Comparar el coste durante un año de un ordenador con un procesador estándar (escogerlo de forma que sea el mismo tipo de procesador en los dos vendedores) y con el resto de las características similares (tamaño de disco duro equivalente a transferencia de disco duro) en el caso de que la infraestructura comprada se usa sólo el 1% o el 10% del tiempo.	
 	
 Para realizar el ejercicio, las características y procesador que he comparado ha sido de 1 núcleo y 20 GB de almacenamiento SSD. 
@@ -61,14 +53,63 @@ Ahora vamos a realizar la comparación en los siguientes casos:
 En resumen, en ambos casos vemos que si sólo se va a usar un 1% o un 10 % del tiempo, es más económica la opción del servicio en la nube de Azure (7.25€ VS. 0.112e9 o 1.129€). En cambio, si este servicio se va a usar durante un mes completo todas las horas, es más económica la opción de alojamiento (11.29€ > 7.25€).
 
 
+###Ejercicio 3
+1.¿Qué tipo de virtualización usarías en cada caso? Comentar en el foro
+
+Para tener un SO como tal virtualizado, recurriría a la virtualización plena, usando por ejemplo VirtualBox.
+Cuando en Linux se quiere ejcutar un ejecutable (.exe) de Windows que no está disponible para Linux, he recurrido a Wine para virtualizar la aplicación concreta.
+A nivel de virtualización de sistema operativo, conozco OpenVZ donde anfitrión y clientes usan Linux como sistemas operativos y están totalmente aislados, aunque nunca lo he llegado a utilizar.
+
+2.Crear un programa simple en cualquier lenguaje interpretado para Linux, empaquetarlo con CDE y probarlo en diferentes distribuciones.
+
+He creado un programa que escribe 5 veces una oración.
+
+![Programa Python](http://i1016.photobucket.com/albums/af281/raperaco/ej3Python_zpse2k8ja2w.png)
+
+El resultado de la ejecución es el siguiente:
+
+*Ubuntu: ![Ejecución en Ubuntu](http://i1016.photobucket.com/albums/af281/raperaco/ejecucionUbuntu_zpsyswfzyk5.png)
+
+Ahora procedo a empaquetarlo con CDE y probarlo en otra distribución como Linux Mint.
+
+El uso de la herramienta CDE podemos verlo en la [página oficial](http://www.pgbovine.net/cde.html)
+
+Tras haber instalado CDE, realizamos el empaquetado de la aplicación:
+
+![Empaquetado con CDE](http://i1016.photobucket.com/albums/af281/raperaco/empaquetarConCDE_zpszilqnb0c.png)
+
+Tras comprimirlo, llevarlo a otra máquina Linux y descomprimirlo, nos movemos por las carpetas *cde-package/cde-root/home/<usuario_actual>*. En esa ubicación, habrá un fichero con extensión **.cde** que será el que habrá que ejecutar el cual tiene enlazadas todas las bibliotecas y requisitos de la aplicación. Lo vemos en la siguiente imagen:
+
+*En la misma máquina en la que se empaquetó (Ubuntu Server 14.04): ![Ejecución en Ubuntu Server](http://i1016.photobucket.com/albums/af281/raperaco/ejecucionCDEUbuntuServer_zpsjna99yyl.png)
+
+*Linux Mint: ![Ejecución en Linux Mint](http://i1016.photobucket.com/albums/af281/raperaco/ejecucionCDEMint_zps1drak6yf.png)
 	
 	
 	
+###Ejercicio 4
+Comprobar si el procesador o procesadores instalados tienen estos flags. ¿Qué modelo de procesador es? ¿Qué aparece como salida de esa orden?	
 	
-	
-	
-	
-	
+El modelo de procesador es el [Intel Core i5 M430 @2.27GHz](http://ark.intel.com/products/43537/Intel-Core-i5-430M-Processor-3M-Cache-2_26-GHz). Lo he consultado con el comando *cat /proc/cpuinfo*, el cual muestra la siguiente información:
+
+![Modelo de procesador](http://i1016.photobucket.com/albums/af281/raperaco/cpuinfo_zpsjbqaxxjk.png)
+
+La salida que aparece al ejecutar la orden egrep '^flags.*(vmx|svm)' /proc/cpuinfo es:
+![Orden flags virtualización](http://i1016.photobucket.com/albums/af281/raperaco/salidaFlagsVirtualizacion_zpscl5z8qgh.png)
+
+*Aparece la misma salida repetida cuatro veces, porque es la recogida en cada uno de los "cores"*. 
+Vemos como efectivamente aparece el flag *vmx*.
+
+
+###Ejercicio 5
+1. Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.	
+Ejecuto el comando kvm-ok, y recibo el aviso de que no lo tengo instalado, que instale el programa cpu-checker. 
+![KVM1](http://i1016.photobucket.com/albums/af281/raperaco/kvm1_zpsld5yj6xc.png)
+
+Lo instalo, y vuelvo a ejecutar la orden *kvm-ok* y ya veo que el núcleo sí contiene este módulo KVM.
+![KVM2](http://i1016.photobucket.com/albums/af281/raperaco/kvm2_zpsubojrr12.png)
+
+2. Instalar un hipervisor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios.
+Tengo ya dos hipervisores instalados en el PC como son **VirtualBox** y **VMware**, listos para usar y crear máquinas virtuales.
 	
 	
 	

@@ -10,3 +10,9 @@ Objetivos realizados en esta sesion:
   * [x] Entendimiento de los conceptos de virtualizacion.
   * [x] Entendimiento de las diversas tecnicas de calculo de coste de amortizacion de uno o varios equipos informaticos y aplicar los costes por recurso.
   * [x] Entendimiento de los soportes de hardware en las distintas tecnicas de virtualizacion y el proceso en como se extiende hasta el nucleo de los sistemas operativos.
+  * [x] Comienzo de uso de git desde la linea de ordenes y comprender su papel como sistema de trabajo cooperativo y despliegue de aplicaciones.
+  * [x] Comprender los niveles de virtualizacion y sus denominaciones genericas.
+  * [x] Comprender el concepto de software as a service y comprender los criterios necesarios para su eleccion.  
+   
+Otros objetivos:
+  * [x] Entender el sistema de practicas, a bases de las entregas de hitos del proyecto, su puntuacion y que es lo que se exige.

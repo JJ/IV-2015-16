@@ -1,6 +1,6 @@
 ##Objetivos Alvaro Perez
 
-### Sesion 1
+### Sesión 1 (Semana del 23 al 30 septiembre 2015)
 
 [x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
 
@@ -11,7 +11,7 @@
 [x] Vernos las caras.
 
 
-### Sesion 2
+### Sesión 2 (Semana del 30 septiembre al 7 octubre 2015)
 
 [x] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
 
@@ -47,5 +47,30 @@
 [x] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 
 [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
+
+
+###Sesión 3 (Semana del 7 al 14 de octubre 2015)
+[x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
+
+[x] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+
+[x] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
+
+[] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
+
+#####Otros objetivos
+
+[] Entregar el primer hito del proyecto al final de la semana.
+
+[] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
+
+[x] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
+
+[x] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
+
+[] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+
+[] Comprender el papel de las build tools o herramientas de automatización.
+
 
 

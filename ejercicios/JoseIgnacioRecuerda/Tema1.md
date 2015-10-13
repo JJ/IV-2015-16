@@ -64,6 +64,27 @@ Deducimos que los primeros años se amortiza más
 	<li>Séptimo año: 800,82 * 0,10 = 80,082</li>
 </ol>
 
+
+##Ejercicio 2
+###Usando las tablas de precios de servicios de alojamiento en Internet y de proveedores de servicios en la nube, Comparar el coste durante un año de un ordenador con un procesador estándar (escogerlo de forma que sea el mismo tipo de procesador en los dos vendedores) y con el resto de las características similares (tamaño de disco duro equivalente a transferencia de disco duro) en el caso de que la infraestructura comprada se usa sólo el 1% o el 10% del tiempo.
+Como servidor dedicado he escogido Hostalia
+Este tiene un coste anual de 419,4€ (los 6 primeros meses) y 599,4€ (los siguientes 6 meses) que hacen un total de 1018,8€ al año. Sus características son:
+![captura de pantalla](https://www.dropbox.com/s/ecl3jk229pnvfdv/ejr2.png?dl=1)
+
+Para Servicios en la nube he escogido AWS Amazon, las caractiristicas que nos ofrece son:
+Procesador intel 2.4 GHz Xeon E5-2676
+Memoria RAM: 16 GiB
+Con un coste de 199€ cada mes.
+Si lo usamos un 1% tendria un coste de 1,99€ al mes que al año sería 23,88€
+Si por el contrarío lo usamos un 10% al mes tendría un coste de 19,9€ y al año de 238,8€.
+
+Con esta comparación podemos ver que sale mas económico el servicio en la nube (la comparación es haciendo uso entre un 1% y 10%)
+
+##Ejercicio 3.1
+###¿Qué tipo de virtualización usarías en cada caso? Comentar en el foro
+[Contestada en el foro](https://github.com/JJ/IV-2015-16/issues/1)
+
+
 ##Ejercicio 3.2
 ###Usando las tablas de precios de servicios de alojamiento en Internet y de proveedores de servicios en la nube, Comparar el coste durante un año de un ordenador con un procesador estándar (escogerlo de forma que sea el mismo tipo de procesador en los dos vendedores) y con el resto de las características similares (tamaño de disco duro equivalente a transferencia de disco duro) en el caso de que la infraestructura comprada se usa sólo el 1% o el 10% del tiempo.
 
@@ -71,14 +92,27 @@ Deducimos que los primeros años se amortiza más
 	<li>He instalado CDE con el comando: sudo apt-get install cde</li>
 	<li>Me he creado un pequeño programa en python que imprime una frase</li>
 	<li>He empaquetado mi programa con el comando: cde python programa.py</li>
-	<li>Me he movido a la ruta ~/Desktop/cde-package/cde-root/home/parallels/Desktop que es donde se encuentra el archivo emmpaquetado por CDE</li>
+	<li>Me he movido a la ruta en la que me ha creado el archivo emmpaquetado por CDE</li>
 	<li>Ejecuto el archivo creado</li>
 </ol>
-![captura de pantalla](https://github.com/ignaciorecuerda/IV-2015-16/blob/miramaejercicios/ejercicios/JoseIgnacioRecuerda/captura.png)
+
+En esta captura se puede ver el contenido del programa creado y la ejecución del archivo empaquetado por cde.
+![captura de pantalla](https://www.dropbox.com/s/a7kmk596868l9wu/ejr3_2.png?dl=1)
 
 
 ##Ejercicio 4
 ###Comprobar si el procesador o procesadores instalados tienen estos flags. ¿Qué modelo de procesador es? ¿Qué aparece como salida de esa orden?
-Al usar mac el comando que he tenido que ejecutar para ver la información del procesador es: sysctl -a | grep machdep.cpu
-y la salida ha sido la siguiente:
-![captura de pantalla](https://github.com/ignaciorecuerda/IV-2015-16/blob/miramaejercicios/ejercicios/JoseIgnacioRecuerda/captura2.png)
+Usando dicho comando no me lista nada, con lo cual quiere decir que mi procesador no tiene esta función o la tiene desactivada.
+![captura de pantalla](https://www.dropbox.com/s/9yc3wh5vgi43kt8/ejr4_1.png?dl=1)
+
+Para ver que modelo de procesador tengo uso el comando "cat /proc/cpuinfo" y obtengo la siguiente salida
+![captura de pantalla](https://www.dropbox.com/s/0v6729pfrbhswwc/ejr4_2.png?dl=1)
+![captura de pantalla](https://www.dropbox.com/s/8qdrd503r5hxa42/ejr4_3.png?dl=1)
+
+##Ejercicio 5.1
+###Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
+![captura de pantalla](https://www.dropbox.com/s/ixfejcp2i5tqnc6/ejr5_1.png?dl=1)
+
+##Ejercicio 5.2
+###Instalar un hipervisor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios.
+Tengo instalado en mi ordenador el Software Parallels Desktop, con el que se pueden gestionar máquinas virtuales

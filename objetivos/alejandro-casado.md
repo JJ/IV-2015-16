@@ -40,7 +40,7 @@ recurso.
 - [x] Tener a punto una instalación Linux para llevar a cabo las actividades de la asignatura. Si necesitas ayuda para instalarlo, los
 jueves a partir de las 12:30 está la OSL en la sala de reuniones.
 
-- [ ] Comenzar a usar los métodos de entrega de ejercicios propuestos para la asignatura [usando GitHub](../ejercicios/README.md). 
+- [x] Comenzar a usar los métodos de entrega de ejercicios propuestos para la asignatura [usando GitHub](../ejercicios/README.md). 
 
 - [x] Manejar de forma básica la línea de órdenes de Linux.
 
@@ -48,7 +48,7 @@ jueves a partir de las 12:30 está la OSL en la sala de reuniones.
 
 - [x] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
 
-- [ ] Usar git para hacer *check-in* en clase y [expresar al final de cada sesión los objetivos alcanzados](Cumpliendo_Objetivos.md).
+- [x] Usar git para hacer *check-in* en clase y [expresar al final de cada sesión los objetivos alcanzados](Cumpliendo_Objetivos.md).
 
 - [ ] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 
