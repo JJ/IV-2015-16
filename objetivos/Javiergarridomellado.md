@@ -1,6 +1,6 @@
-# Objetivos I Francisco Javier Garrido Mellado
+# Objetivos  Francisco Javier Garrido Mellado
 
-## Clase del 29 de septiembre de 2015
+## Sesion 1 (Clase practica del 29 de septiembre de 2015)
 
 
 - [X] Entender la metodología docente, de evaluación y de interacción de la asignatura.
@@ -12,3 +12,35 @@
 
 - [X] Entrar en la lista de correo
 - [X] Realizar encuesta inicial
+
+
+## Sesion 2 (Clase del 30 de septiembre de 2015)
+
+- [X] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
+- [X] Comprender las técnicas de cálculo del coste de amortización de un equipo informático y aplicarlo al cálculo del coste de uso de un recurso.
+- [X] Entender el soporte en hardware de las técnicas de virtualización y cómo se extiende ese soporte al núcleo de los sistemas operativos. Saber si el ordenador habitual lo usa.
+- [X] Comenzar a usar git desde línea de órdenes y comprender su papel como sistema para trabajo colaborativo y despliegue de aplicaciones.
+- [X] Comprender los niveles de virtualización y sus denominaciones genéricas.
+- [X] Comprender el concepto de software as a service y comprender los criterios necesarios para su elección.
+
+### Otros objetivos
+
+- [X] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige.
+- [X] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (no https).
+- [X] Tener configurdos los dos repositorios (origin, el propio, upstream, el del resto de la clase).
+- [X] Tener a punto una instalación Linux para llevar a cabo las actividades de la asignatura. Si necesitas ayuda para instalarlo, los jueves a partir de las 12:30 está la OSL en la sala de reuniones.
+- [X] Comenzar a usar los métodos de entrega de ejercicios propuestos para la asignatura usando GitHub.
+- [X] Manejar de forma básica la línea de órdenes de Linux.
+- [X] Aprender a instalar software libre en Linux.
+- [X] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
+- [X] Usar git para hacer check-in en clase y expresar al final de cada sesión los objetivos alcanzados.
+- [X] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
+- [X] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
+
+## Sesion 3 (Clase del 07 de Octubre de 2015)
+
+- [ ] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [ ] Entender el concepto de DevOps
+- [ ] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+- [ ] Aprender a usar integración continua en cualquier aplicación.
+

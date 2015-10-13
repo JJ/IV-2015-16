@@ -47,23 +47,27 @@ Precio del servidor dedicado de 1&1: 119.99 €/mes
 
 Como podemos ver, con proveedores de servicios en la nube que nos cobran por el uso y no por el hecho de tener acceso, nos puede resultar más económico si hacemos un uso por debajo del 20% del total.
 
+### Ejercicio 3.1: ¿Qué tipo de virtualización usarías en cada caso? Comentar en el foro.
+
+Mi comentario en el foro está [aquí](https://github.com/JJ/IV-2015-16/issues/1#issuecomment-144691470).
+
 ### Ejercicio 3.2: Crear un programa simple en cualquier lenguaje interpretado para Linux, empaquetarlo con CDE y probarlo en diferentes distribuciones.
 
-* Creamos un script.py en python con un holamundo por ejemplo:
+1. Creamos un script.py en python con un holamundo por ejemplo:
 ```
 #! /usr/bin/python 
 print "Hola mundo" 
 ```
 
-* Instalamos CDE con *sudo apt-get install cde*
+2. Instalamos CDE con *sudo apt-get install cde*
 
-* Empaquetamos el script con *cde python script.py*, que nos crea los ficheros cde.options y cde-package
+3. Empaquetamos el script con *cde python script.py*, que nos crea los ficheros cde.options y cde-package
 
 ![Archivos creados CDE](https://www.dropbox.com/s/0vdjlsojagossbp/ficherosCDE.PNG?dl=1)
 
-* Nos vamos al directorio donde se encuentre el ejecutable creado: *cd cde-package/cde-root/home/usuario/...*
+4. Nos vamos al directorio donde se encuentre el ejecutable creado: *cd cde-package/cde-root/home/usuario/...*
 
-* Y ejecutamos *./python.cde script.py*, y nos saldrá "Hola mundo" por la terminal.
+5. Y ejecutamos *./python.cde script.py*, y nos saldrá "Hola mundo" por la terminal.
 
 ### Ejercicio 4: Comprobar si el procesador o procesadores instalados tienen estos flags. ¿Qué modelo de procesador es? ¿Qué aparece como salida de esa orden?
 
@@ -74,3 +78,15 @@ Si no lista nada, entonces es que el procesador no tiene esa funcionalidad o est
 Con el comando *cat /proc/cpuinfo* vemos la CPU que tenemos:
 
 ![Intel Core i7 M640](https://www.dropbox.com/s/ulcduxlpw0zb0u7/infoCPU.PNG?dl=1)
+
+### Ejercicio 5.1: Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
+
+1. Primero instalamos el paquete kvm-ok con el comando: *sudo apt-get install cpu-checker*
+
+2. Ejecutamos *sudo kvm-ok* para averiguar si está instalado el módulo.
+
+![Comprobación módulo kvm](https://www.dropbox.com/s/7snrxi4sweozfkg/kvm-ok.PNG?dl=1)
+
+### Ejercicio 5.2: Instalar un hipervisor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios.
+
+En mi caso he instalado [Xen](http://www.xenproject.org/developers/teams/hypervisor.html) con el siguiente comando: *sudo apt-get install xen-hypervisor-4.4-amd64*

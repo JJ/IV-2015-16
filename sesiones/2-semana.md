@@ -11,7 +11,7 @@ Todos podéis participar en los [premios a proyectos libres de la UGR](http://os
 equipo informático y aplicarlo al cálculo del coste de uso de un
 recurso.
 2. Entender el soporte en hardware de las técnicas de virtualización y cómo se extiende ese soporte al núcleo de los sistemas operativos. Saber si el ordenador habitual lo usa.
-3. Comenzar a usar git desde línea de órdenes y comprender su papel como sistema para trabajo colaborativo y despliegue de aplicaciones.
+3. Comenzar a usar `git` desde línea de órdenes y comprender su papel como sistema para trabajo colaborativo y despliegue de aplicaciones.
 4. Comprender los niveles de virtualización y sus denominaciones genéricas.
 5. Comprender el concepto de *software as a service* y comprender los criterios necesarios para su elección.
 
