@@ -1,16 +1,13 @@
-#Clases de Infraestructura Virtual.
+#Proyecto de IV-DAI.
+
+##Componentes del grupo:
+- Lorenzo Manuel Rosas Rodríguez.
+- Javier Ruíz César.
+- Alberto Romero Cañadas.
 
 
-Repositorio para el material específico de cada clase, planificación y ejercicios. 
+Nuestro proyecto irá acompañado del proyecto en DAI, es decir, en DAI realizaremos una aplicación web y en IV le daremos el soporte y la desplegaremos, tocaremos tecnologías como servidores web y balanceados de carga. Todo esto lo deberemos realizar de manera automática para que el usuario se preocupe solo del uso de la aplicación.
 
-* Puedes consultar [los apuntes de la materia](http://jj.github.io/IV).
-* Comprueba la [metodología y criterios de evaluación](Metodología_y_criterios_de_evaluación.md).
-* Comienza con [la programación y objetivos de las diferentes sesiones de la asignatura](sesiones/README.md).
-* Tu fichero de objetivos estará en el [directorio correspondiente](objetivos/README.md).
-* Tu fichero de ejercicios, también en el [directorio correspondiente](ejercicios/README.md).
-* Puedes mirar [las prácticas propuestas para la asignatura](practicas_propuestas.md) o las [elegidas por los alumnos](practicas/1.md).
-
-
-
+Todos los miembros estamos inscritos en el concurso de software libre.
 
 
