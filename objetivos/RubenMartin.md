@@ -85,11 +85,11 @@
 
 - [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
 
-- [ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+- [x] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
 
-- [ ] Comprender los mecanismos de despliegue automático.
+- [x] Comprender los mecanismos de despliegue automático.
 
-- [ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+- [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
 __________________________________________
 
@@ -124,8 +124,8 @@ __________________________________________
 
 ### Tema 3: Creando aplicaciones en la nube: Uso de PaaS y SaaS
 
-- [ ] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+- [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS.
 
-- [ ] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+- [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
 
-- [ ] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+- [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
