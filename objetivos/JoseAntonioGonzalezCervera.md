@@ -5,7 +5,7 @@
 - [x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
 - [x] Darse de alta y comprender el funcionamiento básico de GitHub y la lista de correo de la asignatura; conocer el resto de los recursos de la asignatura.
 - [x] Entender el concepto de software libre y su aplicación práctica en clase.
-- [ ] Vernos las caras.
+- [x] Vernos las caras.
 
 ### Segunda semana
 
@@ -24,7 +24,7 @@
 - [x] Comenzar a usar los métodos de entrega de ejercicios propuestos para la asignatura usando GitHub.
 - [x] Manejar de forma básica la línea de órdenes de Linux.
 - [x] Aprender a instalar software libre en Linux.
-- [] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
+- [x] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
 - [] Usar git para hacer check-in en clase y expresar al final de cada sesión los objetivos alcanzados.
 - [] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 - [] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.

@@ -23,13 +23,13 @@ Probando corregir a otro alumno
 
 [X] Comenzar a usar git desde línea de órdenes y comprender su papel como sistema para trabajo colaborativo y despliegue de aplicaciones.
 
-[] Comprender los niveles de virtualización y sus denominaciones genéricas.
+[X] Comprender los niveles de virtualización y sus denominaciones genéricas.
 
-[] Comprender el concepto de software as a service y comprender los criterios necesarios para su elección.
+[X] Comprender el concepto de software as a service y comprender los criterios necesarios para su elección.
 
 ### Otros objetivos
 
-[] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige. 
+[X] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige. 
 
 [X] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (**no*[] https).
 
@@ -43,10 +43,10 @@ Probando corregir a otro alumno
 
 [X] Aprender a instalar software libre en Linux.
 
-[] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
+[X] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
 
 [X] Usar git para hacer *check-in[] en clase y [expresar al final de cada sesión los objetivos alcanzados](Cumpliendo_Objetivos.md).
 
-[] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
+[X] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 
-[] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
+[X] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
