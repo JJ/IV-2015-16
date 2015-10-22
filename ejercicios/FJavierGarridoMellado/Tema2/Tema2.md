@@ -105,3 +105,87 @@ Usando el comando **npm init** se crea el archivo **package.json** como puede ve
 En el caso de **django** lo mas parecido que he encontrado es el archivo **settings.py** donde se encuentra el nombre de la aplicación, tipo de base de datos usada, etc.
 
 ![django](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/django_zpsq2vd3ksl.png)
+
+###Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
+
+- El primer paso es instalar grunt mediante el comando **sudo npm install -g grunt-cli**, esto lo instala en el sistema de manera global.
+
+![instalargrunt](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalargrunt_zpssirlemwc.png)
+
+- El segundo paso es situarse en la carpeta raiz del proyecto e instalar docco mediante el comando **npm install docco grunt-docco --save-dev** .
+
+![instalardocco](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalardocco_zpsqskvoai3.png)
+
+- Se refleja en el archivo **package.json** la configuración relativa a dicha herramienta.
+
+```
+{
+  "name": "empresa",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "express": "~3.4.8",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "jade": "~1.3.0"
+  },
+  "description": "Ejercicio_de_iv",
+  "main": "app.js",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-docco": "~0.4.0",
+    "docco": "~0.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javiergarridomellado/Empresa_expressiv.git"
+  },
+  "author": "Javier Garrido",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/javiergarridomellado/Empresa_expressiv/issues"
+  }
+}
+```
+
+- A continuación se crea en la carpeta raiz del proyecto el archivo **Gruntfile.js** con la siguiente configuración:
+
+```
+'use strict';
+
+module.exports = function(grunt) {
+
+  // Configuración del proyecto
+  grunt.initConfig({
+  pkg: grunt.file.readJSON('package.json'),
+  docco: {
+	  debug: {
+	  src: ['*.js'],
+	  options: {
+		  output: 'docs/'
+	  }
+	  }
+  }
+  });
+
+  // Carga el plugin de grunt para hacer esto
+  grunt.loadNpmTasks('grunt-docco');
+
+  // Tarea por omisión: generar la documentación
+  grunt.registerTask('default', ['docco']);
+};
+```
+
+- Por ultimo se ejectuta el comando **grunt** y se crea la [documentacion](https://github.com/javiergarridomellado/Empresa_expressiv/tree/master/empresa/docs) correspondiente.
+
+![ejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/docugrunt_zps2pyimugi.png)
+
+![doc](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/docu_zpsu1ujcl2k.png)
+
+Falta por probar alguna herramienta para mi proyecto de Python, en este caso **Sphynx** para generar la documentación correspondiente.
