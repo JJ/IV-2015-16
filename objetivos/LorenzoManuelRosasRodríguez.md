@@ -3,43 +3,43 @@ Lista de objetivos de Lorenzo Manuel Rosas Rodríguez
 
 
 ##Semana del 29 de septiembre:
-- Entender la metodología docente, de evaluación y de interacción de la asignatura.
-- Darse de alta y comprender el funcionamiento básico de GitHub y la lista de correo de la asignatura; conocer el resto de los recursos de la asignatura.
-- Entender el concepto de software libre y su aplicación práctica en clase.
-- Vernos las caras.
+- [X] Entender la metodología docente, de evaluación y de interacción de la asignatura.
+- [X] Darse de alta y comprender el funcionamiento básico de GitHub y la lista de correo de la asignatura; conocer el resto de los recursos de la asignatura.
+- [X] Entender el concepto de software libre y su aplicación práctica en clase.
+- [X] Vernos las caras.
 
 ##Semana del 30 de Octubre:
 
-- Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
+- [X] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
 
-- Comprender las técnicas de cálculo del coste de amortización de un equipo informático y aplicarlo al cálculo del coste de uso de un recurso.
+- [X] Comprender las técnicas de cálculo del coste de amortización de un equipo informático y aplicarlo al cálculo del coste de uso de un recurso.
 
-- Entender el soporte en hardware de las técnicas de virtualización y cómo se extiende ese soporte al núcleo de los sistemas operativos. Saber si el ordenador habitual lo usa.
+- [X] Entender el soporte en hardware de las técnicas de virtualización y cómo se extiende ese soporte al núcleo de los sistemas operativos. Saber si el ordenador habitual lo usa.
 
-- Comenzar a usar git desde línea de órdenes y comprender su papel como sistema para trabajo colaborativo y despliegue de aplicaciones.
+- [X] Comenzar a usar git desde línea de órdenes y comprender su papel como sistema para trabajo colaborativo y despliegue de aplicaciones.
 
-- Comprender los niveles de virtualización y sus denominaciones genéricas.
+- [X] Comprender los niveles de virtualización y sus denominaciones genéricas.
 
-- Comprender el concepto de software as a service y comprender los criterios necesarios para su elección.
+- [X] Comprender el concepto de software as a service y comprender los criterios necesarios para su elección.
 
 ##Objetivos Introducción:
-- Conocer la historia de la Computación Virtual, sus orígenes y razones de su existencia.
+- [X] Conocer la historia de la Computación Virtual, sus orígenes y razones de su existencia.
 
-- Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
-- Comprender la diferencia entre infraestructura virtual y real.
-- Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+- [X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [X] Comprender la diferencia entre infraestructura virtual y real.
+- [X] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
 
 ##Objetivos específicos de la introducción:
 
-- Conocer diferentes tecnologías relacionadas con la virtualización (Computación nube, Utility Computing, Software as a Service o      Google AppSpot)
+- [X] Conocer diferentes tecnologías relacionadas con la virtualización (Computación nube, Utility Computing, Software as a Service o      Google AppSpot)
 
-##Conocer el concepto de software libre y su importancia dentro de la computación nube.
+- [X] Conocer el concepto de software libre y su importancia dentro de la computación nube.
 
-- Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
+- [X] Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
 
-- Usar el sistema de control de fuentes git para desarrollo colaborativo y para despliegue de aplicaciones en la nube.
+- [X] Usar el sistema de control de fuentes git para desarrollo colaborativo y para despliegue de aplicaciones en la nube.
 ##Objetivos Sesion 2:
-- Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
+- [X] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
 - Comprender las técnicas de cálculo del coste de amortización de un equipo informático y aplicarlo al cálculo del coste de uso de un recurso.
 
 - Entender el soporte en hardware de las técnicas de virtualización y cómo se extiende ese soporte al núcleo de los sistemas operativos. Saber si el ordenador habitual lo usa. 
