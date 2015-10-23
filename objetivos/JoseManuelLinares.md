@@ -1,7 +1,6 @@
 # Lista de objetivos de Jose Manuel Linares Rojas
 
-## Semana del 23 al 30 de septiembre de 2015
-### Objetivos a cubrir en la sesión
+## 1 - Semana del 23 al 30 de septiembre de 2015
 
 - [x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
 
@@ -12,8 +11,7 @@
 - [x] Vernos las caras.
 
 
-## Semana del 30 de septiembre al 7 de octubre de 2015
-### Objetivos de la semana
+## 2 - Semana del 30 de septiembre al 7 de octubre de 2015
 
 - [x] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
 
@@ -25,8 +23,16 @@
 
 - [x] Comprender los niveles de virtualización y sus denominaciones genéricas.
 
-- [x] Comprender el concepto de "software as a service" y comprender los criterios necesarios para su elección.
+- [x] Comprender el concepto de "software as a service" y comprender los criterios necesarios para su elección.              
 
+## 3 - Semana del 7 de octubre al 14 de octubre de 2015
+- [ ] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
+
+- [ ] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+
+- [ ] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
+
+- [ ] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
 
 ### Otros objetivos
 
@@ -38,7 +44,7 @@
 
 - [x] Tener a punto una instalación Linux para llevar a cabo las actividades de la asignatura.
 
-- [ ] Usar los métodos de entrega de ejercicios propuestos para la asignatura usando GitHub.
+- [x] Usar los métodos de entrega de ejercicios propuestos para la asignatura usando GitHub.
 
 - [x] Manejar de forma básica la línea de órdenes de Linux.
 

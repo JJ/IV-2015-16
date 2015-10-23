@@ -32,4 +32,49 @@ ordenador habitual lo usa.
   - [x] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
   - [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
+### Objetivos tercera sesión
+  - [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
+
+  - [x] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+
+  - [x] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
+
+  - [x] Entender los ficheros de *requisitos* y su utilidad en las infraestructuras virtuales.
+  
+  - [x] Entregar el [primer hito del proyecto](http://jj.github.io/IV/documentos/practicas/1.Infraestructura) al final de la semana.
+
+  - [x] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos. 
+
+  - [x] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
+
+  - [x] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
+  
+  - [ ] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+
+  - [x] Comprender el papel de las *build tools* o herramientas de automatización. 
+
+### Objetivos cuarta sesión
+
+  - [x] Terminar la configuración de los sistemas de integración continua
+  - [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+### Otros objetivos cuarta sesión
+
+  - [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+  - [ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+  - [x] Comprender los mecanismos de despliegue automático.
+  - [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
+### Objetivos quinta sesión
+
+  - [ ] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+  - [ ] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+  - [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+  - [ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+### Otros objetivos quinta sesíón
+
+  - [x] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
+  - [ ] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+
 
