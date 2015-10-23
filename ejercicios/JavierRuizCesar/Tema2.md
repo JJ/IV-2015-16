@@ -45,8 +45,7 @@ Probamos con el resto de versiones que habíamos instalado en el ejercicio 1:
 Lo he hecho con el comando *npm init* ejecutado dentro del directorio de la aplicación.
 Solo habrá que ir rellenando los distintos parámetros que nos pide. Al final nos queda algo así:
 
-[resultado](https://www.dropbox.com/s/e600c9wyuclaz5f/ejer4.png?dl=0).
-
+![resultado](https://www.dropbox.com/s/e600c9wyuclaz5f/ejer4.png?dl=0).
 
 ### Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema para otro lenguaje de programación) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
