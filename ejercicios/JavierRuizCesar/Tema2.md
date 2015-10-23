@@ -22,17 +22,16 @@ Vamos a utilizar NVM. Para su instalación, hay que seguir los siguientes pasos:
 
 ### Ejercicio 2: Como ejercicio, algo ligeramente diferente: una web para calificar las empresas en las que hacen prácticas los alumnos. Las acciones serían crear empresa y listar calificaciones para cada empresa, crear calificación y añadirla (comprobando que la persona no la haya añadido ya), borrar calificación (si se arrepiente o te denuncia la empresa o algo) y hacer un ránking de empresas por calificación, por ejemplo. Crear un repositorio en GitHub para la librería y crear un pequeño programa que use algunas de sus funcionalidades. Si se quiere hacer con cualquier otra aplicación, también es válido.
 
-El tutorial que he seguido para crear la aplicación está [aquí](https://openwebinars.net/aprende-realizar-una-aplicacion-con-django-el-mundial-de-brasil-2014/)
+El tutorial que he seguido para crear la aplicación está [aquí](http://www.codedrinks.com/como-crear-una-pagina-web-con-node-js-express-jade-y-stylus/)
 
-El repositorio del programa que he creado esta [aquí](https://github.com/javiexfiliana7/app_futbol_nodejs.git)
+El repositorio del programa que he creado esta [aquí](https://github.com/javiexfiliana7/app_nodejs.git)
 
 Para ejecutarlo simplemente, clonamos el repositorio con *git clone* entramos en la carpeta, y hacemos *node server.js* en el directorio raíz de la aplicación.
 
 Aquí una muestra de la aplicación funcionando:
 
-![Aplicacion](https://www.dropbox.com/s/2qr7yl8ga8ylh3s/Captura%20de%20pantalla%20de%202015-10-23%2011%3A19%3A37.png?dl=0)
-![Aplicacion](https://www.dropbox.com/s/64w88jjjfh079i2/Captura%20de%20pantalla%20de%202015-10-23%2011%3A24%3A46.png?dl=0)
-![Aplicacion](https://www.dropbox.com/s/8imqe6z4noas7z0/Captura%20de%20pantalla%20de%202015-10-23%2011%3A25%3A19.png?dl=0)
+![Aplicacion](https://www.dropbox.com/s/1e878ui9zzqmtr3/ejer2.png?dl=0)
+
 
 ### Ejercicio 3: Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
 
@@ -46,24 +45,24 @@ Probamos con el resto de versiones que habíamos instalado en el ejercicio 1:
 Lo he hecho con el comando *npm init* ejecutado dentro del directorio de la aplicación.
 Solo habrá que ir rellenando los distintos parámetros que nos pide. Al final nos queda algo así:
 
-{
-  "name": "futbol",
-  "version": "1.0.0",
-  "description": "Partidos de champions",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/javiexfiliana7/app_futbol_nodejs.git"
-  },
-  "author": "Javier Ruiz César",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/javiexfiliana7/app_futbol_nodejs/issues"
-  },
-  "homepage": "https://github.com/javiexfiliana7/app_futbol_nodejs"
-}
+[resultado](https://www.dropbox.com/s/e600c9wyuclaz5f/ejer4.png?dl=0).
+
+
+### Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema para otro lenguaje de programación) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
+
+Primero instalamos grunt y docco con los siguientes comandos:
+
+1. *npm install -g grunt-cli*
+
+2. *npm install docco grunt-docco --save-dev*
+
+Ahora creamos el Gruntfile.js (en el directorio raíz de la aplicación que estamos creando):
+
+![Creación de Gruntfile](https://www.dropbox.com/s/yb0xsdsgrwzwqyh/ejer5a.png?dl=0)
+
+Y por último ejecutamos *grunt*, que produce la siguiente [documentación](https://github.com/javiexfiliana7/app_nodejs/tree/master/docs).
+Vemos como lo hace sin errores:
+![Creación de documentación con Grunt](https://www.dropbox.com/s/97z6fqto588b911/ejr5.png?dl=0)
+
 
 
