@@ -73,3 +73,76 @@
 - [x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 
 - [x] Comprender el papel de las build tools o herramientas de automatización.
+
+## Semana del 14 de octubre al 21 de octubre de 2015
+### Objetivos de la semana
+
+- [x] Terminar la configuración de los sistemas de integración continua.
+
+- [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+### Otros objetivos
+
+- [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+
+- [x] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+
+- [x] Comprender los mecanismos de despliegue automático.
+
+- [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
+## Semana del 21 de octubre al 28 de octubre de 2015
+### Objetivos de la semana
+
+- [ ] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+
+- [ ] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+
+- [ ] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+
+- [ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+### Otros objetivos
+
+- [ ] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
+
+- [ ] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+
+__________________________________________
+
+## Objetivos de la asignatura
+
+- [x] Conocer la historia de la Computación Virtual, sus orígenes y razones de su existencia.
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+- [x] Comprender la diferencia entre infraestructura virtual y real.
+
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+## Objetivos específicos
+### Tema 1: Introducción a la infraestructura virtual: concepto y soporte físico
+
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación nube, Utility Computing, Software as a Service o Google AppSpot)
+
+- [x] Conocer el concepto de software libre y su importancia dentro de la computación nube.
+
+- [x] Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
+
+- [x] Usar el sistema de control de fuentes git para desarrollo colaborativo y para despliegue de aplicaciones en la nube.
+
+### Tema 2: Desarrollo basado en pruebas
+
+- [x] Entender el concepto de DevOps.
+
+- [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+
+- [x] Aprender a usar integración continua en cualquier aplicación.
+
+### Tema 3: Creando aplicaciones en la nube: Uso de PaaS y SaaS
+
+- [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS.
+
+- [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+
+- [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.

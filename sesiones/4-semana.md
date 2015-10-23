@@ -25,6 +25,6 @@ Comenzamos con el [segundo hito del proyecto](https://github.com/JJ/IV/blob/mast
 
 ##Siguiente semana
 
-Quinta semana, que incluye la visita a Trevenque.
+[Quinta semana](5-semana.md), que incluye la visita a Trevenque.
 
 

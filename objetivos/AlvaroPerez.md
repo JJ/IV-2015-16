@@ -56,11 +56,11 @@
 
 [x] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
 
-[] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
+[x] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
 
 #####Otros objetivos
 
-[] Entregar el primer hito del proyecto al final de la semana.
+[x] Entregar el primer hito del proyecto al final de la semana.
 
 [] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
 
@@ -68,9 +68,27 @@
 
 [x] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
 
-[] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+[x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 
-[] Comprender el papel de las build tools o herramientas de automatización.
+[x] Comprender el papel de las build tools o herramientas de automatización.
+
+###Sesión 4 (Semana del 14 al 21 de octubre 2015)
+
+[] Terminar la configuración de los sistemas de integración continua.
+    
+[] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+#####Otros objetivos
+
+[x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+
+[] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+
+[] Comprender los mecanismos de despliegue automático.
+    
+[] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
+
 
 
 
