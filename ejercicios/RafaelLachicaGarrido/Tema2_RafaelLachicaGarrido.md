@@ -252,7 +252,10 @@ before_script:
 script:
   - grunt
 
-```
-![shipabbleTest](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/script_zpsv2xpje88.png)
+# Tell istanbul to generate a coverage report
+after_script:
+  - ./node_modules/.bin/istanbul cover grunt -- -u tdd
+  - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
 
+```
 [Shippable](http://docsv2.readthedocs.org/en/latest/start.html)

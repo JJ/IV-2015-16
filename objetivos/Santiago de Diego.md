@@ -26,7 +26,7 @@ Lista de objetivos de Santiago de Diego
     
 [x] Comprender el concepto de software as a service y comprender los criterios necesarios para su elección.
 
-##Otros objetivos
+#Otros objetivos
 
 [X] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige.
 
@@ -49,37 +49,6 @@ Lista de objetivos de Santiago de Diego
 [ ] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 
 [X] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
-
-#Objetivos de la tercera sesión
-[X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
-
-[X] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
-
-[X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de
-  programación y entender su utilidad.
-
-[X] Entender los ficheros de *requisitos* y su utilidad en las
-  infraestructuras virtuales.
-  
-[X] Entregar el [primer hito del proyecto](http://jj.github.io/IV/documentos/practicas/1.Infraestructura) al final de la semana.
-
-[X] Entender el formato JSON y su importancia para ficheros de
-  configuración e intercambio genérico de datos. 
-
-[X] Comenzar el aprendizaje de un nuevo lenguaje de programación o
-  entender cómo node.js hace las cosas, o simplemente mirar el
-  cinturón de herramientas del lenguaje que se use habitualmente de
-  otra forma.
-
-[ ] Comprender la utilidad de la virtualización y definición de
-  herramientas de desarrollo.
-  
-[ ] Instalar las herramientas necesarias para crear y aplicar tests en
-  un proyecto.
-
-[X] Comprender el papel de las *build tools* o herramientas de
-  automatización. 
-
 
 
 
