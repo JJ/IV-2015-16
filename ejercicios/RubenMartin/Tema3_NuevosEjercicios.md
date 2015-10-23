@@ -73,9 +73,55 @@ Damos en "Instalar Wordpress".
 
 ![mocha test](https://www.dropbox.com/s/ufjmxhlrlhz2fwm/mochatest.PNG?dl=1)
 
+Ahora procedemos a subirlo a github:
+
+- git init
+- git commit -m "subo app de prueba a git"
+- Creamos repositorio en GitHub
+- git remote add origin git@github.com:romilgildo/Porra-IV.git
+- git push -u origin master
+
+Y con esto ya está la aplicación subida en mi [repositorio](https://github.com/romilgildo/Porra-IV).
+
 ### Ejercicio 3: Crear pruebas para las diferentes rutas de la aplicación.
 
 ### Ejercicio 4: Instalar y echar a andar tu primera aplicación en Heroku.
+
+1. Nos registramos en [Heroku](https://signup.heroku.com/dc).
+
+![Registro en Heroku](https://www.dropbox.com/s/g6266gm4zthfi5b/registroHeroku.PNG?dl=1)
+
+2. Descargamos el cinturón de herramientas de Heroku con: *wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh*
+
+3. Nos logueamos en Heroku desde la linea de comandos: *heroku login*
+
+4. Clonamos repositorio de la app de prueba de Heroku: *git clone git@github.com:heroku/node-js-getting-started.git*
+
+5. Entramos a la carpeta de la app: *cd node-js-getting-started*
+
+6. Instalamos dependencias: *npm install*
+
+7. Vemos que la app funciona con: *npm start*
+
+![app Heroku en marcha](https://www.dropbox.com/s/kok2tlnwoyfdeo4/appHerokuFunciona.PNG?dl=1)
+
+8. Ahora pasamos a desplegar la app en Heroku con: *heroku create* y *git push heroku master*
+
+9. Podemos cambiar el nombre a la aplicación, ya que por defecto nos asigna uno aleatorio. Para ello ejecutamos:
+
+- *heroku apps:rename newname*
+
+- *git remote rm heroku*
+
+- *heroku git:remote -a newname*
+
+10. Por último, para comprobar que se ha desplegado correctamente, ejecutamos: 
+
+- *heroku ps:scale web=1*	# que arranca el servidor
+
+- *heroku open*	# para acceder a la app mediante el navegador web
+
+ ![app Heroku desplegada](https://www.dropbox.com/s/adowoiht196dpqf/appHerokuDesplegada.PNG?dl=1)
 
 ### Ejercicio 5: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
 
