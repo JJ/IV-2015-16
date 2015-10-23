@@ -34,3 +34,36 @@ Aquí una muestra de la aplicación funcionando:
 ![Aplicacion](https://www.dropbox.com/s/64w88jjjfh079i2/Captura%20de%20pantalla%20de%202015-10-23%2011%3A24%3A46.png?dl=0)
 ![Aplicacion](https://www.dropbox.com/s/8imqe6z4noas7z0/Captura%20de%20pantalla%20de%202015-10-23%2011%3A25%3A19.png?dl=0)
 
+### Ejercicio 3: Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
+
+Probamos con el resto de versiones que habíamos instalado en el ejercicio 1:
+
+- v0.11.16 -> Funciona correctamente
+- v0.12.7 -> Funciona correctamente
+
+### Ejercicio 4: Crear una descripción del módulo usando package.json o el equivalente en otro lenguaje.
+
+Lo he hecho con el comando *npm init* ejecutado dentro del directorio de la aplicación.
+Solo habrá que ir rellenando los distintos parámetros que nos pide. Al final nos queda algo así:
+
+{
+  "name": "futbol",
+  "version": "1.0.0",
+  "description": "Partidos de champions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javiexfiliana7/app_futbol_nodejs.git"
+  },
+  "author": "Javier Ruiz César",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javiexfiliana7/app_futbol_nodejs/issues"
+  },
+  "homepage": "https://github.com/javiexfiliana7/app_futbol_nodejs"
+}
+
+
