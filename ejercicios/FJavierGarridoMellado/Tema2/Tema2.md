@@ -188,4 +188,29 @@ module.exports = function(grunt) {
 
 ![doc](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/docu_zpsu1ujcl2k.png)
 
-Falta por probar alguna herramienta para mi proyecto de Python, en este caso **Sphynx** para generar la documentación correspondiente.
+He probado la herramienta para mi proyecto de Python, en este caso **Sphinx** para generar la documentación correspondiente.
+
+- Se instala con el comando **sudo easy_install -U sphinx**.
+
+![instalar](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalarsphinx_zpsq8a1zano.png)
+
+- Se crean las carpetas correspondientes ejecutando **sphinx-quickstart** tras responder una serie de preguntas.
+
+![carpetadoc](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/quicstart_zpsmm3qlwmb.png)
+
+- Se crean archivos **rst** por cada uno de los paquetes que se quiere documentar ejecutando **sphinx-apidoc -o docs .**
+
+![otrosrst](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/apidoc_zpslvopncvy.png)
+
+- Se edita el archivo **index** que se encuentra en la carpeta **source** y se ejecuta el comando **make html**
+
+![makefile](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/makehtml_zpsam6frmnv.png)
+
+- Puede verse en la carpeta **build** que se genera los **html** correspondientes a la documentación.
+
+![carpetadoc](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/htmlgenerados_zpsdfqh1y2b.png)
+
+![docenlaweb](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/documentacionempresa_zpsefndyimq.png)
+
+Puede seguirse el siguiente [enlace](https://www.ibm.com/developerworks/ssa/opensource/library/os-sphinx-documentation/) para realizar lo mismo. Mi documentación del ejercicio de Django puede [visitarse](https://github.com/javiergarridomellado/Empresa_django/tree/master/Empresas/docs).
+
