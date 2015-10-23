@@ -49,6 +49,7 @@ Damos en "Instalar Wordpress".
 - npm install grunt-shell
 - sudo apt-get install sqlite3
 - npm install sqlite3
+- npm install should --save-dev
 - grunt creadb
 
 ![grunt creadb](https://www.dropbox.com/s/0boonf5zkeuq9nv/gruntcreadb.PNG?dl=1)
@@ -69,10 +70,6 @@ Damos en "Instalar Wordpress".
 
 ![obtener datos porra](https://www.dropbox.com/s/rql7fjol9yn2y7t/accesoPorra.PNG?dl=1)
 
-- mocha test/test.js   # ejecutamos el test
-
-![mocha test](https://www.dropbox.com/s/ufjmxhlrlhz2fwm/mochatest.PNG?dl=1)
-
 Ahora procedemos a subirlo a github:
 
 - git init
@@ -84,6 +81,73 @@ Ahora procedemos a subirlo a github:
 Y con esto ya está la aplicación subida en mi [repositorio](https://github.com/romilgildo/Porra-IV).
 
 ### Ejercicio 3: Crear pruebas para las diferentes rutas de la aplicación.
+
+El archivo de tests, queda con el siguiente contenido:
+
+```
+var request = require('supertest'), 
+should = require('should'),
+app = require('../app.js');
+want_id = "mad-bcn-liga-2014";
+
+describe( "Crear porra", function() {
+	it('should create', function (done) {
+		request(app)
+			.put('/porra/local/visitante/copa/2014')
+			.expect('Content-Type', /json/)
+			.expect(200,done);
+	});
+});
+
+describe( "Leer ID porra", function() {
+	it('should return ID', function (done) {
+		request(app)
+			.put('/porra/mad/bcn/liga/2014')
+			.expect('Content-Type', /json/)
+			.expect(200)
+			.end( function ( error, resultado ) {
+				if ( error ) {
+					return done( error );
+				}
+				resultado.body.should.have.property('ID', want_id);
+				done();
+			});
+	});
+});
+
+describe( "Crear apuesta", function() {
+	it('should create bet correctly', function (done) {
+		request(app)
+			.put('/apuesta/mendas/liga/2014/mad/2/bcn/2')
+			.expect('Content-Type', /json/)
+			.expect(200,done);
+	});
+});
+			
+describe( "Leer ID apuesta", function() {
+	it('should return ID', function (done) {
+		request(app)
+			.put('/apuesta/mendas/liga/2014/mad/2/bcn/2')
+			.expect('Content-Type', /json/)
+			.expect(200)		
+			.end( function ( error, resultado ) {
+				if ( error ) {
+					return done( error );
+				}
+				resultado.body.should.have.property('local','2');
+				resultado.body.should.have.property('visitante','2');
+				done();
+			});
+    });
+});
+
+```
+
+Versión actualizada del fichero test.js [aquí](https://github.com/romilgildo/Porra-IV/blob/master/test/test.js).
+
+Ejecutamos las pruebas con mocha y vemos que son satisfactorias: *mocha test/test.js*
+
+![Resultados Mocha de la porra](https://www.dropbox.com/s/xot1bad04gefzsa/mochaPorra.PNG?dl=1)
 
 ### Ejercicio 4: Instalar y echar a andar tu primera aplicación en Heroku.
 
