@@ -50,19 +50,35 @@ Damos en "Instalar Wordpress".
 - sudo apt-get install sqlite3
 - npm install sqlite3
 - grunt creadb
+
 ![grunt creadb](https://www.dropbox.com/s/0boonf5zkeuq9nv/gruntcreadb.PNG?dl=1)
 
 - DEBUG=prueba-rest npm start   # comprobamos que funciona
+
 ![ejecucion de aplicacion](https://www.dropbox.com/s/vszcb0tsybuu16i/pruebaappJSdebug.PNG?dl=1)
 
 - node app.js   # arrancamos servidor
+
 ![servidor app.js en marcha](https://www.dropbox.com/s/83mui062c67sh3i/servidorJS.PNG?dl=1)
 
 - curl -X PUT http://127.0.0.1:5000/porra/local/visitante/Copa/2013   # probamos a meter datos
+
 ![meter datos en la db](https://www.dropbox.com/s/2rihk9xi0l8ar6t/meterdatosJS.PNG?dl=1)
 
 - Vemos que ha metido los datos correctamente:
+
 ![obtener datos porra](https://www.dropbox.com/s/rql7fjol9yn2y7t/accesoPorra.PNG?dl=1)
 
 - mocha test/test.js   # ejecutamos el test
+
 ![mocha test](https://www.dropbox.com/s/ufjmxhlrlhz2fwm/mochatest.PNG?dl=1)
+
+### Ejercicio 3: Crear pruebas para las diferentes rutas de la aplicación.
+
+### Ejercicio 4: Instalar y echar a andar tu primera aplicación en Heroku.
+
+### Ejercicio 5: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
+
+### Ejercicio 6: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
+
+### Ejercicio 7: Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.
