@@ -85,11 +85,28 @@
 
 - [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
 
-- [ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+- [x] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
 
-- [ ] Comprender los mecanismos de despliegue automático.
+- [x] Comprender los mecanismos de despliegue automático.
 
-- [ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+- [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
+## Semana del 21 de octubre al 28 de octubre de 2015
+### Objetivos de la semana
+
+- [ ] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+
+- [ ] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+
+- [ ] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+
+- [ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+### Otros objetivos
+
+- [ ] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
+
+- [ ] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
 
 __________________________________________
 
@@ -124,8 +141,8 @@ __________________________________________
 
 ### Tema 3: Creando aplicaciones en la nube: Uso de PaaS y SaaS
 
-- [ ] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+- [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS.
 
-- [ ] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+- [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
 
-- [ ] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+- [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.

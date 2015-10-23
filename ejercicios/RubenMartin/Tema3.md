@@ -118,3 +118,19 @@ function myFunction(){
 El sistema de automatización para Python que he encontrado ha sido *AAP*. Es una "especie" de make para Python. En este [enlace](http://www.calmar.ws/aap/) nos explican como usarlo.
 
 También existen otras como BitBake, SCons o Waf sacadas de [wikipedia](https://en.wikipedia.org/wiki/List_of_build_automation_software#Non-Make-based_tools).
+
+### Ejercicio 6: Identificar, dentro del PaaS elegido o cualquier otro en el que se dé uno de alta, cuál es el fichero de automatización de construcción e indicar qué herramienta usa para la construcción y el proceso que sigue en la misma.
+
+En OpenShift el fichero de automatización se encuentra en .openshift/action_hooks/build.
+
+Además, para poder automatizar tareas existen dos formas: 
+
+- Usando [Jenkins](https://developers.openshift.com/en/managing-continuous-integration.html): es un servidor que proporciona funciones de integración continua para el desarrollo de software que puede ejecutar, construir, testear y programar tareas que se integran con las aplicaciones de OpenShift.
+
+- Usando Hot deployment: con hot deployment se aplican los cambios al código de la aplicación sin necesidad de reiniciar la aplicación, lo que aumenta la velocidad de despliegue y minimiza el tiempo de inactividad de la aplicación. 
+
+Ambos lo he sacado de [aquí](https://developers.openshift.com/en/managing-modifying-applications.html).
+
+### Ejercicio 7: Buscar un entorno de pruebas para el lenguaje de programación y entorno de desarrollo que usemos habitualmente.
+
+Existen dos entornos de pruebas muy usados para Python, que son [Tox](https://pypi.python.org/pypi/tox) y [nose](https://pypi.python.org/pypi/nose/1.3.7) que usa funciones de [unittest](https://docs.python.org/2/library/unittest.html).
