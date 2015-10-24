@@ -51,8 +51,31 @@ Instalamos grunt (npm install -g grunt-cli) y docco (npm install docco grunt-doc
 Ahora pasamos a crear el Gruntfile.js con el siguiente contenido:
 
 ```
-'use strict';module.exports = function(grunt) {  // Configuración del proyecto  grunt.initConfig({  pkg: grunt.file.readJSON('package.json'),  docco: {      debug: {      src: ['*.js'],      options: {          output: 'docs/'      }      }  }  });  // Carga el plugin de grunt para hacer esto  grunt.loadNpmTasks('grunt-docco');  // Tarea por omisión: generar la documentación  grunt.registerTask('default', ['docco']);};
-```
+'use strict';
+
+module.exports = function(grunt) {
+
+  // Configuración del proyecto
+  grunt.initConfig({
+  pkg: grunt.file.readJSON('package.json'),
+  docco: {
+      debug: {
+      src: ['*.js'],
+      options: {
+          output: 'docs/'
+      }
+      }
+  }
+  });
+
+  // Carga el plugin de grunt para hacer esto
+  grunt.loadNpmTasks('grunt-docco');
+
+  // Tarea por omisión: generar la documentación
+  grunt.registerTask('default', ['docco']);
+};
+
+```
 
 
 
@@ -69,7 +92,16 @@ Se ha añadido una aserción que comprueba si el comentario introducido es nulo 
 Instalamos mocha con: npm install -g mocha. Creamos un directorio en el que vamos a alojar los tests, y dentro de este, el fichero test.js que tiene el siguiente contenido:
 
 ```
-var assert = require("assert");miweb = require(__dirname+"/../app.js");describe('Miweb', function(){    describe('Comentar', function(){        it('Debe cargar el programa', function(){            assert(miweb, "Cargado");        });    });});
+var assert = require("assert");
+miweb = require(__dirname+"/../app.js");
+
+describe('Miweb', function(){
+    describe('Comentar', function(){
+        it('Debe cargar el programa', function(){
+            assert(miweb, "Cargado");
+        });
+    });
+});
 ```
 ![haciendo test](http://s2.subirimagenes.com/imagen/previo/thump_9484431ej7.png)
 
@@ -78,6 +110,7 @@ var assert = require("assert");miweb = require(__dirname+"/../app.js");descri
 
 He optado por utilizar Shippable como sistema de integración continua. 
 A continuación se muestra una captura que muestra que el proceso se ha realizado correctamente:
+
 ![](http://s2.subirimagenes.com/imagen/previo/thump_9484439ej8.png)
 
 
