@@ -21,14 +21,10 @@ He instalado NVM. Para su instalación, hay que seguir los siguientes pasos:
 ###Ejercicio 2
 **Como ejercicio, algo ligeramente diferente: una web para calificar las empresas en las que hacen prácticas los alumnos. Las acciones serían crear empresa y listar calificaciones para cada empresa, crear calificación y añadirla (comprobando que la persona no la haya añadido ya), borrar calificación (si se arrepiente o te denuncia la empresa o algo) y hacer un ránking de empresas por calificación, por ejemplo. Crear un repositorio en GitHub para la librería y crear un pequeño programa que use algunas de sus funcionalidades. Si se quiere hacer con cualquier otra aplicación, también es válido. Se trata de hacer una aplicación simple que se pueda hacer rápidamente con un generador de aplicaciones como los que incluyen diferentes marcos MVC. Si cuesta mucho trabajo, simplemente prepara una aplicación que puedas usar más adelante en el resto de los ejercicios**
 
-He creado una aplicación web básica para la solución de este ejercicio sirviéndome de [codedrinks](http://www.codedrinks.com/como-crear-una-pagina-web-con-node-js-express-jade-y-stylus/)
-Instalamos las herramientas necesarias para el funcionamiento de ésta aplicación:
-    npm install express
-    npm install jade
-    npm install stylus
+He creado una aplicación web básica para la solución de este ejercicio sirviéndome de [koalite](http://blog.koalite.com/2011/11/tutorial-node-js-express-jquery-i-creando-la-aplicacion/)
+Instalamos las herramientas necesarias para el funcionamiento de ésta aplicación con npm y ejecutamos la aplicación con node app.js. Si no hay errores, la aplicación está funcionando en el puerto 3000.
 
-Ejecutamos node app.js y si no hay errores, la aplicación está funcionando en el puerto 3000 (indicado en el app.js).
-![aplicación funcionando](http://s2.subirimagenes.com/imagen/previo/thump_9484070ej2.png)
+![aplicación funcionando](http://s2.subirimagenes.com/imagen/previo/thump_9484427ej22.png)
     
 
 ###Ejercicio 3
@@ -63,13 +59,26 @@ Ahora pasamos a crear el Gruntfile.js con el siguiente contenido:
 ###Ejercicio 6
 **Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).**
 
+Se ha añadido una aserción que comprueba si el comentario introducido es nulo o no:
+
+![aserción](http://s2.subirimagenes.com/imagen/previo/thump_9484429ej6.png)
 
 ###Ejercicio 7
 **Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.**
 
+Instalamos mocha con: npm install -g mocha. Creamos un directorio en el que vamos a alojar los tests, y dentro de este, el fichero test.js que tiene el siguiente contenido:
+
+```
+var assert = require("assert");miweb = require(__dirname+"/../app.js");describe('Miweb', function(){    describe('Comentar', function(){        it('Debe cargar el programa', function(){            assert(miweb, "Cargado");        });    });});
+```
+![haciendo test](http://s2.subirimagenes.com/imagen/previo/thump_9484431ej7.png)
 
 ###Ejercicio 8
 **Ejercicio: Haced los dos primeros pasos antes de pasar al tercero.**
+
+He optado por utilizar Shippable como sistema de integración continua. 
+A continuación se muestra una captura que muestra que el proceso se ha realizado correctamente:
+![](http://s2.subirimagenes.com/imagen/previo/thump_9484439ej8.png)
 
 
 
