@@ -37,7 +37,7 @@ ordenador habitual lo usa.
   - [x] Usar git para hacer *check-in* en clase y expresar al final de cada sesión los objetivos alcanzados
   - [x] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
   - [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
-  - 
+   
   
 
 ### Objetivos tercera sesión
