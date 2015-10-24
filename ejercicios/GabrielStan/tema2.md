@@ -20,4 +20,11 @@ He creado una aplicacion basica usando el framework Django. El codigo se puede v
 
 [Ejercicio 2 - Enlace a GitHub](https://github.com/gabriel-stan/tema2-IV)
 
+### Ejercico 3
+
+**Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?**
+
+He creado dos entornos virtuales: no usando **python 2.7.6** y el otro usando **python 3.4.3**, instalando Django en cada uno de ellos. Como se puede ver en la imagen, la aplicacion se ejecuta tanto con python 2 como con python 3.
+
+![ej3](https://www.dropbox.com/s/rg2ox6lyszs1wk5/ejercicio3.png?dl=1)
 
