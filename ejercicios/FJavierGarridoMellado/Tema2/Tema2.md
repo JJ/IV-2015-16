@@ -267,7 +267,7 @@ exports.post_enviar_empresa = function(req, res){
 ```
 ![asercion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/asercion_zpsvlk8qnbb.png)
 
-#Ejercicio 7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
+###Ejercicio 7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
 
 Los pasos seguidos han sido los siguientes:
 - Instalación de mocha mediante el comando **sudo npm install -g mocha**
@@ -290,4 +290,44 @@ describe('WebPracticas', function(){
 - Por ultimo se ejecuta con el comando **mocha test/test.js**
 
 ![ejecucionmocha](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ejecucionmocha_zpsz4cuhk5g.png)
+
+###Ejercicio 8: Haced los dos primeros pasos antes de pasar al tercero.
+
+- [X] Darse de alta. Muchos están conectados con GitHub por lo que puedes usar directamente el usuario ahí. A través de un proceso de autorización, acceder al contenido e incluso informar del resultado de los tests.( Solo hay que darle al botón y te conecta automaticamente )
+
+- [X] Activar el repositorio en el que se vaya a aplicar la integración continua. Travis permite hacerlo directamente desde tu configuración; en otros se dan de alta desde la web de GitHub.
+
+![activacionrepo](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/sincronizandotravis_zpstro9pijp.png)
+
+- [X] Crear un fichero de configuración para que se ejecute la integración y añadirlo al repositorio.
+
+
+En mi caso he seguido unos pasos muy parecido a lo expuesto en la explicación, he configurado el archivo **.travis.yml** de la siguiente manera:
+```
+language: node_js
+node_js:
+  - "0.10"
+  - "0.11"
+  - "4.2.1"
+before_install:
+  - npm install -g mocha
+  - cd empresa; npm install .
+script: mocha
+```
+
+He intentado incluir la linea de script dentro de package.json para que tuviese la orden en dicho archivo pero por extraña razón daba error y no encontraba el modulo. En **package.json** unicamente he incluido la siguiente linea:
+```
+{
+  "name": "empresa",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "mocha"
+  },
+```
+Y puede verse como ejecuta el testeo correctamente:
+
+![travis](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/travis_zpsnblwherv.png)
+
+![ejecu](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/resultado_zpslpmidjue.png)
 
