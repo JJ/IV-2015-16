@@ -40,7 +40,7 @@ ordenador habitual lo usa.
    
   
 
-### Objetivos tercera sesión
+## Objetivos tercera sesión
   - [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
   - [x] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
   - [x] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
