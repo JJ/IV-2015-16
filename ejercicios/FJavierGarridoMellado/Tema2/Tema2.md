@@ -102,9 +102,31 @@ Usando el comando **npm init** se crea el archivo **package.json** como puede ve
 
 ![package](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ejerc4_zps7adcvb89.png)
 
-En el caso de **django** lo mas parecido que he encontrado es el archivo **settings.py** donde se encuentra el nombre de la aplicación, tipo de base de datos usada, etc.
+En el caso de **django** para describir la aplicación esta el archivo **setup.py** donde se describe el nombre de la aplicación, tipo de base de datos usada, etc. (puede consultarse informacion de la app para describir dicho archivo usando el comando **pip freeze**, el siguiente [enlace](http://python-packaging.readthedocs.org/en/latest/minimal.html) ilustra la utilidad de setup.py)
 
-![django](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/django_zpsq2vd3ksl.png)
+```
+from setuptools import setup
+
+    setup(name='Empresas',
+          version='0.1',
+          description='Aplicacion para el ejercicio 2',
+          long_description='App que permite registrar empresas y valorar practicas de alumnos',
+          classifiers=[
+        'Development Status :: 3 - Alpha',
+        'License :: GNU :: GNU License',
+        'Programming Language :: Python :: 2.7',
+        'Topic :: Text Processing :: Linguistic',
+          ],
+          keywords='aplicacion valoracion de practicas',
+          url='https://github.com/javiergarridomellado/Empresa_django.git',
+          author='Javier Garrido Mellado',
+          author_email='franciscojaviergarridomellado@gmail.com',
+          license='GNU',
+          packages=['Empresas'],
+          install_requires=['sqlite3', ],
+          include_package_data=True,
+          zip_safe=False)
+```
 
 ###Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
@@ -213,4 +235,59 @@ He probado la herramienta para mi proyecto de Python, en este caso **Sphinx** pa
 ![docenlaweb](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/documentacionempresa_zpsefndyimq.png)
 
 Puede seguirse el siguiente [enlace](https://www.ibm.com/developerworks/ssa/opensource/library/os-sphinx-documentation/) para realizar lo mismo. Mi documentación del ejercicio de Django puede [visitarse](https://github.com/javiergarridomellado/Empresa_django/tree/master/Empresas/docs).
+
+###Ejercicio 6: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
+
+He añadido varias aserciones al registrar unas practicas de un alumno, y se observa como se superan.
+```
+var assert = require("assert");
+
+exports.post_enviar_empresa = function(req, res){
+   var asunto = req.body.asunto;
+   var mensaje = req.body.mensaje;
+   var fechainicio = req.body.fechainicio;
+   var fechafinalizacion = req.body.fechafinalizacion;
+   var calificacion = req.body.calificacion;
+   lista.push({
+      emp: emp,
+      alumno: alumno,
+      fechainicio: fechainicio,
+      fechafinalizacion: fechafinalizacion,
+      calificacion: calificacion
+   })
+   assert(emp, "Practicas de alumnos");
+   assert(alumno, "Practicas de alumnos");
+   assert(fechainicio, "Practicas de alumnos");
+   assert(fechafinalizacion, "Practicas de alumnos");
+   assert(calificacion, "Practicas de alumnos");
+   console.log("Acceso a los datos correcto");
+   
+   enviar_empresa(req, res);
+}
+```
+![asercion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/asercion_zpsvlk8qnbb.png)
+
+#Ejercicio 7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
+
+Los pasos seguidos han sido los siguientes:
+- Instalación de mocha mediante el comando **sudo npm install -g mocha**
+
+![instalacionmocha](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalarmocha_zpsxw1xpv1v.png)
+
+- Crear la carpeta **test** y el correspondiente archivo **test.js** describiendo en el su correspondiente testeo. En mi caso:
+```
+var assert = require("assert");
+web = require(__dirname+"/../app.js");
+
+describe('WebPracticas', function(){
+    describe('WebPracticas', function(){
+        it('Debe cargar app.js', function(){
+            assert(web, "Cargado, aca dejo mis dies");
+        });
+    });
+});
+```
+- Por ultimo se ejecuta con el comando **mocha test/test.js**
+
+![ejecucionmocha](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ejecucionmocha_zpsz4cuhk5g.png)
 
