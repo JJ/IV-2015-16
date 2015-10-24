@@ -8,10 +8,16 @@ Usando **virtualenv** he instalado **nodeenv** y dos otros entornos virtuales pa
 
 ![virtualenv y nodeenv](https://www.dropbox.com/s/jm2ipw6u5hmy3k7/instalando%20nodejs%20venv.png?dl=1)
 
-Ya que voy a usar Django para crear la aplicación, voy a usar el entorno **virtualenv**.
+Ya que voy a usar Django (**python**) para crear la aplicación, voy a usar el entorno **virtualenv**.
 
 ![virtualenv y django](https://www.dropbox.com/s/rxjghtcmjhqhr0v/venv%2Bdjango.png?dl=1)
 
 ### Ejercicio 2
+
+**Crear una aplicacion para calificar empresas**
+
+He creado una aplicacion basica usando el framework Django. El codigo se puede ver en el siguiente repositorio de GitHub:
+
+[Ejercicio 2 - Enlace a GitHub](https://github.com/gabriel-stan/tema2-IV)
 
 
