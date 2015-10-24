@@ -289,5 +289,5 @@ describe('WebPracticas', function(){
 ```
 - Por ultimo se ejecuta con el comando **mocha test/test.js**
 
-![ejecucionmocha](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalarmocha_zpsbshcitir.pngt)
-```
+![ejecucionmocha](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ejecucionmocha_zpsz4cuhk5g.png)
+
