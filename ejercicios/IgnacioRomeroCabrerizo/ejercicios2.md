@@ -99,4 +99,22 @@ Lanzamos el test: ``` mocha test/test.js ```
 
 ###Ejercicio 8: Travis
 
+Tras permitir el acceso de Travis al repositorio y crear el archivo **.travis.yml**:
+
+```
+
+language: node_js
+
+node_js:
+  - "0.12"
+
+before_install:
+  - npm install -g mocha
+  - mocha
+
+```
+
+Obtenemos el repositorio con el **build|passing** realizado:
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema2/travis.png)
 
