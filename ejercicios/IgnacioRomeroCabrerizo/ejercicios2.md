@@ -24,6 +24,9 @@ La interfaz de usuario se modifica en el archivo *layout.jade* e *index.jade* en
 
 ###Ejercicio 3: Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
 
+Se ha ejecutado en node.js v0.12.0 y en la v4.2.1 sin problemas.
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema2/ej3.png)
 
 
 ###Ejercicio 4: Crear una descripción del módulo usando package.json. 
