@@ -19,7 +19,7 @@ Sin embargo el gasto decucible en una *amortización a 7 años* es mayor los pri
 
 ## Ejercicio 2 : Usando las tablas de precios de servicios de alojamiento en Internet y de proveedores de servicios en la nube, Comparar el coste durante un año de un ordenador con un procesador estándar (escogerlo de forma que sea el mismo tipo de procesador en los dos vendedores) y con el resto de las características similares (tamaño de disco duro equivalente a transferencia de disco duro) en el caso de que la infraestructura comprada se usa sólo el 1% o el 10% del tiempo.
 
-[Comparación servidores]:http://imgur.com/v2JlKJt
+![Comparación servidores](http://imgur.com/v2JlKJt)
 El precio del servidor en OHV.es es de 30€ la mes, lo que hace un total de **360€** al cabo de un año.
 En 1&1 el monto asciende a 79.2€ por mes, en doce meses por tanto son **950.4€**
 El uso al 1% tras un año sería de 3.6€ contra 9.504€
@@ -51,7 +51,7 @@ Ahora podemos ejecutar el paquete creado en otras distribuciones
 
 ## Ejercicio 4 : Comprobar si el procesador o procesadores instalados tienen estos flags. ¿Qué modelo de procesador es? ¿Qué aparece como salida de esa orden?
 En el fichero /proc/cpuinfo está contenida esta información:
-[CPU]:http://i.imgur.com/vSCO0ac.png
+![CPU](http://i.imgur.com/vSCO0ac.png)
 
 ## Ejercicio 5 : 1. Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
 No estaba instalado, pero puede ser usado tras ejecutar:
