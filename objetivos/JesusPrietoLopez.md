@@ -55,7 +55,7 @@ Lista de objetivos de Jesús Prieto López
 ##Clases de 4ª semana
 
 - [] Terminar la configuración de los sistemas de integración continua
-- [] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+- [X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
 ###Otros objetivos
 
