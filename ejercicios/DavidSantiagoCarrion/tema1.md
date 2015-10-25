@@ -1,29 +1,62 @@
-#Tema 1: Introducción a la infraestructura virtual
+#Tema 1: IntroducciÃ³n a la infraestructura virtual
 
-## Ejercicio 1 : Consultar en el catálogo de alguna tienda de informática el precio de un ordenador tipo servidor y calcular su coste de amortización a cuatro y siete años.
-Vamos a calcular el coste de amortización de un [Lenovo ThinkServer TS 440](http://www.amazon.es/Lenovo-ThinkServer-TS440-70AQ0009UX-E3-1225V3/dp/B00HEK9A8M/ref=lp_11036071_1_3/186-4709759-3585620?s=pc&ie=UTF8&qid=1444809467&sr=1-3) 1.679,23 €
+## Ejercicio 1 : Consultar en el catÃ¡logo de alguna tienda de informÃ¡tica el precio de un ordenador tipo servidor y calcular su coste de amortizaciÃ³n a cuatro y siete aÃ±os.
+Vamos a calcular el coste de amortizaciÃ³n de un [Lenovo ThinkServer TS 440](http://www.amazon.es/Lenovo-ThinkServer-TS440-70AQ0009UX-E3-1225V3/dp/B00HEK9A8M/ref=lp_11036071_1_3/186-4709759-3585620?s=pc&ie=UTF8&qid=1444809467&sr=1-3) 1.679,23 Â€
 Primero extraemos el precio sin IVA:
-1679.23 / 1.21 = 1387.79 €
+1679.23 / 1.21 = 1387.79 Â€
 
-A esta base imponible podemos imputarle como gasto deducible un 25% de su valor en una *amortización a 4 años*:
-1387.79 * 0.25 = 346.95 € por año
+A esta base imponible podemos imputarle como gasto deducible un 25% de su valor en una *amortizaciÃ³n a 4 aÃ±os*:
+1387.79 * 0.25 = 346.95 Â€ por aÃ±o
 
-Sin embargo el gasto decucible en una *amortización a 7 años* es mayor los primeros años y se va decrementaando progresivamente:
-1387.79 * 0.25 = 346.95 € por el primer año
-1387.79 * 0.25 = 346.95 € por el segundo año
-1387.79 * 0.15 = 208.17 € por el tercer año
-1387.79 * 0.15 = 208.17 € por el cuarto año
-1387.79 * 0.10 = 138.78 € por el quinto año
-1387.79 * 0.10 = 138.78 € por el sexto año
-1387.79 * 0.05 = 69.39 € por el séptimo año
+Sin embargo el gasto decucible en una *amortizaciÃ³n a 7 aÃ±os* es mayor los primeros aÃ±os y se va decrementando progresivamente:
+1387.79 * 0.25 = 346.95 Â€ por el primer aÃ±o
+1387.79 * 0.25 = 346.95 Â€ por el segundo aÃ±o
+1387.79 * 0.15 = 208.17 Â€ por el tercer aÃ±o
+1387.79 * 0.15 = 208.17 Â€ por el cuarto aÃ±o
+1387.79 * 0.10 = 138.78 Â€ por el quinto aÃ±o
+1387.79 * 0.10 = 138.78 Â€ por el sexto aÃ±o
+1387.79 * 0.05 = 69.39 Â€ por el sÃ©ptimo aÃ±o
 
-## Ejercicio 2 : Usando las tablas de precios de servicios de alojamiento en Internet y de proveedores de servicios en la nube, Comparar el coste durante un año de un ordenador con un procesador estándar (escogerlo de forma que sea el mismo tipo de procesador en los dos vendedores) y con el resto de las características similares (tamaño de disco duro equivalente a transferencia de disco duro) en el caso de que la infraestructura comprada se usa sólo el 1% o el 10% del tiempo.
+## Ejercicio 2 : Usando las tablas de precios de servicios de alojamiento en Internet y de proveedores de servicios en la nube, Comparar el coste durante un aÃ±o de un ordenador con un procesador estÃ¡ndar (escogerlo de forma que sea el mismo tipo de procesador en los dos vendedores) y con el resto de las caracterÃ­sticas similares (tamaÃ±o de disco duro equivalente a transferencia de disco duro) en el caso de que la infraestructura comprada se usa sÃ³lo el 1% o el 10% del tiempo.
+
+[ComparaciÃ³n servidores](http://imgur.com/v2JlKJt)
+El precio del servidor en OHV.es es de 30â‚¬ la mes, lo que hace un total de **360â‚¬** al cabo de un aÃ±o.
+En 1&1 el monto asciende a 79.2â‚¬ por mes, en doce meses por tanto son **950.4â‚¬**
+El uso al 1% tras un aÃ±o serÃ­a de 3.6â‚¬ contra 9.504â‚¬
+Finalmente tras un uso al 10% el coste serÃ­a de 36â‚¬ contra 95.04â‚¬
+
 
 ## Ejercicio 3 : 1. [Comentario en el hilo](https://github.com/JJ/IV-2015-16/issues/1)
 2. Crear un programa simple en cualquier lenguaje interpretado para Linux, empaquetarlo con CDE y probarlo en diferentes distribuciones.
+Primero instalamos el empaquetador de entorno con la orden:
+sudo apt-get install cde
 
-## Ejercicio 4 : Comprobar si el procesador o procesadores instalados tienen estos flags. ¿Qué modelo de procesador es? ¿Qué aparece como salida de esa orden?
+Y elegimos la aplicaciÃ³n que queremos virtualizar, en este caso un hola mundo escrito python.
 
-## Ejercicio 5 : 1. Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
+```
+#!/usr/bin/env python
 
-2. Instalar un hipervisor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios.
+print 'Hola mundo!'
+```
+EjecutÃ¡ndo cde empaquetamos el programa:
+
+```
+cde python holamundo.py
+
+```
+Ahora podemos ejecutar el paquete creado en otras distribuciones
+
+
+## Ejercicio 4 : Comprobar si el procesador o procesadores instalados tienen estos flags. Â¿QuÃ© modelo de procesador es? Â¿QuÃ© aparece como salida de esa orden?
+En el fichero /proc/cpuinfo estÃ¡ contenida esta informaciÃ³n:
+[CPU](http://i.imgur.com/vSCO0ac.png)
+
+## Ejercicio 5 : 1. Comprobar si el nÃºcleo instalado en tu ordenador contiene este mÃ³dulo del kernel usando la orden kvm-ok.
+No estaba instalado, pero puede ser usado tras ejecutar:
+Â´Â´Â´
+sudo apt-get install cpu-checker
+Â´Â´Â´
+
+2. Instalar un hipervisor para gestionar mÃ¡quinas virtuales, que mÃ¡s adelante se podrÃ¡ usar en pruebas y ejercicios.
+Ya cuento con virtualBox y Vmware workstation instalados.
+
