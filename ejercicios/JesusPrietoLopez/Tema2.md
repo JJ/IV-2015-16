@@ -79,7 +79,7 @@ Después tan solo tenemos que acceder al directorio */califpy-empresa/web* y eje
 
 ![Ejecución de la aplicación](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap2_zpsah8gvwm6.png)
 
-Desde el navegador ahora podemos acceder a la web con la dirección http://IP 127.0.0.0:8000
+Desde el navegador ahora podemos acceder a la web con la dirección http://127.0.0.0:8000
 
 
 ###Ejercicio 3: Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
@@ -168,5 +168,95 @@ Cuando ejecutemos este último comando se creará una carpeta *html* en *docs* q
 
 **Es necesario tener comentada la aplicación (módulos, funciones, clases, etc) con docstrings para que la documentación no esté vacía.**
 
+###Ejercicio 6: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan.
+
+Mediante asserciones he comprobado que no hay fallos a la hora de utilizar un formulario para la creación de una empresa, ni a la hora de crear una empresa. Estas son las comprobaciones:
+
+```python
+	e = Empresa(nombre='test', ciudad='ciudadtest', sector='sectortest')
+	e.save()
+	self.assertEqual(e.nombre,'test')
+	print("Test de creacion de empresa correcto, test superado")
+```
+
+![Salida por consola al ejecutar el test de creación de empresa](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap6_zpsavaczukk.png)
+
+
+```python
+	datos = { 'nombre' : 'test', 'ciudad' : 'ciudadtest', 'sector' : 'sectortest' }
+	form = crearEmpresaForm(data=datos)
+	self.assertEqual(form.is_valid(),True)	
+	print("Formulario para crear empresa correcto, test superado")
+```
+
+![Salida por consola al ejecutar el test del formulario creación de empresa](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap7_zpshx8sdc6g.png)
+
+###Ejercicio 7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
+
+Con django disponemos de un marco de ejecución de test que he usado directamente. En él se indica cuántos test han ido correctamente y cuanto se ha tardado en realizar los test.
+Si queremos podemos añadir en los diferentes test una descripción mediante *print* para saber qué está haciendo.
+
+```python
+from django.test import TestCase
+
+from .forms import crearEmpresaForm, crearCalificacionForm
+from .models import Empresa, Calificacion
+
+class empresaTestCase(TestCase):
+	def test_crear_empresa(self):
+		e = Empresa(nombre='test', ciudad='ciudadtest', sector='sectortest')
+		e.save()
+		self.assertEqual(e.nombre,'test')
+		print("Creada empresa")
+		
+	def test_formulario_empresa(self):
+		datos = { 'nombre' : 'test', 'ciudad' : 'ciudadtest', 'sector' : 'sectortest' }
+		form = crearEmpresaForm(data=datos)
+		self.assertTrue(form.is_valid())
+		print("Comprobado formulario de empresa")	
+
+class calificacionTestCase(TestCase):
+	def test_crear_calificacion(self):
+		e = Empresa(nombre='test', ciudad='ciudadtest', sector='sectortest')
+		e.save()
+		c = Calificacion(alumno='atest', calificacion='10', empresa=e)
+		c.save()
+		self.assertEqual(c.empresa, e)
+		print("Creada calificacion")
+		
+	def test_formulario_calificacion(self):
+		e = Empresa(nombre='test', ciudad='ciudadtest', sector='sectortest')
+		e.save()
+		datos = { 'alumno' : 'atest', 'calificacion' : 10, 'empresa' : e.id }
+		form = crearCalificacionForm(data=datos)
+		self.assertTrue(form.is_valid())
+		print("Comprobado formulario de calificacion")
+```
+![Salida por consola al ejecutar todos los test](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap8_zpsrpmtsjd0.png)
+
+
+###Ejercicio 8: Ejercicio: Haced los dos primeros pasos antes de pasar al tercero. Configurar integración continua para nuestra aplicación usando Travis o algún otro sitio.
+
+Utilizando Travis, nos damos de alta en su [página web](https://travis-ci.org/) mediante Github y añadimos nuestro repositorio en la configuración.
+
+Tenemos que crear un archivo *.travis.yml*, en el directorio raíz, que sirve para la configuración de la integración continua. En mi caso este es mi fichero:
+
+```
+language: python
+python:
+ - "2.7"
+# command to install dependencies
+install:
+ - python web/setup.py install
+ - pip install -r web/requirements.txt
+# command to run tests
+script:
+ - cd web
+ - python manage.py test
+```
+
+Una vez subido al repositorio este archivo en opciones activamos el test y comprobamos en la página de Travis que se ha completado con éxito.
+
+![Captura del building en travis](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap9_zpsy95zu8i6.png)
 
 
