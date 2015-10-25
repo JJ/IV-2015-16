@@ -18,7 +18,7 @@ Se ha desarrollado mediante Express en Node.js y usado Azure para la base de dat
 
 Se ha creado, entre otros, un fichero de configuración (config.js) incluyendo los valores obtenidos en la base de datos creada en Azure y modificado el ficjero app.js para incluir la nueva configuración.
 
-La interfaz de usuario se modifica en el archivo layout.jade e indez.jade en la carpeta view creada por Express. Modificaremos estos ficheros con el fin de darle el aspecto y funcionalidad deseados.
+La interfaz de usuario se modifica en el archivo *layout.jade* e *index.jade* en la carpeta **view** creada por Express. Modificaremos estos ficheros con el fin de darle el aspecto y funcionalidad deseados.
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema2/empresaIV.png)
 
@@ -56,7 +56,7 @@ La interfaz de usuario se modifica en el archivo layout.jade e indez.jade en la 
     "grunt-docco": "^0.4.0"
   }
 }
-```
+``
 
 ###Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema para otro lenguaje de programación) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
@@ -75,5 +75,28 @@ Para comprobarlo creamos un **assert** para verificar que la conexión con la ba
 
 ###Ejercicio 7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
 
+
+Instalamos el modulo necesario: ``` npm install -g mocha ```
+
+Y creamos el archivo para realizar el test:
+
+```
+
+var assert = require("assert");
+lib = require(__dirname+"/../models/docdbUtils.js");
+
+    describe('Web', function(){
+        it('Carga del fichero docdbUtils', function(){
+            assert(lib, "Cargado");
+        });
+});
+
+```
+
+Lanzamos el test: ``` mocha test/test.js ```
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema2/test.png)
+
+###Ejercicio 8: Travis
 
 
