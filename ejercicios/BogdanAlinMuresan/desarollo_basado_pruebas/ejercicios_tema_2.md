@@ -304,7 +304,7 @@ MacBook-Pro-de-Bogdan:Desarrollo-basado-en-pruebas bogdan$
 	
 	
 El log que se crea al pasar los tests es :
-Como podemos observas se pasan los test corectamente
+Como podemos observar se pasan los test corectamente.
 
 
 ~~~
