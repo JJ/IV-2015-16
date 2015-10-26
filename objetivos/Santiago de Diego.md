@@ -71,10 +71,10 @@ Lista de objetivos de Santiago de Diego
   cinturón de herramientas del lenguaje que se use habitualmente de
   otra forma.
 
-[ ] Comprender la utilidad de la virtualización y definición de
+[X] Comprender la utilidad de la virtualización y definición de
   herramientas de desarrollo.
   
-[ ] Instalar las herramientas necesarias para crear y aplicar tests en
+[X] Instalar las herramientas necesarias para crear y aplicar tests en
   un proyecto.
 
 [X] Comprender el papel de las *build tools* o herramientas de
