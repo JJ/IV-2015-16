@@ -37,5 +37,8 @@ Para crear un entorno con la versión 3 de Python, la orden a ejecutar es **virt
 **Como ejercicio, algo ligeramente diferente: una web para calificar las empresas en las que hacen prácticas los alumnos. Las acciones serían crear empresa y listar calificaciones para cada empresa, crear calificación y añadirla (comprobando que la persona no la haya añadido ya), borrar calificación (si se arrepiente o te denuncia la empresa o algo) y hacer un ránking de empresas por calificación, por ejemplo. Crear un repositorio en GitHub para la librería y crear un pequeño programa que use algunas de sus funcionalidades. Si se quiere hacer con cualquier otra aplicación, también es válido.
 Se trata de hacer una aplicación simple que se pueda hacer rápidamente con un generador de aplicaciones como los que incluyen diferentes marcos MVC. Si cuesta mucho trabajo, simplemente prepara una aplicación que puedas usar más adelante en el resto de los ejercicios.**
 
+He realizado una aplicación web con el framework Django el cual está basado en Python.
+La parte que he implementado es una primera aproximación sobre una funcionalidad que tendrá mi aplicación web final sobre peñas de fútbol. Lo que realiza es que a partir de una lista con los componentes de una peña, los divide aleatoriamente en dos equipos para el partido semanal.
+El proyecto se puede encontrar en el [repositorio](https://github.com/mabarrbai/TusPachangas) de mi aplicación.
 
 
