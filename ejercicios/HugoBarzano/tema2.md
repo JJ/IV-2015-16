@@ -110,10 +110,14 @@ El primer test que vamos a realizar es la creación de una nueva empresa, podemo
 
 ![test1](https://www.dropbox.com/s/x1vfvocpt8u0z1x/test1.png?dl=1)
 
-El siguiente paso es crear los test necesarios para una nueva funcionalidad, comprobar que fallan y entonces crear dicha funcionalidad de manera que los test no fallen. 
+He creado los test necesarios para la funcionalidad de consultar empresa (getEmpresa) y como esta funcionalidad, aun no ha sido desarollada, la aplicación no supera los test:
+![test2](https://www.dropbox.com/s/xj6gxjfallyucwl/test2.png?dl=1)
 
-
-
+Creamos una funcionalidad tan basica como la siguiente:
+	def getEmpresa(self):
+		return self
+Tras incorporarla a nuestro modelos, comprobamos efectivamente que la aplicación si supera los test:
+![test3](https://www.dropbox.com/s/ufkywa0zia5sf8s/test3.png?dl=1)
 
 
 
