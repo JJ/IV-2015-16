@@ -2,6 +2,34 @@ Lista de objetivos de Gabriel Stan
 ==================================
 
 
+## Objetivos de la quinta semana
+
+### Objetivos principales
+
+[ ] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+[ ] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+[ ] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+[ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+### Otros Objetivos
+[ ] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
+[ ] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+
+## Objetivos de la cuarta semana
+
+### Objetivos principales
+
+[ ] Terminar la configuración de los sistemas de integración continua
+[ ] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+###Otros objetivos
+
+[ ] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+[ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+[ ] Comprender los mecanismos de despliegue automático.
+[ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
+
 ## Objetivos de la tercera semana
 
 ### Objetivos principales
