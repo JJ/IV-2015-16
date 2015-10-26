@@ -39,9 +39,9 @@ Lista de objetivos de Jesús Prieto López
 
 
 - [X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
-- [X]Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
-- [X]Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
-- [X]Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
+- [X] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+- [X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
+- [X] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
 
 ###Otros objetivos
 
@@ -54,13 +54,13 @@ Lista de objetivos de Jesús Prieto López
 
 ##Clases de 4ª semana
 
-- [] Terminar la configuración de los sistemas de integración continua
+- [X] Terminar la configuración de los sistemas de integración continua
 - [X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
 ###Otros objetivos
 
 - [X] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
-- [] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+- [ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
 - [X] Comprender los mecanismos de despliegue automático.
-- [] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+- [ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
