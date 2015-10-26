@@ -185,9 +185,15 @@ Ejecutamos las pruebas con mocha y vemos que son satisfactorias: *mocha test/tes
 
 - *heroku open*	# para acceder a la app mediante el navegador web
 
+[Aquí](http://romilgildo-iv2015.herokuapp.com/) tenemos la aplicación despegada.
+
  ![app Heroku desplegada](https://www.dropbox.com/s/adowoiht196dpqf/appHerokuDesplegada.PNG?dl=1)
 
 ### Ejercicio 5: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
+
+1. Instalamos Foreman con el siguiente comando: *sudo gem install foreman*
+
+2. Ejecutamos nuestra aplicación web localmente de la siguiente forma: *foreman start web* 
 
 ### Ejercicio 6: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
 
