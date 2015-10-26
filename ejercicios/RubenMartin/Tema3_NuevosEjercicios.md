@@ -191,9 +191,32 @@ Ejecutamos las pruebas con mocha y vemos que son satisfactorias: *mocha test/tes
 
 ### Ejercicio 5: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
 
-1. Instalamos Foreman con el siguiente comando: *sudo gem install foreman*
+1. Combinamos y fusionamos archivos de ambas aplicaciones.
 
-2. Ejecutamos nuestra aplicación web localmente de la siguiente forma: *foreman start web* 
+2. Hacemos *npm install* por si hay que instalar alguna dependencia.
+
+3. Ejecutamos los test de prueba para ver que funcionan con *mocha test/test.js*
+
+4. Instalamos Foreman con el siguiente comando: *sudo gem install foreman*
+
+5. Ejecutamos nuestra aplicación web localmente de la siguiente forma: *foreman start web* 
+
+![Ejecución local con Foreman](https://www.dropbox.com/s/s6wjmtqxovxuswc/foremanPrueba.PNG?dl=1)
+
+6. Ahora procedemos a realizar el despliegue de nuevo en Heroku: 
+
+- git add * -f
+- git commit -m "Subo ejercicio 5"
+- git push heroku master
+
+7. Una vez termine de subir los archivos, ya podremos ejecutar de nuevo el servidor y acceder a nuestra app:
+
+- heroku ps:scale web=1
+- heroku open
+
+Y ya tenemos nuestra app de Porra desplegado sobre Heroku, y accesible desde [aquí](http://romilgildo-iv2015.herokuapp.com/).
+
+![Aplicacion Porra desplegada en Heroku](https://www.dropbox.com/s/6qulzogdpatz6iw/despliegueHeroku.PNG?dl=1)
 
 ### Ejercicio 6: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
 
