@@ -65,4 +65,4 @@
 
  - [x] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
  - [x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
-* Comprender el papel de las *build tools* o herramientas de automatización. 
+ - [x] Comprender el papel de las *build tools* o herramientas de automatización. 
