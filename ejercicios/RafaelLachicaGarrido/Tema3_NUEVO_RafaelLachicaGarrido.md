@@ -1,17 +1,7 @@
 #Tema 3
 ##Rafael Lachica Garrido
+
 #Ejercicio 1
-##Instalar un entorno virtual para tu lenguaje de programación favorito (uno de los mencionados arriba, obviamente).
-
-Instalo virtualenv para **python**:
-
-```
-rafaellg8: ~ $ sudo apt-get install python-virtualenv
-Reading package lists... Done
-Building dependency tree
-```
-
-#Ejercicio 2
 ##Darse de alta en algún servicio PaaS tal como Heroku, Nodejitsu u OpenShift.
 Usaré OpenShift
 ![Openshift](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Proyecto1_zpsrbk2uop7.png)
@@ -20,7 +10,7 @@ Me daré de alta en el sistema de **Openshift**, accedemos a [Openshift](https:/
 ![Openshift](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/openshift_zps6qi2uvc0.png)
 
 
-#Ejercicio 3
+#Ejercicio 2
 ##Crear una aplicación en OpenShift y dentro de ella instalar WordPress.
 Para crear una aplicación, en el menú inicial hacemos click en crear aplicación ahora:
 ![wordOpenshift](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Proyecto7_zpse4p5tisk.png)
@@ -140,7 +130,7 @@ module.exports = config;
 Base de datos de DocumentDB en Azure:
 ![documentDB](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-11%20171835_zpsiwetznbe.png)
 
-Web funcionando, iniciamos con **npm init**:
+Web funcionando, iniciamos con **npm start**:
 ![imagenWeb](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/apiNode_zpsx6jsnuuh.png)
 
 Subimos la pequeña aplicación a github:
@@ -150,3 +140,31 @@ Subimos la pequeña aplicación a github:
 [Directorio App Github](https://github.com/rafaellg8/empresaPracticas)
 
 [Fuente](https://azure.microsoft.com/es-es/documentation/articles/documentdb-nodejs-application/)
+
+#Ejercicio 3
+##Crear pruebas para las diferentes rutas de la aplicación
+
+Creamos dentro de test/test.js las pruebas:
+
+```
+var assert = require("assert"),
+	prueba = require(__dirname+"/../models/taskDao.js");
+
+describe('init', function(){
+	// Testea que se haya cargado bien la librería
+
+	it('Cargando la base de datos', function(){
+		assert(prueba, "Cargado documentDB de Azure");
+	});
+});
+
+describe('addItem', function () {
+    it('Añadimos una nueva nota de empresa', function(){
+		assert(prueba, "Creada la empresa correctamente");
+	});
+})
+```
+
+Comprobamos que las preubas realizadas, a través de Mocha son satisfactorias:
+
+![mocha](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-12%20190324_zps6okaymhj.png)
