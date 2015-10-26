@@ -165,7 +165,7 @@ describe('addItem', function () {
 })
 ```
 
-Comprobamos que las preubas realizadas, a través de Mocha son satisfactorias:
+Comprobamos que las pruebas realizadas, a través de Mocha son satisfactorias:
 
 ![mocha](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-12%20190324_zps6okaymhj.png)
 
