@@ -118,3 +118,41 @@ De esta forma, cuando añadimos una nueva empresa nos aparece lo siguiente en la
 ![Test superados](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Assert_zpsis13ebzl.png)
 
 #Ejercicio 7
+Primero de todo instalamos mocha con `sudo npm install -g mocha` para instalarlo de forma global.
+
+Ahora creamos otra carpeta para almacenar nuestros test y dentro, un archivo *test.js* que conformará nuestro test. He hecho un test muy básico que comprobará si arranca correctamente la web este es:
+
+```
+var assert=require("assert");
+app=require(__dirname+"/../app.js");
+
+describe('Empresa', function(){
+	    it('Debe cargar', function(){
+	        assert(app, "La página carga correctamente");
+	    });
+});
+
+```
+
+#Ejercicio 8
+Para darme de alta en Travis simplemente entro en la [Página oficial](https://travis-ci.org) y me logeo con mi cuenta de Github.
+
+Una vez dado de alta, sigo los pasos de la página y marco el repositorio que quiero que esté vinculado con Travis, para ello simplemente hago click.
+
+Ahora tengo que crear el archivo *.travis.yml*. Lo he creado dentro del directorio de la aplicación, y el archivo tiene las siguientes líneas:
+
+```
+language: node_js
+node_js:
+  - "0.10"
+  - "0.11"
+before_install:
+  - npm install -g mocha
+  - npm install .
+script: mocha tests/test.js
+
+```
+
+Efectivamente al hacer push al repositorio se activa automáticamente:
+
+![Integración continua](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Integracion%20continua_zpspvnulgif.png)
