@@ -60,8 +60,11 @@ Arrancamos el servidor, y voilà!
 
 ![funciona](https://www.dropbox.com/s/ol4eb9ka2bovgrp/funciona.png?dl=1)
 
+El paquete también se puede instalar con todos los demás requisitos usando el comando **pip install -r requirements.txt**. El código se puede ver en github (ver ejercicio 2).
 
+### Ejercicio 5
 
+**Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.**
 
 
 
