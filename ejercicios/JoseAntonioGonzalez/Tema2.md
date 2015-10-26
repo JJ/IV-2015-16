@@ -60,3 +60,15 @@ He seguido [este tutorial](http://python-packaging.readthedocs.org/en/latest/).
 6º El paquete ya se habrá creado. Si queremos ejecutarlo con una sla orden, debemos de tener un fichero __init__.py dentro del directorio del paquete, que será el que se ejecute (una especie de "main"). Para comprobarlo, hacemos:
 
 	python appEjercicioIV
+
+NOta: es posible que haya un error al instalar mysqldb. Seguir estos pasos:
+I found the solution on this blog post here but I’ll list the steps here anyway.
+
+    Be sure you have pip installed on your machine using this command:
+        sudo easy_install pip
+    If you already have pip installed, it’d be a good idea to upgrade it now:
+        sudo pip install pip --upgrade
+    Build the dependencies for python-mysqldb libraries:
+        sudo apt-get build-dep python-mysqldb
+    Install the Python MySQL libraries:
+        sudo pip install MySQL-python
