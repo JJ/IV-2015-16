@@ -168,3 +168,80 @@ describe('addItem', function () {
 Comprobamos que las preubas realizadas, a través de Mocha son satisfactorias:
 
 ![mocha](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-12%20190324_zps6okaymhj.png)
+
+#Ejercicio4
+##Registrarse en Heroku
+Nos registramos a través de su web:
+
+![Heroku](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-26%20145408_zpsegqccckt.png)
+
+Instalamos toolbelt heroku desde [toolbelt](https://toolbelt.heroku.com/debian):
+```
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+```
+Nos logeamos e instalamos:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV$ heroku login
+Installing Heroku Toolbelt v4... done.
+For more information on Toolbelt v4: https://github.com/heroku/heroku-cli
+Setting up node-v4.2.1... done
+Installing core plugins heroku-cli-addons, heroku-apps, heroku-fork, heroku-git, heroku-local, heroku-run, heroku-status... done
+Enter your Heroku credentials.
+Email: rafaellg93@gmail.com
+Password (typing will be hidden):
+Logged in as rafaellg93@gmail.com
+```
+
+[Fuente nodejs-Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
+Seguimos el tutorial y clonamos la app de prueba de [prueba](https://devcenter.heroku.com/articles/getting-started-with-nodejs#prepare-the-app)
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp$  git clone https://github.com/heroku/node-js-getting-started.git
+Clonar en «node-js-getting-started»...
+remote: Counting objects: 439, done.
+remote: Total 439 (delta 0), reused 0 (delta 0), pack-reused 439
+Receiving objects: 100% (439/439), 223.84 KiB | 27.00 KiB/s, done.
+Resolving deltas: 100% (64/64), done.
+Checking connectivity... hecho.
+```
+
+Creamos una nueva app con **heroku create**:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp/node-js-getting-started$ heroku create
+Creating powerful-crag-1990... done, stack is cedar-14
+https://powerful-crag-1990.herokuapp.com/ | https://git.heroku.com/powerful-crag-1990.git
+Git remote heroku added
+```
+Mandamos los cambios a github y actualizamos con **git push heroku master**.
+
+Instalamos dependencias y nodejs con **npm install** y lo iniciamos con **npm start**:
+
+![Imagen iniciando localhost](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-26%20174956_zps1ttzz5ov.png)
+
+Ya tenemos la app desplegada!.
+
+Ahora podemos editar cosas como el nombre de la app, yo la llamaré **herokurlg**:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp/node-js-getting-started$ heroku apps:rename herokurlg
+Renaming powerful-crag-1990 to herokurlg... done
+https://herokurlg.herokuapp.com/ | https://git.heroku.com/herokurlg.git
+Git remote heroku updated
+```
+Clonamos el nuevo repositorio:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp/node-js-getting-started$ git remote rm heroku
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp/node-js-getting-started$ heroku git:remote -a herokurlg
+set git remote heroku to https://git.heroku.com/herokurlg.git
+
+```
+Por último,nos aseguramos que esta el servicio activo con **heroku ps:scale web=1**, y una vez está todo correcto abrimos heroku:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp/node-js-getting-started$ heroku ps:scale web=1
+Scaling dynos... done, now running web at 1:Free.
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp/node-js-getting-started$ heroku open
+Opening powerful-crag-1990... done
+```
+
+Abrimos la app:
+![herokuApp](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-26%20180312_zpsenrygvua.png)
+
+[Fuentes extras desarrolladores](https://devcenter.heroku.com/articles/git)
