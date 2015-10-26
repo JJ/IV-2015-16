@@ -29,4 +29,8 @@ También necesitaremos instalar el módulo MySQLdb, para conectar a la base de d
     sudo apt-get install python-mysqldb # Si aparece python-mysqldb en la orden de arriba
 
 #Ejercicio 3
-    
+ 
+#### Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
+
+Lamentablemente, webapp2 sólo está desarrollado para Python 2.7, tal y como informa en su [pagina web](https://webapp-improved.appspot.com). Buscando un poco más de información, acabamos llegando a una [pregunta en stackoverflow](http://stackoverflow.com/questions/15639475/webapp2-with-python3), donde nos confirman lo peor, referenciando además [un issue](https://code.google.com/p/webapp-improved/issues/detail?id=40) donde se está debatiendo si llevar webapp2 a la versión 3 (y posteriors) de Python. Aunque por ahora, no hay nada hecho.
+
