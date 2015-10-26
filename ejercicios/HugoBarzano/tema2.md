@@ -119,6 +119,8 @@ Creamos una funcionalidad tan basica como la siguiente:
 Tras incorporarla a nuestro modelos, comprobamos efectivamente que la aplicación si supera los test:
 ![test3](https://www.dropbox.com/s/ufkywa0zia5sf8s/test3.png?dl=1)
 
+#ejercicio7: 
+
 
 
 
