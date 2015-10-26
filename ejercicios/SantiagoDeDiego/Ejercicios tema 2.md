@@ -109,3 +109,12 @@ module.exports = function(grunt) {
 ```
 
 Una vez hecho esto ejecutamos `grunt docco`y la consola nos devuelve que el proceso se ha realizado correctamente sin errores. Entonces, este comando nos devuelve una documentación en formato html que podemos encontrar en el [repositorio de esta aplicación](https://github.com/santidediego/ev_empresas) dentro de la carpeta docs.
+
+#Ejercicio 6
+En este apartado utilizaremos la librería *assert* para definir una serie de aserciones cuando insertemos los datos. Podemos ver las aserciones introducidas [en el archivo empresa.js](https://github.com/santidediego/ev_empresas/blob/master/routes/empresa.js)
+
+De esta forma, cuando añadimos una nueva empresa nos aparece lo siguiente en las peticiones:
+
+![Test superados](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Assert_zpsis13ebzl.png)
+
+#Ejercicio 7
