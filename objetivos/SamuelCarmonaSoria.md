@@ -3,15 +3,15 @@
 ###Objetivos Primera Sesión - 23 Septiembre
 
  - [x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
- - [x] Darse de alta y comprender el funcionamiento básico de GitHub y la lista de correo de la asignatura; conocer el resto de los recursos de la asignatura. 
- - [x] Entender el concepto de software libre y su aplicación práctica en clase. 
+ - [x] Darse de alta y comprender el funcionamiento básico de GitHub y la lista de correo de la asignatura; conocer el resto de los recursos de la asignatura.
+ - [x] Entender el concepto de software libre y su aplicación práctica en clase.
  - [x] Vernos las caras.
- 
+
 ###Objetivos Segunda Sesión - 30 Septiembre
 
   - [x] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
   - [x] Comprender las técnicas de cálculo del coste de amortización de un equipo informático y aplicarlo al cálculo del coste de uso de un recurso.
-  - [x] Entender el soporte en hardware de las técnicas de virtualización y cómo se extiende ese soporte al núcleo de los sistemas operativos. Saber si el 
+  - [x] Entender el soporte en hardware de las técnicas de virtualización y cómo se extiende ese soporte al núcleo de los sistemas operativos. Saber si el
 ordenador habitual lo usa.
   - [x] Comenzar a usar git desde línea de órdenes y comprender su papel como sistema para trabajo colaborativo y despliegue de aplicaciones.
   - [x] Comprender los niveles de virtualización y sus denominaciones genéricas.
@@ -20,10 +20,10 @@ ordenador habitual lo usa.
 
 ###Otros objetivos
 
-  - [x] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige. 
+  - [x] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige.
   - [x] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (**no** https).
-  - [x] Tener configurdos los dos repositorios (`origin`, el propio, `upstream`, el del resto de la clase). 
-  - [x] Tener a punto una instalación Linux para llevar a cabo las actividades de la asignatura. Si necesitas ayuda para instalarlo, los jueves a partir de las 
+  - [x] Tener configurdos los dos repositorios (`origin`, el propio, `upstream`, el del resto de la clase).
+  - [x] Tener a punto una instalación Linux para llevar a cabo las actividades de la asignatura. Si necesitas ayuda para instalarlo, los jueves a partir de las
 12:30 está la OSL en la sala de reuniones.
   - [x] Comenzar a usar los métodos de entrega de ejercicios propuestos para la asignatura usando GitHub
   - [x] Manejar de forma básica la línea de órdenes de Linux.
@@ -32,3 +32,33 @@ ordenador habitual lo usa.
   - [ ] Usar git para hacer *check-in* en clase y expresar al final de cada sesión los objetivos alcanzados
   - [x] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
   - [ ] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
+
+
+
+### Objetivos Tercera Sesión
+
+  - [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
+  - [x] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+  - [x] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
+  - [x] Entender los ficheros de *requisitos* y su utilidad en las infraestructuras virtuales.
+  - [] Entregar el [primer hito del proyecto](http://jj.github.io/IV/documentos/practicas/1.Infraestructura) al final de la semana.
+  - [] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
+  - [] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
+  - [] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
+  - [ ] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+  - [] Comprender el papel de las *build tools* o herramientas de automatización.
+
+
+### Objetivos Cuarta Sesión
+
+  - [] Terminar la configuración de los sistemas de integración continua
+  - [] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+
+
+### Otros objetivos Cuarta Sesión
+
+  - [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+  - [ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+  - [] Comprender los mecanismos de despliegue automático.
+  - [] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.

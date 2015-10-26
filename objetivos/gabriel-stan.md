@@ -1,12 +1,64 @@
 Lista de objetivos de Gabriel Stan
 ==================================
 
-## Objetivos de la primera semana
 
-[x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
-[x] Darse de alta y comprender el funcionamiento básico de GitHub y la lista de correo de la asignatura; conocer el resto de los recursos de la asignatura.
-[x] Entender el concepto de software libre y su aplicación práctica en clase.
-[x] Vernos las caras.
+## Objetivos de la quinta semana
+
+### Objetivos principales
+
+[ ] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+[ ] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+[ ] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+[ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+### Otros Objetivos
+[ ] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
+[ ] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+
+## Objetivos de la cuarta semana
+
+### Objetivos principales
+
+[X] Terminar la configuración de los sistemas de integración continua
+[X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+###Otros objetivos
+
+[X] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+[ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+[ ] Comprender los mecanismos de despliegue automático.
+[X] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
+
+## Objetivos de la tercera semana
+
+### Objetivos principales
+
+
+[X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
+
+[X] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+
+[X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
+
+[X] Entender los ficheros de *requisitos* y su utilidad en las infraestructuras virtuales.
+
+###Otros objetivos
+
+[X] Entregar el [primer hito del proyecto](http://jj.github.io/IV/documentos/practicas/1.Infraestructura) al final de la semana.
+
+[X] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos. 
+
+[ ] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
+
+[X] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
+
+[X] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+
+[X] Comprender el papel de las *build tools* o herramientas de automatización. 
+
+
+
 
 ## Objetivos de la segunda semana
 
@@ -47,3 +99,11 @@ Lista de objetivos de Gabriel Stan
 [] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 
 [] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
+
+
+## Objetivos de la primera semana
+
+[x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
+[x] Darse de alta y comprender el funcionamiento básico de GitHub y la lista de correo de la asignatura; conocer el resto de los recursos de la asignatura.
+[x] Entender el concepto de software libre y su aplicación práctica en clase.
+[x] Vernos las caras.

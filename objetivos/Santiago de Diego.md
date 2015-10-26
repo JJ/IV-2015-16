@@ -63,21 +63,21 @@ Lista de objetivos de Santiago de Diego
   
 [X] Entregar el [primer hito del proyecto](http://jj.github.io/IV/documentos/practicas/1.Infraestructura) al final de la semana.
 
-[ ] Entender el formato JSON y su importancia para ficheros de
+[X] Entender el formato JSON y su importancia para ficheros de
   configuración e intercambio genérico de datos. 
 
-[ ] Comenzar el aprendizaje de un nuevo lenguaje de programación o
+[X] Comenzar el aprendizaje de un nuevo lenguaje de programación o
   entender cómo node.js hace las cosas, o simplemente mirar el
   cinturón de herramientas del lenguaje que se use habitualmente de
   otra forma.
 
-[ ] Comprender la utilidad de la virtualización y definición de
+[X] Comprender la utilidad de la virtualización y definición de
   herramientas de desarrollo.
   
-[ ] Instalar las herramientas necesarias para crear y aplicar tests en
+[X] Instalar las herramientas necesarias para crear y aplicar tests en
   un proyecto.
 
-[ ] Comprender el papel de las *build tools* o herramientas de
+[X] Comprender el papel de las *build tools* o herramientas de
   automatización. 
 
 

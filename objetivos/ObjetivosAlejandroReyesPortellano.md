@@ -16,3 +16,13 @@ Objetivos realizados en esta sesion:
    
 Otros objetivos:
   * [x] Entender el sistema de practicas, a bases de las entregas de hitos del proyecto, su puntuacion y que es lo que se exige.
+  * [x] Tener a punto la instalacion de git usando pares clave publica/privada para interactuar con GitHub
+  * [x] Tener configurados los dos repositorios (origin, el propio, upstream, el del resto de la clase)
+  * [x] Tener a punto una instalacion Linux para llevar a cabo las actividades de la asignatura.
+  * [x] Comenzar a usar los metodos de entrega de ejercicios propuestos para la asignatura usando GitHub
+  * [x] Manejar de forma basica la linea de ordenes de Linux.
+  * [x] Aprender a instalar software libre en Linux.
+  * [x] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
+  * [x] Usar git para hacer check-in en clase y expresar al final de cada sesion los objetivos alcanzados.
+  * [x] Revisar algun ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
+  * [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
