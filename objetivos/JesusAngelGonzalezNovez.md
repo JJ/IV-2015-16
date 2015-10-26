@@ -73,3 +73,19 @@
 
 [ ] Comprender el papel de las build tools o herramientas de automatización.
 
+##Sesión 4 (Semana del 14 de octubre al 21 de octubre)
+
+[ ] Terminar la configuración de los sistemas de integración continua
+
+[ ] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+####Otros objetivos
+
+[x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+
+[ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+
+[ ] Comprender los mecanismos de despliegue automático.
+
+[ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
