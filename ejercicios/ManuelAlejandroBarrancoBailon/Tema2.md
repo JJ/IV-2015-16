@@ -41,4 +41,45 @@ He realizado una aplicación web con el framework Django el cual está basado en
 La parte que he implementado es una primera aproximación sobre una funcionalidad que tendrá mi aplicación web final sobre peñas de fútbol. Lo que realiza es que a partir de una lista con los componentes de una peña, los divide aleatoriamente en dos equipos para el partido semanal.
 El proyecto se puede encontrar en el [repositorio](https://github.com/mabarrbai/TusPachangas) de mi aplicación.
 
+La aplicación queda por ahora de la siguiente manera (cada vez que se actualiza, cambian los equipos de manera aleatoria):
+![TusPachangasAleatorio](http://i1016.photobucket.com/albums/af281/raperaco/tusPachangasAleatorio_zpsghz5emx5.png)
+
+###Ejercicio 3
+**Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?**
+Mi proyecto está construido sobre la versión 3.4 de Python, sobre la cual hemos visto anteriormente que se ejecuta sin problemas. ![EjecucionPython3](http://i1016.photobucket.com/albums/af281/raperaco/ejecucionPython3_zpsztre4sg2.png)
+Sobre la versión 2.7 de Python en un entorno virtual distinto, intento ejecutar mi aplicación, pero no es posible ejecutarla obteniendo diversos errores. ![EjecucionPython2](http://i1016.photobucket.com/albums/af281/raperaco/ejecucionPython2_zpsviznd0kh.png)
+
+###Ejercicio 4
+**Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente.**
+Como primer punto, hay que saber qué método se corresponde en Python. En este caso es mediante el fichero *[setup.py](http://python-packaging.readthedocs.org/en/latest/minimal.html)*. Para conocer las dependencias de nuestro proyecto existe la orden **pip freeze** la cual nos devuelve las dependencias.
+En mi caso, al ejecutar *pip freeze*, devuelve la siguiente salida: ![PipFreeze](http://i1016.photobucket.com/albums/af281/raperaco/pipFreeze_zpszllbx1iu.png)
+
+Para crear una descripción, creamos el fichero **setup.py**, el cual en mi caso queda de la siguiente manera: ![ficheroSetup.py](http://i1016.photobucket.com/albums/af281/raperaco/ficheroSetup.py_zpsqnw9bjus.png)
+
+###Ejercicio 5
+**Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
