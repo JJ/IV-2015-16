@@ -2,7 +2,7 @@
 
 ###Ejercicio 1 : Instalar alguno de los entornos virtuales de node.js y, con ellos, instalar la última versión existente, la versión minor más actual de la 0.12 y lo mismo para la 0.11 o alguna impar. Si no se usa habitualmente este lenguaje, hacer lo mismo con cualquier otro lenguaje de scripting.
 
-En mi caso no uso dicho lenguaje y por eso he optado por el entorno virtual **virtualenv** de *Python*, el cual como se explica en los apuntes nos permite usar una versión diferente en caso de estar inmerso en desarrollos de proyectos que necesitan diferentes versiones de Python.
+Para Python he optado por el entorno virtual **virtualenv** de *Python*, el cual como se explica en los apuntes nos permite usar una versión diferente en caso de estar inmerso en desarrollos de proyectos que necesitan diferentes versiones de Python.
 
 ![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/virt_inst_zpsvq4gzyua.png)
 
@@ -22,7 +22,7 @@ Por ultimo, para desactivarlo solo hay que ejecutar la orden **deactivate**
 
 ![desactivar](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/desactivar_zpsuduiec5s.png)
 
-Añado la instalación de **nvm** para *nodejs*( para instalar [nodejs](http://www.hostingadvice.com/how-to/install-nodejs-ubuntu-14-04/#ubuntu-package-manager) puede seguirse esta página) como se indica en el enlace del [tema](https://github.com/creationix/nvm):
+Para nodejs añado la instalación de **nvm**,( para instalar [nodejs](http://www.hostingadvice.com/how-to/install-nodejs-ubuntu-14-04/#ubuntu-package-manager) puede seguirse esta página) como se indica en el enlace del [tema](https://github.com/creationix/nvm):
 
 - Instalación mediante el comando **curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash**
 ![instalarentorno](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/1_zpszvr81ipu.png)
@@ -58,29 +58,7 @@ En mi caso he creado una aplicación sencilla donde se añade la empresa junto a
 
 El repositorio se encuentra en el siguente [enlace](https://github.com/javiergarridomellado/Empresa_expressiv.git).
 
-Por otra parte he creado otra app usando el framework Django ( Python ) debido a que el proyecto final en mi caso usa dicha herramienta.
-
-- Activación del entorno virtual ejecutando **source bin/activate**
-
-- Instalación de la versión de Django que se va a usar **pip install Django==1.5**
-
-![instalardjango](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalacionDjango_zpsz6uhymoq.png)
-
-- Creación del proyecto mediante la orden **django-admin.py startproject nombreproyeto**
-
-![crearproyecto](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/creacionproyecto_zpsaf3oms0f.png)
-
-- Dentro de la carpeta del proyecto se crea la aplicación mediante la orden **django-admin.py startapp nombreaplicacion**
-
-![crearapp](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/crearapp_zpsucsg99bc.png)
-
-- La aplicación funcionando tras haber sincronizado la base de datos con **python manage.py syncdb** y ejecutar el servidor con la orden **python manage.py runserver**, en este caso solo le he dado la funcionalidad de registrar las practicas de Empresa.
-
-![appdjango](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/RegistrarEmpresa_zpsey2ioquo.png)
-
-![appdjango2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/Redirigir%20Empresa_zps7kcvr0hm.png)
-
-El repositorio se encuentra en el siguiente [enlace](https://github.com/javiergarridomellado/Empresa_django.git)
+Por otra parte he creado otra app para la practica usando el framework Django ( Python ) debido a que el proyecto final en mi caso usa dicha herramienta, el repositorio se encuentra en el siguiente [enlace](https://github.com/javiergarridomellado/IV_javiergarridomellado.git)
 
 ###Ejercicio 3: Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
 
@@ -92,7 +70,7 @@ He activado el entorno virtual con la orden **~/.nvm/nvm.sh** y he procedido a p
 
 ![version011](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/node011_zpshkp8wjeg.png)
 
-En el caso de Python he definido para **virtualenv** la ruta para que use **Python3** mediante el comando **virtualenv --python=/usr/bin/python3 nombre**,  puede verse en la carpeta **/bin** como esta la version 3 para usarse pero al arrancar el servidor da un error en la importación de un modulo de django que posiblemente sea causado por ser la version 1.5 y por tanto no use diche versión.
+En el caso de Python he definido para **virtualenv** la ruta para que use **Python3** mediante el comando **virtualenv --python=/usr/bin/python3 nombre**,  puede verse en la carpeta **/bin** como esta la version 3 para usarse pero al arrancar el servidor da un error en la importación de un modulo de django.
 
 ![python3](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/errorpython3_zpsig2cbyi7.png)
 
@@ -102,30 +80,21 @@ Usando el comando **npm init** se crea el archivo **package.json** como puede ve
 
 ![package](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ejerc4_zps7adcvb89.png)
 
-En el caso de **django** para describir la aplicación esta el archivo **setup.py** donde se describe el nombre de la aplicación, tipo de base de datos usada, etc. (puede consultarse informacion de la app para describir dicho archivo usando el comando **pip freeze**, el siguiente [enlace](http://python-packaging.readthedocs.org/en/latest/minimal.html) ilustra la utilidad de setup.py)
+En el caso de **django**, para describir la aplicación esta el archivo **setup.py** donde se describe el nombre de la aplicación, tipo de base de datos usada, etc , el siguiente [enlace](http://python-packaging.readthedocs.org/en/latest/minimal.html) ilustra la utilidad de setup.py)
 
 ```
 from setuptools import setup
 
-    setup(name='Empresas',
-          version='0.1',
-          description='Aplicacion para el ejercicio 2',
-          long_description='App que permite registrar empresas y valorar practicas de alumnos',
-          classifiers=[
-        'Development Status :: 3 - Alpha',
-        'License :: GNU :: GNU License',
-        'Programming Language :: Python :: 2.7',
-        'Topic :: Text Processing :: Linguistic',
-          ],
-          keywords='aplicacion valoracion de practicas',
-          url='https://github.com/javiergarridomellado/Empresa_django.git',
-          author='Javier Garrido Mellado',
-          author_email='franciscojaviergarridomellado@gmail.com',
-          license='GNU',
-          packages=['Empresas'],
-          install_requires=['sqlite3', ],
-          include_package_data=True,
-          zip_safe=False)
+setup(name='apuestas',
+	version='0.1',
+	description='App web de apuestas',
+	url='https://github.com/javiergarridomellado/IV_javiergarridomellado.git',
+	author='Francisco Javier Garrido',
+	author_email='franciscojaviergarridomellado@gmail.com',
+	license='GNU GPL',
+	packages=['apuestas'],
+	install_requires=['django','wheel'],
+	zip_safe=False)
 ```
 
 ###Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
@@ -210,32 +179,27 @@ module.exports = function(grunt) {
 
 ![doc](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/docu_zpsu1ujcl2k.png)
 
-He probado la herramienta para mi proyecto de Python, en este caso **Sphinx** para generar la documentación correspondiente.
+En Python una manera facil de documentar es usando **epydoc**, basta con documentar el archivo html y llamar a epydoc. Por ejemplo para el proyecto he documentado *models.py* y *views.py* ejecutando el comando **epydoc --html models.py views.py** . Se ha documentado *models.py* de la siguiente manera:
+*Nota: Es posible que salga un error al ejecutar el comando, igualmente crea la carpeta html de manera correcta.*
 
-- Se instala con el comando **sudo easy_install -U sphinx**.
+```
+from django.db import models
+# Create your models here.
 
-![instalar](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalarsphinx_zpsq8a1zano.png)
+class Persona(models.Model):
+	"""Modelo del registro Persona.
+		Sirve para definir en la base de datos
+	"""
 
-- Se crean las carpetas correspondientes ejecutando **sphinx-quickstart** tras responder una serie de preguntas.
+	nombre = models.CharField(max_length=50)
+	dni = models.CharField(max_length=9)
+	pais = models.CharField(max_length=20)
+	equipo = models.CharField(max_length=10)
+	hobbies = models.TextField(max_length=200)
 
-![carpetadoc](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/quicstart_zpsmm3qlwmb.png)
-
-- Se crean archivos **rst** por cada uno de los paquetes que se quiere documentar ejecutando **sphinx-apidoc -o docs .**
-
-![otrosrst](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/apidoc_zpslvopncvy.png)
-
-- Se edita el archivo **index** que se encuentra en la carpeta **source** y se ejecuta el comando **make html**
-
-![makefile](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/makehtml_zpsam6frmnv.png)
-
-- Puede verse en la carpeta **build** que se genera los **html** correspondientes a la documentación.
-
-![carpetadoc](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/htmlgenerados_zpsdfqh1y2b.png)
-
-![docenlaweb](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/documentacionempresa_zpsefndyimq.png)
-
-Puede seguirse el siguiente [enlace](https://www.ibm.com/developerworks/ssa/opensource/library/os-sphinx-documentation/) para realizar lo mismo. Mi documentación del ejercicio de Django puede [visitarse](https://github.com/javiergarridomellado/Empresa_django/tree/master/Empresas/docs).
-
+	def __unicode__(self):
+		return self.nombre
+```
 ###Ejercicio 6: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
 
 He añadido varias aserciones al registrar unas practicas de un alumno, y se observa como se superan.
@@ -291,6 +255,8 @@ describe('WebPracticas', function(){
 
 ![ejecucionmocha](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ejecucionmocha_zpsz4cuhk5g.png)
 
+En Python basta con definir en el archivo **tests.py** una prueba de testeo, por ejemplo, probar los modelos que se han creado, para ejecutar el testeo se usa el comando **python manage.py test nombre_app_a_testear**
+
 ###Ejercicio 8: Haced los dos primeros pasos antes de pasar al tercero.
 
 - [X] Darse de alta. Muchos están conectados con GitHub por lo que puedes usar directamente el usuario ahí. A través de un proceso de autorización, acceder al contenido e incluso informar del resultado de los tests.( Solo hay que darle al botón y te conecta automaticamente )
@@ -331,3 +297,17 @@ Y puede verse como ejecuta el testeo correctamente:
 
 ![ejecu](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/resultado_zpslpmidjue.png)
 
+Para el proyecto de Python he usado las siguientes lineas:
+```
+language: python
+python:
+ - "2.7"
+# command to install dependencies
+install:
+ - python apuestas/setup.py install
+
+# command to run tests para django python
+script:
+ - cd apuestas
+ - python manage.py test apu
+```
