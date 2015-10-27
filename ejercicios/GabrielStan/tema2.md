@@ -79,6 +79,19 @@ Escribimos las nuevas funcionalidades para que pasen las pruebas:
 ![pasan](https://www.dropbox.com/s/j47vyxyb7mpu67z/vuelve%20a%20funcionar.png?dl=1)
 
 
+### Ejercicio 8
+
+**
+Darse de alta. Muchos están conectados con GitHub por lo que puedes usar directamente el usuario ahí. A través de un proceso de autorización, acceder al contenido e incluso informar del resultado de los tests.**
+
+**Activar el repositorio en el que se vaya a aplicar la integración continua. Travis permite hacerlo directamente desde tu configuración; en otros se dan de alta desde la web de GitHub.**
+
+**Crear un fichero de configuración para que se ejecute la integración y añadirlo al repositorio.**
+
+
+Añadidos fichero .yml al [repositorio](https://travis-ci.org/gabriel-stan/tema2-IV) e integración continua con [Travis-CI](https://travis-ci.org/gabriel-stan/tema2-IV)
+
+[![Build Status](https://travis-ci.org/gabriel-stan/tema2-IV.svg?branch=master)](https://travis-ci.org/gabriel-stan/tema2-IV)
 
 
 
