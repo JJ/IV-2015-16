@@ -62,9 +62,36 @@ Arrancamos el servidor, y voilà!
 
 El paquete también se puede instalar con todos los demás requisitos usando el comando **pip install -r requirements.txt**. El código se puede ver en github (ver ejercicio 2).
 
-### Ejercicio 5
+### Ejercicio 6
 
-**Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.**
+**Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).**
+
+Tenemos un par de aserciones, y comprobamos que pasan las pruebas:
+
+![pruebas](https://www.dropbox.com/s/3eufgwbwsbvpmbz/pruebas.png?dl=1)
+
+Añadimos algunas aserciones, que van a fallar, ya que las funcionalidades no existen todavia:
+
+![fallan](https://www.dropbox.com/s/8z9ay7w3hkj7pxh/fallan_pruebas.png?dl=1)
+
+Escribimos las nuevas funcionalidades para que pasen las pruebas:
+
+![pasan](https://www.dropbox.com/s/j47vyxyb7mpu67z/vuelve%20a%20funcionar.png?dl=1)
+
+
+### Ejercicio 8
+
+**
+Darse de alta. Muchos están conectados con GitHub por lo que puedes usar directamente el usuario ahí. A través de un proceso de autorización, acceder al contenido e incluso informar del resultado de los tests.**
+
+**Activar el repositorio en el que se vaya a aplicar la integración continua. Travis permite hacerlo directamente desde tu configuración; en otros se dan de alta desde la web de GitHub.**
+
+**Crear un fichero de configuración para que se ejecute la integración y añadirlo al repositorio.**
+
+
+Añadidos fichero .yml al [repositorio](https://travis-ci.org/gabriel-stan/tema2-IV) e integración continua con [Travis-CI](https://travis-ci.org/gabriel-stan/tema2-IV)
+
+[![Build Status](https://travis-ci.org/gabriel-stan/tema2-IV.svg?branch=master)](https://travis-ci.org/gabriel-stan/tema2-IV)
 
 
 
