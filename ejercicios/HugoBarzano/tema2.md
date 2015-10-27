@@ -1,8 +1,8 @@
 # Tema 2. Desarrollo basado en pruebas
 
-##Ejercicio 1: Instalar alguno de los entonrnos virtuales de node.js y, con ellos, instalar la última versión existente, la versión minor más actual de la 0.12 y lo mismo para la 0.11 o alguna impar. Si no se una habitualmente este lenguaje, hacer lo mismo con cualquier otro lenguaje de scripting.
+##Ejercicio 1: Instalar alguno de los entornos virtuales de node.js y, con ellos, instalar la última versión existente, la versión menor más actual de la 0.12 y lo mismo para la 0.11 o alguna impar. Si no se una habitualmente este lenguaje, hacer lo mismo con cualquier otro lenguaje de scripting.
 
-**Paso 1:** Actualizar repositorios de Ubuntu y obtener los que permiten crear paquetes, mediante las intrucciones:
+**Paso 1:** Actualizar repositorios de Ubuntu y obtener los que permiten crear paquetes, mediante las instrucciones:
 
 	$ sudo apt-get update
 
@@ -20,7 +20,7 @@
 	
 	$ nvm ls-remote
 
-**Paso 5:** Instalar la version que queramos. Por ejemplo, para la version inferior a la 0.12:
+**Paso 5:** Instalar la versión que queramos. Por ejemplo, para la versión inferior a la 0.12:
 
 	$ nvm install 0.12.0
 
@@ -37,7 +37,7 @@ Para la 0.11:
 
 ##Ejercicio 2: Como ejercicio, algo ligeramente diferente: una web para calificar las empresas en las que hacen prácticas los alumnos. Las acciones serían crear empresa y listar calificaciones para cada empresa, crear calificación y añadirla (comprobando que la persona no la haya añadido ya), borrar calificación (si se arrepiente o te denuncia la empresa o algo) y hacer un ránking de empresas por calificación, por ejemplo. Crear un repositorio en GitHub para la librería y crear un pequeño programa que use algunas de sus funcionalidades. Si se quiere hacer con cualquier otra aplicación, también es válido. Se trata de hacer una aplicación simple que se pueda hacer rápidamente con un generador de aplicaciones como los que incluyen diferentes marcos MVC. Si cuesta mucho trabajo, simplemente prepara una aplicación que puedas usar más adelante en el resto de los ejercicios.
 
-He desarrollado la aplicación utilizando como framework Django, desarrollada en python y utilizando la base de datos que integra Django, sqlite3. El framework permite separar Modelo-Vista-Controlador. La aplicación esta en el siguiente repositorio [Empresas](https://github.com/hugobarzano/Aplicaciones/tree/master/ENV1/mysite) de de github. Para lanzarla, es necesario tener python instalado, y una vez lanzado el entorno virtual, basta con ejecutar:
+He desarrollado la aplicación utilizando como framework Django, desarrollada en python y utilizando la base de datos que integra Django, sqlite3. El framework permite separar Modelo-Vista-Controlador. La aplicación esta en el siguiente repositorio [Empresas](https://github.com/hugobarzano/Ejercicio_Empresas_IV) de github. Para lanzarla, es necesario tener python instalado, y una vez lanzado el entorno virtual, basta con ejecutar:
 
 	(ENV1)hugo@hugo-machine:~/App/ENV1/mysite$ python manage.py runserver&
 
@@ -55,9 +55,9 @@ Estoy utilizando la versión 1.4 de Django, que funciona correctamente con versi
 ##Ejercicio 4: Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente. 
 
 Con python y trabajando en Django, la herramienta equivalente es pip (PyPI) y los archivos de configuración setup.py
-En el siguiente enlace, podemos encontrar un tutorial de como utilizar dicha herramienta [pip](http://python-packaging.readthedocs.org/en/latest/minimal.html)
-Un primer setup.py para la aplicación de valorar practicas de empresa, tendria un aspecto tal que así:
-```python
+En el siguiente enlace, podemos encontrar un tutoríal de como utilizar dicha herramienta [pip](http://python-packaging.readthedocs.org/en/latest/minimal.html)
+Un primer setup.py para la aplicación de valorar practicas de empresa, tendría un aspecto tal que así:
+'''python
 	from setuptools import setup
 
 	setup(name='Empresas',
@@ -80,13 +80,13 @@ Un primer setup.py para la aplicación de valorar practicas de empresa, tendria 
 	      include_package_data=True,
 	      zip_safe=False)
 
-```
+'''
 
 ##Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
-Para documentar la aplicación python, he utilizado epidoc. Podemos encontrar un sencillo tutorial en [epidoc](http://mundogeek.net/archivos/2008/07/07/documentacion-en-python/)
+Para documentar la aplicación python, he utilizado epidoc. Podemos encontrar un sencillo tutoríal en [epidoc](http://mundogeek.net/archivos/2008/07/07/documentacion-en-python/)
 
-Instalacion:
+Instalación:
 
 	 sudo apt-get install python-epydoc
 
@@ -94,7 +94,7 @@ Generar html de modelos y vistas: la opcion -v es para ver el log de errores)
 
 	epydoc –html -v models.py views.py
 
-Es necesaio documentar previamente, veamos un ejemplo de como se documentaria por ejemplo el index:
+Es necesaio documentar previamente, veamos un ejemplo de como se documentaría por ejemplo el index:
 
 ![documentando_1](https://www.dropbox.com/s/3yx5v9xha3znki2/documentando.png?dl=1)
 
@@ -102,7 +102,7 @@ El resultado seria algo así:
 
 ![documentando_2](https://www.dropbox.com/s/vu484jogcb7b8ag/documentando2.png?dl=1)
 
-Nota: He tenido que comentar los impor* de cada archivo para poder generar el html. Enlace a github [Documentacion Empresas](https://github.com/hugobarzano/Aplicaciones/tree/master/ENV1/mysite/empresas/html)
+Nota: He tenido que comentar los import* de cada archivo para poder generar el html. 
 
 ##Ejercicio 6: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
 
@@ -110,18 +110,44 @@ El primer test que vamos a realizar es la creación de una nueva empresa, podemo
 
 ![test1](https://www.dropbox.com/s/x1vfvocpt8u0z1x/test1.png?dl=1)
 
-He creado los test necesarios para la funcionalidad de consultar empresa (getEmpresa) y como esta funcionalidad, aun no ha sido desarollada, la aplicación no supera los test:
+He creado los test necesarios para la funcionalidad de consultar empresa (getEmpresa) y como esta funcionalidad, aun no ha sido desarrollada, la aplicación no supera los test:
 ![test2](https://www.dropbox.com/s/xj6gxjfallyucwl/test2.png?dl=1)
 
-Creamos una funcionalidad tan basica como la siguiente:
+Creamos una funcionalidad tan básica como la siguiente:
+	'''
 	def getEmpresa(self):
 		return self
+	'''
+
+
 Tras incorporarla a nuestro modelos, comprobamos efectivamente que la aplicación si supera los test:
 ![test3](https://www.dropbox.com/s/ufkywa0zia5sf8s/test3.png?dl=1)
 
-#ejercicio7: 
+##Ejercicio7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante
 
+Al trabajar con Django como framework esta tarea ya esta automatizada, ya que todos los test se crean en un archivo llamado test.py que es generado automáticamente a la hora de inicializar el proyecto. 
+Esta batería de test se lanza mediante la orden:
 
+	python manage.py test empresas
+
+##Ejercicio8: Haced los dos primeros pasos antes de pasar al tercero.
+Tenemos que añadir un fichero .travis.yml con el siguiente contenido:
+	'''
+		language: python
+		python:
+ 		 - "2.7"
+
+		install:
+ 		 - sudo apt-get install python-dev
+   		 - pip install --upgrade pip 
+ 		 - pip install Django 
+
+		script:
+ 		 - python manage.py test 
+	'''
+
+Automáticamente, Travis sincronizará el repositorio y comprobará si todo esta correcto
+![integracion](https://www.dropbox.com/s/h6t5kdtmpijwffy/integracion.png?dl=1)
 
 
 
