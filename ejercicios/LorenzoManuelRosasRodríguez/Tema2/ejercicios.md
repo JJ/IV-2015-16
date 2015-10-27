@@ -35,9 +35,14 @@ Introduciremos esa dirección ip en nuestro navegador y ya podremos usarla. Al p
 ![encuestas](https://www.dropbox.com/s/578zwjvea9uewcf/img7.png?dl=1)
 
 Si pinchamos en una nos saldría las distintas opciones:
+
+
 ![opciones](https://www.dropbox.com/s/a5bq5pmyhavazyy/img8.png?dl=1)
 
 Y se guardaría nuestra respuesta:
+
+
+
 ![respuestas](https://www.dropbox.com/s/dw7juwy5ot7347s/img9.png?dl=1)
 
 ###Ejercicio 3: Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
