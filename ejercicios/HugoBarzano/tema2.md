@@ -114,10 +114,9 @@ He creado los test necesarios para la funcionalidad de consultar empresa (getEmp
 ![test2](https://www.dropbox.com/s/xj6gxjfallyucwl/test2.png?dl=1)
 
 Creamos una funcionalidad tan básica como la siguiente:
-	'''
+
 	def getEmpresa(self):
 		return self
-	'''
 
 
 Tras incorporarla a nuestro modelos, comprobamos efectivamente que la aplicación si supera los test:
@@ -132,19 +131,16 @@ Esta batería de test se lanza mediante la orden:
 
 ##Ejercicio8: Haced los dos primeros pasos antes de pasar al tercero.
 Tenemos que añadir un fichero .travis.yml con el siguiente contenido:
-	'''
-		language: python
-		python:
- 		 - "2.7"
 
-		install:
- 		 - sudo apt-get install python-dev
-   		 - pip install --upgrade pip 
- 		 - pip install Django 
-
-		script:
- 		 - python manage.py test 
-	'''
+	language: python
+	python:
+	 - "2.7"
+	install:
+	 - sudo apt-get install python-dev
+	 - pip install --upgrade pip 
+	 - pip install Django 
+	script:
+	 - python manage.py test 
 
 Automáticamente, Travis sincronizará el repositorio y comprobará si todo esta correcto
 ![integracion](https://www.dropbox.com/s/h6t5kdtmpijwffy/integracion.png?dl=1)
