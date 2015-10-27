@@ -256,10 +256,6 @@ Editamos **Procfile**:
 web: npm start
 ```
 
-Subimos todas las modificaciones al github que tengo de heroku:
-1. git add * -f
-2. git commit -m "Actualizo Heroku"
-3. git push heroku master
 
 También edito el **package.json** para que arranque directamente desde la app remota en Heroku:
 ```
@@ -271,3 +267,29 @@ También edito el **package.json** para que arranque directamente desde la app r
     "start": "heroku open"
   },
 ```
+
+Subimos todas las modificaciones al github que tengo de heroku:
+1. git add * -f
+2. git commit -m "Actualizo Heroku"
+3. git push heroku master
+
+Copiamos el repositorio con los fuentes a mi repo de github:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp/node-js-getting-started$ git remote rm origin
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp/node-js-getting-started$ git remote add origin git@github.com:rafaellg8/herokurlg.git
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp/node-js-getting-started$ git push -u origin master
+Counting objects: 3791, done.
+```
+
+#Ejercicio6
+##Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
+Nos registramos y configuramos la carpeta que vamos a usar de github en Snap CI. Hacemos unas modificaciones y vemos que comienza la integración:
+
+```
+To https://git.heroku.com/herokurlg.git
+   81859f7..1576c74  master -> master
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp/node-js-getting-started$ git push origin master
+Counting objects: 5, done.
+```
+
+![SnapCI](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-27%20112014_zpsybjlhced.png)
