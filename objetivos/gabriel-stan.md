@@ -1,6 +1,21 @@
 Lista de objetivos de Gabriel Stan
 ==================================
 
+#Objetivos del tema 3
+
+### Objetivos generales
+
+[ ] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+[ ] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+### Objetivos específicos
+
+[ ] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+
+[ ] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+
+[ ] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
 
 ## Objetivos de la quinta semana
 
@@ -14,6 +29,19 @@ Lista de objetivos de Gabriel Stan
 ### Otros Objetivos
 [ ] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
 [ ] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+
+## Objetivos del tema 2
+
+###Objetivos generales
+
+[X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+###Objetivos específicos
+
+[X] Entender el concepto de DevOps.
+[X] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+[X] Aprender a usar integración continua en cualquier aplicación.
+
 
 ## Objetivos de la cuarta semana
 
@@ -56,8 +84,6 @@ Lista de objetivos de Gabriel Stan
 [X] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 
 [X] Comprender el papel de las *build tools* o herramientas de automatización. 
-
-
 
 
 ## Objetivos de la segunda semana
