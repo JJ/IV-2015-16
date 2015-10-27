@@ -57,16 +57,28 @@ En mi caso al usar django, el archivo más parecido que he localizado para reali
 ![archivo](https://www.dropbox.com/s/u0wmzqwbzt5vrtj/img12.png?dl=1)
 
 ###Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
+
 En mi caso, tras consultarlo en internet y con mis compañeros, he tenido que utilizar la herramienta Sphinx:
 -Instalación:
+
+
 ![install](https://www.dropbox.com/s/s2nasxeoyajf89u/img13.png?dl=1)
+
 -Creación de las carpetas correspondientes:
+
+
 ![crear_carpts](https://www.dropbox.com/s/zt6kmjz88r1iuv4/img14.png?dl=1)
+
 -Creación de los archivos rst correspondientes por cada uno de los módulos que se quiere documentar:
+
+
 ![creacion_arc_rst](https://www.dropbox.com/s/uyjwnz47vqjum1v/img15.png?dl=1)
 -Se ejecuta el make html.
+
+
 ![ejecucion_make](https://www.dropbox.com/s/7if4sss2a19ajxf/img16.png?dl=1)
 -Podemos observar en la carpeta build como se generan los htmls correspondientes a la documentación.
+
 ![prueba1](https://www.dropbox.com/s/3bvonnq2vhw8ksg/img17.png?dl=1)
 ![prueba2](https://www.dropbox.com/s/tm2858drxvuze16/img18.png?dl=1)
 
