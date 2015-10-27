@@ -22,10 +22,10 @@ O por ejemplo para Python 3 en concreto, para ello debemos específicar el inté
 Para activar/desactivar el entorno simplemente debemos ejecutar:
 
     source entornov2/bin/activate
-    source entornov2/bin/deactivate
+    deactivate
 
     source entornov3/bin/activate
-    source entornov3/bin/deactivate
+    deactivate
 
 entornov2 y entornov3 son los directorios raíz generados al crear el entorno, del cual cuelgan los directorios bin, include y lib de dicho entorno virtual. Estos directorios contienen los binarios y librerias necesarios para utilizar las correspondientes versiones de Python elegidas.
 
