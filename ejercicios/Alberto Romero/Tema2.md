@@ -65,21 +65,7 @@ Creamos un assert para comprobar si el servicio se ha ejecutado con normalidad:
 
 ![assert](https://i.gyazo.com/65d01440ef72b780c6f39a4d83358f26.png "assert")
 
-![assert](https://gyazo.com/b02bdde774cb1078ddb65dfded660f7d "assert")
+![assert](https://i.gyazo.com/b02bdde774cb1078ddb65dfded660f7d.png "assert")
 
 #Ejercicio 8.
 ##Ejercicio: Haced los dos primeros pasos antes de pasar al tercero.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
