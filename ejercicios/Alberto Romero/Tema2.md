@@ -69,3 +69,7 @@ Creamos un assert para comprobar si el servicio se ha ejecutado con normalidad:
 
 #Ejercicio 8.
 ##Ejercicio: Haced los dos primeros pasos antes de pasar al tercero.
+Hemos creado el archivo shippable.yml correctamente en nuestro repositorio, y lo hemos construido correctamente.
+![shippable](https://i.gyazo.com/76887999520f8cfebd13dc9e44fe2e9f.png "shippable")
+
+
