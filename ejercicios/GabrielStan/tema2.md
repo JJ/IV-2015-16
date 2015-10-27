@@ -62,9 +62,23 @@ Arrancamos el servidor, y voilà!
 
 El paquete también se puede instalar con todos los demás requisitos usando el comando **pip install -r requirements.txt**. El código se puede ver en github (ver ejercicio 2).
 
-### Ejercicio 5
+### Ejercicio 6
 
-**Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.**
+**Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).**
+
+Tenemos un par de aserciones, y comprobamos que pasan las pruebas:
+
+![pruebas](https://www.dropbox.com/s/3eufgwbwsbvpmbz/pruebas.png?dl=1)
+
+Añadimos algunas aserciones, que van a fallar, ya que las funcionalidades no existen todavia:
+
+![fallan](https://www.dropbox.com/s/8z9ay7w3hkj7pxh/fallan_pruebas.png?dl=1)
+
+Escribimos las nuevas funcionalidades para que pasen las pruebas:
+
+![pasan](https://www.dropbox.com/s/j47vyxyb7mpu67z/vuelve%20a%20funcionar.png?dl=1)
+
+
 
 
 
