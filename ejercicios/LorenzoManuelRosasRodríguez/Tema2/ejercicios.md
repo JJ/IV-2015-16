@@ -15,7 +15,6 @@ Podremos activar el entorno desde la carpeta del mismo e introduciendo en la pan
 
 ![activacion](https://www.dropbox.com/s/yjdd4pltjnsiged/img3.png?dl=1)
 
-![activacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/activacion_zps9gkq305d.png)
 
 Ya podríamos instalar lo que fuera necesario en nuestro entorno, usando la herramienta **pip**, por ejemplo *Django 1.6*
 
