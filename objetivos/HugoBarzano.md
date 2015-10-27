@@ -64,7 +64,7 @@ recurso.
 
 	[ ]Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
 
-	[ ] Usar git para hacer *check-in* en clase y expresar al final de cada sesión los objetivos alcanzados.
+	[X] Usar git para hacer *check-in* en clase y expresar al final de cada sesión los objetivos alcanzados.
 
 	[ ] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull 		    request, en este caso al repo del compañero.
 	
@@ -82,14 +82,14 @@ recurso.
 
 ##Otros objetivos de la Sesion 3
 
-	[ ] Entregar el primer hito del proyecto al final de la semana.
+	[X] Entregar el primer hito del proyecto al final de la semana.
 
 	[ ] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos. 
 
 	[ ] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el
   	    cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
 
-	[ ] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
+	[X] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
 
 	[ ] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 	
