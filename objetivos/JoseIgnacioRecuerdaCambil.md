@@ -19,3 +19,4 @@ Lista de objetivos de Jose Ignacio Recuerda Cambil
 - [X] Entender el concepto de DevOps.
 - [X] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
 - [X] Aprender a usar integración continua en cualquier aplicación.
+

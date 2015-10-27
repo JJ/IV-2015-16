@@ -1,9 +1,10 @@
-#Clase del 23 de septiembre de 2015
+#Semana del 23 al 30 de septiembre de 2015
 
 Agradeceré que contestes la
 [encuesta inicial](https://docs.google.com/forms/d/1jTVZBwyce-BvzeBtVE8Kq8p_K5qDlx_tx1AUYQovHuE/viewform). Se
 recuerda al alumno que es su responsabilidad atender a clase o
 enterarse de los contenidos impartidos en la misma. 
+
 
 
 ##Objetivos a cubrir en la sesión
@@ -13,7 +14,8 @@ enterarse de los contenidos impartidos en la misma.
 2. Entender el concepto de software libre y su aplicación práctica en clase.
 3. Vernos las caras.
 
-## Contenidos 
+## Contenidos
+* Antes que ninguna otra cosa, organizaremos los grupos de prácticas. 
 * Presentación del profesor y los recursos de la asignatura: [web](http://jj.github.io/IV) y [Twitter `@iv_gii`](http://twitter.com/iv_gii).
 * [Visión general de la asignatura](http://grados.ugr.es/informatica/pages/infoacademica/guias_docentes/espti/infraestructuravirtual).
 * Metodología docente: [Clase inversa](http://www.tecnologiasparalaeducacion.es/la-clase-inversa-flip-classroom-tecnologias/), incluyendo eliminación de la distinción teoría/prácticas y consecuencias que trae.
