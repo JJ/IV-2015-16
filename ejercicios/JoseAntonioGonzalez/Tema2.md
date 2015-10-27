@@ -73,6 +73,11 @@ I found the solution on this blog post here but I’ll list the steps here anywa
     Install the Python MySQL libraries:
         sudo pip install MySQL-python
 
+#Ejercicio 6
+
+Se ha usado la libreria unittest para realizar las pruebas. 
+
+El código del test se puede ver en [este enlace](https://github.com/JA-Gonz/appEjercicioIV/blob/master/appEjercicioIV/test.py).
 
 #Ejercicio 7
 
