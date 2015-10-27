@@ -13,3 +13,9 @@ Lista de objetivos de Jose Ignacio Recuerda Cambil
 - [X] Conocer el concepto de software libre y su importancia dentro de la computación nube.
 - [X] Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
 - [X] Usar el sistema de control de fuentes gitpara desarrollo colaborativo y para despliegue de aplicaciones en la nube.
+
+###Objetivos tercera sesión
+- [X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [X] Entender el concepto de DevOps.
+- [X] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+- [X] Aprender a usar integración continua en cualquier aplicación.
