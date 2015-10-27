@@ -58,9 +58,36 @@ Para crear una descripción, creamos el fichero **setup.py**, el cual en mi caso
 
 ###Ejercicio 5
 **Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.**
+Lo primero que he hecho ha sido documentar mi función *formar_equipos*. Para ello en Python existe lo que se conoce como **[docstring](https://www.python.org/dev/peps/pep-0257/)**. En mi caso, debido a la simplicidad de la función implementada, he usado un *docstring* de una línea, aunque también es posible en múltiples líneas.
+Por tanto, la documentación de mi función ha quedado:
+![documentacionFormarEquipos](http://i1016.photobucket.com/albums/af281/raperaco/documentacionFuncion_zpswsavhtcv.png)
 
+El siguiente paso a realizar será el de automatizar el proceso de generación de documentación. En Python existe la herramienta **[pydoc](https://docs.python.org/3.4/library/pydoc.html)** la cual genera la documentación en consola, en un navegador o en ficheros HTML. En nuestro caso, para generar la documentación en ficheros HTML, la orden a utilizar será **pydoc -w TusPachangas/**. De esta forma se crean los ficheros en el directorio actual, los cuales moveremos normalmente a un directorio *doc* dentro del directorio del proyecto.
+La generación de la documentación:
+![generacionPydoc](http://i1016.photobucket.com/albums/af281/raperaco/generarPydoc_zpslykvrx2z.png)
 
+Y una vez creados los ficheros HTML, podemos verlos desde un navegador:
+![documentacion](http://i1016.photobucket.com/albums/af281/raperaco/docHTML_zpsqnjmopyk.png)
+Y la documentación sobre mi función es:
+![documentacionViews](http://i1016.photobucket.com/albums/af281/raperaco/docHTMLViews_zpsh1p559dv.png)
 
+###Ejercicio 6
+**Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).**
+
+La aserción que he escrito lo que realiza es comprobar que el número de jugadores de la peña es distinto de 0 y en caso de superarse el test, se muestra un mensaje por pantalla indicando que se ha superado con éxito.
+![CódigoConAssert](http://i1016.photobucket.com/albums/af281/raperaco/assertEnLinea_zpsgabzjy1u.png)
+
+Comprobamos que si se ejecuta sin errores, muestra el mensaje de éxito por el terminal:
+![TestExitoso](http://i1016.photobucket.com/albums/af281/raperaco/testExitoso_zps1rwbpmlt.png)
+
+Ahora voy a provocar un fallo intencionadamente dejando la lista de jugadores vacía para ver cómo entra el *assert* en acción lanzando un error.
+![AssertionError](http://i1016.photobucket.com/albums/af281/raperaco/assertionError_zpsorzf2mvc.png)
+
+Además ahora en la terminal, vemos como el código HTTP ahora es [500](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP#5xx_Errores_de_servidor) el cual es un código de error de servidor debido al error lanzado por el *assert*.
+![Error500](http://i1016.photobucket.com/albums/af281/raperaco/error500_zpsv5ptrpsm.png)
+
+###Ejercicio 7
+**Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.**
 
 
 
