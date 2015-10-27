@@ -32,9 +32,9 @@ También he tenido errores con pip y easy_install teniendo varias versiones de p
 vemos que no tenemos instalado pip, sino que tenemos pip2.7, pip3.5  y otros. Esto es debido a que tenemos varias versiones de python. Entonces, para instalar paquetes con pip, en el caso de querer hacerlo con la versión 3 de python tenemos que escribir `pip3 install <paquete>` para que funcione; si solo ponemos pip nos dirá que no existe ese comando.
 #Ejercicio 2
 
-Ahora vamos a crear una aplicación web sencilla sobre la que poder trabajar. En mi caso voy a hacerla con node.js y su módulo express, de ahí que lo instalase anteriormente. En mi caso voy a crearla en mi carpeta de la asignatura, así que vamos a nuestra carpeta y escribimos el comando: `express primera_app_nodejs`. Una vez hecho esto instalamos las dependencias con `cd primera_app_nodejs && npm install`. Esto instalará las librerías (módulos) y las dependencias de estas, necesarias para correr nuestro proyecto. Ya con esto tenemos lo necesario para empezar a programar nuestra primera aplicación web.
+Ahora vamos a crear una aplicación web sencilla sobre la que poder trabajar. En mi caso voy a hacerla con node.js y su módulo express, de ahí que lo instalase anteriormente. En mi caso voy a crearla en mi carpeta de la asignatura, así que vamos a nuestra carpeta y escribimos el comando: `express ev_empresas`. Una vez hecho esto instalamos las dependencias con `cd ev_empresas && npm install`. Esto instalará las librerías (módulos) y las dependencias de estas, necesarias para correr nuestro proyecto. Ya con esto tenemos lo necesario para empezar a programar nuestra primera aplicación web.
 
-Para ver que funciona la ejecutamos escribiendo: `DEBUG=primera_app_nodejs:* npm start` como pone en la terminal que lo hagamos. Ahora en la dirección local con el puerto 3000 encontramos:
+Para ver que funciona la ejecutamos escribiendo: `DEBUG=ev_empresas:* npm start` como pone en la terminal que lo hagamos. Ahora en la dirección local con el puerto 3000 encontramos:
 
 ![Express](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Express%20funcionando_zpsqrzyaexb.png)
 
@@ -59,12 +59,9 @@ Aquí presento las líneas del archivo package.json
 ```
 {
   "author": "Santiago de Diego <santidediego@gmail.com>",
-  "name": "primera_app_nodejs",
-  "description": "Aplicación para aprender a usar node.js",
+  "name": "ev_empresas",
   "version": "0.0.0",
-  "repository": {
-    "url": "git@github.com:santidediego/primera_app_nodejs.git"
-  },
+  "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -111,4 +108,51 @@ module.exports = function(grunt) {
 };
 ```
 
-Una vez hecho esto ejecutamos `grunt docco`y la consola nos devuelve que el proceso se ha realizado correctamente sin errores. Entonces, este comando nos devuelve una documentación en formato html que podemos encontrar en el [repositorio de esta aplicación](https://github.com/santidediego/primera_app_nodejs) dentro de la carpeta docs.
+Una vez hecho esto ejecutamos `grunt docco`y la consola nos devuelve que el proceso se ha realizado correctamente sin errores. Entonces, este comando nos devuelve una documentación en formato html que podemos encontrar en el [repositorio de esta aplicación](https://github.com/santidediego/ev_empresas) dentro de la carpeta docs.
+
+#Ejercicio 6
+En este apartado utilizaremos la librería *assert* para definir una serie de aserciones cuando insertemos los datos. Podemos ver las aserciones introducidas [en el archivo empresa.js](https://github.com/santidediego/ev_empresas/blob/master/routes/empresa.js)
+
+De esta forma, cuando añadimos una nueva empresa nos aparece lo siguiente en las peticiones:
+
+![Test superados](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Assert_zpsis13ebzl.png)
+
+#Ejercicio 7
+Primero de todo instalamos mocha con `sudo npm install -g mocha` para instalarlo de forma global.
+
+Ahora creamos otra carpeta para almacenar nuestros test y dentro, un archivo *test.js* que conformará nuestro test. He hecho un test muy básico que comprobará si arranca correctamente la web este es:
+
+```
+var assert=require("assert");
+app=require(__dirname+"/../app.js");
+
+describe('Empresa', function(){
+	    it('Debe cargar', function(){
+	        assert(app, "La página carga correctamente");
+	    });
+});
+
+```
+
+#Ejercicio 8
+Para darme de alta en Travis simplemente entro en la [Página oficial](https://travis-ci.org) y me logeo con mi cuenta de Github.
+
+Una vez dado de alta, sigo los pasos de la página y marco el repositorio que quiero que esté vinculado con Travis, para ello simplemente hago click.
+
+Ahora tengo que crear el archivo *.travis.yml*. Lo he creado dentro del directorio de la aplicación, y el archivo tiene las siguientes líneas:
+
+```
+language: node_js
+node_js:
+  - "0.10"
+  - "0.11"
+before_install:
+  - npm install -g mocha
+  - npm install .
+script: mocha tests/test.js
+
+```
+
+Efectivamente al hacer push al repositorio se activa automáticamente:
+
+![Integración continua](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Integracion%20continua_zpspvnulgif.png)
