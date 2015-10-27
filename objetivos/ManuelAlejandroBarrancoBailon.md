@@ -43,23 +43,22 @@
 ###Objetivos de la semana
 - [X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
 
-- [ ] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+- [X] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
 
 - [X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
 
-- [ ] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
+- [X] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
 
-###Otros objetivos
-- [X] Entregar el primer hito del proyecto al final de la semana.
+##Cuarta semana, comienza el 14 de octubre
+###Objetivos de la semana
+- [] Terminar la configuración de los sistemas de integración continua
+- [X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
-- [ ] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
-
-- [X] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
-
-- [ ] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
-
-- [ ] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
-
-- [ ] Comprender el papel de las build tools o herramientas de automatización.
+##Quinta semana, comienza el 21 de octubre
+###Objetivos de la semana
+- [] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+- [] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+- [X] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+- [] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
 
