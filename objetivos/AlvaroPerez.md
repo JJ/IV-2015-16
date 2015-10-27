@@ -1,4 +1,4 @@
-##Objetivos Alvaro Perez
+##Objetivos Álvaro Pérez
 
 ### Sesión 1 (Semana del 23 al 30 septiembre 2015)
 
