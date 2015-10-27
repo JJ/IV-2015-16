@@ -74,9 +74,9 @@
 
 ###Sesión 4 (Semana del 14 al 21 de octubre 2015)
 
-[] Terminar la configuración de los sistemas de integración continua.
+[x] Terminar la configuración de los sistemas de integración continua.
     
-[] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+[x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
 #####Otros objetivos
 
@@ -84,9 +84,27 @@
 
 [] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
 
-[] Comprender los mecanismos de despliegue automático.
+[x] Comprender los mecanismos de despliegue automático.
     
-[] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+[x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
+
+###Sesión 5 (Semana del 21 al 28 de octubre 2015)
+
+[x] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS.
+    
+[x] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+
+[] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+
+[] Resolver los problemas que surjan en los primeros despliegues de la asignatura.
+
+#####Otros objetivos
+
+[x] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
+
+[] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+
 
 
 
