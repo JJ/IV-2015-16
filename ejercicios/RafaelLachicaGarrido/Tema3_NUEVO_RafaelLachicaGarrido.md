@@ -245,3 +245,29 @@ Abrimos la app:
 ![herokuApp](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-26%20180312_zpsenrygvua.png)
 
 [Fuentes extras desarrolladores](https://devcenter.heroku.com/articles/git)
+
+#Ejercicio5
+##Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
+
+Copiamos los archivos de la aplicación empresa al directorio de myapp de heroku en local.
+Borramos el archivo por defecto de **index.js**
+Editamos **Procfile**:
+```
+web: npm start
+```
+
+Subimos todas las modificaciones al github que tengo de heroku:
+1. git add * -f
+2. git commit -m "Actualizo Heroku"
+3. git push heroku master
+
+También edito el **package.json** para que arranque directamente desde la app remota en Heroku:
+```
+{
+  "name": "empresaIV",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "start": "heroku open"
+  },
+```
