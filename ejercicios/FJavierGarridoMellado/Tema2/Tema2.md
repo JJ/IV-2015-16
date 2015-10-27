@@ -2,7 +2,7 @@
 
 ###Ejercicio 1 : Instalar alguno de los entornos virtuales de node.js y, con ellos, instalar la última versión existente, la versión minor más actual de la 0.12 y lo mismo para la 0.11 o alguna impar. Si no se usa habitualmente este lenguaje, hacer lo mismo con cualquier otro lenguaje de scripting.
 
-Para Python he optado por el entorno virtual **virtualenv** de *Python*, el cual como se explica en los apuntes nos permite usar una versión diferente en caso de estar inmerso en desarrollos de proyectos que necesitan diferentes versiones de Python.
+Para Python he optado por el entorno virtual **virtualenv**, el cual como se explica en los apuntes nos permite usar una versión diferente en caso de estar inmerso en desarrollos de proyectos que necesitan diferentes versiones de Python.
 
 ![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/virt_inst_zpsvq4gzyua.png)
 
@@ -281,7 +281,7 @@ before_install:
 script: mocha
 ```
 
-He intentado incluir la linea de script dentro de package.json para que tuviese la orden en dicho archivo pero por extraña razón daba error y no encontraba el modulo. En **package.json** unicamente he incluido la siguiente linea:
+ En **package.json** unicamente he incluido la siguiente linea:
 ```
 {
   "name": "empresa",
