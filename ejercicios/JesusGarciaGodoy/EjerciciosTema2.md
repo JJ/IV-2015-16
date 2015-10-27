@@ -86,10 +86,9 @@ Convertir los tests unitarios anteriores con assert a programas de test y ejecut
 Ejercicio: Haced los dos primeros pasos antes de pasar al tercero.
 
 - Primero me he dado de alta en Travis con GitHub.
-![ej8_1.png](http://i.imgur.com/lu90SZW.png)
 
 - Después he activado la integración continua en el repositorio de la aplicación de empresas.
-![ej8_2.png](http://i.imgur.com/vcDqLA3.png)
+![ej8_2.png](http://i.imgur.com/zCvbP8l.png)
 
 - He creado el archivo **.travis.yml** dentro de la carpeta del proyecto con el siguiente contenido:
 ![ej8_3.png](http://i.imgur.com/OOKCQAV.png)
