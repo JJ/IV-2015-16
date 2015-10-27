@@ -72,3 +72,10 @@ I found the solution on this blog post here but I’ll list the steps here anywa
         sudo apt-get build-dep python-mysqldb
     Install the Python MySQL libraries:
         sudo pip install MySQL-python
+
+
+#Ejercicio 7
+
+EL fichero corresponidente de prueba se ha creado con "sure", y se puede ver en mi [repositorio](https://github.com/JA-Gonz/appEjercicioIV/blob/master/appEjercicioIV/test_sure.py)
+
+Es muy parecido al del ejercicio 6, pero realizando las modificaciones oportunas.
