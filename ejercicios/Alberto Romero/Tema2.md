@@ -50,8 +50,8 @@ Instalamos grunt y docco para esta tarea:
 #Ejercicio 6.
 ##Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
 
-Hemos añadido una aserción que nos comprueba si el mensaje está vacio:
-
+Hemos añadido una aserción que nos comprueba si el comentario sobre el vehículo está vacio:
+![coment](https://i.gyazo.com/b02bdde774cb107 "coment")
 
 
 
