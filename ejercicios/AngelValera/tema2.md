@@ -24,12 +24,12 @@ Para realizar esta aplicación he utilizado el framework Express, Jade para crea
 Se trata de una aplicación en la que puedes registrarte como alumno iniciar sesión y poner una puntuación a las empresas que haya insertadas en la aplicación, por último puedes ver las puntuaciones que ha introducido cada usuario.El repositorio de la aplicación se puede ver [aquí.](https://github.com/AngelValera/Ejercicio2-Tema2.git)
 
 Podemos ver una prueba de ejecución  en la siguiente imagen
-![prueba ejecución](http://i666.photobucket.com/albums/vv21/angelvalera/Seleccioacuten_001_zpsndermmf8.png)
+![prueba ejecución](http://i666.photobucket.com/albums/vv21/angelvalera/EjerciciosTema2/Seleccioacuten_001_zpsndermmf8.png)
 ###**Ejercicio 3**:Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
 
 He ejecutado el prgrama en las versiones **v4.1.2** y **v0.12.7** y como podemos ver en la imagen siguiente en ambas funciona.
 
-![prueba ejecución](http://i666.photobucket.com/albums/vv21/angelvalera/ejercicio3-Tema2_zpsaur0yiwm.png)
+![prueba ejecución](http://i666.photobucket.com/albums/vv21/angelvalera/EjerciciosTema2/ejercicio3-Tema2_zpsaur0yiwm.png)
 
 
 ###**Ejercicio 4**:Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente.
@@ -128,7 +128,7 @@ app.post('/autenticar', function(req, res){
 //---------------------------------------
 ```
 El resultado lo podemos ver en la siguiente imagen.
-![prueba ejecución](http://i666.photobucket.com/albums/vv21/angelvalera/Seleccioacuten_002_zps02uabps2.png)
+![prueba ejecución](http://i666.photobucket.com/albums/vv21/angelvalera/EjerciciosTema2/Seleccioacuten_002_zps02uabps2.png)
 
 ###**Ejercicio 7**:Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
 
@@ -156,7 +156,7 @@ describe( "Vota empresas", function() {
 
 ```
 Lo que testea es que al llamar a la aplicación, esta devuelve el contenido adecuado, en este caso html. Se ejecuta con el comando **mocha test/test.js** y el resultado lo podemos ver en la siguiente imagen.
-![prueba ejecución](http://i666.photobucket.com/albums/vv21/angelvalera/Seleccioacuten_003_zps2xi1bxpk.png)
+![prueba ejecución](http://i666.photobucket.com/albums/vv21/angelvalera/EjerciciosTema2/Seleccioacuten_003_zps2xi1bxpk.png)
 
 
 ###**Ejercicio 8**: Añadiendo integración continua: Haced los dos primeros pasos antes de pasar al tercero.
@@ -166,7 +166,7 @@ Para la integración continua he decidido usar Travis, lo primero que debemos ha
 1. Darse de alta. Muchos están conectados con GitHub por lo que puedes usar directamente el usuario ahí. A través de un proceso de autorización, acceder al contenido e incluso informar del resultado de los tests.
 
 2. Activar el repositorio en el que se vaya a aplicar la integración continua. Travis permite hacerlo directamente desde tu configuración; en otros se dan de alta desde la web de GitHub.
-![test](http://i666.photobucket.com/albums/vv21/angelvalera/Seleccioacuten_004_zps9pnxkpu6.png)
+![test](http://i666.photobucket.com/albums/vv21/angelvalera/EjerciciosTema2/Seleccioacuten_004_zps9pnxkpu6.png)
 Ahora añadimos un fichero de configuración para que se ejecute la integración, al cual llamaremos .travis.yml, y lo subimos a nuestro repositorio, en ese fichero añadimos las siguientes líneas:
 
 ```json
@@ -191,7 +191,7 @@ Ahora ya podemos ver en travis si pasa los test o si no los pasa, en cualquiera 
 ![test](https://travis-ci.org/AngelValera/Ejercicio2-Tema2.svg?branch=master)
 
 Un ejemplo de que debe aparecer al pasar el test es:
-![test](http://i666.photobucket.com/albums/vv21/angelvalera/Seleccioacuten_005_zpsflznlage.png)
+![test](http://i666.photobucket.com/albums/vv21/angelvalera/EjerciciosTema2/Seleccioacuten_005_zpsflznlage.png)
 
 
 
