@@ -1,35 +1,89 @@
 Lista de objetivos de Gabriel Stan
 ==================================
 
+#Objetivos del tema 3
+
+### Objetivos generales
+
+[ ] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+[ ] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+### Objetivos específicos
+
+[ ] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+
+[ ] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+
+[ ] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+
+## Objetivos de la quinta semana
+
+### Objetivos principales
+
+[ ] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+[ ] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+[ ] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+[ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+### Otros Objetivos
+[ ] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
+[ ] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+
+## Objetivos del tema 2
+
+###Objetivos generales
+
+[X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+###Objetivos específicos
+
+[X] Entender el concepto de DevOps.
+[X] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+[X] Aprender a usar integración continua en cualquier aplicación.
+
+
+## Objetivos de la cuarta semana
+
+### Objetivos principales
+
+[X] Terminar la configuración de los sistemas de integración continua
+[X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+###Otros objetivos
+
+[X] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+[ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+[ ] Comprender los mecanismos de despliegue automático.
+[X] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
 
 ## Objetivos de la tercera semana
 
 ### Objetivos principales
 
 
-[ ] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
+[X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
 
-[ ] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+[X] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
 
-[ ] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
+[X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
 
-[ ] Entender los ficheros de *requisitos* y su utilidad en las infraestructuras virtuales.
+[X] Entender los ficheros de *requisitos* y su utilidad en las infraestructuras virtuales.
 
 ###Otros objetivos
 
-[ ] Entregar el [primer hito del proyecto](http://jj.github.io/IV/documentos/practicas/1.Infraestructura) al final de la semana.
+[X] Entregar el [primer hito del proyecto](http://jj.github.io/IV/documentos/practicas/1.Infraestructura) al final de la semana.
 
-[ ] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos. 
+[X] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos. 
 
 [ ] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
 
-[ ] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
+[X] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
 
-[ ] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+[X] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 
-[ ] Comprender el papel de las *build tools* o herramientas de automatización. 
-
-
+[X] Comprender el papel de las *build tools* o herramientas de automatización. 
 
 
 ## Objetivos de la segunda semana
