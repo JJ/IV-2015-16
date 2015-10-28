@@ -74,3 +74,38 @@ Instalamos entonces la versión que nos queda:
 ```
 $ nodeenv --node=0.11.16 --prebuilt env-0.11.16-prebuilt
 ```
+
+#Ejercicio 2
+
+**Como ejercicio, algo ligeramente diferente: una web para calificar las empresas en las que hacen prácticas los alumnos. Las acciones serían crear empresa y listar calificaciones para cada empresa, crear calificación y añadirla (comprobando que la persona no la haya añadido ya), borrar calificación (si se arrepiente o te denuncia la empresa o algo) y hacer un ránking de empresas por calificación, por ejemplo. Crear un repositorio en GitHub para la librería y crear un pequeño programa que use algunas de sus funcionalidades. Si se quiere hacer con cualquier otra aplicación, también es válido.**
+
+
+Para realizar este ejercicio he elegido python y Django. Para comenzar crearemos el entorno con **virtualenv** y activaremos el entorno:
+
+```
+$ virtualenv tema2IV
+$ cd tema2IV
+$ source bin/activate
+```
+E instalamos Django con el comando ``` $ pip install Django```
+
+Ya tenemos todas las herramientas, ahora tenemos que crear el proyecto y levantar el servidor para ponernos a trabajar.
+
+```
+$ django-admin startproject Proyecto
+$ cd Proyecto
+$ python manage.py startapp Proyecto
+$ python manage.py startapp aplicacion
+$ python manage.py runserver
+```
+
+Al iniciar el servidor me sale un aviso. Si no se activa la migración la aplicación podria no funcionar correctamente, así que la activamos.
+
+```
+$ python manage.py migrate
+$ python manage.py runserver
+```
+
+El servidor se ejecuta en la dirección [http://127.0.0.1:8000](http://127.0.0.1:8000/)
+
+# Ejercicio 3
