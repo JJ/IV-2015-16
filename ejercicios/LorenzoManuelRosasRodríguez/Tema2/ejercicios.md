@@ -82,9 +82,32 @@ En mi caso, tras consultarlo en internet y con mis compañeros, he tenido que ut
 ![prueba1](https://www.dropbox.com/s/3bvonnq2vhw8ksg/img17.png?dl=1)
 ![prueba2](https://www.dropbox.com/s/tm2858drxvuze16/img18.png?dl=1)
 
+###Ejercicio 6: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
+
+Yo me he basado en el tutorial de Django para realizar el ejercicio, ya que me ha venido bien para profundizar en este tema, para ello dentro de la carpeta polls, en el archivo tests.py he introducido lo siguiente:
+
+![assert1](img19)
+
+El cual, al ejecutarlo me ha salido:
 
 
+![assert1](img20)
 
+¿Qué es lo que ha pasado?, sencillamente lo que he hecho es crear una pregunta la cual instancia el pub_date del método Question en el futuro. Pero al comprobar si la pregunta se ha publicado recientemente nos sale verdadero y nos debería salir falso, por lo que deberíamos de modificar dicho método, por lo que nos dirigimos al archivo polls/models.py y lo dejamos de la siguiente forma:
+
+ 
+![assert1](img21)
+
+Ahora al ejecutarlo nos sale realiza el test correctamente:
+
+
+![assert1](img22)
+
+###Ejercicio7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
+
+Ya lo he realizado en el ejercicio 6, mi archivo se llama polls/tests.py.
+
+###Ejercicio8: Haced los dos primeros pasos antes de pasar al tercero. Configurar integración continua para nuestra aplicación usando Travis o algún otro sitio.
 
 
 
