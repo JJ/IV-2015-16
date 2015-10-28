@@ -168,3 +168,14 @@ setup(name='Proyecto',
     zip_safe=False)
 ```
 Y lo instalamos con ```python setup.py install```
+
+# Ejercicio 5
+**Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.**
+
+Usaremos pycco para documentar el código. Antes de nada lo instalaremos de la siguiente forma: ``` $ pip install pycco```
+
+Y ahora podemos documentar lo que queramos. Como ejemplo:
+
+```
+$ pycco *.py
+```
