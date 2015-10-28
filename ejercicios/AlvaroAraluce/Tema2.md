@@ -109,3 +109,38 @@ $ python manage.py runserver
 El servidor se ejecuta en la dirección [http://127.0.0.1:8000](http://127.0.0.1:8000/)
 
 # Ejercicio 3
+
+**Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?**
+Si ejecutamos python dentro de nuestro entorno virtual podemos ver que trabaja en este momento con **python 2.7.6**, pero podemos cambiar las versiones.
+
+Veamos de qué versiones disponemos y vamos a probar algunas de ellas:
+
+```
+$ ls -l /usr/bin/python*
+lrwxrwxrwx 1 root root       9 oct 26 17:27 /usr/bin/python -> python2.7
+lrwxrwxrwx 1 root root       9 oct 26 17:27 /usr/bin/python2 -> python2.7
+-rwxr-xr-x 1 root root 3345416 jun 22 20:51 /usr/bin/python2.7
+lrwxrwxrwx 1 root root       9 oct 26 17:27 /usr/bin/python3 -> python3.4
+-rwxr-xr-x 2 root root 3709944 oct 14 23:42 /usr/bin/python3.4
+-rwxr-xr-x 2 root root 3709944 oct 14 23:42 /usr/bin/python3.4m
+lrwxrwxrwx 1 root root      10 oct 26 17:27 /usr/bin/python3m -> python3.4m
+lrwxrwxrwx 1 root root      58 feb 20  2014 /usr/bin/pythontex -> ../share/texlive/texmf-dist/scripts/pythontex/pythontex.py
+-rwxr-xr-x 1 root root     306 feb 20  2014 /usr/bin/pythontex3
+```
+Vamos a instalar entonces la versión python2 y probamos si funciona o no:
+
+```
+$ virtualenv -p /usr/bin/python2 tema2IV
+$ python manage.py runserver
+```
+
+Funciona perfectamente. No me he dado cuenta que es la misma versión, ep
+
+Probamos hora la versión 3:
+
+```
+$ virtualenv -p /usr/bin/python3 tema2IV
+$ python manage.py runserver
+```
+
+Y obtengo un error de importación de módulos.
