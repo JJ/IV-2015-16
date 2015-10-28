@@ -17,11 +17,31 @@ He probado el ejercicio en python 2.7 y en python 3.4, pero la biblioteca webapp
 
 ### Ejercicio 4
 
+El equivalente en python es el requirements.txt con la orden:
+
+	pip freeze > requirements.txt
+
+Aquí dejo el enlace al mío:
+
+[++requeriments.txt++](https://github.com/neon520/appIV/blob/master/requirements.txt)
+
+### Ejercicio 5
+
 En python, podemos crear un archivo [++setup.py++](https://github.com/neon520/appIV/blob/master/setup.py) el cual contiene lo necesario para instalar las dependencias. Utilizaremos la orden:
 
 	python setup.py install
 
-### Ejercicio 5
+Para documentarlo uso pycco, con la orden:
+
+	pycco setup.py
+
+Para documentar el resto de archivos ejecuto la orden:
+
+	pycco appIV/*.py
+
+Aquí dejo un enlace a los resultados:
+
+[++docs++](https://github.com/neon520/appIV/tree/master/docs)
 
 ### Ejercicio 6
 
