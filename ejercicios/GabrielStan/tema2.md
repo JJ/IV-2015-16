@@ -88,6 +88,14 @@ Escribimos las nuevas funcionalidades para que pasen las pruebas:
 
 ![pasan](https://www.dropbox.com/s/j47vyxyb7mpu67z/vuelve%20a%20funcionar.png?dl=1)
 
+### Ejercicio 7
+
+**Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta.**
+
+El sistema de pruebas de Django está basado en una librería más avanzada que "unittest", llamada "django.test.runner.DiscoverRunner", haciendo uso de las clases "TestCase". Basta con ejecutar el comando "python manage.py test", para ejecutar el programa de test.
+
+![test](https://www.dropbox.com/s/g4kblpy9ph8b9jp/testcase.png?dl=1)
+
 
 ### Ejercicio 8
 
@@ -103,6 +111,9 @@ Añadidos fichero .yml al [repositorio](https://travis-ci.org/gabriel-stan/tema2
 
 [![Build Status](https://travis-ci.org/gabriel-stan/tema2-IV.svg?branch=master)](https://travis-ci.org/gabriel-stan/tema2-IV)
 
+Contenido del fichero .travis.yml:
+
+![travis](https://www.dropbox.com/s/ocglq7ft3l2oczp/travis.png?dl=1)
 
 
 
