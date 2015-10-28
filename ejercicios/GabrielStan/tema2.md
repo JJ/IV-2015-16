@@ -60,7 +60,17 @@ Arrancamos el servidor, y voilà!
 
 ![funciona](https://www.dropbox.com/s/ol4eb9ka2bovgrp/funciona.png?dl=1)
 
-El paquete también se puede instalar con todos los demás requisitos usando el comando **pip install -r requirements.txt**. El código se puede ver en github (ver ejercicio 2).
+El paquete también se puede instalar con todos los demás requisitos usando el comando **pip install -r requirements.txt**. El código se puede ver en github (ver ejercicio 2). Contenido del fichero "requirements.txt":
+
+![requirements](https://www.dropbox.com/s/qrd2mkxkf4rj15w/requirements.png?dl=1)
+
+### Ejercicio 5
+
+**Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.**
+
+Instalamos **pycco**, una librería de generación de documentación para python, con el comando ** pip install pycco**. A continuación generamos la documentación del proyecto con **pycco ruta/al/proyecto/**, y genera la documentación correspontiente.
+
+![documentacion](https://www.dropbox.com/s/e14fdruk91wmn8p/documentacion.png?dl=1)
 
 ### Ejercicio 6
 
