@@ -185,10 +185,173 @@ Ejecutamos las pruebas con mocha y vemos que son satisfactorias: *mocha test/tes
 
 - *heroku open*	# para acceder a la app mediante el navegador web
 
+[Aquí](http://romilgildo-iv2015.herokuapp.com/) tenemos la aplicación despegada.
+
  ![app Heroku desplegada](https://www.dropbox.com/s/adowoiht196dpqf/appHerokuDesplegada.PNG?dl=1)
 
 ### Ejercicio 5: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
 
+1. Combinamos y fusionamos archivos de ambas aplicaciones. Para ello debemos agregar las dependencias de nuestra aplicación al el fichero "package.json" que queda de la siguiente forma:
+
+```
+{
+  "name": "node-js-getting-started",
+  "version": "0.1.5",
+  "description": "A sample Node.js app using Express 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "2.3.3",
+    "express": "4.13.3",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "docco": "^0.7.0",
+    "grunt": "^0.4.5",
+    "grunt-docco": "^0.4.0",
+    "should": "^7.1.1"
+  },
+  "engines": {
+    "node": "0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "scripts": {
+	"test": "mocha",
+	"start": "node index.js"
+  },
+  "license": "MIT"
+}
+
+``` 
+
+2. Hacemos *npm install* por si hay que instalar alguna dependencia.
+
+3. Ejecutamos los test de prueba para ver que funcionan con *mocha test/test.js*
+
+4. Instalamos Foreman con el siguiente comando: *sudo gem install foreman*
+
+5. Ejecutamos nuestra aplicación web localmente de la siguiente forma: *foreman start web* 
+
+![Ejecución local con Foreman](https://www.dropbox.com/s/s6wjmtqxovxuswc/foremanPrueba.PNG?dl=1)
+
+6. Ahora procedemos a realizar el despliegue de nuevo en Heroku: 
+
+- git add * -f
+- git commit -m "Subo ejercicio 5"
+- git push heroku master
+
+7. Una vez termine de subir los archivos, ya tenemos nuestra app de Porra desplegado sobre Heroku, y accesible desde [aquí](http://romilgildo-iv2015.herokuapp.com/).
+
+![Aplicacion Porra desplegada en Heroku](https://www.dropbox.com/s/6qulzogdpatz6iw/despliegueHeroku.PNG?dl=1)
+
+8. Por último vamos a crear un repositorio en mi cuenta de GitHub con la aplicación que hemos desplegado.
+
+- git remote rm origin
+- Creamos repositorio en GitHub
+- git remote add origin git@github.com:romilgildo/Porra-Heroku.git
+- git push -u origin master
+
+[Aquí](https://github.com/romilgildo/Porra-Heroku) tenemos la aplicación que hemos desplegado en Heroku, dentro del repositorio en GitHub.
+
 ### Ejercicio 6: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
 
+Vamos a configurar primeramente Travis, para ello creamos el fichero [.travis.yml](https://github.com/romilgildo/Porra-Heroku/blob/master/.travis.yml) con el siguiente contenido:
+
+```
+# Selección del lenguaje 
+language: node_js   
+
+node_js:
+  - "4.1" 
+  - "0.12"
+  - "iojs"
+
+install:   # Instalación de dependencias
+  - npm install
+  - npm install -g mocha
+
+script:       # El script que ejecutaremos para que nuestro código funcione y corra los test.
+  - mocha
+
+notifications:   # Notificamos los resultados de los test por correo
+  recipients:
+    - rubenmartin1991@gmail.com
+  email:
+    on_success: change
+    on_failure: always
+```
+
+Lo subimos a GitHub para ver que pasa los test.
+
+- git add .travis.yml
+- git commit -m "Incluyo travis"
+- git push -u origin master
+
+![Prueba Travis Porra](https://www.dropbox.com/s/4zw3864pz3jxem4/travisHeroku.PNG?dl=1)
+
+Una vez comprobado que funciona correctamente, la desplegamos de nuevo en Heroku con: *git push heroku master*
+
+Ahora pasamos a realizar el despliegue automático con [Snap CI](https://snap-ci.com/):
+
+Pinchamos sobre "TRY NOW" de la página de inicio de Snap.
+
+![Inicio Snap](https://www.dropbox.com/s/z2el2hbxnwm8z5m/inicioSnap.PNG?dl=1)
+
+En la siguiente página pulsamos sobre "Authorize application" para que tenga acceso a nuestros repositorios de GitHub.
+
+![Aceptar acceso a GitHub](https://www.dropbox.com/s/n9n0v4n1go7ql3v/autorizarSnap.PNG?dl=1)
+
+Una vez dentro, pinchamos sobre nuestra aplicación Porra-Heroku, en el botón "Add".
+
+![Pinchar sobre Porra-Heroku](https://www.dropbox.com/s/m949f0uzu74q6b2/repositoriosSnap.PNG?dl=1)
+
+Entramos en "Configuración", que se ubica arriba a la derecha. Luego por el mismo lugar, pinchamos sobre "Edit".
+
+Configuramos los comandos que queramos ejecutar para los tests en la parte de EDITME:
+
+![Configurar Editme](https://www.dropbox.com/s/lj14egg0pty9jby/configuracionSnap.PNG?dl=1)
+
+Ahora pinchamos sobre "ADD STAGE", y elegimos a la izquierda "Deploy" y luego "Basic". Ahora procedemos a configurar nuestra cuenta de Heroku y el nombre de nuestra aplicación desplegada.
+
+Para configurar la cuenta de Heroku habrá que permitir el acceso de Snap CI a Heroku como podemos ver en la siguiente captura:
+
+![Permitir acceso de Snap CI](https://www.dropbox.com/s/eir9b07gi4ve3ge/permitirHeroku.PNG?dl=1)
+
+Mi configuración final en Snap CI es la siguiente: 
+
+![Configuracion Deploy Heroku](https://www.dropbox.com/s/5plusm1e9k96mgy/configuracionSnapHeroku.PNG?dl=1)
+
+Guardamos los cambios en el botón de arriba a la derecha "Save".
+
+Una vez guardamos, automáticamente se inicia el proceso de integración contínua sobre nuestra aplicación. 
+
+Los resultados son los siguientes:
+
+![Integración contínua en Heroku](https://www.dropbox.com/s/mo7rk1iheboybhc/despliegueHerokuSnap.PNG?dl=1)
+
+Con esto ya tendremos la aplicación desplegándose automáticamente en Heroku con cada cambio que realicemos en el repositorio de GitHub y tras pasar los test de prueba.
+
+Para ello hay que hacer:
+
+- git add * -f
+- git commit -m "Despliegue en Heroku"
+- git push
+
 ### Ejercicio 7: Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.
+
+Desplegar Chat en OpenShift
