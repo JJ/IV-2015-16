@@ -38,3 +38,27 @@
 - [X] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 - [X] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
+
+##Semana del 7 de octubre al 14 de octubre (3ª semana)
+###Objetivos de la semana
+- [X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
+
+- [X] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+
+- [X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
+
+- [X] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
+
+##Cuarta semana, comienza el 14 de octubre
+###Objetivos de la semana
+- [] Terminar la configuración de los sistemas de integración continua
+- [X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+##Quinta semana, comienza el 21 de octubre
+###Objetivos de la semana
+- [] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+- [] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+- [X] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+- [] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+

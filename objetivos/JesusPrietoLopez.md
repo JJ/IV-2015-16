@@ -34,3 +34,33 @@ Lista de objetivos de Jesús Prieto López
 - [] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 - [] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
+
+##Clases de 3ª semana
+
+
+- [X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
+- [X] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+- [X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
+- [X] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
+
+###Otros objetivos
+
+- [X] Entregar el primer hito del proyecto al final de la semana.
+- [X] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
+- [X] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
+- [X] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
+- [X] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+- [X] Comprender el papel de las build tools o herramientas de automatización.
+
+##Clases de 4ª semana
+
+- [X] Terminar la configuración de los sistemas de integración continua
+- [X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+###Otros objetivos
+
+- [X] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+- [ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+- [X] Comprender los mecanismos de despliegue automático.
+- [ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
