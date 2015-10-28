@@ -55,3 +55,15 @@ He utilizado la librería ++sure++ para realizar estos test y he utilizado el pr
 
 [++test_sure.py++](https://github.com/neon520/appIV/blob/master/appIV/test_sure.py)
 ### Ejercicio 8
+
+He realizado el paso 1 conectándolo con Github, aqui queda el resultado de mi test
+
+![travis](https://travis-ci.org/neon520/appIV.svg?branch=master)
+
+En el paso 2 he dado de alta el repositorio en el que tengo el ejercicio 2:
+
+![repotravis](https://www.dropbox.com/s/9mwm4xmzwy3t8k8/repoactivado.png?dl=1)
+
+Aquí dejo un enlace al fichero de configuración de travis:
+
+[++.travis.yml++](https://github.com/neon520/appIV/blob/master/.travis.yml)
