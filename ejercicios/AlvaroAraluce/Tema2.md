@@ -144,3 +144,27 @@ $ python manage.py runserver
 ```
 
 Y obtengo un error de importación de módulos.
+
+#Ejercicio 4
+**Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente.**
+
+Como estamos en python, vamos a crear la descripción del módulo en el fichero **setup.py**. A continuación pongo la descripcción:
+
+```
+from setuptools import setup
+
+setup(name='Proyecto',
+    version='0.0.1',
+    description='Tema 2',
+    url='https://github.com/araluce/Tema2IV',
+    author='Alvaro Fernandez-Alonso Araluce',
+    author_email='araluce11@gmail.com',
+    license='GNU General Public License',
+    packages=['Proyecto'],
+    install_requires=[
+        'django',
+        'wheel',
+    ],
+    zip_safe=False)
+```
+Y lo instalamos con ```python setup.py install```
