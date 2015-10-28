@@ -24,13 +24,12 @@ Lista de objetivos de Hugo Bárzano Cruz
 
 ##Objetivos específicos de la introducción:
 
-	[X] Conocer diferentes tecnologías relacionadas con la virtualización (Computación nube, Utility Computing, Software as a Service o 		Google AppSpot)
+[X] Conocer diferentes tecnologías relacionadas con la virtualización (Computación nube, Utility Computing, Software as a Service o 		Google AppSpot)
+[X] Conocer el concepto de software libre y su importancia dentro de la computación nube.
 
-    	[X] Conocer el concepto de software libre y su importancia dentro de la computación nube.
+ [ ] Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
 
-    	[ ] Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
-
-    	[X] Usar el sistema de control de fuentes git para desarrollo colaborativo y para despliegue de aplicaciones en la nube.
+   [X] Usar el sistema de control de fuentes git para desarrollo colaborativo y para despliegue de aplicaciones en la nube.
 
 #Objetivos Sesion 2:
 
