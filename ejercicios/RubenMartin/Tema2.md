@@ -71,3 +71,121 @@ Lo he hecho con el comando *npm init* ejecutado dentro del directorio de la apli
 Solo habrá que ir rellenando los distintos parámetros que nos pide. Al final nos queda algo así:
 
 ![Ejemplo de package.json](https://www.dropbox.com/s/gwhoyu8ipsbubfr/packageJSON.PNG?dl=1)
+
+### Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema para otro lenguaje de programación) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
+
+Primero debemos instalar grunt y docco con los siguientes comandos:
+
+1. *npm install -g grunt-cli*
+
+2. *npm install docco grunt-docco --save-dev*
+
+Ahora pasamos a crear el Gruntfile.js (en el directorio raíz de la aplicación que estamos creando):
+
+```
+'use strict';
+
+module.exports = function(grunt) {
+
+  // Configuración del proyecto
+  grunt.initConfig({
+  pkg: grunt.file.readJSON('package.json'),
+  docco: {
+	  debug: {
+	  src: ['*.js'],
+	  options: {
+		  output: 'docs/'
+	  }
+	  }
+  }
+  });
+
+  // Carga el plugin de grunt para hacer esto
+  grunt.loadNpmTasks('grunt-docco');
+
+  // Tarea por omisión: generar la documentación
+  grunt.registerTask('default', ['docco']);
+};
+```
+
+Y por último ejecutamos *grunt*, que produce la siguiente [documentación](https://github.com/romilgildo/Chat/tree/master/docs).
+
+![Creación de documentación con Grunt](https://www.dropbox.com/s/u768mvdz7edaoyy/ejecucionGrunt.PNG?dl=1)
+
+### Ejercicio 6: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga
+
+He añadido dos asersiones tras hacer el Login del usuario, y podemos ver que ambos tests han sido superados.
+
+```
+var assert = require("assert");
+
+app.post('/login', function (req, res) {
+	var username = req.body.username;
+	var password = req.body.password;
+
+	assert(username, "Login username");
+	assert(password, "Login password");
+	console.log("Usuario logueado correctamente");
+});
+```
+
+![Test con assert](https://www.dropbox.com/s/bhv8gzonwqgaizw/assertNode.PNG?dl=1)
+
+### Ejercicio 7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta.
+
+Ahora he hecho los test en la función que guarda y envía los mensajes.
+
+1. Instalamos mocha con: *npm install -g mocha*
+
+2. Creamos un directorio para tests, y dentro de este, el fichero test.js
+
+```
+var assert = require("assert");
+chat = require(__dirname+"/../server.js");
+
+describe('Chat', function(){
+	describe('Carga', function(){
+		it('Debe cargar el programa', function(){
+			assert(chat, "Cargado");
+		});
+	});
+});
+
+```
+
+3. Ejecutamos el test con *mocha test/test.js*
+
+![Ejecución correcta de Mocha](https://www.dropbox.com/s/kfzx9g98pgqx6dj/testMocha.PNG?dl=1)
+
+### Ejercicio 8: Haced los dos primeros pasos antes de pasar al tercero.
+
+1. Me he dado de alta en Shippable conectándome directamente desde mi usuario en GitHub.
+
+2. Creamos el fichero shippable.yml con el siguiente contenido:
+
+```
+# Build Environment
+build_environment: Ubuntu 14.04
+
+# language setting
+language: node_js
+
+# version numbers, testing against two versions of node
+node_js:
+ - "0.11"
+ - "0.12"
+
+# npm install runs by default but shown here for illustrative purposes
+before_install:
+ - npm install -g mocha
+ 
+ # Running npm test to run your test cases
+script:
+ - mocha
+ ```
+ 
+3. Cargamos el repositorio y le damos a BUILD THIS BRANCH, y ya tendremos activada la integración contínua.
+
+Podemos ver el correcto funcionamiento cuando cada vez que hacemos un push del repositorio, automáticamente se ejecutan los test indicados, y si se pasan, marca el build con "succes".
+
+![Integración continua con Shippable](https://www.dropbox.com/s/8yu4xssngstoyqm/succesShippable.PNG?dl=1)

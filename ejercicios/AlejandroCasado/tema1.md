@@ -10,23 +10,23 @@ El precio sin IVA del equipo es 1.330 €
 
 ####Amortización a 4 años
 
-Si queremos amortizarlo en un plazo de 4 años cada año amortizamos un [26%](http://www.infoautonomos.com/fiscalidad/gastos-deducibles-autonomos-irpf-estimacion-directa/), salvo el último.
+Si queremos amortizarlo en un plazo de 4 años cada año amortizamos un [25%](http://www.infoautonomos.com/fiscalidad/gastos-deducibles-autonomos-irpf-estimacion-directa/), ya que es el máximo autorizado, por lo que cada año quedaría así:
 
-* **Primer año**: 1.330 € * 0.26 = 345,8 €
+* **Primer año**: 1.330 € * 0.25 = 332,5 €
 
-* **Segundo año**: 1.330 € * 0.26 = 345,8 €
+* **Segundo año**: 1.330 € * 0.25 = 332,5 €
 
-* **Tercer año**: 1.330 € * 0.26 = 345,8 €
+* **Tercer año**: 1.330 € * 0.25 = 332,5 €
 
-* **Cuarto año**: 1.330 € * 0.22 = 292,6 €
+* **Cuarto año**: 1.330 € * 0.25 = 332,5 €
 
 ####Amortización a 7 años
 
 En el caso de amortizarlo a siete años podemos hacer lo siguiente:
 
-* **Primer año**: 1.330 € * 0.26 = 345,8 €
+* **Primer año**: 1.330 € * 0.25 = 332,5 €
 
-* **Segundo año**: 1.330 € * 0.26 = 345,8 €
+* **Segundo año**: 1.330 € * 0.25 = 332,5 €
 
 * **Tercer año**: 1.330 € * 0.10 = 133 €
 
@@ -36,7 +36,7 @@ En el caso de amortizarlo a siete años podemos hacer lo siguiente:
 
 * **Sexto año**: 1.330 € * 0.10 = 133 €
 
-* **Septimo año**: 1.330 € * 0.08 = 106,4 €
+* **Septimo año**: 1.330 € * 0.10 = 133 €
 
 ##Ejercicio 2
 

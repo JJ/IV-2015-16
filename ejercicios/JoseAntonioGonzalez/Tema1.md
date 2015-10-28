@@ -6,17 +6,17 @@ El servidor encontrado es un Dell PowerEdge T110 II:
 
 http://configure.euro.dell.com/dellstore/config.aspx?oc=pet1102bu&model_id=poweredge-t110-2&c=es&l=es&s=bsd&cs=esbsdt1&
 
-Su precio total es de 699€. Las amortizaciones respectivas a 4 y 7 años son:
+Su precio total es de 800€. Las amortizaciones respectivas a 4 y 7 años son:
 	
     Amortizacion 4 años:
-    699 / 4 = 174.75
+    800 / 4 = 200
     
-El servidor debe producir 174.75 €/año si queremos que se amortice en 4 años.
+El servidor debe producir 200 €/año si queremos que se amortice en 4 años.
 
 	Amortización 7 años:
-    699 / 7 = 99.86
+    800 / 7 = 114.28
     
-El servidor debe producir 99.86€/años si queremos que se amortice en 7 años.
+El servidor debe producir 114.28 €/año si queremos que se amortice en 7 años.
 
 #Ejercicio 2
 
@@ -25,10 +25,10 @@ El servidor debe producir 99.86€/años si queremos que se amortice en 7 años.
 COnsultamos el sitio http://www.1and1.es en busca de uno de sus servidores virtuales. En la imagen, vemos algunas de sus tarifas para estos servidores virtuales. Nos quedamos con la primera de todas, que vale 20€ al mes (y no 9.99 como aparece en la imagen, ya que ese precio es si se contrata un mínimo de 24 meses)
 
 ![](https://www.dropbox.com/s/pnt79qjg00aa01d/1and1.png?dl=1)
-https://www.dropbox.com/s/pnt79qjg00aa01d/1and1.png?dl=0
+
 EL coste total sería en 6 meses de 120 €.
 
-Ahora, comparamos el precio que nos costaría contratar una máquina ddicada de similares características. Tal y como se aprecia en la imagen, el coste es mucho superior, ya que asciende a más de 43 euros:
+Ahora, comparamos el precio que nos costaría contratar una máquina dedicada de similares características. Tal y como se aprecia en la imagen, el coste es mucho superior, ya que asciende a más de 43 euros:
 
 ![](https://www.dropbox.com/s/850gtzgm3rka80f/1and1_2.png?dl=1)
 
@@ -46,11 +46,7 @@ Estos precios son claramente inferiores a los 120€ que nos cuesta contratarlo 
 
 #### 1. ¿Qué tipo de virtualización usarías en cada caso? Comentar en el foro
 
--Para varios clientes en un sólo servidor: Usaría una virtualización a nivel de SO, ya que cada usuario comparte el mismo sistema (el servidor), pero todos quedan independientes los unos de los otros, por lo que no hay problemas de seguridad y los cleintes tendrán la sensación final de que tienen un sistema dedicado
-
--Para crear sistema eficiente web + middleware + bd: Usaría una virtualización total. Primero, tomaría una imagen del sistema operativo y programas exclusivamente necesarios, y haría una imagen de instalación. Esa instalación la pondría en una máquina virtual, ya que así el servidor queda montado rápidamente (y repuesto en caso de pérdidas de datos, ya que tenemos la imagen de instalación). Utilizar una virtualización a nivel de aplicación necesitaría ejecutar "los emuladores" (como WINE), por lo que tenemos corriendo el SO + emulador + aplicación, gastando más recursos.
-
-Para crear un sistema de pruebas software e integración: Yo pondría un sistema de virtualización de entornos de desarrollo, ya que será el que más representa la realidad mientras estamos haciendo los programas / scripts, y tendremos (en teoría) menos problemas a la hora de pasarlo a producción.
+He tenido que trabajar con sistemas operativos virtualizados al completo en mis prácticas, siendo así una virtualización plena (por ejemplo usando Virtual Box para emular servidores web). Aunque en las aulas de prácticas, para algunas asignaturas, hemos necesitado usar wine para ejecutar programas hechos para Windows dentro de Linux. Esto sería del tipo "virtualización de aplicaciones". También he usado este tipo de virtualización en la segunda parte del ejercicio 4, ya que he tenido que usar CDE
 
 #### 2. Crear un programa simple en cualquier lenguaje interpretado para Linux, empaquetarlo con CDE y probarlo en diferentes distribuciones.
 
@@ -79,3 +75,24 @@ Para saber si tenemos KVM activado, utilizamos la orden
 	egrep -c "vmx" /proc/cpuinfo
     
 En nuestro caso, nos devuelve 4, que son el número de procesadores que tienen la tecnología KVM activada.
+
+#Ejercicio 5
+
+#### 5.1 Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
+
+No podemos ejecutar la orden kvm-ok sin tener antes el programa cpu-checker instalado. Para ello:
+
+	sudo apt-get install cpu-checker
+
+Y una vez instalado, ejecutamos kvm-ok:
+
+	joseantonio@Asus:~$ kvm-ok 
+	INFO: /dev/kvm exists
+	KVM acceleration can be used
+    
+#### 5.2 Instalar un hipervisor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios.     
+Para unas prácticas anteriores, tenía instalado en mi equipo Virtual Box. Aunque no puedo poner capturas de la instalación, la orden sería:
+	
+    sudo apt-get install virtualbox
+    
+O bien, en su [página web](https://www.virtualbox.org/wiki/Linux_Downloads) podemos descargar una versión, que en el caso de Ubuntu, se puede instalar comodamente desde el centro de Software.
