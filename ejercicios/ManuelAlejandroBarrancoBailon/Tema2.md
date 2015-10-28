@@ -90,7 +90,7 @@ Además ahora en la terminal, vemos como el código HTTP ahora es [500](https://
 **Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.**
 
 En este apartado los test que he realizado han sido evaluar la creación de peñas y jugadores y la pertenencia de éstos a una de ellas sobre la base de datos SQLite de mi aplicación.
-En Django, estos tests han de ser escritos en el fichero **tests.py** y este fichero ha de ser ejecutado con **python manage.py test** o más específicamente **python manage.py test *directorio_app* ** (en mi caso *python manage.py test penhas/* ya que el directorio *penhas* es el de mi aplicación que contiene el modelo de base de datos).
+En Django, estos tests han de ser escritos en el fichero **tests.py** y este fichero ha de ser ejecutado con **python manage.py test** o más específicamente **python manage.py test "directorio_app" ** (en mi caso *python manage.py test penhas/* ya que el directorio *penhas* es el de mi aplicación que contiene el modelo de base de datos).
 Por tanto, mi fichero *tests.py* ha quedado de la siguiente forma:
 ![Fichero tests.py](http://i1016.photobucket.com/albums/af281/raperaco/test.py_zpsv4lobchl.png)
 
