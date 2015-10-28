@@ -59,3 +59,16 @@
 - [X] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 
 - [X] Comprender el papel de las build tools o herramientas de automatización.
+
+##Objetivos de la 4ª semana
+
+- [X] Terminar la configuración de los sistemas de integración continua
+- [X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+###Otros objetivos
+
+- [X] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+- [ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+- [X] Comprender los mecanismos de despliegue automático.
+- [ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
