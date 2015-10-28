@@ -259,8 +259,6 @@ Ejecutamos las pruebas con mocha y vemos que son satisfactorias: *mocha test/tes
 
 ![Aplicacion Porra desplegada en Heroku](https://www.dropbox.com/s/6qulzogdpatz6iw/despliegueHeroku.PNG?dl=1)
 
-[Aquí](https://github.com/romilgildo/Porra-Heroku) tenemos la aplicación que hemos desplegado en Heroku, dentro del repositorio en GitHub.
-
 8. Por último vamos a crear un repositorio en mi cuenta de GitHub con la aplicación que hemos desplegado.
 
 - git remote rm origin
@@ -268,12 +266,14 @@ Ejecutamos las pruebas con mocha y vemos que son satisfactorias: *mocha test/tes
 - git remote add origin git@github.com:romilgildo/Porra-Heroku.git
 - git push -u origin master
 
+[Aquí](https://github.com/romilgildo/Porra-Heroku) tenemos la aplicación que hemos desplegado en Heroku, dentro del repositorio en GitHub.
+
 ### Ejercicio 6: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
 
 Vamos a configurar primeramente Travis, para ello creamos el fichero [.travis.yml](https://github.com/romilgildo/Porra-Heroku/blob/master/.travis.yml) con el siguiente contenido:
 
 ```
-# Selección del lenguaje, en nuestro caso python. 
+# Selección del lenguaje 
 language: node_js   
 
 node_js:
