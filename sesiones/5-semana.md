@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-#Quinta semana, comienza 28 de octubre
+#Quinta semana, comienza el 28 de octubre
 
 ##Importante
 
-Todos podéis participar en los
+Todavía está abierto el plazo de inscripción para los 
 [premios a proyectos libres de la UGR](http://osl.ugr.es/bases-de-los-premios-a-proyectos-libres-de-la-ugr/). Hasta
-1000€ al mejor proyecto. Además, contará con puntos en el primer hito
-del proyecto.
+1000€ al mejor proyecto. 
 
 ##Objetivos de la semana
 
