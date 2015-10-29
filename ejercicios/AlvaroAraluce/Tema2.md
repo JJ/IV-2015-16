@@ -264,6 +264,7 @@ Destroying test database for alias 'default'...
 # Ejercicio 7
 **Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.**
 
+Con Django ya disponemos de un programa para realizar test que además nos devuelve el tiempo de ejecución.
 
 Definimos un sencillo tests.py:
 
@@ -308,18 +309,19 @@ class PracticosModelTest(TestCase):
 Y ya podemos realizar la ejecución del test:
 
 ```
-$ python manage.py test
 Creating test database for alias 'default'...
 La empresa se ha creado satisfactoriamente
 .Se ha comprobado el formulario de la empresa
+.Se ha modificado la nota
 .Se ha calificado a la empresa
 .Se ha comprobado el formulario de los practicos
 .
 ----------------------------------------------------------------------
-Ran 4 tests in 0.010s
+Ran 5 tests in 0.011s
 
 OK
 Destroying test database for alias 'default'...
+
 ```
 
 Como algo adicional, podemos añadir los modelos a la base de datos sqlite y ver que, efectivamente, estamos definiendo la base de datos:
