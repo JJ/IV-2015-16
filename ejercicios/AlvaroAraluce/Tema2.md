@@ -179,3 +179,120 @@ Y ahora podemos documentar lo que queramos. Como ejemplo:
 ```
 $ pycco *.py
 ```
+
+# Ejercicio 6
+**Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).**
+
+Para este ejercicio necesitamos definir los modelos de datos que vamos a usar y los formularios sobre los que vamos a hacer el test.
+
+Definimos el fichero models.py:
+
+```
+from django.db import models
+from datetime import datetime
+
+class Empresa(models.Model):
+
+	nombre = models.CharField(max_length=100)
+	nEmpleados = models.IntegerField(default=0)
+	localizacion = models.CharField(max_length=100)
+	fecha_creacion = models.DateField(default=datetime.now(), blank=True)
+	def __str__(self):
+		return self.nombre
+
+class Practicos(models.Model):
+
+	Nombre = models.CharField(max_length=100)
+	calificacion = models.IntegerField(default=0)
+	empresa = models.ForeignKey(Empresa)
+	def __str__(self):
+		return self.Nombre
+```
+Y, para que Django los vea modificamos el fichero admin.py de la siguiente manera:
+
+```
+from django.contrib import admin
+
+from .models import Empresa, Practicos
+
+admin.site.register(Empresa)
+admin.site.register(Practicos)
+```
+
+Ahora también podemos definir los formularios para cada modelo:
+
+```
+from django import forms
+from .models import Empresa, Practicos
+
+class insertaEmpresa(forms.ModelForm):
+
+	class Meta:
+
+		model = Empresa
+		fields = ('nombre','nEmpleados','localizacion', 'fecha_creacion')
+
+class insertaPractico(forms.ModelForm):
+
+	class Meta:
+
+		model = Practicos
+		fields = ('Nombre','calificacion','empresa')
+```
+
+Definimos un sencillo test.py:
+
+```
+from django.test import TestCase
+
+from .forms import insertaEmpresa, insertaPractico
+from .models import Empresa, Practicos
+from datetime import datetime
+
+class EmpresaModelTest(TestCase):
+	def test_Empresa_representation(self):
+		e = Empresa(nombre='test', nEmpleados=150, localizacion='localizacion', fecha_creacion=datetime.now())
+		e.save()
+		self.assertEqual(e.nombre,'test')
+		print("La empresa se ha creado satisfactoriamente")
+
+	def test_formularioEmpresa_representation(self):
+		datos = { 'nombre' : 'test', 'nEmpleados' : 150, 'localizacion' : 'localizacion', 'fecha_creacion' :  datetime.now() }
+		form = insertaEmpresa(data=datos)
+		self.assertTrue(form.is_valid())
+		print("Se ha comprobado el formulario de la empresa")
+
+class PracticosModelTest(TestCase):
+	def test_Practicos_representation(self):
+		emp = Empresa(nombre='test', nEmpleados=150, localizacion='localizacion', fecha_creacion=datetime.now())
+		emp.save()
+		prac = Practicos(Nombre='alumno', calificacion=10, empresa=emp)
+		prac.save()
+		self.assertEqual(prac.empresa, emp)
+		print("Se ha calificado a la empresa")
+
+	def test_formularioPracticos_representation(self):
+		emp = Empresa(nombre='test', nEmpleados=150, localizacion='localizacion', fecha_creacion=datetime.now())
+		emp.save()
+		datos = { 'Nombre' : 'alumno', 'calificacion' : 10, 'empresa' : emp.id }
+		form = insertaPractico(data=datos)
+		self.assertTrue(form.is_valid())
+		print("Se ha comprobado el formulario de los practicos")
+```
+
+Y ya podemos realizar la ejecución del test:
+
+```
+$ python manage.py test
+Creating test database for alias 'default'...
+La empresa se ha creado satisfactoriamente
+.Se ha comprobado el formulario de la empresa
+.Se ha calificado a la empresa
+.Se ha comprobado el formulario de los practicos
+.
+----------------------------------------------------------------------
+Ran 4 tests in 0.010s
+
+OK
+Destroying test database for alias 'default'...
+```
