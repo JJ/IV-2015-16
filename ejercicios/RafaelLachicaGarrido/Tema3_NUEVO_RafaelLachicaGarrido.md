@@ -281,6 +281,8 @@ rafaellg8@system32:~/Documentos/GII/Cuarto/IV/myapp/node-js-getting-started$ git
 Counting objects: 3791, done.
 ```
 
+![herokuOpen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-27%20120054_zpsnsjiwnvu.png)
+
 #Ejercicio6
 ##Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
 Nos registramos y configuramos la carpeta que vamos a usar de github en Snap CI. Hacemos unas modificaciones y vemos que comienza la integración:
@@ -293,3 +295,30 @@ Counting objects: 5, done.
 ```
 
 ![SnapCI](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-27%20112014_zpsybjlhced.png)
+
+Configuramos los test para mocha en el panel de control
+![testing](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-28%20114845_zps0mizewao.png)
+
+#Ejercicio7
+##Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido. También en OpenShift se puede desplegar automáticamente usando Travis, por ejemplo. De hecho, incluso en Heroku se puede trabajar también con Travis para el despliegue automático, aunque es mucho más simple hacerlo con Snap CI como se ha indicado más arriba.
+También la he usado para desplegarla en Heroku, para ello he configurado algunas cosas en nodejs, en el package.json:
+edito el **package.json** para que arranque directamente desde la app remota en Heroku:
+```
+{
+  "name": "empresaIV",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "start": "heroku open"
+  },
+```
+Con esto si abrimos herokurlg en la web vemos que la web está funcionando correctamen:
+![imagenHerokuDesplegado](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-28%20120949_zpsexk8jju7.png)
+
+[herokuRLG](http://herokurlg.herokuapp.com/)
+
+También añadiré la app para que se inicio de forma automática y configuraré su despliegue en **Openshift**.
+
+![imagenOpenshift](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-10-28%20121206_zpsx0dacuxh.png)
+
+[URL openshift](http://myapp-rafaellg8.rhcloud.com)

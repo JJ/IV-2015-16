@@ -49,7 +49,7 @@
 
 - [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
-## Semana del 7 de octubre al 14 de octubre de 2015
+## Semana del 7 al 14 de octubre de 2015
 ### Objetivos de la semana
 
 - [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
@@ -74,7 +74,7 @@
 
 - [x] Comprender el papel de las build tools o herramientas de automatización.
 
-## Semana del 14 de octubre al 21 de octubre de 2015
+## Semana del 14 al 21 de octubre de 2015
 ### Objetivos de la semana
 
 - [x] Terminar la configuración de los sistemas de integración continua.
@@ -91,16 +91,16 @@
 
 - [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
-## Semana del 21 de octubre al 28 de octubre de 2015
+## Semana del 21 al 28 de octubre de 2015
 ### Objetivos de la semana
 
-- [ ] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+- [x] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
 
 - [x] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
 
 - [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
 
-- [ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
 ### Otros objetivos
 
@@ -108,6 +108,32 @@
 
 - [x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
 
+## Semana del 28 de octubre al 4 de noviembre de 2015
+### Objetivos de la semana
+
+- [ ] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+
+- [ ] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+
+- [ ] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo. 
+
+- [ ] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+### Otros objetivos
+
+- [x] Darse de alta y probar diferentes servicios PaaS.
+
+- [ ] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+
+- [ ] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+
+- [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases... 
+
+- [ ] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
 __________________________________________
 
 ## Objetivos de la asignatura
