@@ -10,7 +10,9 @@ Me he dado de alta en **Heroku**, **OpenShift** y **BlueMix**
 
 **Crear una aplicación en OpenShift y dentro de ella instalar WordPress.**
 
-[Wordpress en OpenShift](http://wordpress-paasforiv.rhcloud.com/)
+Usando la guia de instalación de aplicaciones de Openshift, he creado facilmente una instalación WordPress. [Wordpress en OpenShift](http://wordpress-paasforiv.rhcloud.com/)
+
+
 
 
 
