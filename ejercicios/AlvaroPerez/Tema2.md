@@ -12,7 +12,10 @@ Instalamos las diferentes versiones de **nvm**:
 
 ###Ejercicio2: Como ejercicio, algo ligeramente diferente: una web para calificar las empresas en las que hacen prácticas los alumnos. Las acciones serían crear empresa y listar calificaciones para cada empresa, crear calificación y añadirla (comprobando que la persona no la haya añadido ya), borrar calificación (si se arrepiente o te denuncia la empresa o algo) y hacer un ránking de empresas por calificación, por ejemplo. Crear un repositorio en GitHub para la librería y crear un pequeño programa que use algunas de sus funcionalidades. Si se quiere hacer con cualquier otra aplicación, también es válido.
 
-Web creada con **Node.js** siguiendo este tutorial: [Tutorial](http://codehero.co/nodejs-y-express-instalacion-e-iniciacion/)
+Web creada con **Node.js** siguiendo este tutorial:
+[Tutorial](http://codehero.co/nodejs-y-express-instalacion-e-iniciacion/).
+Repositorio de la apliación: [empresas](https://github.com/alvaro-gr/empresa-IV).
+
 
 ![Ejercicio2](https://www.dropbox.com/s/gvdmrrhto1rrrsy/Ejercicio2.png?dl=1)
 
@@ -32,7 +35,7 @@ Dentro del directorio donde guardamos nuestra aplicación cuando hacemos **npm i
 
 ###Ejercicio5: Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
-Primero instalamos grunt de maner global:
+Primero instalamos grunt de manera global:
 
 ![Ejercicio5a](https://www.dropbox.com/s/y8lzjd4xwelwa8f/Ejercicio5a.png?dl=1)
 
