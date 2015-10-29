@@ -240,7 +240,32 @@ class insertaPractico(forms.ModelForm):
 		fields = ('Nombre','calificacion','empresa')
 ```
 
-Definimos un sencillo test.py:
+Y en el fichero tests.py podemos definir diferentes aserciones. Por ejemplo, para probar la creación de una empresa:
+```
+e = Empresa(nombre='test', nEmpleados=150, localizacion='localizacion', fecha_creacion=datetime.now())
+e.save()
+self.assertEqual(e.nombre,'test')
+print("La empresa se ha creado satisfactoriamente")
+```
+
+Ejecutamos ``` $ python manage.py test``` y, si todo va bien obtendremos esta salida:
+```
+Creating test database for alias 'default'...
+La empresa se ha creado satisfactoriamente
+----------------------------------------------------------------------
+Ran 1 tests in 0.0s
+
+OK
+Destroying test database for alias 'default'...
+```
+
+
+
+# Ejercicio 7
+**Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.**
+
+
+Definimos un sencillo tests.py:
 
 ```
 from django.test import TestCase
