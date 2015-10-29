@@ -296,3 +296,12 @@ Ran 4 tests in 0.010s
 OK
 Destroying test database for alias 'default'...
 ```
+
+Como algo adicional, podemos añadir los modelos a la base de datos sqlite y ver que, efectivamente, estamos definiendo la base de datos:
+
+```
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver
+```
+Puedes conectar con la dirección http://127.0.0.1:8000/admin/ y trastear con las tablas que se han creado.
