@@ -38,8 +38,15 @@ Lamentablemente, webapp2 sólo está desarrollado para Python 2.7, tal y como in
 
 ####Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente. 
 
-Al estar trabajando con Python, he creído conveniente usar pip para empaquetar la aplicación del ejercicio 2.
+Al estar trabajando con python, he creído conveniente utilizar pip freeze. La orden es:
 
+	pip freeze > requirements.txt
+
+Esto copiará todos los paquetes que hay instalados ahora mismo en el equipo. Llegados a este punto, puede ser interesante utilizar virtualenv con nuestra aplicaión para que el requirement.txt tenga solamente los paquetes necesarios, y no absolutamente todo. Otra opción es borrar a mano del requirement todos los paquetes innecesarios. Más abajo detallo como poder realizar la primera opción.
+
+El requirement.txt [tiene este aspecto](https://github.com/JA-Gonz/appEjercicioIV/blob/master/requirements.txt)
+
+---------------
 He seguido [este tutorial](http://python-packaging.readthedocs.org/en/latest/).
 
 1º Ponemos el contenido del paquete en un mismo directorio, y lo nombramos con el nombre que queremos que tenga el paquete.
@@ -57,21 +64,10 @@ He seguido [este tutorial](http://python-packaging.readthedocs.org/en/latest/).
 
 	python setup.py install
     
-6º El paquete ya se habrá creado. Si queremos ejecutarlo con una sla orden, debemos de tener un fichero __init__.py dentro del directorio del paquete, que será el que se ejecute (una especie de "main"). Para comprobarlo, hacemos:
+6º El paquete ya se habrá creado. Si queremos ejecutarlo con una sla orden, debemos de tener un fichero __main__.py dentro del directorio del paquete, que será el que se ejecute (una especie de "main"). Para comprobarlo, hacemos:
 
 	python appEjercicioIV
 
-NOta: es posible que haya un error al instalar mysqldb. Seguir estos pasos:
-I found the solution on this blog post here but I’ll list the steps here anyway.
-
-    Be sure you have pip installed on your machine using this command:
-        sudo easy_install pip
-    If you already have pip installed, it’d be a good idea to upgrade it now:
-        sudo pip install pip --upgrade
-    Build the dependencies for python-mysqldb libraries:
-        sudo apt-get build-dep python-mysqldb
-    Install the Python MySQL libraries:
-        sudo pip install MySQL-python
 
 #Ejercicio 6
 
@@ -83,4 +79,9 @@ El código del test se puede ver en [este enlace](https://github.com/JA-Gonz/app
 
 EL fichero corresponidente de prueba se ha creado con "sure", y se puede ver en mi [repositorio](https://github.com/JA-Gonz/appEjercicioIV/blob/master/appEjercicioIV/test_sure.py)
 
-Es muy parecido al del ejercicio 6, pero realizando las modificaciones oportunas.
+Es muy parecido al del ejercicio 6, pero realizando las modificaciones oportunas. 
+
+Para ejecutar los test, debemos de instalar nose (sudo pip install nose). Este programa buscará todas las funciones de nombre "test_*" y las ejecutará:
+
+	nosetests test_sure.py
+    
