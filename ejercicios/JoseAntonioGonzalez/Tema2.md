@@ -98,3 +98,15 @@ Para ejecutar los test, debemos de instalar nose (sudo pip install nose). Este p
 
 	nosetests test_sure.py
     
+#Ejercicio 8
+
+Ingresamos en [Travis](https://travis-ci.org/), y en la parte superior derecha, hay un botón para loguearse a través de GitHub. Pulsamos en él y nos logueamos.
+
+Despés en la lista que nos aparece a la izquierda, podemos seleccionar repositorios de nuestro perfil, o bien de nuestras organizaciones. Simplemente, debemos de "encender" el repositorio en el que queramos incluir integración continua, tal y como aparece en la imagen:
+
+Pasados unos instantes, Travis ya está "pendiente" de los push que hagamos contra el repositorio. Nuestra próxima tarea será ahora decirle a Travis qué es lo que tiene que hacer. Estas órdenes se las tenemos que indicar en el fichero **.travis.yml**. [Aquí pdoemos ver en concreto el que he creado para la app](https://github.com/JA-Gonz/appEjercicioIV/blob/master/.travis.yml). Hay que tener en cuenta que hay que añadirle un script de testeo al final, para que Travis compruebe que nuestra subida de código realmente conduce a una versión estable o no.
+
+Tras corregir los posibles errores que puedan ir surgiendo durante el desarrollo de la aplicación, Travis ejecutará un test que pasará correctamente, tal y como se muestra en la imagen.
+
+
+    
