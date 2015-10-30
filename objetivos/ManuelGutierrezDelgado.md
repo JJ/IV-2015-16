@@ -71,9 +71,9 @@
 
 ##Objetivos a cubrir en la sesión 4.
 
- - [*] Terminar la configuración de los sistemas de integración continua
+ - [x] Terminar la configuración de los sistemas de integración continua
 
- - [*] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+ - [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
 ####Otros objetivos
 
@@ -106,7 +106,7 @@
 
  - [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
 
- - [] Aprender a usar integración continua en cualquier aplicación.
+ - [ ] Aprender a usar integración continua en cualquier aplicación.
 
 
 
