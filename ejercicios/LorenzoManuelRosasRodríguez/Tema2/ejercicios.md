@@ -111,6 +111,7 @@ Ya lo he realizado en el ejercicio 6, mi archivo se llama polls/tests.py.
 
 Yo he elegido travis:
 
-![img23](https://www.dropbox.com/s/o2yw439d6y3xuj6/img22.png?dl=1)
+![travis](https://www.dropbox.com/s/uoyn00dq4dw8vph/img23.png?dl=1)
+
 
 
