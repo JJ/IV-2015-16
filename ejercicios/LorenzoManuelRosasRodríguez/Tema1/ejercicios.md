@@ -106,15 +106,8 @@ Si funciona:
 
 Finalmente lo llevaríamos a otra máquina, ejecutaríamos el último paso y comprobaríamos que funciona correctamente.
 
-###Ejercicio5.1:Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
-
-Como puede verse no está instalado:
 
 
-![img](https://www.dropbox.com/s/drv3yvt0gfsk8p3/img1_tema1.png?dl=1)
 
-###Ejercicio 5.2: Instalar un hiper-visor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios. Podemos instalar virtual-box o Xen:
-
-**sudo apt-get install xen-hypervisor-amd64**
 
 
