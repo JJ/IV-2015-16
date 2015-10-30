@@ -1,3 +1,5 @@
+# [REPOSITORIO DE LA PRACTICA](https://github.com/araluce/Tema2IV)
+
 # Ejercicio 1
 **Instalar alguno de los entornos virtuales de node.js (o de cualquier otro lenguaje con el que se esté familiarizado) y, con ellos, instalar la última versión existente, la versión minor más actual de la 4.x y lo mismo para la 0.11 o alguna impar (de desarrollo).**
 
@@ -74,3 +76,289 @@ Instalamos entonces la versión que nos queda:
 ```
 $ nodeenv --node=0.11.16 --prebuilt env-0.11.16-prebuilt
 ```
+
+#Ejercicio 2
+
+**Como ejercicio, algo ligeramente diferente: una web para calificar las empresas en las que hacen prácticas los alumnos. Las acciones serían crear empresa y listar calificaciones para cada empresa, crear calificación y añadirla (comprobando que la persona no la haya añadido ya), borrar calificación (si se arrepiente o te denuncia la empresa o algo) y hacer un ránking de empresas por calificación, por ejemplo. Crear un repositorio en GitHub para la librería y crear un pequeño programa que use algunas de sus funcionalidades. Si se quiere hacer con cualquier otra aplicación, también es válido.**
+
+
+Para realizar este ejercicio he elegido python y Django. Para comenzar crearemos el entorno con **virtualenv** y activaremos el entorno:
+
+```
+$ virtualenv tema2IV
+$ cd tema2IV
+$ source bin/activate
+```
+E instalamos Django con el comando ``` $ pip install Django```
+
+Ya tenemos todas las herramientas, ahora tenemos que crear el proyecto y levantar el servidor para ponernos a trabajar.
+
+```
+$ django-admin startproject Proyecto
+$ cd Proyecto
+$ python manage.py startapp Proyecto
+$ python manage.py startapp aplicacion
+$ python manage.py runserver
+```
+
+Al iniciar el servidor me sale un aviso. Si no se activa la migración la aplicación podria no funcionar correctamente, así que la activamos.
+
+```
+$ python manage.py migrate
+$ python manage.py runserver
+```
+
+El servidor se ejecuta en la dirección [http://127.0.0.1:8000](http://127.0.0.1:8000/)
+
+# Ejercicio 3
+
+**Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?**
+Si ejecutamos python dentro de nuestro entorno virtual podemos ver que trabaja en este momento con **python 2.7.6**, pero podemos cambiar las versiones.
+
+Veamos de qué versiones disponemos y vamos a probar algunas de ellas:
+
+```
+$ ls -l /usr/bin/python*
+lrwxrwxrwx 1 root root       9 oct 26 17:27 /usr/bin/python -> python2.7
+lrwxrwxrwx 1 root root       9 oct 26 17:27 /usr/bin/python2 -> python2.7
+-rwxr-xr-x 1 root root 3345416 jun 22 20:51 /usr/bin/python2.7
+lrwxrwxrwx 1 root root       9 oct 26 17:27 /usr/bin/python3 -> python3.4
+-rwxr-xr-x 2 root root 3709944 oct 14 23:42 /usr/bin/python3.4
+-rwxr-xr-x 2 root root 3709944 oct 14 23:42 /usr/bin/python3.4m
+lrwxrwxrwx 1 root root      10 oct 26 17:27 /usr/bin/python3m -> python3.4m
+lrwxrwxrwx 1 root root      58 feb 20  2014 /usr/bin/pythontex -> ../share/texlive/texmf-dist/scripts/pythontex/pythontex.py
+-rwxr-xr-x 1 root root     306 feb 20  2014 /usr/bin/pythontex3
+```
+Vamos a instalar entonces la versión python2 y probamos si funciona o no:
+
+```
+$ virtualenv -p /usr/bin/python2 tema2IV
+$ python manage.py runserver
+```
+
+Funciona perfectamente. No me he dado cuenta que es la misma versión, ep
+
+Probamos hora la versión 3:
+
+```
+$ virtualenv -p /usr/bin/python3 tema2IV
+$ python manage.py runserver
+```
+
+Y obtengo un error de importación de módulos.
+
+#Ejercicio 4
+**Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente.**
+
+Como estamos en python, vamos a crear la descripción del módulo en el fichero **setup.py**. A continuación pongo la descripcción:
+
+```
+from setuptools import setup
+
+setup(name='Proyecto',
+    version='0.0.1',
+    description='Tema 2',
+    url='https://github.com/araluce/Tema2IV',
+    author='Alvaro Fernandez-Alonso Araluce',
+    author_email='araluce11@gmail.com',
+    license='GNU General Public License',
+    packages=['Proyecto'],
+    install_requires=[
+        'django',
+        'wheel',
+    ],
+    zip_safe=False)
+```
+Y lo instalamos con ```python setup.py install```
+
+# Ejercicio 5
+**Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.**
+
+Usaremos pycco para documentar el código. Antes de nada lo instalaremos de la siguiente forma: ``` $ pip install pycco```
+
+Y ahora podemos documentar lo que queramos. Como ejemplo:
+
+```
+$ pycco *.py
+```
+
+# Ejercicio 6
+**Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).**
+
+Para este ejercicio necesitamos definir los modelos de datos que vamos a usar y los formularios sobre los que vamos a hacer el test.
+
+Definimos el fichero models.py:
+
+```
+from django.db import models
+from datetime import datetime
+
+class Empresa(models.Model):
+
+	nombre = models.CharField(max_length=100)
+	nEmpleados = models.IntegerField(default=0)
+	localizacion = models.CharField(max_length=100)
+	fecha_creacion = models.DateField(default=datetime.now(), blank=True)
+	def __str__(self):
+		return self.nombre
+
+class Practicos(models.Model):
+
+	Nombre = models.CharField(max_length=100)
+	calificacion = models.IntegerField(default=0)
+	empresa = models.ForeignKey(Empresa)
+	def __str__(self):
+		return self.Nombre
+```
+Y, para que Django los vea modificamos el fichero admin.py de la siguiente manera:
+
+```
+from django.contrib import admin
+
+from .models import Empresa, Practicos
+
+admin.site.register(Empresa)
+admin.site.register(Practicos)
+```
+
+Ahora también podemos definir los formularios para cada modelo:
+
+```
+from django import forms
+from .models import Empresa, Practicos
+
+class insertaEmpresa(forms.ModelForm):
+
+	class Meta:
+
+		model = Empresa
+		fields = ('nombre','nEmpleados','localizacion', 'fecha_creacion')
+
+class insertaPractico(forms.ModelForm):
+
+	class Meta:
+
+		model = Practicos
+		fields = ('Nombre','calificacion','empresa')
+```
+
+Y en el fichero tests.py podemos definir diferentes aserciones. Por ejemplo, para probar la creación de una empresa:
+```
+e = Empresa(nombre='test', nEmpleados=150, localizacion='localizacion', fecha_creacion=datetime.now())
+e.save()
+self.assertEqual(e.nombre,'test')
+print("La empresa se ha creado satisfactoriamente")
+```
+
+Ejecutamos ``` $ python manage.py test``` y, si todo va bien obtendremos esta salida:
+```
+Creating test database for alias 'default'...
+La empresa se ha creado satisfactoriamente
+----------------------------------------------------------------------
+Ran 1 tests in 0.0s
+
+OK
+Destroying test database for alias 'default'...
+```
+
+
+
+# Ejercicio 7
+**Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.**
+
+Con Django ya disponemos de un programa para realizar test que además nos devuelve el tiempo de ejecución.
+
+Definimos un sencillo tests.py:
+
+```
+from django.test import TestCase
+
+from .forms import insertaEmpresa, insertaPractico
+from .models import Empresa, Practicos
+from datetime import datetime
+
+class EmpresaModelTest(TestCase):
+	def test_Empresa_representation(self):
+		e = Empresa(nombre='test', nEmpleados=150, localizacion='localizacion', fecha_creacion=datetime.now())
+		e.save()
+		self.assertEqual(e.nombre,'test')
+		print("La empresa se ha creado satisfactoriamente")
+
+	def test_formularioEmpresa_representation(self):
+		datos = { 'nombre' : 'test', 'nEmpleados' : 150, 'localizacion' : 'localizacion', 'fecha_creacion' :  datetime.now() }
+		form = insertaEmpresa(data=datos)
+		self.assertTrue(form.is_valid())
+		print("Se ha comprobado el formulario de la empresa")
+
+class PracticosModelTest(TestCase):
+	def test_Practicos_representation(self):
+		emp = Empresa(nombre='test', nEmpleados=150, localizacion='localizacion', fecha_creacion=datetime.now())
+		emp.save()
+		prac = Practicos(Nombre='alumno', calificacion=10, empresa=emp)
+		prac.save()
+		self.assertEqual(prac.empresa, emp)
+		print("Se ha calificado a la empresa")
+
+	def test_formularioPracticos_representation(self):
+		emp = Empresa(nombre='test', nEmpleados=150, localizacion='localizacion', fecha_creacion=datetime.now())
+		emp.save()
+		datos = { 'Nombre' : 'alumno', 'calificacion' : 10, 'empresa' : emp.id }
+		form = insertaPractico(data=datos)
+		self.assertTrue(form.is_valid())
+		print("Se ha comprobado el formulario de los practicos")
+```
+
+Y ya podemos realizar la ejecución del test:
+
+```
+Creating test database for alias 'default'...
+La empresa se ha creado satisfactoriamente
+.Se ha comprobado el formulario de la empresa
+.Se ha modificado la nota
+.Se ha calificado a la empresa
+.Se ha comprobado el formulario de los practicos
+.
+----------------------------------------------------------------------
+Ran 5 tests in 0.011s
+
+OK
+Destroying test database for alias 'default'...
+
+```
+
+Como algo adicional, podemos añadir los modelos a la base de datos sqlite y ver que, efectivamente, estamos definiendo la base de datos:
+
+```
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver
+```
+Puedes conectar con la dirección http://127.0.0.1:8000/admin/ y trastear con las tablas que se han creado.
+
+# Ejercicio 8
+
+**Haced los dos primeros pasos antes de pasar al tercero. Crear un fichero de configuración para que se ejecute la integración y añadirlo al repositorio.**
+
+El primer paso es darse de alta en la [página de travis](https://travis-ci.org/) por medio de la cuenta de GitHub. Se dan los permisos a travis para que pueda acceder al repositorio deseado y se configura en la raíz del repositorio el fichero .travys.yml.
+
+En su página web nos muestran [algunos ejemplos](http://docs.travis-ci.com/user/languages/python/) que pueden sernos útiles para construir ese fichero.
+
+El fichero **.travis.yml** de este proyecto tiene esta pinta:
+
+```
+language: python
+python:
+ - "2.7"
+# command to install dependencies
+install:
+ - python tema2IV/Proyecto/setup.py install
+ - pip install -q Django==1.8.5
+ - pip install -q wheel==0.24.0
+# command to run tests
+script:
+ - cd tema2IV
+ - cd Proyecto
+ - python manage.py test
+```
+
+En nuestro perfil de la página de travis podemos ver cómo, automáticamente, se ejecuta el fichero que acabamos de configurar.
