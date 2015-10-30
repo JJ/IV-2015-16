@@ -362,3 +362,5 @@ script:
 ```
 
 En nuestro perfil de la página de travis podemos ver cómo, automáticamente, se ejecuta el fichero que acabamos de configurar.
+
+![Ejecucion de travis](http://es.zimagez.com/full/439ffa70a47e3607817defaa1cf6b754d6e6242531a466361fce99d1ba02b4f8.php)
