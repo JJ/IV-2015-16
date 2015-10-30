@@ -40,7 +40,7 @@
 
 [x] Aprender a instalar software libre en Linux.
 
-[ ] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
+[x] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
 
 [x] Usar git para hacer check-in en clase y expresar al final de cada sesión los objetivos alcanzados.
 
@@ -53,7 +53,7 @@
 
 [ ] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
 
-[ ] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+[x] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
 
 [x] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
 
@@ -69,7 +69,23 @@
 
 [x] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
 
-[ ] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+[x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 
-[ ] Comprender el papel de las build tools o herramientas de automatización.
+[x] Comprender el papel de las build tools o herramientas de automatización.
+
+##Sesión 4 (Semana del 14 de octubre al 21 de octubre)
+
+[x] Terminar la configuración de los sistemas de integración continua
+
+[x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+####Otros objetivos
+
+[x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+
+[ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+
+[x] Comprender los mecanismos de despliegue automático.
+
+[x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
