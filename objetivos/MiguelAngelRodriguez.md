@@ -22,3 +22,34 @@ Lista de objetivos de Miguel Ángel Rodríguez
 [X] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
 [X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
 [X] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
+
+##Otros objetivos
+
+[x] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige.
+
+[x] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (no[] https).
+
+[x] Tener configurdos los dos repositorios (origin, el propio, upstream, el del resto de la clase).
+
+[x] Tener a punto una instalación Linux para llevar a cabo las actividades de la asignatura. Si necesitas ayuda para instalarlo, los jueves a partir de las 12:30 está la OSL en la sala de reuniones.
+
+[x] Comenzar a usar los métodos de entrega de ejercicios propuestos para la asignatura usando GitHub.
+
+[x] Manejar de forma básica la línea de órdenes de Linux.
+
+[x] Aprender a instalar software libre en Linux.
+
+[x] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
+
+[x] Usar git para hacer *check-in[] en clase y expresar al final de cada sesión los objetivos alcanzados.
+
+[x] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
+
+[x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
+
+##Sesión 3
+[X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación. [] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+
+[X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
+
+[X] Entender los ficheros de *requisitos y su utilidad en las infraestructuras virtuales.
