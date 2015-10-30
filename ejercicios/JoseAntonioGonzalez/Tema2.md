@@ -68,6 +68,19 @@ He seguido [este tutorial](http://python-packaging.readthedocs.org/en/latest/).
 
 	python appEjercicioIV
 
+#Ejercicio 5 
+
+Para generar la documentación, he usado Pycco. La instalación es muy simple:
+
+	sudo pip install pycco
+
+Y para generar la documentación, aún más simple. Simplemente tenemos que pasar como parámetro todos los ficheros .py que queramos documentar. En mi caso:
+
+	pycco setup.py #Fichero realizado en el ejercicio 4 para empaquetar como forma opcional
+    pycco appEjercicioIV /*.py #Ubicación de todos los .py
+
+El resultado es una carpeta docs, con páginas html de documentación. Ésta consistirá en los comentarios que hayamos puesto en el código. Se puede ver los ejemplos en la [carpeta de documentacion](https://github.com/JA-Gonz/appEjercicioIV/tree/master/docs)
+
 
 #Ejercicio 6
 
