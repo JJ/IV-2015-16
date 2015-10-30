@@ -99,14 +99,16 @@ Y a continuación, mandamos a ejecutar los tests con la orden anteriormente menc
 
 ###Ejercicio 8
 **Configurar integración continua para nuestra aplicación usando Travis**
+Me he dado de alta en Travis, con un simple procedimiento, ya que Travis y GitHub están conectados por lo que Travis ha tomado mi usuario de GitHub habiéndome pedido permiso antes.
+A continuación en mi página de perfil en la cual me aparecen mis directorios de GitHub listados, activo la sincronización del repositorio en el cual se llevará a cabo la integración continua.
+![Repositorio sincronizado en Travis](http://i1016.photobucket.com/albums/af281/raperaco/repoSincronizadoTravis_zpstu3o0cnr.png)
 
+Ahora a continuación, creo el fichero *.travis.yml* indicándole la versión de Python que usa mi proyecto, el comando de instalación junto los requirements.txt y el comando para ejecutar los tests.
+![Fichero .travis.yml](http://i1016.photobucket.com/albums/af281/raperaco/travis.yml_zpsollo56zw.png)
 
-
-
-
-
-
-
+Tras hacer el push del fichero *.travis.yml* al repositorio de GitHub sincronizado con Travis, automáticamente Travis realiza las pruebas de integración continua (construcción y tests) sobre la aplicación superándolas correctamente.
+![Travis1](http://i1016.photobucket.com/albums/af281/raperaco/travis1_zps2adbhtfp.png)
+![Travis2](http://i1016.photobucket.com/albums/af281/raperaco/travis2_zpslmgsdbfb.png)
 
 
 
