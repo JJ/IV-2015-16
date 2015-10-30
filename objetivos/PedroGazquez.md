@@ -29,16 +29,28 @@
 
 # Objetivos Sesión 3:
 
-- [] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
+- [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
 - [x] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
 - [x] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
-- [] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
+- [x] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
 
 # Otros objetivos
 
 - [x] Entregar el primer hito del proyecto al final de la semana.
-- []  Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos. 
+- [x]  Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos. 
 - [x] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
-- [] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
-- [] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
-- [] Comprender el papel de las build tools o herramientas de automatización.
+- [x] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
+- [x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+- [x] Comprender el papel de las build tools o herramientas de automatización.
+
+# Objetivos Sesión 4
+
+- [x] Terminar la configuración de los sistemas de integración continua
+- [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+# Otros objetivos
+
+- [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+- [x] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+- [x] Comprender los mecanismos de despliegue automático.
+- [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
