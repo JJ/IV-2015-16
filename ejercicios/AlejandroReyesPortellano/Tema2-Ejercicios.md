@@ -189,7 +189,7 @@ setup(name='IV',
     zip_safe=False)
 ```
 Una vez realizado debemos ejecutar el comando "sudo python setup.py install" y una vez que se instale ejecutamos "sudo pip freeze" y nos muestra lo siguiente:  
-´´´
+```
 $ (AppIV)reyic@reyic-Aspire-5755G ~/AppIV/ProyectoIV $ sudo pip freeze
 [sudo] password for reyic: 
 BeautifulSoup==3.2.1
@@ -260,7 +260,7 @@ wsgiref==0.1.2
 wxPython==2.8.12.1
 wxPython-common==2.8.12.1
 zope.interface==4.0.5
-´´´
+```
 Como podemos observar Django=1.8.5 y wheel=0.26.0  
 
 #Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
@@ -277,12 +277,10 @@ Como podemos observar se ha creado una carpeta docs con el archivo documentado.
 #Ejercicio 6: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
 
 ```
-class e_t_c(TestCase):
-	def test_c_e(self):
-		e=Enterprise(name='test',town='ttest',sector='stest')
-		e.save()
-		self.assertEqual(e.name,'test')
-		print("Your Enterprise was created succesfully")
+	e=Enterprise(name='test',town='ttest',sector='stest')
+	e.save()
+	self.assertEqual(e.name,'test')
+	print("Your Enterprise was created succesfully")
 ```
 Ejecutamos el tests1.py con "python manage.py tests" y muestra por pantalla:  
 
