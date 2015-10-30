@@ -1,6 +1,7 @@
 #Ejercicio 1
 
 #### Instalar alguno de los entornos virtuales de node.js (o de cualquier otro lenguaje con el que se esté familiarizado) y, con ellos, instalar la última versión existente, la versión minor más actual de la 4.x y lo mismo para la 0.11 o alguna impar (de desarrollo).
+He decidio instalar este entorno de pruebas por que en el proyecto, la aplicación está escrita en Python.
 
 Tal y como aparece en su página web, seguimos las instrucciones:
 
@@ -8,7 +9,7 @@ Ejecutamos como administrador la siguiente orden:
 
 	pip install virtualenv
     
-He decidio instalar este entorno de pruebas por que en el proyecto, la aplicación está escrita en Python.
+![](https://www.dropbox.com/s/4s0bdd3y4ebgd77/ejercicio1.png?dl=1)
 
 
 #Ejercicio 2
@@ -68,7 +69,9 @@ He seguido [este tutorial](http://python-packaging.readthedocs.org/en/latest/).
 
 	python appEjercicioIV
 
+![](https://www.dropbox.com/s/etb99h4k92wr2md/ejercicio4.png?dl=1)
 #Ejercicio 5 
+####Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
 Para generar la documentación, he usado Pycco. La instalación es muy simple:
 
@@ -83,12 +86,14 @@ El resultado es una carpeta docs, con páginas html de documentación. Ésta con
 
 
 #Ejercicio 6
+####Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
 
 Se ha usado la libreria unittest para realizar las pruebas. 
 
 El código del test se puede ver en [este enlace](https://github.com/JA-Gonz/appEjercicioIV/blob/master/appEjercicioIV/test.py).
 
 #Ejercicio 7
+#### Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante. 
 
 EL fichero corresponidente de prueba se ha creado con "sure", y se puede ver en mi [repositorio](https://github.com/JA-Gonz/appEjercicioIV/blob/master/appEjercicioIV/test_sure.py)
 
@@ -99,14 +104,16 @@ Para ejecutar los test, debemos de instalar nose (sudo pip install nose). Este p
 	nosetests test_sure.py
     
 #Ejercicio 8
+#### Darse de alta. Muchos están conectados con GitHub por lo que puedes usar directamente el usuario ahí. A través de un proceso de autorización, acceder al contenido e incluso informar del resultado de los tests. Activar el repositorio en el que se vaya a aplicar la integración continua. Travis permite hacerlo directamente desde tu configuración; en otros se dan de alta desde la web de GitHub. Crear un fichero de configuración para que se ejecute la integración y añadirlo al repositorio.
 
 Ingresamos en [Travis](https://travis-ci.org/), y en la parte superior derecha, hay un botón para loguearse a través de GitHub. Pulsamos en él y nos logueamos.
 
 Despés en la lista que nos aparece a la izquierda, podemos seleccionar repositorios de nuestro perfil, o bien de nuestras organizaciones. Simplemente, debemos de "encender" el repositorio en el que queramos incluir integración continua, tal y como aparece en la imagen:
-
+![](https://www.dropbox.com/s/0sscicj3y6asc2l/ejercicio8.png?dl=1)
 Pasados unos instantes, Travis ya está "pendiente" de los push que hagamos contra el repositorio. Nuestra próxima tarea será ahora decirle a Travis qué es lo que tiene que hacer. Estas órdenes se las tenemos que indicar en el fichero **.travis.yml**. [Aquí pdoemos ver en concreto el que he creado para la app](https://github.com/JA-Gonz/appEjercicioIV/blob/master/.travis.yml). Hay que tener en cuenta que hay que añadirle un script de testeo al final, para que Travis compruebe que nuestra subida de código realmente conduce a una versión estable o no.
 
 Tras corregir los posibles errores que puedan ir surgiendo durante el desarrollo de la aplicación, Travis ejecutará un test que pasará correctamente, tal y como se muestra en la imagen.
 
+![](https://www.dropbox.com/s/1bkrk39jo6z41z6/ejrercicio8_2.png?dl=1)
 
     
