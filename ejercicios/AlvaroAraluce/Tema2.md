@@ -334,3 +334,31 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 Puedes conectar con la dirección http://127.0.0.1:8000/admin/ y trastear con las tablas que se han creado.
+
+# Ejercicio 8
+
+**Haced los dos primeros pasos antes de pasar al tercero. Crear un fichero de configuración para que se ejecute la integración y añadirlo al repositorio.**
+
+El primer paso es darse de alta en la [página de travis](https://travis-ci.org/) por medio de la cuenta de GitHub. Se dan los permisos a travis para que pueda acceder al repositorio deseado y se configura en la raíz del repositorio el fichero .travys.yml.
+
+En su página web nos muestran [algunos ejemplos](http://docs.travis-ci.com/user/languages/python/) que pueden sernos útiles para construir ese fichero.
+
+El fichero **.travis.yml** de este proyecto tiene esta pinta:
+
+```
+language: python
+python:
+ - "2.7"
+# command to install dependencies
+install:
+ - python tema2IV/Proyecto/setup.py install
+ - pip install -q Django==1.8.5
+ - pip install -q wheel==0.24.0
+# command to run tests
+script:
+ - cd tema2IV
+ - cd Proyecto
+ - python manage.py test
+```
+
+En nuestro perfil de la página de travis podemos ver cómo, automáticamente, se ejecuta el fichero que acabamos de configurar.
