@@ -58,7 +58,7 @@
 - [x] Comprender los mecanismos de despliegue automático.
 - [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales. 
 
-##Tema 2
+##Objetivos Tema 2
 
 ###Cubre los siguientes objetivos de la asignatura
 
