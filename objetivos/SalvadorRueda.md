@@ -68,3 +68,12 @@
 
 - [x] Comprender los mecanismos de despliegue automático.
 
+##Tema 2
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+- [x] Entender el concepto de DevOps.
+
+- [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+
+- [x] Aprender a usar integración continua en cualquier aplicación
