@@ -33,18 +33,18 @@ He realizado la web con **Node.js** siguiendo los pasos del siguiente tutorial:
 
 Dentro del directorio de nuestra aplicación si ejecutamos **npm init**, automaticamente se crea el package.json.
 
-![package.json](https://i.gyazo.com/5a4d6faccfc0be11a30bea9a0064f78c.png)
+![package.json](https://i.gyazo.com/343364853ac30bb08ea32b5986effd10.png)
 
 
+#Ejercicio 5.
+##Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
+Instalamos grunt con el comando **sudo npm install -g grunt-cli**
 
+![https://gyazo.com/9b13583306376bf1a62cda8034cdd03a](https://i.gyazo.com/9b13583306376bf1a62cda8034cdd03a.png)
 
+Instalamos docco con el comando **sudo npm install docco grunt-docco --save-dev**.
 
+![https://gyazo.com/e688adf370bb87ec39645e140a4240ea](https://i.gyazo.com/e688adf370bb87ec39645e140a4240ea.png)
 
-
-
-
-
-
-
-
+Al terminal de instalar, para generar la documentación hacemos: **docco *js** y se genera por cada **.js** un fichero **html**.
