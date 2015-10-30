@@ -71,42 +71,42 @@
 
 ##Objetivos a cubrir en la sesión 4.
 
-[*] Terminar la configuración de los sistemas de integración continua
+ - [*] Terminar la configuración de los sistemas de integración continua
 
-[*] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+ - [*] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
 ####Otros objetivos
 
-[x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+ - [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
 
-[ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+ - [ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
 
-[] Comprender los mecanismos de despliegue automático.
+ - [ ] Comprender los mecanismos de despliegue automático.
 
-[ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales. 
+ - [ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales. 
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 ## Tema 1
 
-- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
-- [x] Comprender la diferencia entre infraestructura virtual y real.
-- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
-- [x] Conocer el concepto de software libre y su importancia dentro de la computación nube.
-- [x] Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
+ - [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+ - [x] Comprender la diferencia entre infraestructura virtual y real.
+ - [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+ - [x] Conocer el concepto de software libre y su importancia dentro de la computación nube.
+ - [x] Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
 
 ##Tema 2
 
-[*] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+ - [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 
 ####Objetivos específicos
 
-[x] Entender el concepto de DevOps.
+ - [x] Entender el concepto de DevOps.
 
-[x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+ - [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
 
-[] Aprender a usar integración continua en cualquier aplicación.
+ - [] Aprender a usar integración continua en cualquier aplicación.
 
 
 
