@@ -82,8 +82,9 @@ Lista de objetivos de Santiago de Diego
   
   
 #Objetivos cuarta semana
-1. Terminar la configuración de los sistemas de integración continua
-2. Comprender el nivel *plataforma* de la infraestructura virtual y su uso en prueba y producción.
+
+[x] Terminar la configuración de los sistemas de integración continua
+[X] Comprender el nivel *plataforma* de la infraestructura virtual y su uso en prueba y producción.
 
 ##Otros objetivos
 

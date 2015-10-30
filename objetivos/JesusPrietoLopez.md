@@ -64,3 +64,14 @@ Lista de objetivos de Jesús Prieto López
 - [X] Comprender los mecanismos de despliegue automático.
 - [ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
+##Tema 2
+
+- [X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+###Objetivos específicos
+
+- [X] Entender el concepto de DevOps.
+- [X] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+- [X] Aprender a usar integración continua en cualquier aplicación.
+
+
