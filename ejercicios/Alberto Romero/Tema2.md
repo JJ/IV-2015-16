@@ -1,11 +1,10 @@
-#Alberto Romero Cañadas 
+#Alberto Romero Cañadas
 #Tema 2
 
 ##Ejercicio 1.
 ##Instalar alguno de los entornos virtuales de node.js (o de cualquier otro lenguaje con el que se esté familiarizado) y, con ellos, instalar la última versión existente, la versión minor más actual de la 4.x y lo mismo para la 0.11 o alguna impar (de desarrollo).
 
 Siguiente el tutorial de la propia web de [Nodejs](http://nodejs.org/en/download/package-manager/), hemos instalado las diferentes versiones.
-
 
 ![Versiones Nodejs](https://i.gyazo.com/b57a48792659d0d59458e0a4bc56f3a6.png "Versiones Nodejs")
 
