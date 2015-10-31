@@ -51,7 +51,7 @@ Instalación de mocha con npm:
 
 ![Ejercicio7a](https://www.dropbox.com/s/4e561r4mvaj8hqg/Ejercicio7a.png?dl=1)
 
-En el siguiento fichero es para ver si se carga todo bien o no:
+En el siguiente fichero es para ver si se carga todo bien o no:
 
 ![Ejercicio7b](https://www.dropbox.com/s/ekoqecsbymog2g3/Ejercicio7b.png?dl=1)
 
