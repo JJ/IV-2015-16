@@ -37,12 +37,12 @@ Lista de objetivos de Miguel Ángel Rodríguez
 [x] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
-##Sesión 3
+##Sesión 4
 [X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación. [] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
 [X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
 [X] Entender los ficheros de *requisitos y su utilidad en las infraestructuras virtuales.
        
-##Sesión 4    
+##Sesión 5    
 [X] Terminar la configuración de los sistemas de integración continua
 [X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
