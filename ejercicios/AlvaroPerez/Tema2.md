@@ -45,6 +45,17 @@ Después instalamos docco:
 
 Y ahora para generar la documentación pues hacemos: **docco *js** y se genera por cada .js un fichero html.
 
+###Ejercicio7: Utilizando mocha
+
+Instalación de mocha con npm:
+
+![Ejercicio7a](https://www.dropbox.com/s/4e561r4mvaj8hqg/Ejercicio7a.png?dl=1)
+
+En el siguiento fichero es para ver si se carga todo bien o no:
+
+![Ejercicio7b](https://www.dropbox.com/s/4e561r4mvaj8hqg/Ejercicio7b.png?dl=1)
+
+
 ###Ejercicio8: Ejercicio: Haced los dos primeros pasos antes de pasar al tercero.
 
 Para poder hacer la integración con Travis debemos tener en nuestro repositorio el fichero .travis.yml configurado con el lenguaje que estamos utilizando y solamente decirle a Travis que sincronize.
