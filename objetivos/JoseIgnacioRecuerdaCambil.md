@@ -20,3 +20,8 @@ Lista de objetivos de Jose Ignacio Recuerda Cambil
 - [X] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
 - [X] Aprender a usar integración continua en cualquier aplicación.
 
+###Objetivos cuarta sesión
+- [X] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+- [X] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+- [X] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+- [X] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
