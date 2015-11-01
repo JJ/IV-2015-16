@@ -77,7 +77,7 @@ Primero debemos instalar grunt y docco con los siguientes comandos:
 
 2. Creamos el fichero test.js
 
-``
+````
 var assert = require("assert");
     prueba = require(__dirname+"/../server.js");
 
@@ -89,7 +89,7 @@ assert(web, "Cargado");
 });
 });
 
-``
+````
 3. Ejecutamos el test con *mocha test.js*
 
 
@@ -101,13 +101,13 @@ assert(web, "Cargado");
 
 2. Creamos el fichero .travis.yml con el siguiente contenido configurado con el lenguaje que estamos utilizando:
 
-``
+````
 language: node_js
 
 node_js:
 - 0.10.25
 
- ``
+ ````
  
 3. Cargamos el repositorio y le damos a BUILD THIS BRANCH, y ya tendremos activada la integración contínua.
 
