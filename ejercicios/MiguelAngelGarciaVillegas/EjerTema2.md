@@ -73,7 +73,7 @@ Para ver que el proyecto funciona
 Si el puerto del servicio está ocupado, 127.0.0.1:8000 se podría cambiar
 ejecutando python manage.py runserver numPuerto (ejemplo 8888)
 
-<img src="https://www.dropbox.com/s/0gjdbfq07shiw0g/imag.png?dl=0" />
+<img src="https://www.dropbox.com/home/IV?preview=imag.png" />
 
 Cuando comprobamos que todo funciona correctamente, nos disponemos a crear la aplicación.
 Desde la carpeta del proyecto, debemos ejecutar el comando
@@ -87,6 +87,7 @@ Después de ésta instrucción, nuestra carpeta IV2 queda con éste contenido.
 	- [] settings.py
 	- [] urls.py
 	- [] wsgi.py
+
 - [] appPracticas.py
   - [] __init__.py
   - [] models.py
@@ -95,6 +96,23 @@ Después de ésta instrucción, nuestra carpeta IV2 queda con éste contenido.
 
 ## Ejercicio 3.
 ### Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
+
+Hemos estado ejecuntando el programa con python 2.7.6 y sin problema.
+miguelangel@MiguelAngel ~/Escritorio/Curso15-16/IV$ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13)
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+
+Vamos a cambiar la versión de python, a ver que tal...
+
+miguelangel@MiguelAngel ~/Escritorio/Curso15-16/IV$ virtualenv -p /usr/bin/python3 IV2
+Running virtualenv with interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in IV2/bin/python3
+Not overwriting existing python script IV2/bin/python (you must use IV2/bin/python3)
+Installing setuptools, pip...done.
+
+Da error, a la hora de ejecución. 
 
 ## Ejercicio 4.
 ### Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente.
