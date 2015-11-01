@@ -73,7 +73,7 @@ Para ver que el proyecto funciona
 Si el puerto del servicio está ocupado, 127.0.0.1:8000 se podría cambiar
 ejecutando python manage.py runserver numPuerto (ejemplo 8888)
 
-<img src="https://photos-4.dropbox.com/t/2/AADYj_t7O0rBzqNyi7Y66OVk2pVoiS1Ykz_Fht2Vh8exfQ/12/380869476/png/32x32/1/_/1/2/imag.png/EKm7x4MDGA0gASgB/oqsCbEWUywLYlM77fBTWsW27NPwAYSTSYnFLzdTz16A?size=1024x768&size_mode=2" />
+<img src="https://www.dropbox.com/s/0gjdbfq07shiw0g/imag.png?dl=0" />
 
 Cuando comprobamos que todo funciona correctamente, nos disponemos a crear la aplicación.
 Desde la carpeta del proyecto, debemos ejecutar el comando
