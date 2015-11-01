@@ -30,12 +30,12 @@ Repositorio de la apliación: [empresaPrácticas](https://github.com/migueib17/e
 
 1. Algunas capturas mias siguiendo el [Tutorial](http://codehero.co/nodejs-y-express-instalacion-e-iniciacion/).
 
-[aquí](http://i1379.photobucket.com/albums/ah138/migueib17/21_zpsks3tcuox.png)
-[aquí](http://i1379.photobucket.com/albums/ah138/migueib17/22_zpsf3lehdsp.png)
+![1](http://i1379.photobucket.com/albums/ah138/migueib17/21_zpsks3tcuox.png)
+![2](http://i1379.photobucket.com/albums/ah138/migueib17/22_zpsf3lehdsp.png)
 
 2. Web creada:
 
-[aquí](http://i1379.photobucket.com/albums/ah138/migueib17/23_zpsnqfgwboo.png)
+![3](http://i1379.photobucket.com/albums/ah138/migueib17/23_zpsnqfgwboo.png)
 
 
 ### Ejercicio 3: Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
@@ -52,7 +52,7 @@ Con la orden nvm ls podemos ver la distintas versiones que tenemos instaladas. Y
 
 Dentro del directorio donde guardamos nuestra aplicación cuando hacemos npm init se crea el package.json.
 
-[Ejemplo de package.json](http://i1379.photobucket.com/albums/ah138/migueib17/24_zps3ouwcfmj.png)
+![Ejemplo de package.json](http://i1379.photobucket.com/albums/ah138/migueib17/24_zps3ouwcfmj.png)
 
 ### Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema para otro lenguaje de programación) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
@@ -77,7 +77,7 @@ Primero debemos instalar grunt y docco con los siguientes comandos:
 
 2. Creamos el fichero test.js
 
-```
+``
 var assert = require("assert");
     prueba = require(__dirname+"/../server.js");
 
@@ -94,13 +94,14 @@ assert(web, "Cargado");
 
 
 
+
 ### Ejercicio 8: Haced los dos primeros pasos antes de pasar al tercero.
 
 1. Me he dado de alta en Travis conectándome directamente desde mi usuario en GitHub.
 
 2. Creamos el fichero .travis.yml con el siguiente contenido configurado con el lenguaje que estamos utilizando:
 
-```
+``
 language: node_js
 
 node_js:
