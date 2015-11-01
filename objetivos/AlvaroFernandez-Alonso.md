@@ -39,3 +39,19 @@
 - [ ] Usar git para hacer *check-in* en clase y [expresar al final de cada sesión los objetivos alcanzados](Cumpliendo_Objetivos.md).
 - [ ] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 - [ ] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
+
+# Objetivos sesión 3
+
+- [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
+
+- [x] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
+
+- [x] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
+
+- [x] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
+
+# Objetivos sesión 4
+
+- [x] Terminar la configuración de los sistemas de integración continua
+
+- [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.

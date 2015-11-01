@@ -59,7 +59,7 @@
 
  
 ----------
-##**Sesión 3: Desarrollo basado en pruebas** ##
+##**Sesión 3: Objetivos de la semana** ##
 ###**7 de octubre** ###
 
  - [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
@@ -83,4 +83,46 @@
  - [x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 
  - [x] Comprender el papel de las build tools o herramientas de automatización.
+
+##**Tema 2: Desarrollo basado en pruebas** ##
+###**14 de octubre** ###
+
+- [x] Terminar la configuración de los sistemas de integración continua
+
+- [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+###Otros objetivos
+
+- [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+
+- [ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+
+- [x] Comprender los mecanismos de despliegue automático.
+
+- [ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales. 
+
+##**Sesión 4: Objetivos de la semana** ##
+###**14 de octubre** ###
+
+###Cubre los siguientes objetivos de la asignatura
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+
+###Objetivos específicos
+
+- [x] Entender el concepto de DevOps.
+
+- [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+
+- [x] Aprender a usar integración continua en cualquier aplicación
+
+
+
+
+
+
+
+
+
 
