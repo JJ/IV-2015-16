@@ -115,7 +115,7 @@ Lo ejecutamos con **idle-python3.4**
 Python 3.4.3 (default, Oct 14 2015, 20:28:29)
 [GCC 4.8.4] on linux
 Type "copyright", "credits" or "license()" for more information.
->>>
+
 
 Nos muestra errores y no ejecuta. No es compatible.  
 
@@ -133,11 +133,11 @@ Y se instala **python setup.py install**
 
 Contenido del fichero setup.py
 
-import os
-from setuptools import setup
+    import os
+      from setuptools import setup
 
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+        def read(fname):
+        return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
 
@@ -179,25 +179,25 @@ Y en docs/ vamos a encontrar los resultados.
 
 Archivo Admin.py
 
-from django.contrib import admin
-from .models import Empresa, Alumnos
+    from django.contrib import admin
+    from .models import Empresa, Alumnos
 
-  admin.site.register(Empresa)
-  admin.site.register(Alumnos)
+    admin.site.register(Empresa)
+    admin.site.register(Alumnos)
 
 Archivo Models.py
 
-from django.db import models
-from datetime import datetime
+    from django.db import models
+    from datetime import datetime
 
-class Empresa(models.Model):
+    class Empresa(models.Model):
 
     nombre = models.CharField(max_length=50)
     nAlumnos = models.IntegerField(default=0)
     def __str__(self):
         return self.nombre
 
-class Alumnos(models.Model):
+        class Alumnos(models.Model):
 
     nombrePrac = models.CharField(max_length=50)
     calificacion = models.IntegerField(default=0)
@@ -209,17 +209,17 @@ Archivo test.py
 
 Para crear empresa
 
-empresa = Empresa(nombre='UGR', nAlumnos = 23)
-empresa.save()
-self.assertEqual(empresa.nombre,'test')
-print("El alumno se ha creado satisfactoriamente")
+    empresa = Empresa(nombre='UGR', nAlumnos = 23)
+    empresa.save()
+    self.assertEqual(empresa.nombre,'test')
+    print("Se ha creado satisfactoriamente")
 
 Para Crear Alumno
 
-alumno = Alumnos(nombrePrac='test', calificacion ='6', empresa = UGR)
-alumno.save()
-self.assertEqual(alumno.nombre,'test')
-print("El alumno se ha creado satisfactoriamente")
+    alumno = Alumnos(nombrePrac='test', calificacion ='6', empresa = UGR)
+    alumno.save()
+    self.assertEqual(alumno.nombre,'test')
+    print("Se ha creado satisfactoriamente")
 
 Una vez tenemos los archivos creados, ejecutar **python manage.py test**
 
@@ -228,13 +228,13 @@ Una vez tenemos los archivos creados, ejecutar **python manage.py test**
 
 Archivo test.py
 
-from django.test import TestCase
+    from django.test import TestCase
 
-from .forms import addEmpresa, addAlumno
-from .models import Empresa, Alumnos
-from datetime import datetime
+    from .forms import addEmpresa, addAlumno
+    from .models import Empresa, Alumnos
+    from datetime import datetime
 
-class EmpresaModelTest(TestCase):
+    class EmpresaModelTest(TestCase):
     def test_Empresa_representation(self):
     empresa = Empresa(nombre='UGR', nAlumnos = 23)
     empresa.save()
@@ -247,7 +247,7 @@ class EmpresaModelTest(TestCase):
         self.assertTrue(form.is_valid())
         print("Se ha comprobado el formulario de la empresa")
 
-class AlumnosModelTest(TestCase):
+        class AlumnosModelTest(TestCase):
     def test_Alumnos_representation(self):
         empresaA = Empresa(nombre='test', nAlumnos=23)
         empresaA.save()
@@ -265,8 +265,11 @@ class AlumnosModelTest(TestCase):
         print("formulario de los practicos")
 
 Y para ejecutar
+
 $ python manage.py makemigrations
+
 $ python manage.py migrate
+
 $ python manage.py runserver
 
 ## Ejercicio 8.
@@ -277,17 +280,17 @@ Vamos a darnos de alta en Travis CI.
 
 Archivo  travis.yml
 
-language: python
-python:
- - "2.7.6"
-# command to install dependencies
-install:
- - python aplicacion/setup.py install
- - pip install -r aplicacion/requirements.txt
-# command to run tests
-script:
- - cd aplicacion
- - python manage.py test
+    language: python
+    python:
+    - "2.7.6"
+    # command to install dependencies
+    install:
+    - python aplicacion/setup.py install
+    - pip install -r aplicacion/requirements.txt
+    # command to run tests
+    script:
+    - cd aplicacion
+    - python manage.py test
 
 
 Accedemos a la web de Travis y una vez que este sincronizado con nuestro repositorio en github accedemos a current.
