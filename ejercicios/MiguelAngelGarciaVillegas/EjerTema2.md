@@ -73,11 +73,11 @@ Para ver que el proyecto funciona
 Si el puerto del servicio está ocupado, 127.0.0.1:8000 se podría cambiar
 ejecutando python manage.py runserver numPuerto (ejemplo 8888)
 
-<img src="https://www.dropbox.com/home/IV?preview=imag.png" />
+https://www.dropbox.com/s/0gjdbfq07shiw0g/imag.png?dl=0
 
 Cuando comprobamos que todo funciona correctamente, nos disponemos a crear la aplicación.
 Desde la carpeta del proyecto, debemos ejecutar el comando
-**python manage.py startapp appPrincipal**
+**python manage.py startapp appPracticas**
 
 Después de ésta instrucción, nuestra carpeta IV2 queda con éste contenido.
 
@@ -97,28 +97,82 @@ Después de ésta instrucción, nuestra carpeta IV2 queda con éste contenido.
 ## Ejercicio 3.
 ### Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
 
+
 Hemos estado ejecuntando el programa con python 2.7.6 y sin problema.
+
 miguelangel@MiguelAngel ~/Escritorio/Curso15-16/IV$ python
 Python 2.7.6 (default, Jun 22 2015, 17:58:13)
 [GCC 4.8.2] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 
-Vamos a cambiar la versión de python, a ver que tal...
+Vamos a cambiar la versión de python, con IDLE a ver que tal...
 
-miguelangel@MiguelAngel ~/Escritorio/Curso15-16/IV$ virtualenv -p /usr/bin/python3 IV2
-Running virtualenv with interpreter /usr/bin/python3
-Using base prefix '/usr'
-New python executable in IV2/bin/python3
-Not overwriting existing python script IV2/bin/python (you must use IV2/bin/python3)
-Installing setuptools, pip...done.
+**sudo apt-get install idle-python3.4**
+**sudo apt-get update**
 
-Da error, a la hora de ejecución. 
+Lo ejecutamos con **idle-python3.4**
+
+Python 3.4.3 (default, Oct 14 2015, 20:28:29)
+[GCC 4.8.4] on linux
+Type "copyright", "credits" or "license()" for more information.
+>>>
+
+Nos muestra errores y no ejecuta. No es compatible.  
+
+Cuando tenemos instalados varias versiones y nos disponemos a cambiar de una versión a otra, simplemente hacemos **update-alternatives --config python** y el sistema nos muestra la lista de opciones que tiene registradas y pregunta que versión queremos utilizar.
 
 ## Ejercicio 4.
 ### Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente.
 
+Vamos a crear la descrpcion en el archivo setup.py
+Y se instala **python setup.py install**
+
+- [] manage.py
+- [] practicaEmpresas
+- [] setup.py
+
+Contenido del fichero setup.py
+
+import os
+from setuptools import setup
+
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
+setup(
+
+      name = "practicas Empresas",
+    version = "0.0.1",
+    author = "Miguel Angel Garcia Villegas",
+    author_email = "magvugr@gmail.com",
+    description = ("Tema 2 Ejercicios "
+                                   "practicasEmpresas."),
+    license = "GNU",
+    keywords = "documentacion tutorial",
+    url = "https://github.com/magvugr/IV2.git",
+    packages=['practicasEmpresas', 'tests'],
+    #long_description=read('README'),
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        "Topic :: Utilities",
+        "License :: OSI Approved :: GNU General Public License",
+    ],
+)
+
+
 ## Ejercicio 5.
 ### Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
+
+Como estamos utilizando python, podríamos hacer una buena documentación utilizando Pycco.
+Si estás utilizando el Node.js pueden usar Docco.
+
+Primero lo instalamos **sudo pip install pycoo**
+
+Luego creamos la documentación **pycco practicasEmpresas/*.py practicasEmpresas/static/js/appPracticas.js**
+
+Y en docs/ vamos a encontrar los resultados.
+
+
 
 ## Ejercicio 6.
 ### Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
