@@ -111,15 +111,15 @@
 ## Semana del 28 de octubre al 4 de noviembre de 2015
 ### Objetivos de la semana
 
-- [ ] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+- [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
 
-- [ ] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+- [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
 
-- [ ] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+- [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
 
 - [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo. 
 
-- [ ] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+- [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
 
 - [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
