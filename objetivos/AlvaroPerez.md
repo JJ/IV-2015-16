@@ -62,7 +62,7 @@
 
 [x] Entregar el primer hito del proyecto al final de la semana.
 
-[] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
+[x] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
 
 [x] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
 
