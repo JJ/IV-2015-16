@@ -102,6 +102,20 @@ jueves a partir de las 12:30 está la OSL en la sala de reuniones.
 
 - [ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales. 
 
+##Tema 2
+
+###Cubre los siguientes objetivos de la asignatura
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+
+###Objetivos específicos
+
+- [x] Entender el concepto de DevOps.
+
+- [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+
+- [x] Aprender a usar integración continua en cualquier aplicación
 
 
 
