@@ -163,6 +163,17 @@ setup(
 ## Ejercicio 5.
 ### Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
+Como estamos utilizando python, podríamos hacer una buena documentación utilizando Pycco.
+Si estás utilizando el Node.js pueden usar Docco.
+
+Primero lo instalamos **sudo pip install pycoo**
+
+Luego creamos la documentación **pycco practicasEmpresas/*.py practicasEmpresas/static/js/appPracticas.js**
+
+Y en docs/ vamos a encontrar los resultados.
+
+
+
 ## Ejercicio 6.
 ### Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
 
