@@ -29,3 +29,25 @@ Una vez validado, ya podemos acceder a la interfaz de OpenShift y comenzar su co
 
 ##Ejercicio 2: Crear una aplicación en OpenShift y dentro de ella instalar WordPress.
 
+En la interfaz de OpenShift, buscamos el apartado Instant App y selecionamos WordPress 4
+![ej2](https://www.dropbox.com/s/nu9h41bb5ipz53g/ej2.png?dl=1)
+
+Elegimos la url de nuestra aplicación:
+![ej2_2](https://www.dropbox.com/s/486qm2lbrddeh4l/ej2_2.png?dl=1) 
+
+Y tras esperar un poco, nuestra aplicación ha sido creada:
+![ej2_3](https://www.dropbox.com/s/lkmw407uiu219ut/ej2_3.png?dl=1)
+
+La vinculamos a nuestra cuenta de WordPress:
+![ej2_4](https://www.dropbox.com/s/s479ifm3o64ladm/ej2_4.png?dl=1)
+
+Y listo, ya podemos empezar a personalizar la aplicación [WordPress](http://php-hugobarzano.rhcloud.com/)
+![ej2_5](https://www.dropbox.com/s/bxtp1xtle8vssrx/ej2_5.png?dl=1)
+
+
+
+
+
+
+
+
