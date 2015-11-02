@@ -57,10 +57,32 @@ compañero.
   - [x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
   - [x] Comprender el papel de las build tools o herramientas de automatización.
 
+
+## 14 de octubre
+
+### Lista de objetivos
+
   - [x] Terminar la configuración de los sistemas de integración continua
   - [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+### Otros objetivos
 
   - [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
   - [x] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
   - [x] Comprender los mecanismos de despliegue automático.
   - [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
+
+## 21 de octubre
+
+### Lista de objetivos
+
+  - [x] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+  - [x] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+  - [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+  - [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+
+### Otros objetivos
+  - [x] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
+  - [x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
