@@ -386,8 +386,6 @@ Una vez creada, vamos a clonar nuestro repositorio de la app que tenemos en Gith
 
 Y enlazamos con el repositorio de Openshift:
 
-- *git remote add openshift ssh://56353ee82d5271e9b70000ad@michat-iv2015.rhcloud.com/~/git/michat.git/* # la dirección ssh la obtenemos de la información que nos da rhc de la app al crearla
+- *git remote add openshift ssh://5637951c7628e1ecd60000dc@michat-iv2015.rhcloud.com/~/git/michat.git/* # la dirección ssh la obtenemos de la información que nos da rhc de la app al crearla
 - *git fetch openshift*
 - *git push -u openshift*
-
-
