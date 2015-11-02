@@ -86,19 +86,19 @@
 ###Quinta semana, comienza el 28 de octubre
 - [ ] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
 - [ ] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
-- [ ] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
-- [ ] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo. - [ ] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+- [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo. - [ ] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
 - [ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
 ###Otros objetivos
 
-- [ ] Darse de alta y probar diferentes servicios PaaS.
+- [x] Darse de alta y probar diferentes servicios PaaS.
 - [ ] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
 - [ ] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
 - [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases... 5 Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
 
 ###Objetivos del tema 3
-- [ ] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 - [ ] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
 - [ ] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS 
 - [ ] Aplicar el concepto de DevOps a este tipo específico de plataforma.
