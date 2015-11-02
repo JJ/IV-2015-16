@@ -18,19 +18,19 @@ Vamos a utilizar NVM. Para su instalación, hay que seguir los siguientes pasos:
 
 7. Por último, podemos ver las versiones instaladas con el comando *nvm ls*.
 
-![Versiones nodejs instaladas](https://www.dropbox.com/s/mpr5nxeobktxvfh/Captura%20de%20pantalla%20de%202015-10-21%2016%3A55%3A09.png?dl=0)
+![Versiones nodejs instaladas](http://i64.tinypic.com/6pc4li.png)
 
 ### Ejercicio 2: Como ejercicio, algo ligeramente diferente: una web para calificar las empresas en las que hacen prácticas los alumnos. Las acciones serían crear empresa y listar calificaciones para cada empresa, crear calificación y añadirla (comprobando que la persona no la haya añadido ya), borrar calificación (si se arrepiente o te denuncia la empresa o algo) y hacer un ránking de empresas por calificación, por ejemplo. Crear un repositorio en GitHub para la librería y crear un pequeño programa que use algunas de sus funcionalidades. Si se quiere hacer con cualquier otra aplicación, también es válido.
 
-El tutorial que he seguido para crear la aplicación está [aquí](http://www.codedrinks.com/como-crear-una-pagina-web-con-node-js-express-jade-y-stylus/)
+El tutorial que he seguido para crear la aplicación está [aquí](http://blog.koalite.com/2011/11/tutorial-node-js-express-jquery-i-creando-la-aplicacion/)
 
-El repositorio del programa que he creado esta [aquí](https://github.com/javiexfiliana7/app_nodejs.git)
+El repositorio del programa que he creado esta [aquí](https://github.com/javiexfiliana7/app_motos.git)
 
-Para ejecutarlo simplemente, clonamos el repositorio con *git clone* entramos en la carpeta, y hacemos *node server.js* en el directorio raíz de la aplicación.
+Para ejecutarlo simplemente, clonamos el repositorio con *git clone* entramos en la carpeta, y hacemos *node app.js* en el directorio raíz de la aplicación.
 
 Aquí una muestra de la aplicación funcionando:
 
-![Aplicacion](https://www.dropbox.com/s/1e878ui9zzqmtr3/ejer2.png?dl=0)
+![Aplicacion](http://i65.tinypic.com/9r3e60.png)
 
 
 ### Ejercicio 3: Ejecutar el programa en diferentes versiones del lenguaje. ¿Funciona en todas ellas?
@@ -45,7 +45,7 @@ Probamos con el resto de versiones que habíamos instalado en el ejercicio 1:
 Lo he hecho con el comando *npm init* ejecutado dentro del directorio de la aplicación.
 Solo habrá que ir rellenando los distintos parámetros que nos pide. Al final nos queda algo así:
 
-![resultado](https://www.dropbox.com/s/e600c9wyuclaz5f/ejer4.png?dl=0).
+![resultado](http://i63.tinypic.com/23gzolv.png).
 
 ### Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema para otro lenguaje de programación) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
@@ -57,11 +57,71 @@ Primero instalamos grunt y docco con los siguientes comandos:
 
 Ahora creamos el Gruntfile.js (en el directorio raíz de la aplicación que estamos creando):
 
-![Creación de Gruntfile](https://www.dropbox.com/s/yb0xsdsgrwzwqyh/ejer5a.png?dl=0)
+![Creación de Gruntfile](http://i65.tinypic.com/66cbgm.png)
 
-Y por último ejecutamos *grunt*, que produce la siguiente [documentación](https://github.com/javiexfiliana7/app_nodejs/tree/master/docs).
+Y por último ejecutamos *grunt*, que produce la siguiente [documentación](https://github.com/javiexfiliana7/app_motos/tree/master/docs).
 Vemos como lo hace sin errores:
-![Creación de documentación con Grunt](https://www.dropbox.com/s/97z6fqto588b911/ejr5.png?dl=0)
+![Creación de documentación con Grunt](http://i68.tinypic.com/vyqgc5.png)
+
+### Ejercicio 6: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga
+
+He añadido una asersion que comprueba el inicio del servicio.
+![Asersion](https://www.dropbox.com/home/15-16/iv-2015-16/imagenes/ejer_t2?preview=ejer5_gruntt.png)
+
+### Ejercicio 7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta.
 
 
+- Instalamos mocha si no lo tenemos con: *npm install -g mocha*
 
+- Creamos un directorio para tests, y dentro de este, el fichero test.js
+
+```
+var assert = require("assert");
+web_motos_enduro = require(__dirname+"/../app.js");
+
+describe('web_motos_enduro', function(){
+    describe('Probando el inicio del servicio...', function(){
+        it('El servicio esta trabajando!', function(){
+            assert(web_motos_enduro, "servicio parado!");
+        });
+    });
+});
+
+```
+
+3. Ejecutamos el test con *mocha test/test.js*
+![Ejecución correcta de Mocha](http://i65.tinypic.com/2yo1vo4.jpg)
+
+### Ejercicio 8: Haced los dos primeros pasos antes de pasar al tercero.
+
+- Usando el usuario de Github nos registramos en Shippable.
+
+- Creamos el fichero shippable.yml:
+
+```
+# Build Environment
+build_environment: Ubuntu 14.04
+
+# language setting
+language: node_js
+
+# version numbers, testing against two versions of node
+node_js:
+ - 0.12.7
+ - 0.11
+#for public modules use
+ https://github.com/javiexfiliana7/app_motos.git
+
+# npm install runs by default but shown here for illustrative purposes
+before_install:
+ - npm install -g mocha
+
+ # Running npm test to run your test cases
+script:
+ - mocha
+ after_script:
+ - ./node_modules/.bin/mocha -R xunit ./test > shippable/testresults/result.xml
+ ```
+
+3. Cargamos el repositorio y le damos a BUILD THIS BRANCH, cada vez que hacemos un push del repositorio, automáticamente se ejecutan los test indicados, y si se pasan, marca el build con "succes". Si no se pasan lo marca como "Fail"
+![Shippable](http://i67.tinypic.com/zxmg46.png)

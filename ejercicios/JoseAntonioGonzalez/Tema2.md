@@ -1,6 +1,7 @@
 #Ejercicio 1
 
 #### Instalar alguno de los entornos virtuales de node.js (o de cualquier otro lenguaje con el que se esté familiarizado) y, con ellos, instalar la última versión existente, la versión minor más actual de la 4.x y lo mismo para la 0.11 o alguna impar (de desarrollo).
+He decidio instalar este entorno de pruebas por que en el proyecto, la aplicación está escrita en Python.
 
 Tal y como aparece en su página web, seguimos las instrucciones:
 
@@ -8,7 +9,7 @@ Ejecutamos como administrador la siguiente orden:
 
 	pip install virtualenv
     
-He decidio instalar este entorno de pruebas por que en el proyecto, la aplicación está escrita en Python.
+![](https://www.dropbox.com/s/4s0bdd3y4ebgd77/ejercicio1.png?dl=1)
 
 
 #Ejercicio 2
@@ -38,8 +39,15 @@ Lamentablemente, webapp2 sólo está desarrollado para Python 2.7, tal y como in
 
 ####Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente. 
 
-Al estar trabajando con Python, he creído conveniente usar pip para empaquetar la aplicación del ejercicio 2.
+Al estar trabajando con python, he creído conveniente utilizar pip freeze. La orden es:
 
+	pip freeze > requirements.txt
+
+Esto copiará todos los paquetes que hay instalados ahora mismo en el equipo. Llegados a este punto, puede ser interesante utilizar virtualenv con nuestra aplicaión para que el requirement.txt tenga solamente los paquetes necesarios, y no absolutamente todo. Otra opción es borrar a mano del requirement todos los paquetes innecesarios. Más abajo detallo como poder realizar la primera opción.
+
+El requirement.txt [tiene este aspecto](https://github.com/JA-Gonz/appEjercicioIV/blob/master/requirements.txt)
+
+---------------
 He seguido [este tutorial](http://python-packaging.readthedocs.org/en/latest/).
 
 1º Ponemos el contenido del paquete en un mismo directorio, y lo nombramos con el nombre que queremos que tenga el paquete.
@@ -57,30 +65,55 @@ He seguido [este tutorial](http://python-packaging.readthedocs.org/en/latest/).
 
 	python setup.py install
     
-6º El paquete ya se habrá creado. Si queremos ejecutarlo con una sla orden, debemos de tener un fichero __init__.py dentro del directorio del paquete, que será el que se ejecute (una especie de "main"). Para comprobarlo, hacemos:
+6º El paquete ya se habrá creado. Si queremos ejecutarlo con una sla orden, debemos de tener un fichero __main__.py dentro del directorio del paquete, que será el que se ejecute (una especie de "main"). Para comprobarlo, hacemos:
 
 	python appEjercicioIV
 
-NOta: es posible que haya un error al instalar mysqldb. Seguir estos pasos:
-I found the solution on this blog post here but I’ll list the steps here anyway.
+![](https://www.dropbox.com/s/etb99h4k92wr2md/ejercicio4.png?dl=1)
+#Ejercicio 5 
+####Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
 
-    Be sure you have pip installed on your machine using this command:
-        sudo easy_install pip
-    If you already have pip installed, it’d be a good idea to upgrade it now:
-        sudo pip install pip --upgrade
-    Build the dependencies for python-mysqldb libraries:
-        sudo apt-get build-dep python-mysqldb
-    Install the Python MySQL libraries:
-        sudo pip install MySQL-python
+Para generar la documentación, he usado Pycco. La instalación es muy simple:
+
+	sudo pip install pycco
+
+Y para generar la documentación, aún más simple. Simplemente tenemos que pasar como parámetro todos los ficheros .py que queramos documentar. En mi caso:
+
+	pycco setup.py #Fichero realizado en el ejercicio 4 para empaquetar como forma opcional
+    pycco appEjercicioIV /*.py #Ubicación de todos los .py
+
+El resultado es una carpeta docs, con páginas html de documentación. Ésta consistirá en los comentarios que hayamos puesto en el código. Se puede ver los ejemplos en la [carpeta de documentacion](https://github.com/JA-Gonz/appEjercicioIV/tree/master/docs)
+
 
 #Ejercicio 6
+####Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
 
 Se ha usado la libreria unittest para realizar las pruebas. 
 
 El código del test se puede ver en [este enlace](https://github.com/JA-Gonz/appEjercicioIV/blob/master/appEjercicioIV/test.py).
 
 #Ejercicio 7
+#### Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante. 
 
 EL fichero corresponidente de prueba se ha creado con "sure", y se puede ver en mi [repositorio](https://github.com/JA-Gonz/appEjercicioIV/blob/master/appEjercicioIV/test_sure.py)
 
-Es muy parecido al del ejercicio 6, pero realizando las modificaciones oportunas.
+Es muy parecido al del ejercicio 6, pero realizando las modificaciones oportunas. 
+
+Para ejecutar los test, debemos de instalar nose (sudo pip install nose). Este programa buscará todas las funciones de nombre "test_*" y las ejecutará:
+
+	nosetests test_sure.py
+    
+#Ejercicio 8
+#### Darse de alta. Muchos están conectados con GitHub por lo que puedes usar directamente el usuario ahí. A través de un proceso de autorización, acceder al contenido e incluso informar del resultado de los tests. Activar el repositorio en el que se vaya a aplicar la integración continua. Travis permite hacerlo directamente desde tu configuración; en otros se dan de alta desde la web de GitHub. Crear un fichero de configuración para que se ejecute la integración y añadirlo al repositorio.
+
+Ingresamos en [Travis](https://travis-ci.org/), y en la parte superior derecha, hay un botón para loguearse a través de GitHub. Pulsamos en él y nos logueamos.
+
+Despés en la lista que nos aparece a la izquierda, podemos seleccionar repositorios de nuestro perfil, o bien de nuestras organizaciones. Simplemente, debemos de "encender" el repositorio en el que queramos incluir integración continua, tal y como aparece en la imagen:
+![](https://www.dropbox.com/s/0sscicj3y6asc2l/ejercicio8.png?dl=1)
+Pasados unos instantes, Travis ya está "pendiente" de los push que hagamos contra el repositorio. Nuestra próxima tarea será ahora decirle a Travis qué es lo que tiene que hacer. Estas órdenes se las tenemos que indicar en el fichero **.travis.yml**. [Aquí pdoemos ver en concreto el que he creado para la app](https://github.com/JA-Gonz/appEjercicioIV/blob/master/.travis.yml). Hay que tener en cuenta que hay que añadirle un script de testeo al final, para que Travis compruebe que nuestra subida de código realmente conduce a una versión estable o no.
+
+Tras corregir los posibles errores que puedan ir surgiendo durante el desarrollo de la aplicación, Travis ejecutará un test que pasará correctamente, tal y como se muestra en la imagen.
+
+![](https://www.dropbox.com/s/1bkrk39jo6z41z6/ejrercicio8_2.png?dl=1)
+
+    
