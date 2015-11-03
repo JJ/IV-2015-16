@@ -1,6 +1,6 @@
 ##Objetivos Álvaro Pérez
 
-###Semana del 23 al 30 septiembre 2015
+###Sesión 1 (Semana del 23 al 30 septiembre 2015)
 
 [x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
 
@@ -11,7 +11,7 @@
 [x] Vernos las caras.
 
 
-###Semana del 30 septiembre al 7 octubre 2015
+###Sesión 2 (Semana del 30 septiembre al 7 octubre 2015)
 
 [x] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
 
@@ -49,7 +49,7 @@
 [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
 
-###Semana del 7 al 14 de octubre 2015
+###Sesión 3 (Semana del 7 al 14 de octubre 2015)
 [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
 
 [x] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
@@ -72,7 +72,7 @@
 
 [x] Comprender el papel de las build tools o herramientas de automatización.
 
-###Semana del 14 al 21 de octubre 2015
+###Sesión 4 (Semana del 14 al 21 de octubre 2015)
 
 [x] Terminar la configuración de los sistemas de integración continua.
     
@@ -89,7 +89,7 @@
 [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
 
-###Semana del 21 al 28 de octubre 2015
+###Sesión 5 (Semana del 21 al 28 de octubre 2015)
 
 [x] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS.
     
@@ -105,7 +105,7 @@
 
 [x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
 
-###Semana del 28 de octubre al 4 de noviembre 2015
+###Sesión 6 (Semana del 28 de octubre al 4 de noviembre 2015)
 
 [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
     
