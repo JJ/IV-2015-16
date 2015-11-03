@@ -108,7 +108,7 @@ Ahora encontraremos dentro de "build" la web generada para la documentación.
 Para más información sobre Sphinx y la sintaxis de comentarios para Python puede visitarse su [web](http://sphinx-doc.org/) y también la sección de documentación de Django [aquí](https://docs.djangoproject.com/en/1.8/internals/contributing/writing-documentation/)
 
 ###Ejercicio 6: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD). Ejercicio 7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
-Cuando usamos Django se hace uso de test unitarios, en mi caso crearé un test para comprobar que todas las urls están correctamente mapeadas a sus vistas, para ello crearé el siguiente test en el fichero empresas/tests.py:
+Cuando usamos Django y necesitamos hacer uso de test unitarios se utiliza el fichero app/tests.py, en mi caso crearé un test para comprobar que todas las urls están correctamente mapeadas a sus vistas, para ello crearé el siguiente test en el fichero empresas/tests.py:
 
     from django.test import TestCase
     from django.core.urlresolvers import resolve
@@ -124,5 +124,7 @@ Cuando usamos Django se hace uso de test unitarios, en mi caso crearé un test p
             found = resolve('/ranking/')
             self.assertEqual(found.func, ranking)
 
-De esta forma aseguramos que las urls '/', '/todo/' y '/ranking/' usan sus correspondientes vistas.
+De esta forma aseguramos que las urls '/', '/todo/' y '/ranking/' usan sus correspondientes vistas, de lo contrario dará una excepción. Para probar el test ejecutamos:
+
+    python manage.py test
 
