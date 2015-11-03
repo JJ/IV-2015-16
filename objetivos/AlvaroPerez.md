@@ -113,7 +113,7 @@
     
 [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
     
-[] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+[x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
 
 [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
     
