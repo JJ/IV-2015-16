@@ -47,4 +47,8 @@ Otros objetivos:
   * [x] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
   * [x] Comprender los mecanismos de despliegue automático.
   * [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
-
+#Sesion 5:
+  * [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+  * [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+  * [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+  * [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
