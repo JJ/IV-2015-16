@@ -61,4 +61,9 @@
 - [X] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
 - [X] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
-
+##Sexta semana, comienza el 28 de octubre
+- [] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+- [] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+- [] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+- [] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo. 4 Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+- [] Resolver los problemas que surjan en los primeros despliegues de la asignatura
