@@ -44,6 +44,13 @@ La vinculamos a nuestra cuenta de WordPress:
 Y listo, ya podemos empezar a personalizar la aplicación [WordPress](http://php-hugobarzano.rhcloud.com/)
 ![ej2_5](https://www.dropbox.com/s/bxtp1xtle8vssrx/ej2_5.png?dl=1)
 
+##Ejercicio3: Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
+
+Para realizar la aplicación, he elegido python y Django. Para poder utilizar variables REST, Django pone a nuestra disposición el FrameWork
+**djangorestframework**
+Para realizar la aplicación, he continuado con el ejemplo de Empresas del tema 2, la nueva aplicación se escuentra alojada en el siguiente repositorio [Empresa](https://github.com/hugobarzano/Empresas_tema3)
+En dicho repositorio tambien se encuentra el fichero [Pasos](https://github.com/hugobarzano/Empresas_tema3/blob/master/pasos.md) en el que están detallados todos los pasos a seguir para crear la aplicación. 
+
 
 
 
