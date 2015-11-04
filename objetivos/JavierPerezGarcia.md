@@ -65,12 +65,28 @@ Probando corregir a otro alumno
 ###Otros objetivos
 [X] Entregar el primer hito del proyecto al final de la semana.
 
-[] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
+[X] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
 
 [X] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
 
-[] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
+[X] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
 
 [X] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 
-[] Comprender el papel de las build tools o herramientas de automatización.
+[X] Comprender el papel de las build tools o herramientas de automatización.
+
+## Objetivos de la cuarta semana
+
+[X] Terminar la configuración de los sistemas de integración continua
+
+[X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción
+
+###Otros objetivos
+
+[X] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+
+[X] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+
+[X] Comprender los mecanismos de despliegue automático.
+
+[X] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
