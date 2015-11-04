@@ -22,7 +22,7 @@ Lista de objetivos de Gabriel Stan
 ### Objetivos principales
 
 - [ ] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
-- [ ] Probar diferentes formas de desplegar aplicaciones desde
+- [ ] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
 
 ### Otros Objetivos
 
