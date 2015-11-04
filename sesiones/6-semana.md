@@ -11,7 +11,7 @@ Todavía está abierto el plazo de inscripción para los
 ##Objetivos de la semana
 
 1. Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
-2. Probar diferentes formas de desplegar aplicaciones desde 
+2. Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
 
 
 ##Otros objetivos
@@ -23,8 +23,8 @@ Todavía está abierto el plazo de inscripción para los
 
 ##Material para la clase
 
-Continuamos con el tema dedicado a los
-[contenedores](http://jj.github.io/IV/documentos/temas/PaaS)
+Continuamos con el tema dedicado al
+[uso de plataformas como servicio](http://jj.github.io/IV/documentos/temas/PaaS)
 y empezamos con el
 [tercer hito del proyecto](https://github.com/JJ/IV/blob/master/documentos/practicas/3.PaaS.md). La
 fecha de entrega es el **16 de noviembre**. 
