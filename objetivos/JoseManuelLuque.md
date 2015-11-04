@@ -1,8 +1,8 @@
-#José Manuel Luque Burgos
+# José Manuel Luque Burgos
 
-##23 de septiembre
+## 23 de septiembre
 
-###Lista de objetivos
+### Lista de objetivos
 
  - [x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
  - [x] Darse de alta y comprender el funcionamiento básico de GitHub y la lista de correo de la asignatura; conocer el resto de los recursos de la asignatura.
@@ -10,9 +10,9 @@
  - [x] Vernos las caras.
 
 
-##30 de septiembre
+## 30 de septiembre
 
-###Lista de objetivos
+### Lista de objetivos
 
   - [x] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
   - [x] Comprender las técnicas de cálculo del coste de amortización de un equipo informático y aplicarlo al cálculo del coste de uso de un recurso.
@@ -22,7 +22,7 @@ ordenador habitual lo usa.
   - [x] Comprender los niveles de virtualización y sus denominaciones genéricas.
   - [x] Comprender el concepto de *software as a service* y comprender los criterios necesarios para su elección.
 
-###Otros objetivos
+### Otros objetivos
 
   - [x] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige.
   - [x] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (**no** https).
@@ -39,16 +39,16 @@ compañero.
   - [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
 
-##7 de octubre
+## 7 de octubre
 
-###Lista de objetivos
+### Lista de objetivos
 
   - [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
   - [x] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
   - [x] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
   - [x] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
 
-###Otros objetivos
+### Otros objetivos
 
   - [x] Entregar el primer hito del proyecto al final de la semana.
   - [x] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
@@ -56,3 +56,33 @@ compañero.
   - [x] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
   - [x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
   - [x] Comprender el papel de las build tools o herramientas de automatización.
+
+
+## 14 de octubre
+
+### Lista de objetivos
+
+  - [x] Terminar la configuración de los sistemas de integración continua
+  - [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+### Otros objetivos
+
+  - [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+  - [x] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+  - [x] Comprender los mecanismos de despliegue automático.
+  - [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
+
+## 21 de octubre
+
+### Lista de objetivos
+
+  - [x] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+  - [x] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+  - [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+  - [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+
+### Otros objetivos
+  - [x] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
+  - [x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.

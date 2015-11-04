@@ -27,6 +27,15 @@
 - [] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 - [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
+#Objetivos Tema 2:
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+#Objetivos específicos:
+- [x] Entender el concepto de DevOps.
+- [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+- [x] Aprender a usar integración continua en cualquier aplicación.
+
 # Objetivos Sesión 3:
 
 - [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
