@@ -11,7 +11,7 @@ Todavía está abierto el plazo de inscripción para los
 ##Objetivos de la semana
 
 1. Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
-2. Probar diferentes formas de desplegar aplicaciones desde 
+2. Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
 
 
 ##Otros objetivos
