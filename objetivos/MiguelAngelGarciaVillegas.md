@@ -70,20 +70,20 @@
 # Tema 2 
 
 ## Objetivos a cubrir en la Cuarta sesión comienza 14 de octubre
-- [] Terminar la configuración de los sistemas de integración continua
-- [] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+- [X] Terminar la configuración de los sistemas de integración continua
+- [X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
 ## Otros objetivos
-- [] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
-- [] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
-- [] Comprender los mecanismos de despliegue automático.
-- [] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+- [X] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+- [X] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+- [X] Comprender los mecanismos de despliegue automático.
+- [X] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
 ## Objetivos Segundo Hito: Integración continua
-- [] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 
 ## Objetivos Específicos Segundo Hito: Integración continua
-- [] Entender el concepto de DevOps.
-- [] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
-- [] Aprender a usar integración continua en cualquier aplicación.
+- [X] Entender el concepto de DevOps.
+- [X] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+- [X] Aprender a usar integración continua en cualquier aplicación.
 
