@@ -67,6 +67,10 @@ Con cada push que se ejecute sobre el repositorio, Heroku espera las que pasen l
 
 ![despliegue heroku](https://www.dropbox.com/s/jkhqevg2isplnwa/heroku%20log.png?dl=1)
 
+### Ejercicio 8
+
+**Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.**
+
 
 
 
