@@ -55,7 +55,7 @@ Tenemos que activar el dyno, si no lo está.
 
 ![activar dyno](https://www.dropbox.com/s/n7t4kpryj6xw597/activar%20dyno.png?dl=1)
 
-Y podemos ver la aplicación el la url proporcionada por defecto, en este caso. También se puede indicar una url a la hora de crear la aplicación. La aplicación se puede ver [aqui](arcane-springs-3380.herokuapp.com)
+Y podemos ver la aplicación el la url proporcionada por defecto, en este caso. También se puede indicar una url a la hora de crear la aplicación. La aplicación se puede ver [aqui](http://arcane-springs-3380.herokuapp.com)
 
 
 
