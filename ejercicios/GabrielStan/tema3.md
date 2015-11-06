@@ -47,20 +47,25 @@ A continuación, creamos una aplicación en Heroku y la configuramos con el repo
 
 ![herokuapp](https://www.dropbox.com/s/5xt9qujy83xjcvi/herokuapp.png?dl=1)
 
-Como se puede observar, también tenemos la opción de esperar a que las pruebas de CI pasen, antes de esplegar la aplicación. Con cada push que se ejecute sobre el repositorio, Heroku espera las que pasen las pruebas, y en caso de que hayan pasado, procede a desplegar automaticamente la aplicación.
-
-![despliegue heroku](https://www.dropbox.com/s/jkhqevg2isplnwa/heroku%20log.png?dl=1)
-
 Tenemos que activar el dyno, si no lo está.
 
 ![activar dyno](https://www.dropbox.com/s/n7t4kpryj6xw597/activar%20dyno.png?dl=1)
 
 Y podemos ver la aplicación el la url proporcionada por defecto, en este caso. También se puede indicar una url a la hora de crear la aplicación. La aplicación se puede ver [aqui](http://arcane-springs-3380.herokuapp.com)
 
+### Ejercicio 7
 
+**Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow**
 
+Heroku ya tiene un servicio que permite integrar la aplicación desde un repositorio de github directamente.
 
+![heroku app](https://www.dropbox.com/s/5xt9qujy83xjcvi/herokuapp.png?dl=1)
 
+Como se puede observar, en Heroku también tenemos la opción de esperar a que las pruebas de CI pasen, antes de esplegar la aplicación. De esta manera, ya no hace falta integrar otro servivio CI con despliegue, ya que Heroku usa el que ya hay configurado sobre el repositorio.
+
+Con cada push que se ejecute sobre el repositorio, Heroku espera las que pasen las pruebas, y en caso de que hayan pasado, procede a desplegar automaticamente la aplicación.
+
+![despliegue heroku](https://www.dropbox.com/s/jkhqevg2isplnwa/heroku%20log.png?dl=1)
 
 
 
