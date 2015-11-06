@@ -1,6 +1,6 @@
 ##Objetivos Álvaro Pérez
 
-### Sesión 1 (Semana del 23 al 30 septiembre 2015)
+###Sesión 1 (Semana del 23 al 30 septiembre 2015)
 
 [x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
 
@@ -11,7 +11,7 @@
 [x] Vernos las caras.
 
 
-### Sesión 2 (Semana del 30 septiembre al 7 octubre 2015)
+###Sesión 2 (Semana del 30 septiembre al 7 octubre 2015)
 
 [x] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
 
@@ -25,7 +25,7 @@
 
 [x] Comprender el concepto de software as a service y comprender los criterios necesarios para su elección.
 
-##### Otros objetivos
+#####Otros objetivos
 [x] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige.
     
 [x] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (no https).
@@ -62,7 +62,7 @@
 
 [x] Entregar el primer hito del proyecto al final de la semana.
 
-[] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
+[x] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
 
 [x] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
 
@@ -95,15 +95,45 @@
     
 [x] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
 
-[] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+[x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
 
-[] Resolver los problemas que surjan en los primeros despliegues de la asignatura.
+[x] Resolver los problemas que surjan en los primeros despliegues de la asignatura.
 
 #####Otros objetivos
 
 [x] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
 
-[] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+[x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+
+###Sesión 6 (Semana del 28 de octubre al 4 de noviembre 2015)
+
+[x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+    
+[x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+    
+[x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+    
+[x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+
+[x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+    
+[] Resolver los problemas que surjan en los primeros despliegues de la asignatura.
+
+#####Otros objetivos
+
+[x] Darse de alta y probar diferentes servicios PaaS.
+    
+[] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+    
+[] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+    
+[x] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
+    
+[x] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir 	 del principio de la clase, el coeficiente será de 0.7.
+
+###Sesión 7 (Semana del 4 al 11 de noviembre 2015)
+
+
 
 
 

@@ -86,28 +86,31 @@ En mi caso, tras consultarlo en internet y con mis compañeros, he tenido que ut
 
 Yo me he basado en el tutorial de Django para realizar el ejercicio, ya que me ha venido bien para profundizar en este tema, para ello dentro de la carpeta polls, en el archivo tests.py he introducido lo siguiente:
 
-![assert1](img19)
+![assert1](https://www.dropbox.com/s/t05efyp9zmdrrvr/img19.png?dl=1)
 
 El cual, al ejecutarlo me ha salido:
 
 
-![assert1](img20)
+![assert1](https://www.dropbox.com/s/xrxmz085sjvn2ha/img20.png?dl=1)
 
 ¿Qué es lo que ha pasado?, sencillamente lo que he hecho es crear una pregunta la cual instancia el pub_date del método Question en el futuro. Pero al comprobar si la pregunta se ha publicado recientemente nos sale verdadero y nos debería salir falso, por lo que deberíamos de modificar dicho método, por lo que nos dirigimos al archivo polls/models.py y lo dejamos de la siguiente forma:
 
  
-![assert1](img21)
+![assert1](https://www.dropbox.com/s/ztjwfw6riajmjc0/img21.png?dl=1)
 
 Ahora al ejecutarlo nos sale realiza el test correctamente:
 
 
-![assert1](img22)
+![assert1](https://www.dropbox.com/s/o2yw439d6y3xuj6/img22.png?dl=1)
 
 ###Ejercicio7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
 
 Ya lo he realizado en el ejercicio 6, mi archivo se llama polls/tests.py.
 
 ###Ejercicio8: Haced los dos primeros pasos antes de pasar al tercero. Configurar integración continua para nuestra aplicación usando Travis o algún otro sitio.
+
+![assert1](https://www.dropbox.com/s/uoyn00dq4dw8vph/img23.png?dl=1)
+
 
 
 

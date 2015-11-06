@@ -60,3 +60,71 @@ Ahora tenemos un entorno con:
 Ahora si que ha funcionado correctamente, por tanto vemos que mi aplicación no está 
 preparada para correr bajo Python 3.
 
+###Ejercicio4: Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente.
+
+Dado que mi aplicación esta realizada usando Django, se basa en Python, por tanto no se usa un package.json, no obstante podemos hacer uso de un fichero llamado requirements.txt que es lo que normalmente se usa. En este fichero se describen las dependencias del proyecto. Existen herramientas como "freeze" para generar la lista de dependencias.
+
+    pip freeze > requirements.txt
+    pip install -r requirements.txt
+
+Como ejemplo realizaremos un "pip freeze" en el virtualenv de la aplicación:
+
+    alabaster==0.7.6
+    Babel==2.1.1
+    Django==1.8.5
+    docutils==0.12
+    Jinja2==2.8
+    MarkupSafe==0.23
+    Pygments==2.0.2
+    pytz==2015.7
+    six==1.10.0
+    snowballstemmer==1.2.0
+    Sphinx==1.3.1
+    sphinx-rtd-theme==0.1.9
+    wheel==0.24.0
+
+Excepto Django y wheel las demás dependencias viene a raíz de Sphinx, pero para usar la aplicación no es necesario Spinx pues lo usamos sólo para documentarla.
+
+###Ejercicio 5: Automatizar con grunt y docco (o algún otro sistema) la generación de documentación de la librería que se cree. Previamente, por supuesto, habrá que documentar tal librería.
+
+Se va a documentar la app del ejercicio 2 de este mismo tema, dicha app está hecha con Django por tanto debemos usar Sphinx para documentarla, para instalarla:
+
+    pip install sphinx
+
+Una vez instalado nos situamos en el directorio del proyecto y comenzamos a usar Sphinx en su modo "quickstart" para responder una serie de preguntas:
+
+    sphinx-quickstart
+
+Una vez terminado y según como respondamos se nos deberían crear dos nuevos directorios, "build" y "source" y un Makefile para generar los ficheros html, podemos moverlos a otro directorio si queremos. Ahora debemos decirle que nos genere la documentación para la app o las apps que hemos creado dentro del proyecto Django, en mi caso sólo he creado una llamada "empresas", usaremos el siguiente comando:
+
+    sphinx-apidoc empresas/ source/
+
+Ahora ya tenemos autogenerados los ficheros necesarios para incluirlos en la documentación. A continuación solo nos queda generar en formato html toda la documentación:
+
+    make html
+
+Ahora encontraremos dentro de "build" la web generada para la documentación.
+
+Para más información sobre Sphinx y la sintaxis de comentarios para Python puede visitarse su [web](http://sphinx-doc.org/) y también la sección de documentación de Django [aquí](https://docs.djangoproject.com/en/1.8/internals/contributing/writing-documentation/)
+
+###Ejercicio 6: Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD). Ejercicio 7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
+Cuando usamos Django y necesitamos hacer uso de test unitarios se utiliza el fichero app/tests.py, en mi caso crearé un test para comprobar que todas las urls están correctamente mapeadas a sus vistas, para ello crearé el siguiente test en el fichero empresas/tests.py:
+
+    from django.test import TestCase
+    from django.core.urlresolvers import resolve
+    from empresas.models import Empresa
+    from empresas.views import *
+    # Create your tests here.
+    class EmpresaTest(TestCase):
+        def test_urls(self):
+            found = resolve('/')
+            self.assertEqual(found.func, index)
+            found = resolve('/todo/')
+            self.assertEqual(found.func, todo)
+            found = resolve('/ranking/')
+            self.assertEqual(found.func, ranking)
+
+De esta forma aseguramos que las urls '/', '/todo/' y '/ranking/' usan sus correspondientes vistas, de lo contrario dará una excepción. Para probar el test ejecutamos:
+
+    python manage.py test
+
