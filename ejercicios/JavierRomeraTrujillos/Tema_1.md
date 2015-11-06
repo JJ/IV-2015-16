@@ -42,6 +42,17 @@ Ejercicio 2.
 |Uso 10% al mes= 28,919€ | Uso 10% al año= 347,028€|	
 
 
+Ejercicio 3.
+------
+1. Creamos el programa en Ubuntu:
+![Imagen 3.1](https://www.dropbox.com/s/fcymt9ak9g0q462/3.1.png?dl=1)
+
+2. Lo empaquetamos con CDE:
+![Imagen 3.2](https://www.dropbox.com/s/g0r81vtja1bqr4w/3.2.png?dl=1)
+
+3. Comprobamos que funciona en Fedora:
+![Imagen 3.2](https://www.dropbox.com/s/4iy32c6xjiuighy/3.3.png?dl=1)
+
 Ejercicio 4.
 ------
 1. Mi procesador no tiene instalados los flags:
