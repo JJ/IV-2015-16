@@ -87,3 +87,5 @@
 - [X] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
 - [X] Aprender a usar integración continua en cualquier aplicación.
 
+## Objetivos para el Proyecto
+- [X] Además de realizar los Ejercicios, hemos realizado los ejercicios y una guía paso a paso también en el proyecto. 
