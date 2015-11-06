@@ -623,29 +623,38 @@ https://www.dropbox.com/home/IV?preview=Usuario+a+modificar.png
 
 Vamos a darnos de alta en Travis CI.-> https://travis-ci.org/
 
-Archivo  travis.yml
+## Archivo  **.travis.yml**
 
-    languaje: python
+    language: python
     python:
-      - "2.7.6"
-    env:
-      - DJANGO_VERSION = 1.8.6
+     - "2.7"
+    # command to install dependencies
     install:
-      - sudo apt-get install python-dev
-      - sudo pip install --upgrade pip
-      - sudo pip install -q Django
-      - sudo pip install -q wheel == 0.26.0
+     - sudo apt-get install python-dev
+     - pip install -q Django==1.8.5
+     - pip install -q wheel==0.24.0
+     - pip install pycco
+    # command to run tests
     script:
-      - cd insertaLogo/insertaLogo
-      - sudo python setup.py install
-      - sudo python manage.py test
+     - pycco insertaLogo/insertaLogo/*.py
+     - pycco insertaLogo/insertaLogo/appInsertaLogo/*.py
+     - python insertaLogo/insertaLogo/manage.py test insertaLogo
 
+    branches:
+      - only:
+        - master
 
 Accedemos a la web de Travis y una vez que este sincronizado con nuestro repositorio en github accedemos a current.
 Todo Ok.
+
+    Enlace: https://travis-ci.org/magvugr/InsertaLogo
+
+Imágenes
+https://www.dropbox.com/home/IV?preview=travis+01.png
+https://www.dropbox.com/home/IV?preview=travis+2.png
 
 También lo he realizado con **Circleci**, como tenía que realizar un cambio he aprovechado para ver otra herramienta de Integración Continua.
 
 Aquí os pongo imagen de la muestra y solución.
 
-https://www.dropbox.com/home/IV?preview=circleci.png
+    Enlace: https://circleci.com/gh/magvugr/InsertaLogo/4
