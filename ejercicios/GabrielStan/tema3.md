@@ -27,6 +27,14 @@ He incluido un par de funciones que respondan a ciertas URLs, usando Django como
 
 ![rest api](https://www.dropbox.com/s/lxdry4vahskcf9s/REST.png?dl=1)
 
+## Ejercicio 4
+
+** Crear pruebas para las diferentes rutas de la aplicación.**
+
+escribimos algunos tests para las urls:
+
+![urltests](https://www.dropbox.com/s/4z8ef4y1ehvsryo/pruebas%20vista.png?dl=1)
+
 
 
 
