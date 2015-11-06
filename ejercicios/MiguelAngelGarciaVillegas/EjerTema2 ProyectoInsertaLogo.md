@@ -646,6 +646,7 @@ Vamos a darnos de alta en Travis CI.-> https://travis-ci.org/
 
 Accedemos a la web de Travis y una vez que este sincronizado con nuestro repositorio en github accedemos a current.
 Todo Ok.
+El fichero travis en el repositorio github tiene que llamarse .travis.yml
 
     Enlace: https://travis-ci.org/magvugr/InsertaLogo
 
