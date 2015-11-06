@@ -27,7 +27,7 @@ He incluido un par de funciones que respondan a ciertas URLs, usando Django como
 
 ![rest api](https://www.dropbox.com/s/lxdry4vahskcf9s/REST.png?dl=1)
 
-## Ejercicio 4
+### Ejercicio 4
 
 ** Crear pruebas para las diferentes rutas de la aplicación.**
 
@@ -35,12 +35,27 @@ escribimos algunos tests para las urls:
 
 ![urltests](https://www.dropbox.com/s/4z8ef4y1ehvsryo/pruebas%20vista.png?dl=1)
 
+###Ejercicio 5
 
+**Instalar y echar a andar tu primera aplicación en Heroku.**
 
+Primero creamos un fichero **Procfile** para la configuración de Heroku.
 
+![procfile](https://www.dropbox.com/s/yvr0ww4bmarwu24/procfile.png?dl=1)
 
+A continuación, creamos una aplicación en Heroku y la configuramos con el repositorio en github.
 
+![herokuapp](https://www.dropbox.com/s/5xt9qujy83xjcvi/herokuapp.png?dl=1)
 
+Como se puede observar, también tenemos la opción de esperar a que las pruebas de CI pasen, antes de esplegar la aplicación. Con cada push que se ejecute sobre el repositorio, Heroku espera las que pasen las pruebas, y en caso de que hayan pasado, procede a desplegar automaticamente la aplicación.
+
+![despliegue heroku](https://www.dropbox.com/s/jkhqevg2isplnwa/heroku%20log.png?dl=1)
+
+Tenemos que activar el dyno, si no lo está.
+
+![activar dyno](https://www.dropbox.com/s/n7t4kpryj6xw597/activar%20dyno.png?dl=1)
+
+Y podemos ver la aplicación el la url proporcionada por defecto, en este caso. También se puede indicar una url a la hora de crear la aplicación. La aplicación se puede ver [aqui](arcane-springs-3380.herokuapp.com)
 
 
 
