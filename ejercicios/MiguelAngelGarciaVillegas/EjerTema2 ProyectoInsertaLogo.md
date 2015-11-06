@@ -652,6 +652,7 @@ El fichero travis en el repositorio github tiene que llamarse .travis.yml
 
 Imágenes
 https://www.dropbox.com/home/IV?preview=travis+01.png
+
 https://www.dropbox.com/home/IV?preview=travis+2.png
 
 También lo he realizado con **Circleci**, como tenía que realizar un cambio he aprovechado para ver otra herramienta de Integración Continua.
