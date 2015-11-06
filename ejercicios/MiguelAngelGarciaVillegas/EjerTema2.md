@@ -3,6 +3,10 @@
 
 # Ejercicios Tema 2
 
+## Hito 2 en mi Proyecto
+## [InsertaLogo](https://github.com/magvugr/InsertaLogo.git)
+[Miguel Ángel García Villegas, proyecto relacionado con Dai, InsertaLogo]
+
 ## Ejercicio 1.
 ### Instalar alguno de los entornos virtuales de node.js (o de cualquier otro lenguaje con el que se esté familiarizado) y, con ellos, instalar la última versión existente, la versión minor más actual de la 4.x y lo mismo para la 0.11 o alguna impar (de desarrollo).
 
