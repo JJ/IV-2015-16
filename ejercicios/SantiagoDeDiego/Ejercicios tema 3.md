@@ -50,6 +50,8 @@ En esta aplicación sencilla por ejemplo, si nosotros ponemos en la ruta por eje
 
 #Ejercicio 4
 
+#Ejercicio 5
+
 Primero de todo descargamos el cinturón de herramientas de Heroku, y una vez hecho esto ejecutamos `heroku login`. Después nos descargamos de github la aplicación de ejemplo de nodejs del repositorio [Aplicación de ejemplo](git@github.com:heroku/node-js-getting-started.git).
 
 Ejecutamos `heroku create` para crear una aplicación en Heroku con nuestro repositorio. En este caso, existe un archivo Procfile, pero de no existir, lo creamos e incluimos:
@@ -61,8 +63,6 @@ web: node index.js
 Una vez hecho esto, sin más que ejecutar `git push heroku master` tenemos nuestra aplicación subida a Heroku.
 
 Para ejecutar foreman, he tenido un problema y es que el cinturón de herramientas de Heroku no me lo ha instalado y he tenido que instalarlo por separado del [repositorio de foreman](https://github.com/ddollar/foreman). No obstante, he tenido otro error durante la instalación de esta manera y al final lo que me ha funcionado es hacer `sudo gem install foreman`
-
-#Ejercicio 5
 
 #Ejercicio 6
 
