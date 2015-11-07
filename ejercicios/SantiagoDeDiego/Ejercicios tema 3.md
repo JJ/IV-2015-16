@@ -62,9 +62,12 @@ web: node index.js
 
 Una vez hecho esto, sin más que ejecutar `git push heroku master` tenemos nuestra aplicación subida a Heroku.
 
-Para ejecutar foreman, he tenido un problema y es que el cinturón de herramientas de Heroku no me lo ha instalado y he tenido que instalarlo por separado del [repositorio de foreman](https://github.com/ddollar/foreman). No obstante, he tenido otro error durante la instalación de esta manera y al final lo que me ha funcionado es hacer `sudo gem install foreman`
 
 #Ejercicio 6
+
+Para ejecutar foreman, he tenido un problema y es que el cinturón de herramientas de Heroku no me lo ha instalado y he tenido que instalarlo por separado del [repositorio de foreman](https://github.com/ddollar/foreman). No obstante, he tenido otro error durante la instalación de esta manera y al final lo que me ha funcionado es hacer `sudo gem install foreman` Una vez hecho esto he ejecutado `foreman start web` y me ha saltado un error. Esto es debido a que mi MAC después de la última actualización lleva instalado un Firewall y me estaba bloqueando la aplicación. Desactivándolo ya funciona perfectamente. Aquí podemos verlo:
+
+![Foreman](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Foreman_zps0sxpjmqk.png)
 
 #Ejercicio 7
 
