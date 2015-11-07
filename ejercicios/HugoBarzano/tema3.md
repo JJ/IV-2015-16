@@ -79,6 +79,42 @@ que lo que devuelve es la empresa n-esima que haya resgistrada en la aplicación
 Podemos observar que la aplicación supera la bateria de test:
 ![test](https://www.dropbox.com/s/q9ezfp47nctpe9y/test.png?dl=1)
 
+##Ejercicio 5: Instalar y echar a andar tu primera aplicación en Heroku.
+
+Para que nuestra aplicación pueda funcionar en Heroku, debemos realizar una serie de modificaciones.
+Lo primero que debemos hacer es actualizar el fichero de requuirements:
+
+	Django==1.7
+	dj-database-url==0.3.0
+	dj-static==0.0.6
+	gunicorn==19.1.1
+	psycopg2==2.5.1
+	static==0.4
+	wsgiref==0.1.2
+
+Lo siguiente que Heroku necesita para funcionar es un archivo de configuración llamado Procfile, con el siguiente contenido:
+
+	web: gunicorn djangoblog.wsgi --log-file -
+
+Con esto lo que le estamos indicando a Heroku es que queremos arrancar una instancia web y dejar que gunicorn ejecute nuestra aplicación dentro de ella. 
+
+Como en ejercicios anteriores tubimos que crear una cuenta en Heroku, ha llegado el momento de hacer loguin en ella, mediante 
+	
+	heroku login
+
+No solicitará nuestro nombre de correo y contraseña. Una vez loogueados, lo siguiente es crear un enlace al repositorio que Heroku nos ofrece para alojar nuestra aplicación mediante
+
+	heroku create
+
+Por último temeos que hacer push al repositorio de Heroku mediante 
+
+	git push heroku master
+
+**Nota:** si tenemos problemas al hacer push, reinicialziar el repositorio y tulizar el comando 
+
+	heroku create --stack cedar
+
+
 
 
 
