@@ -51,6 +51,35 @@ Para realizar la aplicación, he elegido python y Django. Para poder utilizar va
 Para realizar la aplicación, he continuado con el ejemplo de Empresas del tema 2, la nueva aplicación se escuentra alojada en el siguiente repositorio [Empresa](https://github.com/hugobarzano/Empresas_tema3)
 En dicho repositorio tambien se encuentra el fichero [Pasos](https://github.com/hugobarzano/Empresas_tema3/blob/master/pasos.md) en el que están detallados todos los pasos a seguir para crear la aplicación. 
 
+##Ejercicio 4: Crear pruebas para las diferentes rutas de la aplicación. 
+
+Las rutas que he creada para la aplicación Empresa son las indicadas en el ejercicio anterior. Ahora vamos a testear 2 de ellas.
+
+La primera ruta que vamos a probar es **/Empresas/** que lo que devuelve es un listado en formato JSON de todas las empresas registradas en la aplicación. Para ello he creado el siguiente test:
+
+	def test_detalle_varias_empresas(self):
+		emp = Empresa(nombre='empresa1',correo='correo1')
+		emp.save()
+		emp2 = Empresa(nombre='empresa2',correo='correo2')
+		emp2.save()
+		response = self.client.get('/Empresas/')
+		self.assertEqual(response.content,'[{"nombre":"empresa1","correo":"correo1"},{"nombre":"empresa2","correo":"correo2"}]')
+		print("Varias Empresas consultadas en detalle correctamente")
+
+En este test, he simulado el comportamiento del navegador mediante APIClient. La siguiente ruta que voy a probar es **/Empresa/n**
+que lo que devuelve es la empresa n-esima que haya resgistrada en la aplicación. Para ello he creado el siguiente test:
+
+	def test_detalle_empresa(self):
+		emp = Empresa(nombre='empresa1',correo='correo1')
+		emp.save()
+		response = self.client.get('/Empresa/1/')
+		self.assertEqual(response.content,'{"nombre":"empresa1","correo":"correo1"}')
+		print("Una unica Empresa consultada en detalle correctamente")
+
+Podemos observar que la aplicación supera la bateria de test:
+![test](https://www.dropbox.com/s/q9ezfp47nctpe9y/test.png?dl=1)
+
+
 
 
 
