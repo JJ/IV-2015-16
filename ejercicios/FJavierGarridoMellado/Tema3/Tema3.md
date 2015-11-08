@@ -166,3 +166,33 @@ urlpatterns = [
 
 ![vistaserializada](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vistasserializacion_zpsgzgfe1zt.png)
  
+###Ejercicio 4: Crear pruebas para las diferentes rutas de la aplicación.
+
+En este ejercicio lo que se realiza es un test donde compruebo las dos rutas generadas en el ejercicio anterior, para ello en el archivo **tests.py** creo la clase *RutaTests* donde defino los dos tests, posteriormente ejecutando **python manage.py test** compruebo si los pasa. Se ha añadido al fichero tests.py lo siguiente:
+```
+from rest_framework import status
+from rest_framework.test import APITestCase
+from apu.views import *
+
+class RutasTests(APITestCase):
+
+	def test_detalle_persona(self):
+		per = Persona(nombre='Jose' ,dni='45678921r',pais='Holanda',equipo='Betis',hobbies='musica',fondo='500')
+		per.save()
+		response = self.client.get('/apu/1/')
+		self.assertEqual(response.content,'{"nombre":"Jose","dni":"45678921r","pais":"Holanda","equipo":"Betis","hobbies":"musica","fondo":500}')
+		print("Persona consultada en detalle correctamente")
+
+	def test_detalle_varias_personas(self):
+		per = Persona(nombre='Jose' ,dni='45678921r',pais='Holanda',equipo='Betis',hobbies='musica',fondo='500')
+		per.save()
+		per2 = Persona(nombre='Juan' ,dni='55678921r',pais='Espana',equipo='Real',hobbies='skap',fondo='100')
+		per2.save()
+		response = self.client.get('/apu/')
+		self.assertEqual(response.content,'[{"nombre":"Jose","dni":"45678921r","pais":"Holanda","equipo":"Betis","hobbies":"musica","fondo":500},{"nombre":"Juan","dni":"55678921r","pais":"Espana","equipo":"Real","hobbies":"skap","fondo":100}]')
+		print("Varias personas consultadas en detalle correctamente")
+```
+
+Se observa que *response* recibe la serialización de la vista y lo compara con lo que debe de dar para testear si dicha serialización es correcta.
+
+![testrutas](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/testeorutas_zpswmr13qaf.png)
