@@ -38,7 +38,8 @@ Siguiendo el tutorial de [Django Rest Framework](http://www.django-rest-framewor
 - Realizar **python manage.py makemigrations aplicacion** y **python manage.py migrate** sino se ha realizado previamente.
 - Dentro de la carpeta de nuestra aplicación crear el archivo **serializers.py** , el contenido en mi caso es este ( similar al de mi clase Persona de models.py pero usando serializadores):
 
-```from rest_framework import serializers
+```
+from rest_framework import serializers
 from apu.models import Persona
 
 
