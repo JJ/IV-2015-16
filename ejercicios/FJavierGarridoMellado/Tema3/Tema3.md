@@ -160,6 +160,7 @@ urlpatterns = [
     url(r'^apu/(?P<pk>[0-9]+)/$', views.Persona_detalle),
 
 ]
+```
 
 - Se arranca la aplicación con **python manage.py runserver** y se comprueba que funciona como Dios manda:
 
