@@ -13,7 +13,7 @@ Todavía está abierto el plazo de inscripción para los
 3. Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
 3. Entender el concepto de despliegue y cómo la infraestructura
    virtual y su especificación son esenciales para el mismo.
-4 Comprender qué herramientas de desarrollo y lenguajes de programación 
+4. Comprender qué herramientas de desarrollo y lenguajes de programación 
   se pueden usar en diferentes PaaS con facilidad.
 3. Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
@@ -25,7 +25,7 @@ Todavía está abierto el plazo de inscripción para los
 4. Aprender buenas prácticas en entornos con integración y despliegue
    continuo: uso de ramas en el código, uso de *tags* para
    releases... 
-5 Antes de clase se debería haber entregado la revisión del
+5. Antes de clase se debería haber entregado la revisión del
   [primer hito del proyecto](http://jj.github.io/IV/documentos/practicas/1.Infraestructura)
   antes del principio de la clase, para un coeficiente de 0.8. A
   partir del principio de la clase, el coeficiente será de 0.7.
@@ -41,4 +41,4 @@ fecha de entrega es el **16 de noviembre**.
 
 ##Siguiente semana
 
-Sexta semana
+[Sexta semana](6-semana.md)
