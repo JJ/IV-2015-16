@@ -40,6 +40,33 @@ Aplicación creada:
 
 ###Ejercicio 5: Instalar y echar a andar tu primera aplicación en Heroku.
 
+Una vez implementada la aplicación y subida al repositorio en GitHub,  Heroku permitirá el acceso a la misma, no sólo de forma local. 
+
+Para ello debemos realizar los siguientes pasos tras instalar *Heroku toolbelt* previamente:
+	
+- Definir el archivo **Procfile** :
+	
+```
+web: gunicorn gettingstarted.wsgi --log-file -
+```
+
+- Definir el archivo **requirements.txt**:
+
+```
+pip freeze > requirements.txt
+```
+
+Y por último:
+
+	1.  heroku create
+	2.	git push heroku master
+	3.	heroku ps:scale web=1
+	4.	heroku open
+	
+Comprobamos nuestra aplicación funcionando correctamente en Heroku:
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/web.png)
+
 
 ###Ejercicio 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
 
