@@ -197,4 +197,39 @@ Se observa que *response* recibe la serialización de la vista y lo compara con 
 
 ![testrutas](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/testeorutas_zpswmr13qaf.png)
 
+###Ejercicio 5: Instalar y echar a andar tu primera aplicación en Heroku.
+
+- Instalar Ruby mediante el comando **sudo apt-get install ruby-full**
+- Descargar cinturon de Heroku mediante la orden **wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh**
+- Instalar las herramientas de django necesarias para el despliegue **pip install django-toolbelt** ( posteriormente se define requirements.txt )
+- Si da algun error con **psycopg2** ejecutar **sudo apt-get install libpq-dev python-dev** ( es una herramienta necesaria si se va a usar postgreSQL )
+- Definir **requirements.txt** , en mi caso:
+```
+Django==1.8.6
+argparse==1.2.1
+dj-database-url==0.3.0
+dj-static==0.0.6
+django-toolbelt==0.0.1
+djangorestframework==3.3.1
+gunicorn==19.3.0
+psycopg2==2.6.1
+static3==0.6.1
+wsgiref==0.1.2
+```
+- Definir un archivo **runtime.txt** en caso de que heroku no soporte la versión de python utilizada. Ver [enlace](https://devcenter.heroku.com/articles/python-runtimes) para saber que versiones requieren de este archivo.
+- Definir un archivo **Procfile** , en mi caso ( wsgi corresponde al nombre de la aplicación ):
+```
+web: gunicorn apuestas.wsgi --log-file -
+```
+- Subir todos estos cambios a github ya que heroku utiliza un repositorio.
+- Loguearse en heroku mediante **heroku login**
+- Crear la app mediante **heroku create**
+- Subir la app mediante **git push heroku master**
+- En la pestaña derecha de heroku se le da a **open app** y se ve la aplicación desplegada.
+- Si da algun error ejecutar en el terminal **heroku logs** para ver que ocurre.
+
+![heroku](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/heroku_zpsmdrm8vj6.png)
+
+![appheroku](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appheroku_zps3osjvghx.png)
+
 
