@@ -90,11 +90,42 @@ Lista de objetivos de Santiago de Diego
 
 [X] Antes de la clase de "teoría" se debería haber entregado el [primer hito del proyecto](http://jj.github.io/IV/documentos/practicas/1.Infraestructura).
 
-[ ] Configurar los *toolbelt* de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+[X] Configurar los *toolbelt* de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
 
-[ ] Comprender los mecanismos de despliegue automático.
+[X] Comprender los mecanismos de despliegue automático.
 
-[ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales. 
+[X] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
+#Objetivos quinta semana
+
+[X] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+
+[X] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+
+[X] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+
+[X] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+
+[X] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+
+[ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+[X] Darse de alta y probar diferentes servicios PaaS.
+[X] Instalar los *toolbelt* de los diferentes servicios para poder manejarlos con facilidad.
+[X] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+[X] Aprender buenas prácticas en entornos con integración y despliegue
+   continuo: uso de ramas en el código, uso de *tags* para
+   releases...
+   
+#Objetivos sexta semana
+
+[X] Trabajar con los *toolbelts* de los diferentes PaaS.
+
+[X] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+
+[X] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+
+[X] Experimentar con el despliegue simultáneo a varios PaaS.
 
 
 
