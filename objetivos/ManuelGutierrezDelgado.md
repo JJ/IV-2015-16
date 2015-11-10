@@ -83,7 +83,7 @@
 
  - [x] Comprender los mecanismos de despliegue automático.
 
- - [ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales. 
+ - [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales. 
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------
