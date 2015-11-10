@@ -82,7 +82,7 @@
 
 [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
 
-[] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+[X] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
 
 [x] Comprender los mecanismos de despliegue automático.
     
@@ -117,15 +117,15 @@
 
 [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
     
-[] Resolver los problemas que surjan en los primeros despliegues de la asignatura.
+[X] Resolver los problemas que surjan en los primeros despliegues de la asignatura.
 
 #####Otros objetivos
 
 [x] Darse de alta y probar diferentes servicios PaaS.
     
-[] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+[X] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
     
-[] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+[X] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
     
 [x] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
     
@@ -133,7 +133,21 @@
 
 ###Sesión 7 (Semana del 4 al 11 de noviembre 2015)
 
+[x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
 
+[x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+
+#####Otros objetivos
+
+[x] Trabajar con los toolbelts de los diferentes PaaS.
+    
+[] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+    
+[x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+    
+[x] Experimentar con el despliegue simultáneo a varios PaaS.
+
+###Sesión 8 (Semana del 11 al 18 de noviembre 2015)
 
 
 
