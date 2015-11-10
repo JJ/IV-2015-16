@@ -5,34 +5,34 @@
 
 Voy a utilizar la PaaS OpenShift, en la que ya tengo una cuenta creada desde hace un año y probé a subir varias aplicaciones
 
-![Captura de la página principal de OpenShift]()
+![Captura de la página principal de OpenShift](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap1_zps6yloxcrx.png)
 
 ###Ejercicio 2: Crear una aplicación en OpenShift y dentro de ella instalar WordPress.
 
 Para añadir una aplicación, dentro del menú principal de nuestra cuenta en OpenShift en la pestaña **Applications**, pulsamos en el botón **Add Application...**. En caso de no tener ninguna aplicación ya, aparecerá diferente la página y nos explicará brevemente como crearla.
 
-![Botón para añadir aplicación](cap2)
+![Botón para añadir aplicación](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap2_zps6yzhqbhw.png)
 
 Después se nos muestra una página donde elegir el tipo de aplicación. En el apartado *Instant App* podemos encontrar el tipo de aplicación que queremos crear, WordPress.
 
-![Enlace para seleccionar el tipo de aplicación WordPress](cap3)
+![Enlace para seleccionar el tipo de aplicación WordPress](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap3_zpstfw9pvhg.png)
 
 Una vez hemos accedido al enlace para crear la aplicación podemos configurar esta desde la siguiente página. Ahí indicamos la URL pública, donde está el código fuente, los *gears* que utiliza, el escalado, y la región.
 
-![Página de configuración de la aplicación](cap4)
+![Página de configuración de la aplicación](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap4_zps2xw2jlrd.png)
 
 En el código fuente no voy a indicar un repositorio de mi propiedad, sino voy a dejarlo por defecto, que enlaza a un repositorio con código fuente de ejemplo de una aplicación WordPress creada por los de OpenShift.
 
 Pulsamos el botón **Create Application** desde la página de configuración para confirmar definitivamente la creación. Después de unos segundos nos mostrará una página con información sobre lo que podemos hacer a partir de ahora y datos referentes a la BD.
 También explica un poco como cambiar el código mediante la herramienta *Git*.
 
-![Página con los datos de la aplicación creada](cap5)
+![Página con los datos de la aplicación creada](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap5_zpsjohsjedr.png)
 
 Si pulsamos en **Continue to the application overview page** accederemos al panel de control de nuestra aplicación.
 
 Como ya está creada, podemos acceder directamente a la dirección de URL pública que proporcionamos en la configuración. En este caso https://wp-jesuspl.rhcloud.com/ y veremos la aplicación funcionando.
 
-![Página en WordPress creada en OpenShift](cap6)
+![Página en WordPress creada en OpenShift](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap6_zps1gheddqs.png)
 
 
 ###Ejercicio 3: Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
@@ -148,19 +148,19 @@ Ahora desde la consola, comprobamos con *curl* o *http* que funcionan la rutas.
 `$ curl http://localhost:8000/empresas/`
 `$ http http://localhost:8000/empresas/`
 
-![Respuesta en JSON de la ruta de mostrar empresas](cap7)
+![Respuesta en JSON de la ruta de mostrar empresas](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap7_zpsx8cwr9jj.png)
 
 * La ruta que muestra la calificación de una empresa, en este caso de la segunda.
 
 `$ curl http://localhost:8000/empresas/2/`
 
-![Respuesta JSON con la calificacion de una empresa](cap8)
+![Respuesta JSON con la calificacion de una empresa](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap8_zpssp9tn9pi.png)
 
 * La ruta de mostrar empresas pero con método POST para crear una empresa pasandole parámetros
 
 `$ http --json POST http://localhost:8000/empresas/ <atributo1>=<valor1> ...`
 
-![Respuesta JSON al crear una empresa desde la consola](cap9)
+![Respuesta JSON al crear una empresa desde la consola](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap9_zpsawjvhb6m.png)
 
 
 ###Ejercicio 4: Crear pruebas para las diferentes rutas de la aplicación.
@@ -212,7 +212,7 @@ Lanzamos los test:
 
 `$ python manage.py test`
 
-![Resultados de los test para las rutas de la interfaz REST](cap10)
+![Resultados de los test para las rutas de la interfaz REST](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap10_zpsfk8s4umr.png)
 
 
 
