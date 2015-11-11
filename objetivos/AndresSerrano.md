@@ -14,7 +14,7 @@
 
 ###Sesion 2
 
-[*] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
+ - [*] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
 
 [*] Comprender las técnicas de cálculo del coste de amortización de un equipo informático y aplicarlo al cálculo del coste de uso de un recurso.
 
@@ -70,7 +70,7 @@
 
 [*] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
 
-[] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+[*] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 
 [*] Comprender el papel de las *build tools* o herramientas de automatización. 
 
@@ -84,13 +84,13 @@
 
 ###Otros objetivos
 
-[x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+[*] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
 
-[ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+[] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
 
-[] Comprender los mecanismos de despliegue automático.
+[*] Comprender los mecanismos de despliegue automático.
 
-[ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales. 
+[*] Entender el formato YAML y su uso en diferentes infraestructuras virtuales. 
 
 ##Lista de Objetivos
 

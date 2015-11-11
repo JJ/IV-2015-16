@@ -196,3 +196,5 @@ class RutasTests(APITestCase):
 Se observa que *response* recibe la serialización de la vista y lo compara con lo que debe de dar para testear si dicha serialización es correcta.
 
 ![testrutas](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/testeorutas_zpswmr13qaf.png)
+
+
