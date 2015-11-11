@@ -201,6 +201,7 @@ Se observa que *response* recibe la serialización de la vista y lo compara con 
 
 - Instalar Ruby mediante el comando **sudo apt-get install ruby-full**
 - Descargar cinturon de Heroku mediante la orden **wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh**
+- Instalar foreman mediante **sudo gem install foreman**
 - Instalar las herramientas de django necesarias para el despliegue **pip install django-toolbelt** ( posteriormente se define requirements.txt )
 - Si da algun error con **psycopg2** ejecutar **sudo apt-get install libpq-dev python-dev** ( es una herramienta necesaria si se va a usar postgreSQL )
 - Definir **requirements.txt** , en mi caso:
@@ -232,4 +233,9 @@ web: gunicorn apuestas.wsgi --log-file -
 
 ![appheroku](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appheroku_zps3osjvghx.png)
 
+###Ejercicio 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
+
+He probado solo ejecutar con foreman, he instalado foreman ejecutando **sudo gem install foreman** y he ejecutado con la orden **foreman start web**.
+
+![foreman](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/foreman_zpsf7k5np1z.png)
 
