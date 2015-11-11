@@ -37,6 +37,10 @@ Se va a crear la aplicación porra:
 
 ![](http://s2.subirimagenes.com/imagen/previo/thump_9489022probandoapp.png)
 
+![](http://s2.subirimagenes.com/imagen/previo/thump_9489043metiendodatos.png)
+
+![](http://s2.subirimagenes.com/imagen/previo/thump_9489045probandoinsercion.png)
+
 
 ###Ejercicio 4
 **Crear pruebas para las diferentes rutas de la aplicación.**
