@@ -82,31 +82,35 @@ Podemos observar que la aplicación supera la bateria de test:
 ##Ejercicio 5: Instalar y echar a andar tu primera aplicación en Heroku.
 
 Para que nuestra aplicación pueda funcionar en Heroku, debemos realizar una serie de modificaciones.
-Lo primero que debemos hacer es actualizar el fichero de requuirements:
+Lo primero que debemos hacer es actualizar el fichero de requirements.txt:
 
-	Django==1.7
 	dj-database-url==0.3.0
 	dj-static==0.0.6
-	gunicorn==19.1.1
-	psycopg2==2.5.1
-	static==0.4
-	wsgiref==0.1.2
+	Django==1.8.5
+	django-toolbelt==0.0.1
+	djangorestframework==3.3.0
+	gunicorn==19.3.0
+	psycopg2==2.6.1
+	Pygments==2.0.2
+	static3==0.6.1
+	wheel==0.24.0
+	whitenoise==2.0.4
 
 Lo siguiente que Heroku necesita para funcionar es un archivo de configuración llamado Procfile, con el siguiente contenido:
 
-	web: gunicorn djangoblog.wsgi --log-file -
+	web: gunicorn EjerciciosIV.wsgi --log-file -
 
 Con esto lo que le estamos indicando a Heroku es que queremos arrancar una instancia web y dejar que gunicorn ejecute nuestra aplicación dentro de ella. 
 
-Como en ejercicios anteriores tubimos que crear una cuenta en Heroku, ha llegado el momento de hacer loguin en ella, mediante 
+Como en ejercicios anteriores tuvimos que crear una cuenta en Heroku, ha llegado el momento de hacer loguin en ella, mediante 
 	
 	heroku login
 
-No solicitará nuestro nombre de correo y contraseña. Una vez loogueados, lo siguiente es crear un enlace al repositorio que Heroku nos ofrece para alojar nuestra aplicación mediante
+Nos solicitará nuestro correo y contraseña. Una vez loogueados, lo siguiente es crear un enlace al repositorio que Heroku nos ofrece para alojar nuestra aplicación mediante
 
 	heroku create
 
-Por último temeos que hacer push al repositorio de Heroku mediante 
+Por último tenemos que hacer push al repositorio de Heroku mediante 
 
 	git push heroku master
 
@@ -114,12 +118,34 @@ Por último temeos que hacer push al repositorio de Heroku mediante
 
 	heroku create --stack cedar
 
+Para hacer que la aplicación funcione en Heroku,sobre una base de datos postgres sql he tenido que modificar el settings.py de la aplicación:
+
+	DATABASES = {
+    		'default': {
+      			  'ENGINE': 'django.db.backends.sqlite3',
+      			  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+   		 }
+	}
+	ON_HEROKU = os.environ.get('PORT')
+	if ON_HEROKU:
+		DATABASE_URL='postgres://xfkguxxjdcmgrp:cqk8UhZfqmBKystbg39wVZDWyB@ec2-54-204-6-113.compute-1.amazonaws.com:5432/d1ea7k9gsqu3j1'
+		DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
+
+Con esto, le estamos diciendo al proyecto Django que utilice por defecto sqlite3 pero si al consultar la variable de entorno **PORT** que Heroku facilita, esta contiene algun valor, especificamos que DATABASE_URL sea la que Heroku nos crea al subir la aplicación y después indicamos que la configuración por defecto de la base de datos defaul, la coja de los datos facilitados por esta URL.  
 
 
+##Ejercicio 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
+
+Hay dos formas de instalar foreman, desde el repositorio [Foreman](http://theforeman.org/manuals/1.9/quickstart_guide.html) o mediante pip install foreman
+
+Si instalamos desde el repositorio, tenemos que modificar /etc/host para que la salida de **facter fqdn** conincida con la de **'hostname -f'** en mi caso he tenido que añadir 
+
+	127.0.1.1       hugo-machine.ugr.es hugo-machine
+
+##Ejercicio 7: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow
 
 
-
-
+##Ejercicio 8: Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido
 
 
 
