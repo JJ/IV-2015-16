@@ -389,3 +389,5 @@ Y enlazamos con el repositorio de Openshift:
 - *git remote add openshift ssh://5637951c7628e1ecd60000dc@michat-iv2015.rhcloud.com/~/git/michat.git/* # la dirección ssh la obtenemos de la información que nos da rhc de la app al crearla
 - *git fetch openshift*
 - *git push -u openshift*
+
+[Esta](http://michat-iv2015.rhcloud.com/) es la aplicación desplegada.
