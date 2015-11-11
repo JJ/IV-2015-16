@@ -17,8 +17,15 @@ Nos aseguramos de tener instalado **Nodejs** :
 Y comprobamos que funciona la aplicación tras ejecutar **npm start**:   
 ![aplicacionFuncionando](https://dl.dropboxusercontent.com/u/14470490/UGR_IV_github/ejercicios_tema3/ejercicio2.png)   
 
+## Ejercicio4: 
+   
+![4-1](https://dl.dropboxusercontent.com/u/14470490/UGR_IV_github/ejercicios_tema3/tema3-4_1.png)   
+![4-2](https://dl.dropboxusercontent.com/u/14470490/UGR_IV_github/ejercicios_tema3/tema3-4_2.png)   
+![4-3](https://dl.dropboxusercontent.com/u/14470490/UGR_IV_github/ejercicios_tema3/tema3-4_3.png)   
+![4-4](https://dl.dropboxusercontent.com/u/14470490/UGR_IV_github/ejercicios_tema3/tema3-4_4.png)   
+![4-5](https://dl.dropboxusercontent.com/u/14470490/UGR_IV_github/ejercicios_tema3/tema3-4_5.png)   
 
 ## Ejercicio 5: Instalar y echar a andar tu primera aplicación en Heroku.
 ![ejercicio5_1](https://dl.dropboxusercontent.com/u/14470490/UGR_IV_github/ejercicios_tema3/tema3_ejercicio5_1.png)   
-   
-
+![5-2](https://dl.dropboxusercontent.com/u/14470490/UGR_IV_github/ejercicios_tema3/tema3_5.png)   
+![5-3](https://dl.dropboxusercontent.com/u/14470490/UGR_IV_github/ejercicios_tema3/tema3_5-2.png)
