@@ -229,6 +229,8 @@ web: gunicorn apuestas.wsgi --log-file -
 - En la pestaña derecha de heroku se le da a **open app** y se ve la aplicación desplegada.
 - Si da algun error ejecutar en el terminal **heroku logs** para ver que ocurre.
 
+El enlace de la aplicacion es el [siguiente](https://hidden-meadow-4203.herokuapp.com/)
+
 ![heroku](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/heroku_zpsmdrm8vj6.png)
 
 ![appheroku](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appheroku_zps3osjvghx.png)
@@ -238,4 +240,30 @@ web: gunicorn apuestas.wsgi --log-file -
 He probado solo ejecutar con foreman, he instalado foreman ejecutando **sudo gem install foreman** y he ejecutado con la orden **foreman start web**.
 
 ![foreman](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/foreman_zpsf7k5np1z.png)
+
+![foremanweb](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/foremanweb_zpsz9cpvilv.png)
+
+###Ejercicio 7: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
+
+- Me he registrado en [https://snap-ci.com](https://snap-ci.com) y he procedido a conectar con el repositorio deseado.
+
+![registro](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/snip_zpstizkdamu.png)
+ 
+- Posteriormente en Heroku he comprobado que este conectado con **Github** y que tenga el despliegue automático ( consultar pestaña Deploy ).
+
+![despliegue](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/conectadodespliegue_zpsesmmhu40.png)
+
+- He hecho un push al repositorio y he comprobado que efectivamente hace un testeo antes de desplegarlo.
+
+![testeo](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/testeo_zpsth2wby4p.png)
+
+![despliegue](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/build_zps3nmsg96s.png)
+
+- Cojo la etiqueta markdown de **Snap-ci** que se obtiene dandole al recuadro de notificaciones.
+
+![paso1](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/paso1_zpszqhnuo5b.png)
+
+![paso2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/paso4_zpsfrp4pley.png)
+
+![github](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/git_zpsx2yiestv.png)
 
