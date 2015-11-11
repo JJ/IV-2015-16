@@ -56,6 +56,51 @@ Los pasos detallados de como desplegar una aplicación en Flask en Heroku están
 
 #Ejercicio 4
 
+En este ejercicio crearemos tests sobre las rutas de la aplicación en flask anterior. Para ello he utilizado la [documentación oficial de tests en Flask](http://flask.pocoo.org/docs/0.10/testing/)
+
+El archivo test.py queda como sigue:
+
+```
+
+import unittest
+import os
+import paginaEstatica
+import tempfile
+from flask.ext.testing import TestCase
+
+class paginaEstaticaTestCase(unittest.TestCase):
+
+    def setUp(self):
+        self.db_fd, paginaEstatica.app.config['DATABASE'] = tempfile.mkstemp()
+        paginaEstatica.app.config['TESTING'] = True
+        self.app = paginaEstatica.app.test_client()
+        #paginaEstatica.init_db()
+
+    def tearDown(self):
+        os.close(self.db_fd)
+        os.unlink(paginaEstatica.app.config['DATABASE'])
+
+    #Aqui acaba el esqueleto principal
+
+    def test_home_status_code(self):
+        # sends HTTP GET request to the application
+        # on the specified path
+        result = self.app.get('/')
+        # assert the status code of the response
+        self.assertEqual(result.status_code, 200)
+
+    def test_name_status_code(self):
+        # sends HTTP GET request to the application
+        # on the specified path
+        result = self.app.get('/user/santiago')
+        # assert the status code of the response
+        self.assertEqual(result.status_code, 200)
+```
+
+Hasta donde pone *Aqui acaba el esqueleto principal* corresponde a la parte más o menos común que debe tener todo programa de test en Flask y los dos test corresponden a las dos últimas funciones. La primera comprueba que se carga la ruta correspondiente a la página de inicio y la segunda comprueba para un nombre de usuario determinado, si se carga la página correspondiente.
+
+Se puede ver la mini aplicación en su [repositorio correspondiente](https://github.com/santidediego/AppBasicaFlask)
+
 #Ejercicio 5
 
 Primero de todo descargamos el cinturón de herramientas de Heroku, y una vez hecho esto ejecutamos `heroku login`. Después nos descargamos de github la aplicación de ejemplo de nodejs del repositorio [Aplicación de ejemplo](git@github.com:heroku/node-js-getting-started.git).
