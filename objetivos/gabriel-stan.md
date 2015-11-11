@@ -36,11 +36,11 @@ Lista de objetivos de Gabriel Stan
 ### Objetivos principales
 
 - [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
-- [ ] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
-- [ ] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+- [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+- [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
 - [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
 - [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
-- [ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
 ### Otros Objetivos
 - [x] Darse de alta y probar diferentes servicios PaaS.
