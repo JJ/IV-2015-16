@@ -88,3 +88,25 @@ Aquí dejo una captura de la aplicacion funcionando en Heroku!
 
 
 Aquí dejo el enlace a mi apliación en Heroku por si se desea probar mi [aplicacion](https://openorder.herokuapp.com) 
+
+
+
+##Ejercicio 6
+###Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
