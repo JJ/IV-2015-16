@@ -47,6 +47,13 @@ Por último adjunto una captura de pantalla desde dentro de nuestro sitio Wordpr
 
 
 
+##Ejercicio 3
+###Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
+
+
+##Ejercicio 4
+###Crear pruebas para las diferentes rutas de la aplicación.
+
 
 ##Ejercicio 5
 ###Instalar y echar a andar tu primera aplicación en Heroku.
