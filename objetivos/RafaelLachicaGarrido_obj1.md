@@ -97,6 +97,51 @@
 
 - [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
+## Semana del 21 al 28 de octubre de 2015
+### Objetivos de la semana
+
+- [x] Integrar GitHub - Sistema de Integración Continua - PaaS.
+
+- [x] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+### Otros objetivos
+
+- [x] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
+
+- [x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+
+- [x] Aprender y entender el funcionamiento de las herramientas de integrción continua como Travis y Shippable.
+
+- [x] Aprender a usar Openshift y Heroku.
+
+## Semana del 28 de octubre al 4 de noviembre de 2015
+### Objetivos de la semana
+
+- [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+
+- [x] Entender el concepto de PaaS, su aplicación y sus limitaciones.
+
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo. 
+
+- [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+### Otros objetivos
+
+- [x] Darse de alta y probar diferentes servicios PaaS.
+
+- [x] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad. He instalado los de heroku.
+
+- [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+
+- [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases... 
+
+- [x] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
 __________________________________________
 
 ## Objetivos de la asignatura
@@ -129,9 +174,25 @@ __________________________________________
 - [x] Aprender a usar integración continua en cualquier aplicación.
 
 ### Tema 3: Creando aplicaciones en la nube: Uso de PaaS y SaaS
-
+####Objetivos específicos
 - [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
 
 - [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
 
 - [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización. Por ejemplo tenemos varios trabajadores que tocan el mismo código, con la integración continua sabemos donde están los fallos, porque se producen y quien los provoca. Además podemos trabajar sobre la nube.
+
+####Otros objetivos
+- [x] Darse de alta en Heroku y Openshift y aprender a usarlos.
+
+- [x] Crear una aplicación Wordpress dentro de Openshift.
+
+- [x] Realizar una app en Heroku.
+
+- [x] Crear pruebas para la app y verlas en la integración continua.
+
+
+
