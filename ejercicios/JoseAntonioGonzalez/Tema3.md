@@ -1,0 +1,35 @@
+#Ejercicio 1
+### Darse de alta en algún servicio PaaS tal como Heroku, Nodejitsu, BlueMix u OpenShift.
+
+Nos daremos de alta en [Heroku](https://www.heroku.com), yendo a su página principal. Dentro pulsamos en sign up para ir a la siguiente ventana:
+
+![](REGISTRO_HEROKU_1.png)
+
+Después de rellenar el formulario con el email, nos saldrá la siguiente ventana:
+
+![](REGISTRO_HEROKU_2.png)
+
+Nos metemos en nuestro correo, y seguimos el enlace de activación. Tras hacerlo, nos pedirá que guardemos una contraseña, y nos aparecerá el menú principal de Heroku:
+
+![](REGISTRO_HEROKU_3.png)
+
+#Ejercicio 2
+
+#### Crear una aplicación en OpenShift y dentro de ella instalar WordPress.
+
+Nos vamos a la página de [OpenShift](https://www.openshift.com/), y si no tenemos cuenta, nos hacemos una pulsando en el boton Sign up for free.
+
+![](Ej3_1.png)
+
+UNa vez creada y desde el menú de nuestra cuenta,nos aparecerá una pantalla de bienvenida, donde pulsaremos sobre "Create your first application now"
+
+En el primer apartado (Instant app), pulsamos sobre WordPress 4. Rellenamos todos los campos del formulario (en este caso, la aplicación ejecutada será la que viene de prueba, que descargará de un repositorio de git).
+
+![](ejercicio2)
+
+Esperamos un tiempo hasta que se cree (tarda bastante). Después, una vez creada, la plataforma nos proporcionará los datos de acceso a la base de datos para poder realizar las operaciones que nos interesen
+
+![](ejercicio2_1)
+
+
+
