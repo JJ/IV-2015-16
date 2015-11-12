@@ -69,6 +69,7 @@ Ejecutamos los tests:
 	- wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh 
 - Nos logueamos
 	- heroku login
+	
 		![login heroku](http://s2.subirimagenes.com/imagen/previo/thump_9489622loginheroku.png)
 
 - Clonamos el directorio y entramos en el mismo
