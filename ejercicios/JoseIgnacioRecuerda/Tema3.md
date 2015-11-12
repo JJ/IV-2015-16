@@ -145,5 +145,8 @@ Para arrancar la aplicación y probarla en local se puede hacer de dos formas, t
 
 
 
+##Ejercicio 8
+###Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.
 
-
+Como se ha podido ver durante la realización de estos ejercicios he escogido el servicio en la nube paas (platform as a service) que ofrece Heroku.
+A continuación dejo un enlace a mi aplicación desplegada en Heroku para que se pueda probar [aplicacion](https://openorder.herokuapp.com) 
