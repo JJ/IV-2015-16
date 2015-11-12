@@ -150,3 +150,7 @@ Para arrancar la aplicación y probarla en local se puede hacer de dos formas, t
 
 Como se ha podido ver durante la realización de estos ejercicios he escogido el servicio en la nube paas (platform as a service) que ofrece Heroku.
 A continuación dejo un enlace a mi aplicación desplegada en Heroku para que se pueda probar [aplicacion](https://openorder.herokuapp.com) 
+
+Añado captura de pantalla de la aplicación desplegada desde la url en Heroku
+
+![aplicacion en heroku](https://www.dropbox.com/s/z99iaqdgh0dg5ob/ejr8.1.png?dl=1)
