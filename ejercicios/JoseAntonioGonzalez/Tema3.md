@@ -32,4 +32,29 @@ Esperamos un tiempo hasta que se cree (tarda bastante). Después, una vez creada
 ![](ejercicio2_1)
 
 
+#Ejercicio 3
 
+En los ejercicios del [Tema 2](https://github.com/JJ/IV-2015-16/blob/master/ejercicios/JoseAntonioGonzalez/Tema2.md) se pidió crear una aplicación. En ese momento, usé como lenguaje Python, y como framework para crear una aplicacion web, **webapp2** (que podría ser un equivalente a express en js). 
+
+Sin embargo en ese ejercicio no se pedía un tratamiento de variables (no desde URL, aunque si se tratan desde formularios). De modo que para este ejercicio, he reutilizado esa aplicación, añadiendo una nueva página que imprime una variable dada por URL.
+
+Cooncretamente, el fragmento de código incorporado es el siguiente:
+
+	[...]
+    class PaginaPruebaVariable(webapp2.RequestHandler):
+    def get(self,parametro):
+        self.response.write( 'Parametro recibido: %s' % parametro)
+        
+        [...]
+        aplicacion = webapp2.WSGIApplication([
+        [...]
+        (r'/prueba/(\w+)', PaginaPruebaVariable),
+					], debug=True)
+        
+        
+Aunque se puede apreciar mejor [en el commit del repo con la modificacion](https://github.com/JA-Gonz/appEjercicioIV/commit/d1f0b16f1d345d7ebb1421e976358996939d59c9)
+
+Como vemos, imprime la variable proporcionada en la URL:
+
+![](Ejercicio 3)
+    
