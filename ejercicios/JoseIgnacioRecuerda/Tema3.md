@@ -131,4 +131,19 @@ Aquí dejo una captura de la aplicacion funcionando en Heroku!
 
 Aquí dejo el enlace a mi apliación en Heroku por si se desea probar mi [aplicacion](https://openorder.herokuapp.com) 
 
+Para arrancar la aplicación y probarla en local se puede hacer de dos formas, tanto usando el comando foreman (como se indica en en el guión de los ejercicios) como usando el comando "heroku local web". a continuación pongo capturas arrancando la aplicación en local con ambos comandos:
+
+- Con el comando "foreman start web":
+
+![lanzando local con foreman](https://www.dropbox.com/s/ca2xujget9ypeh2/ejr6.1.png?dl=1)
+
+
+- Con el comando "heroku local web":
+
+![lanzando local con Heroku](https://www.dropbox.com/s/wufxtmwi45hg01y/ejr6.2.png?dl=1)
+
+
+
+
+
 
