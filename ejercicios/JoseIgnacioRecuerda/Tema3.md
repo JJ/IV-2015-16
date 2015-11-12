@@ -44,3 +44,47 @@ Por último adjunto una captura de pantalla desde dentro de nuestro sitio Wordpr
 
 ![dentro de wordpress](https://www.dropbox.com/s/8hmdsb3ows3lq3x/ejr2.7.png?dl=1)
 
+
+
+
+
+##Ejercicio 5
+###Instalar y echar a andar tu primera aplicación en Heroku.
+
+Para realizar este ejercicio me he ayudado del tutorial de [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
+
+En primer lugar he instalado heroku Toolbelt
+
+![instalado heroku Toolbelt](https://www.dropbox.com/s/z7t2wl3zlunf250/ejr5.1.png?dl=1)
+
+Me logeo desde terminal
+
+![Me logeo desde terminal](https://www.dropbox.com/s/omtlmu87y31lu11/ejr5.2.png?dl=1)
+
+Acontinuacion creo una aplicación en Heroku con el nombre que deseo, "openorder"
+
+![creo app en heroku](https://www.dropbox.com/s/rxrpnhnj7o86nbd/ejr5.3.png?dl=1)
+
+Una vez creada me voy a la página web de Heroku y verifico que se ha creado correctamente mi aplicación. Podemos comprobarlo en la siguiente captura de pantalla
+
+![verifico creacion app](https://www.dropbox.com/s/s4pghabpy99zrmh/ejr5.7.png?dl=1)
+
+Una vez verificado que se ha creado la aplicación me dispongo a enlazarlo con mi aplicación que esta ubicada en gitHub. Para ello selecciono mi aplicación en la web de Heroku, me voy al apartado "Deploy" y enlazo mi aplicación con el repositorio de GitHub, previamente autorizando a Heroku a acceder a mi cuenta de GitHub.
+
+![enlazo mi app con repositorio gitHub](https://www.dropbox.com/s/87h6u6rg1y4d9ls/ejr5.4.png?dl=1)
+![enlazo mi app con repositorio gitHub2](https://www.dropbox.com/s/qo5kk5sut7zvn79/ejr5.5.png?dl=1)
+
+Por último, abro la aplicación con el comando "Heroku open" desde terminal 
+
+![abro app desde terminal](https://www.dropbox.com/s/nyfsr7xlg6svhq6/ejr5.8.png?dl=1)
+
+o abriendola desde la misma web
+
+ ![abro aplicacion desde la web](https://www.dropbox.com/s/c8ig0bp5aimzcyr/ejr5.9.png?dl=1)
+
+Aquí dejo una captura de la aplicacion funcionando en Heroku!
+
+![app lanzada en Heroku](https://www.dropbox.com/s/41dgx5akn56n8qt/ejr5.6.png?dl=1)
+
+
+Aquí dejo el enlace a mi apliación en Heroku por si se desea probar mi [aplicacion](https://openorder.herokuapp.com) 
