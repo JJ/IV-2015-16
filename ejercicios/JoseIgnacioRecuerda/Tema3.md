@@ -58,7 +58,7 @@ Por último adjunto una captura de pantalla desde dentro de nuestro sitio Wordpr
 ##Ejercicio 5
 ###Instalar y echar a andar tu primera aplicación en Heroku.
 
-Para realizar este ejercicio me he ayudado del tutorial de [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
+Para realizar este ejercicio he seguido los pasos del tutorial de [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
 
 En primer lugar he instalado heroku Toolbelt
 
@@ -68,7 +68,42 @@ Me logeo desde terminal
 
 ![Me logeo desde terminal](https://www.dropbox.com/s/omtlmu87y31lu11/ejr5.2.png?dl=1)
 
-Acontinuacion creo una aplicación en Heroku con el nombre que deseo, "openorder"
+Nos descargamos un repositorio de git con el [enlace](https://github.com/heroku/node-js-getting-started.git) que nos proporcionan.
+
+![Clono repositorio](https://www.dropbox.com/s/qg5wtdsy234oe39/ejr5_verdadero_1.png?dl=1)
+
+Creamos nuestra primera aplicación en Heroku
+
+![Creo aplicacion heroku](https://www.dropbox.com/s/5ctzzg2e4jlptmn/ejr5_verdadero_2.png?dl=1)
+
+Hacemos un push al git remote de Heroku que se nos habia creado con el anterior comando
+
+![subimos aplicacion a heroku](https://www.dropbox.com/s/x34q69mznx0k78n/ejr5_verdadero_3.png?dl=1)
+
+Con todo esto la aplicación ya esta desplegada, pero nos aseguramos de que hay una instancia ejecutandose y introducimos el comando para que nos abra la aplicacion en nuestro navegador
+
+![abrimos aplicacion](https://www.dropbox.com/s/2azc3homomasm0v/ejr5_verdadero_4.png?dl=1)
+
+Como podemos comprobar nuestra aplicación se esta ejecutando ya en Heroku!
+
+![abrimos aplicacion](https://www.dropbox.com/s/ibrp8fpo8cwxnjf/ejr5_verdadero_5.png?dl=1)
+
+A continuacion me dispongo a instalar todas las dependencias que necesita la aplicacion con el comando mnpm install
+
+![abrimos aplicacion](https://www.dropbox.com/s/h2vllvn5ttqjjz1/ejr5_verdadero_6.png?dl=1)
+
+Por último termino el tutorial y consigo instalar más dependecias, me creo otra ruta de navegación y aprendo a subir los cambiar realizados desde terminal a Heroku
+
+
+##Ejercicio 6
+###Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
+
+
+Para realizar este ejercicio me he seguido apoyando del tutorial de [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
+
+Yo este ejercicio lo he realizado usando mi propia aplicación de nodejs.
+
+Creo una aplicación en Heroku, esta vez con el nombre que deseo, "openorder"
 
 ![creo app en heroku](https://www.dropbox.com/s/rxrpnhnj7o86nbd/ejr5.3.png?dl=1)
 
@@ -95,12 +130,5 @@ Aquí dejo una captura de la aplicacion funcionando en Heroku!
 
 
 Aquí dejo el enlace a mi apliación en Heroku por si se desea probar mi [aplicacion](https://openorder.herokuapp.com) 
-
-
-
-##Ejercicio 6
-###Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
-
-
 
 
