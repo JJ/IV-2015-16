@@ -10,13 +10,13 @@ El primer paso es rellenar el formulario de registro:
 El segundo paso es confirmar el registro mediante un enlace enviado a nuestro correo:
 ![confirmacion](https://www.dropbox.com/s/u6xghl3tvvibnz9/h2.png?dl=1)
 
-En el enlace enviado a nuestro correo electrónico, hay un segundo mecanismo de validación utilizando un código enviado a nuestro telefono movil:
+En el enlace enviado a nuestro correo electrónico, hay un segundo mecanismo de validación utilizando un código enviado a nuestro teléfono móvil:
 ![validacion](https://www.dropbox.com/s/mz1nkdos7ncqmu5/h3.png?dl=1)
 
 Finalmente, podemos acceder a la interfaz de Heroku
 ![interfaz](https://www.dropbox.com/s/qip00ljrgi94ty8/h4.png?dl=1)
 
-Voy a darme de alta tambien en [OpenShift](https://www.openshift.com) ya que es necesario para el siguiente ejercicio. 
+Voy a darme de alta también en [OpenShift](https://www.openshift.com) ya que es necesario para el siguiente ejercicio. 
 
 El primer paso es rellenar el formulario de registro:
 ![registro](https://www.dropbox.com/s/m63dhwxf78nim33/op.png?dl=1)
@@ -29,7 +29,7 @@ Una vez validado, ya podemos acceder a la interfaz de OpenShift y comenzar su co
 
 ##Ejercicio 2: Crear una aplicación en OpenShift y dentro de ella instalar WordPress.
 
-En la interfaz de OpenShift, buscamos el apartado Instant App y selecionamos WordPress 4
+En la interfaz de OpenShift, buscamos el apartado Instant App y seleccionamos WordPress 4
 ![ej2](https://www.dropbox.com/s/nu9h41bb5ipz53g/ej2.png?dl=1)
 
 Elegimos la url de nuestra aplicación:
@@ -48,8 +48,8 @@ Y listo, ya podemos empezar a personalizar la aplicación [WordPress](http://php
 
 Para realizar la aplicación, he elegido python y Django. Para poder utilizar variables REST, Django pone a nuestra disposición el FrameWork
 **djangorestframework**
-Para realizar la aplicación, he continuado con el ejemplo de Empresas del tema 2, la nueva aplicación se escuentra alojada en el siguiente repositorio [Empresa](https://github.com/hugobarzano/Empresas_tema3)
-En dicho repositorio tambien se encuentra el fichero [Pasos](https://github.com/hugobarzano/Empresas_tema3/blob/master/pasos.md) en el que están detallados todos los pasos a seguir para crear la aplicación. 
+Para realizar la aplicación, he continuado con el ejemplo de Empresas del tema 2, la nueva aplicación se encuentra alojada en el siguiente repositorio [Empresa](https://github.com/hugobarzano/Empresa)
+En dicho repositorio también se encuentra el fichero [Pasos](https://github.com/hugobarzano/Empresa/blob/master/pasos.md) en el que están detallados todos los pasos a seguir para crear la aplicación con variables REST
 
 ##Ejercicio 4: Crear pruebas para las diferentes rutas de la aplicación. 
 
@@ -106,7 +106,7 @@ Como en ejercicios anteriores tuvimos que crear una cuenta en Heroku, ha llegado
 	
 	heroku login
 
-Nos solicitará nuestro correo y contraseña. Una vez loogueados, lo siguiente es crear un enlace al repositorio que Heroku nos ofrece para alojar nuestra aplicación mediante
+Nos solicitará nuestro correo y contraseña. Una vez dentro, lo siguiente es crear un enlace al repositorio que Heroku nos ofrece para alojar nuestra aplicación mediante
 
 	heroku create
 
@@ -114,7 +114,7 @@ Por último tenemos que hacer push al repositorio de Heroku mediante
 
 	git push heroku master
 
-**Nota:** si tenemos problemas al hacer push, reinicialziar el repositorio y tulizar el comando 
+**Nota:** si tenemos problemas al hacer push, reinicializar el repositorio y utilizar el comando 
 
 	heroku create --stack cedar
 
@@ -131,21 +131,36 @@ Para hacer que la aplicación funcione en Heroku,sobre una base de datos postgre
 		DATABASE_URL='postgres://xfkguxxjdcmgrp:cqk8UhZfqmBKystbg39wVZDWyB@ec2-54-204-6-113.compute-1.amazonaws.com:5432/d1ea7k9gsqu3j1'
 		DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
 
-Con esto, le estamos diciendo al proyecto Django que utilice por defecto sqlite3 pero si al consultar la variable de entorno **PORT** que Heroku facilita, esta contiene algun valor, especificamos que DATABASE_URL sea la que Heroku nos crea al subir la aplicación y después indicamos que la configuración por defecto de la base de datos defaul, la coja de los datos facilitados por esta URL.  
+Con esto, le estamos diciendo al proyecto Django que utilice por defecto sqlite3 pero si al consultar la variable de entorno **PORT** que Heroku facilita, esta contiene algún valor, especificamos que DATABASE_URL sea la que Heroku nos crea al subir la aplicación y después indicamos que la configuración por defecto de la base de datos default, la coja de los datos facilitados por esta URL.  
 
 
 ##Ejercicio 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
 
 Hay dos formas de instalar foreman, desde el repositorio [Foreman](http://theforeman.org/manuals/1.9/quickstart_guide.html) o mediante pip install foreman
 
-Si instalamos desde el repositorio, tenemos que modificar /etc/host para que la salida de **facter fqdn** conincida con la de **'hostname -f'** en mi caso he tenido que añadir 
+Si instalamos desde el repositorio, tenemos que modificar /etc/host para que la salida de **facter fqdn** coincida con la de **'hostname -f'** en mi caso he tenido que añadir 
 
 	127.0.1.1       hugo-machine.ugr.es hugo-machine
 
 ##Ejercicio 7: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow
 
+He añadido los test de nuevas funcionalidades creadas en el ejercicio 3 como son la creación, actualización y borrado de una empresa mediante el uso de variables REST. Los test están [aquí](https://github.com/hugobarzano/Empresa/blob/master/Empresa/tests.py)
+
+Para configurar el despliegue automático de a Heroku usando Snap CI, lo que tenemos que hacer es añadir una nueva stage al pipeline de la build, indicándole un despliegue básico de la aplicación Heroku: 
+![pipeline](https://www.dropbox.com/s/84kspv2jnjsbgdt/snap_ci.png?dl=0)
+
+Una vez guardada la configuración,si todo esta correcto, el pipeline saltará solo de un stage a otro hasta completar el despliegue.
+![pipeline2](https://www.dropbox.com/s/9w28pjewd0wbxpi/snep_ci_2.png?dl=0)
+
 
 ##Ejercicio 8: Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido
+
+Llegados a este punto, la aplicación ya esta lista para su despliegue en Heroku. Este puede llevarse acabo mediante 
+	
+	git push //Utilizando la automatización de Snap CI
+	git push heroku master //Indicándole directamente a Heroku que se han realizado cambios en la aplicación. 
+
+Podemos consultar la aplicación aquí: [Empresa](https://infinite-springs-9824.herokuapp.com/)
 
 
 
