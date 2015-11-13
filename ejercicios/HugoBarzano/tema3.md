@@ -147,10 +147,10 @@ Si instalamos desde el repositorio, tenemos que modificar /etc/host para que la 
 He añadido los test de nuevas funcionalidades creadas en el ejercicio 3 como son la creación, actualización y borrado de una empresa mediante el uso de variables REST. Los test están [aquí](https://github.com/hugobarzano/Empresa/blob/master/Empresa/tests.py)
 
 Para configurar el despliegue automático de a Heroku usando Snap CI, lo que tenemos que hacer es añadir una nueva stage al pipeline de la build, indicándole un despliegue básico de la aplicación Heroku: 
-![pipeline](https://www.dropbox.com/s/84kspv2jnjsbgdt/snap_ci.png?dl=0)
+![pipeline](https://www.dropbox.com/s/84kspv2jnjsbgdt/snap_ci.png?dl=1)
 
 Una vez guardada la configuración,si todo esta correcto, el pipeline saltará solo de un stage a otro hasta completar el despliegue.
-![pipeline2](https://www.dropbox.com/s/9w28pjewd0wbxpi/snep_ci_2.png?dl=0)
+![pipeline2](https://www.dropbox.com/s/9w28pjewd0wbxpi/snep_ci_2.png?dl=1)
 
 
 ##Ejercicio 8: Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido
