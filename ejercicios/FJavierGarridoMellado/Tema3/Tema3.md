@@ -236,6 +236,41 @@ El enlace de la aplicacion es el [siguiente](https://hidden-meadow-4203.herokuap
 
 ![appheroku](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appheroku_zps3osjvghx.png)
 
+Para usar Postgre como base de datos en la aplicación, la cual es la que recomienda Heroku deben de seguirse los siguientes pasos :
+- Tener instalado *psycopg2*, instalando el paquete django-toolbet debe de instalarse.
+- Tener instalado *dj_database_url*, al igual que antes debe de instalarse con el paquete mencionado.
+- Abrir el archivo *setting.py* del proyecto y añadir lo siguiente( sacado del siguiente [enlace](http://stackoverflow.com/questions/26080303/improperlyconfigured-settings-databases-is-improperly-configured-please-supply):
+```
+import dj_database_url
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+ALLOWED_HOSTS = ['*']
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+ON_HEROKU = os.environ.get('PORT')
+if ON_HEROKU:
+	DATABASE_URL='postgres://jxryjglugskiss:iKqJ7bn20j41Fcaa6kvGiSSK1v@ec2-107-21-222-62.compute-1.amazonaws.com:5432/dhbuh37t7p0dm'
+	DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
+
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+```
+- Notar que en DATABASE_URL se pone la url que sale para la base de datos postgre que Heroku nos ofrece, hay que darle a show para verlo.
+- Ejecutar el comando *heroku run python manage.py syncdb* ( posiblemente funcione usando makemigrations, migrate y createsuperuser )
+
+
 ###Ejercicio 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
 
 He probado solo ejecutar con foreman, he instalado foreman ejecutando **sudo gem install foreman** y he ejecutado con la orden **foreman start web**.
