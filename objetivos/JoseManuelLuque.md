@@ -116,8 +116,8 @@ compañero.
 
 - [ ] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
 
-## Semana del 4 al 11 de noviembre de 2015
-### Objetivos de la semana
+## 4 de noviembre
+### Lista de objetivos
 
 - [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
 
