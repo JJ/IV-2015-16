@@ -197,4 +197,81 @@ Se observa que *response* recibe la serialización de la vista y lo compara con 
 
 ![testrutas](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/testeorutas_zpswmr13qaf.png)
 
+###Ejercicio 5: Instalar y echar a andar tu primera aplicación en Heroku.
 
+- Instalar Ruby mediante el comando **sudo apt-get install ruby-full**
+- Descargar cinturon de Heroku mediante la orden **wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh**
+- Instalar foreman mediante **sudo gem install foreman**
+- Instalar las herramientas de django necesarias para el despliegue **pip install django-toolbelt** ( posteriormente se define requirements.txt )
+- Si da algun error con **psycopg2** ejecutar **sudo apt-get install libpq-dev python-dev** ( es una herramienta necesaria si se va a usar postgreSQL )
+- Definir **requirements.txt** , en mi caso:
+```
+Django==1.8.6
+argparse==1.2.1
+dj-database-url==0.3.0
+dj-static==0.0.6
+django-toolbelt==0.0.1
+djangorestframework==3.3.1
+gunicorn==19.3.0
+psycopg2==2.6.1
+static3==0.6.1
+wsgiref==0.1.2
+```
+- Definir un archivo **runtime.txt** en caso de que heroku no soporte la versión de python utilizada. Ver [enlace](https://devcenter.heroku.com/articles/python-runtimes) para saber que versiones requieren de este archivo.
+- Definir un archivo **Procfile** , en mi caso ( wsgi corresponde al nombre de la aplicación ):
+```
+web: gunicorn apuestas.wsgi --log-file -
+```
+- Subir todos estos cambios a github ya que heroku utiliza un repositorio.
+- Loguearse en heroku mediante **heroku login**
+- Crear la app mediante **heroku create**
+- Subir la app mediante **git push heroku master**
+- En la pestaña derecha de heroku se le da a **open app** y se ve la aplicación desplegada.
+- Si da algun error ejecutar en el terminal **heroku logs** para ver que ocurre.
+- Para renombrar el nombre de la aplicación no se debe usar la página sino el comando **heroku apps:rename newname** 
+
+El enlace de la aplicacion es el [siguiente](https://hidden-meadow-4203.herokuapp.com/)
+
+![heroku](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/heroku_zpsmdrm8vj6.png)
+
+![appheroku](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appheroku_zps3osjvghx.png)
+
+###Ejercicio 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
+
+He probado solo ejecutar con foreman, he instalado foreman ejecutando **sudo gem install foreman** y he ejecutado con la orden **foreman start web**.
+
+![foreman](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/foreman_zpsf7k5np1z.png)
+
+![foremanweb](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/foremanweb_zpsz9cpvilv.png)
+
+###Ejercicio 7: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
+
+- Me he registrado en [https://snap-ci.com](https://snap-ci.com) y he procedido a conectar con el repositorio deseado.
+
+![registro](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/snip_zpstizkdamu.png)
+ 
+- Posteriormente en Heroku he comprobado que este conectado con **Github** y que tenga el despliegue automático ( consultar pestaña Deploy ).
+
+![despliegue](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/conectadodespliegue_zpsesmmhu40.png)
+
+- He hecho un push al repositorio y he comprobado que efectivamente hace un testeo antes de desplegarlo.
+
+![testeo](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/testeo_zpsth2wby4p.png)
+
+![despliegue](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/build_zps3nmsg96s.png)
+
+- He definido nuevos testeos pues solo añadia los *requirements* y le he añadido el despliegue.
+
+![snaptestdesplie](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/snapyheroku_zpsvqacnzr2.png)
+
+- Cojo la etiqueta markdown de **Snap-ci** que se obtiene dandole al recuadro de notificaciones.
+
+![paso1](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/paso1_zpszqhnuo5b.png)
+
+![paso2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/paso4_zpsfrp4pley.png)
+
+![github](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/git_zpsx2yiestv.png)
+
+###Ejercicio 8: Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido
+
+Una vez probado todo lo anterior solo queda hacer algun cambio y subirlo al repositorio, hacer un *git push heroku master* y rezar. Puede consultarse la app [desplegada](https://hidden-meadow-4203.herokuapp.com/) y el [Readme](https://github.com/javiergarridomellado/ej5.git) de la aplicación para consultar los enlaces a Travis y Snap. 
