@@ -53,3 +53,16 @@
   - [x] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
   - [x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
   - [x] Comprender el papel de las *build tools* o herramientas de automatización. 
+## Objetivos cuarta sesión
+
+- [x] Terminar la configuración de los sistemas de integración continua.
+- [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+- [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+- [x] Comprender los mecanismos de despliegue automático.
+
+##Tema 2
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [x] Entender el concepto de DevOps.
+- [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+- [x] Aprender a usar integración continua en cualquier aplicación

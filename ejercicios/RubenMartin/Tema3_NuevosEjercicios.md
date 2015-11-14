@@ -354,4 +354,40 @@ Para ello hay que hacer:
 
 ### Ejercicio 7: Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.
 
-Desplegar Chat en OpenShift
+Voy a desplegar la aplicación que ya hice en el Tema 2, pero sobre el PaaS de OpenShift. Para ello seguimos los siguientes pasos:
+
+Registrarnos en Openshift. Ya lo hicimos en ejercicios anteriores.
+
+Instalamos las herramientas de Openshift, además de Ruby que es necesario para ejecutarlas.
+
+- *sudo apt-get install ruby-full*
+- *sudo gem install rhc*
+
+Creamos un dominio para nuestra aplicación. En mi caso ya lo tenía hecho de antes al crear la aplicación de Wordpress:
+
+- *rhc-create-domain -n nombredominio -l my_email -p my_password*  # datos de la cuenta de openshift
+
+Configuramos rhc para que se conecte con nuestra cuenta de Openshift:
+
+- *rhc setup*
+
+Dejamos el hostname del servidor por defecto, y metemos la password. Actualizamos también la clave SSH.
+
+Ahora pasamos a crear la aplicación en Openshift, que se puede hacer por comandos con *rhc app-create michat nodejs* o desde la web:
+
+![Crear app en Openshift con rhc](https://www.dropbox.com/s/iivam9lk7jgi4uw/appcreateOpenshift.PNG?dl=1)
+
+![Crear app en Openshift por web](https://www.dropbox.com/s/im1qyyalec1xff3/appcreateOpenshiftWEB.PNG?dl=1)
+
+Una vez creada, vamos a clonar nuestro repositorio de la app que tenemos en Github:
+
+- *git clone git@github.com:romilgildo/Chat.git*
+- cd Chat
+
+Y enlazamos con el repositorio de Openshift:
+
+- *git remote add openshift ssh://5637951c7628e1ecd60000dc@michat-iv2015.rhcloud.com/~/git/michat.git/* # la dirección ssh la obtenemos de la información que nos da rhc de la app al crearla
+- *git fetch openshift*
+- *git push -u openshift*
+
+[Esta](http://michat-iv2015.rhcloud.com/) es la aplicación desplegada.
