@@ -228,6 +228,7 @@ web: gunicorn apuestas.wsgi --log-file -
 - Subir la app mediante **git push heroku master**
 - En la pestaña derecha de heroku se le da a **open app** y se ve la aplicación desplegada.
 - Si da algun error ejecutar en el terminal **heroku logs** para ver que ocurre.
+- Para renombrar el nombre de la aplicación no se debe usar la página sino el comando **heroku apps:rename newname** 
 
 El enlace de la aplicacion es el [siguiente](https://hidden-meadow-4203.herokuapp.com/)
 
@@ -259,6 +260,10 @@ He probado solo ejecutar con foreman, he instalado foreman ejecutando **sudo gem
 
 ![despliegue](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/build_zps3nmsg96s.png)
 
+- He definido nuevos testeos pues solo añadia los *requirements* y le he añadido el despliegue.
+
+![snaptestdesplie](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/snapyheroku_zpsvqacnzr2.png)
+
 - Cojo la etiqueta markdown de **Snap-ci** que se obtiene dandole al recuadro de notificaciones.
 
 ![paso1](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/paso1_zpszqhnuo5b.png)
@@ -267,3 +272,6 @@ He probado solo ejecutar con foreman, he instalado foreman ejecutando **sudo gem
 
 ![github](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/git_zpsx2yiestv.png)
 
+###Ejercicio 8: Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido
+
+Una vez probado todo lo anterior solo queda hacer algun cambio y subirlo al repositorio, hacer un *git push heroku master* y rezar. Puede consultarse la app [desplegada](https://hidden-meadow-4203.herokuapp.com/) y el [Readme](https://github.com/javiergarridomellado/ej5.git) de la aplicación para consultar los enlaces a Travis y Snap. 

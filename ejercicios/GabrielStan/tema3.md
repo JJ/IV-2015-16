@@ -51,7 +51,7 @@ Tenemos que activar el dyno, si no lo está.
 
 ![activar dyno](https://www.dropbox.com/s/n7t4kpryj6xw597/activar%20dyno.png?dl=1)
 
-Y podemos ver la aplicación el la url proporcionada por defecto, en este caso. También se puede indicar una url a la hora de crear la aplicación. La aplicación se puede ver [aqui](http://arcane-springs-3380.herokuapp.com)
+Y podemos ver la aplicación el la url proporcionada por defecto, en este caso. También se puede indicar una url a la hora de crear la aplicación.
 
 ### Ejercicio 7
 
@@ -71,7 +71,7 @@ Con cada push que se ejecute sobre el repositorio, Heroku espera las que pasen l
 
 **Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.**
 
-
+Tal y como se ha mencionado en los ejercicios anteriores, se ha configurado la aplicación para su despliegue en **Heroku**, mediante un archivo de configuración **Procfile** y la configuración en Heroku. La aplicación se puede ver [aqui](http://arcane-springs-3380.herokuapp.com)
 
 
 
