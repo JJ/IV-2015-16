@@ -267,6 +267,21 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 ```
+- En **wsgi.py** poner lo siguiente:
+```
+import os
+
+from django.core.wsgi import get_wsgi_application
+from dj_static import Cling
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "apuestas.settings")
+
+#from whitenoise.django import DjangoWhiteNoise
+application = get_wsgi_application()
+
+
+application = Cling(get_wsgi_application())
+#application = DjangoWhiteNoise(application)
+```
 - Notar que en DATABASE_URL se pone la url que sale para la base de datos postgre que Heroku nos ofrece, hay que darle a show para verlo.
 - Subir cambios a github y hacer **git push heroku master**.
 - Ejecutar el comando **heroku run python manage.py syncdb** ( mas recomendable usar  **heroku run python manage.py makemigrations**, **heroku run python manage.py migrate** y **heroku run python manage.py createsuperuser** )
