@@ -268,7 +268,8 @@ STATICFILES_DIRS = (
 )
 ```
 - Notar que en DATABASE_URL se pone la url que sale para la base de datos postgre que Heroku nos ofrece, hay que darle a show para verlo.
-- Ejecutar el comando *heroku run python manage.py syncdb* ( posiblemente funcione usando makemigrations, migrate y createsuperuser )
+- Subir cambios a github y hacer **git push heroku master**.
+- Ejecutar el comando **heroku run python manage.py syncdb** ( mas recomendable usar  **heroku run python manage.py makemigrations**, **heroku run python manage.py migrate** y **heroku run python manage.py createsuperuser** )
 
 
 ###Ejercicio 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
