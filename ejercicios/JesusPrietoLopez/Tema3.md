@@ -215,5 +215,95 @@ Lanzamos los test:
 ![Resultados de los test para las rutas de la interfaz REST](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap10_zpsfk8s4umr.png)
 
 
+###Ejercicio 5: Instalar y echar a andar tu primera aplicación en Heroku
+
+Una vez descargado e instalado las herramientas de *heroku* desde su [página web](https://devcenter.heroku.com/articles/getting-started-with-python#set-up) nos logueamos.
+
+`heroku login`
+
+![Login en heroku a través de la consola de ubuntu](cap11)
+
+Una vez logueados, podemos crearnos nuestra aplicación. Yo me he bajado el ejemplo de *python* que proporcionan en el [repositorio](https://github.com/heroku/python-getting-started) de *heroku*.
+
+`$ git clone https://github.com/heroku/python-getting-started.git`
+
+Accedemos a la carpeta raíz de la aplicación que acabamos de descargarnos para crear la aplicación en *heroku*. Introducimos los comandos:
+
+`$ cd python-getting-started`
+`$ heroku create`
+
+![Creación de aplicación en heroku](cap12)
+
+Y desde la web de *heroku* en nuestro **Dashboard** podemos ver que se ha creado la aplicación. Con esta opción crea la aplicación con un nombre aleatorio que posteriormente podremos cambiar.
+
+![Dashboard de heroku](cap13)
+
+Y ahora desplegamos la aplicación en la plataforma.
+
+`$ git push heroku master`
+
+![Resultado de desplegar la aplicaición en heroku](cap14)
+
+Ahora podemos acceder a la aplicación web desde la URL que nos ha proporcionado heroku *https://cryptic-tundra-3723.herokuapp.com/* o con un comando desde consola que hace la función de acceso directo.
+
+`$ heroku open`
+
+![Aplicación web ejecutada desde el PaaS heroku](cap15)
+
+
+###Ejercicio 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
+
+> Me han surgido muchos errores al intentar combinar la aplicación que cree en el ejercicio 3 con la del ejercicio anterior. Así que voy a trabajar directamente con la del ejercicio 3 adaptada.
+
+Dentro del directorio de nuestra aplicación, añadimos el archivo *Procfile*. En este caso tendrá el siguiente contenido:
+
+```
+web: gunicorn test_rest.wsgi --log-file -
+```
+
+También añadimos el fichero *runtime.txt* para indicar la versión de python, en este caso la 3.4.0
+
+```
+python-3.4.0
+```
+
+Sin olvidarnos de el fichero *requirements.txt* para las dependencias. En este añadiremos a las anteriores la línea para *gunicorn* y *django-toolbelt*
+
+```
+Django==1.8.5
+djangorestframework==3.3.0
+wheel==0.24.0
+django-toolbelt==0.0.1
+gunicorn==19.3.0
+```
+
+> Estos son archivos necesarios si deseamos que nuestra aplicación funcione en el PaaS heroku
+
+Podemos comprobar que funciona correctamente con *foreman*. Para instalar *foreman*: `$ gem install foreman` o `$ pip install foreman`.
+
+`$ foreman start web`
+
+![Ejecución en local con foreman](cap16)
+
+![Aplicación web en el navegador después de ejecutarlo con foreman](cap17)
+
+Y ejecutamos los test.
+
+`$ python manage.py test`
+
+![Test después de preparar la aplicación para el PaaS](cap19)
+
+Desplegamos ahora en *heroku*. Creamos el repositorio y subimos el código.
+
+`$ heroku create`
+
+![Creación de la aplicación dentro de heroku](cap18)
+
+`$ git push heroku master`
+
+Podemos acceder desde la dirección proporcionada por heroku o a través del comando `$ heroku open`. Podemos ver que funciona correctamente
+
+![Aplicación web del ejercicio 3 subida en heroku](cap20)
+
 
 
