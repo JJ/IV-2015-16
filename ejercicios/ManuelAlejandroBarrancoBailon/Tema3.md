@@ -26,16 +26,40 @@ Ya que estoy trabajando con Python y Django, he optado por usar el framework [**
 Siguiendo el [tutorial](http://www.django-rest-framework.org/tutorial/1-serialization/) de la página oficial, voy a comentar los pasos más importantes realizados:
 * Instalar el framework con *pip install djangorestframework*
 * En el fichero *settings.py* de nuestro proyecto Django, añadir la aplicación rest_framework a *INSTALLED_APPS.
-* Creamos nuestro archivo **serializers.py** dentro de la carpeta de nuestra aplicación. En este fichero creamos la clase serializadora *PenhaSerializer*.[!clase PenhaSerializer](http://i1016.photobucket.com/albums/af281/raperaco/claseSerializadora_zpsd9aqg3ky.png)
+* Creamos nuestro archivo **serializers.py** dentro de la carpeta de nuestra aplicación. En este fichero creamos la clase serializadora *PenhaSerializer*.![clase PenhaSerializer](http://i1016.photobucket.com/albums/af281/raperaco/claseSerializadora_zpsd9aqg3ky.png)
 * Ahora probamos nuestra clase serializadora. Para ello desde el terminal de Python (*python manage.py shell*):
-[!Datos Serializados terminal](http://i1016.photobucket.com/albums/af281/raperaco/serializador_shell_python_zpsnz3ocqq2.png)
+![Datos Serializados terminal](http://i1016.photobucket.com/albums/af281/raperaco/serializador_shell_python_zpsnz3ocqq2.png)
 Tambien podemos mostrar los datos en formato JSON:
-[!JSON](http://i1016.photobucket.com/albums/af281/raperaco/jsonRenderer_zpsfio92wmv.png)
+![JSON](http://i1016.photobucket.com/albums/af281/raperaco/jsonRenderer_zpsfio92wmv.png)
 * Ahora vamos a crear una vista que devuelva los datos en formato JSON usando nuestra clase serializadora. Creamos una clase que contendrá las distintas vistas.
-[!Clase JSONResponse](http://i1016.photobucket.com/albums/af281/raperaco/JSONResponse_zpsu0d1xssk.png)
+![Clase JSONResponse](http://i1016.photobucket.com/albums/af281/raperaco/JSONResponse_zpsu0d1xssk.png)
 Creamos una vista que servirá para listar las peñas.
-[!Listar Penhas JSON](http://i1016.photobucket.com/albums/af281/raperaco/listarPenhasJSON_zpskve1qwvz.png)
+![Listar Penhas JSON](http://i1016.photobucket.com/albums/af281/raperaco/listarPenhasJSON_zpskve1qwvz.png)
 Y otra vista para recuperar, actualizar o borrar peñas.
-[!ActualizarPenhasJSON](http://i1016.photobucket.com/albums/af281/raperaco/actualizarPenhasJSON_zpsza3cuwyu.png)
+![ActualizarPenhasJSON](http://i1016.photobucket.com/albums/af281/raperaco/actualizarPenhasJSON_zpsza3cuwyu.png)
 * Añadimos las URLs al fichero *urls.py* de nuestra aplicación.
-* [!URLs REST](http://i1016.photobucket.com/albums/af281/raperaco/urlsREST_zpsatk5p6rg.png)
+* ![URLs REST](http://i1016.photobucket.com/albums/af281/raperaco/urlsREST_zpsatk5p6rg.png)
+* Finalmente, con el servidor de desarrollo en ejecución podemos obtener una lista de todas las peñas registradas o una peña en concreto identificándola con su ID(primary key).
+	* ![listarPenhasJSON](http://i1016.photobucket.com/albums/af281/raperaco/JSONlistarPenhas_zpsrfeumxlh.png)
+	* ![detallePenhaJSON](http://i1016.photobucket.com/albums/af281/raperaco/detallePenhaJSON_zpsunwvzpzk.png)
+
+###Ejercicio 4
+**Crear pruebas para las diferentes rutas de la aplicación.**
+He realizado las pruebas sobre las rutas */penhas/* y sobre */penhas/1/* y */penhas/2/*. Las pruebas realizadas consisten en realizar peticiones a esas rutas correctamente, es decir que se recibe el **código HTTP 200** y también se comprueba que el tipo de contenido recibido sea **JSON**.
+A continuación se puede ver el código de los tests (en el fichero *tests.py*) y cómo se superan los tests:
+![cabecerasTests](http://i1016.photobucket.com/albums/af281/raperaco/importTests_zpslbwbyynb.png)
+![testsJSON](http://i1016.photobucket.com/albums/af281/raperaco/testsJSON_zps3qzsduy1.png)
+![TestsOK](http://i1016.photobucket.com/albums/af281/raperaco/testsOK_zpsbracoy94.png)
+
+###Ejercicio 5
+**Instalar y echar a andar tu primera aplicación en Heroku.**
+Realizamos los siguientes pasos:
+1. Descargamos el cinturón de herramientas de Heroku con la orden:
+~~~
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+~~~
+2. Desde el terminal, nos logueamos en Heroku con la orden:
+~~~
+heroku login
+~~~
+3. 
