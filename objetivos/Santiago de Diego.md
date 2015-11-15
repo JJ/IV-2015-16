@@ -108,7 +108,7 @@ Lista de objetivos de Santiago de Diego
 
 [X] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
 
-[ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+[X] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
 [X] Darse de alta y probar diferentes servicios PaaS.
 [X] Instalar los *toolbelt* de los diferentes servicios para poder manejarlos con facilidad.
