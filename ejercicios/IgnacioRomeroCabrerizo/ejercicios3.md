@@ -33,7 +33,87 @@ Aplicación creada:
 
 ###Ejercicio 3: Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
 
+Haciendo uso del repositorio con la anterior aplicación creada de empresas realizamos los siguientes pasos para crear una API REST
 
+1. Instamos MondoDB y Mongoose si no los tenemos aún:
+
+``` npm install mongodb --save ```
+``` npm install mongoose```
+
+2. Creamos un apartado en nuestra aplicación para administrar un listado de series de TV.
+
+3. Creamos el modelo con **mongoose** para guardar la información (con los métodos POST, PUT, GET, DELETE).
+
+```
+exports = module.exports = function(app, mongoose) {
+
+	var tvshowSchema = new mongoose.Schema({
+		title: 		{ type: String },
+		year: 		{ type: Number },
+		country: 	{ type: String },
+		poster:  	{ type: String },
+		seasons: 	{ type: Number },
+		genre: 		{
+			type: String,
+			enum: ['Drama', 'Fantasy', 'Sci-Fi', 'Thriller', 'Comedy']
+		},
+		summary: 	{ type: String }
+	});
+
+	mongoose.model('TVShow', tvshowSchema);
+
+};
+
+```
+Y los métodos REST:
+
+```
+//PUT - Update a register already exists
+exports.updateTVShow = function(req, res) {
+	TVShow.findById(req.params.id, function(err, tvshow) {
+		tvshow.title   = req.body.petId;
+		tvshow.year    = req.body.year;
+		tvshow.country = req.body.country;
+		tvshow.poster  = req.body.poster;
+		tvshow.seasons = req.body.seasons;
+		tvshow.genre   = req.body.genre;
+		tvshow.summary = req.body.summary;
+
+		tvshow.save(function(err) {
+			if(err) return res.send(500, err.message);
+      res.status(200).jsonp(tvshow);
+		});
+	});
+};
+
+//DELETE - Delete a TVShow with specified ID
+exports.deleteTVShow = function(req, res) {
+	TVShow.findById(req.params.id, function(err, tvshow) {
+		tvshow.remove(function(err) {
+			if(err) return res.send(500, err.message);
+      res.status(200);
+		})
+	});
+};
+```
+
+4. Con la extensión REST de Chrome o alguna aplicación REST como *CococaRestClient* insertamos (POST) en la base de datos:
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/rest.png)
+
+Comprobamos los datos intertados:
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/cocoa.png)
+
+5. Para borrar (DELETE) o actualizar (PUT) basta con indicar el ID creado automáticamente por Mongo en la aplicación REST:
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/put.png)
+
+6. Comprobamos en la base de datos de Mongo y en el navegador que se han insertado/modificado los datos correctamente:
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/mongo.png)
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/nav.png)
 
 ###Ejercicio 4: Crear pruebas para las diferentes rutas de la aplicación.
 
