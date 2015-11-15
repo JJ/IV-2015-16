@@ -49,7 +49,7 @@ ordenador habitual lo usa.
 
   - [x] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
   
-  - [ ] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+  - [x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 
   - [x] Comprender el papel de las *build tools* o herramientas de automatización. 
 
@@ -67,14 +67,37 @@ ordenador habitual lo usa.
 
 ### Objetivos quinta sesión
 
-  - [ ] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
-  - [ ] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+  - [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+  - [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+  - [x] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+  - [x] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
   - [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
-  - [ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+  - [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+  - [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+  - [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
-### Otros objetivos quinta sesíón
+### Otros objetivos quinta sesión
 
   - [x] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
-  - [ ] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+  - [x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
 
+### Objetivos sexta sesión
+
+  - [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+  - [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+
+### Otros objetivos sexta sesión
+
+  - [x] Trabajar con los toolbelts de los diferentes PaaS.
+  - [x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+  - [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+  - [x] Experimentar con el despliegue simultáneo a varios PaaS.
+
+### Objetivos séptima sesión
+
+  - [ ] Entender la base del aislamiento de recursos en el sistema operativo.
+
+### Otros objetivos sexta sesión
+
+  - [ ] Instalar docker y trabajar con él.
 
