@@ -306,4 +306,50 @@ Podemos acceder desde la dirección proporcionada por heroku o a través del com
 ![Aplicación web del ejercicio 3 subida en heroku](cap20)
 
 
+###Ejercicio 7: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
+
+He utilizado [Snap CI](https://snap-ci.com/) para la configuración del despliegue automático. Al registrarnos nos pedirá que autoricemos el acceso desde Snap CI a los repositorios que tengamos en Github.
+
+![Petición de acceso a github desde Snap CI](cap21)
+
+En *heroku* conectamos con el repositorio de github desde la pestaña **Deploy**.
+
+![Conectar el repositorio github](cap22)
+
+Indicamos el repositorio donde están los fuentes de la aplicación
+
+![Indicar el repositorio](cap23)
+
+Y activamos la opción para que pase la integración continua antes de desplegarla
+
+![Activación para desplegar la CI](cap24)
+
+Ahora desde Snap CI añadimos el repositorio al que queremos realizarle la integración continua, como antes nos registramos y conectamos con github, se nos mostrarán los repositorios que tenemos en github.
+
+![Añadir repositorio a CI](cap25)
+
+Realizará la integración continua y veremos que ha funcionado correctamente si indica "Passed".
+
+![CI realizada con éxito](cap26)
+
+Pero aún no hemos terminado. Tenemos que editar la Pipeline creada por defecto para que añada los test y despligue la aplicación en *heroku*. Podemos editarla desde **Settings - Edit**.
+
+Primero añadimos un paso que sería para instalar las dependencias con el comando `$ pip install -r requirements.txt`
+
+![Paso en CI para instalar dependencias](cap27)
+
+Después creamos otro paso que sería para ejecutar los tests de nuestra aplicación, indicandolo que ejecute el comando `$ python manage.py test`.
+
+![Paso en CI para los tests](cap28)
+
+Y por último el paso para desplegar la aplicación en *heroku* añadiendole la credencial de nuestra cuenta en *heroku* y la aplicación.
+
+![Paso en CI para el despliegue](cap29)
+
+Pulsamos en la opción del panel superior **Save** para guardar los cambios. En este momento se iniciará el proceso para comprobar la integración continua y realizar el despliegue. Cuando termine mostrará los resultados tanto en *Snap CI* como en *heroku*.
+
+![Resultado de CI en Snap CI](cap30)
+
+![Resultado de despliegue en heroku con Snap CI](cap31)
+
 
