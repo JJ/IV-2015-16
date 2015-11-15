@@ -221,7 +221,7 @@ Una vez descargado e instalado las herramientas de *heroku* desde su [página we
 
 `heroku login`
 
-![Login en heroku a través de la consola de ubuntu](cap11)
+![Login en heroku a través de la consola de ubuntu](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap11_zpsixej4w5u.png)
 
 Una vez logueados, podemos crearnos nuestra aplicación. Yo me he bajado el ejemplo de *python* que proporcionan en el [repositorio](https://github.com/heroku/python-getting-started) de *heroku*.
 
@@ -232,23 +232,23 @@ Accedemos a la carpeta raíz de la aplicación que acabamos de descargarnos para
 `$ cd python-getting-started`
 `$ heroku create`
 
-![Creación de aplicación en heroku](cap12)
+![Creación de aplicación en heroku](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap12_zpspflv5ddk.png)
 
 Y desde la web de *heroku* en nuestro **Dashboard** podemos ver que se ha creado la aplicación. Con esta opción crea la aplicación con un nombre aleatorio que posteriormente podremos cambiar.
 
-![Dashboard de heroku](cap13)
+![Dashboard de heroku](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap13_zpsrnugqerg.png)
 
 Y ahora desplegamos la aplicación en la plataforma.
 
 `$ git push heroku master`
 
-![Resultado de desplegar la aplicaición en heroku](cap14)
+![Resultado de desplegar la aplicaición en heroku](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap14_zpsbwvxw0ro.png)
 
 Ahora podemos acceder a la aplicación web desde la URL que nos ha proporcionado heroku *https://cryptic-tundra-3723.herokuapp.com/* o con un comando desde consola que hace la función de acceso directo.
 
 `$ heroku open`
 
-![Aplicación web ejecutada desde el PaaS heroku](cap15)
+![Aplicación web ejecutada desde el PaaS heroku](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap15_zps3qxe6j0j.png)
 
 
 ###Ejercicio 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
@@ -283,73 +283,79 @@ Podemos comprobar que funciona correctamente con *foreman*. Para instalar *forem
 
 `$ foreman start web`
 
-![Ejecución en local con foreman](cap16)
+![Ejecución en local con foreman](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap16_zpsjvknxjkj.png)
 
-![Aplicación web en el navegador después de ejecutarlo con foreman](cap17)
+![Aplicación web en el navegador después de ejecutarlo con foreman](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap17_zpsmuyqdrzx.png)
 
 Y ejecutamos los test.
 
 `$ python manage.py test`
 
-![Test después de preparar la aplicación para el PaaS](cap19)
+![Test después de preparar la aplicación para el PaaS](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap19_zpsybn3ymuw.png)
 
 Desplegamos ahora en *heroku*. Creamos el repositorio y subimos el código.
 
 `$ heroku create`
 
-![Creación de la aplicación dentro de heroku](cap18)
+![Creación de la aplicación dentro de heroku](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap18_zpsubjvv9pu.png)
 
 `$ git push heroku master`
 
 Podemos acceder desde la dirección proporcionada por heroku o a través del comando `$ heroku open`. Podemos ver que funciona correctamente
 
-![Aplicación web del ejercicio 3 subida en heroku](cap20)
+![Aplicación web del ejercicio 3 subida en heroku](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap20_zpsqbiebr44.png)
 
 
 ###Ejercicio 7: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
 
 He utilizado [Snap CI](https://snap-ci.com/) para la configuración del despliegue automático. Al registrarnos nos pedirá que autoricemos el acceso desde Snap CI a los repositorios que tengamos en Github.
 
-![Petición de acceso a github desde Snap CI](cap21)
+![Petición de acceso a github desde Snap CI](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap21_zpsvmlrmsy6.png)
 
 En *heroku* conectamos con el repositorio de github desde la pestaña **Deploy**.
 
-![Conectar el repositorio github](cap22)
+![Conectar el repositorio github](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap22_zpsnuciq7dk.png)
 
 Indicamos el repositorio donde están los fuentes de la aplicación
 
-![Indicar el repositorio](cap23)
+![Indicar el repositorio](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap23_zpsbwbb9gtn.png)
 
 Y activamos la opción para que pase la integración continua antes de desplegarla
 
-![Activación para desplegar la CI](cap24)
+![Activación para desplegar la CI](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap24_zpskqygnrr5.png)
 
 Ahora desde Snap CI añadimos el repositorio al que queremos realizarle la integración continua, como antes nos registramos y conectamos con github, se nos mostrarán los repositorios que tenemos en github.
 
-![Añadir repositorio a CI](cap25)
+![Añadir repositorio a CI](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap25_zpso9np57x3.png)
 
 Realizará la integración continua y veremos que ha funcionado correctamente si indica "Passed".
 
-![CI realizada con éxito](cap26)
+![CI realizada con éxito](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap26_zps3i5cs0dl.png)
 
 Pero aún no hemos terminado. Tenemos que editar la Pipeline creada por defecto para que añada los test y despligue la aplicación en *heroku*. Podemos editarla desde **Settings - Edit**.
 
 Primero añadimos un paso que sería para instalar las dependencias con el comando `$ pip install -r requirements.txt`
 
-![Paso en CI para instalar dependencias](cap27)
+![Paso en CI para instalar dependencias](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap27_zpsqeypxm9e.png)
 
 Después creamos otro paso que sería para ejecutar los tests de nuestra aplicación, indicandolo que ejecute el comando `$ python manage.py test`.
 
-![Paso en CI para los tests](cap28)
+![Paso en CI para los tests](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap28_zpsc3xleqvv.png)
 
 Y por último el paso para desplegar la aplicación en *heroku* añadiendole la credencial de nuestra cuenta en *heroku* y la aplicación.
 
-![Paso en CI para el despliegue](cap29)
+![Paso en CI para el despliegue](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap29_zpsz28tn73w.png)
 
 Pulsamos en la opción del panel superior **Save** para guardar los cambios. En este momento se iniciará el proceso para comprobar la integración continua y realizar el despliegue. Cuando termine mostrará los resultados tanto en *Snap CI* como en *heroku*.
 
-![Resultado de CI en Snap CI](cap30)
+![Resultado de CI en Snap CI](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap30_zpsa61m4b8h.png)
 
-![Resultado de despliegue en heroku con Snap CI](cap31)
+![Resultado de despliegue en heroku con Snap CI](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap31_zpsga9vxfq5.png)
+
+###Ejercicio 8: Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido
+
+Nuestra aplicación ya está preparada para ejecutarse en el PaaS seleccionado, *heroku*. Cuando hagamos un `$ git push` de nuestra aplicación directamente se realizará la integración continua, pasando por los test, y desplegando para finalizar la aplicación en el PaaS.
+
+Puedes acceder a la aplicación pulsando [aquí](https://github.com/JesGor/test_rest). En el readme están añadidos los enlaces para comprobar que se ha pasado la integración continua y el enlace para ejecutar la aplicación web desde *heroku*.
 
 
