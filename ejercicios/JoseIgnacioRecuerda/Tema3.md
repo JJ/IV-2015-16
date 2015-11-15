@@ -186,7 +186,20 @@ Para arrancar la aplicación y probarla en local se puede hacer de dos formas, t
 ![lanzando local con Heroku](https://www.dropbox.com/s/wufxtmwi45hg01y/ejr6.2.png?dl=1)
 
 
+##Ejercicio 7
+###Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow
 
+Para poder configurar el despliegue automático he utilizado Travis añadiendo el archivo .travis.yml. Este archivo contiene lo siguiente:
+
+![contenido archivo .travis.yml](https://www.dropbox.com/s/plrh1o79r0149ok/ejr7.1.png?dl=1)
+
+Nos metemos en la página de travis y seleccionamos el repositorio de la aplicación que estamos gestionando y podemos comprobar que pasa los test
+
+![pagina de travis](https://www.dropbox.com/s/01sayme68xd900t/ejr7.2.png?dl=1)
+
+Para finalizar nos vamos a la web de Heroku, seleccionamos dicha aplicación, y nos vamos al menú "Deploy". Dentro de este menú hay una sección que se denomina "Automatic deploys" en la que marcando la casilla que dice "Wait for CI to pass before deploy" para que la aplicación no se despliegue hasta que pase los test
+
+![opcion heroku para que no arranque sin pasar test](https://www.dropbox.com/s/78opuxf0p155w0a/ejr7.3.png?dl=1)
 
 ##Ejercicio 8
 ###Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.
