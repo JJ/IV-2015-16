@@ -126,10 +126,10 @@ Para ello debemos realizar los siguientes pasos tras instalar *Heroku toolbelt* 
 - Definir el archivo **Procfile** :
 	
 ```
-web: gunicorn gettingstarted.wsgi --log-file -
+web: node app.js
 ```
 
-- Definir el archivo **requirements.txt**:
+- Definir el archivo **requirements.txt** (si fuese necesario) usado en Flask principalmente:
 
 ```
 pip freeze > requirements.txt
@@ -144,7 +144,7 @@ Y por último:
 	
 Comprobamos nuestra aplicación funcionando correctamente en Heroku:
 
-![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/web.png)
+[Aplicación](https://cryptic-earth-2238.herokuapp.com)
 
 
 ###Ejercicio 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
