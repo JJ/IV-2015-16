@@ -33,16 +33,16 @@ Aplicación creada:
 
 ###Ejercicio 3: Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
 
-Haciendo uso del repositorio con la anterior aplicación creada de empresas realizamos los siguientes pasos para crear una API REST
+Haciendo uso del repositorio con la anterior aplicación creada de empresas realizamos los siguientes pasos para crear una API REST para listar series de TV:
 
-1. Instamos MondoDB y Mongoose si no los tenemos aún:
+- Instamos MondoDB y Mongoose si no los tenemos aún:
 
-``` npm install mongodb --save ```
-``` npm install mongoose```
+```
+npm install mongodb --save
+npm install mongoose 
+```
 
-2. Creamos un apartado en nuestra aplicación para administrar un listado de series de TV.
-
-3. Creamos el modelo con **mongoose** para guardar la información (con los métodos POST, PUT, GET, DELETE).
+- Creamos el modelo con **mongoose** para guardar la información (con los métodos POST, PUT, GET, DELETE).
 
 ```
 exports = module.exports = function(app, mongoose) {
@@ -95,21 +95,22 @@ exports.deleteTVShow = function(req, res) {
 		})
 	});
 };
+
 ```
 
-4. Con la extensión REST de Chrome o alguna aplicación REST como *CococaRestClient* insertamos (POST) en la base de datos:
+- Con la extensión REST de Chrome o alguna aplicación REST como *CococaRestClient* insertamos (POST) en la base de datos:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/rest.png)
 
-Comprobamos los datos intertados:
+- Comprobamos los datos intertados:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/cocoa.png)
 
-5. Para borrar (DELETE) o actualizar (PUT) basta con indicar el ID creado automáticamente por Mongo en la aplicación REST:
+- Para borrar (DELETE) o actualizar (PUT) basta con indicar el ID creado automáticamente por Mongo en la aplicación REST:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/put.png)
 
-6. Comprobamos en la base de datos de Mongo y en el navegador que se han insertado/modificado los datos correctamente:
+- Comprobamos en la base de datos de Mongo y en el navegador que se han insertado/modificado los datos correctamente:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/mongo.png)
 
