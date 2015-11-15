@@ -35,6 +35,7 @@ Realizar una app en express (o el lenguaje y marco elegido) que incluya variable
 
 Siguiendo este [tutorial](http://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask) he creado una aplicación sencilla con **Flask**, el código de la cual dejo aquí:
 
+```
 #!flask/bin/python
 from flask import Flask, jsonify, abort, make_response, request, url_for
 
@@ -120,7 +121,7 @@ def not_found(error):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
+```
 
 ## Ejercicio 4
 
@@ -128,6 +129,7 @@ Crear pruebas para las diferentes rutas de la aplicación.
 
 Compruebo con 3 tests que en las rutas que yo he creado esten presentes los elementos que he metido inicialmente, y efectivamente se puede comprobar que están y se pasan los tests.
 
+```
 import os
 import app
 import unittest
@@ -164,7 +166,7 @@ class appTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
+```
 
 ![tests_pasados](http://i.imgur.com/aEZ7hmX.png)
 
