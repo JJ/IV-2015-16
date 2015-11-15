@@ -135,7 +135,7 @@
 
 - [x] Trabajar con los toolbelts de los diferentes PaaS.
 
-- [] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+- [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
 
 - [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
 
