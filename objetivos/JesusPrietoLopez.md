@@ -106,7 +106,7 @@ Lista de objetivos de Jesús Prieto López
 - [X] Experimentar con el despliegue simultáneo a varios PaaS.
 
 
-##Tema 2
+##Tema 3
 
 - [X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 
