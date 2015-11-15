@@ -50,9 +50,42 @@ Por último adjunto una captura de pantalla desde dentro de nuestro sitio Wordpr
 ##Ejercicio 3
 ###Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
 
+Para realizar este ejercicio he usado la aplicación de la porra
 
-##Ejercicio 4
-###Crear pruebas para las diferentes rutas de la aplicación.
+He necesitado usar varios comandos, algunos de ellos han sido han sido:
+
+* npm init
+* npm install express --save
+* npm install -g grunt-cli
+* npm install -g mocha
+* npm install (para instalar todas las dependencias)
+* sudo apt-get install sqlite3
+
+A continuación he creado la base de datos:
+
+![instalado Base de datos](https://www.dropbox.com/s/zi6h2kpl4b6ksy3/ejr3.1.png?dl=1)
+
+El siguiente paso es lanzar la aplicación con el comando "npm start" y una vez la aplicación esta ejecutandose en el puerto 5000 de localhost hacemos un put a la aplicación con los datos deseados. Los datos que yo he mandado han sido:
+
+* competición: "Liga"
+* año: "2015"
+* Local: "Granada"
+* Visitante: "RMadrid"
+
+Se puede ver en la siguiente captura
+
+![mandando datos con put](https://www.dropbox.com/s/7srj9rd1ygp7eeh/ejr3.2.png?dl=1)
+
+Me voy a mi navegador y compruebo que los datos se han mandado correctamente al meterme en http://localhost:5000/porras que es la ruta encargada de mostrar las porras.
+
+![instalado Base de datos](https://www.dropbox.com/s/zitef86xq753xx7/ejr3.3.png?dl=1)
+
+Por último muestro una captura de mi terminal en la que se pueden ver las rutas a las que se ha ido llamando. En primer lugar vemos el PUT con los datos comentados anteriormente, y en segundo lugar un get de la ruta /porras que es la que nos ha mostrado en el navegador los datos.
+
+![instalado Base de datos](https://www.dropbox.com/s/e4sgzdwq76fhj7w/ejr3.4.png?dl=1)
+
+
+
 
 
 ##Ejercicio 5
