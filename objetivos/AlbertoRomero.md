@@ -58,6 +58,49 @@ ordenador habitual lo usa.
 - [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 - [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
 - [x] Comprender los mecanismos de despliegue automático.
+- [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+
+##Objetivos quinta sesión
+
+- [x] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
+- [x] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+
+### Otros objetivos
+- [x] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
+- [x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
+
+
+## Objetivos sesión 28 octubre
+
+- [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+- [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+- [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+- [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+### Otros objetivos
+
+- [x] Darse de alta y probar diferentes servicios PaaS.
+- [x] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+- [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+- [x] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
+- [x] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
+
+## Objetivos sesión 4 noviembre
+- [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+- [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+
+### Otros objetivos
+
+- [x] Trabajar con los toolbelts de los diferentes PaaS.
+- [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+- [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+- [x] Experimentar con el despliegue simultáneo a varios PaaS.
+
 
 ##Tema 2
 
@@ -65,3 +108,16 @@ ordenador habitual lo usa.
 - [x] Entender el concepto de DevOps.
 - [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
 - [x] Aprender a usar integración continua en cualquier aplicación
+
+
+##Tema 3
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+- [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+- [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+- [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+
+
+
+
