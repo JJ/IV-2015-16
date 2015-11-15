@@ -95,7 +95,6 @@ exports.deleteTVShow = function(req, res) {
 		})
 	});
 };
-
 ```
 
 - Con la extensión REST de Chrome o alguna aplicación REST como *CococaRestClient* insertamos (POST) en la base de datos:
