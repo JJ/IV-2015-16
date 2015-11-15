@@ -72,24 +72,7 @@
 
 [x] Comprender el papel de las build tools o herramientas de automatización.
 
-###Sesión 4 (Semana del 14 al 21 de octubre 2015)
-
-[x] Terminar la configuración de los sistemas de integración continua.
-    
-[x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
-
-#####Otros objetivos
-
-[x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
-
-[] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
-
-[x] Comprender los mecanismos de despliegue automático.
-    
-[x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
-
-
-###Sesión 5 (Semana del 21 al 28 de octubre 2015)
+###Sesión 4 (Semana del 21 al 28 de octubre 2015)
 
 [x] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS.
     
@@ -105,7 +88,7 @@
 
 [x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
 
-###Sesión 6 (Semana del 28 de octubre al 4 de noviembre 2015)
+###Sesión 5 (Semana del 28 de octubre al 4 de noviembre 2015)
 
 [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
     
@@ -117,23 +100,37 @@
 
 [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
     
-[] Resolver los problemas que surjan en los primeros despliegues de la asignatura.
+[X] Resolver los problemas que surjan en los primeros despliegues de la asignatura.
 
 #####Otros objetivos
 
 [x] Darse de alta y probar diferentes servicios PaaS.
     
-[] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+[X] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
     
-[] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+[X] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
     
 [x] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
     
 [x] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir 	 del principio de la clase, el coeficiente será de 0.7.
 
-###Sesión 7 (Semana del 4 al 11 de noviembre 2015)
+###Sesión 6 (Semana del 4 al 11 de noviembre 2015)
 
+[x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
 
+[x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+
+#####Otros objetivos
+
+[x] Trabajar con los toolbelts de los diferentes PaaS.
+    
+[] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+    
+[x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+    
+[x] Experimentar con el despliegue simultáneo a varios PaaS.
+
+###Sesión 7 (Semana del 11 al 18 de noviembre 2015)
 
 
 

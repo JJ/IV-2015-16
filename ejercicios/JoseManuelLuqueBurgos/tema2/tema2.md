@@ -5,7 +5,7 @@
 Instalar alguno de los entornos virtuales de node.js (o de cualquier otro lenguaje con el que se esté familiarizado) y, con ellos, instalar la última versión existente, la versión minor más actual de la 4.x y lo mismo para la 0.11 o alguna impar (de desarrollo)
 
  1. Instalamos y configuramos nvm:
-	#yaourt install -S nvm
+	yaourt install -S nvm
 Configuramos la variable de entorno añadiendo lo siguiente al .zshrc/bashrc
 	export NVM_DIR="$HOME/.nvm"
 	source /usr/share/nvm/nvm.sh
