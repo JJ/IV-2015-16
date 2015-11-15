@@ -61,7 +61,7 @@ He necesitado usar varios comandos, algunos de ellos han sido han sido:
 * npm install (para instalar todas las dependencias)
 * sudo apt-get install sqlite3
 
-A continuación he creado la base de datos:
+A continuación he creado la base de datos con "sudo grunt creadb":
 
 ![instalado Base de datos](https://www.dropbox.com/s/zi6h2kpl4b6ksy3/ejr3.1.png?dl=1)
 
