@@ -86,6 +86,16 @@ Por último muestro una captura de mi terminal en la que se pueden ver las rutas
 
 
 
+##Ejercicio 4
+###Crear pruebas para las diferentes rutas de la aplicación.
+
+He creado pruebas en el archivo test.js para las rutas que se tienen creadas. Este archivo se encuentra dentro del directorio test y tiene el siguiente contenido:
+
+![contenido test/test.js](https://www.dropbox.com/s/33rvtq0utx6cfnm/ejr4.1.png?dl=1)
+
+A continuación ejecuro el comando mocha test/test.js para ejecutar todos los test y podemos ver como los pasa correctamente.
+
+![pasa todos los test](https://www.dropbox.com/s/xb4jel2e0go1r0u/ejr4.2.png?dl=1)
 
 
 ##Ejercicio 5
