@@ -50,9 +50,52 @@ Por último adjunto una captura de pantalla desde dentro de nuestro sitio Wordpr
 ##Ejercicio 3
 ###Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
 
+Para realizar este ejercicio he usado la aplicación de la porra
+
+He necesitado usar varios comandos, algunos de ellos han sido han sido:
+
+* npm init
+* npm install express --save
+* npm install -g grunt-cli
+* npm install -g mocha
+* npm install (para instalar todas las dependencias)
+* sudo apt-get install sqlite3
+
+A continuación he creado la base de datos con "sudo grunt creadb":
+
+![instalado Base de datos](https://www.dropbox.com/s/zi6h2kpl4b6ksy3/ejr3.1.png?dl=1)
+
+El siguiente paso es lanzar la aplicación con el comando "npm start" y una vez la aplicación esta ejecutandose en el puerto 5000 de localhost hacemos un put a la aplicación con los datos deseados. Los datos que yo he mandado han sido:
+
+* competición: "Liga"
+* año: "2015"
+* Local: "Granada"
+* Visitante: "RMadrid"
+
+Se puede ver en la siguiente captura
+
+![mandando datos con put](https://www.dropbox.com/s/7srj9rd1ygp7eeh/ejr3.2.png?dl=1)
+
+Me voy a mi navegador y compruebo que los datos se han mandado correctamente al meterme en http://localhost:5000/porras que es la ruta encargada de mostrar las porras.
+
+![instalado Base de datos](https://www.dropbox.com/s/zitef86xq753xx7/ejr3.3.png?dl=1)
+
+Por último muestro una captura de mi terminal en la que se pueden ver las rutas a las que se ha ido llamando. En primer lugar vemos el PUT con los datos comentados anteriormente, y en segundo lugar un get de la ruta /porras que es la que nos ha mostrado en el navegador los datos.
+
+![instalado Base de datos](https://www.dropbox.com/s/e4sgzdwq76fhj7w/ejr3.4.png?dl=1)
+
+
 
 ##Ejercicio 4
 ###Crear pruebas para las diferentes rutas de la aplicación.
+
+He creado pruebas en el archivo test.js para las rutas que se tienen creadas. Este archivo se encuentra dentro del directorio test y tiene el siguiente contenido:
+
+![contenido test/test.js](https://www.dropbox.com/s/33rvtq0utx6cfnm/ejr4.1.png?dl=1)
+
+A continuación ejecuro el comando mocha test/test.js para ejecutar todos los test y podemos ver como los pasa correctamente.
+
+![pasa todos los test](https://www.dropbox.com/s/xb4jel2e0go1r0u/ejr4.2.png?dl=1)
 
 
 ##Ejercicio 5
@@ -143,7 +186,20 @@ Para arrancar la aplicación y probarla en local se puede hacer de dos formas, t
 ![lanzando local con Heroku](https://www.dropbox.com/s/wufxtmwi45hg01y/ejr6.2.png?dl=1)
 
 
+##Ejercicio 7
+###Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow
 
+Para poder configurar el despliegue automático he utilizado Travis añadiendo el archivo .travis.yml. Este archivo contiene lo siguiente:
+
+![contenido archivo .travis.yml](https://www.dropbox.com/s/plrh1o79r0149ok/ejr7.1.png?dl=1)
+
+Nos metemos en la página de travis y seleccionamos el repositorio de la aplicación que estamos gestionando y podemos comprobar que pasa los test
+
+![pagina de travis](https://www.dropbox.com/s/01sayme68xd900t/ejr7.2.png?dl=1)
+
+Para finalizar nos vamos a la web de Heroku, seleccionamos dicha aplicación, y nos vamos al menú "Deploy". Dentro de este menú hay una sección que se denomina "Automatic deploys" en la que marcando la casilla que dice "Wait for CI to pass before deploy" para que la aplicación no se despliegue hasta que pase los test
+
+![opcion heroku para que no arranque sin pasar test](https://www.dropbox.com/s/78opuxf0p155w0a/ejr7.3.png?dl=1)
 
 ##Ejercicio 8
 ###Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.
