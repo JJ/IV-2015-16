@@ -116,8 +116,6 @@ exports.deleteTVShow = function(req, res) {
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/nav.png)
 
-###Ejercicio 4: Crear pruebas para las diferentes rutas de la aplicación.
-
 
 ###Ejercicio 5: Instalar y echar a andar tu primera aplicación en Heroku.
 
@@ -151,20 +149,32 @@ Comprobamos nuestra aplicación funcionando correctamente en Heroku:
 
 ###Ejercicio 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
 
+- El primer paso es instalar **foreman**:
+```
+sudo gem install foreman
+```
 
+- Ejecutar la utilidad:
+```
+foreman start web
+```
+
+foreman leerá el Procfile y ejecutará la tarea correspondiente a web, en este caso app.js. 
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/fore.png)
 
 
 ###Ejercicio 7: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow
 
-Tras realizar el registro en https://snap-ci.com y vincular el repositorio en git con nuestra aplicación, obtenemos el resultado de *SNAP-CI*:
+- Tras realizar el registro en https://snap-ci.com y vincular el repositorio en git con nuestra aplicación, obtenemos el resultado de *SNAP-CI*:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/snap.png)
 
-Creamos una nueva instancia en Snap-CI vinculando la cuenta de Heroku y eligiendo la aplicación de Heroku:
+- Creamos una nueva instancia en Snap-CI vinculando la cuenta de Heroku y eligiendo la aplicación de Heroku:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/sheroku.png)
 
-Por último comprobamos que realiza los test de forma correcta:
+- Por último comprobamos que realiza los test de forma correcta:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema3/passed.png)
 
