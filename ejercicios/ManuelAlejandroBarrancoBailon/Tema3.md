@@ -160,4 +160,4 @@ Para ello, editamos la *pipeline* y le establecemos un nombre, le indicamos que 
 ###Ejercicio 8
 **Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.**
 Como he venido trabajando con mi aplicación propia en los anteriores ejercicios, por tanto ya tengo mi aplicación desplegada en Heroku.
-[![Deploy to Heroku TusPachangas](http://blog.openplans.org/wp-content/uploads/2014/12/Screen-Shot-2014-12-03-at-10.47.32-PM.png)]()
+[![Deploy to Heroku TusPachangas](http://blog.openplans.org/wp-content/uploads/2014/12/Screen-Shot-2014-12-03-at-10.47.32-PM.png)](https://tuspachangas.herokuapp.com/)
