@@ -235,6 +235,5 @@ He creado por lo tanto un .travis.yml, he actualizado algún archivo para realiz
 
 ## Ejercicio 8.
 ### Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.
-
 He hecho los pasos anteriores sobre la aplicación de empresas del tema anterior. Y el resultado se muestra en la siguiente captura:
 ![Empresas-Heroku](http://i770.photobucket.com/albums/xx346/BkY_1234/captura9_zpsplns8kme.jpg)
