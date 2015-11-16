@@ -55,3 +55,33 @@ Accedemos a la pantalla de configuración de recursos del contenedor, que por de
 Para modificar los recursos, primero debemos parar la ejecución del contenedor, para poder aplicar los cambios. Luego se podrá volver a arrancar sin problemas.
 
 ![Recursos cambiados](https://www.dropbox.com/s/wfz2hjitrwtcbwp/recursosLXC.PNG?dl=1)
+
+### Ejercicio 5: Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor usando nginx.
+
+### Ejercicio 6: Instalar docker.
+
+Se puede instalar con `curl -sSL https://get.docker.com/ | sudo sh` ó `sudo apt-get -y install docker.io`
+
+Cada vez que vayamos a ejecutar debemos borrar el archivo *docker.pid* con: `sudo rm /var/run/docker.pid` 
+
+Y ejecutamos el daemon con: `sudo docker -d &`
+
+### Ejercicio 7.1: Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+
+Con el servicio docker arrancado, ya podemos instalar los contenedores.
+
+Ubuntu: `sudo docker pull ubuntu`
+
+CentOS: `sudo docker pull centos`
+
+### Ejercicio 7.2: Buscar e instalar una imagen que incluya MongoDB.
+
+En este [enlace](https://github.com/dockerfile/mongodb) he encontrado como instalar una imagen Docker con MongoDB, pero debemos cambiar donde pone "dockerfile/mongodb" por "library/mongo": 
+
+```
+sudo docker pull library/mongo
+```
+
+Ya podemos ver que tenemos las tres imagenes instaladas:
+
+![Imagenes instaladas con Docker](https://www.dropbox.com/s/s97ca5qgl19wjas/imagenesDocker.PNG?dl=1)
