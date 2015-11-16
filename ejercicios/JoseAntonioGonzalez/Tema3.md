@@ -3,15 +3,15 @@
 
 Nos daremos de alta en [Heroku](https://www.heroku.com), yendo a su página principal. Dentro pulsamos en sign up para ir a la siguiente ventana:
 
-![](REGISTRO_HEROKU_1.png)
+![](https://www.dropbox.com/s/uq7am742hv0d94v/REGISTRO_HEROKU_1.png?dl=1)
 
 Después de rellenar el formulario con el email, nos saldrá la siguiente ventana:
 
-![](REGISTRO_HEROKU_2.png)
+![](https://www.dropbox.com/s/f8c8l3aogpegknh/REGISTRO_HEROKU_2.png?dl=1)
 
 Nos metemos en nuestro correo, y seguimos el enlace de activación. Tras hacerlo, nos pedirá que guardemos una contraseña, y nos aparecerá el menú principal de Heroku:
 
-![](REGISTRO_HEROKU_3.png)
+![](https://www.dropbox.com/s/m4j3jvq0p1skwa7/REGISTRO_HEROKU_3.png?dl=1)
 
 #Ejercicio 2
 
@@ -19,17 +19,17 @@ Nos metemos en nuestro correo, y seguimos el enlace de activación. Tras hacerlo
 
 Nos vamos a la página de [OpenShift](https://www.openshift.com/), y si no tenemos cuenta, nos hacemos una pulsando en el boton Sign up for free.
 
-![](Ej3_1.png)
+![](https://www.dropbox.com/s/1qek3jwotfwf7vr/Ej3_1.png?dl=1)
 
 UNa vez creada y desde el menú de nuestra cuenta,nos aparecerá una pantalla de bienvenida, donde pulsaremos sobre "Create your first application now"
 
 En el primer apartado (Instant app), pulsamos sobre WordPress 4. Rellenamos todos los campos del formulario (en este caso, la aplicación ejecutada será la que viene de prueba, que descargará de un repositorio de git).
 
-![](ejercicio2)
+![](https://www.dropbox.com/s/tftsz2zxxczsqy0/ejercicio2.png?dl=1	)
 
 Esperamos un tiempo hasta que se cree (tarda bastante). Después, una vez creada, la plataforma nos proporcionará los datos de acceso a la base de datos para poder realizar las operaciones que nos interesen
 
-![](ejercicio2_1)
+![](https://www.dropbox.com/s/qx8j6lex3nx5vh2/ejercicio2-1.png?dl=1)
 
 
 #Ejercicio 3
@@ -56,7 +56,7 @@ Aunque se puede apreciar mejor [en el commit del repo con la modificacion](https
 
 Como vemos, imprime la variable proporcionada en la URL:
 
-![](Ejercicio 3)
+![](https://www.dropbox.com/s/7pjxqn9c6xps70e/ejercicio3.png?dl=1)
     
 #Ejercicio 4
 
@@ -89,6 +89,7 @@ Dentro de Heroku, tenemos que configurar la aplicación para que se despliegue a
 
 Para ello, nos vamos en el menú de la izquierda a "Personal Apps" -> appejercicioiv (en este caso, pero aqui sale el nombre de la app) -> Deploy -> Enable Automatic Deploy (marcando el tick de Wait for CI to pass before deploy )
 
+![](https://www.dropbox.com/s/41do46brnj0aq93/practica_heroku.png?dl=1)
 #Ejercicio 8
 
 Si atendemos a las últimas lineas del fichero principal de la aplicación, vemos lo siguiente:
