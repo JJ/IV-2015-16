@@ -33,11 +33,11 @@ En este caso se va reduciendo el coste del producto conforme pasan los años, lo
 
 Para el servidor dedicado he optado por [OVH](https://www.ovh.es)
 
-![Dedicado](img/tema1-2.1.png)
+![Dedicado](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema1-2.1_zpsk9mgdwb3.png)
 
 Para cloud he optado por [Azure](https://azure.microsoft.com)
 
-![Cloud](img/tema1-2.2.png)
+![Cloud](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema1-2.2_zpsxltakxxk.png)
 
 #### Uso de un 1% del tiempo:
 
@@ -82,7 +82,7 @@ Los flags que me aparecen son los siguientes:
 
     egrep '^flags.*' /proc/cpuinfo
 
-![flags](img/tema1-4flags.png)
+![flags](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema1-4flags_zpsa0dnyjg1.png)
 
 Vemos que no tengo los flags de virtualización, pudiera ser que no estén activados por defecto también.
 
@@ -90,7 +90,7 @@ Para ver el modelo de procesador usamos:
 
     cat /proc/cpuinfo | grep "model name"
 
-![model name](img/tema1-4.png)
+![model name](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema1-4_zps8pdqn5vr.png)
 
 La orden cat /proc/cpuinfo sin el grep, nos da toda la información detallada del ordenador pero con el filtro grep obtenemos solo el nombre del procesador. Como vemos tengo 2 núcleos de Intel T1600 a 1.66GHz
 
@@ -99,7 +99,7 @@ La orden cat /proc/cpuinfo sin el grep, nos da toda la información detallada de
 
     sudo kvm-ok
 
-![Captura módulo kvm](img/tema1-5.1.png)
+![Captura módulo kvm](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema1-5.1_zpsluajrk1f.png)
 
 ### Ejercicio 5.2: Instalar un hipervisor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios.
 

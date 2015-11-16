@@ -95,15 +95,54 @@ Ejecutamos los tests:
 		![heroku online](http://s2.subirimagenes.com/imagen/previo/thump_9489627herokuonline.png)
 
 	
-###Ejercicio 6
-**Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
-Como en todos los ejemplos anteriores, se puede cambiar “node” y “heroku” por la herramienta que se haya elegido.**
 
 ###Ejercicio 7
 **Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow**
 
+Vamos a configurar primeramente Travis, para ello creamos el fichero .travis.yml con el siguiente contenido:
+
+```
+language: node_js   
+
+node_js:
+  - "4.1" 
+  - "0.12"
+  - "iojs"
+
+install:   # Instalación de dependencias
+  - npm install
+  - npm install -g mocha
+
+script:       # El script que ejecutaremos para que nuestro código funcione y corra los test.
+  - mocha
+
+notifications:   # Notificamos los resultados de los test por correo
+  recipients:
+    - rubenmartin1991@gmail.com
+  email:
+    on_success: change
+    on_failure: always
+```
+Vemos que se han pasado todos los tests en travis:
+
+![](http://s2.subirimagenes.com/imagen/previo/thump_9490290porratravis.png)
+
+
 
 ###Ejercicio 8
 **Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.**
+
+Seguimos las instrucciones de la captura para instalar la aplicación:
+
+![instalando en openshift](http://s2.subirimagenes.com/imagen/previo/thump_9490289firstappopenshift.png)
+
+Una vez creada, clonamos nuestro repositorio de github en el que tenemos la app y enlazamos con el repositorio de OpenShift con las siguientes ordenes:
+
+git remote add openshift ssh://5649a0d70c1e66024a00005e@firstappiv-barchecker.rhcloud.com/~/git/firstappiv.git
+
+git fetch openshift
+git push 
+
+Con esto ya tenemos nuestra aplicación desplegada en OpenShift
 
 
