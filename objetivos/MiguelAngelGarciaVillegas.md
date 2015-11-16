@@ -1,5 +1,5 @@
 # Asignatura: IV Grupo de Practicas Miercoles 8:30h a 10:30h
-## Miguel Ángel García Villegas 
+## Miguel Ángel García Villegas
 
 # Objetivos a cubrir en la Primera sesión Semana del 23 al 30 de septiembre de 2015
 
@@ -67,7 +67,7 @@
 
 ## ---------------------------------------------------------------------------##
 
-# Tema 2 
+# Tema 2
 
 ## Objetivos a cubrir en la Cuarta sesión comienza 14 de octubre
 - [X] Terminar la configuración de los sistemas de integración continua
@@ -88,4 +88,36 @@
 - [X] Aprender a usar integración continua en cualquier aplicación.
 
 ## Objetivos para el Proyecto
-- [X] Además de realizar los Ejercicios, hemos realizado los ejercicios y una guía paso a paso también en el proyecto. 
+- [X] Además de realizar los Ejercicios, hemos realizado los ejercicios y una guía paso a paso también en el proyecto.
+
+## ---------------------------------------------------------------------------##
+
+# Tema 3 
+
+## Objetivos de la semana que comienza el 28 de OCtubre
+
+- [ ] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+- [ ] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+- [ ] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+- [ ] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+- [ ] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+- [ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+## Otros objetivos
+
+- [ ] Darse de alta y probar diferentes servicios PaaS.
+- [ ] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+- [ ] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+- [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
+- [ ] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
+
+## Objetivos, Cubre los siguientes objetivos de la asignatura
+
+- [ ] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [ ] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+## Objetivos específicos
+
+- [ ] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+- [ ] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+- [ ] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
