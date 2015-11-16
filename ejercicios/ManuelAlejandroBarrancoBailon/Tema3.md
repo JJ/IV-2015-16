@@ -54,21 +54,21 @@ A continuación se puede ver el código de los tests (en el fichero *tests.py*) 
 ###Ejercicio 5
 **Instalar y echar a andar tu primera aplicación en Heroku.**
 Siguiendo el [tutorial](https://devcenter.heroku.com/articles/getting-started-with-django) oficial de Heroku para despliegue de aplicaciones Django, realizamos los siguientes pasos:
-1. Descargamos el cinturón de herramientas de Heroku con la orden:
+* Descargamos el cinturón de herramientas de Heroku con la orden:
 ~~~
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 ~~~
-2. Desde el terminal, nos logueamos en Heroku con la orden:
+* Desde el terminal, nos logueamos en Heroku con la orden:
 ~~~
 heroku login
 ~~~
-3. Creamos un fichero **Procfile** en la carpeta raíz de nuestro proyecto, en el que indicamos los pasos necesarios para desplegar la aplicación web en Heroku.
-4. Actualizamos el fichero de dependencias de nuestra aplicación.
+* Creamos un fichero **Procfile** en la carpeta raíz de nuestro proyecto, en el que indicamos los pasos necesarios para desplegar la aplicación web en Heroku.
+* Actualizamos el fichero de dependencias de nuestra aplicación.
 ~~~
 pip freeze > requirements.txt
 ~~~
 (Tener en cuenta que introduce como dependencia, la aplicación Django en sí, en mi caso TusPachangas. Eliminarla del fichero de requisitos)
-5. Modificamos el fichero *settings.py* para indicarle la base de datos de Heroku a usar. Por tanto, tenemos que añadir el siguiente código:
+* Modificamos el fichero *settings.py* para indicarle la base de datos de Heroku a usar. Por tanto, tenemos que añadir el siguiente código:
 ~~~
 import dj_database_url
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -79,37 +79,37 @@ if ON_HEROKU:
     DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
 ~~~
 Con esto lo que le estamos indicando es que cuando se encuentre en Heroku, que use la base de datos de la URL especificada (la obtenemos desde el panel de control de Heroku, cada una diferente para un usuario, obviamente).
-6. En el fichero *wsgi.py*, añadir el siguiente código:
+* En el fichero *wsgi.py*, añadir el siguiente código:
 ~~~
 from django.core.wsgi import get_wsgi_application
 from dj_static import Cling
 application = Cling(get_wsgi_application())
 ~~~
-7. Preparamos todos los ficheros modificados para subirlos a un repositorio GitHub.
+* Preparamos todos los ficheros modificados para subirlos a un repositorio GitHub.
 ~~~
 git init
 git add .
 git commit -m "my django app"
 ~~~
-8. Creamos un nuevo repositorio git para subir la aplicación a Heroku.
+* Creamos un nuevo repositorio git para subir la aplicación a Heroku.
 ~~~
 heroku create
 ~~~
-9. Subimos nuestra aplicación al nuevo repositorio creado.
+* Subimos nuestra aplicación al nuevo repositorio creado.
 ~~~
 git push heroku master
 ~~~
-10. Realizamos los cambios sobre la base de datos Heroku, para que tengan efecto.
+* Realizamos los cambios sobre la base de datos Heroku, para que tengan efecto.
 ~~~
 heroku run python manage.py makemigrations
 heroku run python manage.py migrate
 heroku run python manage.py createsuperuser
 ~~~
-11. Indicamos que nos abra nuestra app desplegada en Heroku en un navegador.
+* Indicamos que nos abra nuestra app desplegada en Heroku en un navegador.
 ~~~
 heroku open
 ~~~
-12. Vemos nuestra app desplegada en Heroku:
+* Vemos nuestra app desplegada en Heroku:
 * /
 ![heroku](http://i1016.photobucket.com/albums/af281/raperaco/heroku_zpsgojniwgh.png)
 * /penhas/
