@@ -1,5 +1,5 @@
 #Objetivos de Manuel Alejandro Barranco Bailón para la asignatura de Infraestructuras Virtuales curso 2015/2016
-##Semana del 23 al 30 de septiembre de 2015
+##1ª Semana, del 23 al 30 de septiembre de 2015
 
 ###Objetivos a cubrir en la sesión
 
@@ -13,7 +13,7 @@
 - [X] Encuesta inicial contestada
 
 
-##Semana del 30 de septiembre al 7 de octubre
+##2ª Semana, del 30 de septiembre al 7 de octubre
 
 ###Objetivos de la semana
 
@@ -38,8 +38,19 @@
 - [X] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 - [X] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
+##Objetivos Tema 1
+- [X] Conocer la historia de la Computación Virtual, sus orígenes y razones de su existencia.
+- [X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [X] Comprender la diferencia entre infraestructura virtual y real.
+- [X] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
 
-##Semana del 7 de octubre al 14 de octubre (3ª semana)
+###Objetivos específicos
+- [X] Conocer diferentes tecnologías relacionadas con la virtualización (Computación nube, Utility Computing, Software as a Service o Google AppSpot)
+- [X] Conocer el concepto de software libre y su importancia dentro de la computación nube.
+- [X] Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
+- [X] Usar el sistema de control de fuentes git para desarrollo colaborativo y para despliegue de aplicaciones en la nube.
+
+##3ª Semana, del 7 de octubre al 14 de octubre
 ###Objetivos de la semana
 - [X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
 
@@ -49,19 +60,28 @@
 
 - [X] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
 
-##Cuarta semana, comienza el 14 de octubre
+##4ª semana, comienza el 14 de octubre
 ###Objetivos de la semana
 - [X] Terminar la configuración de los sistemas de integración continua
 - [X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
-##Quinta semana, comienza el 21 de octubre
+##Semana que comienza el 21 de octubre
+(no aparece en las sesiones de la asignatura, da un salto del 14 al 28 de octubre, en su momento sí aparecía)
 ###Objetivos de la semana
 - [X] Integrar la cadena GitHub - Sistema de Integración Continua - PaaS
 - [X] Ver las posibilidades de configuración que ofrecen los diferentes sistemas de integración continua y de integración con repositorios locales y remotos.
 - [X] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
 - [X] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
-##Semana que comienza el 28 de octubre
+##Objetivos Tema 2
+- [X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+###Objetivos específicos
+- [X] Entender el concepto de DevOps.
+- [X] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+- [X] Aprender a usar integración continua en cualquier aplicación.
+
+##5ª Semana, comienza el 28 de octubre
 - [X] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
 - [X] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
 - [X] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
@@ -73,17 +93,17 @@
 - [X] Darse de alta y probar diferentes servicios PaaS.
 - [X] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
 - [X] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
-- [] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
+- [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
 
-##Semana que comienza el 4 de noviembre
+##6ª Semana, comienza el 4 de noviembre
 - [X] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
 - [X] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
 
 ###Otros objetivos
 - [X] Trabajar con los toolbelts de los diferentes PaaS.
-- [] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
-- [] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
-- [] Experimentar con el despliegue simultáneo a varios PaaS.
+- [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+- [X] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+- [ ] Experimentar con el despliegue simultáneo a varios PaaS.
 
 ##Objetivos Tema 3
 - [X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
