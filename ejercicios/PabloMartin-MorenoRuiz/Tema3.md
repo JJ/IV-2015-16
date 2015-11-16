@@ -70,3 +70,62 @@ Y otro fallo que me costó ver es no ejecutar python manage.py collectstatic ant
 [Web de ejemplo de Heroku subida por mi](https://infinite-badlands-9357.herokuapp.com/)
 
 [Web de funcionó básica para ir empezando](https://gentle-coast-2534.herokuapp.com/)
+
+
+# Ejercicio 6. Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
+
+foreman start web nos permite probar nuestra web cómo si estuviera siendo ejecutada en heroku. Veamos, según he comprobado por su funcionamiento se ejecuta localmente (es decir, usa localhost en la base de datos) lo que ocurre es que ejecuta Procfile y lanza por hay la aplicación (wsgi). Así podemos comprobar que esa parte la tenemos bien configurada pero aun así estamos usando la herramienta localmente (ip privada) y al subirlo a heroku (se puede ver mejor en el ejercicio 8) tendremos problemas con la base de datos.
+
+Ejemplo de uso:
+
+![foreman](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Seleccioacuten_012_zps6ps9xnmw.png)
+
+# Ejercicio 7. Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI
+
+He configurado, probado y subido la aplicación de las calificaciones con base de datos. Lo explico en mayor profundidad en el ejercicio 8, aquí explicaré la configuración de snap-ci y la modificación realizada en la práctica.
+
+Introduciendonos en Snap-ci podemos ver la lista de nuestros proyectos a los que queremos hacerle cauces (pipelines). En este caso se ha diseñado para que el código una vez introducido en github y pasado travis nos lo mande a heroku.
+
+Introducimos el repositorio que queramos en el pipeline, seleccionamos heroku de entre los Deploy y uan vez hecho esto lo configuramos cómo se muestra en la siguiente imagen:
+
+![configuracion_heroku](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Seleccioacuten_014_zpsbwwktmhz.png)
+
+Se ha añadido a la web la opción modificar empresas que es dónde modificamos una calificación de la empresa si la empresa ya está calificada. 
+
+[En este repositorio se pueden ver los cambios](https://github.com/pmmre/Empresas)
+
+[Este es un enlace a la web ejecutándolo](https://salty-reaches-8826.herokuapp.com/)
+
+# Ejercicio 8. Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.
+
+En este caso he subido la aplicación de calificar empresas en la que venimos trabajando en los ejercicios anteriores. Estaba trabajando con la base de datos sqlite que viene por defecto en Django pero heroku nos pide que utilicemos postgressql. Así que lo he configurado es usando las 2 bases de datos. Sqlite la dejo para desarrollo y postgressql para heroku.
+
+Lo he hecho modificando la configuración del settings para la base de datos por la siguiente:
+
+ON_HEROKU = os.environ.get('ON_HEROKU')
+
+if ON_HEROKU:
+
+    DATABASES = {'default' : dj_database_url.config() }
+
+else:
+
+    DATABASES = {
+
+        'default': {
+
+            'ENGINE': 'django.db.backends.sqlite3',
+
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        }
+
+    }
+
+
+Con esto lo que hago es que si esto en un entorno que no sea heroku ejecuto sqlite3 pero si estoy en heroku utilizo postgressql cómo él me indica.
+
+[Repositorio de la aplicación](https://github.com/pmmre/Empresas)
+
+[Web ejecutándose](https://salty-reaches-8826.herokuapp.com/)
+
