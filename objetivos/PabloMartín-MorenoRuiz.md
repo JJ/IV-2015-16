@@ -31,3 +31,20 @@
 ## Objetivos Cuarta semana
 - [x] Terminar la configuración de los sistemas de integración continua
 - [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+
+
+## Objetivos Quinta Semana
+- [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+- [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+- [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+- [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+### Otros objetivos de la quinta semana
+- [x] Darse de alta y probar diferentes servicios PaaS.
+- [x] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+- [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+
+## Objetivos Sexta Semana
+- [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+- [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
