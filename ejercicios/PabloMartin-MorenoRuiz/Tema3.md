@@ -2,6 +2,5 @@
 
 Me he dado de alta en Openshift y pongo a continuación una imagen que muestra el inicio de sesesión.
 
-![registro_openshift](http://s393.photobucket.com/user/pmmre/media/Practica3IV/Seleccioacuten_010_zpsam2jltxv.png.html)
-
+![registro_openshift](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Seleccioacuten_010_zpsam2jltxv.png)
 
