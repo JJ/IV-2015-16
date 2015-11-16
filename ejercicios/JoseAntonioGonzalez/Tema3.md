@@ -88,3 +88,20 @@ He modificado la app de forma que he metido una URL mas de prueba. Todos los cam
 Dentro de Heroku, tenemos que configurar la aplicación para que se despliegue automáticamente después de pasar los test del CI (en este caso, seguimos usando Travis).
 
 Para ello, nos vamos en el menú de la izquierda a "Personal Apps" -> appejercicioiv (en este caso, pero aqui sale el nombre de la app) -> Deploy -> Enable Automatic Deploy (marcando el tick de Wait for CI to pass before deploy )
+
+#Ejercicio 8
+
+Si atendemos a las últimas lineas del fichero principal de la aplicación, vemos lo siguiente:
+
+	def main():
+    	from paste import httpserver
+   		httpserver.serve(aplicacion, host='127.0.0.1', port='8080')
+
+	if __name__ == '__main__':
+    	main()
+    
+Con Webapp2, estas sentencias configuran el servidor para una IP concreta y puerto.
+
+Como se ha enlazado en el ejercicio 5, la aplicación resultante está en el siguiente enlace:
+
+[Enlace a la aplicacion](appejercicioiv.herokuapp.com) (appejercicioiv.herokuapp.com)
