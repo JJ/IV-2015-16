@@ -33,7 +33,7 @@ Esperamos un tiempo hasta que se cree (tarda bastante). Después, una vez creada
 
 
 #Ejercicio 3
-
+#### Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
 En los ejercicios del [Tema 2](https://github.com/JJ/IV-2015-16/blob/master/ejercicios/JoseAntonioGonzalez/Tema2.md) se pidió crear una aplicación. En ese momento, usé como lenguaje Python, y como framework para crear una aplicacion web, **webapp2** (que podría ser un equivalente a express en js). 
 
 Sin embargo en ese ejercicio no se pedía un tratamiento de variables (no desde URL, aunque si se tratan desde formularios). De modo que para este ejercicio, he reutilizado esa aplicación, añadiendo una nueva página que imprime una variable dada por URL.
@@ -78,11 +78,11 @@ El codigo usado es el siguiente (se ha incorporado a las pruebas ya existentes d
             (response.body).should.contain('valor_prueba')
 
 #Ejercicio 5
-
+#### Instalar y echar a andar tu primera aplicación en Heroku.
 [Enlace a la aplicacion](appejercicioiv.herokuapp.com) (appejercicioiv.herokuapp.com)
             
 #Ejercicio 7
-
+#### Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow
 He modificado la app de forma que he metido una URL mas de prueba. Todos los cambios hechos están [en este commit](https://github.com/JA-Gonz/appEjercicioIV/commit/6c08ca76aacbae42e3bce076713f85cd73bd1fa8)
 
 Dentro de Heroku, tenemos que configurar la aplicación para que se despliegue automáticamente después de pasar los test del CI (en este caso, seguimos usando Travis).
@@ -91,7 +91,7 @@ Para ello, nos vamos en el menú de la izquierda a "Personal Apps" -> appejercic
 
 ![](https://www.dropbox.com/s/41do46brnj0aq93/practica_heroku.png?dl=1)
 #Ejercicio 8
-
+#### Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido. 
 Si atendemos a las últimas lineas del fichero principal de la aplicación, vemos lo siguiente:
 
 	def main():
