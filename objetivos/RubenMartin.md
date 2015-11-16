@@ -151,11 +151,11 @@
 ## Semana del 11 al 18 de noviembre de 2015
 ### Objetivos de la semana
 
-- [ ] Entender la base del aislamiento de recursos en el sistema operativo.
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
 
 ### Otros objetivos
 
-- [ ] Instalar docker y trabajar con él.
+- [x] Instalar docker y trabajar con él.
 
 ## Objetivos de la asignatura
 
