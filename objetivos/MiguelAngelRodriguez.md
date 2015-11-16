@@ -18,7 +18,19 @@ Lista de objetivos de Miguel Ángel Rodríguez
 [x] Comprender el concepto de "software as a service" y comprender los criterios necesarios para su elección.                   
 
 ##Sesión 3 (Semana del 7 de Octubre al 14)
-[X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
-[X] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
-[X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
-[X] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
+[X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.   
+[X] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.   
+[X] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.   
+[X] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.   
+   
+##Sesión 4   
+[X] Terminar la configuración de los sistemas de integración continua   
+[X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.   
+   
+##Sesión 5   
+[X] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.   
+[X] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.   
+[X] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.   
+[X] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.   
+[X] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.   
+[X] Resolver los problemas que surjan en los primeros despliegues de la asignatura   
