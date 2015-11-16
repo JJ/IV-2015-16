@@ -1,5 +1,5 @@
 # Lista de objetivos de Rubén Martín Hidalgo
-## Semana del 23 al 30 de septiembre de 2015
+## Sesión 1: Semana del 23 al 30 de septiembre de 2015
 ### Objetivos a cubrir en la sesión
 
 - [x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
@@ -10,7 +10,7 @@
 
 - [x] Vernos las caras.
 
-## Semana del 30 de septiembre al 7 de octubre de 2015
+## Sesión 2: Semana del 30 de septiembre al 7 de octubre de 2015
 ### Objetivos de la semana
 
 - [x] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
@@ -49,7 +49,7 @@
 
 - [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
-## Semana del 7 al 14 de octubre de 2015
+## Sesión 3: Semana del 7 al 14 de octubre de 2015
 ### Objetivos de la semana
 
 - [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
@@ -74,7 +74,7 @@
 
 - [x] Comprender el papel de las build tools o herramientas de automatización.
 
-## Semana del 14 al 21 de octubre de 2015
+## Sesión 4: Semana del 14 al 21 de octubre de 2015
 ### Objetivos de la semana
 
 - [x] Terminar la configuración de los sistemas de integración continua.
@@ -106,7 +106,7 @@
 
 - [x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
 
-## Semana del 28 de octubre al 4 de noviembre de 2015
+## Sesión 5: Semana del 28 de octubre al 4 de noviembre de 2015
 ### Objetivos de la semana
 
 - [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
@@ -131,7 +131,7 @@
 
 - [x] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases... 
 
-## Semana del 4 al 11 de noviembre de 2015
+## Sesión 6: Semana del 4 al 11 de noviembre de 2015
 ### Objetivos de la semana
 
 - [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
@@ -148,7 +148,7 @@
 
 - [x] Experimentar con el despliegue simultáneo a varios PaaS.
 
-## Semana del 11 al 18 de noviembre de 2015
+## Sesión 7: Semana del 11 al 18 de noviembre de 2015
 ### Objetivos de la semana
 
 - [x] Entender la base del aislamiento de recursos en el sistema operativo.
