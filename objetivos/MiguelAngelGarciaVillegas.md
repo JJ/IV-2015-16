@@ -92,9 +92,21 @@
 
 ## ---------------------------------------------------------------------------##
 
-# Tema 3 
+# Tema 3
 
-## Objetivos de la semana que comienza el 28 de OCtubre
+## Objetivos, Cubre los siguientes objetivos de la asignatura
+
+- [ ] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [ ] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+## Objetivos específicos
+
+- [ ] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+- [ ] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+- [ ] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+
+
+## Objetivos de la semana que comienza el 28 de Octubre
 
 - [ ] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
 - [ ] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
@@ -111,13 +123,14 @@
 - [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
 - [ ] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
 
-## Objetivos, Cubre los siguientes objetivos de la asignatura
+## Objetivos de la semana que comienza el 4 de Noviembre
 
-- [ ] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
-- [ ] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+- [ ] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+- [ ] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
 
-## Objetivos específicos
+## Otros objetivos
 
-- [ ] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
-- [ ] Aplicar el concepto de DevOps a este tipo específico de plataforma.
-- [ ] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+- [ ] Trabajar con los toolbelts de los diferentes PaaS.
+- [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+- [ ] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+- [ ] Experimentar con el despliegue simultáneo a varios PaaS.
