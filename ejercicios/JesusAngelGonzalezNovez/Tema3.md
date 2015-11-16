@@ -3,21 +3,21 @@
 
 Me he registrado en [Heroku](https://www.heroku.com/), he creado una aplicación de pruebas y otra con nombre propio, Try-2-Learn, usada para el proyecto propio de las prácticas de esta asignatura.
 
-![Heroku](img/tema3-1.1.png)
+![Heroku](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema3-1.1_zpsoc02ngtj.png)
 
 ###Ejercicio2: Crear una aplicación en OpenShift y dentro de ella instalar WordPress.
 
 Nos registramos en [OpenShift](https://www.openshift.com/app/account/new), creamos nuestra primera aplicación, lo cual nos da a elegir entre varios tipos, una de ella WordPress 4, la seleccionamos:
 
-![paso1](img/tema3-2.1.png)
+![paso1](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema3-2.1_zps5iuxbbkd.png)
 
 Después configuramos algunos parámetros:
 
-![paso2](img/tema3-2.2.png)
+![paso2](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema3-2.2_zpstn2bkxbe.png)
 
 Ya tenemos la aplicación instalada:
 
-![paso3](img/tema3-2.3.png)
+![paso3](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema3-2.3_zpszd4xiu5l.png)
 
 Podemos visitarla [aquí](http://jesusgn90-pruebaiv15.rhcloud.com/)
 
