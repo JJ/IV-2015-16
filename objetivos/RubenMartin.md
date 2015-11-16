@@ -156,7 +156,6 @@
 ### Otros objetivos
 
 - [ ] Instalar docker y trabajar con él.
-__________________________________________
 
 ## Objetivos de la asignatura
 
