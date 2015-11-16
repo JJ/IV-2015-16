@@ -106,4 +106,12 @@ Como en todos los ejemplos anteriores, se puede cambiar “node” y “heroku�
 ###Ejercicio 8
 **Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.**
 
+Seguimos las instrucciones de la captura para instalar la aplicación:
+
+![instalando en openshift](https://www.dropbox.com/s/8hy5m50qkwu1sgd/appopenshift.png?dl=0)
+
+Una vez creada, clonamos nuestro repositorio de github en el que tenemos la app y enlazamos con el repositorio de OpenShift con a siguiente orden:
+
+git remote add openshift ssh://5649a0d70c1e66024a00005e@firstappiv-barchecker.rhcloud.com/~/git/firstappiv.git
+
 
