@@ -104,8 +104,6 @@
 
 ### Otros objetivos
 
-- [ ] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
-
 - [x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
 
 ## Semana del 28 de octubre al 4 de noviembre de 2015
@@ -133,8 +131,6 @@
 
 - [x] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases... 
 
-- [ ] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
-
 ## Semana del 4 al 11 de noviembre de 2015
 ### Objetivos de la semana
 
@@ -150,7 +146,7 @@
 
 - [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
 
-- [ ] Experimentar con el despliegue simultáneo a varios PaaS.
+- [x] Experimentar con el despliegue simultáneo a varios PaaS.
 
 ## Semana del 11 al 18 de noviembre de 2015
 ### Objetivos de la semana
