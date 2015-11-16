@@ -138,4 +138,4 @@ El procedimiento es muy sencillo, simplemente entramos en nuestra aplicación en
 
 Aquí podemos ver porqué prefiero este método que utilizar Snap CI. Con este sistema nos aparece un botón para marcar que nos dice que sólo se activará la subida a Heroku si tenemos la integración continua configurada, en otras palabras, si se han pasado correctamente los tests.
 
-Para comprobarlo, he quitado dos botones inútiles que tenía en la página y he hecho `git push`. Ahora veremos si después de pasar los tests aparecen o no en Heroku.
+Para comprobarlo, he quitado dos botones inútiles que tenía en la página y he hecho `git push`. La página se actualiza correctamente.
