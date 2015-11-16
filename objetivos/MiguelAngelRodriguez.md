@@ -34,3 +34,7 @@ Lista de objetivos de Miguel Ángel Rodríguez
 [X] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.   
 [X] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.   
 [X] Resolver los problemas que surjan en los primeros despliegues de la asignatura   
+   
+##Sesión 6   
+[X] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.   
+[X] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.   
