@@ -58,3 +58,23 @@ Como vemos, imprime la variable proporcionada en la URL:
 
 ![](Ejercicio 3)
     
+#Ejercicio 4
+
+#### Crear pruebas para las diferentes rutas de la aplicación. 
+
+El codigo usado es el siguiente (se ha incorporado a las pruebas ya existentes del hito anterior)
+
+	def test_prueba(self):
+            request = webapp2.Request.blank('/prueba')
+            response = request.get_response(pasarelatest.aplicacion())
+
+            (response.body).should.contain('Parametro')
+
+	def test_prueba_con_parametro(self):
+
+            request = webapp2.Request.blank('/prueba/valor_prueba')
+
+            response = request.get_response(pasarelatest.aplicacion())
+            (response.body).should.contain('valor_prueba')
+            
+            
