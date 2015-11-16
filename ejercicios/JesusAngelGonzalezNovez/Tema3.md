@@ -21,6 +21,14 @@ Ya tenemos la aplicación instalada:
 
 Podemos visitarla [aquí](http://jesusgn90-pruebaiv15.rhcloud.com/)
 
+###Ejercicio 3: Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
+
+Sigo usando mi propio proyecto, pues uso justamente Express, link [Try-2-Learn](https://github.com/jesusgn90/Try-2-Learn)
+
+###Ejercicio 4: Crear pruebas para las diferentes rutas de la aplicación.
+
+Mi test inicial es para comprobar arrancado de servidor y manejo de rutas, podemos verlo [aquí](https://github.com/jesusgn90/Try-2-Learn/tree/master/app/test)
+
 ###Ejercicio 5: Instalar y echar a andar tu primera aplicación en Heroku
 
 Mostraré como lo he realizado en el proyecto propio de las prácticas de la asignatura. El proyecto propio es [Try-2-Learn](https://github.com/jesusgn90/Try-2-Learn), pues dentro esta el directorio "app", que es la aplicación nodejs, en el he creado otro repositorio para Heroku. 
@@ -49,4 +57,16 @@ Podemos verla en [https://try-2-learn.herokuapp.com/](https://try-2-learn.heroku
 He seguido usando mi proyecto propio de las prácticas, como uso NodeJS voy a usar [Node-Foreman](https://github.com/strongloop/node-foreman). Lo instalamos de forma global:
 
     $ npm install -g foreman
+
+Tenemos un Procfile con:
+
+    web: npm start
+
+A continuación solo debemos ejecutar:
+
+    $ nf start web=1
+
+Para ver más parámetros y sus finalidades sobre el comando "nf" podemos visitar [https://github.com/strongloop/node-foreman](https://github.com/strongloop/node-foreman) o bien ejecutar:
+
+    $ nf --help
 
