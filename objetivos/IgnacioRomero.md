@@ -113,3 +113,50 @@ recurso.
 - [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
 
 - [x] Aprender a usar integración continua en cualquier aplicación
+
+
+##Sesión 5
+###Objetivos de la semana
+
+- [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+
+- [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+
+- [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+
+- [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+###Otros objetivos
+
+- [x] Darse de alta y probar diferentes servicios PaaS.
+
+- [x] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+
+- [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+
+
+##Sesión 6
+###Objetivos de la semana
+
+- [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+    
+- [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+
+
+##Tema 3
+
+###Cubre los siguientes objetivos de la asignatura
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+###Objetivos específicos
+
+- [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+
+- [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.

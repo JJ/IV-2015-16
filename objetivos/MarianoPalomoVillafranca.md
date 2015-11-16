@@ -37,22 +37,22 @@ Lista de objetivos de Mariano Palomo Villafranca
 - [X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
 ## Semana 5
-- [ ] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+- [X] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
 
-- [ ] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+- [X] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
 
-- [ ] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+- [X] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
 
-- [ ] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+- [X] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
 
-- [ ] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+- [X] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
 
-- [ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+- [X] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
 ## Semana 6
-- [ ] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+- [X] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
 
-- [ ] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+- [X] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
 
 ## Semana 7
 - [ ] Entender la base del aislamiento de recursos en el sistema operativo.

@@ -5,24 +5,24 @@ Lista de objetivos de Gabriel Stan
 
 ### Objetivos generales
 
-- [ ] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 
-- [ ] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
 
 ### Objetivos específicos
 
-- [ ] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+- [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
 
-- [ ] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+- [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
 
-- [ ] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+- [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
 
 ## Objetivos de la sexta semana
 
 ### Objetivos principales
 
-- [ ] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
-- [ ] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+- [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+- [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
 
 ### Otros Objetivos
 
@@ -36,11 +36,11 @@ Lista de objetivos de Gabriel Stan
 ### Objetivos principales
 
 - [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
-- [ ] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
-- [ ] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+- [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+- [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
 - [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
 - [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
-- [ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
 ### Otros Objetivos
 - [x] Darse de alta y probar diferentes servicios PaaS.

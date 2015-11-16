@@ -25,6 +25,11 @@ Primero de todo instalamos el gestor de paquetes pip. Esto además nos servirá 
 
 El motivo de esta instalación es que utilizo bastante el mac para programar en python y me parecía interesante tener un entorno de python.
 
+En MAC, depende de la versión de python que queramos utilizar podemos hacer varias cosas. Si queremos trabajar con python 2.* entonces nos vale crear un entorno con `virtualenv nombre_entorno`. En cambio, si queremos intalar un entorno de python3 podemos hacer dos cosas:
+
+- Utilizar virtualenv con el comando: `virtualenv --distribute --python=<ruta donde esra instalado python3>`. Esta para mi es la opción más tediosa ya que tenemos que saber la ruta exacta de donde está instalado python3
+- Utilizar `pyvenv nombre_entorno`. Esta para mí es la opción más cómoda y además nos permite usar `pip` como gestor de paquetes de python3 (la otra igual también no lo se seguro). La ventaja de esta opción es que ejecutando `python` ya nos abre directamente python3 sin necesidad de tener que escribir `python3`. Este sistema viene detallado en [este blog](http://www.marinamele.com/2014/07/install-python3-on-mac-os-x-and-use-virtualenv-and-virtualenvwrapper.html)
+
 ###Importante:
 Si tenemos varias versiones de python instaladas, como es mi caso la 2.7 y la 3.4, entonces al crear un entorno virtual con virtualenv tenemos que especificar la versión de python que estamos utilizando, ya que sino dará un error. En mi caso, sería algo como: `virtualenv -p python3 <Nombre_de_la_carpeta>`
 
