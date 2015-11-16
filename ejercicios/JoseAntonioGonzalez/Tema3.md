@@ -81,3 +81,10 @@ El codigo usado es el siguiente (se ha incorporado a las pruebas ya existentes d
 
 [Enlace a la aplicacion](appejercicioiv.herokuapp.com) (appejercicioiv.herokuapp.com)
             
+#Ejercicio 7
+
+He modificado la app de forma que he metido una URL mas de prueba. Todos los cambios hechos están [en este commit](https://github.com/JA-Gonz/appEjercicioIV/commit/6c08ca76aacbae42e3bce076713f85cd73bd1fa8)
+
+Dentro de Heroku, tenemos que configurar la aplicación para que se despliegue automáticamente después de pasar los test del CI (en este caso, seguimos usando Travis).
+
+Para ello, nos vamos en el menú de la izquierda a "Personal Apps" -> appejercicioiv (en este caso, pero aqui sale el nombre de la app) -> Deploy -> Enable Automatic Deploy (marcando el tick de Wait for CI to pass before deploy )
