@@ -124,13 +124,36 @@
 
 [x] Trabajar con los toolbelts de los diferentes PaaS.
     
-[] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+[x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
     
 [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
     
 [x] Experimentar con el despliegue simultáneo a varios PaaS.
 
 ###Sesión 7 (Semana del 11 al 18 de noviembre 2015)
+
+[x] Entender la base del aislamiento de recursos en el sistema operativo.
+
+#####Otros objetivos
+
+[] Instalar docker y trabajar con él. 
+
+###Sesión 8 (Semana del 18 al 25 de noviembre 2015)
+
+[x] Entender la base del aislamiento de recursos en el sistema operativo.
+    
+[] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+#####Otros objetivos
+
+[x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+
+[] Instalar docker y trabajar con él.
+    
+[] Usar imágenes de docker publicadas.
+
+
+
 
 
 
