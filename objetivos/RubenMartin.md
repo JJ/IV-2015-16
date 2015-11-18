@@ -1,5 +1,5 @@
 # Lista de objetivos de Rubén Martín Hidalgo
-## Semana del 23 al 30 de septiembre de 2015
+## Sesión 1: Semana del 23 al 30 de septiembre de 2015
 ### Objetivos a cubrir en la sesión
 
 - [x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
@@ -10,7 +10,7 @@
 
 - [x] Vernos las caras.
 
-## Semana del 30 de septiembre al 7 de octubre de 2015
+## Sesión 2: Semana del 30 de septiembre al 7 de octubre de 2015
 ### Objetivos de la semana
 
 - [x] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
@@ -49,7 +49,7 @@
 
 - [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
-## Semana del 7 al 14 de octubre de 2015
+## Sesión 3: Semana del 7 al 14 de octubre de 2015
 ### Objetivos de la semana
 
 - [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
@@ -74,7 +74,7 @@
 
 - [x] Comprender el papel de las build tools o herramientas de automatización.
 
-## Semana del 14 al 21 de octubre de 2015
+## Sesión 4: Semana del 14 al 21 de octubre de 2015
 ### Objetivos de la semana
 
 - [x] Terminar la configuración de los sistemas de integración continua.
@@ -104,11 +104,9 @@
 
 ### Otros objetivos
 
-- [ ] Entregar la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.9. A partir del principio de la clase, el coeficiente será de 0.8.
-
 - [x] Elegir herramientas de desarrollo y lenguajes de programación que se puedan usar en diferentes PaaS con facilidad.
 
-## Semana del 28 de octubre al 4 de noviembre de 2015
+## Sesión 5: Semana del 28 de octubre al 4 de noviembre de 2015
 ### Objetivos de la semana
 
 - [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
@@ -133,9 +131,7 @@
 
 - [x] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases... 
 
-- [ ] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
-
-## Semana del 4 al 11 de noviembre de 2015
+## Sesión 6: Semana del 4 al 11 de noviembre de 2015
 ### Objetivos de la semana
 
 - [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
@@ -150,8 +146,16 @@
 
 - [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
 
-- [ ] Experimentar con el despliegue simultáneo a varios PaaS.
-__________________________________________
+- [x] Experimentar con el despliegue simultáneo a varios PaaS.
+
+## Sesión 7: Semana del 11 al 18 de noviembre de 2015
+### Objetivos de la semana
+
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+
+### Otros objetivos
+
+- [x] Instalar docker y trabajar con él.
 
 ## Objetivos de la asignatura
 
@@ -162,6 +166,22 @@ __________________________________________
 - [x] Comprender la diferencia entre infraestructura virtual y real.
 
 - [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+- [ ] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+- [ ] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+
+- [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+
+- [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+
+- [ ] Documentar y mantener una plataforma virtual.
+
+- [ ] Optimizar aplicaciones sobre plataformas virtuales.
+
+- [ ] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+
+- [ ] Realizar tareas de administración en infraestructura virtual.
 
 ## Objetivos específicos
 ### Tema 1: Introducción a la infraestructura virtual: concepto y soporte físico
@@ -189,3 +209,11 @@ __________________________________________
 - [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
 
 - [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+
+### Tema 4: Virtualización ligera usando contenedores
+
+- [ ] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+
+- [ ] Crear infraestructuras virtuales completas.
+
+- [ ] Comprender los pasos necesarios para la configuración automática de las mismas.

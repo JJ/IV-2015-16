@@ -138,4 +138,10 @@ El procedimiento es muy sencillo, simplemente entramos en nuestra aplicación en
 
 Aquí podemos ver porqué prefiero este método que utilizar Snap CI. Con este sistema nos aparece un botón para marcar que nos dice que sólo se activará la subida a Heroku si tenemos la integración continua configurada, en otras palabras, si se han pasado correctamente los tests.
 
-Para comprobarlo, he quitado dos botones inútiles que tenía en la página y he hecho `git push`. Ahora veremos si después de pasar los tests aparecen o no en Heroku.
+Para comprobarlo, he quitado dos botones inútiles que tenía en la página y he hecho `git push`. La página se actualiza correctamente.
+
+#Ejercicio 8
+La aplicación escogida es la que he realizado con Flask en el Ejercicio 3. El despliegue de la aplicación en lenguaje Python con el framework Flask está detallado en el [repositorio de mi proyecto](https://github.com/santidediego/Landscapes/blob/master/README.md). 
+
+Podemos acceder a la aplicación web desplegada en Heroku [aquí](https://appbasicaflask.herokuapp.com).
+

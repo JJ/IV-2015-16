@@ -45,13 +45,13 @@ ordenador habitual lo usa.
   - [x] Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos.
   - [x] Comenzar el aprendizaje de un nuevo lenguaje de programación o entender cómo node.js hace las cosas, o simplemente mirar el cinturón de herramientas del lenguaje que se use habitualmente de otra forma.
   - [x] Comprender la utilidad de la virtualización y definición de herramientas de desarrollo.
-  - [] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
+  - [x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
   - [x] Comprender el papel de las *build tools* o herramientas de automatización.
 
 
 ### Objetivos Cuarta Sesión
 
-  - [] Terminar la configuración de los sistemas de integración continua
+  - [x] Terminar la configuración de los sistemas de integración continua
   - [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
 
