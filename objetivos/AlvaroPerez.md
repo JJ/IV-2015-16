@@ -144,7 +144,7 @@
 
 - [x] Entender la base del aislamiento de recursos en el sistema operativo.
     
- Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+      Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
 
 #####Otros objetivos
 
