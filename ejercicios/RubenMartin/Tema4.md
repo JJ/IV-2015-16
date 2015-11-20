@@ -147,3 +147,44 @@ Ya podemos ver que tenemos las tres imagenes instaladas:
 
 ![Imagenes instaladas con Docker](https://www.dropbox.com/s/s97ca5qgl19wjas/imagenesDocker.PNG?dl=1)
 
+### Ejercicio 8: Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+
+Arrancamos el contenedor y accedemos a él por terminal.
+
+•  `sudo docker run -i -t ubuntu /bin/bash`
+
+![Imagen de Ubuntu en Docker corriendo](https://www.dropbox.com/s/97rwwatu28kdi1b/dockerCorriendo.PNG?dl=1)
+
+Creamos un usuario, le asignamos contraseña, añadimos privilegios de superusuario y por último nos logueamos con dicho usuario.
+
+•  `useradd -d /home/usudocker -m usudocker`
+•  `passwd usudocker`
+•  `sudo adduser usudocker sudo`
+•  `login usudocker`
+
+![Usuario creado y funcionando](https://www.dropbox.com/s/n12wui1fu2xervj/loginUserDocker.PNG?dl=1)
+
+Ahora vamos a instalar *nginx* dentro del contenedor.
+ 
+•  `sudo apt-get install software-properties-common` 
+•  `sudo add-apt-repository ppa:nginx/stable`
+•  `sudo apt-get install nginx`
+•  `sudo nginx; service nginx status`    
+
+![Nginx funcionando en Docker](https://www.dropbox.com/s/vyljvkkrvawf3ef/nginxDocker.PNG?dl=1)
+
+Como podemos ver a lo largo de este tema, existen diversas formas de instalar, arrancar y comprobar el funcionamiento de nginx.
+
+### Ejercicio 9: Crear a partir del contenedor anterior una imagen persistente con commit.
+
+Las siguientes órdenes se deben ejecutar en la máquina anfitriona mientras se está ejecutando el contenedor.
+
+Obtenemos el ID del contenedor: `sudo docker ps -a=false`
+
+![Obtenemos ID del contendor](https://www.dropbox.com/s/oopydv85xcwzp0d/obtenerIDDocker.PNG?dl=1)
+
+Guardamos el estado actual del contenedor haciendo un commit: `sudo docker commit <id obtenida> <comentario commit>`
+
+Y comprobamos que se ha creado la nueva imagen: `sudo docker images`
+
+![Commit realizado en Docker](https://www.dropbox.com/s/adcl8nnfq3nb1ei/commitDocker.PNG?dl=1)
