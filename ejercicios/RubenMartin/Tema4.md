@@ -151,25 +151,25 @@ Ya podemos ver que tenemos las tres imagenes instaladas:
 
 Arrancamos el contenedor y accedemos a él por terminal.
 
-•  `sudo docker run -i -t ubuntu /bin/bash`
+- `sudo docker run -i -t ubuntu /bin/bash`
 
 ![Imagen de Ubuntu en Docker corriendo](https://www.dropbox.com/s/97rwwatu28kdi1b/dockerCorriendo.PNG?dl=1)
 
 Creamos un usuario, le asignamos contraseña, añadimos privilegios de superusuario y por último nos logueamos con dicho usuario.
 
-•  `useradd -d /home/usudocker -m usudocker`
-•  `passwd usudocker`
-•  `sudo adduser usudocker sudo`
-•  `login usudocker`
+- `useradd -d /home/usudocker -m usudocker`
+- `passwd usudocker`
+- `sudo adduser usudocker sudo`
+- `login usudocker`
 
 ![Usuario creado y funcionando](https://www.dropbox.com/s/n12wui1fu2xervj/loginUserDocker.PNG?dl=1)
 
 Ahora vamos a instalar *nginx* dentro del contenedor.
  
-•  `sudo apt-get install software-properties-common` 
-•  `sudo add-apt-repository ppa:nginx/stable`
-•  `sudo apt-get install nginx`
-•  `sudo nginx; service nginx status`    
+- `sudo apt-get install software-properties-common` 
+- `sudo add-apt-repository ppa:nginx/stable`
+- `sudo apt-get install nginx`
+- `sudo nginx; service nginx status`    
 
 ![Nginx funcionando en Docker](https://www.dropbox.com/s/vyljvkkrvawf3ef/nginxDocker.PNG?dl=1)
 
