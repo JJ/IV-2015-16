@@ -128,5 +128,15 @@ Lista de objetivos de Santiago de Diego
 [X] Experimentar con el despliegue simultáneo a varios PaaS.
 
 
+#Objetivos séptima semana
 
+[X] Entender la base del aislamiento de recursos en el sistema operativo.
+
+[X] Instalar docker y trabajar con él.
+
+[X] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+[X] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+
+[X] Usar imágenes de docker publicadas.
 
