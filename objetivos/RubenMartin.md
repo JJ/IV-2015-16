@@ -157,6 +157,21 @@
 
 - [x] Instalar docker y trabajar con él.
 
+## Sesión 8: Semana del 18 al 25 de noviembre de 2015
+### Objetivos de la semana
+
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+
+- [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+### Otros objetivos
+
+- [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+
+- [x] Instalar docker y trabajar con él.
+
+- [x] Usar imágenes de docker publicadas.
+
 ## Objetivos de la asignatura
 
 - [x] Conocer la historia de la Computación Virtual, sus orígenes y razones de su existencia.
