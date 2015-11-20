@@ -97,6 +97,7 @@ Podemos visitar nuestro sitio pinchando aquí [aquí](http://php-magv.rhcloud.co
 Vamos a instalar [Heroku Toolbelt](https://toolbelt.heroku.com/install-ubuntu.sh), que nos proporciona acceso a Heroku Command Line Interface (CLI), que se puede utilizar para gestionar y ampliar sus aplicaciones y complementos, también ayuda en la gestión de las aplicaciones en forma local.
 
 ![Instalar Heroku Toolbelt](https://www.dropbox.com/s/pn6xauwpoemvxpd/05.%2001.png?dl=1)
+
 Figura 5.2 Una vez instalado Heroku Toolbelt ya podemos utilizar el comando heroku desde la consola.
 
 Ejecutamos heroku en la consola para que se instalen también las demás dependencias.
@@ -106,6 +107,7 @@ Para autentificarnos utilizamos el comando `heroku login` y nos pide:
 - Contraseña
 
 ![Autentificación Heroku](https://www.dropbox.com/s/2ornpj5oxkyzf5n/05.02.png?dl=1)
+
 Figura 5.3 Autentificación Heroku
 
 Si estamos usando proxy, pulsa [aquí](https://devcenter.heroku.com/articles/using-the-cli#using-an-http-proxy) para ver lo que debes hacer.
@@ -130,7 +132,8 @@ Crear una aplicación en Heroku:
     $ heroku create
 
 ![Clonar Aplicación y Crear aplicación Heroku](https://www.dropbox.com/s/y9347yqhcbk4u11/05.04.png?dl=1)
-    Figura 5.4 Clonar Aplicación y Crear aplicación Heroku
+
+Figura 5.4 Clonar Aplicación y Crear aplicación Heroku
 
 Cuando se crea una aplicación, también se crea un control remoto git (llamado heroku) y se asocia con su repositorio git local.
 Heroku genera un nombre aleatorio (en este caso `morning-anchorage-5665`) para su aplicación, o se puede pasar un parámetro para especificar su propio nombre de la aplicación.
@@ -142,11 +145,13 @@ Ahora ejecutamos el comando `git push heroku master`
 La aplicación se despliega y hay que asegurarnos de que está ejecutando al menos una instancia de la aplicación, ejecutando en el terminal `heroku ps:scale web=1` y a continuación podemos visitar la aplicación en la URL generada por el nombre de la aplicación o ejecutando `heroku open`:
 
 ![Heroku ps:scale web=1 y Heroku open](https://www.dropbox.com/s/foy94yq447lnpxd/05.06.png?dl=1)
+
 Figura 5.5 Heroku ps:scale web=1 y Heroku open
 
 Visitando la Url o ejecutando `heroku open` deberemos ver:
 
 ![Resultado Morning Anchorage 5665](https://www.dropbox.com/s/7jm4h70jhb61iou/05.07.png?dl=1)
+
 Figura 5.6 Resultado Morning Anchorage 5665
 
 
