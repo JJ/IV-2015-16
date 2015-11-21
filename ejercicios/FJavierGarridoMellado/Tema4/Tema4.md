@@ -28,8 +28,8 @@ sudo ls /usr/share/lxc/templates/
 ![creacioncontenedor2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/creacioncont_zpsdjnejbly.png)
 
 - Arranco el contenedor con el comando:
-
 ```
+
 sudo lxc-start -n nubecilla
 ```
 
