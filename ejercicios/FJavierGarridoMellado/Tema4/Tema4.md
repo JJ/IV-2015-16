@@ -27,13 +27,7 @@ sudo ls /usr/share/lxc/templates/
 
 ![creacioncontenedor2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/creacioncont_zpsdjnejbly.png)
 
-- Arranco el contenedor con el comando:
-```
-
-sudo lxc-start -n nubecilla
-```
-
-Se observa como queda una pantalla negra y el cursor parpadeando, el siguiente paso es introducir el usuario que por defecto es **ubuntu** y pulsar enter, a continuaciòn pide el password a introducir que por defecto tambien es **ubuntu**.
+- Arranco el contenedor con el comando **sudo lxc-start -n nubecilla** y se observa como queda una pantalla negra y el cursor parpadeando, el siguiente paso es introducir el usuario que por defecto es **ubuntu** y pulsar enter, a continuaciòn pide el password a introducir que por defecto tambien es **ubuntu**.
 
 ![arrancarcontenedor](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/arrancarcontenedor_zpseexdtowf.png)
 
