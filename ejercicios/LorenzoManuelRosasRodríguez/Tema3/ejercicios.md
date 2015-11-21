@@ -271,7 +271,7 @@ STATICFILES_DIRS = (
 )
 
 
-````
+```
 
 - Modificar también wsgi.py:
 
