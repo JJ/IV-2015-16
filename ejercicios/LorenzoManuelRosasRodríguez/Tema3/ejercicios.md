@@ -318,7 +318,7 @@ Para la realización de este ejercicio he usado foreman:
 
 - Funcionamiento:
 
-![img9](https://www.dropbox.com/s/u38kctev732zv3k/img9.png?dl=1)
+![img9](https://www.dropbox.com/s/qd293vicacmgs9f/img9.png?dl=1)
 
 
 ###Ejercicio 7: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow.
