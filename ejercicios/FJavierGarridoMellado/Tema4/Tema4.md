@@ -12,14 +12,14 @@ Y se procede a probar su compatibilidad.
 
 - A la hora de crear el contenedor daba un error *debootsrap is missing* , se ha solucionado con el siguiente comando( sacado de los comentarios del siguiente [enlace](http://www.stgraber.org/2012/05/04/lxc-in-ubuntu-12-04-lts/)):
 
-'''
+```
 apt-get install lxc debootstrap
-'''
+```
 
 - Puede verse los templates de los que se dispone con el comando:
-'''
+```
 sudo ls /usr/share/lxc/templates/
-'''
+```
 
 - Para la creación del contenedor he ejecutado **sudo lxc-create -t ubuntu -n my-container**
 
