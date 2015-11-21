@@ -223,7 +223,6 @@ web: gunicorn polls.wsgi --log-file -
 
 ```
 
-```
 - Subida de los cambios que he realizado a mi github.
 
 - Login en heroku: **heroku login**
