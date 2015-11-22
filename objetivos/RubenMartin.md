@@ -227,8 +227,8 @@
 
 ### Tema 4: Virtualización ligera usando contenedores
 
-- [ ] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
 
-- [ ] Crear infraestructuras virtuales completas.
+- [x] Crear infraestructuras virtuales completas.
 
-- [ ] Comprender los pasos necesarios para la configuración automática de las mismas.
+- [x] Comprender los pasos necesarios para la configuración automática de las mismas.
