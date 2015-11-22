@@ -1,3 +1,5 @@
+
+
 # Objetivos  Lorenzo Manuel Rosas Rodríguez.
 
 ## Sesion 1 (Clase practica del 29 de septiembre de 2015)
