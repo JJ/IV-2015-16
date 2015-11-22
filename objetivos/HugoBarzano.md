@@ -133,6 +133,22 @@ recurso.
     
 [X] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases... 
 
+#Objetivos de la Sesión 6
+
+[ ] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+  
+[X] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+
+#Otros Objetivos de la Sesión 6
+
+[X] Trabajar con los toolbelts de los diferentes PaaS.
+   
+[ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+  
+[X] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+
+[] Experimentar con el despliegue simultáneo a varios PaaS.
+
 #Objetivos tema 3
 
 [X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
@@ -146,6 +162,57 @@ recurso.
 [X] Aplicar el concepto de DevOps a este tipo específico de plataforma.
 
 [X] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+
+#Objetivos de la Sesión 7
+
+[ ] Entender la base del aislamiento de recursos en el sistema operativo.
+
+##Otros Objetivos de la Sesión 7
+
+[ ] Instalar docker y trabajar con él. 
+
+#Objetivos de la Sesion 8
+
+[ ] Entender la base del aislamiento de recursos en el sistema operativo.
+
+[ ] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+##Otros Objetivos de la Sesión 8
+
+[ ] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+
+[ ] Instalar docker y trabajar con él.
+
+[ ] Usar imágenes de docker publicadas.
+
+
+#Objetivos tema 4
+
+[ ] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+    
+[ ] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+    
+[ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales.
+
+[ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+
+[ ] Documentar y mantener una plataforma virtual.
+   
+[ ] Optimizar aplicaciones sobre plataformas virtuales.
+
+[ ] Conocer diferentes tecnologías relacionadas con la virtualización e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+   
+[ ] Realizar tareas de administración en infraestructura virtual.
+
+##Objetivos Especificos del tema 4
+
+[ ] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+
+[ ] Crear infraestructuras virtuales completas.
+
+[ ] Comprender los pasos necesarios para la configuración automática de las mismas.
+
+
 
 
 
