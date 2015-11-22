@@ -47,6 +47,10 @@ Una vez creada, podemos iniciarla mediante
 Para conectarnos a la máquina, debemos introducir **ubuntu** como usuario y contraseña.
 ![caja1_login](https://www.dropbox.com/s/lzjvw1ato90so7e/caja1_log.png?dl=1)
 
+Para detener la máquina:
+
+	sudo lxc-stop -n caja1
+
 El contenedor tiene acceso a internet a travez del anfitrión. Podemos consultar los puentes creados en el archivo **/var/lib/lxc/caja1/config**
 ![caja1_config](https://www.dropbox.com/s/yozwhfin50r2twh/caja1_config.png?dl=1)
 
@@ -65,10 +69,16 @@ Efectivamente en la creación podemos observar que el funcionamiento es ligerame
 
 ![nube1](https://www.dropbox.com/s/qv8x3484lozmp2v/nube1.png?dl=1)
 
+Las interfaces puente creadas, son similares a las de nube1
 
 ##Ejercicio 3:
 
 ###3.1:Crear y ejecutar un contenedor basado en Debian.
+
+Para crear un contenedor basado en Debian podmeos utilizar:
+
+	 sudo lxc-create -t debian -n caja_debian
+
 
 ###3.2:Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora. Nota En general, crear un contenedor basado en tu distribución y otro basado en otra que no sea la tuya. Fedora, al parecer, tiene problemas si estás en Ubuntu 13.04 o superior, así que en tal caso usa cualquier otra distro. Por ejemplo, Óscar Zafra ha logrado instalar Gentoo usando un script descargado desde su sitio, como indica en este comentario en el issue.
 
@@ -93,6 +103,10 @@ Efectivamente en la creación podemos observar que el funcionamiento es ligerame
 ###7.2:Buscar e instalar una imagen que incluya MongoDB.
 
 ##Ejercicio 8: Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+
+##Ejercicio 9: Crear a partir del contenedor anterior una imagen persistente con commit.
+
+##Ejercicio 10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección. 
 
 
 
