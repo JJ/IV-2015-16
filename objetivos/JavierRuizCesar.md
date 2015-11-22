@@ -65,4 +65,17 @@
 - [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 - [x] Entender el concepto de DevOps.
 - [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+
+###Objetivos quinta sesión
+- [X] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+- [X] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+- [X] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+- [X] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+- [X] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+- [X] Resolver los problemas que surjan en los primeros despliegues de la asignatura-
+
+###Objetivos sexta semana
+- [X] Trabajar con los toolbelts de los diferentes PaaS.
+- [X] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+- [X] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
 - [x] Aprender a usar integración continua en cualquier aplicación
