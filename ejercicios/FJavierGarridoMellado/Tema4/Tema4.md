@@ -100,7 +100,7 @@ Marcando en alguna máquina de las que se dispone se accede al panel de configur
 
 ![centosconf](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/confcentos_zpsvhctm4hb.png)
 
-![centosconf2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/centosconf2_zpso8tbbx7n.png)
+![centosconf2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/confcentos_zpscxyrcaor.png)
 
 
 
