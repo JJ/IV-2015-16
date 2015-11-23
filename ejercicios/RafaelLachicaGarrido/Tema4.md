@@ -127,4 +127,67 @@ En mi caso he ajustado sólo 1 GB para la memoria RAM, y que funcione sólo con 
 ##Ejercicio 5. Comparar servidores usando nginx entre jaulas y contenedores.
 Para crear una jaula usaré el software que ya me viene instalado en ubuntu llamado **debootstrap**. He usado el siguiente enlace para crearlas: [fuente](https://help.ubuntu.com/community/BasicChroot)
 Procedemos a crear la jaula:
-1. ```sudo debootstrap --arch=amd64 lucid /home/jaulas/lucid/ http://archive.ubuntu.com/ubuntu```
+ ```sudo debootstrap --arch=amd64 lucid /home/jaulas/lucid/ http://archive.ubuntu.com/ubuntu```
+Entramos en la jaula y la configuramos:
+```
+sudo chroot /home/jaulas/lucid/
+```
+A continuación instalamos nginx, el problema es que la jaula tiene pocos repositorios y programas instaladas por lo que tenemos que instalarlo todo de forma muy manual:
+Instalar wget
+
+```
+apt-get -y install wget
+```
+Descargamos clave nginx y la añadimos al repositorio:
+```
+http://nginx.org/keys/nginx_signing.key
+```
+```
+root@system32:/# apt-key add nginx_signing.key
+OK
+
+```
+Añadimos repositorio:
+```
+echo "deb http://nginx.org/packages/ubuntu/ raring nginx" >> /etc/apt/sources.list echo "deb-src http://nginx.org/packages/ubuntu/ raring nginx" >> /etc/apt/sources.lis
+```
+
+Instalamos finalmente nginx y curl:
+```
+apt-get install nginx curl
+```
+
+Nos da un problema de que el puerto está ya ocupado, seguramente por apache:
+```
+root@system32:/# nginx 
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+```
+Cambiaremos el puerto en el que escucha, por ejemplo 8080, para ello editamos el fichero **/etc/nginx/conf.d/default.conf**:
+Primero instalamos nano:
+```
+root@system32:/# apt-get install nano
+```
+Y ahora editamos el archivo **/etc/nginx/conf.d/default.conf**:
+```
+server {
+    listen       8080;
+    server_name  localginx;
+
+```
+Comprobmos que funciona ya todo:
+```
+root@system32:/# service nginx start
+root@system32:/# service nginx status
+ * nginx is running
+```
+
+##Ejercicio 6. Instalar Docker
+Podemos instalarlo en ubuntu desde el repositorio oficial:
+```
+ sudo apt-get install docker.io  
+ ```
+ Comprobamos versión:
+ ```
+rafaellg8@system32:~$ docker -v
+Docker version 1.6.2, build 7c8fca2
+```
