@@ -65,3 +65,60 @@ Probamos ahora nuestra interfaces locales, de nuestro PC local a ver si han sido
 ![imagenIfconfig](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-17%20141323_zpsqasmqost.png)
 
 Vemos que nos crea la interfaz nueva de lxcbr, que la usa para que nos podamos comunicar desde el contenedor con internet.
+
+##Ejercicio 3: Crear y ejecutar un contenedor basado en Debian.
+##En general, crear un contenedor basado en tu distribución y otro basado en otra que no sea la tuya.
+Como ya he instalado el contenedor de ubuntu, crearé otro de **cirros**:
+```
+rafaellg8@system32:~$ sudo lxc-create -t cirros -n cirrosBox
+--2015-11-23 18:42:31--  http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-lxc.tar.gz
+Resolviendo download.cirros-cloud.net (download.cirros-cloud.net)... 69.163.241.114
+Conectando con download.cirros-cloud.net (download.cirros-cloud.net)[69.163.241.114]:80... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+```
+
+##Ejercicio 4:
+### a) Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
+### b)Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
+Seguimos este tutorial de lxc para instalarlo ![lxc-webpage](https://lxc-webpanel.github.io/install.html).
+
+Ejecutamos como superusuario la orden:
+```
+wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash
+```
+Esto descarga y ejecuta el script. Nos sale la instalación:
+```
+root@system32:/home/rafaellg8#  wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash
+--2015-11-23 18:50:01--  https://lxc-webpanel.github.io/tools/install.sh
+Resolviendo lxc-webpanel.github.io (lxc-webpanel.github.io)... 23.235.43.133
+Conectando con lxc-webpanel.github.io (lxc-webpanel.github.io)[23.235.43.133]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: 2678 (2,6K) [application/x-sh]
+Grabando a: “STDOUT”
+
+100%[===============================================================================================================================>] 2.678       --.-K/s   en 0s      
+
+2015-11-23 18:50:02 (200 MB/s) - escritos a stdout [2678/2678]
+
+ _     __   _______  __          __  _       _____                 _ 
+| |    \ \ / / ____| \ \        / / | |     |  __ \               | |
+| |     \ V / |       \ \  /\  / /__| |__   | |__) |_ _ _ __   ___| |
+| |      > <| |        \ \/  \/ / _ \ '_ \  |  ___/ _` | '_ \ / _ \ |
+| |____ / . \ |____     \  /\  /  __/ |_) | | |  | (_| | | | |  __/ |
+|______/_/ \_\_____|     \/  \/ \___|_.__/  |_|   \__,_|_| |_|\___|_|
+
+
+Adding /etc/init.d/lwp...
+Done
+Starting server...done.
+Connect you on http://your-ip-address:5000/
+
+```
+Ahora abrimos ```localhost:5000``` en el navegador y tenemos nuestras opciones de lxc y arrancamos nuestras cajas:
+**Nota** usuario y contraseña admin.
+[box](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-23%20190707_zpsmvepq92l.png)
+
+b) Restringir recursos:
+Para ello paramos las máquinas primero y después elegimos en cada contenedor los recursos, yo por ejemplo, como en local tengo ubuntu y después hay que comparar, tocaré los recursos de ubuntu:
+
+
