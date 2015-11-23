@@ -120,5 +120,6 @@ Ahora abrimos ```localhost:5000``` en el navegador y tenemos nuestras opciones d
 
 b) Restringir recursos:
 Para ello paramos las máquinas primero y después elegimos en cada contenedor los recursos, yo por ejemplo, como en local tengo ubuntu y después hay que comparar, tocaré los recursos de ubuntu:
+[boxsetting](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-23%20191502_zps2fpnopdn.png)
 
-
+En mi caso he ajustado sólo 1 GB para la memoria RAM, y que funcione sólo con 2 de los 4 núcleos.
