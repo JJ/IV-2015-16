@@ -123,3 +123,8 @@ Para ello paramos las máquinas primero y después elegimos en cada contenedor l
 [boxsetting](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-23%20191502_zps2fpnopdn.png)
 
 En mi caso he ajustado sólo 1 GB para la memoria RAM, y que funcione sólo con 2 de los 4 núcleos.
+
+##Ejercicio 5. Comparar servidores usando nginx entre jaulas y contenedores.
+Para crear una jaula usaré el software que ya me viene instalado en ubuntu llamado **debootstrap**. He usado el siguiente enlace para crearlas: [fuente](https://help.ubuntu.com/community/BasicChroot)
+Procedemos a crear la jaula:
+1. ```sudo debootstrap --arch=amd64 lucid /home/jaulas/lucid/ http://archive.ubuntu.com/ubuntu```
