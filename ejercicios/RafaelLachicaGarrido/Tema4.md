@@ -80,7 +80,7 @@ Petición HTTP enviada, esperando respuesta... 200 OK
 ##Ejercicio 4:
 ### a) Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
 ### b)Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
-Seguimos este tutorial de lxc para instalarlo ![lxc-webpage](https://lxc-webpanel.github.io/install.html).
+Seguimos este tutorial de lxc para instalarlo [lxc-webpage](https://lxc-webpanel.github.io/install.html).
 
 Ejecutamos como superusuario la orden:
 ```
@@ -116,11 +116,11 @@ Connect you on http://your-ip-address:5000/
 ```
 Ahora abrimos ```localhost:5000``` en el navegador y tenemos nuestras opciones de lxc y arrancamos nuestras cajas:
 **Nota** usuario y contraseña admin.
-[box](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-23%20190707_zpsmvepq92l.png)
+![box](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-23%20190707_zpsmvepq92l.png)
 
 b) Restringir recursos:
 Para ello paramos las máquinas primero y después elegimos en cada contenedor los recursos, yo por ejemplo, como en local tengo ubuntu y después hay que comparar, tocaré los recursos de ubuntu:
-[boxsetting](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-23%20191502_zps2fpnopdn.png)
+![boxsetting](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-23%20191502_zps2fpnopdn.png)
 
 En mi caso he ajustado sólo 1 GB para la memoria RAM, y que funcione sólo con 2 de los 4 núcleos.
 
@@ -172,19 +172,96 @@ Y ahora editamos el archivo **/etc/nginx/conf.d/default.conf**:
 server {
     listen       8080;
     server_name  localginx;
-
+     
 ```
-Comprobmos que funciona ya todo:
+Comprobamos que funciona ya todo:
 ```
 root@system32:/# service nginx start
 root@system32:/# service nginx status
  * nginx is running
 ```
 
+Probamos nginx con curl:
+```
+root@system32:/# curl 127.0.0.1:8080
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+```
+
+**Ahora instalaremos Nginx en ubuntu-box.**
+Tan sencillo como arrancar la máquina y ejecutar:
+```
+ubuntu@ubuntu-caja:~$ sudo apt-get install nginx
+```
+
+**NOTA**: lo que si he tenido que modificar es que la memoria swap sea ilimitado porque sino da error al inciar la máquina, al parecer es un bug de lxc.
+Comprobamos ahora que funciona nginx:
+```
+ubuntu@ubuntu-caja:~$ sudo service nginx start
+Starting nginx: nginx.
+ubuntu@ubuntu-caja:~$ curl localhost
+<html>
+<head>
+<title>Welcome to nginx!</title>
+</head>
+<body bgcolor="white" text="black">
+<center><h1>Welcome to nginx!</h1></center>
+</body>
+</html>
+```
+
+Ahora procederemos a comparar el rendimiento, para ello usaré [Siege](https://www.joedog.org/siege-home/)
+
+###JAULA UBUNTU###
+
+Probamos en la jaula de ubuntu:
+```
+sudo chroot /home/jaulas/lucid
+siege -b -c 1000 -t 120s 127.0.0.1:8080/
+```
+**Resultado**:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-24%20125912_zpsp4uozlhb.png)
+Obtenemos una disponibilidad del 99.96% y un rendimiento de 1.98 MB/S. Apenas se pierden envíos, sólo 152.
+
+###UBUNTU CAJA###
+Instalamos y después probamos la carga en la caja:
+```
+ubuntu@ubuntu-caja:~$ sudo apt-get install siege
+```
+Esto ejecuta un benckmark con 1000 conexiones concurrentes durante 120 segundos.
+```
+ubuntu@ubuntu-caja:~$ siege -b -c 1000 -t 120 localhost
+```
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-24%20131002_zpso39vpaww.png)
+Aquí vemos que el rendimiento apenas llega a 0.25 MB/S, y que se han perdido 1121 envíos.
+
 ##Ejercicio 6. Instalar Docker
 Podemos instalarlo en ubuntu desde el repositorio oficial:
 ```
- sudo apt-get install docker.io  
+ sudo apt-get install docker.io
  ```
  Comprobamos versión:
  ```
