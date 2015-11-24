@@ -116,11 +116,11 @@ Connect you on http://your-ip-address:5000/
 ```
 Ahora abrimos ```localhost:5000``` en el navegador y tenemos nuestras opciones de lxc y arrancamos nuestras cajas:
 **Nota** usuario y contraseña admin.
-![box](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-23%20190707_zpsmvepq92l.png)
+![box](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/cf633b5e-c3ff-4fb0-bd97-13703dd6809b_zpsx4g2znxn.png)
 
 b) Restringir recursos:
 Para ello paramos las máquinas primero y después elegimos en cada contenedor los recursos, yo por ejemplo, como en local tengo ubuntu y después hay que comparar, tocaré los recursos de ubuntu:
-![boxsetting](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-23%20191502_zps2fpnopdn.png)
+![boxsetting](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/eae7486f-0055-4056-939f-644f64897c73_zpsnqbgcser.png)
 
 En mi caso he ajustado sólo 1 GB para la memoria RAM, y que funcione sólo con 2 de los 4 núcleos.
 
