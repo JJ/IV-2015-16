@@ -119,7 +119,7 @@ He procedido a crear en una máquina virtual un contenedor de *Ubuntu* llamado *
 - Instalar los paquetes necesarios para poder lanzar ab mediante **sudo apt-get install apache2-utils**
 - Lanzar un ab, en mi caso **ab -n 1000 -c 1000 http://localhost/**.
 
-![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curlcontenedor_zpsb8gml7lt.png)
+![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/abcontenedor_zps0wbnqmxg.png)
 
 
 Para crear la jaula ( jail ) al igual que antes tambien he usado una máquina virtual.He seguido los siguientes pasos para su creación y posterior evaluación con *ab*:
