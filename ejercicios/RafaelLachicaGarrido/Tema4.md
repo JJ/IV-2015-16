@@ -339,3 +339,47 @@ mongo               latest              ae293c6896a1        4 days ago          
 debian              latest              ea6bab360f56        4 days ago          125.1 MB
 ubuntu              latest              ca4d7b1b9a51        2 weeks ago         187.9 MB
 ```
+
+##Ejercicio 8. Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+
+Arrancamos el docker de ubuntu interactivo de forma:
+```
+sudo docker run -i -t ubuntu
+```
+Y después procederemos a crear un usuario y asignarlo a grupo de superusuario,primero probamos con debian:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-24%20223424_zpsbw52fwft.png)
+
+Hacemos lo mismo para ubuntu, arrancamos y creamos su usuario:
+```
+root@1510dc2d3475:/# useradd -d /home/user -m user
+root@1510dc2d3475:/# passwd user
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@1510dc2d3475:/# sudo su  
+root@1510dc2d3475:/# adduser user sudo
+Adding user `user' to group `sudo' ...
+Adding user user to group sudo
+Done.
+root@1510dc2d3475:/# login user
+Password: 
+Welcome to Ubuntu 14.04 LTS (GNU/Linux 3.19.0-31-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+Para instalar Nginx, como apenas tiene paquetes, hay que instalar antes el software-common:
+```
+user@1510dc2d3475:~$ sudo apt-get install software-properties-common
+```
+Actualizamos:
+```
+user@1510dc2d3475:~$ sudo apt-get update
+```
+
+Instalamos Nginx:
+```
+user@1510dc2d3475:~$ sudo apt-get install nginx
+```
+
+Arrancamos servicio y hacemos comprobaciones de que funciona:
+![nginx](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-24%20225454_zpshvpgcpfm.png)
