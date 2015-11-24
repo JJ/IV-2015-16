@@ -366,7 +366,7 @@ Password:
 Welcome to Ubuntu 14.04 LTS (GNU/Linux 3.19.0-31-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
-
+```
 Para instalar Nginx, como apenas tiene paquetes, hay que instalar antes el software-common:
 ```
 user@1510dc2d3475:~$ sudo apt-get install software-properties-common
@@ -377,6 +377,7 @@ user@1510dc2d3475:~$ sudo apt-get update
 ```
 
 Instalamos Nginx:
+
 ```
 user@1510dc2d3475:~$ sudo apt-get install nginx
 ```
