@@ -77,8 +77,30 @@ lxc-start -n lxc-centos01 -d
 - Si surge algún problema puede consultarse la siguiente [guia](http://www.bonusbits.com/wiki/HowTo:Setup_CentOS_LXC_Container_on_Ubuntu).
 
 
+###Ejercicio 4:
+###1.Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
 
+- Con el siguiente comando instalo *lxc-webpanel*:
+```
+wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash
+```
+- Pongo la dirección *http://localhost:5000* en el navegador y acto seguido introduzco el *user/password* que es *admin/admin*.En definitiva sigo la guia de la página [oficial](http://lxc-webpanel.github.io/install.html).
 
+![pagina](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/paglxc_zps8i6nrixu.png)
+
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalacionlxcpanel_zpstvts3jv7.png)
+
+![panel](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/lxcpanel_zps88itw4ab.png)
+
+![arrancados](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/lxcarranc_zpso5a0fn0d.png)
+
+###2.Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
+
+Marcando en alguna máquina de las que se dispone se accede al panel de configuración, y tal como se observa en las imágenes el ajuste de los parámetros es sumamente sencillo.
+
+![centosconf](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/confcentos_zpsvhctm4hb.png)
+
+![centosconf2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/confcentos_zpscxyrcaor.png)
 
 
 
