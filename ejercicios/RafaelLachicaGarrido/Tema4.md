@@ -268,3 +268,74 @@ Podemos instalarlo en ubuntu desde el repositorio oficial:
 rafaellg8@system32:~$ docker -v
 Docker version 1.6.2, build 7c8fca2
 ```
+
+Ejecutamos docker, para ello vemos en la ayuda que se activa mediante el daemon:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-16$ sudo docker -d
+INFO[0000] +job serveapi(unix:///var/run/docker.sock)   
+INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) 
+FATA[0000] Shutting down daemon due to errors: pid file found, ensure docker is not running or delete /var/run/docker.pid 
+```
+Nos informa de que debemos borrar el daemon, porque al parecer está escuchando ya ese socket con un pid determinado.
+Lo borramos y volvemos a ejecutar y vemos que funciona ya todo perfecto:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-16$ sudo rm /var/run/docker.pid 
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-16$ sudo docker -d
+INFO[0000] +job serveapi(unix:///var/run/docker.sock)   
+INFO[0000] Listening for HTTP on unix (/var/run/docker.sock) 
+INFO[0000] +job init_networkdriver()                    
+INFO[0000] -job init_networkdriver() = OK (0)           
+WARN[0000] Your kernel does not support cgroup swap limit. 
+INFO[0000] Loading containers: start.                   
+
+INFO[0000] Loading containers: done.                    
+INFO[0000] docker daemon: 1.6.2 7c8fca2; execdriver: native-0.2; graphdriver: aufs 
+INFO[0000] +job acceptconnections()                     
+INFO[0000] -job acceptconnections() = OK (0)            
+INFO[0000] Daemon has completed initialization  
+```
+
+##Ejercicio 7. a) Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+###b) Instalar una imagen que incluya ya MongoDB.
+
+a) Para instalar una imagen de ubuntu y otra adicional simplemente usamos el comando docker pull:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-16$ sudo docker pull ubuntu
+```
+Ahora instalamos otra, que será la última versión de Debian:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-16$ sudo docker pull debian:latest
+INFO[0849] POST /v1.18/images/create?fromImage=debian%3Alatest 
+```
+Toda está información la podemos encontrar en el [manual](https://docs.docker.com/) de docker.
+
+b) Para instalar una imagen que incluya MongoDB, debemos de instalar la imagen de [docker-library/mongo](https://github.com/docker-library/mongo/blob/c9a1b066a0f35f679c2f8e1854a21e025867d938/3.0/Dockerfile)
+
+Buscamos la imagen de la librería:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-16$ sudo docker search mongo
+INFO[1251] GET /v1.18/images/search?term=mongo          
+INFO[1251] +job search(mongo)                           
+INFO[1251] +job resolve_repository(mongo)               
+INFO[1251] -job resolve_repository(mongo) = OK (0)      
+INFO[1252] -job search(mongo) = OK (0)                  
+NAME                           DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+mongo                          MongoDB document databases provide high av...   1106      [OK]  
+```
+
+Probamos a hacer un pull de la librería:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-16$ sudo docker pull mongo
+```
+
+Listamos las imágenes en docker que tenemos instaladas para comprobar que todo está correcto, para ello usamos el comando images:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-16$ sudo docker images 
+INFO[1622] GET /v1.18/images/json                       
+INFO[1622] +job images()                                
+INFO[1622] -job images() = OK (0)                       
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+mongo               latest              ae293c6896a1        4 days ago          261.6 MB
+debian              latest              ea6bab360f56        4 days ago          125.1 MB
+ubuntu              latest              ca4d7b1b9a51        2 weeks ago         187.9 MB
+```
