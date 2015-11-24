@@ -102,6 +102,49 @@ Marcando en alguna máquina de las que se dispone se accede al panel de configur
 
 ![centosconf2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/confcentos_zpscxyrcaor.png)
 
+###Ejercicio 5: Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
+
+He procedido a crear en una máquina virtual un contenedor de *Ubuntu* llamado *my-container* y dentro del contenedor he instalado el servidor nginx. Para ello he seguido los siguientes pasos:
+
+- Crear el contenedor mediante la orden **sudo lxc-create -t ubuntu -n my-container** ( tarda un ratito ).
+- Arrancar el contenedor con el comando **sudo lxc-start -n my-container**.
+- Actualizar los repositorios mediante **sudo apt-get update**.
+- Instalar nginx con **sudo apt-get install nginx**. 
+- Arrancar el servicio nginx con el comando **sudo service nginx start**.
+- Instalar curl mediante **sudo apt-get install curl** ( no es necesario ).
+- Probar que efectivamente se dispone de una página estatica  con **curl localhost**.
+
+![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curlcontenedor_zpszgaa7doj.png)
+
+- Instalar los paquetes necesarios para poder lanzar ab mediante **sudo apt-get install apache2-utils**
+- Lanzar un ab, en mi caso **ab -n 1000 -c 1000 http://localhost/**.
+
+![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curlcontenedor_zpsb8gml7lt.png)
+
+
+Para crear la jaula ( jail ) al igual que antes tambien he usado una máquina virtual.He seguido los siguientes pasos para su creación y posterior evaluación con *ab*:
+
+- He creado la jaula mediante la orden **sudo debootstrap --arch=amd64 lucid /home/jaula/javi/ http://archive.ubuntu.com/ubuntu** ( tarda un ratito ).
+- He ingresado en la ruta **/home/jaula/javi/** y dentro de ella he ejecutado **sudo chroot /home/jaula/javi** ( el prompt cambia al de root )
+- He hecho un **ls** para ver que efectivamente la jaula se habia hecho correctamente.
+
+![jaula](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/jaula_zpsxikqzvcp.png)
+
+- He actualizado los repositorios mediante la orden **apt-get update**
+- He instalado *nginx* y *curl* con la orden **apt-get install nginx curl**
+- He arrcancado el servidor de *nginx* y he comprobado la página por defecto con **curl http://127.0.0.1**
+
+![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curljaula_zpsc1rnd6ar.png)
+
+- Tambien he instalado la paqueteria necesaria para *ab* con **apt-get install apache2-utils**
+- Al igual que en el contenedor he lanzado la orden **ab -n 1000 -c 1000 http://localhost/**.
+
+![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/abjaula_zpsqmodvkis.png)
+
+La conclusión es que los resultados son mejores en la jaula ( jail) y esto es asi porque el contenedor lo hace a través de un puente ( bridge ).
+
+
+
 
 
 
