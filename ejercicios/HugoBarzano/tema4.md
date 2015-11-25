@@ -109,8 +109,28 @@ Tras esto ya podemos iniciar el contenedor
 
 ###4.1: Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
 
+Para realizar la intalacion, es necesario estar en modo super usuario (sudo su) y ejecutar lo siguiente:
+
+wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash
+
+Una vez que este instalado, podemos acceder al web panel desde el navegador http://localhost:5000/ con user: admin y pass:admin
+En la siguiente captura, podemos observar las maquinas creadas en los ejercicios anteriores. Dichas maquinas estan corriendo, pausadas o detenidas. 
+
+![web_panel](https://www.dropbox.com/s/3x1b9o5qo00v247/webP.png?dl=1)
+
+Tambien podemos acceder a la configuracion de las interfaces puente
+
+![web_net](https://www.dropbox.com/s/ekxrkcpb1rnmnj4/webNet.png?dl=1)
+
 ###4.2: Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
 
+Si queremos visualizar y configurar con mas detalle una maquina concreta, basta con pinchar en ella y nos aparecerá un menu de configuración:
+
+![web_centos](https://www.dropbox.com/s/eufv1kzm448r3fl/webCentos.png?dl=1)
+
+Al final de este menu, podemos restringir los recursos disponibles para este contenedor
+
+![restricion](https://www.dropbox.com/s/sk5i0az4v30kld9/restricion.png?dl=1)
 
 
 ##Ejercicio 5: Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
