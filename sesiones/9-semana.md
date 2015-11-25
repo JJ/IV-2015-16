@@ -4,7 +4,7 @@
 
 1. Uso de docker para creación de imágenes.
 2. Entender el uso de docker en el contexto de una aplicación. 
-
+3. Analizar el resultado del último hito de las prácticas.
 
 ##Otros objetivos
 
