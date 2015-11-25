@@ -5,14 +5,13 @@
 
 Instalo virtualenv para **python**:
 
-``
 
     migueib17: ~ $ sudo apt-get install python-virtualenv
 
     Reading package lists... Done
 
     Building dependency tree
-``
+
 
 #Ejercicio 2
 ##Darse de alta en algún servicio PaaS tal como Heroku, Nodejitsu u OpenShift.
