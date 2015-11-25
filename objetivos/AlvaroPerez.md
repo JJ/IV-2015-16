@@ -138,7 +138,7 @@
 
 #####Otros objetivos
 
- Instalar docker y trabajar con él. 
+- [x] Instalar docker y trabajar con él. 
 
 ###Sesión 8 (Semana del 18 al 25 de noviembre 2015)
 
