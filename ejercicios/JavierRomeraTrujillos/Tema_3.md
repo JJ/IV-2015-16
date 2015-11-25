@@ -31,7 +31,7 @@ Ejercicio 3.
 ![Imagen 3.1](https://www.dropbox.com/s/66zxbi41vw2xupt/3.1.png?dl=1)
 
 2. Lo incluimos en el archivo settings.py:
-[!Imagen 3.2](https://www.dropbox.com/s/9eze793h8ylmdt0/3.2.png?dl=1)
+![Imagen 3.2](https://www.dropbox.com/s/9eze793h8ylmdt0/3.2.png?dl=1)
 
 3. Creamos el fichero serializers.py:
 [Enlace](https://github.com/Jarotru/EjercicioTema3_IV/blob/master/futbol/serializers.py)
@@ -43,7 +43,7 @@ Ejercicio 3.
 [Enlace](https://github.com/Jarotru/EjercicioTema3_IV/blob/master/futbol/urls.py)
 
 6. Comprobamos que funcione:
-[!Imagen 3.3](https://www.dropbox.com/s/c8ts1s01t44s7qf/3.3.png?dl=1)
+![Imagen 3.3](https://www.dropbox.com/s/c8ts1s01t44s7qf/3.3.png?dl=1)
 
 
 
