@@ -135,6 +135,51 @@ Al final de este menu, podemos restringir los recursos disponibles para este con
 
 ##Ejercicio 5: Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
 
+Lo primero que vamos a realizar es crear una jaula. Para ello, ejecutamos 
+
+	 sudo debootstrap --arch=amd64 lucid /home/hugo/jaulas/ http://archive.ubuntu.com/ubuntu
+
+
+Ahora debemos instalar ciertas herramientas para poder realizar la comparativa de rendimiento con el contenedor. Para realizar la
+instalación de las siguientes herramientas, he seguido los pasos que Israel hizo en el [ejercicio 5](https://github.com/JJ/GII-2014/blob/master/ejercicios/IsraelBlancas/tema3.md) el año pasado. Sustitullendo **saucy** por **lucid**
+
+	sudo apt-get update //Actualizar repositorio
+	sudo apt-get install nginx //Instalar el servidor de aplicación
+	sudo apt-get install curl //PAra realizar peticiones al servidor web y comprobar que funciona 
+	sudo service nginx start //Iniciar el servidor de aplicación
+	sudo apt-get install apache2-utils //Para poder utilizar Apache Benchmark
+
+**Nota:** Si a la hora de iniciar el servico nginx tenemos problemas, debido a que algun proceso esta utilizando el puerto 80
+y no podemos arrancar el servicio, una solucion es ejecutar:
+
+	sudo fuser -k 80/tcp
+
+Para liberar el puerto y ya si **sudo service nginx start**
+Mediante curl localhost podemos comprobar que nginx esta funcionando y con ifconfig que la ip de la **jaula lucid** es **10.0.3.1**
+Ahora vamos a lanzar AB 
+
+	ab -n 10000 -c 1000 http://10.0.3.1/
+
+![ab_jaula](https://www.dropbox.com/s/zjpveb3ovjo8dk3/ab_jaula.png?dl=1) 
+
+
+
+Como contenedor, voy a utilizar **caja1** creado en el ejercicio 2 que contiene un Ubuntu. 
+Lo iniciamos mediante 
+	
+	sudo lxc-start -n caja1
+
+Es necesario instalar las mismas herramientas que en la jaula. Mediante curl localhost podemos comprobar que nginx esta funcionando y
+con ifconfig que la ip de la **caja1** es **10.0.3.59**
+![if_config](https://www.dropbox.com/s/pz4r7opwwm9c63c/ifconfig.png?dl=1)
+Ahora vamos a lanzar AB 
+
+	ab -n 10000 -c 1000 http://10.0.3.59/ 
+
+![ab_caja1](https://www.dropbox.com/s/joactz8j7qav313/ab_caja1.png?dl=1)
+
+
+
 ##Ejercicio 6: Instalar docker.
 
 ##Ejercicio 7: 
