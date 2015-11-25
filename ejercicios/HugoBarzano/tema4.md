@@ -79,8 +79,29 @@ Para crear un contenedor basado en Debian podmeos utilizar:
 
 	 sudo lxc-create -t debian -n caja_debian
 
+Pero he obtenido el siguiente error a la hora de lanzarla:
+	
+	**Failed to mount cgroup at /sys/fs/cgroup/systemd: Permission denied**
 
 ###3.2:Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora. Nota En general, crear un contenedor basado en tu distribución y otro basado en otra que no sea la tuya. Fedora, al parecer, tiene problemas si estás en Ubuntu 13.04 o superior, así que en tal caso usa cualquier otra distro. Por ejemplo, Óscar Zafra ha logrado instalar Gentoo usando un script descargado desde su sitio, como indica en este comentario en el issue.
+
+Voy a crear un contenedor centos. Para ello, previamente es necesario instalar el gestor de paquetes yum
+
+	sudo apt-get install yum
+
+Para crear el contenedor:
+
+	sudo lxc-create -t centos -n caja_centos
+
+Despues de crearlo, debemos ejecutar la siguiente instrucion para establecer la contraseña:
+
+	sudo chroot /var/lib/lxc/caja_centos/rootfs passwd
+
+Tras esto ya podemos iniciar el contenedor 
+
+	sudo lxc-start -n caja_centos
+
+![centos](https://www.dropbox.com/s/dignwsphoiptpq2/centos.png?dl=1)
 
 
 
