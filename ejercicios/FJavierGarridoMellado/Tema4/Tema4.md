@@ -102,7 +102,7 @@ Marcando en alguna máquina de las que se dispone se accede al panel de configur
 
 ![centosconf2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/confcentos_zpscxyrcaor.png)
 
-###Ejercicio 5: Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
+### Ejercicio 5: Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
 
 He procedido a crear en una máquina virtual un contenedor de *Ubuntu* llamado *my-container* y dentro del contenedor he instalado el servidor nginx. Para ello he seguido los siguientes pasos:
 
@@ -117,9 +117,13 @@ He procedido a crear en una máquina virtual un contenedor de *Ubuntu* llamado *
 ![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curlcontenedor_zpszgaa7doj.png)
 
 - Instalar los paquetes necesarios para poder lanzar ab mediante **sudo apt-get install apache2-utils**
-- Lanzar un ab, en mi caso **ab -n 1000 -c 1000 http://localhost/**.
+- Ejecutar **ifconfig -a** desde el contenedor.
 
-![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/abcontenedor_zps0wbnqmxg.png)
+![ifconfig](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ifconfigcontenedor_zpsootj7ofm.png)
+
+- Lanzar un ab, en mi caso **ab -n 1000 -c 1000 http://10.0.3.35/**.
+
+![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/abcontenedor_zps5boooz1r.png)
 
 
 Para crear la jaula ( jail ) al igual que antes tambien he usado una máquina virtual.He seguido los siguientes pasos para su creación y posterior evaluación con *ab*:
@@ -136,10 +140,16 @@ Para crear la jaula ( jail ) al igual que antes tambien he usado una máquina vi
 
 ![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curljaula_zpsc1rnd6ar.png)
 
-- Tambien he instalado la paqueteria necesaria para *ab* con **apt-get install apache2-utils**
-- Al igual que en el contenedor he lanzado la orden **ab -n 1000 -c 1000 http://localhost/**.
+- He montado el directorio **/proc** necesario para hacer **ifconfig -a**, para ello **mount -t proc proc /proc**
+- Ejecuto **ifconfig -a** como mencioné en el paso anterior.
 
-![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/abjaula_zpsqmodvkis.png)
+![](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ifconfigjail_zpskoc9afyy.png)
+
+
+- Tambien he instalado la paqueteria necesaria para *ab* con **apt-get install apache2-utils**
+- Al igual que en el contenedor he lanzado la orden **ab -n 1000 -c 1000 http://localhost/** desde un terminal diferente.
+
+![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/abjail_zpstfdqwkmj.png)
 
 La conclusión es que los resultados son mejores en la jaula ( jail) y esto es asi porque el contenedor lo hace a través de un puente ( bridge ).
 
