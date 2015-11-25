@@ -6,6 +6,7 @@
 Instalo virtualenv para **python**:
 
 ``
+
     migueib17: ~ $ sudo apt-get install python-virtualenv
 
     Reading package lists... Done
