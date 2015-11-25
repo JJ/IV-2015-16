@@ -5,8 +5,8 @@
 
 Instalo virtualenv para **python**:
 
-```
-rafaellg8: ~ $ sudo apt-get install python-virtualenv
+``
+migueib17: ~ $ sudo apt-get install python-virtualenv
 Reading package lists... Done
 Building dependency tree
 ``
@@ -70,7 +70,7 @@ Podemos usar también un software llamado **Jenkins**, el cual es un servidor qu
 #Ejercicio7
 #Buscar un entorno de pruebas para el lenguaje de programación y entorno de desarrollo que usemos habitualmente.
 Para python he usado [nosetest](https://nose.readthedocs.org/en/latest/), el cual nos permite hacer test en el entorno de integración, como ya he hecho en Shippable:
-![img](http://i1379.photobucket.com/albums/ah138/migueib17/40_zpsdfjzyvwg.png)
+![img](http://i1379.photobucket.com/albums/ah138/migueib17/4_zpsyg0oevhg.png)
 
 Está todo hecho en el archivo [practica2](https://github.com/migueib17/IV-PLUCO-MFF/blob/master/practica2.md).
 Además de este software, también he encontrado otros como [pytest](http://pytest.org/latest/), y [tox](https://tox.readthedocs.org/en/latest/).
