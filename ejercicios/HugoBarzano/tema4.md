@@ -156,6 +156,7 @@ y no podemos arrancar el servicio, una solucion es ejecutar:
 
 Para liberar el puerto y ya si **sudo service nginx start**
 Mediante curl localhost podemos comprobar que nginx esta funcionando y con ifconfig que la ip de la **jaula lucid** es **10.0.3.1**
+![if_config](https://www.dropbox.com/s/pz4r7opwwm9c63c/ifconfig.png?dl=1)
 Ahora vamos a lanzar AB 
 
 	ab -n 10000 -c 1000 http://10.0.3.1/
@@ -171,7 +172,6 @@ Lo iniciamos mediante
 
 Es necesario instalar las mismas herramientas que en la jaula. Mediante curl localhost podemos comprobar que nginx esta funcionando y
 con ifconfig que la ip de la **caja1** es **10.0.3.59**
-![if_config](https://www.dropbox.com/s/pz4r7opwwm9c63c/ifconfig.png?dl=1)
 Ahora vamos a lanzar AB 
 
 	ab -n 10000 -c 1000 http://10.0.3.59/ 
