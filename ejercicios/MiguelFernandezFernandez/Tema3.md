@@ -6,9 +6,9 @@
 Instalo virtualenv para **python**:
 
 ``
-migueib17: ~ $ sudo apt-get install python-virtualenv
-Reading package lists... Done
-Building dependency tree
+    migueib17: ~ $ sudo apt-get install python-virtualenv
+    Reading package lists... Done
+    Building dependency tree
 ``
 
 #Ejercicio 2
@@ -38,7 +38,7 @@ Y ya tenemos nuestro WordPress con la primera entrada **HOLA MUNDO**:
 
 #Ejercicio 4
 ##Crear un script para un documento Google y cambiarle el nombre con el que aparece en el menú,así como la función a la que llama.
-```
+``
 function renameFile() {
   var file = DocumentApp.getActiveDocument();  
   file.setName('HOLA MUNDO');
