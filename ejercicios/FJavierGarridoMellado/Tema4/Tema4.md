@@ -121,7 +121,7 @@ He procedido a crear en una máquina virtual un contenedor de *Ubuntu* llamado *
 
 ![ifconfig](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ifconfigcontenedor_zpsootj7ofm.png)
 
-- Lanzar un ab, en mi caso **ab -n 1000 -c 1000 http://10.0.3.35/**.
+- Lanzar un ab, en mi caso **ab -n 1000 -c 1000 http://10.0.3.35/** desde otro terminal.
 
 ![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/abcontenedor_zps5boooz1r.png)
 
@@ -136,7 +136,7 @@ Para crear la jaula ( jail ) al igual que antes tambien he usado una máquina vi
 
 - He actualizado los repositorios mediante la orden **apt-get update**
 - He instalado *nginx* y *curl* con la orden **apt-get install nginx curl**
-- He arrcancado el servidor de *nginx* y he comprobado la página por defecto con **curl http://127.0.0.1**
+- He arrancacado el servidor de *nginx* y he comprobado la página por defecto con **curl http://127.0.0.1**
 
 ![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curljaula_zpsc1rnd6ar.png)
 
@@ -151,7 +151,7 @@ Para crear la jaula ( jail ) al igual que antes tambien he usado una máquina vi
 
 ![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/abjail_zpstfdqwkmj.png)
 
-La conclusión es que los resultados son mejores en la jaula ( jail) y esto es asi porque el contenedor lo hace a través de un puente ( bridge ).
+La conclusión es que los resultados son mejores en la jaula ( aunque en este caso el resultado es muy parecido por usar una página estatica de poco peso ) y esto es asi porque el contenedor lo hace a través de un puente ( bridge ).
 
 
 
