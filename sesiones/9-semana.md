@@ -8,7 +8,7 @@
 
 ##Otros objetivos
 
-1. Revisar los errores en la entrega de tercer hito.
+1. Revisar los errores en [la entrega de tercer hito](../practicas/3.md).
 1. Adoptar buenas prácticas en los repositorios git:
    - Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
    - Usar prácticas habituales en el *layout* del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
