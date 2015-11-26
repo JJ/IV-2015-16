@@ -56,11 +56,20 @@ Las capturas de pantalla que demuestran ambos procesos se pueden consultar en el
 
 **2. Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora. **
 
-Me decido por la distribución CentOS. Para ello se procede de forma similar al apartado anterior. Además al tratarse de CentOS hay que instalar el paquete **yum**.
+Me decido por la distribución CentOS. Para ello se procede de forma similar al apartado anterior. La única diferencia es que hay que establecer la password del usuario root tras la creación del container. Además al tratarse de CentOS hay que instalar el paquete **yum**.
 
-(Pendientes de ejecutar)
 ~~~
 sudo apt-get install yum
 sudo lxc-create -t centos -n CentosContainer
+sudo chroot /var/lib/lxc/CentosContainer/rootfs passwd
 sudo lxc-start -n CentosContainer
 ~~~
+
+Creando CentosContainer:
+![CreateCentosContainer](http://i1016.photobucket.com/albums/af281/raperaco/CreateCentosContainer_zpsvdn4xd8f.png)
+
+Estableciendo la password del usuario root:
+![SetRootPasswordCentosContainer](http://i1016.photobucket.com/albums/af281/raperaco/SetRootPasswordCentosContainer_zpsu4yzuxbc.png)
+
+Inicio de CentosContainer:
+![Inicio CentosContainer](http://i1016.photobucket.com/albums/af281/raperaco/InicioCentosContainer_zpsfboz0crr.png)
