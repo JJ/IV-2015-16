@@ -26,7 +26,7 @@ Ejercicio 2.
 
 Ejercicio 3.
 -------
-[*Tutorial*](http://www.django-rest-framework.org/tutorial/1-serialization/)
+* [Tutorial](http://www.django-rest-framework.org/tutorial/1-serialization/)
 
 1..Instalamos djangorestframework:
 ![Imagen 3.1](https://www.dropbox.com/s/66zxbi41vw2xupt/3.1.png?dl=1)
@@ -34,7 +34,7 @@ Ejercicio 3.
 2..Lo incluimos en el archivo settings.py:
 ![Imagen 3.2](https://www.dropbox.com/s/9eze793h8ylmdt0/3.2.png?dl=1)
 
-3..Creamos el fichero serializers.py:
+3..Creamos el fichero *serializers.py*:
 ~~~
 from rest_framework import serializers
 from .models import Porras
@@ -64,7 +64,7 @@ class PorrasSerializer(serializers.Serializer):
         return instance
 ~~~
 
-4..Añadimos la clase JSONResponse a views.py:
+4..Añadimos la clase JSONResponse a *views.py*:
 ~~~~
 class JSONResponse(HttpResponse):
     def __init__(self, data, **kwargs):
@@ -111,7 +111,7 @@ def Porras_detail(request, pk):
         return HttpResponse(status=204)
 ~~~~
 
-5..Incluimos las urls al fichero url.py:
+5..Incluimos las urls al fichero *url.py*:
 ~~~~
 from django.conf.urls import patterns, include, url
 from . import views
@@ -132,9 +132,9 @@ urlpatterns = patterns('futbol.views',
 Ejercicio 4.
 -------
 
-[*Tutorial*](http://www.django-rest-framework.org/api-guide/testing/)
+* [Tutorial](http://www.django-rest-framework.org/api-guide/testing/)
 
-1- Incluimos las nuevas pruebas en test.py:
+1- Incluimos las nuevas pruebas en *test.py*:
 ~~~~
 class ViewsTests(APITestCase):
 
