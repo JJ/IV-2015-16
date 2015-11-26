@@ -34,7 +34,32 @@ Ejercicio 3.
 ![Imagen 3.2](https://www.dropbox.com/s/9eze793h8ylmdt0/3.2.png?dl=1)
 
 3. Creamos el fichero serializers.py:
-[Enlace](https://github.com/Jarotru/EjercicioTema3_IV/blob/master/futbol/serializers.py)
+
+   from rest_framework import serializers
+   from .models import Porras
+   
+   class PorrasSerializer(serializers.Serializer):
+       participante = serializers.CharField(max_length=100)
+       porrapartido = serializers.CharField(max_length=200)
+       casa = serializers.IntegerField()
+       fuera = serializers.IntegerField()
+
+       def create(self, validated_data):
+           """
+           Crear y devolver la nueva instancia.
+           """
+          return Porras.objects.create(**validated_data)
+
+       def update(self, instance, validated_data):
+           """
+           Actualizar y validar la instancia.
+           """
+           instance.participante = validated_data.get('participante', instance.participante)
+           instance.porrapartido = validated_data.get('porrapartido', instance.porrapartido)
+           instance.casa = validated_data.get('casa', instance.casa)
+           instance.fuera = validated_data.get('fuera', instance.fuera)
+           instance.save()
+           return instance
 
 4. Añadimos la clase JSONResponse a views.py:
 [Enlace](https://github.com/Jarotru/EjercicioTema3_IV/blob/master/futbol/views.py)
