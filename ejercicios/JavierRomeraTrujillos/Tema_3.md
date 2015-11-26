@@ -28,13 +28,13 @@ Ejercicio 3.
 -------
 [*Tutorial*](http://www.django-rest-framework.org/tutorial/1-serialization/)
 
-1.  Instalamos djangorestframework:
+1..Instalamos djangorestframework:
 ![Imagen 3.1](https://www.dropbox.com/s/66zxbi41vw2xupt/3.1.png?dl=1)
 
-2. Lo incluimos en el archivo settings.py:
+2..Lo incluimos en el archivo settings.py:
 ![Imagen 3.2](https://www.dropbox.com/s/9eze793h8ylmdt0/3.2.png?dl=1)
 
-3. Creamos el fichero serializers.py:
+3..Creamos el fichero serializers.py:
 ~~~
 from rest_framework import serializers
 from .models import Porras
@@ -63,7 +63,8 @@ class PorrasSerializer(serializers.Serializer):
         instance.save()
         return instance
 ~~~
-4. Añadimos la clase JSONResponse a views.py:
+
+4..Añadimos la clase JSONResponse a views.py:
 ~~~~
 class JSONResponse(HttpResponse):
     def __init__(self, data, **kwargs):
@@ -109,7 +110,8 @@ def Porras_detail(request, pk):
         porras.delete()
         return HttpResponse(status=204)
 ~~~~
-5. Incluimos las urls al fichero url.py:
+
+5..Incluimos las urls al fichero url.py:
 ~~~~
 from django.conf.urls import patterns, include, url
 from . import views
@@ -123,10 +125,77 @@ urlpatterns = patterns('futbol.views',
 )
 ~~~~
 
-6. Comprobamos que funcione:
+6..Comprobamos que funcione:
 ![Imagen 3.3](https://www.dropbox.com/s/c8ts1s01t44s7qf/3.3.png?dl=1)
 
 
+Ejercicio 4.
+-------
+
+[*Tutorial*](http://www.django-rest-framework.org/api-guide/testing/)
+
+1- Incluimos las nuevas pruebas en test.py:
+~~~~
+class ViewsTests(APITestCase):
+
+    def test_create_porra(self):
+        partido = Partidos(partido='Torremolinos-Lanjaron')
+        partido.save()
+        porra = Porras(participante='RRR', porrapartido=Partidos.objects.get(partido='Torremolinos-Lanjaron'), casa=12,fuera=15)
+    	porra.save()
+    	response = self.client.get('/futbol/views/')
+    	self.assertEqual(response.content,'[{"participante":"RRR","porrapartido":"Torremolinos-Lanjaron","casa":12,"fuera":15}]')
+        print("test completo")
+~~~~
+
+2- Comprobamos que funcione:
+![Imagen 4.1](https://www.dropbox.com/s/k3i2vw6d3vwign0/4.1.png?dl=1)
 
 
+Ejercicio 5.
+-------
 
+1. Nos registramos en Heroku:
+![Imagen 5.1](https://www.dropbox.com/s/8dbhva0ww1d2aj2/5.1.png?dl=1)
+
+2. Descargamos el cinturón de herramientas de Heroku:
+![Imagen 5.2](https://www.dropbox.com/s/fsx2zi54p4a3jk6/5.2.png?dl=1)
+
+3. Creamos la aplicación en Heroku y la subimos:
+![Imagen 5.3](https://www.dropbox.com/s/5f2y14u3bwsc7cb/5.3.png?dl=1)
+
+4. Observamos que está subida correctamente:
+![Imagen 5.4](https://www.dropbox.com/s/4l8v1n8yj7rjzs9/5.4.png?dl=1)
+
+5. Accedemos al enlace:
+![Imagen 5.5](https://www.dropbox.com/s/5hq6jzzaayipf5j/5.5.png?dl=1)
+
+
+Ejercicio 6.
+-------
+
+1. Ejecutamos ~~~~ foreman start web ~~~~:
+![Imagen 6.1](https://www.dropbox.com/s/hl6oa37kv7rbve4/6.1.png?dl=1)
+
+2. Vamos al enlace y comprobamos que todo funciona:
+![Imagen 6.2](https://www.dropbox.com/s/ckhfv8gil3ixzyd/6.2.png?dl=1)
+
+
+Ejercicio 7.
+-------
+
+1. Sincronizamos con el repositorio y comprobamos si pasa el test:
+![Imagen 7.1](https://www.dropbox.com/s/h6p5cg4oz215suj/7.1.png?dl=1)
+
+2. Vamos al enlace y comprobamos que todo funciona:
+![Imagen 7.2](https://www.dropbox.com/s/2jlt518lxpnaix1/7.2.png?dl=1)
+
+[![Build Status](https://snap-ci.com/Jarotru/EjercicioTema3_IV/branch/master/build_image)](https://snap-ci.com/Jarotru/EjercicioTema3_IV/branch/master)
+
+
+Ejercicio 8.
+-------
+
+[Aplicacion desplegada](http://appporras.herokuapp.com/futbol/)
+
+[Repositorio](https://github.com/Jarotru/EjercicioTema3_IV)
