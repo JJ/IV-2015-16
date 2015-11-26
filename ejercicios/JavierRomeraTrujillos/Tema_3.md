@@ -26,6 +26,7 @@ Ejercicio 2.
 
 Ejercicio 3.
 -------
+[*Tutorial*](http://www.django-rest-framework.org/tutorial/1-serialization/)
 
 1.  Instalamos djangorestframework:
 ![Imagen 3.1](https://www.dropbox.com/s/66zxbi41vw2xupt/3.1.png?dl=1)
@@ -36,38 +37,96 @@ Ejercicio 3.
 3. Creamos el fichero serializers.py:
 
 ~~~
-    from rest_framework import serializers
-    from .models import Porras
-    
-    class PorrasSerializer(serializers.Serializer):
-       participante = serializers.CharField(max_length=100)
-       porrapartido = serializers.CharField(max_length=200)
-       casa = serializers.IntegerField()
-       fuera = serializers.IntegerField()
+from rest_framework import serializers
+from .models import Porras
 
-        def create(self, validated_data):
-           """
-           Crear y devolver la nueva instancia.
-           """
-          return Porras.objects.create(**validated_data)
 
-       def update(self, instance, validated_data):
-           """
-           Actualizar y validar la instancia.
-           """
-           instance.participante = validated_data.get('participante', instance.participante)
-           instance.porrapartido = validated_data.get('porrapartido', instance.porrapartido)
-           instance.casa = validated_data.get('casa', instance.casa)
-           instance.fuera = validated_data.get('fuera', instance.fuera)
-           instance.save()
-           return instance
+class PorrasSerializer(serializers.Serializer):
+    participante = serializers.CharField(max_length=100)
+    porrapartido = serializers.CharField(max_length=200)
+    casa = serializers.IntegerField()
+    fuera = serializers.IntegerField()
+
+    def create(self, validated_data):
+        """
+        Crear y devolver la nueva instancia.
+        """
+        return Porras.objects.create(**validated_data)
+
+    def update(self, instance, validated_data):
+        """
+        Actualizar y validar la instancia.
+        """
+        instance.participante = validated_data.get('participante', instance.participante)
+        instance.porrapartido = validated_data.get('porrapartido', instance.porrapartido)
+        instance.casa = validated_data.get('casa', instance.casa)
+        instance.fuera = validated_data.get('fuera', instance.fuera)
+        instance.save()
+        return instance
 ~~~
 
 4. Añadimos la clase JSONResponse a views.py:
-[Enlace](https://github.com/Jarotru/EjercicioTema3_IV/blob/master/futbol/views.py)
+
+~~~~
+class JSONResponse(HttpResponse):
+    def __init__(self, data, **kwargs):
+        content = JSONRenderer().render(data)
+        kwargs['content_type'] = 'application/json'
+        super(JSONResponse, self).__init__(content, **kwargs)
+
+@csrf_exempt
+def Porras_list(request):
+    if request.method == 'GET':
+        porras = Porras.objects.all()
+        serializer = PorrasSerializer(porras, many=True)
+        return JSONResponse(serializer.data)
+
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = PorrasSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JSONResponse(serializer.data, status=201)
+        return JSONResponse(serializer.errors, status=400)
+
+@csrf_exempt
+def Porras_detail(request, pk):
+    try:
+        porra = Porras.objects.get(pk=pk)
+    except Porras.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == 'GET':
+        serializer = PorrasSerializer(porra)
+        return JSONResponse(serializer.data)
+
+    elif request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = PorrasSerializer(porra, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JSONResponse(serializer.data)
+        return JSONResponse(serializer.errors, status=400)
+
+    elif request.method == 'DELETE':
+        porras.delete()
+        return HttpResponse(status=204)
+~~~~
 
 5. Incluimos las urls al fichero url.py:
-[Enlace](https://github.com/Jarotru/EjercicioTema3_IV/blob/master/futbol/urls.py)
+
+~~~~
+from django.conf.urls import patterns, include, url
+from . import views
+
+urlpatterns = patterns('futbol.views',
+    url(r'^$', 'index', name='index'),
+    url(r'^(?P<partidos_id>[0-9]+)/$', 'gestion', name='gestion'),
+    url(r'^CrearPorra/$', 'porra', name='porra'),
+    url(r'^views/$', views.Porras_list),
+    url(r'^views/(?P<pk>[0-9]+)/$', views.Porras_detail),
+)
+~~~~
 
 6. Comprobamos que funcione:
 ![Imagen 3.3](https://www.dropbox.com/s/c8ts1s01t44s7qf/3.3.png?dl=1)
