@@ -384,3 +384,116 @@ user@1510dc2d3475:~$ sudo apt-get install nginx
 
 Arrancamos servicio y hacemos comprobaciones de que funciona:
 ![nginx](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-24%20225454_zpshvpgcpfm.png)
+
+
+##Ejercicio 9. Crear a partir del contenedor anterior una imagen persistente con commit.
+
+Para realizar un commit en la máquina con docker necesitamos tener la ID, para ello ejecutamos ps:
+```
+rafaellg8@system32:~$ sudo docker ps -a
+INFO[0011] GET /v1.18/containers/json?all=1             
+INFO[0011] +job containers()                            
+INFO[0011] -job containers() = OK (0)                   
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                    PORTS               NAMES
+1510dc2d3475        ubuntu:latest       "/bin/bash"         18 hours ago        Exited (0) 17 hours ago                       modest_rosalind     
+d1b8edbccd6e        debian:latest       "/bin/bash"         18 hours ago        Exited (0) 18 hours ago                       evil_jang           
+df1684de4021        debian:latest       "/bin/bash"         18 hours ago        Exited (0) 18 hours ago                       sleepy_ptolemy   
+```
+
+El ID de ubuntu es **1510dc2d3475**.
+
+Comprobamos que existe el ID correctamente de la máquina con docker inspect:
+```
+rafaellg8@system32:~$ sudo docker inspect 1510dc2d3475
+```
+Nos devuelve un json donde podemos ver cosas como memoria asignada, directorios, ips, además de el estado de la máquina y la última vez que se arrancó docker en ese contenedor:
+```
+"Path": "/bin/bash",
+    "ProcessLabel": "",
+    "ResolvConfPath": "/var/lib/docker/containers/1510dc2d3475004aa8800b4d9a159c29d8c5881fcbc80cd6d94bef0c3e9c4f07/resolv.conf",
+    "RestartCount": 0,
+    "State": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "2015-11-24T21:58:03.744536532Z",
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 0,
+        "Restarting": false,
+        "Running": false,
+        "StartedAt": "2015-11-24T21:44:27.861748847Z"
+    },
+    "Volumes": {},
+    "VolumesRW": {}
+```
+
+Vemos lo que nos interesa la ip de la máquina en el campo id:
+```
+ "HostnamePath": "/var/lib/docker/containers/1510dc2d3475004aa8800b4d9a159c29d8c5881fcbc80cd6d94bef0c3e9c4f07/hostname",
+    "HostsPath": "/var/lib/docker/containers/1510dc2d3475004aa8800b4d9a159c29d8c5881fcbc80cd6d94bef0c3e9c4f07/hosts",
+    "Id": "1510dc2d3475004aa8800b4d9a159c29d8c5881fcbc80cd6d94bef0c3e9c4f07",
+    "Image": "ca4d7b1b9a51f72ff4da652d96943f657b4898889924ac3dae5df958dba0dc4a",
+    "LogPath": "/var/lib/docker/containers/1510dc2d3475004aa8800b4d9a159c29d8c5881fcbc80cd6d94bef0c3e9c4f07/1510dc2d3475004aa8800b4d9a159c29d8c5881fcbc80cd6d94bef0c3e9c4f07-json.log",
+```
+
+Hacemos el commit:
+```
+sudo docker commit 1510dc2d3475004aa8800b4d9a159c29d8c5881fcbc80cd6d94bef0c3e9c4f07 commit_ubuntu
+```
+Para ver que se ha guardado comprobamos el estado de las máqinas con ps:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-25%20173541_zpsgv6umla6.png)
+
+##Ejercicio 10. Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección
+
+Como mi proyecto lo estoy reaizando en Ubuntu, usaré mi contenedor de docker de ubuntu para realizarlo.
+Para esto simplemente lo que tenemos que hacer es como con python, un archivo de requerimientos llamado Dockerfile, donde configuramos el sistema.
+
+Para editar el dockerfile he usado los siguiente tutoriales [dockerfile](https://docs.docker.com/v1.8/reference/builder/) y [dockerizing](https://docs.docker.com/engine/userguide/dockerizing/)
+
+**Dockerfile**
+```
+FROM ubuntu:14.04
+
+#Autor
+MAINTAINER Rafel Lachica Garrido <rafaellg8@correo.ugr.es>
+
+#Actualizamos e instalamos cosas
+RUN sudo apt-get update
+RUN sudo apt-get install -y git
+RUN sudo apt-get install -y build-essential
+RUN sudo apt-get install 
+RUN sudo apt-get install -y git
+RUN sudo apt-get install -y python-setuptools
+RUN sudo git clone https://github.com/rafaellg8IV-PLUCO-RLG.git
+
+#Ejecutamos la instalación de make que llama a requeriments.txt y ejecuta la app
+RUN cd IV-PLUCO-RLG && git pull
+RUN cd IV-PLUCO-RLG && make install
+```
+
+Generamos el build de docker:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-PLUCO-RLG$ sudo docker build -t plucomachine_rlg ./
+Sending build context to Docker daemon 36.23 MB
+```
+
+Y nos lo monta satisfactoriamente:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-26%20112727_zpshrleuhwo.png)
+
+Comprobamos las imágenes de docker:
+
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-26%20113152_zpskslvmeey.png)
+
+Ejecutamos el contenedor plucomachine_rlg:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-26%20113427_zpsjsuye4sn.png)
+
+Finalmente miramos la ip de nuestro docker:
+```
+root@adf25b2712af:/IV-PLUCO-RLG# ifconfig
+eth0      Link encap:Ethernet  HWaddr 02:42:ac:11:00:1c  
+          inet addr:172.17.0.31 
+```
+Y comprobamos en local con la ip de la máquina en docker:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-26%20114616_zpsxjntxtkb.png)
+
