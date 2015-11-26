@@ -153,8 +153,37 @@ Para crear la jaula ( jail ) al igual que antes tambien he usado una máquina vi
 
 La conclusión es que los resultados son mejores en la jaula ( aunque en este caso el resultado es muy parecido por usar una página estatica de poco peso ) y esto es asi porque el contenedor lo hace a través de un puente ( bridge ).
 
+### Ejercicio 6: Instalar docker.
 
+Para la instalación de Docker he ejecutado el siguiente comando:
+```
+sudo apt-get install docker.io
+```
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installdocker_zps9uiv6qgz.png)
 
+Según la literatura puede instalarse tambien ejecutando:
+```
+curl -sSL https://get.docker.com/ | sudo sh
+```
 
+Para comprobar la versión instalada basta con ejecutar:
+```
+docker -v
+```
+
+![versiondocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/versiondocker_zpsdpshhwex.png)
+
+Puede comprobarse el estado del servicio y arrancarse mediante:
+```
+sudo service docker status
+sudo service docker start
+```
+
+Para comprobar que efectivamente se ha instalado correctamente se ejecuta:
+```
+sudo docker run hello-world
+```
+
+![comprobaciondocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobaciondocker_zpshejdvypn.png)
 
 
