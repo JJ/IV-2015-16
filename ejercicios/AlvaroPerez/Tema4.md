@@ -120,6 +120,14 @@ Nos logeamos con el usuario creado, e instalmos nginx:
 
 ###Ejercicio9: Crear a partir del contenedor anterior una imagen persistente con commit. 
 
+Para poder realizar este ejercicio, debemos seleccionar un contenedor de los creados, e iniciarlo.
+Con la orden **docker ps** obtenemos el ID del contenedor que acabos de iniciar:
+
+![Ejercicio9.1](https://www.dropbox.com/s/qzoyygottwxm38j/Ejercicio9.1.png?dl=1)
+
+Ahora guardamos el estado actual del contendor con un **commit**, con la ID del contenedor obtenida. Y vemos que efectivamente se ha creado la imagen:
+
+![Ejercicio9.2](https://www.dropbox.com/s/gaflm4rypc9zwja/Ejercicio9.2.png?dl=1)
 
 ###Ejercicio10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección. 
 
