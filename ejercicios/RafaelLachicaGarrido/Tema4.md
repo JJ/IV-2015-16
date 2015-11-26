@@ -444,3 +444,41 @@ sudo docker commit 1510dc2d3475004aa8800b4d9a159c29d8c5881fcbc80cd6d94bef0c3e9c4
 Para ver que se ha guardado comprobamos el estado de las máqinas con ps:
 ![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-25%20173541_zpsgv6umla6.png)
 
+##Ejercicio 10. Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección
+
+Como mi proyecto lo estoy reaizando en Ubuntu, usaré mi contenedor de docker de ubuntu para realizarlo.
+Para esto simplemente lo que tenemos que hacer es como con python, un archivo de requerimientos llamado Dockerfile, donde configuramos el sistema.
+
+Para editar el dockerfile he usado los siguiente tutoriales [dockerfile](https://docs.docker.com/v1.8/reference/builder/) y [dockerizing](https://docs.docker.com/engine/userguide/dockerizing/)
+
+**Dockerfile**
+```
+FROM ubuntu:14.04
+
+#Autor
+MAINTAINER Rafel Lachica Garrido <rafaellg8@correo.ugr.es>
+
+#Actualizamos e instalamos cosas
+RUN sudo apt-get update
+RUN sudo apt-get install -y git
+RUN sudo apt-get install -y build-essential
+RUN sudo apt-get install 
+RUN sudo apt-get install -y git
+RUN sudo apt-get install -y python-setuptools
+RUN sudo git clone https://github.com/rafaellg8IV-PLUCO-RLG.git
+
+#Ejecutamos la instalación de make que llama a requeriments.txt y ejecuta la app
+RUN cd IV-PLUCO-RLG && git pull
+RUN cd IV-PLUCO-RLG && make install
+```
+
+Generamos el build de docker:
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-PLUCO-RLG$ sudo docker build -t ubuntu ./
+Sending build context to Docker daemon 36.23 MB
+```
+
+Y nos lo monta satisfactoriamente:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-26%20112727_zpshrleuhwo.png)
+
+
