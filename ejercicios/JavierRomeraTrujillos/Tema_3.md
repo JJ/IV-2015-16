@@ -35,10 +35,11 @@ Ejercicio 3.
 
 3. Creamos el fichero serializers.py:
 
-   from rest_framework import serializers
-   from .models import Porras
+
+    from rest_framework import serializers
+    from .models import Porras
    
-   class PorrasSerializer(serializers.Serializer):
+    class PorrasSerializer(serializers.Serializer):
        participante = serializers.CharField(max_length=100)
        porrapartido = serializers.CharField(max_length=200)
        casa = serializers.IntegerField()
