@@ -187,7 +187,7 @@ Ejercicio 7.
 1. Sincronizamos con el repositorio y comprobamos si pasa el test:
 ![Imagen 7.1](https://www.dropbox.com/s/h6p5cg4oz215suj/7.1.png?dl=1)
 
-2. Vamos al enlace y comprobamos que todo funciona:
+2. Vemos que los registros del build son correctos:
 ![Imagen 7.2](https://www.dropbox.com/s/2jlt518lxpnaix1/7.2.png?dl=1)
 
 [![Build Status](https://snap-ci.com/Jarotru/EjercicioTema3_IV/branch/master/build_image)](https://snap-ci.com/Jarotru/EjercicioTema3_IV/branch/master)
