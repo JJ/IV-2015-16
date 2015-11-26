@@ -474,11 +474,26 @@ RUN cd IV-PLUCO-RLG && make install
 
 Generamos el build de docker:
 ```
-rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-PLUCO-RLG$ sudo docker build -t ubuntu ./
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-PLUCO-RLG$ sudo docker build -t plucomachine_rlg ./
 Sending build context to Docker daemon 36.23 MB
 ```
 
 Y nos lo monta satisfactoriamente:
 ![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-26%20112727_zpshrleuhwo.png)
 
+Comprobamos las imágenes de docker:
+
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-26%20113152_zpskslvmeey.png)
+
+Ejecutamos el contenedor plucomachine_rlg:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-26%20113427_zpsjsuye4sn.png)
+
+Finalmente miramos la ip de nuestro docker:
+```
+root@adf25b2712af:/IV-PLUCO-RLG# ifconfig
+eth0      Link encap:Ethernet  HWaddr 02:42:ac:11:00:1c  
+          inet addr:172.17.0.31 
+```
+Y comprobamos en local con la ip de la máquina en docker:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202015-11-26%20114616_zpsxjntxtkb.png)
 
