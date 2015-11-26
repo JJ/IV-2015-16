@@ -35,7 +35,6 @@ Ejercicio 3.
 ![Imagen 3.2](https://www.dropbox.com/s/9eze793h8ylmdt0/3.2.png?dl=1)
 
 3. Creamos el fichero serializers.py:
-
 ~~~
 from rest_framework import serializers
 from .models import Porras
@@ -66,7 +65,6 @@ class PorrasSerializer(serializers.Serializer):
 ~~~
 
 4. Añadimos la clase JSONResponse a views.py:
-
 ~~~~
 class JSONResponse(HttpResponse):
     def __init__(self, data, **kwargs):
@@ -112,9 +110,7 @@ def Porras_detail(request, pk):
         porras.delete()
         return HttpResponse(status=204)
 ~~~~
-
 5. Incluimos las urls al fichero url.py:
-
 ~~~~
 from django.conf.urls import patterns, include, url
 from . import views
