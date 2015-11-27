@@ -282,6 +282,11 @@ o
 
 ##Ejercicio 8: Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
 
+Lo primero que es arrancar el contenedor con interprete interactivo
+
+	sudo docker run -i -t ubuntu /bin/bash
+	
+
 ##Ejercicio 9: Crear a partir del contenedor anterior una imagen persistente con commit.
 
 ##Ejercicio 10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección. 
