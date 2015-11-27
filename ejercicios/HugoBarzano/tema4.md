@@ -189,7 +189,40 @@ Parece ser que la jaula tiene un mayor rendimiento que el contenedor, aun así e
 
 
 ##Ejercicio 6: Instalar docker.
+Para instalar docker correctamente, es necesario segir los siguientes pasos:
 
+**Paso 1:** Añadir una llave gpg
+
+	sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+
+**Paso 2:** Editar el archivo **/etc/apt/sources.list.d/docker.list** y añadir la siguiente entrada si estamos trabajando con ubuntu 14.04
+
+	deb https://apt.dockerproject.org/repo ubuntu-trusty main
+
+**Paso 3:** Actualizar
+
+	sudo apt-get update
+
+**Paso 4:** Instalar recomendaciones, paquete **linux-image-extra**
+
+	sudo apt-get install linux-image-extra-$(uname -r)
+
+**Paso 5:** Instalar Docker
+
+	sudo apt-get install docker-engine
+
+**Paso 6:** Iniciar el servicio
+
+	sudo service docker start
+
+Podemos verificar que **Docker** esta funcionando mediante
+
+	sudo docker run hello-world
+
+![docker](https://www.dropbox.com/s/76180chk8fehjlp/docker.png?dl=1)
+
+Para mas detalles, consultar la documentación de [Docker](https://docs.docker.com/engine/installation/ubuntulinux/)
+	
 ##Ejercicio 7: 
 
 ###7.1:Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
