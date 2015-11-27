@@ -215,9 +215,7 @@ Para instalar docker correctamente, es necesario segir los siguientes pasos:
 
 	sudo service docker start
 
-Podemos verificar que **Docker** esta funcionando mediante
-
-	sudo docker run hello-world
+Podemos verificar que **Docker** esta funcionando mediante **sudo docker run hello-world** o **sudo docker info**
 
 ![docker](https://www.dropbox.com/s/76180chk8fehjlp/docker.png?dl=1)
 
@@ -226,6 +224,47 @@ Para mas detalles, consultar la documentación de [Docker](https://docs.docker.c
 ##Ejercicio 7: 
 
 ###7.1:Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+
+Instalar una imagen ubuntu: 
+
+	sudo docker run -i -t ubuntu /bin/bash //Lanza un interprete interactivo
+
+Podemos consultar los todos los tapers instaldos mediante **sudo docker ps -a** y los que estan en ejecución con **sudo docker ps**
+
+![ubuntu](https://www.dropbox.com/s/abo9yxwhcnfkh0b/docker_ubuntu.png?dl=1)
+
+Instalar una imagen CentOS
+
+Otra forma de administrar nuestros dockers sin tener que arrastrar el ID es la siguiente:
+
+**Crear e Iniciar Docker**
+
+	JOB=$(sudo docker run -i -t centos /bin/bash)
+
+**Para Docker**
+
+	sudo docker stop $JOB
+
+**Iniciar Docker**
+
+	docker start $JOB
+
+**Reiniciar Docker**
+	
+	docker restart $JOB
+
+**Matar el proceso**
+
+	docker kill $JOB
+
+**Borar el Docker**
+
+	docker stop $JOB //Es necesario detener el contenedor
+	docker rm $JOB
+
+Finalmente consultamos los contenedores en ejecucion:
+
+![centos](https://www.dropbox.com/s/9mpxnhzqw2jgg16/docker_centos.png?dl=1)	
 
 ###7.2:Buscar e instalar una imagen que incluya MongoDB.
 
