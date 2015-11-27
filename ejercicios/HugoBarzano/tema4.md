@@ -227,7 +227,9 @@ Para mas detalles, consultar la documentación de [Docker](https://docs.docker.c
 
 Instalar una imagen ubuntu: 
 
-	sudo docker run -i -t ubuntu /bin/bash //Lanza un interprete interactivo
+	sudo docker pull ubuntu		//Crea la imagen
+o
+	sudo docker run -i -t ubuntu /bin/bash //CRea la imagen y la ejecuta. Lanza un interprete interactivo
 
 Podemos consultar los todos los tapers instaldos mediante **sudo docker ps -a** y los que estan en ejecución con **sudo docker ps**
 
@@ -247,26 +249,36 @@ Otra forma de administrar nuestros dockers sin tener que arrastrar el ID es la s
 
 **Iniciar Docker**
 
-	docker start $JOB
+	sudo docker start $JOB
 
 **Reiniciar Docker**
 	
-	docker restart $JOB
+	sudo docker restart $JOB
 
 **Matar el proceso**
 
-	docker kill $JOB
+	sudo docker kill $JOB
 
 **Borar el Docker**
 
-	docker stop $JOB //Es necesario detener el contenedor
-	docker rm $JOB
+	sudo docker stop $JOB //Es necesario detener el contenedor
+	sudo docker rm $JOB
 
 Finalmente consultamos los contenedores en ejecucion:
 
 ![centos](https://www.dropbox.com/s/9mpxnhzqw2jgg16/docker_centos.png?dl=1)	
 
 ###7.2:Buscar e instalar una imagen que incluya MongoDB.
+
+Intalar una imagen que inclute MongoDB
+
+	sudo docker run mongo //Crea la imagen y la lanza
+o
+	sudo docker pull mongo	//Crea la imagen
+
+![mongo](https://www.dropbox.com/s/hrforfm3r295pgr/mongo_docker.png?dl=1)
+
+
 
 ##Ejercicio 8: Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
 
