@@ -47,4 +47,15 @@
 - [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
 - [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
+***
 
+#Sexta semana, comienza el 4 de Noviembre
+##Objetivos de la semana
+- [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+- [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+
+***
+
+#Séptima semana, comienza el 11 de Noviembre
+##Objetivos de la semana
+- [ ] Entender la base del aislamiento de recursos en el sistema operativo.
