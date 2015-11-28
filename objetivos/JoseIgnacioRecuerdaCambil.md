@@ -52,3 +52,15 @@ Lista de objetivos de Jose Ignacio Recuerda Cambil
 ###Objetivos octava semana
 - [X] Entender la base del aislamiento de recursos en el sistema operativo.
 - [X] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+###Objetivos ejercicios tema 4
+- [X] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [X] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+- [X] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+- [X] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+- [X] Documentar y mantener una plataforma virtual.
+Optimizar aplicaciones sobre plataformas virtuales.
+- [X] Realizar tareas de administración en infraestructura virtual.
+- [X] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+- [X] Crear infraestructuras virtuales completas.
+- [X] Comprender los pasos necesarios para la configuración automática de las mismas.
