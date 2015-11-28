@@ -3,23 +3,31 @@
 
 Me he registrado en [Heroku](https://www.heroku.com/), he creado una aplicación de pruebas y otra con nombre propio, Try-2-Learn, usada para el proyecto propio de las prácticas de esta asignatura.
 
-![Heroku](img/tema3-1.1.png)
+![Heroku](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema3-1.1_zpsoc02ngtj.png)
 
 ###Ejercicio2: Crear una aplicación en OpenShift y dentro de ella instalar WordPress.
 
 Nos registramos en [OpenShift](https://www.openshift.com/app/account/new), creamos nuestra primera aplicación, lo cual nos da a elegir entre varios tipos, una de ella WordPress 4, la seleccionamos:
 
-![paso1](img/tema3-2.1.png)
+![paso1](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema3-2.1_zps5iuxbbkd.png)
 
 Después configuramos algunos parámetros:
 
-![paso2](img/tema3-2.2.png)
+![paso2](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema3-2.2_zpstn2bkxbe.png)
 
 Ya tenemos la aplicación instalada:
 
-![paso3](img/tema3-2.3.png)
+![paso3](http://i1376.photobucket.com/albums/ah6/jesusgn90/tema3-2.3_zpszd4xiu5l.png)
 
 Podemos visitarla [aquí](http://jesusgn90-pruebaiv15.rhcloud.com/)
+
+###Ejercicio 3: Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
+
+Sigo usando mi propio proyecto, pues uso justamente Express, link [Try-2-Learn](https://github.com/jesusgn90/Try-2-Learn)
+
+###Ejercicio 4: Crear pruebas para las diferentes rutas de la aplicación.
+
+Mi test inicial es para comprobar arrancado de servidor y manejo de rutas, podemos verlo [aquí](https://github.com/jesusgn90/Try-2-Learn/tree/master/app/test)
 
 ###Ejercicio 5: Instalar y echar a andar tu primera aplicación en Heroku
 
@@ -49,4 +57,16 @@ Podemos verla en [https://try-2-learn.herokuapp.com/](https://try-2-learn.heroku
 He seguido usando mi proyecto propio de las prácticas, como uso NodeJS voy a usar [Node-Foreman](https://github.com/strongloop/node-foreman). Lo instalamos de forma global:
 
     $ npm install -g foreman
+
+Tenemos un Procfile con:
+
+    web: npm start
+
+A continuación solo debemos ejecutar:
+
+    $ nf start web=1
+
+Para ver más parámetros y sus finalidades sobre el comando "nf" podemos visitar [https://github.com/strongloop/node-foreman](https://github.com/strongloop/node-foreman) o bien ejecutar:
+
+    $ nf --help
 

@@ -76,3 +76,22 @@
  -  [] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.  
  -  [] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
  - [] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+### Sexta semana
+
+
+ - [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+ - [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+
+#### Otros objetivos
+ - [x] Trabajar con los toolbelts de los diferentes PaaS.
+ - [x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+ - [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+ - [] Experimentar con el despliegue simultáneo a varios PaaS.
+
+### Septima semana
+
+ - [x] Entender la base del aislamiento de recursos en el sistema operativo.
+
+#### Otros objetivos
+ - [x] Instalar docker y trabajar con él. 
