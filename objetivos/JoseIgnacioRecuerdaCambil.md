@@ -44,3 +44,11 @@ Lista de objetivos de Jose Ignacio Recuerda Cambil
 - [X] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
 - [X] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
 - [X] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
+
+###Objetivos séptima semana
+- [X] Entender la base del aislamiento de recursos en el sistema operativo.
+- [X] Instalar docker y trabajar con él.
+
+###Objetivos octava semana
+- [X] Entender la base del aislamiento de recursos en el sistema operativo.
+- [X] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
