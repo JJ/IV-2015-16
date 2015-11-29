@@ -12,7 +12,7 @@ Seguidamente confirmo dos datos importantes:
 
 ![versión LXC](https://www.dropbox.com/s/7f7zlshwif8xdhv/ejr1.2.png?dl=1)
 
-* Y por otro lado que el kernel soporta lxc-containers. Esto lo he hecho con el comando: `lxc-checkconfig`
+* Y por otro lado comprobamos que el kernel soporta lxc-containers y que todo esta bien configurado. Esto lo he hecho con el comando: `lxc-checkconfig`
 
 ![kernel soporta lxc-containers](https://www.dropbox.com/s/u25004f1v8k4er6/ejr1.1.png?dl=1)
 
