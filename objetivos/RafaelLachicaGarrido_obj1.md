@@ -142,6 +142,30 @@
 - [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases... 
 
 - [x] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
+
+##Semana del 4 al 11 de noviembre de 2015 (Sesión 6)
+### Objetivos de la semana
+
+- [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+
+- [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+
+- [x] Desplegar app en un PaaS
+
+### Otros objetivos
+
+- [x] Trabajar con los toolbelts de los diferentes PaaS.
+
+- [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+
+- [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+
+- [x] Experimentar con el despliegue simultáneo a varios PaaS.
+
+- [x] Probar integración continua junto a los PaaS.
+
+- [x] Aprender a usar Bases de Datos en la nube. MongoLabs
+
 __________________________________________
 
 ## Objetivos de la asignatura
