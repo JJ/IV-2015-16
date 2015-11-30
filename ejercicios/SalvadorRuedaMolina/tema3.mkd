@@ -1,0 +1,184 @@
+#Creando aplicaciones en la nube: Uso de PaaS
+##Ejercicio 1
+##Darse de alta en algún servicio PaaS tal como Heroku, Nodejitsu, BlueMix u OpenShift.
+Me he dado de alta en OpenShift porque había oido hablar de el antes.
+
+##Ejercicio 2
+## Crear una aplicación en OpenShift y dentro de ella instalar WordPress.
+He seleccionado una aplicación basada en WordPress 4 Quickstart.
+Despues puedo configurar la url pública, el repositorio , si deseamos que sea escalable o la región .
+Una vez creada la aplicación accedo a la  url donde instalo wordpress, en primer lugar te piden el idioma. A continuación debes de escribir el nombre del sitio, el usuario, contraseña y tu correo electrónico.  
+Y ya tendriamos nuestra aplicación creada.  
+![ejercicio2](http://i1028.photobucket.com/albums/y349/Salva_Rueda/2_zpsybmorl3b.png)
+
+##Ejercicio 3
+ 
+##Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
+
+Para realizar este ejercicio he utilizado Django Rest Framework y me he ayudado de los siguientes enlaces: [tutorial django](http://www.django-rest-framework.org/tutorial/1-serialization/) y este [blog](http://notoquesmicodigo.blogspot.com.es/2014/01/haciendo-una-api-rest-en-20-minutos-con.html).
+
+Para instalar el tutorial nos dice que necesitamos el siguiente paquete: 
+
+pip install djangorestframework  
+
+Posteriormente añadir en el archivo settings.py en el apartado de INSTALLED_APPS la línea 'rest_framework'
+
+Creo los modelos para el ejemplo de nuestra aplicación. En mi caso he creado dos modelos:
+``` python
+from django.db import models
+
+class Autor(models.Model):
+    nombre = models.TextField(max_length=100)
+    apellido = models.TextField(max_length=100)
+    
+class Libro(models.Model):
+    nombre = models.TextField(max_length=100)
+    editorial = models.TextField(max_length=100)
+    genero = models.TextField(max_length=100)
+```
+Ahora serializaremos los modelos de datos que tenemos añadiendo un archivo serializers.py con el siguiente contenido:  
+``` python
+
+from rest_framework import serializers
+from .models import Libro, Autor
+ 
+class LibroSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Libro
+        fields = ('id', 'nombre', 'editorial', 'genero',)
+ 
+class AutorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Autor
+        fields = ('id', 'nombre', 'apellido',)
+
+```
+Ahora definimos las vistas en un archivo viewsets.py que tiene el siguiente contenido: 
+```python 
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
+from rest_framework import status
+from .models import Autor, Libro
+from .serializers import LibroSerializer, AutorSerializer
+
+class JSONResponse(HttpResponse):
+    def __init__(self, data, **kwargs):
+        content = JSONRenderer().render(data)
+        kwargs['content_type'] = 'application/json'
+        super(JSONResponse, self).__init__(content, **kwargs)
+
+    @csrf_exempt
+    def lista_libro(request):
+        if request.method == 'GET':
+            libro = Libro.objects.all()
+            serializer = LibroSerializer(libro, many=True)
+            return JSONResponse(serializer.data)
+    
+        elif request.method == 'POST':
+            data = JSONParser().parse(request)
+            serializer = LibroSerializer(data=data)
+            if serializer.is_valid():
+                serializer.save()
+                return JSONResponse(serializer.data, status=201)
+            return JSONResponse(serializer.errors, status=400)
+    @csrf_exempt
+    def lista_autor(request):
+        if request.method == 'GET':
+            autor = Autor.objects.all()
+            serializer = AutorSerializer(autor, many=True)
+            return JSONResponse(serializer.data)
+    
+        elif request.method == 'POST':
+            data = JSONParser().parse(request)
+            serializer = AutorSerializer(data=data)
+            if serializer.is_valid():
+                serializer.save()
+                return JSONResponse(serializer.data, status=201)
+            return JSONResponse(serializer.errors, status=400)
+    ```
+E indicamos la vista en la url:
+
+```python
+urlpatterns = [
+    url(r'^libro/$', views.lista_libro),
+    url(r'^autor/$', views.lista_autor),
+    url(r'^$', views.lista_libro),
+    ]
+    
+```
+
+Procedemos a meter los datos en nuestra db con http --json  y ya podemos ver las consultas:  
+
+![ejercicio3](http://i1028.photobucket.com/albums/y349/Salva_Rueda/3_zpsvtwjribv.png)
+
+
+##Ejercicio 4
+##Crear pruebas para las diferentes rutas de la aplicación.
+ 
+```python
+from django.test import TestCase
+from rest_framework import status
+from rest_framework.test import APITestCase
+from .models import Libro, Autor
+from .views import *
+
+class PruebasRESTTests(APITestCase):
+	def test_mostrar_autor(self):
+		a1=Autor(nombre="Juan", apellido = "Martinez")
+		a1.save()
+		a2=Autor(nombre = "Paco", apellido = "Blanco")
+		a2.save()
+		response = self.client.get("/autor/")
+		self.assertEqual(response.content, '[{"id":1,"nombre":"Juan","apellido":"Martinez"},{"id":2,"nombre":"Paco","apellido":"Blanco"}]')
+		print ("VISTA EXITSA")
+	def test_crear_libro(self):
+		data ={"nombre":"sinsajo", "editorial":"salvat", "genero": "accion"}
+		response = self.client.post("/libro/", data, format="json")
+		self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+		print("LIBRO CREADO")
+
+```
+![ejercicio 4](http://i1028.photobucket.com/albums/y349/Salva_Rueda/4_zpsrqfcqp6c.png)
+
+## Ejercicio 5
+## Instalar y echar a andar tu primera aplicación en Heroku.
+
+Me he bajado haciendo un git clone el ejemplo de python del repositorio de Heroku.
+Nos loguemos con la orden heroku login.
+Nos  colocamos en el directorio y hacemos un heroku create.
+Finalmente y para levantar la aplicación y que nos devuelca el link  hacemos un git push heroku master y ya podremos acceder a nuestra aplicación [enlace de  la aplicación](https://vast-bastion-9417.herokuapp.com/)
+
+## Ejercicio 6
+## Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
+
+Instalo foreman con el siguiente comando:  
+```python
+sudo gem install foreman
+```
+Y simplemente con la orden foreman start web nuestra aplicación estara corriendo.  
+![Ejercicio6_1](http://i1028.photobucket.com/albums/y349/Salva_Rueda/6_1_zps5zhnagpn.png)  
+![Ejercicio6_2](http://i1028.photobucket.com/albums/y349/Salva_Rueda/6_zps3s1jt8mb.png)
+
+## Ejercicio 7
+##Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow  
+
+Primero me he registrado a través de GitHub en Snap CI le damos permiso para acceder a nuestro GitHub y seleccionamos los repositorios que queremos usar.    
+![Ejercicio7](http://i1028.photobucket.com/albums/y349/Salva_Rueda/7_zpstu10sq8u.png)   
+Una vez pasada esta primera parte tendremos el primer test pasado pero ahora vamos a desplegarlo en Heroku.  
+![Ejercicio7-1](http://i1028.photobucket.com/albums/y349/Salva_Rueda/7_zpstu10sq8u.png)  
+Añadimos un DEPLOY le proporcionamos la credenciales de Heroku y el nombre de la aplicación que vamos a desplegar en Heroku.    
+![Ejercicio7-2](http://i1028.photobucket.com/albums/y349/Salva_Rueda/7_2_zpsxxqy5hlv.png)  
+Ya nuestra aplicación debera pasar los test para poder desplegarse  
+![Ejercicio7-3](http://i1028.photobucket.com/albums/y349/Salva_Rueda/7_3_zpscjpd0mzc.png)  
+Ahora para que se ejecute automaticamente nos vamos a heroku accedemos al Deploy lo conectamos con GitHub y activamos la opción Wait for CI to pass before deploy.  
+Asi ya cada vez que hagamos un push en GitHub si pasa los test se actualizara en Heroku.  
+![Ejercicio7-4](http://i1028.photobucket.com/albums/y349/Salva_Rueda/7_4_zpsoo6veo9a.png)  
+
+##Ejercicio 8
+## Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido.
+
+Con todo lo realizado en los pasos interoriores tendriamos preparada la aplicación.
+Pues visitar el enlace al repositorio [repositorio](https://github.com/srmf9/aplicacion-libros) o a la aplicación en Heroku [aqui](http://aplicacion-libro.herokuapp.com/)
+ 
