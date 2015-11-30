@@ -1,5 +1,7 @@
-Lista de objetivos de Lorenzo Manuel Rosas Rodríguez
-============================
+
+
+# Objetivos  Lorenzo Manuel Rosas Rodríguez.
+
 ## Sesion 1 (Clase practica del 29 de septiembre de 2015)
 
 
@@ -37,7 +39,7 @@ Lista de objetivos de Lorenzo Manuel Rosas Rodríguez
 - [X] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 - [X] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
-##Semana del 7 de octubre al 14 de octubre (3ª semana)
+##Sesión 3 (Semana del 7 de octubre al 14 de octubre)
 ###Objetivos de la semana
 - [X] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
 
@@ -60,14 +62,101 @@ Lista de objetivos de Lorenzo Manuel Rosas Rodríguez
 
 - [X] Comprender el papel de las build tools o herramientas de automatización.
 
-##Objetivos de la 4ª semana
+##Sesión 4 (Semana del 14 de octubre al 21 de octubre)
 
-- [X] Terminar la configuración de los sistemas de integración continua
-- [X] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
+###Objetivos de la semana
+
+- [x] Terminar la configuración de los sistemas de integración continua
+
+- [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
 ###Otros objetivos
 
-- [X] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
-- [ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
-- [X] Comprender los mecanismos de despliegue automático.
-- [ ] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
+- [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
+
+- [x] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+
+- [x] Comprender los mecanismos de despliegue automático.
+
+- [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales. 
+
+##Tema 2
+
+###Cubre los siguientes objetivos de la asignatura
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+
+###Objetivos específicos
+
+- [x] Entender el concepto de DevOps.
+
+- [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+
+- [x] Aprender a usar integración continua en cualquier aplicación
+
+
+##Sesión 5 (Comienza el 28 de octubre)
+
+###Objetivos
+
+- [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+
+- [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+
+- [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+
+- [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+
+###Otros objetivos
+
+- [x] Darse de alta y probar diferentes servicios PaaS.
+
+- [x] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+
+- [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+
+- [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
+
+- [x] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
+
+##Sexta semana (Comienza el 4 de Noviembre)
+
+###Objetivos de la semana
+
+- [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+    
+- [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+
+###Otros objetivos
+
+- [x] Trabajar con los toolbelts de los diferentes PaaS.
+
+- [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+
+- [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+
+- [ ] Experimentar con el despliegue simultáneo a varios PaaS.
+
+
+
+##Tema 3
+
+###Cubre los siguientes objetivos de la asignatura
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+###Objetivos específicos
+
+- [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+
+- [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+
+- [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
