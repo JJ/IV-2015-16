@@ -16,7 +16,7 @@
 - [x] Comprender los niveles de virtualización y sus denominaciones genéricas.
 - [x] Comprender el concepto de software as a service y comprender los criterios necesarios para su elección.
 
-### Objetivos del tema 1
+##Objetivos del tema 1
 
 - [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 - [x] Comprender la diferencia entre infraestructura virtual y real.
@@ -57,7 +57,7 @@
 
 
 
-### Objetivos del tema 2
+##Objetivos del tema 2
 
 - [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 - [x] Entender el concepto de DevOps.
@@ -97,7 +97,7 @@
 - [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
 - [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases... 5 Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
 
-###Objetivos del tema 3
+##Objetivos del tema 3
 - [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 - [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
 - [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS 
@@ -115,11 +115,36 @@
 - [ ] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
 - [x] Experimentar con el despliegue simultáneo a varios PaaS.
 
+##Objetivos del tema 4
+- [ ] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [ ] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+- [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+- [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+- [ ] Documentar y mantener una plataforma virtual.
+- [ ] Optimizar aplicaciones sobre plataformas virtuales.
+- [ ] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+- [ ] Realizar tareas de administración en infraestructura virtual.
+
+###Otros objetivos
+- [ ] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+- [ ] Crear infraestructuras virtuales completas.
+- [ ] Comprender los pasos necesarios para la configuración automática de las mismas.
+
+##Séptima semana, comienza el 11 de Noviembre
+- [ ] Entender la base del aislamiento de recursos en el sistema operativo.
+
+###Otros objetivos
+- [ ] Instalar docker y trabajar con él
 
 
+##Octaba semana, comienza el 18 de Noviembre
+- [ ] Entender la base del aislamiento de recursos en el sistema operativo.
+- [ ] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
 
-
-
+###Otros objetivos
+- [ ] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+- [ ] Instalar docker y trabajar con él.
+- [ ] Usar imágenes de docker publicadas.
 
 
 
