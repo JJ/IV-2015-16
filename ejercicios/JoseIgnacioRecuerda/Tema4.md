@@ -40,13 +40,15 @@ Como podemos ver, en nuestra máquina, nos ha creado una nueva interfaz llamada 
 ##Ejercicio 3
 ###1.- Crear y ejecutar un contenedor basado en Debian.
 
+Este contenedor lo he instalado en el ejercicio anterior usando el comando: `sudo lxc-start -n una-caja` y se me instalo sin problema.
+
 ###2.- Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora. Nota En general, crear un contenedor basado en tu distribución y otro basado en otra que no sea la tuya. Fedora, al parecer, tiene problemas si estás en Ubuntu 13.04 o superior, así que en tal caso usa cualquier otra distro. Por ejemplo, Óscar Zafra ha logrado instalar Gentoo usando un script descargado desde su sitio, como indica en este comentario en el issue.
 
 
+He optado por instalar cirros. 
+He instalado el contenedor de cirros con el comando:`sudo lxc-create -t cirros -n cirrosBox`
 
-##Ejercicio 4
-###
+![instalación cirros](https://www.dropbox.com/s/y1h4suww7cyrtn6/ejr3.1.png?dl=1)
 
-![]()
 
-[]()
+
