@@ -51,4 +51,35 @@ He instalado el contenedor de cirros con el comando:`sudo lxc-create -t cirros -
 ![instalación cirros](https://www.dropbox.com/s/y1h4suww7cyrtn6/ejr3.1.png?dl=1)
 
 
+##Ejercicio 4
+###Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
+
+Sigo los pasos del [tutorial](http://lxc-webpanel.github.io) que se nos facilita para instalar lxc-webpanel.
+En primer lugar me identifico como root, ya que sino no me lo instalaba correctamente, y una vez hecho esto ejecuto el comando: `wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash`
+
+![instalo lxc-webpanel](https://www.dropbox.com/s/r36y1kadpegn5lj/ejr4.1.png?dl=1)
+
+Como podemos ver en la pantalla nos indica que esta se está ejecutando en la `http://your-ip-address:5000/` con lo que nos vamos a nuestro navegador e introducimos la dirección `http://localhost:5000/` en la que podemos ver lo siguiente:
+
+![http://localhost:5000/](https://www.dropbox.com/s/swpkgzh9xgmmm1g/ejr4.2.png?dl=1)
+
+Introducimos username: `admin` y password: `admin` tal y como se nos indica en el [tutorial](http://lxc-webpanel.github.io)
+
+Y ya podemos ver y gestionar los contenedores que tenemos instalados
+
+![contenedores instalados](https://www.dropbox.com/s/vw256vqc3zgocjq/ejr4.3.png?dl=1)
+
+
+
+###Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
+
+Para gestionar desde lxc-webpanel un contenedor, basta con seleccionarlo y configurarlo a nuestro gusto. Yo he configurado el contenedor de ubuntu creado en el ejercicio 2. Le he limitado la memoria a 1386 MB, memoria + Swap a 2048 MB y el número de CPU´s entre 0 y 1.
+
+![configuración contenedor linux](https://www.dropbox.com/s/mr3nmyc7kudj54h/ejr4.4.png?dl=1)
+
+
+
+
+
+
 
