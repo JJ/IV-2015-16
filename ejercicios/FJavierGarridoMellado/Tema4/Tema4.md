@@ -153,8 +153,87 @@ Para crear la jaula ( jail ) al igual que antes tambien he usado una máquina vi
 
 La conclusión es que los resultados son mejores en la jaula ( aunque en este caso el resultado es muy parecido por usar una página estatica de poco peso ) y esto es asi porque el contenedor lo hace a través de un puente ( bridge ).
 
+### Ejercicio 6: Instalar docker.
+
+Para la instalación de Docker he ejecutado el siguiente comando:
+```
+sudo apt-get install docker.io
+```
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installdocker_zps9uiv6qgz.png)
+
+Según la literatura puede instalarse tambien ejecutando:
+```
+curl -sSL https://get.docker.com/ | sudo sh
+```
+
+Para comprobar la versión instalada basta con ejecutar:
+```
+docker -v
+```
+
+![versiondocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/versiondocker_zpsdpshhwex.png)
+
+Puede comprobarse el estado del servicio y arrancarse mediante:
+```
+sudo service docker status
+sudo service docker start
+```
+
+Para comprobar que efectivamente se ha instalado correctamente se ejecuta:
+```
+sudo docker run hello-world
+```
+
+![comprobaciondocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobaciondocker_zpshejdvypn.png)
 
 
+Es importante borrar el archivo **docker.pid** cada vez que se vaya a ejecurar docker.
+```
+sudo rm /var/run/docker.pid
+```
 
+### Ejercicio 7: Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
 
+Para instalar la imagen alternativa de Ubuntu he seguido los siguientes pasos:
 
+- He arrancado el servicio mediante:
+
+```
+sudo docker -d &
+```
+- He creado la imagen con el siguiente comando:
+
+```
+sudo docker pull ubuntu
+```
+
+![creacionubuntu](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installubuntu_zpsfieaf0rd.png)
+
+- He comprobado los tapers instalado con la orden:
+
+```
+sudo docker ps -a
+```
+![contenedoresdisponibles](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresdisponibles_zpsi48ads6h.png)
+
+- Para comprobar los tapers ejecutandose basta con:
+```
+sudo docker ps
+```
+
+![contenedoresejecutando](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion_zpsx0z76kw0.png)
+
+- Para arrancar el contenedor:
+```
+sudo docker run -i -t ubuntu /bin/bash
+```
+
+![ejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando_zpsb3xagvxw.png)
+
+Para **CentOS** se procede de la misma manera:
+
+![instalacioncentos](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installcentos_zpstvvoxben.png)
+
+![contenedoresejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion2_zpsucv13gjc.png)
+
+![centosejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando2_zpsu20jmtje.png)
