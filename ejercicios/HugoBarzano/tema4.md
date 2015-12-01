@@ -313,14 +313,6 @@ Comprobamos que funciona
 
 ![usuario_docker](https://www.dropbox.com/s/fmspjdkn69bt277/usuario_docker.png?dl=1)
 
-
-
-
-
-
-
-
-
 	
 
 ##Ejercicio 9: Crear a partir del contenedor anterior una imagen persistente con commit.
@@ -331,11 +323,15 @@ Pasos para realizar una imagen persistente:
 
 	sudo docker ps -a
 
+![ej9](https://www.dropbox.com/s/9fjbk2ij1twlen2/ej9.png?dl=1)
+
 **Paso 2:**Comprobar que la ID es correcta
 
-	sudo docker inspect ***
+	sudo docker inspect ID
 
-**Paso 3:** Localizar la ID completa de la imagen, buscnado en el fichero json resultado de la instrución anterior el campo ID
+![ej9_2](https://www.dropbox.com/s/ad1bvp3p8sq4dhk/ej9_2.png?dl=1)
+
+**Paso 3:** Localizar la ID completa de la imagen, buscnado en el fichero json resultado de la instrución anterior el campo ID. Puesto que estoy en una maquina virtual y la ID es demasiado larga para escribirla, voy a utilizar la ID reducida. 
 
 **Paso 4:** Realizar el commit
 
@@ -343,7 +339,9 @@ Pasos para realizar una imagen persistente:
 
 **Paso 5:** Comprobar commit
 
-	sudo docker ps -a 
+	sudo docker images
+
+![ej9_3](https://www.dropbox.com/s/3tzezu1qmqrdyno/ej9_3.png?dl=1)
 
 ##Ejercicio 10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección. 
 
