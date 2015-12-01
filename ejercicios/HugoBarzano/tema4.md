@@ -282,12 +282,68 @@ o
 
 ##Ejercicio 8: Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
 
-Lo primero que es arrancar el contenedor con interprete interactivo
+He tenido problemas utilizando docker en mi maquina anfitrión. Principalmente el arranque de mi máquina ahora tarda un montón además
+los contenedores no pueden realizar update de los repositorios correctamente. Debido a todo esto, voy a reinstalar docker en una maquina virtual y en lugar de utilizar **sudo apt-get install docker-engine** voy a utilizar **sudo apt-get install docker.io**
 
-	sudo docker run -i -t ubuntu /bin/bash
+Retomando el ejercicio, lo primero que es arrancar el contenedor con interprete interactivo:
+
+	sudo docker run -i -t ubuntu
+
+Creaar un usuario y asignarle una contraseña
+
+	useradd -d /home/usuario_docker -m usuario_docker
+	passwd usuario_docker
+
+Añadir usuario_docker al grupo de usuarios con permiso de superusuario
+
+	adduser usuario_docker sudo
+
+Iniciar sesión con el nuevo usuario
+
+	login user 
+
+Instalamos Nginx y lo iniciamos
+
+	sudo apt-get install nginx
+	sudo service nginx start
+
+Comprobamos que funciona
+
+	curl http://127.0.0.1 
+
+![usuario_docker](https://www.dropbox.com/s/fmspjdkn69bt277/usuario_docker.png?dl=1)
+
+
+
+
+
+
+
+
+
 	
 
 ##Ejercicio 9: Crear a partir del contenedor anterior una imagen persistente con commit.
+
+Pasos para realizar una imagen persistente:
+
+**Paso 1:** Localizar la ID de la maquina que deseamos commitear
+
+	sudo docker ps -a
+
+**Paso 2:**Comprobar que la ID es correcta
+
+	sudo docker inspect ***
+
+**Paso 3:** Localizar la ID completa de la imagen, buscnado en el fichero json resultado de la instrución anterior el campo ID
+
+**Paso 4:** Realizar el commit
+
+	sudo docker commit ID nombre_comit
+
+**Paso 5:** Comprobar commit
+
+	sudo docker ps -a 
 
 ##Ejercicio 10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección. 
 
