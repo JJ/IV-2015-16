@@ -228,7 +228,7 @@ sudo docker ps
 sudo docker run -i -t ubuntu /bin/bash
 ```
 
-![ejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion_zpshxi47pqw.png)
+![ejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando_zpsb3xagvxw.png)
 
 Para **CentOS** se procede de la misma manera:
 
