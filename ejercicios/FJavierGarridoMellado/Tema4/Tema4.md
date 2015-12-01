@@ -192,7 +192,9 @@ Es importante borrar el archivo **docker.pid** cada vez que se vaya a ejecurar d
 sudo rm /var/run/docker.pid
 ```
 
-### Ejercicio 7: Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+### Ejercicio 7: 
+
+### 1.Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
 
 Para instalar la imagen alternativa de Ubuntu he seguido los siguientes pasos:
 
@@ -220,7 +222,10 @@ sudo docker ps -a
 ```
 sudo docker ps
 ```
-
+ó
+```
+sudo docker images
+```
 ![contenedoresejecutando](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion_zpsx0z76kw0.png)
 
 - Para arrancar el contenedor:
@@ -237,3 +242,17 @@ Para **CentOS** se procede de la misma manera:
 ![contenedoresejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion2_zpsucv13gjc.png)
 
 ![centosejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando2_zpsu20jmtje.png)
+
+### 2.Buscar e instalar una imagen que incluya MongoDB.
+
+Se procede de igual manera que en el apartado anterior, lo instalo y compruebo que se ha hecho correctamente.
+
+- Instalación:
+
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installmongo_zpshrhp2rzr.png)
+
+- Imagenes disponibles (mirar imagen siguiente).
+
+- Ejecución imagen mongo.
+
+![ejecmongo](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/imagesmongo_zpsvjtpyq1g.png)
