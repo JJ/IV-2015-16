@@ -187,3 +187,53 @@ sudo docker run hello-world
 ![comprobaciondocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobaciondocker_zpshejdvypn.png)
 
 
+Es importante borrar el archivo **docker.pid** cada vez que se vaya a ejecurar docker.
+```
+sudo rm /var/run/docker.pid
+```
+
+### Ejercicio 7: Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+
+Para instalar la imagen alternativa de Ubuntu he seguido los siguientes pasos:
+
+- He arrancado el servicio mediante:
+
+```
+sudo docker -d &
+```
+- He creado la imagen con el siguiente comando:
+
+```
+sudo docker pull ubuntu
+```
+
+![creacionubuntu](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installubuntu_zpsfieaf0rd.png)
+
+- He comprobado los tapers instalado con la orden:
+
+```
+sudo docker ps -a
+```
+![contenedoresdisponibles](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresdisponibles_zpsi48ads6h.png)
+
+- Para comprobar los tapers ejecutandose basta con:
+```
+sudo docker ps
+```
+
+![contenedoresejecutando](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion_zpsx0z76kw0.png)
+
+- Para arrancar el contenedor:
+```
+sudo docker run -i -t ubuntu /bin/bash
+```
+
+![ejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion_zpshxi47pqw.png)
+
+Para **CentOS** se procede de la misma manera:
+
+![instalacioncentos](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installcentos_zpstvvoxben.png)
+
+![contenedoresejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion2_zpsucv13gjc.png)
+
+![centosejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando2_zpsu20jmtje.png)
