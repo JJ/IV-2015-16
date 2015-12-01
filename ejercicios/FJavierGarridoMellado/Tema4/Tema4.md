@@ -192,7 +192,9 @@ Es importante borrar el archivo **docker.pid** cada vez que se vaya a ejecurar d
 sudo rm /var/run/docker.pid
 ```
 
-### Ejercicio 7: Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+### Ejercicio 7: 
+
+### 1.Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
 
 Para instalar la imagen alternativa de Ubuntu he seguido los siguientes pasos:
 
@@ -220,7 +222,10 @@ sudo docker ps -a
 ```
 sudo docker ps
 ```
-
+ó
+```
+sudo docker images
+```
 ![contenedoresejecutando](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion_zpsx0z76kw0.png)
 
 - Para arrancar el contenedor:
@@ -237,3 +242,72 @@ Para **CentOS** se procede de la misma manera:
 ![contenedoresejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion2_zpsucv13gjc.png)
 
 ![centosejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando2_zpsu20jmtje.png)
+
+Si se quiere para un docker la manera de obtener el **id** es ejecutando:
+```
+sudo docker ps -a=false
+```
+Y para pararlo se ejecuta:
+```
+sudo docker stop id
+```
+
+Por ejemplo:
+
+![stopdocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/dockerstop_zpsgkyrbmev.png)
+
+### 2.Buscar e instalar una imagen que incluya MongoDB.
+
+Se procede de igual manera que en el apartado anterior, lo instalo y compruebo que se ha hecho correctamente.
+
+- Instalación:
+
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installmongo_zpshrhp2rzr.png)
+
+- Imagenes disponibles (mirar imagen siguiente).
+
+- Ejecución imagen mongo.
+
+![ejecmongo](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/imagesmongo_zpsvjtpyq1g.png)
+
+### Ejercicio 8 : Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+
+Los pasos son los siguientes:
+- Arrancar el contenedor Ubuntu mediante el comando:
+```
+sudo docker run -i -t ubuntu
+```
+- Una vez dentro se crea un usuario, por ejemplo:
+```
+useradd -d /home/us_docker -m us_docker
+```
+- Se introduce una pass para el usuario:
+```
+passwd us_docker
+```
+- Se añade el usuario con privilegios:
+```
+sudo adduser us_docker sudo
+```
+- Me logueo con dicho usuario y procedo a instalar nginx:
+```
+login us_docker
+```
+- Instalo nginx
+```
+sudo apt-get install nginx
+```
+- Instalo curl:
+```
+sudo apt-get install curl
+```
+- Procedo a verificar que funciona mediante:
+```
+curl 127.0.0.1
+```
+
+A continuación dos imágenes que ilustran lo realizado:
+
+![creacuser](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/creacionusuario_zpsity6kwlw.png)
+
+![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curl_zpszvbxmpye.png)
