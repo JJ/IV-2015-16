@@ -32,3 +32,6 @@ Aquí podemos ver el contenedor creado correctamente, además como podemos ver h
 Además he restrigido los recursos de procesador y memoria que utilizará el contenedor, como se puede ver debajo:
 
 ![Restricción de recursos](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/restriccion_zps0vqiowda.png)
+
+#Ejercicio 6
+En este ejercicio nos pide instalar Docker. Yo ya lo he instalado para la realización de mi proyecto, se pueden ver los pasos en el (readme del proyecto)[https://github.com/santidediego/Landscapes]
