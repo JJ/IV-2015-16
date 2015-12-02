@@ -78,7 +78,7 @@ Instalamos el paquete **lxc-docker**, y verificamos que se ha instalado:
 
 ###Ejercicio7:
 
-####1.Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+####7.1 Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
 
 Para instalar cualquier imagen podemos hacerlo de dos formas diferentes: con **docker pull imagen** descargamos la imagen y para instalarla, **docker run -i -t imagen**. Y si queremos que docker la descargue sola y la instale, entonces solo: **docker run -i -t imagen**.  
 
@@ -86,7 +86,7 @@ Para instalar cualquier imagen podemos hacerlo de dos formas diferentes: con **d
 
 ![Ejercicio7.1b](https://www.dropbox.com/s/q1s9wekoovi88lw/Ejercicio7.1b.png?dl=1)
 
-####2.Buscar e instalar una imagen que incluya MongoDB.
+####7.2 Buscar e instalar una imagen que incluya MongoDB.
 
 Para ello utilizamos la siguiente orden: docker pull hairmare/mongodb
  
