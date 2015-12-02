@@ -188,3 +188,33 @@ Guardamos el estado actual del contenedor haciendo un commit: `sudo docker commi
 Y comprobamos que se ha creado la nueva imagen: `sudo docker images`
 
 ![Commit realizado en Docker](https://www.dropbox.com/s/adcl8nnfq3nb1ei/commitDocker.PNG?dl=1)
+
+### Ejercicio 10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección.
+
+Primero creamos el fichero *Dockerfile* con el siguiente contenido:
+
+```
+FROM ubuntu:14.04
+MAINTAINER Ruben Martin Hidalgo <rubenmartin1991@gmail.com>
+
+RUN sudo apt-get update
+RUN sudo apt-get install -y git
+RUN sudo apt-get install -y build-essential
+RUN sudo git clone https://github.com/romilgildo/IV-PLUCO-RMH.git
+RUN cd IV-PLUCO-RMH && git pull
+RUN cd IV-PLUCO-RMH && make install
+```
+
+Y ejecutamos la orden `sudo docker build -t pluco-db .` dentro del proyecto, que creará la imagen a partir del Dockerfile. Este es el resultado:
+
+![Resultado orden docker build](https://www.dropbox.com/s/7dx40tk80n2hv3t/imagenDockercrada.PNG?dl=1)
+
+Ya tenemos nuestra imagen creada, como podemos ver en la siguiente captura:
+
+![Imagen Docker creada](https://www.dropbox.com/s/1uddh8jg6kzu9a4/imagenDockercrada2.PNG?dl=1)
+
+Ya se puede probar la ejecución del contenedor con `sudo docker run -t -i pluco-db /bin/bash` y dentro, podremos ejecutar nuestra app como si estuviera localmente: `make run`
+
+Aquí una muestra del funcionamiento de nuestra app dentro del contenedor, donde accedemos introduciendo la IP del contenedor Docker en el navegador del sistema anfitrión:
+
+![Pluco funcionando en Docker](https://www.dropbox.com/s/ibfqh4rl7f0ggfo/plucoenDocker.PNG?dl=1)
