@@ -41,3 +41,6 @@ Con `docker pull ubuntu` descargamos la imagen oficial de ubuntu para docker y s
 
 #Ejercicio 8
 Primero de todo entramos a nuestro contenedor con `docker run -t -i ubuntu /bin/bash`. Una vez dentro  ejecutamos `adduser santiago` para añadir un usuario nuevo. Una vez hecho esto, tenemos que instalar nginx y eso lo hacemos con `sudo apt-get install nginx` aunque antes he tenido que hacer `sudo apt-get update` para asegurarme de que tengo el sistema actualizado.
+
+#Ejercicio 9
+Ahora voy a crear una imagen persistente de la imagen anterior para que no me desinstale el nginx cuando salga de docker. En el tutorial de la asignatura pone que hay que usar la imagen que aparece con `docker images --notrunc` pero a mi este método no me ha funcionado ya que al hacer commit no me encontraba el id. Buscando he encontrado [esta respuesta](http://stackoverflow.com/questions/30541703/docker-commit-fails-with-no-such-id) en Stackoverflow que es la  solución al problema. Básicamente consiste en fijarse en el número que aparece en la terminal que hemos abierto dentro del docker y copiar el número que aparece al lado del usuario root, en mi caso 6593b3357afd. Ahora ya solamente he hecho `docker commit 6593b3357afd ubuntu_nginx` para crear una versión de la imagen anterior en la que he instalado nginx
