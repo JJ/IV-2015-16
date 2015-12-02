@@ -38,3 +38,6 @@ En este ejercicio nos pide instalar Docker. Yo ya lo he instalado para la realiz
 
 #Ejercicio 7
 Con `docker pull ubuntu` descargamos la imagen oficial de ubuntu para docker y si queremos la imagen de cent OS ejecutamos `docker pull centos` y nos descarga la imagen oficial también. Para conseguir una imagen con mongoDB, podemos encontrar una también en las imágenes oficiales de DockerHub, sin más que ejecutar `docker pull mongo`
+
+#Ejercicio 8
+Primero de todo entramos a nuestro contenedor con `docker run -t -i ubuntu /bin/bash`. Una vez dentro  ejecutamos `adduser santiago` para añadir un usuario nuevo. Una vez hecho esto, tenemos que instalar nginx y eso lo hacemos con `sudo apt-get install nginx` aunque antes he tenido que hacer `sudo apt-get update` para asegurarme de que tengo el sistema actualizado.
