@@ -9,7 +9,7 @@ Después comprobamos que todo esta correcto:
 
 ###Ejercicio2: Comprobar qué interfaces puente se han creado y explicarlos.
 
-Creamos un contenidor llamado caja:
+Creamos un contenedor llamado caja:
 
 ![Ejercicio2a](https://www.dropbox.com/s/5uyz25m6az0h7l4/Ejercicio2a.png?dl=1)
 
@@ -17,13 +17,13 @@ Arrancamos el contenedor con la siguiente orden **lxc-start -n caja** y nos cone
 
 ![Ejercicio2b](https://www.dropbox.com/s/wjan8bm5jc2iiq3/Ejercicio2b.png?dl=1)
 
-Si hacemos un **ifconfig** en local podemos ver como se ha creado una nueva interfaz de red, para que el contendor pueda tener acceso a internet.
+Si hacemos un **ifconfig** en local podemos ver como se ha creado una nueva interfaz de red, para que el contenedor pueda tener acceso a internet.
 
 ![Ejercicio2c](https://www.dropbox.com/s/wpe1dm484sshwhb/Ejercicio2c.png?dl=1)
 
 ###Ejercicio3: 
 
-####1. Crear y ejecutar un contenedor basado en Debian.
+####3.1 Crear y ejecutar un contenedor basado en Debian.
 
 Creamos el contenedor **LXC** con la siguiente orden:
 
@@ -31,7 +31,7 @@ lxc-create -t debian -n caja-debian
 
 ![Ejercicio3.1a](https://www.dropbox.com/s/5det6lxdh26iuzh/Ejercicio3.1a.png?dl=1)
 
-####2. Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora. Nota En general, crear un contenedor basado en tu distribución y otro basado en otra que no sea la tuya. Fedora, al parecer, tiene problemas si estás en Ubuntu 13.04 o superior, así que en tal caso usa cualquier otra distro. Por ejemplo, Óscar Zafra ha logrado instalar Gentoo usando un script descargado desde su sitio, como indica en este comentario en el issue.
+####3.2 Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora. Nota En general, crear un contenedor basado en tu distribución y otro basado en otra que no sea la tuya. Fedora, al parecer, tiene problemas si estás en Ubuntu 13.04 o superior, así que en tal caso usa cualquier otra distro. Por ejemplo, Óscar Zafra ha logrado instalar Gentoo usando un script descargado desde su sitio, como indica en este comentario en el issue.
 
 Como mi distribución es Ubuntu 14.04 LTS, creo un contenedor basacon en **CentOS**:
 
@@ -43,28 +43,21 @@ CentOS utiliza yum para instalar paquetes por tanto lo instalamos con la orden: 
 
 
 ###Ejercicio4:
-####1. Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
+####4.1 Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
 
 Para instalar lxc-webpanel, lo hacemos con la siguiente orden: wget http://lxc-webpanel.github.io/tools/install.sh -O - | sudo bash
 
 ![Ejercicio4.1](https://www.dropbox.com/s/krzwemdzok3vizx/Ejercicio4.1.png?dl=1)
 
-####2. Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
+####4.2 Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
 
-En el navegador ponemos http://localhost:5000/ y nos sale el **LXC Web Panel**. Nos logueamos con el usurio y contraseña "admin". Y ya podemos ver
-los contenedores que hemos creado:
+En el navegador ponemos http://localhost:5000/ y nos sale el **LXC Web Panel**. Hacemos login con el usuario y contraseña "admin". Y ya podemos ver los contenedores que hemos creado:
 
 ![Ejercicio4.2a](https://www.dropbox.com/s/rzir55r5rgylgt4/Ejercicio4.2a.png?dl=1)
 
 Ahora seleccionamos el contenedor al que queremos restringir los recursos, y lo configuramos a nuestro gusto:
 
 ![Ejercicio4.2b](https://www.dropbox.com/s/vylgfgo3y88n80x/Ejercicio4.2b.png?dl=1)
-
-
-###Ejercicio5: Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
-
-
-
 
 ###Ejercicio6: Instalar docker.
 
@@ -99,7 +92,7 @@ Para ello utilizamos la siguiente orden: docker pull hairmare/mongodb
  
 ![Ejercicio7.2](https://www.dropbox.com/s/jrresrkh5nnsxa3/Ejercicio7.2.png?dl=1)
 
-Y finalmente podemos ver las imagenes que tenemos:
+Y finalmente podemos ver las imágenes que tenemos:
 
 ![Ejercicio7.3](https://www.dropbox.com/s/b6wj7dyo0gxinub/Ejercicio7.3.png?dl=1)
 
@@ -112,7 +105,7 @@ Creación del usuario:
     
 ![Ejercicio8a](https://www.dropbox.com/s/qxmoblw8eptizm7/Ejercicio8a.png?dl=1)
 
-Nos logeamos con el usuario creado, e instalmos nginx:
+Hacemos login con el usuario creado, e instalamos nginx:
 
 ![Ejercicio8b](https://www.dropbox.com/s/2rm8obndnib2tpa/Ejercicio8b.png?dl=1)
 
@@ -125,7 +118,7 @@ Con la orden **docker ps** obtenemos el ID del contenedor que acabos de iniciar:
 
 ![Ejercicio9.1](https://www.dropbox.com/s/qzoyygottwxm38j/Ejercicio9.1.png?dl=1)
 
-Ahora guardamos el estado actual del contendor con un **commit**, con la ID del contenedor obtenida. Y vemos que efectivamente se ha creado la imagen:
+Ahora guardamos el estado actual del contenedor con un **commit**, con la ID del contenedor obtenida. Y vemos que efectivamente se ha creado la imagen:
 
 ![Ejercicio9.2](https://www.dropbox.com/s/gaflm4rypc9zwja/Ejercicio9.2.png?dl=1)
 
