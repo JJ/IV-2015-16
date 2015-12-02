@@ -35,3 +35,6 @@ Además he restrigido los recursos de procesador y memoria que utilizará el con
 
 #Ejercicio 6
 En este ejercicio nos pide instalar Docker. Yo ya lo he instalado para la realización de mi proyecto, se pueden ver los pasos en el [readme del proyecto](https://github.com/santidediego/Landscapes)
+
+#Ejercicio 7
+Con `docker pull ubuntu` descargamos la imagen oficial de ubuntu para docker y si queremos la imagen de cent OS ejecutamos `docker pull centos` y nos descarga la imagen oficial también. Para conseguir una imagen con mongoDB, podemos encontrar una también en las imágenes oficiales de DockerHub, sin más que ejecutar `docker pull mongo`
