@@ -214,12 +214,7 @@ Me logeo con el comando: `login usuario`
 
 Ahora instalo nginx en la imagen con el comando: `sudo apt-get install nginx` y compruebo que esta ejecutandose con el comando: `sudo apt-get install status`
 
-![hago el ususario sudo](https://www.dropbox.com/s/ueqllyze2tvds5e/ejr8.3.png?dl=1)
-
-
-
-
-
+![instalo xginx y compruebo que esta ejecuntandose](https://www.dropbox.com/s/ueqllyze2tvds5e/ejr8.3.png?dl=1)
 
 
 
