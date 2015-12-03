@@ -107,15 +107,15 @@ He usado los siguientes comandos:
 * `sudo apt-get update`
 * `sudo apt-get install nginx`
 
-`wget http://nginx.org/keys/nginx_signing.key`
+Descargo la clave con el comando: `wget http://nginx.org/keys/nginx_signing.key`
 
 ![descargo el archivo](https://www.dropbox.com/s/7squbzrqw4898c0/ejr5.3.png?dl=1)
 
-`apt-key add nginx_signing.key` 
+Añado la clave descargada anteriormente con el comando: `apt-key add nginx_signing.key` 
 
 ![añado el archivo descargado](https://www.dropbox.com/s/kyxem7ugsxvljlj/ejr5.4.png?dl=1)
 
-Ejecuto el comando`nginx` y me da un error en el que dice que el puerto 80 ya esta en uso
+Ejecuto el comando`service nginx start` y me da un error en el que dice que el puerto 80 ya esta en uso
 
 ![puerto ya en uso](https://www.dropbox.com/s/m14o9mi831stz2b/ejr5.5.png?dl=1)
 
@@ -123,19 +123,19 @@ Para arreglarlo lo que hago es modificar el archivo de configuración (con el co
 
 ![nginx use puerto 8081](https://www.dropbox.com/s/lcgq0n8etwyzpfs/ejr5.7.png?dl=1)
 
-`service nginx start`
+Lanzo nginx: `service nginx start`
 
-`service nginx status`
+Compruebo que está ejecutandose: `service nginx status`
 
 ![compruebo que nginx esta arrancado](https://www.dropbox.com/s/3rlyvcomukw42ew/ejr5.6.png?dl=1)
 
-`sudo apt-get install curl`
+Instalo el software curl necesario para ver páginas web desde línea de comando: `sudo apt-get install curl`
 
 Desde otra terminal, fuera de la jaula ejecuto el comando `curl http://localhost:8081/` y obtengo el código de la web de que nginx esta bien instalado. Lo muestro en la siguiente captura de pantalla
 
 ![curl http://localhost:8081/](https://www.dropbox.com/s/clbw7fjuojxwfkx/ejr5.8.png?dl=1)
 
-Para verlo desde la propia jaula uso el comando`curl 127.0.0.1:8081`
+Para verlo desde la propia jaula uso el comando: `curl 127.0.0.1:8081`
 
 ![curl http://localhost:8081/](https://www.dropbox.com/s/dhxlql8oax50sjo/ejr5.9.png?dl=1)
 
