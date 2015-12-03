@@ -183,7 +183,7 @@ Y para instalar CentOS con docker he ejecutado el siguiente comando:
 
 ###2.-Buscar e instalar una imagen que incluya MongoDB.
 
-Y para instalar CentOS con docker he ejecutado el siguiente comando:
+Y para instalar una imagen que incluya Mongo con docker he ejecutado el siguiente comando:
 
 * `sudo docker pull library/mongo`
 
@@ -192,6 +192,31 @@ Y para instalar CentOS con docker he ejecutado el siguiente comando:
 Finalmente muestro todas las imágenes que tengo creadas con docker usando el comando: `sudo docker images`
 
 ![imagenes instaladas con docker](https://www.dropbox.com/s/if1hwmadd332szg/ejr7.4.png?dl=1)
+
+
+##Ejercicio 8
+###Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+
+Para realizar este ejercicio voy a usar la imagen de ubuntu creada con docker en el ejercicio anterior. Para ello en primer lugar voy a arrancar dicha imagen con el comando: `sudo docker run -i -t ubuntu`
+
+Ahora creo un usuario con los siguientes comandos: 
+
+* `useradd -d /home/usuario -m usuario`
+* `passwd usuario` he introduzco la contraseña que quiero
+
+![creo usuario](https://www.dropbox.com/s/mf8ll736x8obclw/ejr8.1.png?dl=1)
+
+Y lo hago usuario sudo con el comando: `adduser usuario sudo`
+
+![hago el ususario sudo](https://www.dropbox.com/s/wd2pc5a2i4izqq6/ejr8.2.png?dl=1)
+
+Me logeo con el comando: `login usuario`
+
+Ahora instalo nginx en la imagen con el comando: `sudo apt-get install nginx` y compruebo que esta ejecutandose con el comando: `sudo apt-get install status`
+
+![hago el ususario sudo](https://www.dropbox.com/s/ueqllyze2tvds5e/ejr8.3.png?dl=1)
+
+
 
 
 
