@@ -218,4 +218,24 @@ Ahora instalo nginx en la imagen con el comando: `sudo apt-get install nginx` y 
 
 
 
+##Ejercicio 9
+###Crear a partir del contenedor anterior una imagen persistente con commit.
+
+En primer lugar ejecuto el comando `sudo docker ps -a=false` para así poder conocer el ID del contenedor y así poder hacer el commit. Podemos ver el ID en la siguiente captura
+
+![id](https://www.dropbox.com/s/x0bpekg1aolapci/ejr9.1.png?dl=1)
+
+Ahora hago el commit con el comando: `sudo docker commit 166b09c69bf4 primer_commit`
+
+![hago el commit](https://www.dropbox.com/s/bj3qgjfarnyvxjy/ejr9.2.png?dl=1)
+
+Por último compruebo que se ha añadido correctamente a las que ya habia existentes con el comando: `sudo docker images`
+
+![compruebo que se ha añadido](https://www.dropbox.com/s/l4z9jd4m6q4alo4/ejr9.3.png?dl=1)
+
+
+
+
+
+
 
