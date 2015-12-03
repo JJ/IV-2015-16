@@ -78,6 +78,80 @@ Para gestionar desde lxc-webpanel un contenedor, basta con seleccionarlo y confi
 ![configuración contenedor linux](https://www.dropbox.com/s/mr3nmyc7kudj54h/ejr4.4.png?dl=1)
 
 
+##Ejercicio 5
+###Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
+
+Para hacer este ejercicio voy a usar el contenedor ubuntu creado para el ejercicio 2. 
+
+En primer lugar instalo  debootstrap con el comando: `sudo apt-get install debootstrap`
+
+Seguidamente creo la jaula con el comando: `sudo debootstrap --arch=amd64 lucid /home/jaulas/lucid/ http://archive.ubuntu.com/ubuntu`
+
+Una vez creada la jaula vamos a configurarla con los siguientes comandos:
+
+* `sudo chroot /home/jaulas/lucid/` con lo que cambia de usuario como podemos ver en la captura
+
+![cambio de usuario](5.1)
+
+* Montamos el fichero proc con el comando: `mount -t proc proc /proc` 
+
+* Instalamos este paquete para añadir el idioma español con el comando: `apt-get install language-pack-es` 
+
+![instalamos el paquete de lenguaje en español](5.2)
+
+Me he ayudado de esta [web](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/) para añadir el repositorio donde se encuentra nginx, ya que sin esto no he podido instalarlo.
+He usado los siguientes comandos:
+
+* `echo "deb http://nginx.org/packages/ubuntu/ raring nginx" >> /etc/apt/sources.list`
+* `echo "deb-src http://nginx.org/packages/ubuntu/ raring nginx" >> /etc/apt/sources.list`
+* `sudo apt-get update`
+* `sudo apt-get install nginx`
+
+`wget http://nginx.org/keys/nginx_signing.key`
+
+![descargo el archivo](5.3)
+
+`apt-key add nginx_signing.key` 
+
+![añado el archivo descargado](5.4)
+
+Ejecuto el comando`nginx` y me da un error en el que dice que el puerto 80 ya esta en uso
+
+![puerto ya en uso](5.5)
+
+Para arreglarlo lo que hago es modificar el archivo de configuración (con el comando `nano /etc/nginx/conf.d/default.conf`) de nginx para que use otro puerto que no sea el puerto 80. Al configurarlo he puesto que use el puerto 8081, como se puede ver en la captura de pantalla
+
+![nginx use puerto 8081](5.7)
+
+`service nginx start`
+
+`service nginx status`
+
+![compruebo que nginx esta arrancado](5.6)
+
+`sudo apt-get install curl`
+
+Desde otra terminal, fuera de la jaula ejecuto el comando `curl http://localhost:8081/` y obtengo el código de la web de que nginx esta bien instalado. Lo muestro en la siguiente captura de pantalla
+
+![curl http://localhost:8081/](5.8)
+
+Para verlo desde la propia jaula uso el comando`curl 127.0.0.1:8081`
+
+![curl http://localhost:8081/](5.9)
+
+Ya esta todo preparado para poder comprobar el rendimiento que tienen ambos. Para comprobar el rendimiento voy a usar Apache Benchmark ya que lo he usado alguna vez en otras asignaturas. Este se instala con el comando `sudo apt-get install apache2-utils`
+
+Para las **pruebas en la jaula** ejecuto el comando:`ab -n 1000 -c 5 http://127.0.0.1:8081/` y los resultados que obtengo son los siguientes:
+
+![curl http://localhost:8081/](5.10)
+
+Para las **pruebas en el contenedor** ejecuto el comando:`ab -n 1000 -c 5 http://localhost:8081/` y los resultados que obtengo son los siguientes:
+
+![curl http://localhost:8081/](5.11)
+
+
+
+
 
 
 
