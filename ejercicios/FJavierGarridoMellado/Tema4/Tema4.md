@@ -285,7 +285,7 @@ useradd -d /home/us_docker -m us_docker
 ```
 passwd us_docker
 ```
-- Se añade el usuario con privilegios:
+- Se añade privilegios para el usuario:
 ```
 sudo adduser us_docker sudo
 ```
@@ -311,3 +311,40 @@ A continuación dos imágenes que ilustran lo realizado:
 ![creacuser](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/creacionusuario_zpsity6kwlw.png)
 
 ![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curl_zpszvbxmpye.png)
+
+### Ejercicio 9: Crear a partir del contenedor anterior una imagen persistente con commit.
+
+Los pasos para crear una imagen persistente con commit han sido los siguientes:
+- Arrancar el contenedor mediante la orden (he usado el id corto ya que el largo da error, tambien sirve usar run como se hizo en el ejercicio anterior, la ID corta se obtiene ejecutando **sudo docker ps -a**):
+```
+sudo docker start 40bf706e7e44
+```
+- Localizar la ID del contenedor:
+```
+sudo docker ps -a=false
+```
+![obtenerid](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/obtenerid_zps07umlagg.png)
+
+- Comprobar las ID largas para verificar que se esta trabajando con la imagen correcta(este paso puede obviarse):
+```
+sudo docker inspect 40bf706e7e44
+```
+
+![comprobarid](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobarid_zpsxhb78m7c.png)
+
+```
+sudo docker images -notrunc
+```
+
+![comprobarid2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobarid2_zpst1nnbf0h.png)
+
+- Realizar el commit:
+```
+sudo docker commit  40bf706e7e44 img_persistente
+```
+
+- Comprobar que se ha realizado el commit:
+```
+sudo docker images -notrunc
+```
+![commit](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/commitimagen_zpshw00evem.png)
