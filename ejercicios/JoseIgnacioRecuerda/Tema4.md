@@ -164,5 +164,38 @@ y lo ejecuro para probar su correcto funcionamiento con el comando `sudo docker 
 
 
 
+##Ejercicio 7
+###1.-Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+
+Para instalar a partir de docker una imagen de ubuntu he ejecutado los siguientes comandos:
+
+* `sudo docker -d &`
+* `sudo docker pull ubuntu`
+
+![instalando ubuntu con docker](https://www.dropbox.com/s/xa7fnqbhpgpf29t/ejr7.1.png?dl=1)
+
+Y para instalar CentOS con docker he ejecutado el siguiente comando:
+
+* `sudo docker pull centos`
+
+![instalando centOS con docker](https://www.dropbox.com/s/tkk4fetk9n6n6yx/ejr7.2.png?dl=1)
+
+
+###2.-Buscar e instalar una imagen que incluya MongoDB.
+
+Y para instalar CentOS con docker he ejecutado el siguiente comando:
+
+* `sudo docker pull library/mongo`
+
+![instalando imagen con mongo](https://www.dropbox.com/s/2m98ffquqp4p5ol/ejr7.3.png?dl=1)
+
+Finalmente muestro todas las imágenes que tengo creadas con docker usando el comando: `sudo docker images`
+
+![imagenes instaladas con docker](https://www.dropbox.com/s/if1hwmadd332szg/ejr7.4.png?dl=1)
+
+
+
+
+
 
 
