@@ -124,6 +124,18 @@ Ahora guardamos el estado actual del contenedor con un **commit**, con la ID del
 
 ###Ejercicio10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección. 
 
+Para crear una imagen debemos hacer lo siguiente:
 
+* Para trabajar con Docker hace falta tenerlo instalado, en el siguiente enlace es de una guía para la instalación en Ubuntu 14.04: [enlace](http://docker-ee.blogspot.com.es/2014/08/instalar-docker-en-ubuntu-1404.html) .
+
+* Para la creación de la imagen que contenga las herramientas necesarias para el despliegue hace falta crear una **receta** llamada **Dockerfile**. Que es nada más y nada menos que un fichero donde le decimos que queremos que instale en la imagen. Aquí esta mi Dockerfile que he utilizado: [Dockerfile](https://github.com/alvaro-gr/proyecto-IV/blob/master/Dockerfile) .
+
+* Por último la orden que necesitamos para compilar la imagen: **docker build -t alvaropl/apppoll -f Dockerfile ./** .
+
+Creando la imagen:
+
+![docker1](https://www.dropbox.com/s/96eldj2vvidnj0u/docker1.png?dl=1)
+
+![imagenapp](https://www.dropbox.com/s/bntryzyxawnm0c5/imagenapp.png?dl=1)
 
 
