@@ -151,6 +151,16 @@ Para las **pruebas en el contenedor** ejecuto el comando:`ab -n 1000 -c 5 http:/
 
 
 
+##Ejercicio 6
+###Instalar docker.
+
+He podido instalar docker únicamente haciendo uso del comando `sudo apt-get install docker.io`
+
+![instalando docker](https://www.dropbox.com/s/v2hul68qyxgm7np/ejr6.1.png?dl=1)
+
+y lo ejecuro para probar su correcto funcionamiento con el comando `sudo docker -d`
+
+![ejecutando docker](https://www.dropbox.com/s/15fq330s0pzm4d2/ejr6.2.png?dl=1)
 
 
 
