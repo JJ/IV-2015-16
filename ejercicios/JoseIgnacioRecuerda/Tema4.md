@@ -91,13 +91,13 @@ Una vez creada la jaula vamos a configurarla con los siguientes comandos:
 
 * `sudo chroot /home/jaulas/lucid/` con lo que cambia de usuario como podemos ver en la captura
 
-![cambio de usuario](5.1)
+![cambio de usuario](https://www.dropbox.com/s/czgvb9ehtwbzdzd/ejr5.1.png?dl=1)
 
 * Montamos el fichero proc con el comando: `mount -t proc proc /proc` 
 
 * Instalamos este paquete para añadir el idioma español con el comando: `apt-get install language-pack-es` 
 
-![instalamos el paquete de lenguaje en español](5.2)
+![instalamos el paquete de lenguaje en español](https://www.dropbox.com/s/6lqq9et4ed6efkl/ejr5.2.png?dl=1)
 
 Me he ayudado de esta [web](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/) para añadir el repositorio donde se encuentra nginx, ya que sin esto no he podido instalarlo.
 He usado los siguientes comandos:
@@ -109,46 +109,45 @@ He usado los siguientes comandos:
 
 `wget http://nginx.org/keys/nginx_signing.key`
 
-![descargo el archivo](5.3)
+![descargo el archivo](https://www.dropbox.com/s/7squbzrqw4898c0/ejr5.3.png?dl=1)
 
 `apt-key add nginx_signing.key` 
 
-![añado el archivo descargado](5.4)
+![añado el archivo descargado](https://www.dropbox.com/s/kyxem7ugsxvljlj/ejr5.4.png?dl=1)
 
 Ejecuto el comando`nginx` y me da un error en el que dice que el puerto 80 ya esta en uso
 
-![puerto ya en uso](5.5)
+![puerto ya en uso](https://www.dropbox.com/s/m14o9mi831stz2b/ejr5.5.png?dl=1)
 
 Para arreglarlo lo que hago es modificar el archivo de configuración (con el comando `nano /etc/nginx/conf.d/default.conf`) de nginx para que use otro puerto que no sea el puerto 80. Al configurarlo he puesto que use el puerto 8081, como se puede ver en la captura de pantalla
 
-![nginx use puerto 8081](5.7)
+![nginx use puerto 8081](https://www.dropbox.com/s/lcgq0n8etwyzpfs/ejr5.7.png?dl=1)
 
 `service nginx start`
 
 `service nginx status`
 
-![compruebo que nginx esta arrancado](5.6)
+![compruebo que nginx esta arrancado](https://www.dropbox.com/s/3rlyvcomukw42ew/ejr5.6.png?dl=1)
 
 `sudo apt-get install curl`
 
 Desde otra terminal, fuera de la jaula ejecuto el comando `curl http://localhost:8081/` y obtengo el código de la web de que nginx esta bien instalado. Lo muestro en la siguiente captura de pantalla
 
-![curl http://localhost:8081/](5.8)
+![curl http://localhost:8081/](https://www.dropbox.com/s/clbw7fjuojxwfkx/ejr5.8.png?dl=1)
 
 Para verlo desde la propia jaula uso el comando`curl 127.0.0.1:8081`
 
-![curl http://localhost:8081/](5.9)
+![curl http://localhost:8081/](https://www.dropbox.com/s/dhxlql8oax50sjo/ejr5.9.png?dl=1)
 
 Ya esta todo preparado para poder comprobar el rendimiento que tienen ambos. Para comprobar el rendimiento voy a usar Apache Benchmark ya que lo he usado alguna vez en otras asignaturas. Este se instala con el comando `sudo apt-get install apache2-utils`
 
 Para las **pruebas en la jaula** ejecuto el comando:`ab -n 1000 -c 5 http://127.0.0.1:8081/` y los resultados que obtengo son los siguientes:
 
-![curl http://localhost:8081/](5.10)
+![curl http://localhost:8081/](https://www.dropbox.com/s/qvmyapjzp5xucfz/ejr5.10.png?dl=1)
 
 Para las **pruebas en el contenedor** ejecuto el comando:`ab -n 1000 -c 5 http://localhost:8081/` y los resultados que obtengo son los siguientes:
 
-![curl http://localhost:8081/](5.11)
-
+![curl http://localhost:8081/](https://www.dropbox.com/s/nizqr31urqvzxfx/ejr5.11.png?dl=1)
 
 
 
