@@ -6,7 +6,7 @@ Ubuntu 14.04 ofrece LXC 1.0.3, que es la última versión. Podemos instalarlo me
 
 	sudo apt-get install lxc
 
-Podemos crear un contenedor con privilegios de manera interactiva, esta forma solicitará el tipo de contenedor y el sistema de archivos raíz para descargar - en particular, la distribución, la liberación y la arquitectura mediante la instrución:
+Podemos crear un contenedor con privilegios de manera interactiva, esta forma solicitará el tipo de contenedor y el sistema de archivos raíz para descargar - en particular, la distribución, la liberación y la arquitectura mediante la instrucción:
 
 	sudo lxc-create --template download --name nombre1
 
@@ -24,13 +24,13 @@ Considero que las siguientes ordenes, pueden ser de utilidad:
 
 	 lxc-stop	-> Detener contenedor
 
-	 lxc-attach	-> Acceder contendor
+	 lxc-attach	-> Acceder contenedor
 
 	 lxc-console	-> Acceder contenedor
 	
 	 lxc-destroy	-> Eliminar contenedor
 
-Mediante **lxc-checkconfig** podemos comprobar que efectivamete LXC esta correctamente instalado y listo para funcionar:
+Mediante **lxc-checkconfig** podemos comprobar que efectivamente LXC esta correctamente instalado y listo para funcionar:
 
 ![lxc_check](https://www.dropbox.com/s/fk2231a093s0vs8/checkconfig.png?dl=1)
 
@@ -51,7 +51,7 @@ Para detener la máquina:
 
 	sudo lxc-stop -n caja1
 
-El contenedor tiene acceso a internet a travez del anfitrión. Podemos consultar los puentes creados en el archivo **/var/lib/lxc/caja1/config**
+El contenedor tiene acceso a internet a través del anfitrión. Podemos consultar los puentes creados en el archivo **/var/lib/lxc/caja1/config**
 ![caja1_config](https://www.dropbox.com/s/yozwhfin50r2twh/caja1_config.png?dl=1)
 
 Podemos observar que se han creado los puentes lxcbr0 y veth, una red ethernet virtual linkada a lxcbr0.
@@ -75,7 +75,7 @@ Las interfaces puente creadas, son similares a las de nube1
 
 ###3.1:Crear y ejecutar un contenedor basado en Debian.
 
-Para crear un contenedor basado en Debian podmeos utilizar:
+Para crear un contenedor basado en Debian podemos utilizar:
 
 	 sudo lxc-create -t debian -n caja_debian
 
@@ -93,7 +93,7 @@ Para crear el contenedor:
 
 	sudo lxc-create -t centos -n caja_centos
 
-Despues de crearlo, debemos ejecutar la siguiente instrucion para establecer la contraseña:
+Después de crearlo, debemos ejecutar la siguiente instrucción para establecer la contraseña:
 
 	sudo chroot /var/lib/lxc/caja_centos/rootfs passwd
 
@@ -109,26 +109,26 @@ Tras esto ya podemos iniciar el contenedor
 
 ###4.1: Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
 
-Para realizar la intalacion, es necesario estar en modo super usuario (sudo su) y ejecutar lo siguiente:
+Para realizar la instalación, es necesario estar en modo súper usuario (sudo su) y ejecutar lo siguiente:
 
 wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash
 
 Una vez que este instalado, podemos acceder al web panel desde el navegador http://localhost:5000/ con user: admin y pass:admin
-En la siguiente captura, podemos observar las maquinas creadas en los ejercicios anteriores. Dichas maquinas estan corriendo, pausadas o detenidas. 
+En la siguiente captura, podemos observar las maquinas creadas en los ejercicios anteriores. Dichas maquinas están corriendo, pausadas o detenidas. 
 
 ![web_panel](https://www.dropbox.com/s/3x1b9o5qo00v247/webP.png?dl=1)
 
-Tambien podemos acceder a la configuracion de las interfaces puente
+También podemos acceder a la configuración de las interfaces puente
 
 ![web_net](https://www.dropbox.com/s/ekxrkcpb1rnmnj4/webNet.png?dl=1)
 
 ###4.2: Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
 
-Si queremos visualizar y configurar con mas detalle una maquina concreta, basta con pinchar en ella y nos aparecerá un menu de configuración:
+Si queremos visualizar y configurar con mas detalle una maquina concreta, basta con pinchar en ella y nos aparecerá un menú de configuración:
 
 ![web_centos](https://www.dropbox.com/s/eufv1kzm448r3fl/webCentos.png?dl=1)
 
-Al final de este menu, podemos restringir los recursos disponibles para este contenedor
+Al final de este menú, podemos restringir los recursos disponibles para este contenedor
 
 ![restricion](https://www.dropbox.com/s/sk5i0az4v30kld9/restricion.png?dl=1)
 
@@ -150,8 +150,8 @@ instalación de las siguientes herramientas, he seguido los pasos que Israel hiz
 	sudo service nginx start //Iniciar el servidor de aplicación
 	sudo apt-get install apache2-utils //Para poder utilizar Apache Benchmark
 
-**Nota:** Si a la hora de iniciar el servico nginx tenemos problemas, debido a que algun proceso esta utilizando el puerto 80
-y no podemos arrancar el servicio, una solucion es ejecutar:
+**Nota:** Si a la hora de iniciar el servicio nginx tenemos problemas, debido a que algún proceso esta utilizando el puerto 80
+ y no podemos arrancar el servicio, una solución es ejecutar:
 
 	sudo fuser -k 80/tcp
 
@@ -183,13 +183,13 @@ Ahora vamos a lanzar AB
 
 
 En vista de los resultados, podemos apreciar que la Jaula ha tardado 0.851 segundos frente a los 1.052 segundos que ha tardado el contenedor. De las 10000 peticiones realizadas en la prueba, la jaula ha fallado 896 mientras que en el contenedor han fallado todas.
-Podemos apreciar tambien que la jaula es capaz de servir 11747.94 peticiones por segundo, mientras que el contenedor solo 9509.40. Por ultimo resaltar que el ratio de transferencia en la jaula es de 9212.04 Kbytes/segundo mientras que en el contenedor es de 7348.00 Kbytes/segundo.
+Podemos apreciar también que la jaula es capaz de servir 11747.94 peticiones por segundo, mientras que el contenedor solo 9509.40. Por ultimo resaltar que el ratio de transferencia en la jaula es de 9212.04 Kbytes/segundo mientras que en el contenedor es de 7348.00 Kbytes/segundo.
 
-Parece ser que la jaula tiene un mayor rendimiento que el contenedor, aun así estas prueba deberia realizarse con un volumen mayor de datos y en mayor número para obtener unos resultados mas fiables. 
+Parece ser que la jaula tiene un mayor rendimiento que el contenedor, aun así estas prueba debería realizarse con un volumen mayor de datos y en mayor número para obtener unos resultados mas fiables. 
 
 
 ##Ejercicio 6: Instalar docker.
-Para instalar docker correctamente, es necesario segir los siguientes pasos:
+Para instalar docker correctamente, es necesario seguir los siguientes pasos:
 
 **Paso 1:** Añadir una llave gpg
 
@@ -231,7 +231,7 @@ Instalar una imagen ubuntu:
 o
 	sudo docker run -i -t ubuntu /bin/bash //CRea la imagen y la ejecuta. Lanza un interprete interactivo
 
-Podemos consultar los todos los tapers instaldos mediante **sudo docker ps -a** y los que estan en ejecución con **sudo docker ps**
+Podemos consultar los todos los tapers instalados mediante **sudo docker ps -a** y los que están en ejecución con **sudo docker ps**
 
 ![ubuntu](https://www.dropbox.com/s/abo9yxwhcnfkh0b/docker_ubuntu.png?dl=1)
 
@@ -264,13 +264,13 @@ Otra forma de administrar nuestros dockers sin tener que arrastrar el ID es la s
 	sudo docker stop $JOB //Es necesario detener el contenedor
 	sudo docker rm $JOB
 
-Finalmente consultamos los contenedores en ejecucion:
+Finalmente consultamos los contenedores en ejecución:
 
 ![centos](https://www.dropbox.com/s/9mpxnhzqw2jgg16/docker_centos.png?dl=1)	
 
 ###7.2:Buscar e instalar una imagen que incluya MongoDB.
 
-Intalar una imagen que inclute MongoDB
+Instalar una imagen que incluye MongoDB
 
 	sudo docker run mongo //Crea la imagen y la lanza
 o
@@ -282,14 +282,13 @@ o
 
 ##Ejercicio 8: Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
 
-He tenido problemas utilizando docker en mi maquina anfitrión. Principalmente el arranque de mi máquina ahora tarda un montón además
-los contenedores no pueden realizar update de los repositorios correctamente. Debido a todo esto, voy a reinstalar docker en una maquina virtual y en lugar de utilizar **sudo apt-get install docker-engine** voy a utilizar **sudo apt-get install docker.io**
+He tenido problemas utilizando docker en mi maquina anfitrión. Principalmente el arranque de mi máquina ahora tarda un montón, además los contenedores no pueden realizar update de los repositorios correctamente. Debido a todo esto, voy a reinstalar docker en una maquina virtual y en lugar de utilizar **sudo apt-get install docker-engine** voy a utilizar **sudo apt-get install docker.io**
 
 Retomando el ejercicio, lo primero que es arrancar el contenedor con interprete interactivo:
 
 	sudo docker run -i -t ubuntu
 
-Creaar un usuario y asignarle una contraseña
+Crear un usuario y asignarle una contraseña
 
 	useradd -d /home/usuario_docker -m usuario_docker
 	passwd usuario_docker
@@ -345,10 +344,70 @@ Pasos para realizar una imagen persistente:
 
 ##Ejercicio 10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección. 
 
+Para crear nuestra propia imagen, es necesario crear un archivo Dockerfile como este:
+
+	FROM ubuntu:latest
+
+	#Autor
+	MAINTAINER Hugo Barzano Cruz <hugobarzano@gmail.com>
+
+	#Actualizar Sistema Base
+	RUN sudo apt-get -y update
+
+	#Descargar aplicacion
+	RUN sudo apt-get install -y git
+	RUN sudo git clone https://github.com/hugobarzano/osl-computer-management.git
+
+	# Instalar Python y PostgreSQL
+	RUN sudo apt-get install -y python-setuptools
+	RUN sudo apt-get -y install python-dev
+	RUN sudo apt-get -y install build-essential
+	RUN sudo apt-get -y install python-psycopg2
+	RUN sudo apt-get -y install libpq-dev
+	RUN sudo easy_install pip
+	RUN sudo pip install --upgrade pip
+
+	#Instalamos la aplicacion
+	RUN ls
+	RUN cd osl-computer-management/ && ls -l
+	RUN cd osl-computer-management/ && cat requirements.txt
+	RUN cd osl-computer-management/ && sudo pip install -r requirements.txt
+
+	#Realizamos migraciones
+	RUN cd osl-computer-management/ && python manage.py syncdb --noinput
 
 
+Una vez que este creado, le decimos a docker que genere una imagen
+
+	sudo docker build -f Dockerfile -t nombre_imagen . 
+
+Cuando se completen todos los steps, la imagen se habrá creado correctamente.
+Podemos comprobarlo con **sudo docker ps -a** o **sudo docker images**
+
+![dockerfile](https://www.dropbox.com/s/bi93eo31r8779n1/dockerfile.png?dl=1)
+
+Para comprobar que esta funcionando correctamente, debemos iniciar el contenedor con la imagen creada:
+
+	sudo docker run -t -i computermanagemet /bin/bash
+
+Entramos en el directorio de la aplicación y la ejecutamos
+
+	python manage.py runserver 0.0.0.0:1111 &
+
+![dockerfile_2](https://www.dropbox.com/s/8dhs351qjdhjofp/dockerfile_2.png?dl=1)
+
+Finalmente mediante el navegador del anfitrión y accediendo a la dirección del docker, podemos comprobar que esta funcionando correctamente. 
+
+![dockerfile_3](https://www.dropbox.com/s/duf5hfgtdv8ivsq/dockerfil_3.png?dl=1)
 
 
+###Cosas a tener en cuenta: 
 
- 
+Si deseamos iniciar la build desde el principio, es decir no utilizar la cache de un contenedor anterior, podemos utilizar
+
+	sudo docker build -f Dockerfile -t nombre_imagen --no-cache=true ./ 	
+
+Si al arrancar el docker, este no tiene conexión a internet, podemos resolverlo editando **/etc/NetworkManager/NetworkManager.conf** y comentando la línea **dns=dnsmask** y tras esto, reiniciar el servicio con:
+
+	sudo restart network-manager
 
