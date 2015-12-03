@@ -165,52 +165,52 @@ recurso.
 
 #Objetivos de la Sesión 7
 
-[ ] Entender la base del aislamiento de recursos en el sistema operativo.
+[X] Entender la base del aislamiento de recursos en el sistema operativo.
 
 ##Otros Objetivos de la Sesión 7
 
-[ ] Instalar docker y trabajar con él. 
+[X] Instalar docker y trabajar con él. 
 
 #Objetivos de la Sesion 8
 
-[ ] Entender la base del aislamiento de recursos en el sistema operativo.
+[X] Entender la base del aislamiento de recursos en el sistema operativo.
 
-[ ] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+[X] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
 
 ##Otros Objetivos de la Sesión 8
 
-[ ] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+[X] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
 
-[ ] Instalar docker y trabajar con él.
+[X] Instalar docker y trabajar con él.
 
-[ ] Usar imágenes de docker publicadas.
+[X] Usar imágenes de docker publicadas.
 
 
 #Objetivos tema 4
 
-[ ] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+[X] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
     
-[ ] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+[X] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
     
 [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales.
 
 [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
 
-[ ] Documentar y mantener una plataforma virtual.
+[X] Documentar y mantener una plataforma virtual.
    
-[ ] Optimizar aplicaciones sobre plataformas virtuales.
+[X] Optimizar aplicaciones sobre plataformas virtuales.
 
-[ ] Conocer diferentes tecnologías relacionadas con la virtualización e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+[X] Conocer diferentes tecnologías relacionadas con la virtualización e implementaciones tales como Google AppSpot, OpenShift o Heroku.
    
-[ ] Realizar tareas de administración en infraestructura virtual.
+[X] Realizar tareas de administración en infraestructura virtual.
 
 ##Objetivos Especificos del tema 4
 
-[ ] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+[X] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
 
 [ ] Crear infraestructuras virtuales completas.
 
-[ ] Comprender los pasos necesarios para la configuración automática de las mismas.
+[X] Comprender los pasos necesarios para la configuración automática de las mismas.
 
 
 
