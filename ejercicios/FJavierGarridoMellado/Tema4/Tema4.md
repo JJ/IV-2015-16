@@ -77,9 +77,237 @@ lxc-start -n lxc-centos01 -d
 - Si surge algún problema puede consultarse la siguiente [guia](http://www.bonusbits.com/wiki/HowTo:Setup_CentOS_LXC_Container_on_Ubuntu).
 
 
+###Ejercicio 4:
+###1.Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
+
+- Con el siguiente comando instalo *lxc-webpanel*:
+```
+wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash
+```
+- Pongo la dirección *http://localhost:5000* en el navegador y acto seguido introduzco el *user/password* que es *admin/admin*.En definitiva sigo la guia de la página [oficial](http://lxc-webpanel.github.io/install.html).
+
+![pagina](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/paglxc_zps8i6nrixu.png)
+
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalacionlxcpanel_zpstvts3jv7.png)
+
+![panel](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/lxcpanel_zps88itw4ab.png)
+
+![arrancados](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/lxcarranc_zpso5a0fn0d.png)
+
+###2.Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
+
+Marcando en alguna máquina de las que se dispone se accede al panel de configuración, y tal como se observa en las imágenes el ajuste de los parámetros es sumamente sencillo.
+
+![centosconf](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/confcentos_zpsvhctm4hb.png)
+
+![centosconf2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/confcentos_zpscxyrcaor.png)
+
+### Ejercicio 5: Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
+
+He procedido a crear en una máquina virtual un contenedor de *Ubuntu* llamado *my-container* y dentro del contenedor he instalado el servidor nginx. Para ello he seguido los siguientes pasos:
+
+- Crear el contenedor mediante la orden **sudo lxc-create -t ubuntu -n my-container** ( tarda un ratito ).
+- Arrancar el contenedor con el comando **sudo lxc-start -n my-container**.
+- Actualizar los repositorios mediante **sudo apt-get update**.
+- Instalar nginx con **sudo apt-get install nginx**. 
+- Arrancar el servicio nginx con el comando **sudo service nginx start**.
+- Instalar curl mediante **sudo apt-get install curl** ( no es necesario ).
+- Probar que efectivamente se dispone de una página estatica  con **curl localhost**.
+
+![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curlcontenedor_zpszgaa7doj.png)
+
+- Instalar los paquetes necesarios para poder lanzar ab mediante **sudo apt-get install apache2-utils**
+- Ejecutar **ifconfig -a** desde el contenedor.
+
+![ifconfig](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ifconfigcontenedor_zpsootj7ofm.png)
+
+- Lanzar un ab, en mi caso **ab -n 1000 -c 1000 http://10.0.3.35/** desde otro terminal.
+
+![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/abcontenedor_zps5boooz1r.png)
 
 
+Para crear la jaula ( jail ) al igual que antes tambien he usado una máquina virtual.He seguido los siguientes pasos para su creación y posterior evaluación con *ab*:
+
+- He creado la jaula mediante la orden **sudo debootstrap --arch=amd64 lucid /home/jaula/javi/ http://archive.ubuntu.com/ubuntu** ( tarda un ratito ).
+- He ingresado en la ruta **/home/jaula/javi/** y dentro de ella he ejecutado **sudo chroot /home/jaula/javi** ( el prompt cambia al de root )
+- He hecho un **ls** para ver que efectivamente la jaula se habia hecho correctamente.
+
+![jaula](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/jaula_zpsxikqzvcp.png)
+
+- He actualizado los repositorios mediante la orden **apt-get update**
+- He instalado *nginx* y *curl* con la orden **apt-get install nginx curl**
+- He arrancacado el servidor de *nginx* y he comprobado la página por defecto con **curl http://127.0.0.1**
+
+![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curljaula_zpsc1rnd6ar.png)
+
+- He montado el directorio **/proc** necesario para hacer **ifconfig -a**, para ello **mount -t proc proc /proc**
+- Ejecuto **ifconfig -a** como mencioné en el paso anterior.
+
+![](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ifconfigjail_zpskoc9afyy.png)
 
 
+- Tambien he instalado la paqueteria necesaria para *ab* con **apt-get install apache2-utils**
+- Al igual que en el contenedor he lanzado la orden **ab -n 1000 -c 1000 http://localhost/** desde un terminal diferente.
+
+![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/abjail_zpstfdqwkmj.png)
+
+La conclusión es que los resultados son mejores en la jaula ( aunque en este caso el resultado es muy parecido por usar una página estatica de poco peso ) y esto es asi porque el contenedor lo hace a través de un puente ( bridge ).
+
+### Ejercicio 6: Instalar docker.
+
+Para la instalación de Docker he ejecutado el siguiente comando:
+```
+sudo apt-get install docker.io
+```
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installdocker_zps9uiv6qgz.png)
+
+Según la literatura puede instalarse tambien ejecutando:
+```
+curl -sSL https://get.docker.com/ | sudo sh
+```
+
+Para comprobar la versión instalada basta con ejecutar:
+```
+docker -v
+```
+
+![versiondocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/versiondocker_zpsdpshhwex.png)
+
+Puede comprobarse el estado del servicio y arrancarse mediante:
+```
+sudo service docker status
+sudo service docker start
+```
+
+Para comprobar que efectivamente se ha instalado correctamente se ejecuta:
+```
+sudo docker run hello-world
+```
+
+![comprobaciondocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobaciondocker_zpshejdvypn.png)
 
 
+Es importante borrar el archivo **docker.pid** cada vez que se vaya a ejecurar docker.
+```
+sudo rm /var/run/docker.pid
+```
+
+### Ejercicio 7: 
+
+### 1.Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+
+Para instalar la imagen alternativa de Ubuntu he seguido los siguientes pasos:
+
+- He arrancado el servicio mediante:
+
+```
+sudo docker -d &
+```
+- He creado la imagen con el siguiente comando:
+
+```
+sudo docker pull ubuntu
+```
+
+![creacionubuntu](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installubuntu_zpsfieaf0rd.png)
+
+- He comprobado los tapers instalado con la orden:
+
+```
+sudo docker ps -a
+```
+![contenedoresdisponibles](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresdisponibles_zpsi48ads6h.png)
+
+- Para comprobar los tapers ejecutandose basta con:
+```
+sudo docker ps
+```
+ó
+```
+sudo docker images
+```
+![contenedoresejecutando](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion_zpsx0z76kw0.png)
+
+- Para arrancar el contenedor:
+```
+sudo docker run -i -t ubuntu /bin/bash
+```
+
+![ejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando_zpsb3xagvxw.png)
+
+Para **CentOS** se procede de la misma manera:
+
+![instalacioncentos](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installcentos_zpstvvoxben.png)
+
+![contenedoresejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion2_zpsucv13gjc.png)
+
+![centosejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando2_zpsu20jmtje.png)
+
+Si se quiere para un docker la manera de obtener el **id** es ejecutando:
+```
+sudo docker ps -a=false
+```
+Y para pararlo se ejecuta:
+```
+sudo docker stop id
+```
+
+Por ejemplo:
+
+![stopdocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/dockerstop_zpsgkyrbmev.png)
+
+### 2.Buscar e instalar una imagen que incluya MongoDB.
+
+Se procede de igual manera que en el apartado anterior, lo instalo y compruebo que se ha hecho correctamente.
+
+- Instalación:
+
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installmongo_zpshrhp2rzr.png)
+
+- Imagenes disponibles (mirar imagen siguiente).
+
+- Ejecución imagen mongo.
+
+![ejecmongo](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/imagesmongo_zpsvjtpyq1g.png)
+
+### Ejercicio 8 : Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+
+Los pasos son los siguientes:
+- Arrancar el contenedor Ubuntu mediante el comando:
+```
+sudo docker run -i -t ubuntu
+```
+- Una vez dentro se crea un usuario, por ejemplo:
+```
+useradd -d /home/us_docker -m us_docker
+```
+- Se introduce una pass para el usuario:
+```
+passwd us_docker
+```
+- Se añade el usuario con privilegios:
+```
+sudo adduser us_docker sudo
+```
+- Me logueo con dicho usuario y procedo a instalar nginx:
+```
+login us_docker
+```
+- Instalo nginx
+```
+sudo apt-get install nginx
+```
+- Instalo curl:
+```
+sudo apt-get install curl
+```
+- Procedo a verificar que funciona mediante:
+```
+curl 127.0.0.1
+```
+
+A continuación dos imágenes que ilustran lo realizado:
+
+![creacuser](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/creacionusuario_zpsity6kwlw.png)
+
+![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curl_zpszvbxmpye.png)

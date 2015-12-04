@@ -1,4 +1,4 @@
-#Octaba semana, comienza el 18 de Noviembre
+#Octava semana, comienza el 18 de Noviembre
 
 ##Objetivos de la semana
 
@@ -22,4 +22,4 @@ La entrega de la práctica será el *9 de diciembre*.
 
 ##Siguiente semana
 
-Novena semana. 
+[Novena semana](9-semana.md). 

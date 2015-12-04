@@ -73,8 +73,79 @@ Podemos visitar nuestro sitio pinchando aquí [aquí](http://php-magv.rhcloud.co
 ## Ejercicio 3
 ### Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
 
+He creado un app en Flask sencilla con dos rutas.
+Siguiendo esta web y este tutorial. [Flask](http://flask.pocoo.org/)
+
+appPrueba.py
+
+    # -*- coding: utf-8 -*-
+    import os
+
+    from flask import Flask
+    from flask import request
+
+    app = Flask(__name__)
+
+    #/hello
+    @app.route('/')
+    def hello():
+        return 'Bienvenido a la pagina inicial'
+
+    @app.route('/test2')
+    def test2():
+        return 'Realizando un segundo test'
+
+    if __name__ == '__main__':
+        app.debug = True
+        # Enlazar con el puerto si esta definido, si no por defecto 5000.
+        port = int(os.environ.get('PORT', 5000))
+        app.run(host = '0.0.0.0', port = port)  # 0.0.0.0 para permitir conexiones desde cualquier sitio. Ojo, peligroso en modo debug
+
 ## Ejercicio 4
 ### Crear pruebas para las diferentes rutas de la aplicación.
+
+He realizado los diferentes test a la app creada antes, siguiendo las indicaciones propias de las web de Flask para hacer test. [Test en Flask](http://flask.pocoo.org/docs/0.10/testing/)
+
+Mi test.py y los test que he realizado son los siguientes.
+
+    import os
+    import appPrueba
+    import unittest
+    import tempfile
+
+    class appPruebaTestCase(unittest.TestCase):
+
+        def setUp(self):
+            self.db_fd, appPrueba.app.config['DATABASE'] = tempfile.mkstemp()
+            appPrueba.app.config['TESTING'] = True
+            self.app = appPrueba.app.test_client()
+            #appPrueba.init_db()
+
+        def tearDown(self):
+            os.close(self.db_fd)
+            os.unlink(appPrueba.app.config['DATABASE'])
+
+        def test_raiz(self):
+            rv = self.app.get('/')
+            assert 'Bienvenido a la pagina inicial' in rv.data
+
+        def test_test2(self):
+        	rv = self.app.get('/test2')
+            assert 'Realizando un segundo test' in rv.data
+
+
+
+    if __name__ == '__main__':
+        unittest.main()
+
+El resultado de las pruebas es el siguiente.
+
+![Resultado Test](https://www.dropbox.com/s/fp7x3b3fhgykiqp/Figura%204.png?dl=1)
+Figura 4.1 Resultado Test
+
+
+
+
 
 # Ejercicio 5
 ### Instalar y echar a andar tu primera aplicación en Heroku.
