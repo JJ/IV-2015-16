@@ -73,3 +73,57 @@ Estableciendo la password del usuario root:
 
 Inicio de CentosContainer:
 ![Inicio CentosContainer](http://i1016.photobucket.com/albums/af281/raperaco/InicioCentosContainer_zpsfboz0crr.png)
+
+###Ejercicio 4
+**1.Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.**
+Para ello, seguimos las instrucciones de su [página oficial](https://lxc-webpanel.github.io/install.html).
+Ejecutamos como usuario **root** en un terminal:
+~~~
+wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash
+~~~
+
+A continuación, nos vamos en el navegador a la URL *http://127.0.0.1:5000/* e introducimos como usuario *admin* y password *admin*. 
+![LXCWebPanelGeneral]()
+
+Podemos arrancar por ejemplo el container de CentOS:
+![LXCWebPanelStartCentosContainerStart]()
+
+Podemos ver que recursos está usando el container y los ajustes que tiene:
+![RecursosyAjustesCentosContainer]()
+
+Por último, podemos parar el container.
+
+**2.Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.**
+He restringido la cantidad de memoria que podrá usar el *container* a 1024 MB.
+![usomemoriarestringidoCentosCContainer]()
+
+
+###Ejercicio 5
+**Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.**
+Primero voy a instalar nginx en el **container UbuContainer**.
+Tras arrancarlo con **sudo lxc-start -n UbuContainer** me dispongo a instalar nginx.
+~~~
+sudo apt-get update
+sudo apt-get install nginx
+~~~
+Finalizado el proceso, arrancamos el servicio nginx:
+~~~
+sudo service nginx start
+~~~
+Tras comprobar con **ifconfig** que la IP es 10.0.3.141, en el navegador, introducimos dicha dirección y comprobamos cómo el servidor está funcionando sirviendo la página de bienvenida de NGINX.
+![NginxContainer]()
+
+Ahora instalamos en nuestra máquina anfitrión el paquete apache2-utils para poder usar apache benchmark con el que evaluar las prestaciones.
+~~~
+sudo apt-get update
+sudo apt-get install apache2-utils
+~~~
+Ya podemos lanzar unos test de carga con apache benchmark:
+~~~
+ab -n 2500 -c 1000 http://10.0.3.141/
+~~~
+Con lo que obtenemos de salida:
+![abContainer]()
+
+Ahora voy a realizar lo mismo en una **jaula**.
+
