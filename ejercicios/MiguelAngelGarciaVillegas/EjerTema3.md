@@ -231,8 +231,10 @@ Podemos visitar la app, [aquí](https://morning-anchorage-5665.herokuapp.com/)
 
 # Ejercicio 6
 ### Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.
-
 ### Como en todos los ejemplos anteriores, se puede cambiar “node” y “heroku” por la herramienta que se haya elegido.
+
+He subido mi pequeña aplicación en flask, en Heroku y aquí dejo el enlace para poder verlo.
+https://fast-plateau-1122.herokuapp.com/
 
 # Ejercicio 7
 ### Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow
