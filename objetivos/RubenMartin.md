@@ -204,6 +204,10 @@
 
 - [x] Publicar imágenes de docker.
 
+- [x] Probar imágenes de docker publicadas.
+
+- [ ] Trabajar con varias imágenes de docker conectadas.
+
 ## Objetivos de la asignatura
 
 - [x] Conocer la historia de la Computación Virtual, sus orígenes y razones de su existencia.
