@@ -113,21 +113,21 @@ Una vez instalado accedemos al panel desde el navegador con la dirección http:/
 
 Nos aparece la página principal de *lxc-webpanel* desde la cual nos permite realizar operaciones sobre los contenedores creados anteriormente.
 
-![Página principal del lxc-webpanel](cap11)
+![Página principal del lxc-webpanel](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap11_zpsqqhbjpzq.png)
 
 Si se arranca un contenedor, por ejemplo *caja-debian*, desde el botón **Start**, nos aparecerá la siguiente notificación y el recuadro del contenedor cambiará de color y estado.
 
-![Página principal de lxc-webpanel después de iniciar un contenedor](cap12)
+![Página principal de lxc-webpanel después de iniciar un contenedor](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap12_zpsvj8xssf0.png)
 
 ####Ejercicio 4.2: Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
 
 Desde el menú lateral izquierdo accedemos a los recursos del contenedor en los que queramos modificar estos. Tan solo hay que seleccionar el contenedor desde ese menú.
 
-![Menú lxc-webpanel](cap13)
+![Menú lxc-webpanel](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap13_zpsmnj0qhph.png)
 
 Directamente nos aparecen las diferentes opciones del contenedor, en las que están también las referentes a los recursos del mismo.
 
-![Configuración de recursos del contenedor](cap14)
+![Configuración de recursos del contenedor](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap14_zpsujfchiti.png)
 
 
 ###Ejercicio 5: Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
@@ -141,7 +141,7 @@ Desde el contenedor instalo y arranco el servidor *nginx* siguiendo los siguient
 
 Para comprobar que funciona, desde el contenedor obtener la ip mediante `$ ifconfig`. En mi caso es la 10.0.3.198. Desde fuera del contenedor, desde el navegador comprobamos si funciona el servidor o no.
 
-![Página principal del servidor nginx en el contenedor ubuntu](cap15)
+![Página principal del servidor nginx en el contenedor ubuntu](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap15_zpsazlqrk0r.png)
 
 Para instalar el servidor dentro de una jaula primero hay que crear esta y prepararla. Para esto he usado *debootstrap*.
 
@@ -151,13 +151,128 @@ Creamos ahora la jaula con ubuntu, indicando la arquitectura, la versión de est
 
 `$ debootstrap --arch=amd64 lucid /home/jes/jaula-ubuntu/ http://archive.ubuntu.com/ubuntu`
 
-![Directorio donde se ha creado la jaula](cap16)
+![Directorio donde se ha creado la jaula](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap16_zpsdnjxubc3.png)
 
 Accedemos a la jaula para comprobar que funciona (cambiará el prompt).
 
-`$ sudo chroot /home/jes/jaula-ubuntu/`
+`$ chroot /home/jes/jaula-ubuntu/`
 
-![Dentro de la jaula creada con ubuntu](cap17)
+![Dentro de la jaula creada con ubuntu](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap17_zps9zkaxcn1.png)
 
 Pasamos ahora a instalar el servidor *nginx* en la jaula.
+
+`$ apt-get install nginx`
+
+> Si nos da un error indicando `nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)` hay que liberar el puerto 80 desde el sistema fuera de la jaula. Esto se puede hacer con e comando `fuser -k 80/tcp`.
+
+Y ahora iniciamos el servicio del servidor.
+
+`$ service nginx start`
+
+Ahora comprobamos que funciona correctamente desde el navegador insertando la dirección http://localhost/ .
+
+![Página web del servidor nginx en la jaula](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap18_zpsnx6bbkik.png)
+
+Ahora están los dos servidores listos para poder comparar sus prestaciones. Lo haremos sencillamente con la herramienta **apache benchmark** (ab). Para instalar la herramienta que he mencionado usamos:
+
+`$ apt-get install apache2-utils`
+
+Ejecutamos el comando con *ab*, seguido de los parámetros y la url. En este caso los parámetros que voy a usar son: **-n** para indicar el número de peticiones y **-c** para indicar el número de peticiones que se pueden aceptar al mismo tiempo.
+
+- Jaula con Ubuntu -> `$ ab -n 5000 -c 1000 http://localhost/`
+
+![Resultados del ab sobre la jaula](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap19_zpsdknoha02.png)
+
+- Contenedor con ubuntu -> `$ ab -n 5000 -c 1000 http://10.0.3.198/`
+
+![Resultados del ab sobre el contenedor](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap20_zpsyze6lbhc.png)
+
+Se puede apreciar que desde el contenedor dan mejores resultados que la jaula, por ejemplo en el apartado **Request per second** vemos que el contenedor puede atender más peticiones por segundo y en **Time per request** que tarda menos para cada petición.
+
+
+###Ejercicio 6: Instalar docker.
+
+Es sencillo instalar esta herramienta para la gestión de contenedores.
+
+`$ wget -qO- https://get.docker.com/ | sh`
+
+Después de instalarlo es necesario iniciar el demonio de *docker*.
+
+`$ service docker start`
+
+Comprobamos que se ha instalado correctamente con:
+
+`$ docker run hello-world`
+
+![Ejecutando docker por primera vez](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap21_zps15plvlbf.png)
+
+
+###Ejercicio 7
+####Ejercicio 7.1: Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+
+Si tenemos *docker* instalado y funcionando (con el demonio), podemos instalar imágenes mediante el comando **docker pull**.
+
+`$ docker pull ubuntu`
+
+`$ docker pull centos`
+
+![Instalación de las imágenes para docker de ubuntu y centos](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap22_zpsnjztczic.png)
+
+####Ejercicio 7.2: Buscar e instalar una imagen que incluya MongoDB.
+
+Podemos utilizar el buscador de [este enlace](https://hub.docker.com/) para buscar imágenes, en este caso la de mongo. Hay una imagen del repositorio oficial, encontrado en [este enlace](https://hub.docker.com/_/mongo/), y podemos instalar la imagen con el siguiente comando:
+
+`$ docker pull mongo`
+
+![Instalación de la imagen para docker de mongo](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap23_zpsppnjbror.png)
+
+
+###Ejercicio 8: Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+
+Para este ejercicio voy a utilizar el contenedor con la imagen de ubuntu creado en el ejercicio 7. Para acceder a él y poder realizar todos los comandos utilizo la siguiente orden:
+
+`$ docker run -i -t ubuntu /bin/bash`
+
+Esto nos cambiará el prompt. Una vez dentro procedemos a crear el usuario y a instalar nginx. Me he creado un usuario llamado *jes*, asignándole una contraseña y logueandome después.
+
+`$ useradd -m jes`
+`$ passwd jes`
+`$ login jes`
+
+![Creación de usuario y login desde la imagen docker](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap24_zpsbsmftx03.png)
+
+Nos pasamos al usuario *root* simplemente con la orden `$ exit` e instalamos el servidor nginx.
+
+`$ apt-get install nginx`
+
+Arrancamos el servicio del servidor.
+
+`$ service nginx start`
+
+Para probar que funciona correctamente, obtenemos la IP desde dentro del contenedor con `$ ifconfig`. En mi caso es 172.17.0.2. Ahora desde fuera del contenedor en el navegador introducimos esa dirección IP (http://172.17.0.2) y debería salir algo así:
+
+![Página del servidor nginx en el contendor docker](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap25_zpshqxq8dby.png)
+
+
+###Ejercicio 9: Crear a partir del contenedor anterior una imagen persistente con commit.
+
+Voy a utilizar el contenedor docker que contiene ubuntu, utilizado en los ejercicios anteriores.
+
+Para poder crear una imagen persistente de un contenedor tal como está, en un determinado momento, necesitamos la ID de ese contenedor. Estando en funcionamiento se puede mostrar su id con el comando:
+
+`$ docker ps -a=false`
+
+![Contenedores docker en funcionamiento](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap26_zpsddfrcrlz.png)
+
+En este caso, para el contenedor de ubuntu, tengo la ID `e3ebe8693295`. Simplemente ahora podemos crear una imagen persistente con el estado del contenedor con *commit* y dándole un nombre.
+
+`$ docker commit e3ebe8693295 ubuntu-actual`
+
+Comprobamos que se ha creado la imagen persistente.
+
+`$ docker images`
+
+![Listado de contenedores docker](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap27_zpsomrapnqv.png)
+
+
 
