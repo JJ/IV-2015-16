@@ -153,8 +153,161 @@ Para crear la jaula ( jail ) al igual que antes tambien he usado una máquina vi
 
 La conclusión es que los resultados son mejores en la jaula ( aunque en este caso el resultado es muy parecido por usar una página estatica de poco peso ) y esto es asi porque el contenedor lo hace a través de un puente ( bridge ).
 
+### Ejercicio 6: Instalar docker.
+
+Para la instalación de Docker he ejecutado el siguiente comando:
+```
+sudo apt-get install docker.io
+```
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installdocker_zps9uiv6qgz.png)
+
+Según la literatura puede instalarse tambien ejecutando:
+```
+curl -sSL https://get.docker.com/ | sudo sh
+```
+
+Para comprobar la versión instalada basta con ejecutar:
+```
+docker -v
+```
+
+![versiondocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/versiondocker_zpsdpshhwex.png)
+
+Puede comprobarse el estado del servicio y arrancarse mediante:
+```
+sudo service docker status
+sudo service docker start
+```
+
+Para comprobar que efectivamente se ha instalado correctamente se ejecuta:
+```
+sudo docker run hello-world
+```
+
+![comprobaciondocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobaciondocker_zpshejdvypn.png)
 
 
+Es importante borrar el archivo **docker.pid** cada vez que se vaya a ejecurar docker.
+```
+sudo rm /var/run/docker.pid
+```
 
+### Ejercicio 7: 
 
+### 1.Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
 
+Para instalar la imagen alternativa de Ubuntu he seguido los siguientes pasos:
+
+- He arrancado el servicio mediante:
+
+```
+sudo docker -d &
+```
+- He creado la imagen con el siguiente comando:
+
+```
+sudo docker pull ubuntu
+```
+
+![creacionubuntu](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installubuntu_zpsfieaf0rd.png)
+
+- He comprobado los tapers instalado con la orden:
+
+```
+sudo docker ps -a
+```
+![contenedoresdisponibles](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresdisponibles_zpsi48ads6h.png)
+
+- Para comprobar los tapers ejecutandose basta con:
+```
+sudo docker ps
+```
+ó
+```
+sudo docker images
+```
+![contenedoresejecutando](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion_zpsx0z76kw0.png)
+
+- Para arrancar el contenedor:
+```
+sudo docker run -i -t ubuntu /bin/bash
+```
+
+![ejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando_zpsb3xagvxw.png)
+
+Para **CentOS** se procede de la misma manera:
+
+![instalacioncentos](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installcentos_zpstvvoxben.png)
+
+![contenedoresejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion2_zpsucv13gjc.png)
+
+![centosejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando2_zpsu20jmtje.png)
+
+Si se quiere para un docker la manera de obtener el **id** es ejecutando:
+```
+sudo docker ps -a=false
+```
+Y para pararlo se ejecuta:
+```
+sudo docker stop id
+```
+
+Por ejemplo:
+
+![stopdocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/dockerstop_zpsgkyrbmev.png)
+
+### 2.Buscar e instalar una imagen que incluya MongoDB.
+
+Se procede de igual manera que en el apartado anterior, lo instalo y compruebo que se ha hecho correctamente.
+
+- Instalación:
+
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installmongo_zpshrhp2rzr.png)
+
+- Imagenes disponibles (mirar imagen siguiente).
+
+- Ejecución imagen mongo.
+
+![ejecmongo](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/imagesmongo_zpsvjtpyq1g.png)
+
+### Ejercicio 8 : Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+
+Los pasos son los siguientes:
+- Arrancar el contenedor Ubuntu mediante el comando:
+```
+sudo docker run -i -t ubuntu
+```
+- Una vez dentro se crea un usuario, por ejemplo:
+```
+useradd -d /home/us_docker -m us_docker
+```
+- Se introduce una pass para el usuario:
+```
+passwd us_docker
+```
+- Se añade el usuario con privilegios:
+```
+sudo adduser us_docker sudo
+```
+- Me logueo con dicho usuario y procedo a instalar nginx:
+```
+login us_docker
+```
+- Instalo nginx
+```
+sudo apt-get install nginx
+```
+- Instalo curl:
+```
+sudo apt-get install curl
+```
+- Procedo a verificar que funciona mediante:
+```
+curl 127.0.0.1
+```
+
+A continuación dos imágenes que ilustran lo realizado:
+
+![creacuser](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/creacionusuario_zpsity6kwlw.png)
+
+![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curl_zpszvbxmpye.png)
