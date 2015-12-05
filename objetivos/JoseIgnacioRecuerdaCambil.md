@@ -70,5 +70,13 @@ Optimizar aplicaciones sobre plataformas virtuales.
 - [X] Entender el uso de docker en el contexto de una aplicación.
 - [X] Analizar el resultado del último hito de las prácticas.
 
-###Otros objetivos
+###Otros objetivos novena semana
 - [X] Revisar los errores en la entrega de tercer hito.
+
+###Objetivos décima semana
+- [X] Usar docker en una aplicación real.
+
+###Otros objetivos décima semana
+- [X] Publicar imágenes de docker.
+- [X] Probar imágenes de docker publicadas.
+- [X] Trabajar con varias imágenes de docker conectadas.
