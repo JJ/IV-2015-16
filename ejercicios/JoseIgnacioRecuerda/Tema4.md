@@ -236,6 +236,3 @@ Por último compruebo que se ha añadido correctamente a las que ya habia existe
 
 
 
-
-
-
