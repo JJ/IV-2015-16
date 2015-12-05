@@ -125,5 +125,103 @@ ab -n 2500 -c 1000 http://10.0.3.141/
 Con lo que obtenemos de salida:
 ![abContainer]()
 
-Ahora voy a realizar lo mismo en una **jaula**.
+Ahora voy a realizar lo mismo en una **jaula** siguiendo el siguiente [tutorial](http://www.cyberciti.biz/faq/howto-run-nginx-in-a-chroot-jail/):
+
+1. Definimos un directorio a enjaular:
+~~~
+# D=/nginx
+# mkdir -p $D
+~~~
+
+2. Crear el entorno aislado:
+~~~
+# mkdir -p $D/etc
+# mkdir -p $D/dev
+# mkdir -p $D/var
+# mkdir -p $D/usr
+# mkdir -p $D/usr/local/nginx
+# mkdir -p $D/tmp
+# chmod 1777 $D/tmp
+# mkdir -p $D/var/tmp
+# chmod 1777 $D/var/tmp
+# mkdir -p $D/lib64
+~~~
+
+3. Crear los dispositivos requeridos en $D/dev
+Crear los siguientes tres dispositivos para que nginx pueda trabajar dentro de la jaula:
+~~~
+# ls -l /dev/{null,random,urandom}
+~~~
+lo que nos devuelve una salida del tipo: 
+*crw-rw-rw- 1 root root 1, 3 Apr  5 11:03 /dev/null
+crw-rw-rw- 1 root root 1, 8 Apr  5 11:03 /dev/random
+cr--r--r-- 1 root root 1, 9 Apr  5 11:03 /dev/urandom*
+Por tanto, ahora con *mknod* creamos dichos ficheros de caracteres:
+~~~
+# /bin/mknod -m 0666 $D/dev/null c 1 3
+# /bin/mknod -m 0666 $D/dev/random c 1 8
+# /bin/mknod -m 0444 $D/dev/urandom c 1 9
+~~~
+
+4. Copiar los ficheros Nginx
+Es necesario copiar /usr/local/nginx/ a $D/usr/local/nginx
+~~~
+# /bin/cp -farv /usr/local/nginx/* $D/usr/local/nginx
+~~~
+En caso de que los ficheros de configuración de nginx no se encuentren en /usr/local/nginx, pueden estar en /usr/local/etc/nginx o /etc/nginx. En caso de que sea así, crear el directorio correspondiente en el entorno enjaulado:
+* Si está en /etc/nginx:
+~~~
+# mkdir -p $D/etc/nginx
+# cp -farv /etc/nginx/* $D/etc/nginx
+~~~
+
+* Si está en /usr/local/etc/nginx:
+~~~
+# mkdir -p $D/usr/local/etc/nginx
+# cp -farv /usr/local/etc/nginx/* $D/usr/local/etc/nginx
+~~~
+
+5. Copiar las bibliotecas requeridas
+Nginx depende de las librerias lib64 y /usr/lib64. Para mostrarlas, ejecutamos el siguiente comando (en mi caso /usr/sbin/nginx/):
+~~~
+# ldd /usr/sbin/nginx
+~~~
+
+Copiar todos los ficheros que se han mostrado a $D. Para ello utilizar un [script](http://bash.cyberciti.biz/web-server/nginx-chroot-helper-bash-shell-script/) que se provee desde el mismo tutorial que automatiza todo el proceso:
+~~~
+# cd /tmp
+# wget http://bash.cyberciti.biz/dl/527.sh.zip
+# unzip 527.sh.zip
+# mv 527.sh /usr/bin/n2chroot
+# chmod +x /usr/bin/n2chroot
+# n2chroot /usr/sbin/nginx
+# /bin/cp -fv /lib64/* $D/lib64
+~~~
+
+6. Copiar /etc a la jaula
+~~~
+# cp -fv /etc/{group,prelink.cache,services,adjtime,shells,gshadow,shadow,hosts.deny,localtime,nsswitch.conf,nscd.conf,prelink.conf,protocols,hosts,passwd,ld.so.cache,ld.so.conf,resolv.conf,host.conf} $D/etc
+~~~
+Tambien ejecutar:
+~~~
+# cp -avr /etc/{ld.so.conf.d,prelink.conf.d} $D/etc
+~~~
+
+7. Arrancar Nginx enjaulado
+Matamos cualquier proceso de nginx:
+~~~
+# killall -9 nginx
+~~~
+Arrancamos nginx enjaulado:
+~~~
+# /usr/sbin/chroot /nginx /usr/sbin/nginx -t
+# /usr/sbin/chroot /nginx /usr/sbin/nginx
+~~~
+
+(*En este punto obtengo un error, no pudiendo seguir. El tutorial es de 2010 y más enfocado a RedHat por lo que puede que algo sea diferente; 
+Por tanto, falta acabar la jaula para poder comparar *)
+
+
+###Ejercicio 6
+**Instalar docker.**
 
