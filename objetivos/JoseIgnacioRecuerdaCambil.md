@@ -64,3 +64,10 @@ Optimizar aplicaciones sobre plataformas virtuales.
 - [X] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
 - [X] Crear infraestructuras virtuales completas.
 - [X] Comprender los pasos necesarios para la configuración automática de las mismas.
+
+###Objetivos novena semana
+- [X] Uso de docker para creación de imágenes.
+- [X] Entender el uso de docker en el contexto de una aplicación.
+- [X] Analizar el resultado del último hito de las prácticas.
+
+
