@@ -436,7 +436,7 @@ Añadir *--no-cache=true* hace que no utilice la caché de un contenedor anterio
 
 ![app](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appfuncionando_zpswyheqevq.png)
 
-![app2](http://s1045.photobucket.com/user/Francisco_Javier_G_M/media/appfuncionando2_zps4xanfr3g.png.html)
+![app2](http://s1045.photobucket.com/user/Francisco_Javier_G_M/media/appfuncionando2_zps4xanfr3g.png)
 
 Importante: tuve problemas de conexión del contenedor con Internet que misteriosamente he resuelto ejecutando *sudo rm /var/run/docker.pid* y volviendo a reiniciar con *sudo docker -d &*, otra posible solución es la que aporta **hugobarzano** (nick de github) donde se realiza lo siguiente en la máquina anfitriona(la nuestra):
 **Si al arrancar el docker, este no tiene conexión a internet, podemos resolverlo editando /etc/NetworkManager/NetworkManager.conf y comentando la línea dns=dnsmask y tras esto, reiniciar el servicio con:**
