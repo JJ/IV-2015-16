@@ -70,4 +70,5 @@ Optimizar aplicaciones sobre plataformas virtuales.
 - [X] Entender el uso de docker en el contexto de una aplicación.
 - [X] Analizar el resultado del último hito de las prácticas.
 
-
+###Otros objetivos
+- [X] Revisar los errores en la entrega de tercer hito.
