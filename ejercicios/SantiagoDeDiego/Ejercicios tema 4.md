@@ -48,7 +48,7 @@ Primero de todo vamos a instalar debootstrap con `sudo apt-get install debootstr
 
 Una vez creada ejecutamos chroot y entramos en ella con `sudo chroot jaula_ubuntu`
 
-Al instalar nginx he tenido un problema y es que no he podido instalarlo con apt, entonces he tenido que hacerlo manualmente con wget. Primero instalo wget con `apt-get install -y wget`. Ahora descargamos la clave con wget con `wget http://nginx.org/keys/nginx_signing.key`, la añadimos con `apt-key add nginx_signing.key`. Ahora añadimos el repositorio con `echo "deb http://nginx.org/packages/ubuntu/ raring nginx" >> /etc/apt/sources.list echo "deb-src http://nginx.org/packages/ubuntu/ raring nginx" >> /etc/apt/sources.list` y ya podemos instalar nginx con apt haciendo: `apt-get install nginx`
+Al instalar nginx he tenido un problema y es que no he podido instalarlo con apt, entonces he tenido que hacerlo manualmente con wget. Primero instalo wget con `apt-get install -y wget`. Ahora descargamos la clave con wget con `wget http://nginx.org/keys/nginx_signing.key`, la añadimos con `apt-key add nginx_signing.key`. Ahora añadimos el repositorio con `echo "deb http://nginx.org/packages/ubuntu/ raring nginx" >> /etc/apt/sources.list` y ya podemos instalar nginx con apt haciendo: `apt-get install nginx`
 
 Ahora cambiamos el puerto por defecto para no tener ningún problema, en mi caso al 5000. Editamos el archivo *etc/nginx/conf.d/dafault.conf* y ahí ponemos el número de puerto que queramos. Ahora reiniciamos el servicio con `service nginx start`.
 
