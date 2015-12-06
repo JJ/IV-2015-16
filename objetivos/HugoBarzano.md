@@ -147,7 +147,7 @@ recurso.
   
 [X] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
 
-[] Experimentar con el despliegue simultáneo a varios PaaS.
+[X] Experimentar con el despliegue simultáneo a varios PaaS.
 
 #Objetivos tema 3
 
@@ -192,9 +192,9 @@ recurso.
     
 [X] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
     
-[ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales.
+[X] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales.
 
-[ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+[X] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
 
 [X] Documentar y mantener una plataforma virtual.
    
@@ -204,11 +204,13 @@ recurso.
    
 [X] Realizar tareas de administración en infraestructura virtual.
 
+[X] Asistir al taller de Telegram
+
 ##Objetivos Especificos del tema 4
 
 [X] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
 
-[ ] Crear infraestructuras virtuales completas.
+[X] Crear infraestructuras virtuales completas.
 
 [X] Comprender los pasos necesarios para la configuración automática de las mismas.
 

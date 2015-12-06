@@ -128,7 +128,7 @@ Lista de objetivos de Santiago de Diego
 [X] Experimentar con el despliegue simultáneo a varios PaaS.
 
 
-#Objetivos séptima semana
+#Objetivos séptima y octava semana
 
 [X] Entender la base del aislamiento de recursos en el sistema operativo.
 
@@ -139,4 +139,21 @@ Lista de objetivos de Santiago de Diego
 [X] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
 
 [X] Usar imágenes de docker publicadas.
+
+#Objetivos novena semana
+
+[X] Uso de docker para creación de imágenes.
+
+[X] Entender el uso de docker en el contexto de una aplicación.
+
+[X] Revisar los errores en [la entrega de tercer hito](../practicas/3.md).
+
+[X] Adoptar buenas prácticas en los repositorios git:
+
+   - Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
+   - Usar prácticas habituales en el *layout* del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+
+[X] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+
+[X] Asistir al taller de Telegram
 
