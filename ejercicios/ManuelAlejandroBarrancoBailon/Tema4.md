@@ -224,4 +224,110 @@ Por tanto, falta acabar la jaula para poder comparar *)
 
 ###Ejercicio 6
 **Instalar docker.**
+Siguiendo el [tutorial de la página oficial](https://docs.docker.com/linux/step_one/) me dispongo a la instalación de Docker:
+
+1. Comprobamos que tengamos wget instalado. En caso contrario, lo instalamos.
+
+2. Descargamos el último paquete de Docker que lo instalará así como sus dependencias :
+~~~
+wget -qO- https://get.docker.com/ | sh
+~~~
+Tras finalizar la instalación, me dice que si quiero usar Docker con un usuario que no es root tengo que añadir dicho usuario al grupo *docker*. Por ejemplo en mi caso sería:
+~~~
+sudo usermod -aG docker alex
+~~~
+
+3. Comprobamos que Docker se ha instalado correctamente:
+~~~
+docker run hello-world
+~~~
+Si el usuario no lo añadimos al grupo *docker* como se dijo en el punto anterior, hay que ejecutar dicha orden con **sudo**.
+
+![dockerFuncionando]()
+
+
+###Ejercicio 7
+**1.Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.**
+Siguiendo de nuevo, el [tutorial](https://docs.docker.com/linux/step_three/) de la página oficial, voy a instalar dichas imágenes:
+
+* **Ubuntu**
+1. Buscamos la imagen en el [buscador](https://hub.docker.com/?utm_source=getting_started_guide&utm_medium=embedded_Linux&utm_campaign=find_whalesay) de Docker. Introduzco la palabra Ubuntu.
+![buscarUbuntu]()
+
+2. Por ejemplo, instalo la [imagen oficial](https://hub.docker.com/_/ubuntu/).
+
+
+3. Ejecutamos el servicio docker :
+~~~
+sudo docker -d &
+~~~
+
+4. Lo instalamos con:
+~~~
+sudo docker pull ubuntu
+~~~
+
+5. Comprobamos que se ha instalado mostrando todos los containers que tenemos:
+~~~
+sudo docker images
+~~~
+![dockerImagesUbuntu]()
+
+* **CentOS**
+Se procede de manera similar que la que acabamos de instalar.
+Busco la palabra centos, e instalo la [imagen oficial](https://hub.docker.com/_/centos/).
+
+Lo instalo con:
+~~~
+sudo docker pull centos
+~~~
+![instalandoDockerCentos]()
+
+Volvemos a comrpobar que se ha instalado con:
+~~~
+sudo docker images
+~~~
+![dockerImagesCentos]()
+
+**2.Buscar e instalar una imagen que incluya MongoDB.**
+Instalo la [imagen oficial](https://hub.docker.com/_/mongo/) con:
+~~~
+sudo docker pull mongo
+~~~
+
+Comprobamos su instalación:
+~~~
+sudo docker images
+~~~
+![dockerImagesMongo]()
+
+
+###Ejercicio 8
+**Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.**
+Voy a hacerlo en la imagen de Ubuntu:
+
+1. Arrancamos la imagen en modo terminal interactivo:
+~~~
+sudo docker run -i -t ubuntu /bin/bash
+~~~
+![bashUbuntu]()
+
+2. Creamos un usuario:
+~~~
+adduser alex
+~~~
+![creacionUsuarioUbuntu]()
+
+3. Instalamos nginx y lo iniciamos:
+~~~
+apt-get install nginx
+service nginx start
+~~~
+
+4. Instalamos curl para poder solicitar la página de inicio de nginx:
+~~~
+apt-get install curl
+curl 127.0.0.1
+~~~
+![PaginaNginxDocker]()
 
