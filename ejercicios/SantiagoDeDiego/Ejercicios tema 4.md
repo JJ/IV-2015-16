@@ -59,8 +59,9 @@ Nos olvidamos ahora de la jaula creada con debootstrap y hacemos lo mismo con el
 Ya teniendo las dos partes a comparar, voy a probar el rendimiento con siege. Lo óptimo sería lanzar el test desde fuera de la jaula pero por facilidad voy a lanzarlo en ambos sitios desde dentro al localhost. Primero de todo instalar siege, que en ambos podemos hacerlo con `sudo apt-get install siege` y después vamos a ejecutarlo.
 
 He realizado una prueba similar a la que ha realizado un compañero en su [repositorio](https://github.com/santidediego/IV-2015-16/blob/master/ejercicios/RafaelLachicaGarrido/Tema4.md) para no complicarme la vida demasiado probando la carga óptima y entonces he ejecutado:
-        -`siege -b -c 1000 -t 120 localhost` en el caso del contenedor lxc
-	-`siege -b -c 1000 -t 120 127.0.0.1:5000/` en el caso de la jaula con debootstrap
+
+    -`siege -b -c 1000 -t 120 localhost` en el caso del contenedor lxc
+    -`siege -b -c 1000 -t 120 127.0.0.1:5000/` en el caso de la jaula con debootstrap
 Los resultados salen similares a los que aparecen en el repositorio mencionado y es que la jaula creada con debootstrap responde mucho mejor a la prueba de carga que el contenedor, en concreto unas 8 veces mejor, lo cual me sorprende ya que pensé que iba ser al revés.
 
 #Ejercicio 6
