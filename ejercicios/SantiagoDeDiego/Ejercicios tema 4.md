@@ -42,6 +42,29 @@ Además he restrigido los recursos de procesador y memoria que utilizará el con
 
 ![Restricción de recursos](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/restriccion_zps0vqiowda.png)
 
+#Ejercicio 5
+
+Primero de todo vamos a instalar debootstrap con `sudo apt-get install debootstrap`. Una vez instalado, vamos a crear la jaula con `sudo debootstrap --arch=amd64 lucid /home/jaula_ubuntu http://archive.ubuntu.com/ubuntu`
+
+Una vez creada ejecutamos chroot y entramos en ella con `sudo chroot jaula_ubuntu`
+
+Al instalar nginx he tenido un problema y es que no he podido instalarlo con apt, entonces he tenido que hacerlo manualmente con wget. Primero instalo wget con `apt-get install -y wget`. Ahora descargamos la clave con wget con `wget http://nginx.org/keys/nginx_signing.key`, la añadimos con `apt-key add nginx_signing.key. 
+`. Ahora añadimos el repositorio con `echo "deb http://nginx.org/packages/ubuntu/ raring nginx" >> /etc/apt/sources.list echo "deb-src http://nginx.org/packages/ubuntu/ raring nginx" >> /etc/apt/sources.lis
+` y ya podemos instalar nginx con apt haciendo: `apt-get install nginx`
+
+Ahora cambiamos el puerto por defecto para no tener ningún problema, en mi caso al 5000. Editamos el archivo *etc/nginx/conf.d/dafault.conf* y ahí ponemos el número de puerto que queramos. Ahora reiniciamos el servicio con `service nginx start`.
+
+Ahora instalamos también curl con `apt-get install curl` para probar si nginx funciona. Esto lo hacemos con `curl 127.0.0.1:5000`.
+
+Nos olvidamos ahora de la jaula creada con debootstrap y hacemos lo mismo con el contenedor creado con lxc, solo que esta vez instalar nginx es muy fácil, simplemente ejecutamos `sudo apt-get install nginx`.
+
+Ya teniendo las dos partes a comparar, voy a probar el rendimiento con siege. Lo óptimo sería lanzar el test desde fuera de la jaula pero por facilidad voy a lanzarlo en ambos sitios desde dentro al localhost. Primero de todo instalar siege, que en ambos podemos hacerlo con `sudo apt-get install siege` y después vamos a ejecutarlo.
+
+He realizado una prueba similar a la que ha realizado un compañero en su [repositorio](https://github.com/santidediego/IV-2015-16/blob/master/ejercicios/RafaelLachicaGarrido/Tema4.md) para no complicarme la vida demasiado probando la carga óptima y entonces he ejecutado:
+        -`siege -b -c 1000 -t 120 localhost` en el caso del contenedor lxc
+	-`siege -b -c 1000 -t 120 127.0.0.1:5000/` en el caso de la jaula con debootstrap
+Los resultados salen similares a los que aparecen en el repositorio mencionado y es que la jaula creada con debootstrap responde mucho mejor a la prueba de carga que el contenedor, en concreto unas 8 veces mejor, lo cual me sorprende ya que pensé que iba ser al revés.
+
 #Ejercicio 6
 En este ejercicio nos pide instalar Docker. Yo ya lo he instalado para la realización de mi proyecto, se pueden ver los pasos en el [readme del proyecto](https://github.com/santidediego/Landscapes/blob/master/README.md)
 
