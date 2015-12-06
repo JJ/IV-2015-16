@@ -251,7 +251,10 @@ Y para pararlo se ejecuta:
 ```
 sudo docker stop id
 ```
-
+Para borrar un contenedor usar:
+```
+sudo docker rmi -f c753c7d40294
+```
 Por ejemplo:
 
 ![stopdocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/dockerstop_zpsgkyrbmev.png)
