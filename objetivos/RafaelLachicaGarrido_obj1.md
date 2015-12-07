@@ -259,3 +259,21 @@ __________________________________________
 - [x] Realizar una app en Heroku.
 
 - [x] Crear pruebas para la app y verlas en la integración continua.
+
+- [x] Asistir al taller de Telegram
+
+- [x]  Añadir documentacion al proyecto y ordenarla.
+
+- [x] Migrar mi aplicacion del proyecto a Django
+
+###Sesión 10 (Semana del 2 diciembre al 9 de diciembre 2015)
+
+- [x] Usar docker en una aplicación real.
+
+#####Otros objetivos
+
+- [x] Publicar imágenes de docker.
+
+- [x] Probar imágenes de docker publicadas.
+
+- [x] Trabajar con varias imágenes de docker cokectadas.
