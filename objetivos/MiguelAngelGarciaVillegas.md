@@ -96,41 +96,41 @@
 
 ## Objetivos, Cubre los siguientes objetivos de la asignatura
 
-- [ ] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
-- [ ] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
 
 ## Objetivos específicos
 
-- [ ] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
-- [ ] Aplicar el concepto de DevOps a este tipo específico de plataforma.
-- [ ] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+- [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+- [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+- [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
 
 
 ## Objetivos de la semana que comienza el 28 de Octubre
 
-- [ ] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
-- [ ] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
-- [ ] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
-- [ ] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
-- [ ] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
-- [ ] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+- [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+- [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+- [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+- [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
 ## Otros objetivos
 
-- [ ] Darse de alta y probar diferentes servicios PaaS.
-- [ ] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
-- [ ] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
-- [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
-- [ ] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
+- [x] Darse de alta y probar diferentes servicios PaaS.
+- [x] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+- [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+- [x] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
+- [x] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
 
 ## Objetivos de la semana que comienza el 4 de Noviembre
 
-- [ ] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
-- [ ] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+- [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+- [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
 
 ## Otros objetivos
 
-- [ ] Trabajar con los toolbelts de los diferentes PaaS.
-- [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
-- [ ] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
-- [ ] Experimentar con el despliegue simultáneo a varios PaaS.
+- [x] Trabajar con los toolbelts de los diferentes PaaS.
+- [x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+- [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+- [x] Experimentar con el despliegue simultáneo a varios PaaS.

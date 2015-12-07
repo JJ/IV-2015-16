@@ -153,8 +153,299 @@ Para crear la jaula ( jail ) al igual que antes tambien he usado una máquina vi
 
 La conclusión es que los resultados son mejores en la jaula ( aunque en este caso el resultado es muy parecido por usar una página estatica de poco peso ) y esto es asi porque el contenedor lo hace a través de un puente ( bridge ).
 
+### Ejercicio 6: Instalar docker.
+
+Para la instalación de Docker he ejecutado el siguiente comando:
+```
+sudo apt-get install docker.io
+```
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installdocker_zps9uiv6qgz.png)
+
+Según la literatura puede instalarse tambien ejecutando:
+```
+curl -sSL https://get.docker.com/ | sudo sh
+```
+
+Para comprobar la versión instalada basta con ejecutar:
+```
+docker -v
+```
+
+![versiondocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/versiondocker_zpsdpshhwex.png)
+
+Puede comprobarse el estado del servicio y arrancarse mediante:
+```
+sudo service docker status
+sudo service docker start
+```
+
+Para comprobar que efectivamente se ha instalado correctamente se ejecuta:
+```
+sudo docker run hello-world
+```
+
+![comprobaciondocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobaciondocker_zpshejdvypn.png)
 
 
+Es importante borrar el archivo **docker.pid** cada vez que se vaya a ejecurar docker.
+```
+sudo rm /var/run/docker.pid
+```
+
+### Ejercicio 7: 
+
+### 1.Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+
+Para instalar la imagen alternativa de Ubuntu he seguido los siguientes pasos:
+
+- He arrancado el servicio mediante:
+
+```
+sudo docker -d &
+```
+- He creado la imagen con el siguiente comando:
+
+```
+sudo docker pull ubuntu
+```
+
+![creacionubuntu](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installubuntu_zpsfieaf0rd.png)
+
+- He comprobado los tapers instalado con la orden:
+
+```
+sudo docker ps -a
+```
+![contenedoresdisponibles](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresdisponibles_zpsi48ads6h.png)
+
+- Para comprobar los tapers ejecutandose basta con:
+```
+sudo docker ps
+```
+ó
+```
+sudo docker images
+```
+![contenedoresejecutando](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion_zpsx0z76kw0.png)
+
+- Para arrancar el contenedor:
+```
+sudo docker run -i -t ubuntu /bin/bash
+```
+
+![ejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando_zpsb3xagvxw.png)
+
+Para **CentOS** se procede de la misma manera:
+
+![instalacioncentos](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installcentos_zpstvvoxben.png)
+
+![contenedoresejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedoresejecucion2_zpsucv13gjc.png)
+
+![centosejecucion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorfuncionando2_zpsu20jmtje.png)
+
+Si se quiere para un docker la manera de obtener el **id** es ejecutando:
+```
+sudo docker ps -a=false
+```
+Y para pararlo se ejecuta:
+```
+sudo docker stop id
+```
+Para borrar un contenedor usar:
+```
+sudo docker rmi -f c753c7d40294
+```
+Por ejemplo:
+
+![stopdocker](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/dockerstop_zpsgkyrbmev.png)
+
+### 2.Buscar e instalar una imagen que incluya MongoDB.
+
+Se procede de igual manera que en el apartado anterior, lo instalo y compruebo que se ha hecho correctamente.
+
+- Instalación:
+
+![instalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installmongo_zpshrhp2rzr.png)
+
+- Imagenes disponibles (mirar imagen siguiente).
+
+- Ejecución imagen mongo.
+
+![ejecmongo](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/imagesmongo_zpsvjtpyq1g.png)
+
+### Ejercicio 8 : Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+
+Los pasos son los siguientes:
+- Arrancar el contenedor Ubuntu mediante el comando:
+```
+sudo docker run -i -t ubuntu
+```
+- Una vez dentro se crea un usuario, por ejemplo:
+```
+useradd -d /home/us_docker -m us_docker
+```
+- Se introduce una pass para el usuario:
+```
+passwd us_docker
+```
+- Se añade privilegios para el usuario:
+```
+sudo adduser us_docker sudo
+```
+- Me logueo con dicho usuario y procedo a instalar nginx:
+```
+login us_docker
+```
+- Instalo nginx
+```
+sudo apt-get install nginx
+```
+- Instalo curl:
+```
+sudo apt-get install curl
+```
+- Procedo a verificar que funciona mediante:
+```
+curl 127.0.0.1
+```
+
+A continuación dos imágenes que ilustran lo realizado:
+
+![creacuser](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/creacionusuario_zpsity6kwlw.png)
+
+![curl](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/curl_zpszvbxmpye.png)
+
+### Ejercicio 9: Crear a partir del contenedor anterior una imagen persistente con commit.
+
+Los pasos para crear una imagen persistente con commit han sido los siguientes:
+- Arrancar el contenedor mediante la orden (he usado el id corto ya que el largo da error, tambien sirve usar run como se hizo en el ejercicio anterior, la ID corta se obtiene ejecutando **sudo docker ps -a**):
+```
+sudo docker start 40bf706e7e44
+```
+- Localizar la ID del contenedor:
+```
+sudo docker ps -a=false
+```
+![obtenerid](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/obtenerid_zps07umlagg.png)
+
+- Comprobar las ID largas para verificar que se esta trabajando con la imagen correcta(este paso puede obviarse):
+```
+sudo docker inspect 40bf706e7e44
+```
+
+![comprobarid](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobarid_zpsxhb78m7c.png)
+
+```
+sudo docker images -notrunc
+```
+
+![comprobarid2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobarid2_zpst1nnbf0h.png)
+
+- Realizar el commit:
+```
+sudo docker commit  40bf706e7e44 img_persistente
+```
+
+- Comprobar que se ha realizado el commit:
+```
+sudo docker images -notrunc
+```
+![commit](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/commitimagen_zpshw00evem.png) 958243136
+
+### Ejercicio 10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección.
+
+Este ejercicio lo he realizado desde una máquina virtual sin obtener ningun tipo de error de conexión con Internet a la hora de construir la imagen.Los pasos han sido los siguientes:
+- Crear un archivo **Dockerfile** dentro de la carpeta del proyecto, por ejemplo(no olvidar iniciar servicio docker con *sudo docker -d &*):
+```
+FROM ubuntu:latest
+
+#Autor
+MAINTAINER Francisco Javier Garrido Mellado <franciscojaviergarridomellado@gmail.com>
+
+#Actualizar Sistema Base
+RUN sudo apt-get -y update
+
+#Descargar aplicacion
+RUN sudo apt-get install -y git
+RUN sudo git clone https://github.com/javiergarridomellado/IV_javiergarridomellado.git
+
+# Instalar Python y PostgreSQL
+RUN sudo apt-get install -y python-setuptools
+RUN sudo apt-get -y install python-dev
+RUN sudo apt-get -y install build-essential
+RUN sudo apt-get -y install python-psycopg2
+RUN sudo apt-get -y install libpq-dev
+RUN sudo easy_install pip
+RUN sudo pip install --upgrade pip
+
+#Instalar la app
+RUN ls
+RUN cd IV_javiergarridomellado/ && ls -l
+RUN cd IV_javiergarridomellado/ && cat requirements.txt
+RUN cd IV_javiergarridomellado/ && sudo pip install -r requirements.txt
+
+#Migraciones
+RUN cd IV_javiergarridomellado/ && python manage.py syncdb --noinput
+```
+- Dentro del directorio del proyecto crear la imagen mediante el comando(no olvidar el punto que hay al final del comando):
+```
+ sudo  docker build -t iv_javier .
+```
+Tambien es válido el siguiente comando:
+```
+sudo docker build -f Dockerfile -t nombre_imagen . 
+```
+
+![construirimagen](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contruirimagen_zpsiom2cqek.png)
+
+- Comprobar que efectivamente se ha construido la imagen mediante:
+```
+sudo docker images
+```
+
+![imagen](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/imagen_zpso1zgeqg0.png)
+
+- Arrancar la imagen mediante(en mi caso):
+```
+ sudo docker run -t -i iv_javier /bin/bash
+```
+- Entrar dentro de la aplicación que se ha generado y arrancarla(antes es necesario hacer *ifconfig* para saber la ip del container):
+```
+python manage.py runserver 0.0.0.0:2222 &
+```
+
+![appfuncionando](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appfuncionando_zpsvkvsho54.png)
+
+- Comprobar desde el navegador que efectivamente la app esta disponible:
+
+![appnavegador](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appfuncionando2_zpsjlrpwanh.png)
+
+- En la máquina anfitrión he procedido de la misma manera con la salvedad de que para crearlo he usado el comando:
+```
+sudo docker build -f Dockerfile -t iv_javiergarrido --no-cache=true ./
+```
+
+Añadir *--no-cache=true* hace que no utilice la caché de un contenedor anterior (sin usar esta opción obtenia problemas al instalar librerías)
+
+- El resto de los pasos es exactamente igual.
+
+![crearimagen](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/crearimagen_zpsm1hnuzom.png)
+
+![imagen](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/images_zpsdd87vd9m.png)
+
+![contenedor](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/contenedorapp_zpsrxmc15nw.png)
+
+![ifconf](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ifconfig_zpsmc9uvwlg.png)
+
+![app](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appfuncionando_zpswyheqevq.png)
+
+![app2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appfuncionando2_zpshnh4chn8.png)
+
+Importante: tuve problemas de conexión del contenedor con Internet que misteriosamente he resuelto ejecutando *sudo rm /var/run/docker.pid* y volviendo a reiniciar con *sudo docker -d &*, otra posible solución es la que aporta [hugobarzano](https://github.com/hugobarzano/IV-2015-16/blob/master/ejercicios/HugoBarzano/tema4.md) donde se realiza lo siguiente en la máquina anfitriona(la nuestra):
+**Si al arrancar el docker, este no tiene conexión a internet, podemos resolverlo editando /etc/NetworkManager/NetworkManager.conf y comentando la línea dns=dnsmask y tras esto, reiniciar el servicio con:**
+```
+sudo restart network-manager
+```
 
 
 
