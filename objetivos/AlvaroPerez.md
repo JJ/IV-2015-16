@@ -172,7 +172,7 @@
 
 - [x] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
 
-- [] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+- [x] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
     
 - [x] Asistir al taller de Telegram
 
@@ -180,7 +180,15 @@
 
 ###Sesión 10 (Semana del 2 diciembre al 9 de diciembre 2015)
 
+- [x] Usar docker en una aplicación real. 
 
+#####Otros objetivos
+
+- [x] Publicar imágenes de docker.
+    
+- [x] Probar imágenes de docker publicadas.
+    
+- [x] Trabajar con varias imágenes de docker cokectadas.
 
 
 
