@@ -120,3 +120,4 @@ Los pasos a seguir son los siguientes:
 
 ###Ejercicio 10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección.
 
+Se ha realizado como se indica [aquí](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/documentacion/entornopruebas.md).
