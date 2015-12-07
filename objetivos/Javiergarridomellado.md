@@ -135,7 +135,7 @@
 
 - [x] Trabajar con los toolbelts de los diferentes PaaS.
 
-- [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+- [x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
 
 - [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
 
@@ -182,32 +182,31 @@
 [X] Usar imágenes de docker publicadas.
 
 
-#Objetivos tema 4
+##Tema 4
 
-[X] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
-    
-[X] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
-    
-[ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales.
+###Cubre los siguientes objetivos de la asignatura
 
-[ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento
 
-[X] Documentar y mantener una plataforma virtual.
-   
-[X] Optimizar aplicaciones sobre plataformas virtuales.
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual. 
 
-[X] Conocer diferentes tecnologías relacionadas con la virtualización e implementaciones tales como Google AppSpot, OpenShift o Heroku.
-   
-[X] Realizar tareas de administración en infraestructura virtual.
+- [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
 
-##Objetivos Especificos del tema 4
+- [x] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
 
-[X] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+- [x] Documentar y mantener una plataforma virtual.
 
-[ ] Crear infraestructuras virtuales completas.
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku
 
-[X] Comprender los pasos necesarios para la configuración automática de las mismas.
+- [x] Realizar tareas de administración en infraestructura virtual.
 
+### Objetivos específicos
+
+- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores. 
+
+- [x] Crear infraestructuras virtuales completas.
+
+- [x] Comprender los pasos necesarios para la configuración automática de las mismas.
 
 
 
