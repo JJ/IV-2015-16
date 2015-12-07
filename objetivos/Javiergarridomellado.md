@@ -119,7 +119,7 @@
 
 - [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
 
-- [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
+- [x] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
 
 - [x] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
 
@@ -161,25 +161,25 @@
 
 #Objetivos de la Sesión 7
 
-[X] Entender la base del aislamiento de recursos en el sistema operativo.
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
 
 ##Otros Objetivos de la Sesión 7
 
-[X] Instalar docker y trabajar con él. 
+- [x] Instalar docker y trabajar con él. 
 
 #Objetivos de la Sesion 8
 
-[X] Entender la base del aislamiento de recursos en el sistema operativo.
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
 
-[X] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+- [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
 
 ##Otros Objetivos de la Sesión 8
 
-[X] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+- [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
 
-[X] Instalar docker y trabajar con él.
+- [x] Instalar docker y trabajar con él.
 
-[X] Usar imágenes de docker publicadas.
+- [x] Usar imágenes de docker publicadas.
 
 
 ##Tema 4
