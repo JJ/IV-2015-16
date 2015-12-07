@@ -83,19 +83,19 @@ wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash
 ~~~
 
 A continuación, nos vamos en el navegador a la URL *http://127.0.0.1:5000/* e introducimos como usuario *admin* y password *admin*. 
-![LXCWebPanelGeneral]()
+![LXCWebPanelGeneral](http://i1016.photobucket.com/albums/af281/raperaco/lxcWebpanelGeneral_zpsswh7gdkr.png)
 
 Podemos arrancar por ejemplo el container de CentOS:
-![LXCWebPanelStartCentosContainerStart]()
+![LXCWebPanelStartCentosContainerStart](http://i1016.photobucket.com/albums/af281/raperaco/centosContainerStartLXCWebPanel_zpss497s5yu.png)
 
 Podemos ver que recursos está usando el container y los ajustes que tiene:
-![RecursosyAjustesCentosContainer]()
+![RecursosyAjustesCentosContainer](http://i1016.photobucket.com/albums/af281/raperaco/ajustesyrecursosCentosContainer_zpspjy9vafk.png)
 
 Por último, podemos parar el container.
 
 **2.Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.**
 He restringido la cantidad de memoria que podrá usar el *container* a 1024 MB.
-![usomemoriarestringidoCentosCContainer]()
+![usomemoriarestringidoCentosCContainer](http://i1016.photobucket.com/albums/af281/raperaco/usomemoriarestringidoCentosCContainer_zpsciylti9g.png)
 
 
 ###Ejercicio 5
@@ -111,7 +111,7 @@ Finalizado el proceso, arrancamos el servicio nginx:
 sudo service nginx start
 ~~~
 Tras comprobar con **ifconfig** que la IP es 10.0.3.141, en el navegador, introducimos dicha dirección y comprobamos cómo el servidor está funcionando sirviendo la página de bienvenida de NGINX.
-![NginxContainer]()
+![NginxContainer](http://i1016.photobucket.com/albums/af281/raperaco/NginxContainer_zpsgdcmvkwh.png)
 
 Ahora instalamos en nuestra máquina anfitrión el paquete apache2-utils para poder usar apache benchmark con el que evaluar las prestaciones.
 ~~~
@@ -123,7 +123,7 @@ Ya podemos lanzar unos test de carga con apache benchmark:
 ab -n 2500 -c 1000 http://10.0.3.141/
 ~~~
 Con lo que obtenemos de salida:
-![abContainer]()
+![abContainer](http://i1016.photobucket.com/albums/af281/raperaco/abContainer_zpsarpxhmmf.png)
 
 Ahora voy a realizar lo mismo en una **jaula** siguiendo el siguiente [tutorial](http://www.cyberciti.biz/faq/howto-run-nginx-in-a-chroot-jail/):
 
@@ -243,7 +243,7 @@ docker run hello-world
 ~~~
 Si el usuario no lo añadimos al grupo *docker* como se dijo en el punto anterior, hay que ejecutar dicha orden con **sudo**.
 
-![dockerFuncionando]()
+![dockerFuncionando](http://i1016.photobucket.com/albums/af281/raperaco/dockerFuncionando_zpsau9trpop.png)
 
 
 ###Ejercicio 7
@@ -252,7 +252,7 @@ Siguiendo de nuevo, el [tutorial](https://docs.docker.com/linux/step_three/) de 
 
 * **Ubuntu**
 1. Buscamos la imagen en el [buscador](https://hub.docker.com/?utm_source=getting_started_guide&utm_medium=embedded_Linux&utm_campaign=find_whalesay) de Docker. Introduzco la palabra Ubuntu.
-![buscarUbuntu]()
+![buscarUbuntu](http://i1016.photobucket.com/albums/af281/raperaco/buscarUbuntu_zpsrzvb6eim.png)
 
 2. Por ejemplo, instalo la [imagen oficial](https://hub.docker.com/_/ubuntu/).
 
@@ -271,7 +271,7 @@ sudo docker pull ubuntu
 ~~~
 sudo docker images
 ~~~
-![dockerImagesUbuntu]()
+![dockerImagesUbuntu](http://i1016.photobucket.com/albums/af281/raperaco/dockerImagesUbuntu_zpsrudzelty.png)
 
 * **CentOS**
 Se procede de manera similar que la que acabamos de instalar.
@@ -281,13 +281,13 @@ Lo instalo con:
 ~~~
 sudo docker pull centos
 ~~~
-![instalandoDockerCentos]()
+![instalandoDockerCentos](http://i1016.photobucket.com/albums/af281/raperaco/instalandoDockerCentos_zpspusytt0a.png)
 
 Volvemos a comrpobar que se ha instalado con:
 ~~~
 sudo docker images
 ~~~
-![dockerImagesCentos]()
+![dockerImagesCentos](http://i1016.photobucket.com/albums/af281/raperaco/dockerImagesCentos_zps8ky7tg6u.png)
 
 **2.Buscar e instalar una imagen que incluya MongoDB.**
 Instalo la [imagen oficial](https://hub.docker.com/_/mongo/) con:
@@ -299,7 +299,7 @@ Comprobamos su instalación:
 ~~~
 sudo docker images
 ~~~
-![dockerImagesMongo]()
+![dockerImagesMongo](http://i1016.photobucket.com/albums/af281/raperaco/dockerImagesMongo_zpskip2d3sf.png)
 
 
 ###Ejercicio 8
@@ -310,13 +310,13 @@ Voy a hacerlo en la imagen de Ubuntu:
 ~~~
 sudo docker run -i -t ubuntu /bin/bash
 ~~~
-![bashUbuntu]()
+![bashUbuntu](http://i1016.photobucket.com/albums/af281/raperaco/bashUbuntu_zpsmystb9rf.png)
 
 2. Creamos un usuario:
 ~~~
 adduser alex
 ~~~
-![creacionUsuarioUbuntu]()
+![creacionUsuarioUbuntu](http://i1016.photobucket.com/albums/af281/raperaco/creacionUsuarioUbuntu_zpspvfnszvz.png)
 
 3. Instalamos nginx y lo iniciamos:
 ~~~
@@ -329,5 +329,23 @@ service nginx start
 apt-get install curl
 curl 127.0.0.1
 ~~~
-![PaginaNginxDocker]()
+![PaginaNginxDocker](http://i1016.photobucket.com/albums/af281/raperaco/PaginaNginxDocker_zpsd4hoj77c.png)
+
+
+###Ejercicio 9
+**Crear a partir del contenedor anterior una imagen persistente con commit.**
+
+1. Voy a hacer la imagen sobre el contenedor anterior (el de Ubuntu). Veo que lo tengo arrancado con los comandos ejecutados del ejercicio anterior y veo la ID del container:
+~~~
+sudo docker ps -a
+~~~
+![ubuntuIniciado](http://i1016.photobucket.com/albums/af281/raperaco/ubuntuIniciado_zpslyjo8m3i.png)
+
+2. Creo la imagen persistente con el ID del container y el nuevo nombre que tendrá y compruebo que se ha realizado:
+~~~
+sudo docker commit b68c993bd419 ubualexnginx
+sudo docker images
+~~~
+![imagenUbuNginxAlex](http://i1016.photobucket.com/albums/af281/raperaco/imagenUbuNginxAlex_zpslnuud30x.png)
+
 
