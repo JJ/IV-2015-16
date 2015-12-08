@@ -26,6 +26,10 @@ Cuando se descargue y se cree el contenedor, entramos a él con la siguiente ord
 
 	sudo lxc-start -n pruebacontenedor
 
+Puede pasar que aparentemente "no ocurra nada", ya que se ha creado el contenedor pero parece que no podemos interactuar con él. Debemos de abrir la consola con la siguiente orden:
+
+	sudo lxc-console -n pruebacontenedor
+    
 Cuando pida usuario y contraseña, introduciremos "ubuntu" como ambas, y una vez dentro, comprobamos las interfaces con la siguiente orden:
 
 	ifconfig -a
@@ -33,3 +37,6 @@ Cuando pida usuario y contraseña, introduciremos "ubuntu" como ambas, y una vez
 En nuestro caso, hay dos interfaces levantadas en el contenedor
 
 ![](Ejercicio2-2)
+
+#Ejercicio 3
+
