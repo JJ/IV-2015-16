@@ -60,6 +60,13 @@ y ahora lo paramos:
 
 ## 2. Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
 
+Si nos introducimos en un contenedor podemos ver la configuración que tiene y modificarla:
+
+![menu_contenedor](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Seleccioacuten_023_zpszrk3z28h.png)
+
+En la siguiente imagen vemos cómo ejemplo cómo limitamos la memoría del contenedor:
+
+![limitando_memoria](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Seleccioacuten_024_zpsjcfqbpp6.png)
 
 # Ejercicio 6. Instalar docker.
 
