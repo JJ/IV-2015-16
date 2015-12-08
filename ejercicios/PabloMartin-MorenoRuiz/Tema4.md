@@ -91,11 +91,11 @@ Lo primero es ejecutar docker con el siguiente comando:
 
 ![ejecutar_docker](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/3.%20sudo%20docker%20-d%20fallo_zpswutule1d.jpg)
 
-Pero vemos que sucede un fallo y para solucionalor eliminamos el archivo /var/run/docker.pid y ya podemos ejecutar docker:
+Pero vemos que sucede un fallo y para solucionalo eliminamos el archivo /var/run/docker.pid y ya podemos ejecutar docker:
 
 ![arreglar ejecucion](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/4.%20Inicializando%20docker_zpswsm7m2gw.jpg)
 
-Pero cómo vemos si dejamos de ejecutar, el comando ya podemos descargar imagenes así que para ello lo ejecutamos en segundo plano:
+Ejecutamos el comando en segundo plano y ya podemos instalar imágenes:
 
 ![docker_en_segundo_plano](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/9.%20Ejecutar%20el%20servicio%20en%20segundo%20plano%20mientras%20instalo_zpsj9x0mgu2.jpg)
 
@@ -117,7 +117,63 @@ Y comprobamos que ha sido correctamente instalada:
 
 ## 2. Buscar e instalar una imagen que incluya MongoDB.
 
+Para realizar este ejercicio lo primero que hago es buscar todas las iamgenes que tiene  docker con mongo y almacenarlas en el archivo lista_mongo:
+
+![buscar_imagenes_mongo](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/14.%20Lista%20de%20mongos_zpsilqzd8z3.jpg)
+
+Ahora podemos ver todos las imagenes disponibles:
+
+![imagenes_mongo](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/15.%20nano%20lista%20mongo_zpscke0pb6j.jpg)
+
+
+Instalo mongo:
+![Instalando_imagen_mongo](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/16.%20Instalando%20mongo_zpsn5zp1vrb.jpg)
+
+
+Compruebo que la imagen se ha instalado correctamente:
+
+![imagenes_instaladas_3](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/17.%20Todas%20las%20imagenes_zpsq2bqz028.jpg)
+
 # Ejercicio 8. Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+
+Para realizar este ejercicio, lo primero que hago es ejecutar el contenedor ubuntu de la siguiente forma:
+
+![ejecutar_contenedor](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/18.%20ejecutar%20docker%20ubuntu_zps0pufqvxo.jpg)
+
+Una vez inicialiado creo un usuario:
+
+![crear_usuario](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/19.%20Creando%20usuario_zps7cdpho88.jpg)
+
+Inicio la sesión con el nuevo usuario:
+
+![inicio_sesion](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/20.%20Hacemos%20login_zpszd0qpskh.jpg)
+
+Intentamos instalar nginx:
+
+![instalar_nginx1](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/21.%20Error%20superusuario_zpsiwrgjaes.jpg)
+
+Pero cómo el usuario no es superusuario, tenemos que hacerlo superusuario:
+
+![superusuario](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/22.%20add%20superusuarios_zpsemdct3ry.jpg)
+
+Ahora conseguimos instalar nginx y para ello ejecutarmos service nginx status para ver que si funcionar realmente, también se va ha instalar curl y comprobamos que devuelve algo:
+
+![curl](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/25.%20instalar%20curl_zpsoms1unhc.jpg)
+
+![nginx_va](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/26.%20Prueba%20curl_zpsqrgceucl.jpg)
+
 
 
 # Ejercicio 9. Crear a partir del contenedor anterior una imagen persistente con commit. 
+
+Para realizar este ejercicio ejcutamos sudo docker ps -a para ver las antiguas ejecuciones de los contenedores y elegir uno al que hacerle un commit:
+
+![docker ps -a](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/30.%20ultimas%20maquinas%20ejecutadas_zpsujfyubph.jpg)
+
+Realizamos un commit:
+
+![commit](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/31.%20commit%20maquina%20de%20ubuntu_zpsbx0v9wu8.jpg)
+
+Comprobamos que se ha hecho un commit:
+
+![commit_realizado](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/32.%20commit%20realizado_zpskmrecpzs.jpg)
