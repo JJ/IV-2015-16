@@ -164,3 +164,56 @@ Y probamos las respuestas:
     `siege -b -c 1000 -t 120 127.0.0.1:3000`
     
 El resultado es que el nginx instalado en la jaula responde en un tiempo mucho mejor que el que tiene el contenedor lxc.
+
+
+#EJercicio 6
+
+#### Instala docker
+
+DOcker es una interfaz para los contenedores lxc, que es utilizada en el proyecto del año pasado. Existen algunos posts ([#1](http://freelinuxdistrodeployed.github.io/LDT/2014/12/01/Docker-Ansible/), [#2](http://freelinuxdistrodeployed.github.io/LDT/2014/12/11/Llave_publica/)) en la página del proyecto que tratan la instalación de Docker, además de [otro](http://freelinuxdistrodeployed.github.io/LDT/2014/12/11/ADD_Docker/) en el que hay algunas indicaciones sobre los DockerfiUntitledle.
+
+Para instalar Docker, ejecutamos el siguiente script:
+
+	#Añadir repositorio. 
+	sudo sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+
+	#Añadir la llave pública que verifica el repositorio (el repositorio no está verificado por defecto, omitir este paso
+	#rompería la instalación desatendida, por no hablar del fallo de seguridad)
+	
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D8576A8BA88D21E9
+
+	#Actualizacion de la lista de repositorios	
+	sudo apt-get update
+
+	#Instalación de Docker
+	sudo apt-get --assume-yes install lxc-docker
+
+	#Activar demonio de Docker
+	sudo docker -d &
+
+	#Instalación de Ubuntu
+	sudo docker pull ubuntu
+    
+    
+#Ejercicio 7
+
+#### 1. Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS
+
+Al igual que en el ejercicio 10 introducimos la orden "sudo docker pull ubuntu", de forma análoga se hace con centos:
+
+	sudo docker pull centos
+
+#### 2. Buscar e instalar una imagen que incluya MOngoDB
+
+En el repertorio de imágenes de Docker, hay una que incluye mongodb (aunque siempre podríamos instalarlo automáticamente desde un Dockerfile).
+
+Para descargarla, tecleamos la orden:
+
+	docker pull dockerfile/mongodb
+    
+    
+#Ejercicio 10
+
+#### Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección. 
+
+EL enlace a mi repositorio [es este](https://github.com/JA-Gonz/SMS_Estadisticas), donde se trata el cuarto hito del proyecto y por tanto, este ejercicio.
