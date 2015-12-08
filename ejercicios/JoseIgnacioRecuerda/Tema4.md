@@ -234,5 +234,35 @@ Por último compruebo que se ha añadido correctamente a las que ya habia existe
 ![compruebo que se ha añadido](https://www.dropbox.com/s/l4z9jd4m6q4alo4/ejr9.3.png?dl=1)
 
 
+##Ejercicio 10
+###Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección.
+
+En primer lugar lo que hago es crear mi archivo Dockerfile, para ver el contenido pinche en el  [enlace](https://github.com/ignaciorecuerda/gestionPedidos/blob/master/Dockerfile)
+
+Ahora ejecuto el comando `sudo docker build -f Dockerfile -t gestionpedidos3 .` que me creará la imagen.
+
+Como se puede ver en la captura ha creado la imagen satisfactoriamente
+
+![crea imagen gestionpedidos](https://www.dropbox.com/s/zfktdnd8xos147i/ejr10.1.png?dl=1)
+
+Compruebo que la imagen se ha creado con el comando `sudo docker images`
+
+![compruebo que la imagen se ha creado](https://www.dropbox.com/s/48h4s91q5qxvxzm/ejr10.2.png?dl=1)
+
+Inicio el contenedor ejecutando el comando: `sudo docker run -t -i gestionpedidos /bin/bash`
+
+![docker run](https://www.dropbox.com/s/jpvwfujhlh7jyo0/ejr10.3.png?dl=1)
+
+Compruebo la ip que tiene dicho contenedor y arranco  la aplicacion con `npm start` o con `make run`
+
+![ejecuto aplicacion](https://www.dropbox.com/s/v8wk8gh209zpy54/ejr10.4.png?dl=1)
+
+Y por último, abro mi navegador, me voy a la dirección ip que tiene la imagen en el puerto 3000 y compruebo que la aplicación se esta ejecuntando correctamente.
+
+![ejecuto aplicacion](https://www.dropbox.com/s/p3bbh1x7fqysbiy/ejr10.5.png?dl=1)
+
+
+
+
 
 
