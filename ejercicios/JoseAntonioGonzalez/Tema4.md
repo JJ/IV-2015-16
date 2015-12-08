@@ -69,4 +69,98 @@ Y ya podemos crearlo con la orden:
 
 	sudo lxc-create -t centos -n pruebacentos
     
+#### 1. Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
+
+Para instalar lxc-webpanel, descargamos el fichero de instalación (que es un script), y lo ejecutamos con permisos de administrador:
+
+	wget http://lxc-webpanel.github.io/tools/install.sh
+    chmod +x install.sh
+    sudo ./install.sh
     
+Al instalarlo, nos dice como vemos en la imagen, que accedamos desde el navegador al panel de administración (localhost:5000):
+
+![](Ejercicio4A.png)
+
+##### 2.  Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
+
+En la lista de contenedores que hay dentro de la interfaz web, seleccionamos uno de ellos. Una vez seleccionado,vemos todas las opciones, entre las cuales se encuentran unos deslizadores para poder controlar la memoria utilizada, el total de CPU's compartidas, etc.
+
+    
+#Ejercicio 5
+
+Para comparar los rendimientos entre una jaula (con chroot) y un contenedor, obviamente necesitamos ambas cosas montadas.
+
+Para montar la jaula, necesitamos primero debootstrap:
+
+	sudo apt-get install debootstrap
+
+Ahora creamos la carpeta que será la raíz del punto de montaje de la jaula. En mi caso, la he puesto en el home
+
+	cd $HOME
+    mkdir jaula
+
+Para abreviar las rutas, metemos este directorio en una variable:
+
+	export jaula=/home/joseantonio/jaula
+ 
+Ya está "el terreno" listo, ahora toca instalar el sistema de la jaula. En este caso, he decidido instalar ubuntu:
+
+	sudo debootstrap --arch=amd64 lucid $jaula http://archive.ubuntu.com/ubuntu
+
+Ahora nos aparecerá una imagen ya familiar: la descarga del sistema
+![](Ejercicio5)
+
+Mientras se instala Ubuntu en la jaula, ahorremos tiempo e instalemos Nginx en el contenedor que ya tenemos creado de los ejercicios anteriores. También en el de Ubuntu (recodremos que he nombrado como "pruebacontenedor" al contenedor que tiene Ubuntu instalado):
+
+	sudo lxc-start -n pruebacontenedor 
+    sudo lxc-console -n pruebacontenedor
+    sudo apt-get install nginx
+    
+Ahora, vamos a instalarlo en la jaula (una vez se ha bajado Ubuntu). Para ello, entramos en la carpeta que hemos creado con chroot:
+
+	sudo chroot jaula
+    
+Y nos topamos con el primer problema: no funciona apt-get para instalar nginx. Tampoco funciona si hacemos un update. Parece ser que la lista de repositorios está incompleta o no trae, para reducir al máximo el tamaño de la imagen del sistema.
+
+Por tanto, toca añadirlo, haciendo lo siguiente:
+
+	apt-get install -y wget
+    wget http://nginx.org/keys/nginx_signing.key
+    apt-key add nginx_signing.key
+    echo "deb http://nginx.org/packages/ubuntu/ raring nginx" >> /etc/apt/sources.list
+    
+Ahora si podemos instalar nginx:
+
+	apt-get update
+	apt-get install nginx
+    
+Nos encontramos el segundo error: Nginx depende de libc6 , libpcre3  y libssl. Haciendo un apt-get install de las 3 dependencias, nos encontramos con que las dos primeras ya están instaladas por defecto, pero la última no lo está. Lo instalamos con:
+
+	apt-get install libssl-dev
+    
+Nos percatamos ahora que el problema sigue persisitendo, y es que aunque las dos primeras dependencias están instaladas, no parece que cumplan el mínimo de versión.
+
+Seguimos teniendo problemas de dependencias, y todo por no tener la lista de repositorios lo suficientemente consistente. Después de "googelar" unas cuantas soluciones y no funcionar, he optado por matar moscas a cañonazos, y copiar la lista de repositorios de la instalación de Ubuntu de mi portátil en la jaula. Para eso, salimos de la jaula, y hacemos:
+
+	sudo cp /etc/apt/sources.list jaula/etc/apt/sources.list
+
+Volvemos a entrar e instalamos nginx:
+
+	sudo chroot jaula
+    apt-get update
+    apt-get install nginx
+
+Una vez hecho esto, configuraremos ambos nginx (de la jaula y del contenedor) para que escuchen por el puerto 3000 y 3001 respectivamente. Esta configuracion se realiza editando el fichero etc/nginx/conf.d/dafault.conf, y acto seguido, reiniciamos nginx:
+	
+    service nginx restart
+
+Ya tenemos las dos máquinas funcionando, ahora instalamos siege para poder medir los tiempos de respuesta:
+
+	sudo apt-get install siege
+
+Y probamos las respuestas:
+
+	`siege -b -c 1000 -t 120 localhost:3001`
+    `siege -b -c 1000 -t 120 127.0.0.1:3000`
+    
+El resultado es que el nginx instalado en la jaula responde en un tiempo mucho mejor que el que tiene el contenedor lxc.
