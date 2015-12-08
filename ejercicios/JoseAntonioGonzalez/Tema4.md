@@ -193,3 +193,27 @@ Para instalar Docker, ejecutamos el siguiente script:
 
 	#Instalación de Ubuntu
 	sudo docker pull ubuntu
+    
+    
+#Ejercicio 7
+
+#### 1. Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS
+
+Al igual que en el ejercicio 10 introducimos la orden "sudo docker pull ubuntu", de forma análoga se hace con centos:
+
+	sudo docker pull centos
+
+#### 2. Buscar e instalar una imagen que incluya MOngoDB
+
+En el repertorio de imágenes de Docker, hay una que incluye mongodb (aunque siempre podríamos instalarlo automáticamente desde un Dockerfile).
+
+Para descargarla, tecleamos la orden:
+
+	docker pull dockerfile/mongodb
+    
+    
+#Ejercicio 10
+
+#### Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección. 
+
+EL enlace a mi repositorio [es este](https://github.com/JA-Gonz/SMS_Estadisticas), donde se trata el cuarto hito del proyecto y por tanto, este ejercicio.
