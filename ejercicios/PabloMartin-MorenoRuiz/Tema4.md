@@ -33,11 +33,29 @@ Para instalar una máquina Fedora lo realizamos con el cómando mostrado en la s
 
 ![imagen_fedora](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Seleccioacuten_019_zpsgmr1iuxw.png)
 
-En el ejercicio 4 podremos comprobar que esta bien instalado
+En el ejercicio 4 podremos comprobar que esta bien instalado.
 
 # Ejercicio 4
 
 ## 1. Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
+
+En la siguiente imagen vemos cómo instalar lxc-webpanel, para hacerlo debemos de ejecutarlo cómo root:
+
+![instalacion_lxc-webpanel](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Seleccioacuten_021_zpstbupa7mi.png)
+
+Una vez instalado, vemos que se nos indica que podemos acceder al panel desde localhost:5000, si accedemos podemos ver en la siguiente imagen el panel que nos sale:
+
+![panel-lxc-webpanel](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Seleccioacuten_022_zpslavqpgnt.png)
+
+Podemos ver a la izquierda diversas opciones cómo usuarios, configuraciones y los contenedores que creados. Y ver el estado de los diversos contenedores, iniciarlos, pararlos o detenerlos.
+
+En la siguiente imagen iniciamos un contenedor, desde dentro del mismo contenedor:
+
+![inicio_contenedor](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Seleccioacuten_025_zpscuvlxdm5.png)
+
+y ahora lo paramos:
+
+![parar_contenedor](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Seleccioacuten_026_zpsrbcoh2xq.png)
 
 
 ## 2. Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
