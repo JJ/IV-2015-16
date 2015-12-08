@@ -275,4 +275,58 @@ Comprobamos que se ha creado la imagen persistente.
 ![Listado de contenedores docker](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap27_zpsomrapnqv.png)
 
 
+###Ejercicio 10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección. 
 
+El sistema operativo para la imagen que contiene las herramientas para mi proyecto será *ubuntu*. 
+
+Para poder crear una imagen necesitamos crear un fichero, llamado **Dockerfile**, en el que indicamos algunas opciones para su configuración, tanto del sistema de la imagen como de la aplicación del proyecto. En este caso mi Dockerfile es este:
+
+```
+FROM ubuntu:14.04
+MAINTAINER Jesus Prieto Lopez <jesusgorillo@gmail.com>
+
+#Actualizar los repositorios
+RUN sudo apt-get -y update
+
+#Instalar la herramienta GIT
+RUN sudo apt-get install -y git
+
+#Descargamos el proyecto
+RUN sudo git clone https://github.com/JesGor/Proyecto-IV-DAI.git
+
+#Instalamos python3
+RUN sudo apt-get install -y python3-setuptools python3-dev build-essential libpq-dev
+RUN sudo easy_install3 pip
+RUN sudo pip install --upgrade pip
+
+#Instalar las dependencias
+RUN cd Proyecto-IV-DAI && pip install -r requirements.txt
+
+#Sincronización de la base de datos
+RUN cd Proyecto-IV-DAI && python3 manage.py migrate --noinput
+```
+
+Ahora para crear la imagen a partir del **Dockerfile** ejecutamos la siguiente orden indicando el nombre del protecto con *-t* y el directorio donde se encuentra la app:
+
+`$ docker build -t scrumpy .`
+
+Si queremos comprobar que todo ha salido bien al crear la imagen podemos mirar en las imágenes de docker que disponemos en el sistema.
+
+`$ docker images`
+
+![Imagenes de docker](http://i1175.photobucket.com/albums/r628/jesusgorillo/28_zpsef6ucscb.png)
+
+Podemos arrancar la imagen una vez creada como cualquier otra.
+
+`$ docker run -i -t scrumpy /bin/bash`
+
+Ya dentro del contenedor podemos ejecutar la aplicación del proyecto como si estuviésemos en el sistema anfitrión.
+
+`$ cd Proyecto-IV-DAI`
+`$ python3 manage.py runserver`
+
+Podemos obtener la ip del contenedor con el comando `$ ifconfig` y desde un navegador del sistema anfitrión introducir la ip correspondiente para visualizar la aplicación (mientras está este arrancada). En mi caso la ip es 172.17.0.2, y hay que añadirle el puerto 8000. La dirección quedaría http://172.17.0.2:8000/ .
+
+![Página principal del proyecto ejecutado desde el contenedor](http://i1175.photobucket.com/albums/r628/jesusgorillo/cap29_zpsdqzqw3bq.png)
+
+> Si desde el navegador del sistema anfitrión no se pudiera acceder a la aplicación web, ejecute el comando `$ python3 manage.py runserver,`anteriormente mencionado, seguido de `0.0.0.0:8000`. 
