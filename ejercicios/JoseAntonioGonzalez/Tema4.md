@@ -40,3 +40,33 @@ En nuestro caso, hay dos interfaces levantadas en el contenedor
 
 #Ejercicio 3
 
+Para crear un contenedor basado en Debian, la orden es la misma que en el ejercicio anterior, pero instalando debian en lugar de ubuntu:
+
+	sudo lxc-create -t debian -n pruebadebian
+    
+Entramos a él con las órdenes:
+	
+    sudo lxc-start -n pruebadebian
+    sudo lxc-console -n pruebadebian
+    
+Para instalar un contenedor basado en CentOS, primero instalamos las dependencias:
+
+	sudo apt-get install librpm3 librpmbuild3 librpmio3 librpmsign1 libsqlite0 python-rpm python-sqlite python-sqlitecachec python-support python-urlgrabber rpm rpm-common rpm2cpio 
+    
+    yum debootstrap bridge-utils
+    
+Después descargamos la imagen de CentOS del siguiente enlace: [https://gist.github.com/hagix9/3514296#file-lxc-centos](https://gist.github.com/hagix9/3514296#file-lxc-centos)
+
+Copiamos la descarga:
+
+	    sudo cp ~/Downloads/lxc-centos /usr/share/lxc/templates/
+
+Le damos permisos de ejecución:
+
+		sudo chmod +x /usr/share/lxc/templates/lxc-centos
+        
+Y ya podemos crearlo con la orden:
+
+	sudo lxc-create -t centos -n pruebacentos
+    
+    
