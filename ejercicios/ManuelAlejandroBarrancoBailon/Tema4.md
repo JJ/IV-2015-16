@@ -349,3 +349,66 @@ sudo docker images
 ![imagenUbuNginxAlex](http://i1016.photobucket.com/albums/af281/raperaco/imagenUbuNginxAlex_zpslnuud30x.png)
 
 
+###Ejercicio 10
+**Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección.**
+
+1. Creo en la carpeta raíz del proyecto un fichero **Dockerfile** de la siguiente manera con la ayuda de la [documentación oficial](http://docs.docker.com/engine/reference/builder/):
+~~~
+FROM ubuntu:latest
+
+#Autor
+MAINTAINER Manuel Alejandro Barranco Bailon <mabarranco@correo.ugr.es>
+
+#Actualizar Sistema Base
+RUN sudo apt-get -y update
+
+# Instalar Python
+RUN sudo apt-get -y install python-setuptools
+RUN sudo apt-get -y install python-dev
+RUN sudo apt-get -y install build-essential
+RUN sudo apt-get -y install python-psycopg2
+RUN sudo apt-get -y install libpq-dev
+RUN sudo easy_install pip
+
+#Descargar aplicacion
+RUN sudo apt-get -y install git
+RUN sudo git clone https://github.com/mabarrbai/TusPachangas.git
+
+#Instalar aplicacion
+RUN cd TusPachangas/ && pip install -r requirements.txt
+RUN cd TusPachangas/ && python manage.py syncdb --noinput
+~~~
+
+2. Creamos la imagen a partir de este fichero:
+~~~
+sudo docker build -f Dockerfile -t ubuntuspachangas .
+~~~
+
+Tras crearse la imagen, comprobamos que se ha construido correctamente:
+~~~
+sudo docker images
+~~~
+![ubuntuspachangasCreada]()
+
+3. Arrancamos la imagen:
+~~~
+sudo docker run -i -t ubuntuspachangas /bin/bash
+~~~
+
+4. Nos movemos a la carpeta de la aplicación y la ponemos en ejecución:
+~~~
+cd TusPachangas
+python manage.py runserver 0.0.0.0:5500 &
+~~~
+
+5. Vemos cual es la IP del container, para utilizarla en una petición desde el navegador del SO anfitrión.
+~~~
+ifconfig
+~~~
+![IPubuntuspachangas](http://i1016.photobucket.com/albums/af281/raperaco/IPubuntuspachangas_zpsyklec2dp.png)
+
+Vemos como en mi caso es la 172.17.0.2, a la cual realizaremos la petición al puerto 5500 que es el que indiqué al poner la aplicación en ejecución.
+![APPUbuntuspachangas](http://i1016.photobucket.com/albums/af281/raperaco/APPUbuntuspachangas_zpsexlqvw52.png)
+
+
+
