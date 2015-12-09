@@ -136,9 +136,9 @@
 
 ###Sesión 9.
 
-- [ ] Uso de docker para creación de imágenes.
+- [x] Uso de docker para creación de imágenes.
 
-- [ ] Entender el uso de docker en el contexto de una aplicación.
+- [x] Entender el uso de docker en el contexto de una aplicación.
 
 - [ ] Analizar el resultado del último hito de las prácticas.
 
@@ -223,9 +223,9 @@
 ##Tema 4
 
 
-- [ ] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
 
-- [ ] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
 
 - [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
 
@@ -235,13 +235,13 @@
 
 - [ ] Optimizar aplicaciones sobre plataformas virtuales.
 
-- [ ] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
 
-- [ ] Realizar tareas de administración en infraestructura virtual.
+- [x] Realizar tareas de administración en infraestructura virtual.
 
 ####Otros objetivos
 
-- [ ] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
 
 - [ ] Crear infraestructuras virtuales completas.
 
