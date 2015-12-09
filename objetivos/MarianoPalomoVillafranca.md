@@ -55,4 +55,24 @@ Lista de objetivos de Mariano Palomo Villafranca
 - [X] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
 
 ## Semana 7
-- [ ] Entender la base del aislamiento de recursos en el sistema operativo.
+- [X] Entender la base del aislamiento de recursos en el sistema operativo.
+
+## Semana 8
+
+- [X] Entender la base del aislamiento de recursos en el sistema operativo.
+
+- [X] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+## Semana 9
+
+- [X] Uso de docker para creación de imágenes.
+
+- [X] Entender el uso de docker en el contexto de una aplicación.
+
+- [X] Analizar el resultado del último hito de las prácticas.
+
+## Semana 10
+
+- [X] Usar docker en una aplicación real.
+
+## Semana 11
