@@ -24,22 +24,26 @@ kvm-ok
 
 Para instalar KVM he seguido las [intrucciones de la página de Ubuntu](https://help.ubuntu.com/community/KVM/Installation) actualizada a día 20-9-2015.
 
-1. Instalar los siguientes paquetes:
+* Instalar los siguientes paquetes:
 ~~~
 sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
 ~~~
 Una descripción sobre para qué sirve cada paquete se puede encontrar en las [intrucciones de la página de Ubuntu](https://help.ubuntu.com/community/KVM/Installation).
-2. Como voy a crear máquinas virtuales desde linea de comandos, también hay que instalar **virtinst**.
+
+* Como voy a crear máquinas virtuales desde linea de comandos, también hay que instalar **virtinst**.
 ~~~
 sudo apt-get install virtinst
 ~~~
-3. Para administrar máquinas virtuales con usuarios normales, hay que añadir estos usuarios a los grupos *kvm* y *libvirt*. En mi caso:
+
+* Para administrar máquinas virtuales con usuarios normales, hay que añadir estos usuarios a los grupos *kvm* y *libvirt*. En mi caso:
 ~~~
 adduser alex kvm
 adduser alex libvirtd
 ~~~
-4. Para que el paso anterior tenga efecto, hay que *reloguearse* en el sistema con dicho usuario.
-5. Verificamos la instalación:
+
+* Para que el paso anterior tenga efecto, hay que *reloguearse* en el sistema con dicho usuario.
+
+* Verificamos la instalación:
 ~~~
 virsh -c qemu:///system list
 ~~~
@@ -47,7 +51,8 @@ virsh -c qemu:///system list
 ![verificarInstalacion](http://i1016.photobucket.com/albums/af281/raperaco/verificarInstalacion_zpsvva9gbnk.png)
 
 *Si se tienen errores en este paso, en las [intrucciones de la página de Ubuntu](https://help.ubuntu.com/community/KVM/Installation) se recoge como solucionar algunos de los posibles errores.*
-6. Si queremos tener una interfaz gráfica:
+
+* Si queremos tener una interfaz gráfica:
 ~~~
 sudo apt-get install virt-manager
 ~~~
