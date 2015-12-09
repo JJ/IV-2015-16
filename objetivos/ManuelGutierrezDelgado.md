@@ -94,7 +94,6 @@
  - [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
 ####Otros objetivos
-
  - [x] Darse de alta y probar diferentes servicios PaaS.
  - [x] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
  - [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
@@ -106,9 +105,45 @@
 
 ####Otros objetivos
  - [x] Trabajar con los toolbelts de los diferentes PaaS.
- - [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+ - [x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
  - [ ] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
  - [x] Experimentar con el despliegue simultáneo a varios PaaS.
+
+##Objetivos a cubrir en la sesión 7.
+ - [x] Entender la base del aislamiento de recursos en el sistema operativo.
+
+####Otros objetivos
+ - [x] Instalar docker y trabajar con él. 
+
+##Objetivos a cubrir en la sesión 8.
+ - [x] Entender la base del aislamiento de recursos en el sistema operativo.
+ - [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+####Otros objetivos
+ - [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+ - [x] Instalar docker y trabajar con él.
+ - [x] Usar imágenes de docker publicadas.
+
+##Objetivos a cubrir en la sesión 9.
+ - [x] Uso de docker para creación de imágenes.
+ - [x] Entender el uso de docker en el contexto de una aplicación.
+ - [x] Analizar el resultado del último hito de las prácticas.
+
+####Otros objetivos
+ - [x] Revisar los errores en la entrega de tercer hito.
+ - [x] Adoptar buenas prácticas en los repositorios git.
+ - [x] Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
+ - [x] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+ - [x] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+ - [x] Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
+
+##Objetivos a cubrir en la sesión 10.
+ - [x] Usar docker en una aplicación real. 
+
+####Otros objetivos
+ - [x] Publicar imágenes de docker.
+ - [x] Probar imágenes de docker publicadas.
+ - [x] Trabajar con varias imágenes de docker cokectadas.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -140,6 +175,12 @@
 
  - [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
 
+##Tema 4
 
+ - [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores. 
+
+ - [x] Crear infraestructuras virtuales completas.
+
+ - [x] Comprender los pasos necesarios para la configuración automática de las mismas.
 
 
