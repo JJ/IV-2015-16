@@ -162,5 +162,14 @@
 
 
 
+##Décima semana, comienza el 2 de Diciembre
+- [ ] Usar docker en una aplicación real
+
+###Otros objetivos
+- [ ] Publicar imágenes de docker
+- [ ] Probar imágenes de docker publicadas
+- [ ] Trabajar con varias imágenes de docker cokectadas
+
+
 
 
