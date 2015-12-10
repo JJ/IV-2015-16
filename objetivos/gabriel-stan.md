@@ -20,6 +20,17 @@ Lista de objetivos de Gabriel Stan
 - [ ] Crear infraestructuras virtuales completas.
 - [ ] Comprender los pasos necesarios para la configuración automática de las mismas.
 
+## Objetovos de la décima semana
+
+### Objetivos principales
+
+- [ ] Usar docker en una aplicación real.
+
+### Otros objetivos
+
+- [ ] Publicar imágenes de docker.
+- [ ] Probar imágenes de docker publicadas.
+- [ ] Trabajar con varias imágenes de docker cokectadas.
 
 ## Objetivos de la novena semana
 
@@ -27,7 +38,7 @@ Lista de objetivos de Gabriel Stan
 
 - [ ] Uso de docker para creación de imágenes.
 - [ ] Entender el uso de docker en el contexto de una aplicación.
-- [ ] Analizar el resultado del último hito de las prácticas.
+- [x] Analizar el resultado del último hito de las prácticas.
 
 ### Otros objetivos
 
