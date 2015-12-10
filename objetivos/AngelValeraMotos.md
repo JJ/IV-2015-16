@@ -253,7 +253,7 @@
 - [ ] Trabajar con varias imágenes de docker cokectadas.
 
 
-##**Tema 3: Virtualización ligera usando contenedores** ##
+##**Tema 4: Virtualización ligera usando contenedores** ##
 ###**11 de noviembre** ###
 
 - [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
