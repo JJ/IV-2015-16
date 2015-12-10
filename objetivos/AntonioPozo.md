@@ -120,7 +120,7 @@
 - [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
 - [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
 - [ ] Documentar y mantener una plataforma virtual.
-- [ ] Optimizar aplicaciones sobre plataformas virtuales.
+- [x] Optimizar aplicaciones sobre plataformas virtuales.
 - [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
 - [x] Realizar tareas de administración en infraestructura virtual.
 
@@ -141,14 +141,14 @@
 - [ ] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
 
 ###Otros objetivos
-- [ ] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
-- [ ] Instalar docker y trabajar con él.
+- [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+- [x] Instalar docker y trabajar con él.
 - [ ] Usar imágenes de docker publicadas.
 
 
 ##Novena semana, comienza el 25 de Noviembre
-- [] Uso de docker para creación de imágenes.
-- [] Entender el uso de docker en el contexto de una aplicación.
+- [x] Uso de docker para creación de imágenes.
+- [x] Entender el uso de docker en el contexto de una aplicación.
 - [] Analizar el resultado del último hito de las prácticas.
 
 ###Otros objetivos
