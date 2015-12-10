@@ -125,7 +125,7 @@
 
 - [x] Entender el concepto de PaaS, su aplicación y sus limitaciones.
 
-- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo. 
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
 
 - [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
 
@@ -139,7 +139,7 @@
 
 - [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
 
-- [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases... 
+- [ ] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
 
 - [x] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
 
@@ -177,6 +177,48 @@ __________________________________________
 - [x] Comprender la diferencia entre infraestructura virtual y real.
 
 - [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+## Sesión 8: Semana del 18 al 25 de noviembre de 2015
+### Objetivos de la semana
+
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+
+- [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+### Otros objetivos
+
+- [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+
+- [x] Instalar docker y trabajar con él.
+
+- [x] Usar imágenes de docker publicadas.
+
+## Objetivos de la asignatura
+
+- [x] Conocer la historia de la Computación Virtual, sus orígenes y razones de su existencia.
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+- [x] Comprender la diferencia entre infraestructura virtual y real.
+
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+
+- [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+
+- [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+
+- [ ] Documentar y mantener una plataforma virtual.
+
+- [ ] Optimizar aplicaciones sobre plataformas virtuales.
+
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+
+- [x] Realizar tareas de administración en infraestructura virtual.
+
 
 ## Objetivos por Temas
 ### Tema 1: Introducción a la infraestructura virtual: concepto y soporte físico
@@ -218,5 +260,20 @@ __________________________________________
 
 - [x] Crear pruebas para la app y verlas en la integración continua.
 
+- [x] Asistir al taller de Telegram
 
+- [x]  Añadir documentacion al proyecto y ordenarla.
 
+- [x] Migrar mi aplicacion del proyecto a Django
+
+###Sesión 10 (Semana del 2 diciembre al 9 de diciembre 2015)
+
+- [x] Usar docker en una aplicación real.
+
+#####Otros objetivos
+
+- [x] Publicar imágenes de docker.
+
+- [x] Probar imágenes de docker publicadas.
+
+- [x] Trabajar con varias imágenes de docker cokectadas.

@@ -113,3 +113,51 @@
 - [X] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
 - [X] Aplicar el concepto de DevOps a este tipo específico de plataforma.
 - [X] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+
+
+##7ª Semana, comienza el 11 de noviembre
+- [X] Entender la base del aislamiento de recursos en el sistema operativo.
+
+###Otros objetivos
+- [X] Instalar docker y trabajar con él.
+
+
+##8ª Semana, comienza el 18 de noviembre
+- [X] Entender la base del aislamiento de recursos en el sistema operativo.
+- [X] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+###Otros objetivos
+- [X] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+- [X] Instalar docker y trabajar con él.
+- [X] Usar imágenes de docker publicadas.
+
+
+##9ª Semana, comienza el 25 de noviembre
+- [X] Uso de docker para creación de imágenes.
+- [X] Entender el uso de docker en el contexto de una aplicación.
+- [X] Analizar el resultado del último hito de las prácticas.
+
+###Otros objetivos
+- [X] Revisar los errores en la entrega de tercer hito.
+- [X] Adoptar buenas prácticas en los repositorios git:
+	* Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
+	* Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+- [ ] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+- [X] Asistir al taller de Telegram
+- [ ] Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
+
+
+##10ª Semana, comienza el 2 de diciembre
+- [X] Usar docker en una aplicación real.
+
+###Otros objetivos
+- [X] Publicar imágenes de docker.
+- [X] Probar imágenes de docker publicadas.
+- [ ] Trabajar con varias imágenes de docker cokectadas.
+
+
+##Objetivos específicos Tema 4
+- [X] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+- [X] Crear infraestructuras virtuales completas.
+- [X] Comprender los pasos necesarios para la configuración automática de las mismas.
+
