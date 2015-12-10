@@ -155,14 +155,43 @@ Lo he econtrado en la siguiente [referencia](https://hub.docker.com/_/mongo/)
 ```
 sudo docker pull library/mongo
 ```
-
 ###Ejercicio 8
 **Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.**
+
+Para resolver el ejercicio, de los contenedores instalados, voy a escoger ubuntu:
+
+```
+sudo docker run -i -t ubuntu /bin/bash
+useradd -d /home/apozodocker -m apozodocker
+passwd apozodocker
+sudo adduser apozodocker sudo
+login apozodocker
+```
+La siguiente captura muestra el proceso en terminal:
+
+![añadiendo usuario en docker-ubuntu](http://s2.subirimagenes.com/imagen/previo/thump_9495872addingdockeruser.png)
 
 
 ###Ejercicio 9
 **Crear a partir del contenedor anterior una imagen persistente con commit.**
+Mientras el contenedor está corriendo, en la máquina anfitriona ejecutamos:
 
+```
+sudo docker ps -a=false
+```
+Esto nos muestra información sobre los contenedores que se están ejecutando. Entre dicha información el ID del contenedor. Anotamos la ID (en mi caso 1b8da176fa8b) del contenedor deseado y ejecutamos:
+
+```
+sudo docker commit 1b8da176fa8b nuevaimagenpersistente
+```
+Para comprobar que se ha creado la nueva imagen ejecutamos:
+
+```
+sudo docker images
+```
+El resultado se muestra en la siguiente captura:
+
+![imagenes docker](http://s2.subirimagenes.com/imagen/previo/thump_9495880imagenesdocker.png)
 
 ###Ejercicio 10
 **Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección.**
