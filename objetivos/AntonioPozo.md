@@ -1,4 +1,3 @@
-
 # Lista de Objetivos de Antonio Miguel Pozo Cámara
 
 ## Semana del 23 al 30 de septiembre de 2015
@@ -116,29 +115,29 @@
 - [x] Experimentar con el despliegue simultáneo a varios PaaS.
 
 ##Objetivos del tema 4
-- [ ] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
-- [ ] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
 - [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
 - [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
 - [ ] Documentar y mantener una plataforma virtual.
 - [ ] Optimizar aplicaciones sobre plataformas virtuales.
-- [ ] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
-- [ ] Realizar tareas de administración en infraestructura virtual.
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+- [x] Realizar tareas de administración en infraestructura virtual.
 
 ###Otros objetivos
-- [ ] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
 - [ ] Crear infraestructuras virtuales completas.
 - [ ] Comprender los pasos necesarios para la configuración automática de las mismas.
 
 ##Séptima semana, comienza el 11 de Noviembre
-- [ ] Entender la base del aislamiento de recursos en el sistema operativo.
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
 
 ###Otros objetivos
 - [ ] Instalar docker y trabajar con él
 
 
 ##Octaba semana, comienza el 18 de Noviembre
-- [ ] Entender la base del aislamiento de recursos en el sistema operativo.
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
 - [ ] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
 
 ###Otros objetivos
@@ -147,7 +146,19 @@
 - [ ] Usar imágenes de docker publicadas.
 
 
+##Novena semana, comienza el 25 de Noviembre
+- [] Uso de docker para creación de imágenes.
+- [] Entender el uso de docker en el contexto de una aplicación.
+- [] Analizar el resultado del último hito de las prácticas.
 
+###Otros objetivos
+- [x] Revisar los errores en la entrega de tercer hito.
+- [x] Adoptar buenas prácticas en los repositorios git:
+- [x] Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
+- [ ] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+- [ ] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+- [ ] Asistir al taller de Telegram
+- [ ] Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
 
 
 
