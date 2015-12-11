@@ -63,6 +63,10 @@ Para acceder a una shell de un container ejecutamos:
 
     # lxc-console -n testubuntu
 
+O bien podemos usar *ssh*:
+
+    $ ssh ubuntu@ip-container
+
 ![http://i1376.photobucket.com/albums/ah6/jesusgn90/lxc2_zps79uupuch.png](http://i1376.photobucket.com/albums/ah6/jesusgn90/lxc2_zps79uupuch.png)
 
 Para ver las interfaces ejecutamos desde fuera del contenedor:
@@ -89,7 +93,7 @@ A través del lxc-webpanel podemos ver de un vistazo el estado de nuestros conte
 ### Ejercicio 4: 
 ####1. Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
 
-    # wget https://lxc-webpanel.github.io/tools/install.sh -O - | sudo bash
+    $ wget https://lxc-webpanel.github.io/tools/install.sh -O - | sudo bash
 
     http://localhost:5000/ 
 
@@ -104,6 +108,28 @@ Hacemos click en el contenedor que queremos restringir y nos desplazamos hacia a
 Hacemos click en *Apply* y listo.
 
 ### Ejercicio 5. Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
+
+Test contra el container:
+
+    $ ab -n 100000 -c 100 http://10.0.3.171/
+    Server Software:        nginx/1.1.19
+    Server Hostname:        10.0.3.171
+    Server Port:            80
+
+    Document Path:          /
+    Document Length:        151 bytes
+
+    Concurrency Level:      100
+    Time taken for tests:   46.593 seconds
+    Complete requests:      100000
+    Failed requests:        0
+    Write errors:           0
+
+Crear la jaula:
+
+    $ mkdir testjaula
+    # debootstrap --arch=amd64 lucid ./testjaula http://archive.ubuntu.com/ubuntu
+    # chroot ./testjaula
 
 ### Ejercicio 6. Instalar Docker
 
