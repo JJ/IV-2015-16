@@ -37,7 +37,12 @@ Con el comando `sudo lxc-create -t centos -n centos` podemos crear un contenedor
 
 ![centoscontainer](https://www.dropbox.com/s/nk54f1muecqlrt7/lxc-ej3.png?dl=1)
 
+### Ejercicio 4.1
 
+Instalamos `lxc-webpanel` con el comando 
+```bash
+wget https://lxc-webpanel.github.io/tools/install.sh -O - | sudo bash
+```
 
 
 
