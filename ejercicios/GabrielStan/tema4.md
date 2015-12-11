@@ -44,6 +44,29 @@ Instalamos `lxc-webpanel` con el comando
 wget https://lxc-webpanel.github.io/tools/install.sh -O - | sudo bash
 ```
 
+![webpanel](https://www.dropbox.com/s/ypmdpikoquclksk/webpanel_install.png?dl=1)
+
+Tras la instalación, accedemos a `localhost:5000` y podemos ver e interactuar con los contenedores.
+
+![webpanel](https://www.dropbox.com/s/9licpzw5efkalyd/webpanelview.png?dl=1)
+
+### Ejercicio 4.2
+
+**Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.**
+
+![limits](https://www.dropbox.com/s/ojsc9qz125r9biw/limits.png?dl=1)
+
+### Ejercicio 6
+
+**Instalar docker.**
+
+Lo instalamos con el comando `sudo apt-get install docker.io`. Una vez instalado, lo podemos arrancar con el comando `sudo docker -d`
+
+![docker](https://www.dropbox.com/s/nqx6ap9cujwdm60/run_docker.png?dl=1)
+
+
+
+
 
 
 
