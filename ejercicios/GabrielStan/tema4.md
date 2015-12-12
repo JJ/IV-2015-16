@@ -99,6 +99,18 @@ Y a continuación instalamos nginx. Actualizamos con `sudo apt-get update` e ins
 ![nginx](https://www.dropbox.com/s/ar8x3ckt2qss20u/nginx.png?dl=1)
 
 
+### Ejercicio 9
+
+**Crear a partir del contenedor anterior una imagen persistente con commit.**
+
+Ejecutando el comando `sudo docker ps -a=false` podemos ver el id de los contenedores que se están ejecutando.
+
+![dockerps](https://www.dropbox.com/s/3nd6tfr1445kqoh/dockerps.png?dl=1)
+
+Con ese id, podemos hacer un commit y guardar el estado del contenedor en otra imagen con el comando `sudo docker commit <id> <nombre>`.
+
+![commit](https://www.dropbox.com/s/c802ysd14isgvx9/commit.png?dl=1)
+
 
 
 
