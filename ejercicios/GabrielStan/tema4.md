@@ -60,13 +60,31 @@ Tras la instalación, accedemos a `localhost:5000` y podemos ver e interactuar c
 
 **Instalar docker.**
 
-Lo instalamos con el comando `sudo apt-get install docker.io`. Una vez instalado, lo podemos arrancar con el comando `sudo docker -d`
+Lo instalamos con el comando `sudo apt-get install docker.io`. Una vez instalado, lo podemos arrancar con el comando `sudo docker -d &`
 
 ![docker](https://www.dropbox.com/s/nqx6ap9cujwdm60/run_docker.png?dl=1)
 
 
+### Ejercicio 7.1
+
+**Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.**
+
+Lo podemos conseguir ejecutando los comandos 
+`sudo docker pull ubuntu` y 
+`sudo docker pull centos`.
 
 
+### Ejercicio 7.2
+
+**Buscar e instalar una imagen que incluya MongoDB.**
+
+Podemos buscar imagenes con docker, usando la opcion `search`, por tanto ejecutamos el comando `sudo docker search mongodb` y vemos la lista de resultados.
+
+![dockersearch](https://www.dropbox.com/s/7g6op82fvdsakxa/searchmongo.png?dl=1)
+
+Para descargar la imagen que buscamos, ejecutamos `sudo docker pull mongo`, y por último, comprobamos que todas las imágenes están correctamente instaladas.
+
+![docker images](https://www.dropbox.com/s/plt715ulvretzuv/docker_images.png?dl=1)
 
 
 
