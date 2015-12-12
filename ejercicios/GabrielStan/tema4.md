@@ -86,6 +86,17 @@ Para descargar la imagen que buscamos, ejecutamos `sudo docker pull mongo`, y po
 
 ![docker images](https://www.dropbox.com/s/plt715ulvretzuv/docker_images.png?dl=1)
 
+### Ejercicio 8
+
+**Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.**
+
+Para este ejercicio usaremos el contenedor 'ubuntu'. Emprezamos creando el usuario:
+
+![dockeruser](https://www.dropbox.com/s/a7nak62ed12b1ob/ej81.png?dl=1)
+
+Y a continuación instalamos nginx. Actualizamos con `sudo apt-get update` e instalamos nginx con `sudo apt-get install nginx` y comprobamos que funciona.
+
+![nginx](https://www.dropbox.com/s/ar8x3ckt2qss20u/nginx.png?dl=1)
 
 
 
