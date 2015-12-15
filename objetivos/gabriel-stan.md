@@ -24,28 +24,28 @@ Lista de objetivos de Gabriel Stan
 
 ### Objetivos principales
 
-- [ ] Usar docker en una aplicación real.
+- [x] Usar docker en una aplicación real.
 
 ### Otros objetivos
 
-- [ ] Publicar imágenes de docker.
-- [ ] Probar imágenes de docker publicadas.
+- [x] Publicar imágenes de docker.
+- [x] Probar imágenes de docker publicadas.
 - [ ] Trabajar con varias imágenes de docker cokectadas.
 
 ## Objetivos de la novena semana
 
 ### Objetivos principales
 
-- [ ] Uso de docker para creación de imágenes.
-- [ ] Entender el uso de docker en el contexto de una aplicación.
+- [x] Uso de docker para creación de imágenes.
+- [x] Entender el uso de docker en el contexto de una aplicación.
 - [x] Analizar el resultado del último hito de las prácticas.
 
 ### Otros objetivos
 
 - [ ] Revisar los errores en la entrega de tercer hito.
-- [ ] Adoptar buenas prácticas en los repositorios git:
+- [x] Adoptar buenas prácticas en los repositorios git:
 	- [x] Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
-	- [ ] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+	- [x] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
 - [x] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
 - [x] Asistir al taller de Telegram
 - [ ] Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
@@ -54,24 +54,24 @@ Lista de objetivos de Gabriel Stan
 
 ### Objetivos principales
 
-- [ ] Entender la base del aislamiento de recursos en el sistema operativo.
-- [ ] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+- [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
 
 ### Otros objetivos
 
 - [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
-- [ ] Instalar docker y trabajar con él.
-- [ ] Usar imágenes de docker publicadas.
+- [x] Instalar docker y trabajar con él.
+- [x] Usar imágenes de docker publicadas.
 
 ## Objetivos de la séptima semana
 
 ### Objetivos principales
 
-- [ ] Entender la base del aislamiento de recursos en el sistema operativo.
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
 
 ### Otros objetivos
 
-- [ ] Instalar docker y trabajar con él.
+- [x] Instalar docker y trabajar con él.
 
 #Objetivos del tema 3
 
