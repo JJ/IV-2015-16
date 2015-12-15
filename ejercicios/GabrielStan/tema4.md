@@ -111,13 +111,66 @@ Con ese id, podemos hacer un commit y guardar el estado del contenedor en otra i
 
 ![commit](https://www.dropbox.com/s/c802ysd14isgvx9/commit.png?dl=1)
 
+Comprobamos que la imagen se ha creado correctamente.
+
+![images](https://www.dropbox.com/s/v5e9n7geaajfget/dockerimages.png?dl=1)
 
 
+### Ejercicio 10
 
+**Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección.**
 
+Para crear una imagen para alojar el proyecto, he seguido los siguientes pasos.
 
+- Creamos el fichero `Dockerfile` con los comandos necesarios.
 
+```bash
+FROM ubuntu:latest
+MAINTAINER Gabriel Stan
 
+RUN sudo apt-get update
+RUN sudo apt-get install -y git
+RUN sudo apt-get install -y build-essential
+
+RUN git clone https://github.com/gabriel-stan/gestion-tfg.git
+
+RUN cd gestion-tfg && make install-docker
+
+CMD cd gestion-tfg && make run
+```
+
+- Ejecutamos el comando build: `sudo docker build -t gestfg .` para que docker cree la imagen a partir del fichero Dockerfile y esperamos a que termine, indicando "Successfully built".
+
+![build1](https://www.dropbox.com/s/evi338enqfhw4cb/docker_start_buil.png?dl=1)
+![build2](https://www.dropbox.com/s/cq7wdovs75d33hz/docker_end_build.png?dl=1)
+
+- Comprobamos que la imagen se ha creado correctamente con el comando `sudo docker images`
+
+![img](https://www.dropbox.com/s/72ayan4hthouynp/docker_images_complete_build.png?dl=1)
+
+- Ejecutamos la imagen para comprobar que no hay fallos con el comando `sudo docker run gestfg`.
+
+![run](https://www.dropbox.com/s/zeuvso90aw0gce0/docker_run.png?dl=1)
+
+- Ya que no sabemos que IP tiene ese contenedor en concreto, podemos comprobar que funciona lanzando manualmente desde un contenedor el comando CMD del Dockerfile y comprobamos desde otra terminal que el servidor se está ejecutando correctamente.
+
+![check](https://www.dropbox.com/s/tly44jts1cj3ipt/docker_run_check.png?dl=1)
+
+![curl](https://www.dropbox.com/s/qq7jrxq7nqdybmv/curl.png?dl=1)
+
+- Para subir la imagen a dockerhub, necesitamos crear un repositorio para albergar la imagen.
+
+![repositorio](https://www.dropbox.com/s/4vmzuxoxd7vbtwx/contenedor1.png?dl=1)
+
+- Creamos un tag para la imagen y comprobamos que se ha creado correctamente.
+
+![tag](https://www.dropbox.com/s/w493vrrrtizhklb/tag.png?dl=1)
+
+- Subimos la imagen a DockerHub con `sudo docker push gabrielstan/gestfg`.
+
+![push](https://www.dropbox.com/s/uon5xo1zigiohfg/push.png?dl=1)
+
+La imagen se puede ver [aqui](https://hub.docker.com/r/gabrielstan/gestfg/) y se puede descargar con el comando `sudo docker pull gabrielstan/gestfg`.
 
 
 
