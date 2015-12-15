@@ -1,9 +1,9 @@
-Ejercicio1.
-Instala LXC en tu versión de Linux favorita. Normalmente la 
+**Ejercicio1.**
+**Instala LXC en tu versión de Linux favorita. Normalmente la 
 versión en desarrollo, disponible tanto en GitHub como en el sitio web 
 está bastante más avanzada; para evitar problemas sobre todo con las 
 herramientas que vamos a ver más adelante, conviene que te instales la 
-última versión y si es posible una igual o mayor a la 1.0.
+última versión y si es posible una igual o mayor a la 1.0.**
 
 vamos a proceder a instalar LXC
 
@@ -39,8 +39,8 @@ la conexión entre contenedores.
 ![shockets](https://i.gyazo.com/9e16ec9717dc98add05158dd0d75c0d6.png)
 
 
-Ejercicio 3.
-1.Crear y ejecutar un contenedor basado en Debian.
+**Ejercicio 3.**
+**1.Crear y ejecutar un contenedor basado en Debian.**
 
 Vamos  a crear un contenedor basdo en debian llamado debian1.
 
@@ -48,7 +48,7 @@ Vamos  a crear un contenedor basdo en debian llamado debian1.
 
 Para ejcutarlo, simplemente usaremos `lxc-start -n debian1`
 
-2. Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora.
+**2. Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora.**
 `sudo lxc-create -t fedora -n fedora1`
 
 ![fedora1](https://i.gyazo.com/fffd8f4489c5fb7ac79d2c528178c3a4.png)
@@ -56,9 +56,9 @@ Para ejcutarlo, simplemente usaremos `lxc-start -n debian1`
 
 Para iniciarlo usaremos `sudo lxc-start -n fedora1`
 
-Ejercicio 4.
-1.Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas
- virtuales que se tengan instaladas.
+**Ejercicio 4.**
+**1.Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas
+ virtuales que se tengan instaladas.**
  
  Instalamos mediante `wget https://lxc-webpanel.github.io/tools/install.sh -O - | sudo bash`
  
@@ -72,16 +72,16 @@ Aquí podemos ver todos los contenedores.
 
 ![containers](https://i.gyazo.com/309961f685032cd48e1ea626bb121d5b.png)
 
-2.Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar 
-(en sistemas multinúcleo) o cantidad de memoria.
+**2.Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar 
+(en sistemas multinúcleo) o cantidad de memoria.**
 
 Elegimos uno de los contenedores y restringimos los recursos.
 
 ![recursos](https://i.gyazo.com/bece5d065ee3b42326eb9b494b247143.png)
 
-Ejercicio 5.
-Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor.
-Usar nginx.
+**Ejercicio 5.**
+**Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor.
+Usar nginx.**
 
 probamos que este todo correctamente.
 ![nginx](https://i.gyazo.com/8dcad7e2cdf08157cb898b3e6944f5e8.png)
@@ -118,9 +118,9 @@ Realizamos el test sobre localhost `ab -n 1000 -c 1000 http://localhost`
 
 Los resultados son mejores en la jaula, es debido a que el contenedor usa el puente.
 
-Ejercicio 6.
-Instalar docker.
- Para instalar docker usamos `sudo apt-get install docker.io`
+**Ejercicio 6.**
+**Instalar docker.
+**Para instalar docker usamos `sudo apt-get install docker.io`**
  
 ![docker](https://i.gyazo.com/adb8fb7df2ee569a5c6c0c948d75c5df.png)
 
@@ -133,9 +133,9 @@ Comprobamos que todo funciona correctamente.
 Debemos borrar **docker.pid** cada vez que se va a ejecutar docker. 
 Para ello usaremos `sudo rm /var/run/docker.pid`
 
-Ejercicio 7.
-1.Instalar a partir de docker una imagen alternativa de Ubuntu y alguna 
-adicional, por ejemplo de CentOS.
+**Ejercicio 7.**
+**1.Instalar a partir de docker una imagen alternativa de Ubuntu y alguna 
+adicional, por ejemplo de CentOS.**
 
 Con `sudo docker -d &` arrancamos el servicio y creamos la imagen con 
 `sudo docker pull ubuntu´
@@ -150,7 +150,7 @@ Para arrancar el contenedor usamos `sudo docker run -i -t ubuntu /bin/bash`
 Ahora vamos a instalar **CentOS**
 ![centosdocker](https://i.gyazo.com/79ecdabf709ed1ff3bfe6279410a760f.png)
 
-2.Buscar e instalar una imagen que incluya MongoDB.
+**2.Buscar e instalar una imagen que incluya MongoDB.**
 
 Usaremos `sudo docker pull mongo`
 ![mongo](https://i.gyazo.com/64814760589eeed891caf2c0b05b93c6.png)
@@ -158,8 +158,8 @@ Usaremos `sudo docker pull mongo`
 Comprobamos que la imagen de mongo funcione
 ![mongoOK](https://i.gyazo.com/e44da58fd67fe8989f83b2f1df86feb1.png)
 
-Ejercicio 8.
-Crear un usuario propio e instalar nginx en el contenedor creado de esta forma
+**Ejercicio 8.**
+**Crear un usuario propio e instalar nginx en el contenedor creado de esta forma**
 
 - Entramos en la imagen de ubuntu con `sudo docker run -i -t ubuntu`
 - Añadimos un usuario con `useradd -d /home/alberto -m alberto
@@ -171,8 +171,8 @@ Crear un usuario propio e instalar nginx en el contenedor creado de esta forma
 
 Instalamos nginx y Curl. Y lanzamos curl con `curl 127.0.0.1`
 
-Ejercicio 9.
-Crear a partir del contenedor anterior una imagen persistente con commit.
+**Ejercicio 9.**
+**Crear a partir del contenedor anterior una imagen persistente con commit.**
 
 Arrancamos el contenedor.
 ![asdasd](https://i.gyazo.com/e879637577b91cb3633ee2e6e6dacb57.png)
@@ -181,20 +181,7 @@ hacemos el commit mediante `sudo docker commit 3ada474fe550 imagen_persistente`
 ![commit](https://i.gyazo.com/fc0fd1e2cbb54668d34091c3573bcc10.png)
 
 Comprobamos que se ha realizado correctamente con sudo docker images -notrunc
-!(commit2)[https://i.gyazo.com/c5b8c7179de313116b4b58bc5c03d746.png]
-
-
-!()[]
-!()[]
-!()[]
-!()[]
-!()[]
-!()[]
-!()[]
-!()[]
-!()[]
-!()[]
-!()[]
+![commit2](https://i.gyazo.com/c5b8c7179de313116b4b58bc5c03d746.png)
 
 
 
