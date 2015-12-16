@@ -243,6 +243,17 @@
 
 - [ ] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
 
+## Sesión 14: Semana del 20 al 27 de Enero de 2016
+### Objetivos de la semana
+
+- [ ] Usar infraestructura en la nube.
+
+### Otros objetivos
+
+- [ ] Instalar clientes libres de infraestructura en la nube.
+
+- [ ] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
 ## Objetivos de la asignatura
 
 - [x] Conocer la historia de la Computación Virtual, sus orígenes y razones de su existencia.
