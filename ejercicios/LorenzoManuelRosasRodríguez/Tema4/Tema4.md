@@ -7,7 +7,7 @@ sudo apt-get install lxc debootstrap bridge-utils
 
 ```
 
-Miro su compabilidad con:
+Miro su compatibilidad con:
 
 ```
 lxc-checkconfig
@@ -57,7 +57,7 @@ Creo un contenedor denominado mydebian:
 ![creación_debian](https://www.dropbox.com/s/p4eaoc4oxe4fc80/img4.png?dl=1)
 
 
-Y para su ejecución ( da un error *Failed to mount cgroup at /sys/fs/cgroup/systemd: Permission denied*):
+Y para su ejecución:
 ```
 sudo lxc-start -n debianita
 ```
@@ -144,7 +144,7 @@ ab -n 1000 -c 1000 http://10.0.2.15/
 
 ```
 
-![ab_contenedor](https://www.dropbox.com/s/w13bkpxx63q6cjd/img9.png?dl=1)
+![ab_contenedor](https://www.dropbox.com/s/boz55jf8xpahzgr/img10.png?dl=1)
 
 - Creamos la jaula:
 
@@ -174,7 +174,7 @@ ab -n 1000 -c 1000 http://localhost/
 ```
 ![ab_jaula](https://www.dropbox.com/s/keqrrhpzn4lzm01/img11.png?dl=1)
 
-**Razonamiento**:  Los resultados obtenidos tantp la jaula con ab son mejores que en el contenedor, esto se debe a que el contenedor usa un puente(**bridge**).
+**Razonamiento**:  Los resultados obtenidos en la jaula con ab son mejores que en el contenedor, esto se debe a que el contenedor usa un puente(**bridge**).
 
 
 ### Ejercicio 6: Instalar docker:
@@ -217,7 +217,7 @@ Para centos realizo lo siguiente:
 
 - Iniciamos servicio: **sudo docker -d &**
 - Creamos la imagen con: **sudo docker pull centos**
-- Lo inicio: **sudo docker run -i -t ubuntu /bin/bash**
+- Lo inicio: **sudo docker run -i -t centos /bin/bash**
 
 ![docker_centos](https://www.dropbox.com/s/5u0n1x0ppxokqmf/img14.png?dl=1)
 
@@ -259,7 +259,27 @@ He seguido los siguientes pasos:
 
 ![ej9](https://www.dropbox.com/s/eqsv0m5fjf7ujfg/img18.png?dl=1)
 
+###Ejercicio 10: Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección.
 
+- Para descargar la imagen deberemos introducir en la terminal.
+```
+docker pull lorenmanu/submodulo-lorenzo
+
+```
+
+![img7](https://www.dropbox.com/s/yl4i0e5ft3lmpld/img7.png?dl=1)
+
+- Para arrancar la imagen descargada en el paso anterior:
+
+```
+sudo docker run i -t lorenmanu/submodulo-lorenzo /bin/bash
+
+```
+![img8](https://www.dropbox.com/s/jdwqgser8f9ve5a/img8.png?dl=1)
+
+- Nos vamos al directorio de la app, obtenemos su dirección ip con el comando **ifconfig**, y finalmente la lanzaremos pa visualizarla en nuestro ordenador:
+
+![img9](https://www.dropbox.com/s/h9vb2a8jvsz83qg/xexo.png?dl=1)
 
 
 
