@@ -30,7 +30,7 @@ Primero vamos a crear una máquina virtual con [SliTaz](http://www.slitaz.org/en
 
 - Una vez instalado, esta se ejecuta automáticamente. En caso de necesitar iniciarlo en cualquier otro momento, deberemos hacer `qemu-system-x86_64 -hda fichero-cow.qcow2`. En mi caso al ser una versión "Live", no podremos arrancarlo ya que no se instala. 
 
-![Slitaz funcionando](https://www.dropbox.com/sh/2bgu88ogoikch8u/AAB7DXjH3QebVFWpku4GDZ7ta?dl=1)
+![Slitaz funcionando](https://www.dropbox.com/s/jmo0zfe3b7minn4/Slitaz_funcionando.PNG?dl=1)
 
 Del resto de opciones que tenemos, CoreOs se instala sobre contenedor DOcker o en una máquina virtual de Amazon EC2. TtyLinux ya no ofrece soporte. Me he decantado por probar [GALPon Minino](http://minino.galpon.org/en):
 
