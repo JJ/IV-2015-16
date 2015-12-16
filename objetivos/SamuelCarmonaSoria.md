@@ -98,7 +98,25 @@ ordenador habitual lo usa.
 ###Objetivos séptima semana
 
 [X] Entender la base del aislamiento de recursos en el sistema operativo.
-[] Instalar docker y trabajar con él.
+[x] Instalar docker y trabajar con él.
 [X] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
 [X] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
-[] Usar imágenes de docker publicadas.
+[x] Usar imágenes de docker publicadas.
+
+
+##Tema 4
+
+###Cubre los siguientes objetivos de la asignatura
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+- [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+- [x] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+- [x] Documentar y mantener una plataforma virtual.
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku
+- [x] Realizar tareas de administración en infraestructura virtual.
+
+### Objetivos específicos
+- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+- [x] Crear infraestructuras virtuales completas.
+- [x] Comprender los pasos necesarios para la configuración automática de las mismas.
