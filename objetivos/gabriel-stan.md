@@ -5,36 +5,47 @@ Lista de objetivos de Gabriel Stan
 
 ### Objetivos generales
 
-- [ ] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
-- [ ] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
-- [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+- [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
 - [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
 - [ ] Documentar y mantener una plataforma virtual.
 - [ ] Optimizar aplicaciones sobre plataformas virtuales.
-- [ ] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
 - [ ] Realizar tareas de administración en infraestructura virtual.
 
 ### Objetivos específicos
 
-- [ ] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
-- [ ] Crear infraestructuras virtuales completas.
-- [ ] Comprender los pasos necesarios para la configuración automática de las mismas.
+- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+- [x] Crear infraestructuras virtuales completas.
+- [x] Comprender los pasos necesarios para la configuración automática de las mismas.
 
+## Objetovos de la décima semana
+
+### Objetivos principales
+
+- [x] Usar docker en una aplicación real.
+
+### Otros objetivos
+
+- [x] Publicar imágenes de docker.
+- [x] Probar imágenes de docker publicadas.
+- [ ] Trabajar con varias imágenes de docker cokectadas.
 
 ## Objetivos de la novena semana
 
 ### Objetivos principales
 
-- [ ] Uso de docker para creación de imágenes.
-- [ ] Entender el uso de docker en el contexto de una aplicación.
-- [ ] Analizar el resultado del último hito de las prácticas.
+- [x] Uso de docker para creación de imágenes.
+- [x] Entender el uso de docker en el contexto de una aplicación.
+- [x] Analizar el resultado del último hito de las prácticas.
 
 ### Otros objetivos
 
 - [ ] Revisar los errores en la entrega de tercer hito.
-- [ ] Adoptar buenas prácticas en los repositorios git:
+- [x] Adoptar buenas prácticas en los repositorios git:
 	- [x] Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
-	- [ ] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+	- [x] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
 - [x] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
 - [x] Asistir al taller de Telegram
 - [ ] Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
@@ -43,24 +54,24 @@ Lista de objetivos de Gabriel Stan
 
 ### Objetivos principales
 
-- [ ] Entender la base del aislamiento de recursos en el sistema operativo.
-- [ ] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+- [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
 
 ### Otros objetivos
 
 - [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
-- [ ] Instalar docker y trabajar con él.
-- [ ] Usar imágenes de docker publicadas.
+- [x] Instalar docker y trabajar con él.
+- [x] Usar imágenes de docker publicadas.
 
 ## Objetivos de la séptima semana
 
 ### Objetivos principales
 
-- [ ] Entender la base del aislamiento de recursos en el sistema operativo.
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
 
 ### Otros objetivos
 
-- [ ] Instalar docker y trabajar con él.
+- [x] Instalar docker y trabajar con él.
 
 #Objetivos del tema 3
 
