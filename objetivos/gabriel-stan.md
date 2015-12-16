@@ -5,20 +5,20 @@ Lista de objetivos de Gabriel Stan
 
 ### Objetivos generales
 
-- [ ] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
-- [ ] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
-- [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+- [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
 - [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
 - [ ] Documentar y mantener una plataforma virtual.
 - [ ] Optimizar aplicaciones sobre plataformas virtuales.
-- [ ] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
 - [ ] Realizar tareas de administración en infraestructura virtual.
 
 ### Objetivos específicos
 
-- [ ] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
-- [ ] Crear infraestructuras virtuales completas.
-- [ ] Comprender los pasos necesarios para la configuración automática de las mismas.
+- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+- [x] Crear infraestructuras virtuales completas.
+- [x] Comprender los pasos necesarios para la configuración automática de las mismas.
 
 ## Objetovos de la décima semana
 
