@@ -133,7 +133,8 @@ Y si queremos borrarlo:
 Ahora, vamos a instalar una imagen que incluya MongoDB:
 
 Seguimos el mismo procedimiento usado previamente:
- ```sudo docker pull mongo
+ ```
+ sudo docker pull mongo
 sudo docker run -i -t mongo
 sudo docker ps -a
 ```
