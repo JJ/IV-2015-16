@@ -23,3 +23,49 @@ Estos son mis puentes de red:
 ![Puentes de red en mi sistema](https://www.dropbox.com/s/9kybz5mct0g8m2o/puentesRed2.PNG?dl=1)
 
 Se puede ver que tengo los puentes creados para docker, lxc y virtualbox.
+
+### Ejercicio 2.2: Crear un interfaz virtual y asignarlo al interfaz de la tarjeta wifi, si se tiene, o del fijo, si no se tiene.
+
+1. Creamos el puentes con `sudo brctl addbr puente`.
+
+2. Y lo añadimos a la interfaz del wifi: `brctl addif puente wlan0`
+
+Si en vez de usar la interfaz wifi queremos una fija, ponemos eth0 donde pone wlan0.
+
+### Ejercicio 3.1: Usar debootstrap (o herramienta similar en otra distro) para crear un sistema mínimo que se pueda ejecutar más adelante.
+
+1. Instalamos debootstrap: `sudo apt-get install debootstrap`
+
+2. Creamos la jaula con `sudo debootstrap --arch=amd64 lucid /home/jaulas/lucid/ http://archive.ubuntu.com/ubuntu`
+
+Mi jaula con el sistema Lucid:
+
+![Jaula con Lucid](https://www.dropbox.com/s/hmtr8oy56fgu9zi/jaulaLucid.PNG?dl=1)
+
+### Ejercicio 3.2: Experimentar con la creación de un sistema Fedora dentro de Debian usando Rinse.
+
+1. Instalamos primero Rinse con `sudo apt-get install rinse`.
+
+2. Buscamos la distribución fedora en la lista de disponibles: `rinse --list-distributions` 
+
+![Distribuciones de Rinse](https://www.dropbox.com/s/r7olcbrnmcxusp3/distribucionesRinse.PNG?dl=1)
+
+3. Creamos la carpeta de la jaula: `sudo mkdir -p /home/jaulas/fedora`. Con la opción -p crea las carpetas intermedias.
+
+4. Descargamos e instalamos el sistema fedora en la jaula con `sudo rinse --arch=amd64 --distribution fedora-core-6 --directory /home/jaulas/fedora`.
+
+![Jaula con Fedora funcionando](https://www.dropbox.com/s/ihasescn79uae7w/jaulaFedora.PNG?dl=1)
+
+### Ejercicio 4: Instalar alguna sistema debianita y configurarlo para su uso. Trabajando desde terminal, probar a ejecutar alguna aplicación o instalar las herramientas necesarias para compilar una y ejecutarla.
+
+1. Entramos a la jaula creada en el ejercicio 3.1: `sudo chroot /home/jaulas/lucid`
+
+2. Montamos el filesystem virtual /proc e instalamos el paquete de idioma español para corregir algunos errores dentro de la jaula: `mount -t proc proc /proc && apt-get install language-pack-es`
+
+3. Instalamos un editor: `sudo apt-get install nano`
+
+4. Creamos un programa simple para Python, por ejemplo hola.py con el siguiente contenido: `print "hola mundo"`
+
+5. Ejecutamos el programa: `python hola.py`
+
+![Programa Python funcionando en la jaula](https://www.dropbox.com/s/yrbrzkoy28536hq/holamundoEnjaula.PNG?dl=1)
