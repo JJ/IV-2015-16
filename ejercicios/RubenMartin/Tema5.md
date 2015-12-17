@@ -32,7 +32,7 @@ Primero vamos a crear una máquina virtual con [SliTaz](http://www.slitaz.org/en
 
 ![Slitaz funcionando](https://www.dropbox.com/s/jmo0zfe3b7minn4/Slitaz_funcionando.PNG?dl=1)
 
-Del resto de opciones que tenemos, CoreOs se instala sobre contenedor DOcker o en una máquina virtual de Amazon EC2. TtyLinux ya no ofrece soporte. Me he decantado por probar [GALPon Minino](http://minino.galpon.org/en):
+Del resto de opciones que tenemos, CoreOs se instala sobre contenedor Docker o en una máquina virtual de Amazon EC2. TtyLinux ya no ofrece soporte. Me he decantado por probar [GALPon Minino](http://minino.galpon.org/en):
 
 - Descargamos la imagen de la [página web oficial](http://minino.galpon.org/es/descargas), en mi caso la versión "Ártabros 2.1 minimal".
 
@@ -60,7 +60,7 @@ Yo suelo utilizar [VirtualBox](https://www.virtualbox.org/) como hipervisor. Par
 
 ![Pantalla inicio VirtualBox](https://www.dropbox.com/s/2yflzouol1w2jyu/Virtualbox-Interfaz.PNG?dl=1)
 
-4. Para crear una máquina virtual, damos en "Nueva" y luego configuraremos algunos parámetros como los siguientes:
+Para crear una máquina virtual, damos en "Nueva" y luego configuraremos algunos parámetros como los siguientes:
 
 - Memoria RAM:
 
