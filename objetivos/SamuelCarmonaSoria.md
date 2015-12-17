@@ -120,3 +120,4 @@ ordenador habitual lo usa.
 - [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
 - [x] Crear infraestructuras virtuales completas.
 - [x] Comprender los pasos necesarios para la configuración automática de las mismas.
+
