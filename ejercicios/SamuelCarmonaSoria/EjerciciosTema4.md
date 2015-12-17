@@ -295,4 +295,7 @@ sudo docker push samucs/proyecto-iv:latest
 Se puede ver la imagen subida a Docker [aquí](https://hub.docker.com/r/samucs/proyecto-iv//)
 
 ![ej10_6](http://i770.photobucket.com/albums/xx346/BkY_1234/captura10_6_zps1v4pzch2.jpg)
+
+
+
 Para agilizar el uso de docker he creado el siguiente [script](https://github.com/Samuc/Proyecto-IV-modulo3/script/docker.sh)
