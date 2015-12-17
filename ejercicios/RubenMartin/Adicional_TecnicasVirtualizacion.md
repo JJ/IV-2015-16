@@ -69,3 +69,65 @@ Mi jaula con el sistema Lucid:
 5. Ejecutamos el programa: `python hola.py`
 
 ![Programa Python funcionando en la jaula](https://www.dropbox.com/s/yrbrzkoy28536hq/holamundoEnjaula.PNG?dl=1)
+
+### Ejercicio 5: Instalar una jaula chroot para ejecutar el servidor web de altas prestaciones nginx.
+
+1. Entramos a la jaula: `sudo chroot /home/jaulas/lucid`
+
+2. Actualizamos paquetes: `sudo apt-get update`
+
+3. Instalamos Nginx: `sudo apt-get install nginx`
+
+4. Dejamos libre el puerto 80 con `sudo fuser -k 80/tcp`. Este comando se ejecuta fuera de la jaula.
+
+5. Iniciamos el servicio de Nginx: `sudo service nginx start`
+
+6. Instalamos Curl para poder leer páginas webs: `sudo apt-get install curl`
+
+7. Comprobamos que el servidor está en marcha: `curl localhost`. También se puede hacer desde nuestro navegador web del sistema anfitrión:
+
+![Nginx funcionando con curl](https://www.dropbox.com/s/c1fx63x4pyloo78/nginxChroot.PNG?dl=1)
+
+![Nginx funcionando con navegador web](https://www.dropbox.com/s/a9s8er597l70n0x/nginxfuncionando.PNG?dl=1)
+
+### Ejercicio 6: Crear una jaula y enjaular un usuario usando 'jailkit', que previamente se habrá tenido que instalar.
+
+Vamos a descargar Jailkit de la [web oficial](http://olivier.sessink.nl/jailkit/): `wget http://olivier.sessink.nl/jailkit/jailkit-2.19.tar.gz`
+
+![Descargando Jailkit](https://www.dropbox.com/s/cwtdga3i0covdyr/descargandoJailkit.PNG?dl=1)
+
+Descomprimimos el archivo descargado: `tar -xzvf jailkit-2.19.tar.gz`
+
+Entramos en la carpeta de jailkit descomprimida y ejecutamos `./configure && make && sudo make install` para instalarlo.
+
+![Instalando Jailkit](https://www.dropbox.com/s/77bdpfdqhqnfv9e/instalandoJailkit.PNG?dl=1)
+
+Ahora creamos un sistema de ficheros poseído por root: 
+
+```
+sudo mkdir -p /seguro/jaulas/dorada
+sudo chown -R root:root /seguro
+```
+
+Con `sudo jk_init -v -j /seguro/jaulas/dorada jk_lsh basicshell netutils editors` iniciamos la jaula e instalamos varias cosas en ella.
+
+Vamos a crear un usuario y le asignamos una password: 
+
+```
+sudo useradd pruebaIV 
+sudo passwd pruebaIV
+```
+
+Y enjaulamos el usuario creado: `sudo jk_jailuser -m -j /seguro/jaulas/dorada/ pruebaIV`
+
+![Enjaulamos usuario](https://www.dropbox.com/s/sdx0nxlaydpcf65/crearusuarioJalkit.png?dl=1)
+
+Por último para que el usuario pueda tener la shell habitual, debemos editar el fichero "/seguro/jaulas/dorada/etc/passwd" y cambiar la linea de `jk_lsh` después de los dos puntos por `/bin/bash`, quedando así:
+
+![Modificar shell jailkit](https://www.dropbox.com/s/en4rhoqx4e9xinj/shellJailkit.PNG?dl=1)
+
+Ya podemos acceder a la jaula con nuestro usuario pulsando "Ctrl+Alt+F1" e introduciendo los datos de acceso del usuario creado anteriormente:
+
+![Jaula de jailkit funcionando](https://www.dropbox.com/s/0ohi4o8u4gtau2k/jailkitfuncionando.PNG?dl=1)
+
+Luego podemos volver a modo gráfico en nuestro sistema anfitrión pulsando "Ctrl+Alt+F7".
