@@ -173,3 +173,78 @@ Conectamos con `vinagre localhost:5901`. El puerto de VNC es el 5900, le añadim
 Si preferimos conectar por SSH en vez de VNC, primero redireccionamos el puerto: `qemu-system-x86_64 -boot order=c -drive file=lubuntu.img,if=virtio -m 512M -name lubuntu -redir tcp:2222::22`. La opción -name indica el nombre de usuario a usar.
 
 Y conectamos por ssh: `ssh -p 2222 lubuntu@localhost`.
+
+### Ejercicio 5: Crear una máquina virtual ubuntu en Azure e instalar en ella un servidor nginx para poder acceder mediante web.
+
+Hay dos formas de hacer esto, o mediante el panel de control web o por línea de órdenes.
+
+LINEA DE ORDENES:
+
+Debemos instalar los tres siguientes paquetes:
+
+```
+sudo apt-get install nodejs-legacy
+sudo apt-get install npm
+sudo npm install -g azure-cli
+```
+
+Ahora vamos a conectar con nuestra cuenta de Azure:
+
+- Creamos la configuración pública para nuestra cuenta: `azure account download`
+
+![Creación de claves Azure](https://www.dropbox.com/s/3lcu5ns8pkz28wm/creacionClavesAzure.PNG?dl=1)
+
+- Descargamos el archivo en el enlace de la captura anterior:
+
+![Obtención de claves Azure](https://www.dropbox.com/s/cxu5anvhz4f312s/clavesAzure.PNG?dl=1)
+
+- Importamos el pase de Azure que nos hemos descargado: `azure account import <file location>`. En <file location> ponemos la ubicación del archivo descargado.
+
+![Importar pase de Azure](https://www.dropbox.com/s/ofm30xuwoy5cwcf/ImportamospaseAzure.PNG?dl=1)
+
+- Creamos el sitio web con el comando `azure site create --location "West US" <web site>`. En <web site> ponemos el nombre que queremos que tenga la página que acceda a nuestra máquina virtual.
+
+![Creación del sitio web](https://www.dropbox.com/s/w5uysgzon8dd11i/creacionwebAzure.PNG?dl=1)
+
+Ya tenemos nuestra máquina en marcha:
+
+![Acceso web a la máquina Azure](https://www.dropbox.com/s/7l32ag6dmcwz8eq/sitiowebFuncionando.PNG?dl=1)
+
+Ahora vamos a instalar Ubuntu en ella:
+
+- Buscamos la imagen que queremos de entre las disponibles: `azure vm image list westus ubuntuserver`
+
+![Imágenes dispnibles en Azure](https://www.dropbox.com/s/wxri8ctmgog25sz/imagenesAzure.PNG?dl=1)
+
+- Instalamos la imagen en la máquina virtual: `azure vm create <web site> b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB <user> <password> --location "North Europe" --ssh`
+
+![Maquina creada con Ubuntu](https://www.dropbox.com/s/9kumm7jq9hg7y3x/maquinacreadaAzure.png?dl=1)
+
+Ya podemos arrancarla con la orden `azure vm start pruebaiv-romi`:
+
+![Arrancar máquina en Azure](https://www.dropbox.com/s/7z6jw3goxpn2npe/arrancarmaquinaAzure.PNG?dl=1)
+
+Y ahora nos conectamos a la máquina por SSH: `ssh romi@pruebaiv-romi.cloudapp.net`
+
+![Conexión a la maquina por ssh](https://www.dropbox.com/s/dgpsbk4oqcgl1d0/conectarAzure.PNG?dl=1)
+
+Ahora procedemos a hacer una instalación de nginx como ya hemos hecho otras veces:
+
+- `sudo apt-get update`
+- `sudo apt-get install nginx`
+- `sudo fuser -k 80/tcp`
+- `sudo service nginx start`
+
+Antes de acceder al servicio web, debemos abrir el puerto 80 para nginx:
+
+ `azure vm endpoint create <web site> 80 80`
+ 
+![Abrir puertos en Azure](https://www.dropbox.com/s/glqjxy38mxpmcyv/abrirpuertosAzure.PNG?dl=1)
+
+Ya tenemos acceso a nuestro servidor:
+
+![Servidor Nginx funcionando](https://www.dropbox.com/s/r1bdhg2zk53t4ka/servidorNginxAzure.PNG?dl=1)
+
+Ahora para no seguir pagando, voy a apagar la máquina con el comando `azure vm shutdown pruebaiv-romi`:
+
+![Apagando la maquina de Azure](https://www.dropbox.com/s/zlnnhl9aivkxamo/apagarMaquinaAzure.PNG?dl=1)
