@@ -176,11 +176,9 @@ Y conectamos por ssh: `ssh -p 2222 lubuntu@localhost`.
 
 ### Ejercicio 5: Crear una máquina virtual ubuntu en Azure e instalar en ella un servidor nginx para poder acceder mediante web.
 
-Hay dos formas de hacer esto, o mediante el panel de control web o por línea de órdenes.
+Hay dos formas de hacer esto, o mediante el panel de control web o por línea de órdenes. En este caso lo voy a hacer por linea de comandos que es la que nos interesa en esta asignatura:
 
-LINEA DE ORDENES:
-
-Debemos instalar los tres siguientes paquetes:
+Primero empezamos instalando los tres siguientes paquetes:
 
 ```
 sudo apt-get install nodejs-legacy
