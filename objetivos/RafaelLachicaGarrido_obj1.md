@@ -270,6 +270,8 @@ __________________________________________
 
 - [x] Usar docker en una aplicación real.
 
+- [x] Usar Despligue automático con la librería de python Fabric.
+
 #####Otros objetivos
 
 - [x] Publicar imágenes de docker.
