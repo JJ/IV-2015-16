@@ -80,3 +80,9 @@ Optimizar aplicaciones sobre plataformas virtuales.
 - [X] Publicar imágenes de docker.
 - [X] Probar imágenes de docker publicadas.
 - [X] Trabajar con varias imágenes de docker conectadas.
+
+###Objetivos undécima semana
+- [X] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+###Otros objetivos undécima semana
+- [X] Instalar hipervisores libres y trabajar con ellos.
