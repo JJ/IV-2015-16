@@ -270,6 +270,8 @@ __________________________________________
 
 - [x] Usar docker en una aplicación real.
 
+- [x] Usar Despligue automático con la librería de python Fabric.
+
 #####Otros objetivos
 
 - [x] Publicar imágenes de docker.
@@ -277,3 +279,9 @@ __________________________________________
 - [x] Probar imágenes de docker publicadas.
 
 - [x] Trabajar con varias imágenes de docker cokectadas.
+
+###Sesión 11 (semana del 9 al 16 de Diciembre de 2015)
+
+####Otros objetivos
+- [x] Asistir al programa del Microsoft Tour University.
+- [x] Mejorar nociones sobre Webapp y los distintos servicios que nos ofrece Azure, explicados en el Microsoft Tour University.
