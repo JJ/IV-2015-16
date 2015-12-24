@@ -424,13 +424,16 @@ sudo docker build -f Dockerfile -t jesmorc/proyecto-iv:latest --no-cache=true ./
 ```
 
 Me logueo con las credenciales de Docker:
+
 ```
 sudo docker login
 ```
 
 Y finalmente hago el push al repositorio de Docker:
+
 ```
 sudo docker push jesmorc/proyecto-iv:latest
+```
 
 [**ENLACE A DOCKER DEL PROYECTO**](https://hub.docker.com/r/jesmorc/proyecto-iv/)
 
