@@ -42,7 +42,7 @@ virsh -c qemu:///system list
 ![okinstalacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobacion_zpslsxxrzfv.png)
 
 - Es recomendable tener una interfaz gráfica, aunque no es necesario para un futuro Ingeniero Informático.
-```
+
 ![virtmanager](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/virtmanager_zpsmdgibibo.png)
 
 - Desde el panel de inicio se puede arrancar la interfaz gráfica(Herramientas del sistema->Gestor de máquinas virtuales), esta nos indica si es necesario instalar más paquetes.
