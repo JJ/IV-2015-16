@@ -55,3 +55,46 @@ virsh -c qemu:///system list
 
 ![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/resultado_zpsi2fjtsjs.png)
 
+### Ejercicio 2: Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS (que sirve como soporte para Docker) GALPon Minino, hecha en Galicia para el mundo, Damn Small Linux, SliTaz (que cabe en 35 megas) y ttylinux (basado en línea de órdenes solo).
+
+*CoreOS:*
+
+- Procedo a crear el disco duro necesario:
+```
+$ qemu-img create -f qcow2 coreos.qcow2 10G
+```
+
+![discocoreos](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/coreosdiscoduro_zpsyqnr36az.png)
+
+- Realizo una instalación de una imagen [CoreOS](https://coreos.com/os/docs/latest/booting-with-iso.html) estable:
+```
+$ qemu-system-x86_64 -machine accel=kvm -hda coreos.qcow2 -cdrom coreos_production_iso_image.iso -m 1G -boot d
+```
+
+![instalacioncoreos](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/arrancarcoreos_zpsdxyhylcn.png)
+
+![coreos](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/coreos_zpsz422in4f.png)
+
+*Debian Stable:*
+
+- Procedo a crear el disco duro necesario:
+```
+$ qemu-img create -f qcow2 debian.qcow2 10G
+```
+
+![discodebian](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/debiandiscoduro_zpswrt0y7d5.png)
+
+- Realizo una instalación de una imagen [Debian](http://cdimage.debian.org/debian-cd/8.2.0/amd64/iso-cd/) estable:
+```
+$ qemu-system-x86_64 -machine accel=kvm -hda debian.qcow2 -cdrom debian-8.2.0-amd64-CD-1.iso -m 1G -boot d
+```
+
+![instalaciondebian](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/arrancardebian_zpscp000flk.png)
+
+![debian](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/debian_zpsr0sjfthy.png)
+
+Para arrancar la máquina una vez instalada puede usarse una orden tal como esta  *qemu-system-x86_64 -boot order=c -drive	file=/media/Backup/Isos/discovirtual.img,if=virtio*
+
+### 2.Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
+
+
