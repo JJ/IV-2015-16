@@ -97,4 +97,51 @@ Para arrancar la máquina una vez instalada puede usarse una orden tal como esta
 
 ### 2.Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
 
+He usado para este ejercicio VirtualBox, concretamente he instalado una Debian Stable como se aprecia en las imágenes.
+
+![debian1](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/debian1_zpsaigphxyz.png)
+
+![debian2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/debian2_zpsj5kanvdc.png)
+
+![debian3](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/debian3_zps7zixqafz.png)
+
+### Ejercicio 3: Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con *qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img*
+
+Para este ejercicio he usado el benchmark de [Sysbench](http://www.elmundoenbits.com/2013/04/benchmark-I.html#.VoAuSt9vEc9), los pasos para su instalación y ejecución son los siguientes:
+- Instalación
+```
+sudo apt-get install sysbench
+```
+- Creación del entorno de trabajo
+```
+sysbench --test=fileio --file-total-size=5G prepare
+```
+- Ejecución de los tests y resultados
+```
+sysbench --test=fileio --file-total-size=5G \
+       --file-test-mode=rndrw --init-rng=on \
+       --max-time=300 --max-requests=0 run
+```
+- Limpiar el espacio ocupado
+```
+sysbench --test=fileio --file-total-size=5G cleanup
+```
+
+Para probar con paravirtualización `qemu-system-x86_64 -boot order=c -drive file=ubuntu.qcow2,if=virtio`
+
+![instalar](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalarsysbench_zpseoivkznx.png)
+
+![preparar](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/preparartest_zpso2pb4urg.png)
+
+![resultados1](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/resultado_zpsw85ntrmr.png)
+
+![clean](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/clean_zpswgdjyziy.png)
+
+Para probar sin paravirtualización `qemu-system-x86_64 -hda ubuntu.qcow2`
+
+![resultado2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/resultado1_zpsg3ajtl1n.png)
+
+
+
+
 
