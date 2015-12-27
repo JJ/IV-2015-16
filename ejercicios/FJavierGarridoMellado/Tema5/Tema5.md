@@ -137,7 +137,7 @@ Para probar con paravirtualización `qemu-system-x86_64 -boot order=c -drive fil
 
 ![clean](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/clean_zpswgdjyziy.png)
 
-Para probar sin paravirtualización `qemu-system-x86_64 -hda ubuntu.qcow2`
+Para probar sin paravirtualización `qemu-system-x86_64 -hda ubuntu.qcow2` y se realiza las mismas operaciones de creación del entorno y ejecución de los tests que he comentado antes.
 
 ![resultado2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/resultado1_zpsg3ajtl1n.png)
 
