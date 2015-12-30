@@ -20,15 +20,15 @@ La orden anterior crea un grupo ejercicio2 que se encarga de controlar la memori
 
 Ahora creamos 3 subgrupos para  ejecutar  el  navegador,  un  procesador  de  textos  y  el centro de software de Ubuntu:
 
- `sudo cgcreate -g memory,cpu,cpuacct:ejercicio2/navegador`
- `sudo cgcreate -g memory,cpu,cpuacct:ejercicio2/editor`
- `sudo cgcreate -g memory,cpu,cpuacct:ejercicio2/software`
+- `sudo cgcreate -g memory,cpu,cpuacct:ejercicio2/navegador`
+- `sudo cgcreate -g memory,cpu,cpuacct:ejercicio2/editor`
+- `sudo cgcreate -g memory,cpu,cpuacct:ejercicio2/software`
  
 Ejecutamos los distintos procesos para cada grupo de control:
 
- `sudo cgexec -g memory,cpu,cpuacct:ejercicio2/navegador firefox &`
- `sudo cgexec -g memory,cpu,cpuacct:ejercicio2/editor geany &`
- `sudo cgexec -g memory,cpu,cpuacct:ejercicio2/software software-center &`
+- `sudo cgexec -g memory,cpu,cpuacct:ejercicio2/navegador firefox &`
+- `sudo cgexec -g memory,cpu,cpuacct:ejercicio2/editor geany &`
+- `sudo cgexec -g memory,cpu,cpuacct:ejercicio2/software software-center &`
 
 En las siguientes carpetas tendremos los resultados.
  
@@ -37,3 +37,11 @@ En las siguientes carpetas tendremos los resultados.
 Aquí tenemos un ejemplo donde podemos comparar datos de los stat:
 
 ![Ejemplo de archivo stat con Cgroup](https://www.dropbox.com/s/bkn7tzkx55ku0q5/statCGROUP.png?dl=1)
+
+### Ejercicio 3: Discutir diferentes escenarios de limitación de uso de recursos o de asignación de los mismos a una u otra CPU.
+
+### Ejercicio 4: Implementar usando el fichero de configuración de 'cgcreate' una política que dé menos prioridad a los procesos de usuario que a los procesos del sistema (o viceversa). 
+
+### Ejercicio 5: Usar un programa que muestre en tiempo real la carga del sistema tal como 'htop' y comprobar los efectos de la migración en tiempo real de una tarea *pesada* de un procesador a otro (si se tiene dos núcleos en el sistema). 
+
+### Ejercicio 6: Configurar un servidor para que el servidor web que se ejecute reciba mayor prioridad de entrada/salida que el resto de los usuarios.
