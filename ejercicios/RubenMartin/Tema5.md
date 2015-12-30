@@ -337,3 +337,23 @@ Ya podemos comprobar que nginx está funcionando. Con `juju status` obtenemos es
 ![Juju status](https://www.dropbox.com/s/1w7xgle9w80w6po/jujuStatus.PNG?dl=1)
 
 Si accedemos a la public-adress que viene al final del servicio nginx mediante un navegador web, podremos ver que el servidor está funcionando.
+
+### Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+
+Primero vamos a instalar todo lo necesario:
+
+ `sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils virt-manager`
+ 
+Nos descargamos la ISO de la página de descargas de [Linux Mint](http://www.linuxmint.com/download.php).
+
+Creamos almacenamiento virtual para la máquina virtual:
+
+ `dd if=/dev/zero of=LM_test_os.image bs=1M count=10240`
+
+Y ahora instalamos la imagen descargada en el archivo creado, que funcionará como un disco duro:
+
+ `kvm -cdrom Downloads/linuxmint-17.3-cinnamon-64bit.iso.part -m 1g -hda LM_test_os.image`
+ 
+Estos dos últimos pasos se podrían hacer gráficamente con Virtual Machine Manager (virt-manager):
+
+![Linux Mint con Virt-manager](https://www.dropbox.com/s/2go1wa3oji2qo3d/virt-manager.PNG?dl=1)
