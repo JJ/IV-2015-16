@@ -101,4 +101,36 @@ Si queremos que los cambios sean permamentes tenemos que configurar los servicio
 
 ### Ejercicio 5: Usar un programa que muestre en tiempo real la carga del sistema tal como 'htop' y comprobar los efectos de la migración en tiempo real de una tarea *pesada* de un procesador a otro (si se tiene dos núcleos en el sistema). 
 
+Instalamos htop con `sudo apt-get install htop`.
+
+Y podemos ejecutar el programa simplemente haciendo `htop`, que nos muestra lo siguiente:
+
+![Pantalla Htop](https://www.dropbox.com/s/zl396fkgsvoehps/htop.PNG?dl=1)
+
+Finalmente no he encontrado la forma de migrar un proceso o tarea de un procesador a otro.
+
 ### Ejercicio 6: Configurar un servidor para que el servidor web que se ejecute reciba mayor prioridad de entrada/salida que el resto de los usuarios.
+
+Para realizar esta configuración deberemos modificar otra vez el archivo "/etc/cgconfig.conf", y está vez tendremos que usar el parámetro "blkio.weight", por lo que tendremos que indicar donde se encuentra el controlador del bloqueo de entrada/salida, que en nuestro caso será `blkio = /sys/fs/cgroup/blkio`. 
+
+Ahora tendremos que crear un grupo para los servidores al que llamaremos "servers" y dentro del cual indicaremos que le vamos a dar una prioridad mayor de entrada/salida que al resto de usuarios. 
+
+Los valores posibles para este parámetro están en un rango que va desde 100 hasta 1000, así que para que los servidores tengan bastante más prioridad le vamos a dar un "peso" de 700. 
+
+El archivo de configuración quedaría entonces así: 
+
+```
+mount { 
+   blkio = /sys/fs/cgroup/blkio; 
+} 
+ 
+group servers { 
+    blkio { 
+        blkio.weight = "700"; 
+    } 
+} 
+```
+
+Ejecutamos `sudo service cgconfig start` para crear la jerarquía de cgroup y establecer los parámetros definidos. 
+
+Si el servidor que tenemos funcionando es un servidor Apache, deberemos añadir la directiva de configuración `CGROUP_DAEMON="blkio:/http"` al fichero de configuración "/etc/apache2/apache2.conf" para que el servidor tenga conocimiento de que pertenece a un grupo de control, algo similar a las reglas que definimos en el archivo "/etc/cgrules.conf" para que un proceso fuera movido a su grupo correspondiente en el ejercicio 4.
