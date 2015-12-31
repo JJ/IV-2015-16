@@ -189,7 +189,7 @@
 	- Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
 	- Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
 
-- [ ] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+- [x] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
 
 - [x] Asistir al taller de Telegram
 
@@ -208,6 +208,52 @@
 
 - [ ] Trabajar con varias imágenes de docker conectadas.
 
+## Sesión 11: Semana del 9 al 16 de Diciembre de 2015
+### Objetivos de la semana
+
+- [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+### Otros objetivos
+
+- [x] Instalar hipervisores libres y trabajar con ellos.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+## Sesión 12: Semana del 16 al 23 de Diciembre de 2015
+### Objetivos de la semana
+
+- [x] Usar gestores de máquinas virtuales.
+
+### Otros objetivos
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+- [x] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+## Sesión 13: Semana del 13 al 20 de Enero de 2016
+### Objetivos de la semana
+
+- [x] Usar infraestructura en la nube.
+
+### Otros objetivos
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+## Sesión 14: Semana del 20 al 27 de Enero de 2016
+### Objetivos de la semana
+
+- [x] Usar infraestructura en la nube.
+
+### Otros objetivos
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
 ## Objetivos de la asignatura
 
 - [x] Conocer la historia de la Computación Virtual, sus orígenes y razones de su existencia.
@@ -218,21 +264,21 @@
 
 - [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
 
-- [ ] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
 
-- [ ] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
 
-- [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+- [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
 
-- [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+- [x] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
 
-- [ ] Documentar y mantener una plataforma virtual.
+- [x] Documentar y mantener una plataforma virtual.
 
-- [ ] Optimizar aplicaciones sobre plataformas virtuales.
+- [x] Optimizar aplicaciones sobre plataformas virtuales.
 
-- [ ] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
 
-- [ ] Realizar tareas de administración en infraestructura virtual.
+- [x] Realizar tareas de administración en infraestructura virtual.
 
 ## Objetivos específicos
 ### Tema 1: Introducción a la infraestructura virtual: concepto y soporte físico
@@ -268,3 +314,21 @@
 - [x] Crear infraestructuras virtuales completas.
 
 - [x] Comprender los pasos necesarios para la configuración automática de las mismas.
+
+### Tema 5: Virtualización completa: uso de máquinas virtuales
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+- [x] Documentar y mantener una plataforma virtual.
+
+- [x] Realizar tareas de administración de infraestructuras virtuales.
+
+### Tema 6: Gestión de infraestructuras virtuales
+
+- [ ] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+
+- [ ] Saber cómo aplicarlos en un caso determinado.
+
+- [ ] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.

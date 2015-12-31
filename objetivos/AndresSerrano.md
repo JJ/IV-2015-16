@@ -120,6 +120,56 @@
  - [ ] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
  - [x] Experimentar con el despliegue simultáneo a varios PaaS.
 
+###Sesión 7.
+
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+    
+- [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+#####Otros objetivos
+
+- [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+
+- [x] Instalar docker y trabajar con él.
+    
+- [ ] Usar imágenes de docker publicadas.
+
+###Sesión 9.
+
+- [x] Uso de docker para creación de imágenes.
+
+- [x] Entender el uso de docker en el contexto de una aplicación.
+
+- [ ] Analizar el resultado del último hito de las prácticas.
+
+#####Otros objetivos
+
+- [x] Revisar los errores en la entrega de tercer hito.
+
+- [x] Adoptar buenas prácticas en los repositorios git:
+
+- [ ] Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
+
+- [x] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+
+- [ ] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+    
+- [ ] Asistir al taller de Telegram
+
+- [ ]  Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
+
+###Sesión 10.
+
+- [x] Usar docker en una aplicación real. 
+
+#####Otros objetivos
+
+- [x] Publicar imágenes de docker.
+    
+- [x] Probar imágenes de docker publicadas.
+    
+- [x] Trabajar con varias imágenes de docker cokectadas.
+
 ## Tema 1
 
  - [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
@@ -150,4 +200,51 @@
  - [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
 
  - [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización. Por ejemplo tenemos varios trabajadores que tocan el mismo código, con la integración continua sabemos donde están los fallos, porque se producen y quien los provoca. Además podemos trabajar sobre la nube.
+
+####Otros objetivos
+- [x] Darse de alta en Heroku y Openshift y aprender a usarlos.
+
+- [x] Crear una aplicación Wordpress dentro de Openshift.
+
+- [x] Realizar una app en Heroku.
+
+- [x] Crear pruebas para la app y verlas en la integración continua.
+
+- [x] Asistir al taller de Telegram
+
+- [x] Añadir documentacion al proyecto y ordenarla.
+
+- [x] Migrar mi aplicacion del proyecto a Django
+
+##Tema 4
+
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+
+- [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+
+- [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+
+- [ ] Documentar y mantener una plataforma virtual.
+
+- [ ] Optimizar aplicaciones sobre plataformas virtuales.
+
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+
+- [x] Realizar tareas de administración en infraestructura virtual.
+
+####Otros objetivos
+
+- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+
+- [ ] Crear infraestructuras virtuales completas.
+
+- [ ] Comprender los pasos necesarios para la configuración automática de las mismas.
+
 
