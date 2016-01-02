@@ -24,3 +24,11 @@ KVM acceleration can be used
 
 
 ### Ejercicio 2.1: Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS, GALPon Minino, Damn Small Linux, SliTaz y ttylinux.
+
+Dado que KVM es un módulo del kernel, puede que no esté cargado por defecto. Dependiendo del procesador que usemos, lo cargamos con:
+```
+sudo modprobe kvm-intel
+```
+Con esto, si no esta ya activado, activamos KVM. En mi caso como mi cpu es Intel Core i3, he puesto intel.
+
+Ahora descargamos y creamos la máquina virtual de [Stilaz](http://www.slitaz.org/en/get/#stable), ya que es la que menos especacio ocupa.
