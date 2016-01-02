@@ -91,28 +91,87 @@ La funcion mem_total () devuelve la memoria total usada por el programa (memoria
 
 ##Ejercicio 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
-Para que el sistema unix tenga entorno grafico LXDE, he decidido intalar Lubuntu. Podemos descargar la iso de [aqui](http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/)
+Para que el sistema unix tenga entorno grafico LXDE, he decidido instalar Lubuntu. Podemos descargar la iso de [aqui](http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/)
 
-Crear disco duro
+Crear almacenamiento
 	
 	qemu-img create -f qcow2 lubuntu.img 6G
 
-Instalar imagen lubuntu
+Crear la maquina habilitando vnc
 
-	qemu-system-x86_64 -hda lubuntu.img -cdrom lubuntu-14.04.3-desktop-amd64.iso -m 1G
+	qemu-system-x86_64 -cdrom lubuntu-14.04.3-desktop-amd64.iso -boot d -m 1G -vnc :1 lubuntu.img
 
-Arrancar la máquina
 
-	qemu-system-i386 -hda lubuntu.img vnc :1
+Para conectar por vnc voy a utilizar vinagre. Podemos instalarlo mediante 
+
+	sudo apt-get install vinagre
+
+	vinagre localhost:5901
+
+![imagen](https://www.dropbox.com/s/1e2k773w1ae7rp9/vinagre1.png?dl=1)
 
 
 
 ##Ejercicio 5: Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
-----
 
-##Ejercicio 6: Usar juju para hacer el ejercicio anterior.
+Lo primero es instalar azure-cli
 
----
+	sudo apt-get install nodejs-legacy
+	sudo apt-get install npm
+	sudo npm install -g azure-cli
+
+Debemos hacer login en azure
+
+	azure login
+
+Nos facilitará un enlace y un codigo. Debemos abrir el enlace con el navegador e introducir el código
+
+![imagen](https://www.dropbox.com/s/grjusrkfn0m02q8/azure1.png?dl=1)
+
+Tras esto, debemos facilitar nuestras credenciales (usuario contraseña) y automaticamente se completará el proceso de login
+
+![imagen](https://www.dropbox.com/s/rnxej18vbrjkqhm/azure2.png?dl=1)
+
+Voy a utilizar ubuntu-server 14.04. Podemos consultar las imagenes disponibles mediante 
+
+	azure vm image list
+
+Obtener informacion sobre la que vamos a utilizar
+
+	azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140414-en-us-30GB
+
+![imagen](https://www.dropbox.com/s/o1auh09bqw11y2b/azure4.png?dl=1)
+
+Ahora podemos crear la maquina virtual con la imagen
+
+azure vm create maquina-hugo-ej5 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140414-en-us-30GB hugo Clave#Hugo#1 --location "Central US" --ssh
+
+![imagen](https://www.dropbox.com/s/menasge58ap7qjj/azure5.png?dl=1)
+
+Arrancamos la máquina virtual y nos conectamos por ssh
+
+	azure vm start maquina-hugo-ej5
+	ssh hugo@maquina-hugo-ej5.cloudapp.net
+
+![imagen](https://www.dropbox.com/s/8zkbrkkb8rz3zz8/azure6.png?dl=1)
+
+Actualizamos el sistema base e instalamos nginx
+
+	sudo apt-get update
+	sudo apt-get install nginx
+
+Liberamos el puerto 80 e iniciamos el servicio
+
+	sudo fuser -k 80/tcp
+	sudo service nginx start
+
+
+Por último, desconectamos ssh y abrimos el puerto 80 para nginx. Podemos comprobar mediante un navegador, que todo esta correcto. 
+
+	azure vm endpoint create maquina-hugo-ej5 80 80
+
+![imagen](https://www.dropbox.com/s/hxf478398xhw37f/azure7.png?dl=1)
+
 
 ##Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
 

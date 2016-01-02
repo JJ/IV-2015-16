@@ -8,6 +8,18 @@
 
 	{ uno: "dos",tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] } 
 
+	---
+		- uno: "dos"
+  		tres:
+    			- 4
+    			- 5
+   			- "Seis"
+    			-
+      			- siete: 8
+        		  nueve:
+          			- 10
+          			- 11
+
 
 ##Ejercicio 4: Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
 
