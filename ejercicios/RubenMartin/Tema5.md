@@ -246,3 +246,114 @@ Ya tenemos acceso a nuestro servidor:
 Ahora para no seguir pagando, voy a apagar la máquina con el comando `azure vm shutdown pruebaiv-romi`:
 
 ![Apagando la maquina de Azure](https://www.dropbox.com/s/zlnnhl9aivkxamo/apagarMaquinaAzure.PNG?dl=1)
+
+### Ejercicio 6: Usar juju para hacer el ejercicio anterior.
+
+Vamos a empezar instalando juju como viene en la página de [instalación](https://jujucharms.com/docs/stable/getting-started).
+
+- `sudo add-apt-repository ppa:juju/stable`
+- `sudo apt-get update && sudo apt-get install juju-core` 
+
+Ya podemos iniciar juju con el comando `juju init` o `juju generate-config`: 
+
+![Juju init](https://www.dropbox.com/s/pgzudjm2f3dalos/initJuju.PNG?dl=1)
+
+Esto creará el fichero environments.yaml en ~/.juju con el siguiente contenido sobre Azure:
+
+```
+# https://juju.ubuntu.com/docs/config-azure.html
+azure:
+	type: azure
+
+	# location specifies the place where instances will be started,
+	# for example: West US, North Europe.
+	#
+	location: West US
+
+	# The following attributes specify Windows Azure Management
+	# information. See:
+	# http://msdn.microsoft.com/en-us/library/windowsazure
+	# for details.
+	#
+	management-subscription-id: 00000000-0000-0000-0000-000000000000
+	management-certificate-path: /home/me/azure.pem
+
+	# storage-account-name holds Windows Azure Storage info.
+	#
+	storage-account-name: abcdefghijkl
+```
+
+Creamos el certificado necesario para que juju conecte con Azure con los siguientes comandos. Se aconseja poner "Juju" como "Common Name" al generar el certificado, para poder reconocerlo posteriormente.
+
+- `openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout azure.pem -out azure.pem`
+- `openssl x509 -inform pem -in azure.pem -outform der -out azure.cer`
+- `chmod 600 azure.pem`
+
+Esto nos creará dos ficheros, uno "azure.cer" y otro "azure.pem".
+
+Ahora vamos a editar el fichero environments.yaml, introduciendo en él los datos de nuestra cuenta de Azure:
+
+- *management-subscription-id*, será el Identificador de suscripción, que podemos obtener con: 
+	`azure account list`
+
+- *management-certificate-path*, ponemos el camino hasta el fichero "azure.pem" creado, que en mi caso es:
+	`/home/romi/azure.pem`
+	
+- *storage-account-name*, que es el nombre del almacenamiento, obtenido con:
+	`azure storage account list`
+	
+- *location*, donde pondremos la ubicación del almacenamiento de Azure, que se consigue también con el comando anterior.	
+	
+Ahora vamos a subir el nuevo certificado a nuestra cuenta de Azure. 
+
+Pinchamos en Settings > Managements certificates > Upload:
+
+![Subir certificado a Azure](https://www.dropbox.com/s/k0bgvobukeuoxq0/certificadoAzure.PNG?dl=1)
+
+Y seleccionamos el archivo "azure.cer". Una vez terminemos, podremos pasar a crear el táper con Juju.
+
+Ejecutamos el siguiente comando para trabajar sobre Azure:
+
+ `juju switch azure`
+ 
+Cramos el táper con:
+
+ `juju bootstrap`
+ 
+![Creamos el taper de juju](https://www.dropbox.com/s/p8rg4ehkqdtkwq5/taperJuju.PNG?dl=1)
+
+Como podemos ver, este proceso instala paquetes básicos para el táper y lo prepara para poder hacer uso de él.
+
+Ahora pasamos a instalar Nginx con:
+
+ `juju deploy cs:~imbrandon/precise/nginx-7`
+
+Y ahora publicamos el servicio:
+
+ `juju expose nginx`
+ 
+Ya podemos comprobar que nginx está funcionando. Con `juju status` obtenemos esto:
+
+![Juju status](https://www.dropbox.com/s/1w7xgle9w80w6po/jujuStatus.PNG?dl=1)
+
+Si accedemos a la public-adress que viene al final del servicio nginx mediante un navegador web, podremos ver que el servidor está funcionando.
+
+### Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+
+Primero vamos a instalar todo lo necesario:
+
+ `sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils virt-manager`
+ 
+Nos descargamos la ISO de la página de descargas de [Linux Mint](http://www.linuxmint.com/download.php).
+
+Creamos almacenamiento virtual para la máquina virtual:
+
+ `dd if=/dev/zero of=LM_test_os.image bs=1M count=10240`
+
+Y ahora instalamos la imagen descargada en el archivo creado, que funcionará como un disco duro:
+
+ `kvm -cdrom Downloads/linuxmint-17.3-cinnamon-64bit.iso.part -m 1g -hda LM_test_os.image`
+ 
+Estos dos últimos pasos se podrían hacer gráficamente con Virtual Machine Manager (virt-manager):
+
+![Linux Mint con Virt-manager](https://www.dropbox.com/s/2go1wa3oji2qo3d/virt-manager.PNG?dl=1)
