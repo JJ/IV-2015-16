@@ -32,3 +32,15 @@ sudo modprobe kvm-intel
 Con esto, si no esta ya activado, activamos KVM. En mi caso como mi cpu es Intel Core i3, he puesto intel.
 
 Ahora descargamos y creamos la máquina virtual de [Stilaz](http://www.slitaz.org/en/get/#stable), ya que es la que menos especacio ocupa.
+
+Una vez descargada, creamos e instalamos la imagen en un disco duro virtual, para ello:
+1. Creamos la imagen a través del comando: ```qemu-img create -f qcow2 imagen-cow.qcow2 250M```
+![img-Quemu](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-02%20131941_zpsgaj4d7yl.png)
+
+2. Ahora instalamos la imagen a través del comando **qemu-system-x86_64 -hda imagen-cow.qcow2 -cdrom ~/Descargas/slitaz-4.0.iso**.
+Lo más probable, es que necesitamos instalar antes qemu, a través de ```sudo apt-get install qemu-system```
+
+![instalacion](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-02%20135422_zpskbjehz3e.png)
+![funcionando](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-02%20140125_zpse0hy8m8q.png)
+
+Como es una versión live, cada vez que queramos ejecutar, tenemos que arrancar a través de **qemu-system-x86_64 -hda imagen-cow.qcow2 -cdrom ~/Descargas/slitaz-4.0.iso**
