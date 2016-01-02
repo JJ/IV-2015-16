@@ -207,13 +207,15 @@ __________________________________________
 
 - [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
 
-- [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+- [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+
+- [x] Acceso multidispositivo a nuestro proyecto.
 
 - [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
 
-- [ ] Documentar y mantener una plataforma virtual.
+- [x] Documentar y mantener una plataforma virtual.
 
-- [ ] Optimizar aplicaciones sobre plataformas virtuales.
+- [x] Optimizar aplicaciones sobre plataformas virtuales.
 
 - [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
 
@@ -281,7 +283,35 @@ __________________________________________
 - [x] Trabajar con varias imágenes de docker cokectadas.
 
 ###Sesión 11 (semana del 9 al 16 de Diciembre de 2015)
-
+- [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
 ####Otros objetivos
 - [x] Asistir al programa del Microsoft Tour University.
 - [x] Mejorar nociones sobre Webapp y los distintos servicios que nos ofrece Azure, explicados en el Microsoft Tour University.
+
+- [x] Instalar hipervisores libres y trabajar con ellos.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+## Sesión 12: Semana del 16 al 23 de Diciembre de 2015
+### Objetivos de la semana
+
+- [] Usar gestores de máquinas virtuales.
+
+### Otros objetivos
+
+- [] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+- [x] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+## Sesión 13: Semana del 13 al 20 de Enero de 2016
+### Objetivos de la semana
+
+- [] Usar infraestructura en la nube.
+
+### Otros objetivos
+
+- [] Instalar clientes libres de infraestructura en la nube.
+
+- [] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
