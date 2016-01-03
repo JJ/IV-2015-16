@@ -1,5 +1,5 @@
-#Tema 5
-##Rafael Lachica Garrido
+# Tema 5
+## Rafael Lachica Garrido
 
 ### Ejercicio 1: Instalar los paquetes necesarios para usar KVM.
 [fuente](http://nyacomputing.com/how-to-install-kvm-on-ubuntu-and-run-virtual-machines/).
@@ -20,10 +20,10 @@ rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-16$ sudo kvm-ok
 INFO: /dev/kvm exists
 KVM acceleration can be used
 ```
-[kvm-ok](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/kmv-ok_zpsykwyuztd.png?t=1443563958 "km-ok")
+![kvm-ok](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/kmv-ok_zpsykwyuztd.png?t=1443563958 "km-ok")
 
 
-##Ejercicio 2
+## Ejercicio 2
 ### Ejercicio 2.1: Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS, GALPon Minino, Damn Small Linux, SliTaz y ttylinux.
 
 Dado que KVM es un módulo del kernel, puede que no esté cargado por defecto. Dependiendo del procesador que usemos, lo cargamos con:
@@ -50,7 +50,7 @@ Como es una versión live, cada vez que queramos ejecutar, tenemos que arrancar 
 Para este ejercicio usaré [VMWare](https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/12_0) y el sitema operativo [Ubuntu server](http://www.ubuntu.com/download/server)
 ![imagen con el sistema vwmare](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/0cf3bd8e-747f-460b-ae0f-029f785e679e_zpso7xliqdi.png)
 
-##Ejercicio 3 Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img.
+## Ejercicio 3 Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img.
 Benchmark:
 ```
 #!/usr/bin/env python
@@ -119,6 +119,9 @@ if __name__ == "__main__":
 Lo ejecutamos en local, y el resultado es de 24 segundos:
 ![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-02%20192522_zpskggwm0hy.png)
 
+Ejecutamos el benchmark en la máquina virutal de ubuntu server:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/adca8d32-e0fc-418b-9a86-4216350b49d8_zpsdvbkvexn.png)
+
 Para arrancar el sistema de forma normal, hacemos:
 ```
 qemu-system-x86_64 -hda imagen-cow.qcow2 -cdrom ~/Descargas/slitaz-4.0.iso
@@ -128,8 +131,11 @@ Y nos dice Stilaz boot time 80 s:
 ![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20134641_zpsjrhpvgon.png)
 
 Ahora probamos con la paravirtualización:
+```
+rafaellg8@system32:~/Desktop/pruebasIV$ qemu-system-x86_64 -boot order=c -drive file=imagen-cow.qcow2,if=virtio
+```
 
-### Ejercicio 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
+## Ejercicio 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 Uno de los sistemas operativos que he probado y que es de los más ligeros es Lubuntu, basado en LXDE. Lo descargamos de aquí:
 - [Lubuntu](https://help.ubuntu.com/community/Lubuntu/GetLubuntu)
 Hacemos los mismos pasos que antes:
@@ -139,10 +145,86 @@ Hacemos los mismos pasos que antes:
 ![imagenInstalando](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20142304_zpsil0mzmsc.png)
 
 ## Ejercicio 5: Crear una máquina virtual ubuntu en Azure e instalar en ella un servidor nginx para poder acceder mediante web.
-Accedemos al [portal de azure](https://portal.azure.com/)
+Accedemos al [portal de azure](https://portal.azure.com/) o al portal clásico que para mi es más cómodo [Clásico](https://manage.windowsazure.com)
 seleccionamos Máquina Virtual -> Clásica:
-![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20141735_zpsuvphs50y.png)
-![imagenCreada](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20141832_zps1im3dpwy.png)
-Nombre del servidor será prueba.
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/8e886c20-99ed-4f8d-9408-b9ac8782bb6e_zpsp8eby4tp.png)
+![imagenCreada](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/36e5a0c3-3a83-44f2-a26b-dfd29e45980d_zpscafptotc.png)
+Nombre del servidor será **prueba-iv-rlg**.
 
 A contuación, debemos crear los llamados extremos o ENDPOINTS, para cada puerto, necesitamos al menos HTTP y SSH.
+Para ello accedemos al [portal antiguo](https://manage.windowsazure.com/) el cual es mucho más cómodo.
+Añadimos algunos extremos:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20152020_zpsmic8ph65.png)
+
+Configuración, con direcciones IP y extremos añadidos:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/36e5a0c3-3a83-44f2-a26b-dfd29e45980d_zpscafptotc.png)
+Ya tenemos más o menos toda la configuración, ahora necesitamos conectarnos por terminal a la máquina virtual.
+Tenemos 2 formas, o bien por ssh, la cual va bastante lento, debido al retardo, o por la interfaz de comandos que nos ofrece un cliente de Azure para nmp. Vamos a probar esta opción, anque después instalaremos por ssh: [Fuente](https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/)
+
+1. Instalamos el cliente a través de npm:
+```
+rafaellg8@system32:~/Desktop/pruebasIV$ sudo apt-get install nodejs-legacy
+Leyendo lista de paquetes... Hecho
+Creando árbol de dependencias       
+Leyendo la información de estado... Hecho
+nodejs-legacy ya está en su versión más reciente.
+0 actualizados, 0 se instalarán, 0 para eliminar y 12 no actualizados.
+rafaellg8@system32:~/Desktop/pruebasIV$ sudo npm install -g azure-cli
+```
+
+2. Descargamos nuestra cuenta de azure para poder conectarnos:
+```
+rafaellg8@system32:~/Desktop/pruebasIV$ azure account download
+info:    Executing command account download
+info:    Launching browser to http://go.microsoft.com/fwlink/?LinkId=254432
+help:    Save the downloaded file, then execute the command
+help:      account import <file>
+info:    account download command OK
+rafaellg8@system32:~/Desktop/pruebasIV$
+
+```
+
+3. Nos logueamos a través de **azure login**:
+```
+rafaellg8@system32:~/Desktop/pruebasIV$ azure login
+info:    Executing command login
+-info:    To sign in, use a web browser to open the page https://aka.ms/devicelogin. Enter the code DKYYNDULZ to authenticate. If you're signing in as an Azure AD application, use the --username and --password parameters.
+```
+Introducimos el código para conectar el dispositivo.
+Nos da lo siguiente:
+```
+/-
+|info:    Added subscription Azure Pass
+info:    Setting subscription "Azure Pass" as default
++
+info:    login command OK
+```
+
+4. Listamos las máquinas virutales:
+```
+info:    Executing command vm list
++ Getting virtual machines                                                     
+data:    Name           Status     Location          DNS Name                    IP Address     
+data:    -------------  ---------  ----------------  --------------------------  ---------------
+data:    pluco          ReadyRole  Central US        pluco.cloudapp.net          10.143.14.66   
+data:    prueba-iv-rlg  ReadyRole  South Central US  prueba-iv-rlg.cloudapp.net  100.113.234.182
+info:    vm list command OK
+rafaellg8@system32:~/Desktop/pruebasIV$
+```
+
+Ahora ya tenemos los datos, al final necesitaremos acceder por ssh.
+
+###Instalación Nginx
+- Ahora nos conectamos por ssh:
+```
+ssh azureuser@prueba-iv-rlg.cloudapp.net
+```
+![imagenSSH]()
+
+- Instalamos nginx:
+```
+root@prueba-iv-rlg:/home/azureuser# apt-get install nginx
+```
+
+- Probamos ahora que funciona:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20162920_zpsqj4rejhc.png)
