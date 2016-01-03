@@ -56,10 +56,6 @@ Instalar imagen debian. Es necesario tener una iso del SO que vamos a instalar.
 
 	
 
-
-
-
-
 ##Ejercicio 2.2: Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
 
 Voy a utilizar VirtualBox y voy a volver a instalar Slitaz por ser muy liviano (y por que ya tengo la ISO)
@@ -109,6 +105,21 @@ Para conectar por vnc voy a utilizar vinagre. Podemos instalarlo mediante
 	vinagre localhost:5901
 
 ![imagen](https://www.dropbox.com/s/1e2k773w1ae7rp9/vinagre1.png?dl=1)
+
+Para conectar por ssh he tenido problemas con quemu por lo que he instalado la imagen en virtual box tal y como he reflejado en el ejercicio 2.2
+Adicionalmente, he creado una red solo-anfitrión para tener conexion con mi host
+
+![imagen](https://www.dropbox.com/s/7b2xgkf02xne1tf/lubuntu2.png?dl=1)
+
+He indicado en la configuracion de red de la imagen que se conecte a dicha red por alguno de los adaptadores disponibles
+
+![imagen](https://www.dropbox.com/s/5sg2actbaiyecv5/lubuntu3.png?dl=1)
+
+Instalamos ssh en la maquina virtual y nos conectamos desde el anfitrión 
+
+	sudo apt-get install openssh-server
+
+![imagen](https://www.dropbox.com/s/pux0uz553ji51u7/lubuntu4.png?dl=1)
 
 
 
