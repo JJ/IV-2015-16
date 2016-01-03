@@ -136,3 +136,13 @@ Hacemos los mismos pasos que antes:
 - Añadimos espacio virutal: ```qemu-img create -f qcow2 lubuntu.img 10G```
 - Instalamos lubuntu, con la opción de 512 MB, con -m : ```qemu-system-x86_64 -hda lubuntu.img -cdrom lubuntu-15.10-desktop-amd64.iso -m 512M```
 ![image](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/lubu_zpskf0cmhlm.png)
+![imagenInstalando](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20142304_zpsil0mzmsc.png)
+
+## Ejercicio 5: Crear una máquina virtual ubuntu en Azure e instalar en ella un servidor nginx para poder acceder mediante web.
+Accedemos al [portal de azure](https://portal.azure.com/)
+seleccionamos Máquina Virtual -> Clásica:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20141735_zpsuvphs50y.png)
+![imagenCreada](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20141832_zps1im3dpwy.png)
+Nombre del servidor será prueba.
+
+A contuación, debemos crear los llamados extremos o ENDPOINTS, para cada puerto, necesitamos al menos HTTP y SSH.
