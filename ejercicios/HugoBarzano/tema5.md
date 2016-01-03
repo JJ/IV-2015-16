@@ -15,11 +15,11 @@ Para instalar los paquetes necesarios, podemos hacerlo mediante la orden
 
 	sudo apt-get install qemu-kvm libvirt-bin virtinst kvm virt-viewer
 
-Una vez intalados, es necesario indicar el usuario que queremos que utilize la virtualizacion
+Una vez instalados, es necesario indicar el usuario que queremos que utilice la virtualización
 
 	sudo adduser nombre_usuario kvm
 
-Es recomendable cargar el modulo, en mi caso, para un procesador intel, puede realizarse mediante la instrución
+Es recomendable cargar el modulo, en mi caso, para un procesador intel, puede realizarse mediante la instrucción
 
 	sudo modprobe kvm-intel
 
@@ -60,11 +60,11 @@ Instalar imagen debian. Es necesario tener una iso del SO que vamos a instalar.
 
 Voy a utilizar VirtualBox y voy a volver a instalar Slitaz por ser muy liviano (y por que ya tengo la ISO)
 
-Paso 1: Abrir virtualBox y selecionar NUEVA
+Paso 1: Abrir virtualBox y seleccionar NUEVA
 
 ![imagen](https://www.dropbox.com/s/vtgbp7se5cvpsfj/vb1.png?dl=1)
 
-Paso 2: Selecionar la memoria
+Paso 2: Seleccionar la memoria
 
 ![imagen](https://www.dropbox.com/s/say4jyw3dsdzlaq/vb2.png?dl=1)
 
@@ -83,11 +83,11 @@ Paso 5: Arrancar e instalar el SO
 ##Ejercicio 3: Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con
 
 He creado el siguiente [benchmark](https://github.com/hugobarzano/IV-2015-16/blob/master/ejercicios/HugoBarzano/bm2.cpp) utilizando la información que el sistema operativo almacena dentro del directorio /proc**
-La funcion mem_total () devuelve la memoria total usada por el programa (memoria de datos + memoria de pila) en kilobytes. Utiliza la libreria time.h para medir el tiempo. 
+La función mem_total () devuelve la memoria total usada por el programa (memoria de datos + memoria de pila) en kilobytes. Utiliza la librería time.h para medir el tiempo. 
 
 ##Ejercicio 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
-Para que el sistema unix tenga entorno grafico LXDE, he decidido instalar Lubuntu. Podemos descargar la iso de [aqui](http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/)
+Para que el sistema unix tenga entorno gráfico LXDE, he decidido instalar Lubuntu. Podemos descargar la iso de [aqui](http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/)
 
 Crear almacenamiento
 	
@@ -106,12 +106,12 @@ Para conectar por vnc voy a utilizar vinagre. Podemos instalarlo mediante
 
 ![imagen](https://www.dropbox.com/s/1e2k773w1ae7rp9/vinagre1.png?dl=1)
 
-Para conectar por ssh he tenido problemas con quemu por lo que he instalado la imagen en virtual box tal y como he reflejado en el ejercicio 2.2
-Adicionalmente, he creado una red solo-anfitrión para tener conexion con mi host
+Para conectar por ssh he tenido problemas con quemu por lo que he instalado la imagen en VirtualBox tal y como he reflejado en el ejercicio 2.2
+Adicionalmente, he creado una red solo-anfitrión para tener conexión con mi host
 
 ![imagen](https://www.dropbox.com/s/7b2xgkf02xne1tf/lubuntu2.png?dl=1)
 
-He indicado en la configuracion de red de la imagen que se conecte a dicha red por alguno de los adaptadores disponibles
+He indicado en la configuración de red de la imagen que se conecte a dicha red por alguno de los adaptadores disponibles
 
 ![imagen](https://www.dropbox.com/s/5sg2actbaiyecv5/lubuntu3.png?dl=1)
 
@@ -135,19 +135,19 @@ Debemos hacer login en azure
 
 	azure login
 
-Nos facilitará un enlace y un codigo. Debemos abrir el enlace con el navegador e introducir el código
+Nos facilitará un enlace y un código. Debemos abrir el enlace con el navegador e introducir el código
 
 ![imagen](https://www.dropbox.com/s/grjusrkfn0m02q8/azure1.png?dl=1)
 
-Tras esto, debemos facilitar nuestras credenciales (usuario contraseña) y automaticamente se completará el proceso de login
+Tras esto, debemos facilitar nuestras credenciales (usuario contraseña) y automáticamente se completará el proceso de login
 
 ![imagen](https://www.dropbox.com/s/rnxej18vbrjkqhm/azure2.png?dl=1)
 
-Voy a utilizar ubuntu-server 14.04. Podemos consultar las imagenes disponibles mediante 
+Voy a utilizar ubuntu-server 14.04. Podemos consultar las imágenes disponibles mediante 
 
 	azure vm image list
 
-Obtener informacion sobre la que vamos a utilizar
+Obtener información sobre la que vamos a utilizar
 
 	azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140414-en-us-30GB
 
@@ -197,6 +197,5 @@ Instalar imagen Linux Mint
 	qemu-system-x86_64 -machine accel=kvm -hda mint.qcow2 -cdrom linuxmint-17.3-cinnamon-64bit.iso -m 1G -boot d
 
 ![imagen](https://www.dropbox.com/s/x6qtgb9329uuf4z/mint.png?dl=1)
-
 
 
