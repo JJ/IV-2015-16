@@ -214,7 +214,7 @@ rafaellg8@system32:~/Desktop/pruebasIV$
 
 Ahora ya tenemos los datos, al final necesitaremos acceder por ssh.
 
-###Instalación Nginx
+### Instalación Nginx
 - Ahora nos conectamos por ssh:
 ```
 ssh azureuser@prueba-iv-rlg.cloudapp.net
@@ -228,3 +228,72 @@ root@prueba-iv-rlg:/home/azureuser# apt-get install nginx
 
 - Probamos ahora que funciona:
 ![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20162920_zpsqj4rejhc.png)
+
+## Ejercicio 6: Usar juju para hacer el ejercicio anterior.
+
+Juju, es un software libre, para la orquestación de servicios y herramientos de ubuntu que ayudan a desplegar, gestionar y escalar entornos o cualquier nube.
+Para su instalación seguimos el [tutorial](https://jujucharms.com/docs/stable/getting-started).
+```
+sudo apt-get install juju-core
+```
+Como en local me tira el siguiente error al iniciar, ya que parece ser que no soporta mi distribución [Elementary OS Freya](https://elementary.io/es/), lo he tenido que instalar en una máquina virtual de ubuntuserver.
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/a04b6464-166b-4edb-a37e-4c499d5be9ee_zpsart01yst.png)
+
+Ya tenemos instalado juju, ahora lo iniciamos:
+```
+azureuser@prueba-iv-rlg:~$ juju
+Juju -- devops distilled
+https://juju.ubuntu.com/
+
+Juju provides easy, intelligent service orchestration on top of environments
+such as Amazon EC2, HP Cloud, OpenStack, MaaS, or your own local machine.
+
+Basic commands:
+  juju init             generate boilerplate configuration for juju environments
+  juju bootstrap        start up an environment from scratch
+
+  juju deploy           deploy a new service
+  juju add-relation     add a relation between two services
+  juju expose           expose a service
+
+  juju help bootstrap   more help on e.g. bootstrap command
+  juju help commands    list all commands
+  juju help glossary    glossary of terms
+  juju help topics      list all help topics
+
+Provider information:
+  juju help azure-provider       use on Windows Azure
+  juju help ec2-provider         use on Amazon EC2
+  juju help hpcloud-provider     use on HP Cloud
+  juju help local-provider       use on this computer
+  juju help openstack-provider   use on OpenStack
+```
+El comando juju nos muestra la ayuda, lo iniciamos entonces:
+```
+azureuser@prueba-iv-rlg:~$ juju init
+A boilerplate environment configuration file has been written to /home/azureuser/.juju/environments.yaml.
+Edit the file to configure your juju environment and run bootstrap.
+```
+
+Nos informa de que se ha creado un archivo de configuración y que lo editemos para nuestro entorono o distro, y ejecutemos run bootstrap.
+En esta web, he encontrado un [tutorial](https://jujucharms.com/docs/1.24/config-azure) que usaré para configurar el archivo para la máquina virtual de Ubuntu en Azure.
+Nos dice que tenemos que generar un nuevo certifia para usar Juju.
+- Generamos el certificado
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20165519_zpss7cuidaq.png)
+Nos devuelve un archivo **azure.pem**, con el cual generamos el archivo de certificado .cer:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20165833_zpsir0vsrxh.png)
+
+Ahora con este archivo nos tenemos que ir a nuestra [cuenta de Azure](https://manage.windowsazure.com), y añadirlo con los campos que nos dice en el tutorial.
+
+Pinchamos en Configuración --> Gestión de certificado y lo añadimos:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20170331_zps0kc2snqu.png)
+
+
+
+
+## Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+Seguimos el siguiente [tutorial](http://community.linuxmint.com/tutorial/view/1727) de Linux Mint para su instalación en kvm.
+Instalamos:
+```
+sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils virt-manager
+```
