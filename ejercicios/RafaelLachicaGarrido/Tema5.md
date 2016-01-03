@@ -23,6 +23,7 @@ KVM acceleration can be used
 [kvm-ok](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/kmv-ok_zpsykwyuztd.png?t=1443563958 "km-ok")
 
 
+##Ejercicio 2
 ### Ejercicio 2.1: Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS, GALPon Minino, Damn Small Linux, SliTaz y ttylinux.
 
 Dado que KVM es un módulo del kernel, puede que no esté cargado por defecto. Dependiendo del procesador que usemos, lo cargamos con:
@@ -31,7 +32,7 @@ sudo modprobe kvm-intel
 ```
 Con esto, si no esta ya activado, activamos KVM. En mi caso como mi cpu es Intel Core i3, he puesto intel.
 
-Ahora descargamos y creamos la máquina virtual de [Stilaz](http://www.slitaz.org/en/get/#stable), ya que es la que menos especacio ocupa.
+Ahora descargamos y creamos la máquina virtual de [Minino](http://minino.galpon.org/es/descargas),he usado la Alguadaira, ya que es la que menos especacio ocupa.
 
 Una vez descargada, creamos e instalamos la imagen en un disco duro virtual, para ello:
 1. Creamos la imagen a través del comando: ```qemu-img create -f qcow2 imagen-cow.qcow2 250M```
@@ -44,3 +45,94 @@ Lo más probable, es que necesitamos instalar antes qemu, a través de ```sudo a
 ![funcionando](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-02%20140125_zpse0hy8m8q.png)
 
 Como es una versión live, cada vez que queramos ejecutar, tenemos que arrancar a través de **qemu-system-x86_64 -hda imagen-cow.qcow2 -cdrom ~/Descargas/slitaz-4.0.iso**
+
+### 2.2: Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
+Para este ejercicio usaré [VMWare](https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/12_0) y el sitema operativo [Ubuntu server](http://www.ubuntu.com/download/server)
+![imagen con el sistema vwmare](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/0cf3bd8e-747f-460b-ae0f-029f785e679e_zpso7xliqdi.png)
+
+##Ejercicio 3 Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img.
+Benchmark:
+```
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Rafael Lachica Garrido
+import sys
+import random,math
+import time
+
+"""
+benchmark
+Función básica que consta de 3 bucles, y lo único que hace es leer un archivo en un bucle, y en los sucesivos anidados hallar el logaritmo
+de un número aleatorio
+"""
+def benchmark():
+    print ("Benchmar fácil, crea una matriz y la guarda en un fichero")
+    print ("Creado por : Rafael Lachica Garrido")
+    start = time.time()
+    try:
+        file = open("prueba")
+        out = open("salida",'w')
+    except:
+        print ("Error fichero inexistente o imposible leer")
+        print ("Probamos a crearlo")
+        file = generateFile()
+        out = open("salida",'w')
+
+    i = j =     0
+    d = {}
+    for i in range(10):
+        f = file.read()
+        for j in range(len(f)):
+            for x in range(1, 50):
+                d[x] = math.log(x)
+            out.write(str(d[x]))
+
+    end = time.time() - start
+    out.write("Time"+str(end))
+    out.close()
+    file.close()
+
+    print ("Tiempo en segundos")
+    print (end)
+
+#Generamos el archivo
+def generateFile():
+    file = open("prueba",'w')
+    for i in range(100000):
+        file.write(str(random.random()*random.randint(1,10)))
+
+    file.close()
+    file=open("prueba",'r')
+
+    return file
+
+def main():
+    if len(sys.argv) != 2:
+        benchmark()
+    else:
+        generateFile()
+
+if __name__ == "__main__":
+	main()
+```
+
+Lo ejecutamos en local, y el resultado es de 24 segundos:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-02%20192522_zpskggwm0hy.png)
+
+Para arrancar el sistema de forma normal, hacemos:
+```
+qemu-system-x86_64 -hda imagen-cow.qcow2 -cdrom ~/Descargas/slitaz-4.0.iso
+```
+Usamos la opción que dice core base
+Y nos dice Stilaz boot time 80 s:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20134641_zpsjrhpvgon.png)
+
+Ahora probamos con la paravirtualización:
+
+### Ejercicio 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
+Uno de los sistemas operativos que he probado y que es de los más ligeros es Lubuntu, basado en LXDE. Lo descargamos de aquí:
+- [Lubuntu](https://help.ubuntu.com/community/Lubuntu/GetLubuntu)
+Hacemos los mismos pasos que antes:
+- Añadimos espacio virutal: ```qemu-img create -f qcow2 lubuntu.img 10G```
+- Instalamos lubuntu, con la opción de 512 MB, con -m : ```qemu-system-x86_64 -hda lubuntu.img -cdrom lubuntu-15.10-desktop-amd64.iso -m 512M```
+![image](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/lubu_zpskf0cmhlm.png)
