@@ -219,7 +219,6 @@ Ahora ya tenemos los datos, al final necesitaremos acceder por ssh.
 ```
 ssh azureuser@prueba-iv-rlg.cloudapp.net
 ```
-![imagenSSH]()
 
 - Instalamos nginx:
 ```
@@ -241,7 +240,7 @@ Como en local me tira el siguiente error al iniciar, ya que parece ser que no so
 
 Ya tenemos instalado juju, ahora lo iniciamos:
 ```
-azureuser@prueba-iv-rlg:~$ juju
+rafaellg8:~$ juju
 Juju -- devops distilled
 https://juju.ubuntu.com/
 
@@ -269,26 +268,44 @@ Provider information:
   juju help openstack-provider   use on OpenStack
 ```
 El comando juju nos muestra la ayuda, lo iniciamos entonces:
-```
-azureuser@prueba-iv-rlg:~$ juju init
-A boilerplate environment configuration file has been written to /home/azureuser/.juju/environments.yaml.
-Edit the file to configure your juju environment and run bootstrap.
-```
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20173248_zpswn5cqha2.png)
 
 Nos informa de que se ha creado un archivo de configuración y que lo editemos para nuestro entorono o distro, y ejecutemos run bootstrap.
 En esta web, he encontrado un [tutorial](https://jujucharms.com/docs/1.24/config-azure) que usaré para configurar el archivo para la máquina virtual de Ubuntu en Azure.
-Nos dice que tenemos que generar un nuevo certifia para usar Juju.
+
+Editamos el archivo con los datos de nuestra suscripción que podemos encontrar en nuestra web de azure. También tenemos que crear un espacio de almacenamiento nuevo, yo he creado uno, "jujurlg":
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/4c6f261a-aaa1-44c7-b735-df300c0bc3e2_zps7sznvpwu.png)
+También podemos encontrar los datos con el comando de azure account:
+```
+rafaellg8@system32:~/Desktop/varios$ azure account show
+info:    Executing command account show
+data:    Name                        : Azure Pass
+data:    ID                          : 2cc2475d-2e3d-4d07-b873-e46b595373f7
+data:    State                       : Enabled
+data:    Tenant ID                   : 0b2c9607-9dd6-4fd2-88f2-268d3df2448c
+data:    Is Default                  : true
+data:    Environment                 : AzureCloud
+data:    Has Certificate             : No
+data:    Has Access Token            : Yes
+data:    User name                   : falin1993@hotmail.com
+data:    
+info:    account show command OK
+```
+Nos dice que tenemos que generar un nuevo certificado para usar Juju.
 - Generamos el certificado
-![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20165519_zpss7cuidaq.png)
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20173740_zpseheele9m.png)
 Nos devuelve un archivo **azure.pem**, con el cual generamos el archivo de certificado .cer:
-![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20165833_zpsir0vsrxh.png)
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/c9a009a6-00a3-4f03-8d59-a19beedc92ea_zpsdlralabf.png)
+
+Me he pasado los certificados a una carpeta de github para poder descargarlos luego y trabajar con ellos en Azure, [carpeta github](https://github.com/rafaellg8/varios)
 
 Ahora con este archivo nos tenemos que ir a nuestra [cuenta de Azure](https://manage.windowsazure.com), y añadirlo con los campos que nos dice en el tutorial.
 
 Pinchamos en Configuración --> Gestión de certificado y lo añadimos:
 ![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20170331_zps0kc2snqu.png)
 
-
+Ahora cambiamos de entorno a azure:
+![juju switch](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/491646b6-9237-4ec4-b4b7-4e1621e63ee1_zps9kdtsjjd.png)
 
 
 ## Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
@@ -297,3 +314,23 @@ Instalamos:
 ```
 sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils virt-manager
 ```
+
+Ahora creamos otro espacio virtual para Linux Mint:
+```
+dd if=/dev/zero of=LM_test_os.image bs=1M count=10240
+```
+Nos da:
+```
+rafaellg8@system32:~/Desktop/pruebasIV$ dd if=/dev/zero of=LM_test_os.image bs=1M count=10240
+10240+0 registros leídos
+10240+0 registros escritos
+10737418240 bytes (11 GB) copiados, 184,053 s, 58,3 MB/s
+```
+
+Ahora instalamos con qmu:
+```
+rafaellg8@system32:~/Desktop/pruebasIV$ kvm -cdrom linuxmint-17.3-cinnamon-64bit.iso -m 1g -hda LM_test_os.image
+```
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20184858_zps5cra8ikk.png)
+
+Lo configuramos y le damos a instalar, y ya tenemos nuestro Mint en Qemu.
