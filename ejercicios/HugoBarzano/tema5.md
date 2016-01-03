@@ -197,5 +197,3 @@ Instalar imagen Linux Mint
 	qemu-system-x86_64 -machine accel=kvm -hda mint.qcow2 -cdrom linuxmint-17.3-cinnamon-64bit.iso -m 1G -boot d
 
 ![imagen](https://www.dropbox.com/s/x6qtgb9329uuf4z/mint.png?dl=1)
-
-
