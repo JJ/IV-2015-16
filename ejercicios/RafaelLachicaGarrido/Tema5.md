@@ -144,6 +144,31 @@ Hacemos los mismos pasos que antes:
 ![image](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/lubu_zpskf0cmhlm.png)
 ![imagenInstalando](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20142304_zpsil0mzmsc.png)
 
+
+Necesitamos instalar primero un cliente VNC, (igual que SSH tiene openssh), para poder conectarnos, yo he escogido Vinagre, el primero y mejor recomendado de esta [lista](https://help.ubuntu.com/community/VNC/Clients).
+```
+sudo apt-get install vinagre
+```
+
+Ahora ejecutamos qemu con VNC:
+```
+rafaellg8@system32:~/Desktop/pruebasIV$ qemu-system-i386 -hda lubuntu.img vnc :1
+qemu-system-x86_64: -hda lubuntu.img: drive with bus=0, unit=0 (index=0) exists
+
+```
+Ahora nos conectamos a través del puerto de Vinagre, que es 5900 , más 10 más para que no esté ocupado, 5910, que lo he encontrado [aquí](http://manpages.ubuntu.com/manpages/wily/man1/vinagre.1.html).
+
+Ejecutamos ahora quemu para que funcone también por ssh:
+```
+rafaellg8@system32:~/Desktop/pruebasIV$ qemu-system-x86_64 -boot order=c -drive file=lubuntu.img,if=virtio -m 512M -name lubuntu -redir tcp:2121::22
+```
+
+Por último nos conectamos a Lubuntu:
+```
+rafaellg8@system32:~/Desktop/pruebasIV$ ssh  lubuntu@localhost -p 22
+lubuntu@localhost's password:
+```
+
 ## Ejercicio 5: Crear una máquina virtual ubuntu en Azure e instalar en ella un servidor nginx para poder acceder mediante web.
 Accedemos al [portal de azure](https://portal.azure.com/) o al portal clásico que para mi es más cómodo [Clásico](https://manage.windowsazure.com)
 seleccionamos Máquina Virtual -> Clásica:
@@ -159,7 +184,8 @@ Añadimos algunos extremos:
 Configuración, con direcciones IP y extremos añadidos:
 ![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/36e5a0c3-3a83-44f2-a26b-dfd29e45980d_zpscafptotc.png)
 Ya tenemos más o menos toda la configuración, ahora necesitamos conectarnos por terminal a la máquina virtual.
-Tenemos 2 formas, o bien por ssh, la cual va bastante lento, debido al retardo, o por la interfaz de comandos que nos ofrece un cliente de Azure para nmp. Vamos a probar esta opción, anque después instalaremos por ssh: [Fuente](https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/)
+
+También se puede crear una máquina virtual en Azure a través de línea de comandos:
 
 1. Instalamos el cliente a través de npm:
 ```
@@ -212,7 +238,57 @@ info:    vm list command OK
 rafaellg8@system32:~/Desktop/pruebasIV$
 ```
 
-Ahora ya tenemos los datos, al final necesitaremos acceder por ssh.
+5. Elegimos Ubuntu Server, y vemos los detalles de la máquina:
+
+```
+info:    Executing command vm image show
++ Fetching VM image                                                            
+data:    category "Public"
+data:    label "Ubuntu Server 14.04.3-LTS"
+data:    location 0 "East Asia"
+data:    location 1 "Southeast Asia"
+data:    location 2 "Australia East"
+data:    location 3 "Australia Southeast"
+data:    location 4 "North Europe"
+data:    location 5 "Central India"
+data:    location 6 "South India"
+data:    location 7 "West India"
+data:    location 8 "Japan West"
+data:    location 9 "Central US"
+data:    location 10 "East US 2"
+data:    location 11 "South Central US"
+data:    logicalSizeInGB 30
+data:    name "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB"
+data:    operatingSystemType "Linux"
+data:    eula "http://www.ubuntu.com/project/about-ubuntu/licensing;http://www.ubuntu.com/aboutus/privacypolicy"
+data:    description "Ubuntu Server 14.04.3-LTS (amd64 20151218) for Microsoft Azure. Ubuntu Server is the world's most popular Linux for cloud environments. Updates and patches for Ubuntu 14.04.3-LTS will be available until 2019-04-17.  Ubuntu Server is the perfect platform for all workloads from web applications to NoSQL databases and Hadoop. For more information see [Ubuntu Cloud|http://www.ubuntu.com/cloud|_blank] and [using Juju to deploy your workloads|http://juju.ubuntu.com|_blank]."
+data:    imageFamily "Ubuntu Server 14.04 LTS"
+data:    showInGui true
+data:    publishedDate 2015-12-19T00:00:00.000Z
+data:    isPremium false
+data:    iconUri "Ubuntu-cof-100.png"
+data:    privacyUri "http://www.ubuntu.com/aboutus/privacypolicy"
+data:    publisherName "Canonical"
+data:    smallIconUri "Ubuntu-cof-45.png"
+data:    iOType "Standard_LRS"
+info:    vm image show command OK
+rafaellg8@system32:~/Desktop/pruebasIV$
+```
+
+6. Creamos la máquina:
+```
+rafaellg8@system32:~/Desktop/pruebasIV$ azure vm create prueba-iv-rlg-b b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB azureuser --password =HELLOworld123! --location "East Asia" --ssh
+```
+```
+info:    Executing command vm create
+warn:    --vm-size has not been specified. Defaulting to "Small".
++ Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB
++ Looking up cloud service                                                     
+info:    cloud service prueba-iv-rlg-b not found.
++ Creating cloud service                                                       
++ Retrieving storage accounts                                                  
++ Creating a new storage account 'portalvhds1451853001911'
+```
 
 ### Instalación Nginx
 - Ahora nos conectamos por ssh:
@@ -307,6 +383,19 @@ Pinchamos en Configuración --> Gestión de certificado y lo añadimos:
 Ahora cambiamos de entorno a azure:
 ![juju switch](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/491646b6-9237-4ec4-b4b7-4e1621e63ee1_zps9kdtsjjd.png)
 
+Iniciamos ahora juju bootstrap:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/daf0a9c5-672a-46bf-9c5c-62bc824303a4_zpsme8panz5.png)
+
+#### Nginx juju
+Ahora necesitamos desplegar el servicio Nginx sobre Juju, Seguimos esta [guía](https://jujucharms.com/u/imbrandon/nginx/precise/7)
+
+Instalamos Nginx y lo publicamos en nuestro juju:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/a74b269c-6b88-4828-aa72-889194500aeb_zpssto6fh7b.png)
+
+Comprobamos que todo está correcto y obtenemos el DNS asociado a nuestra máquina con Nginx, a través del comando `juju status`:
+![img juju status 1](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20204003_zpsfgvmgsw4.png)
+![img juju status 2](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-03%20203918_zpsl3prcvkt.png)
+[juju-azure-hkknqkdwdv.cloudapp.net](juju-azure-hkknqkdwdv.cloudapp.net)
 
 ## Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
 Seguimos el siguiente [tutorial](http://community.linuxmint.com/tutorial/view/1727) de Linux Mint para su instalación en kvm.
