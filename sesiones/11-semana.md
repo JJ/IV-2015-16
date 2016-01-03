@@ -1,22 +1,21 @@
-#Décima semana, comienza el 9 de Diciembre
+#Undécima semana, comienza el 9 de Diciembre
 
 ##Objetivos de la semana
 
-1. Usar docker en una aplicación real. 
-
+1. Comprender el concepto de hipervisor y los diferentes tipos que hay.
 
 ##Otros objetivos
 
-1. Publicar imágenes de docker.
+1. Instalar hipervisores libres y trabajar con ellos.
+2. Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
 
 
 ##Material para la clase
 
-Continuamos con el tema dedicado a los
-[contenedores](http://jj.github.io/IV/documentos/temas/Contenedores) y comenzamos con el [4º hito del proyecto](http://jj.github.io/IV/documentos/practicas/4.Docker).
+Tema dedicado a [uso de sistemas](http://jj.github.io/IV/documentos/temas/Uso_de_sistemas.
 
 Antes de esta clase se tendrá que haber entregado la práctica.
 
 ##Siguiente semana
 
-[Duodécima semana](11-semana.md). 
+[Duodécima semana](12-semana.md). 
