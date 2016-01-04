@@ -287,9 +287,19 @@ warn:    --vm-size has not been specified. Defaulting to "Small".
 info:    cloud service prueba-iv-rlg-b not found.
 + Creating cloud service                                                       
 + Retrieving storage accounts                                                  
-+ Creating a new storage account 'portalvhds1451853001911'
++ Creating a new storage account 'portalvhds1451853001911'                     
++ Creating VM                                                                  
+info:    vm create command OK
 ```
 
+Si todo está OK, podemos arrancar nuestra máquina:
+```
+rafaellg8@system32:~/Desktop/pruebasIV$ azure vm start prueba-iv-rlg-b
+info:    Executing command vm start
++ Getting virtual machines                                                     
++ Starting VM                                                                  
+info:    vm start command OK
+```
 ### Instalación Nginx
 - Ahora nos conectamos por ssh:
 ```
