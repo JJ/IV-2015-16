@@ -14,6 +14,48 @@ Podemos comprobar que la instalación se ha realizado correctamente mediante
 	
 
 ##Ejercicio 2: Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
+He decidico instalar nano como editor de texto. Para la receta, he creado la siguiente jerarquia de directorios:
+
+![imagen](https://www.dropbox.com/s/2hteq1ky8kj4bm2/chef2.png?dl=0)
+
+Contenido de la receta default.rb para nano
+
+	package 'nano'
+	directory '/home/hugo/directorioPruebasChef' do
+		owner"hugo"
+		group"hugo"
+		mode 00544
+		action :create
+	end
+	file "/home/hugo/directorioPruebasChef/LEEME_chef" do
+		owner"hugo"
+		group"hugo"
+		mode 00544
+		action :create
+		content "Probando chef"
+	end
+
+Contenido de la receta default.rb para nginx
+
+	package 'nginx'
+
+Contenido de node.json
+
+	{
+		"run_list":["recipe[nano]", "recipe[nginx]"]
+	}
+	
+Contenido de solo.rb
+
+	file_cache_path "/home/hugo/chef"
+	cookbook_path "/home/hugo/chef/cookbooks"
+	json_attribs "/home/hugo/chef/node.json"
+
+Podemos comprobar que funciona ejecutando 
+	
+	sudo chef-solo -c solo.rb
+
+![imagen](https://www.dropbox.com/s/2vd1745ipi93475/chef3.png?dl=1)
 
 ##Ejercicio 3: Escribir en YAML la siguiente estructura de datos en JSON
 
