@@ -2,6 +2,17 @@
 
 ##Ejercicio 1: Instalar chef en la máquina virtual que vayamos a usar
 
+He decidido instalarlo de la forma rápida mediante 
+
+	curl -L https://www.opscode.com/chef/install.sh | sudo bash
+
+Podemos comprobar que la instalación se ha realizado correctamente mediante
+
+	chef-solo -v
+
+![imagen](https://www.dropbox.com/s/ri9fq72hztdm7k3/chef.png?dl=1)
+	
+
 ##Ejercicio 2: Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
 
 ##Ejercicio 3: Escribir en YAML la siguiente estructura de datos en JSON
