@@ -16,7 +16,7 @@ Podemos comprobar que la instalación se ha realizado correctamente mediante
 ##Ejercicio 2: Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
 He decidico instalar nano como editor de texto. Para la receta, he creado la siguiente jerarquia de directorios:
 
-![imagen](https://www.dropbox.com/s/2hteq1ky8kj4bm2/chef2.png?dl=0)
+![imagen](https://www.dropbox.com/s/2hteq1ky8kj4bm2/chef2.png?dl=1)
 
 Contenido de la receta default.rb para nano
 
