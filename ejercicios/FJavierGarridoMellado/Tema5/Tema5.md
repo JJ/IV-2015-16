@@ -141,7 +141,44 @@ Para probar sin paravirtualización `qemu-system-x86_64 -hda ubuntu.qcow2` y se 
 
 ![resultado2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/resultado1_zpsg3ajtl1n.png)
 
+###Ejercicio 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
+- El primer paso es crear el espacio de almacenamiento:
+```
+$ qemu-img create -f qcow2 lubuntu.qcow2 8G
+```
+- Se procede a su instalación igual que en ejercicios anteriores:
+```
+$ qemu-system-x86_64 -machine accel=kvm -hda lubuntu.qcow2 -cdrom lubuntu.iso -m 1G -boot d
+```
 
+- Se accede a la máquina de la siguiente forma:
+```
+$ qemu-system-x86_64 -machine accel=kvm -hda lubuntu.qcow2 -m 512M -vnc :1
+```
+- Se procede a instalar *vinagre* mediante:
+```
+$ sudo apt-get install vinagre
+```
+- Puede verse el escritorio con vinagre de la siguiente forma:
+```
+$ vinagre localhost:1
+```
 
+![conexionvinagre](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vinagre_zpsjlkogp2g.png)
 
+- A continuación instalo **ssh** en la máquina Lubuntu:
+```
+$ sudo apt-get install ssh
+```
+
+- Apago la máquina y vuelvo a arrancar, para ello hago un NAT del puerto 2222 de la máquina host al puerto 22 de la invitada:
+```
+$ qemu-system-x86_64 -machine accel=kvm -hda lubuntu.qcow2 -m 512M -redir tcp:2222::22
+```
+- Para entrar basta con ejecutar lo siguiente:
+```
+$ ssh javi@localhost -p 2222
+```
+
+![sshlubuntu](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/sshlubuntu_zpsvodhapmx.png)
