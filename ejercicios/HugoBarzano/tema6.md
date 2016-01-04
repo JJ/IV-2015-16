@@ -76,6 +76,47 @@ Podemos comprobar que funciona ejecutando
 
 ##Ejercicio 4: Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
 
+Lo primero es instalar ansible
+
+	sudo pip install paramiko PyYAML jinja2 httplib2 ansible
+
+Añadir la maquina de azure al control de ansible, es decir, al inventario
+
+	 echo "maquina-hugo-ej5.cloudapp.net" > ~/ansible_hosts
+
+Utilizar una variable de entorno, para decirle a ansible, donde esta el fichero
+
+	export ANSIBLE_HOSTS=~/ansible_hosts
+
+Voy a utilizar la máquina azure creada en el ejercicio 5 del tema 5: maquina-hugo-ej5.cloudapp.net
+Me logueo y arranco la maquina
+
+	azure login
+	azure vm start maquina-hugo-ej5
+
+Configuro ssh
+
+	ssh-keygen -t dsa 
+	ssh-copy-id -i .ssh/id_dsa.pub hugo@maquina-hugo-ej5.cloudapp.net
+
+Comprobamos que hay conexion
+
+	ansible all -u hugo -i ansible_hosts -m ping
+
+![imagen](https://www.dropbox.com/s/clf2u100lasyr5m/ansible.png?dl=1)
+
+Ahora estamos en condiciones de desplegar la aplicación. 
+
+
+	ansible all -u hugo -m command -a "sudo apt-get install python-dev python-setuptools git -y"
+	ansible all -u hugo -m git -a "repo=https://github.com/hugobarzano/AplicacionDAI.git  dest=~/pruebaAnsible version=HEAD"
+	ansible all -u hugo -m command -a "sudo python manage.py runserver 0.0.0.0:80 &"
+	azure vm endpoint create -n http hugo 80 8080
+
+Para detener la maquina
+
+	 azure vm shutdown maquina-hugo-ej5
+
 ##Ejercicio 5.1: Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
 
 ##Ejercicio 5.2: ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
