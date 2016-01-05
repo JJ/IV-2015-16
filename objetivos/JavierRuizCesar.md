@@ -66,16 +66,116 @@
 - [x] Entender el concepto de DevOps.
 - [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
 
-###Objetivos quinta sesión
-- [X] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
-- [X] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
-- [X] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
-- [X] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
-- [X] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
-- [X] Resolver los problemas que surjan en los primeros despliegues de la asignatura-
+##Sesión 5 (Comienza el 28 de octubre)
 
-###Objetivos sexta semana
-- [X] Trabajar con los toolbelts de los diferentes PaaS.
-- [X] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
-- [X] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
-- [x] Aprender a usar integración continua en cualquier aplicación
+###Objetivos
+
+- [x] Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+
+- [x] Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+
+- [x] Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+
+- [x] Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+
+- [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+
+- [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
+
+
+###Otros objetivos
+
+- [x] Darse de alta y probar diferentes servicios PaaS.
+
+- [x] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+
+- [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+
+- [x] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
+
+- [x] Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
+
+##Sexta semana (Comienza el 4 de Noviembre)
+
+###Objetivos de la semana
+
+- [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
+    
+- [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
+
+###Otros objetivos
+
+- [x] Trabajar con los toolbelts de los diferentes PaaS.
+
+- [x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+
+- [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+
+- [ ] Experimentar con el despliegue simultáneo a varios PaaS.
+
+
+
+##Tema 3
+
+###Cubre los siguientes objetivos de la asignatura
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+###Objetivos específicos
+
+- [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+
+- [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+
+- [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+
+#Objetivos de la Sesión 7
+
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+
+##Otros Objetivos de la Sesión 7
+
+- [x] Instalar docker y trabajar con él. 
+
+#Objetivos de la Sesion 8
+
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+
+- [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+##Otros Objetivos de la Sesión 8
+
+- [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+
+- [x] Instalar docker y trabajar con él.
+
+- [x] Usar imágenes de docker publicadas.
+
+
+##Tema 4
+
+###Cubre los siguientes objetivos de la asignatura
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento
+
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual. 
+
+- [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+
+- [x] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+
+- [x] Documentar y mantener una plataforma virtual.
+
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku
+
+- [x] Realizar tareas de administración en infraestructura virtual.
+
+### Objetivos específicos
+
+- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores. 
+
+- [x] Crear infraestructuras virtuales completas.
+
+- [x] Comprender los pasos necesarios para la configuración automática de las mismas.
