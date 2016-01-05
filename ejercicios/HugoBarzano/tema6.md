@@ -178,6 +178,32 @@ Ansible, la forma de clasificar las tareas y el no necesitar como chef una jeraq
 
 ##Ejercicio 6: Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
 
+Lo primero es instalar Vagrant
+
+	sudo apt-get install vagrant
+
+Lo siguiente es descargar la imagen que vamos a utilizar 
+	
+	vagrant box add debian https://github.com/holms/vagrant-jessie-box/releases/download/Jessie-v0.1/Debian-jessie-amd64-netboot.box
+
+Crear un fichero Vagrant
+
+	vagrant init debian
+
+![imagen](https://www.dropbox.com/s/ykq02qq34lgjflg/vagrant.png?dl=1)
+
+Iniciar la máquina
+
+	vagrant up 
+
+![imagen](https://www.dropbox.com/s/e3g1dby8qeg6537/vagrant2.png?dl=1)
+
+Conectar con la máquina
+
+	vagrant ssh
+
+![imagen](https://www.dropbox.com/s/m6o52i4w3sdtzui/vagrant3.png?dl=1)
+
 ##Ejercicio 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
 
 ##Ejercicio 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
