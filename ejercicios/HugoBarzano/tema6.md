@@ -206,5 +206,33 @@ Conectar con la máquina
 
 ##Ejercicio 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
 
+He modificado el Vagrantfile generado en el ejercicio anterior para que provisione nginx
+
+ 	#-*- mode: ruby -*-
+ 	#vi: set ft=ruby :
+
+ 	#Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+	VAGRANTFILE_API_VERSION = "2"
+
+	Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  		# All Vagrant configuration is done here. The most common configuration
+  		# options are documented and commented below. For a complete reference,
+  		# please see the online documentation at vagrantup.com.
+
+  		# Every Vagrant virtual environment requires a box to build off of.
+  	config.vm.box = "debian"
+  	config.vm.provision "shell",
+  	inline: "sudo apt-get update && sudo apt-get install -y nginx && sudo service nginx start"
+
+	end
+
+Aprovisionamos la maquina y comprobamos el estado de nginx
+
+	vagrant provision
+	vagrant ssh
+	sudo service nginx status
+
+![imagen](https://www.dropbox.com/s/ar13kecmxkiwo96/vagrant4.png?dl=1)
+
 ##Ejercicio 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
 
