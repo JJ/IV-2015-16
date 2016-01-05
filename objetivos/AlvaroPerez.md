@@ -188,7 +188,7 @@
     
 - [x] Probar imágenes de docker publicadas.
     
-- [x] Trabajar con varias imágenes de docker cokectadas.
+- [x] Trabajar con varias imágenes de docker cokectadas
 
 
 
