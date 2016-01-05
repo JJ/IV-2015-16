@@ -215,7 +215,7 @@ $ azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-s
 
 ![vmshow](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vmshow_zpsakf8fyor.png)
 
-- El siguiente paso es crear la máquina virtual( con la localización "West Europe" da error):
+- El siguiente paso es crear la máquina virtual(con la localización "West Europe" da error):
 ```
 $ azure vm create maquina-javi-ubu5 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140414-en-us-30GB javi Clave#Javi#1 --location "Central US" --ssh
 ```
@@ -238,7 +238,7 @@ sudo apt-get install nginx
 
 ![instalarnginx](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalarnginx_zpsvysi5ora.png)
 
-- Lo siguiente es arrancar nginx y abrir el puerto 80 de la máquina:
+- Posteriormente se arranca nginx y se abre el puerto 80 de la máquina:
 ``` 
 sudo service nginx start
 azure vm endpoint create maquina-javi-ubu5 80 80
@@ -259,4 +259,30 @@ azure vm shutdown maquina-javi-ubu5
 
 ![apagar](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/apagar_zpsialecg36.png)
 
+### Ejercicio 6: Usar juju para hacer el ejercicio anterior.
 
+### Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+
+Se procede a descargar la version 17.3 de [Linux Mint](http://www.linuxmint.com/edition.php?id=204), concretamente la versión Mate de "Rosa".
+- Al igual que en el ejercicio 2 se crea el espacio de almacenamiento:
+```
+$ qemu-img create -f qcow2 lmint.qcow2 10G
+```
+- Se instala la imagen:
+```
+$ qemu-system-x86_64 -machine accel=kvm -hda lmint.qcow2 -cdrom linuxmint-17.3-cinnamon-64bit.iso -m 1G -boot d
+```
+
+![instalarmint](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalarmint_zps0y7xbanq.png)
+
+Otra manera más automatizada es seguir los pasos que se sigue en la página oficial de [Debian](https://wiki.debian.org/VMBuilder):
+- Clonar el siguiente repositorio:
+```
+$ git clone git://git.debian.org/git/pkg-escience/vmbuilder.git
+```
+- Ejecutar la siguiente orden:
+```
+./debian-vm-builder kvm lenny --tmp=/var/tmp --mirror http://ftp.de.debian.org/debian --rootpass debian
+```
+
+Esto instala una versión Debian Lenny.
