@@ -182,3 +182,81 @@ $ ssh javi@localhost -p 2222
 ```
 
 ![sshlubuntu](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/sshlubuntu_zpsvodhapmx.png)
+
+### Ejercicio 5: Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
+
+- El primer paso es instalar las herramientas necesarias para hacer uso de azure mediante linea de ordenes:
+```
+$ sudo apt-get install nodejs-legacy
+$ sudo apt-get install npm
+$ sudo npm install -g azure-cli
+```
+
+![azurecli](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/azurecli_zpstblivsi3.png)
+
+- El siguiente paso es hacer login en azure:
+```
+$ azure login
+```
+Esto hace que nos de un enlace web y un password, el cual hay que introducir:
+
+![azurecliver](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/azurecli2_zpstnlg0rht.png)
+
+- El siguiente paso es loguearse en azure y se completa el proceso de login:
+
+![logueo](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/logueoazure_zpsya5wvrkv.png)
+
+- A continuación procedo a ver las imágenes que pueden utilizarse (en mi caso Ubuntu) y a solicitar información sobre alguna imagen:
+```
+$ azure vm image list
+$ azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140414-en-us-30GB
+```
+![vmlist](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vmlist_zps32jew5ek.png)
+
+![vmshow](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vmshow_zpsakf8fyor.png)
+
+- El siguiente paso es crear la máquina virtual( con la localización "West Europe" da error):
+```
+$ azure vm create maquina-javi-ubu5 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140414-en-us-30GB javi Clave#Javi#1 --location "Central US" --ssh
+```
+
+![crearmaquina](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/crearmaquinaubu_zpsfefpvef7.png)
+
+- El siguiente paso es arrancar la máquina y conectar por ssh:
+```
+$ azure vm start maquina-javi-ubu5
+$ ssh javi@maquina-javi-ubu5.cloudapp.net
+```
+
+![arranqueyssh](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/arranqueyssh_zpsj2uytdhm.png)
+
+- Los dos siguientes pasos son actualizar el sistema operativo e instalar nginx:
+```
+sudo apt-get update
+sudo apt-get install nginx
+```
+
+![instalarnginx](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalarnginx_zpsvysi5ora.png)
+
+- Lo siguiente es arrancar nginx y abrir el puerto 80 de la máquina:
+``` 
+sudo service nginx start
+azure vm endpoint create maquina-javi-ubu5 80 80
+```
+
+![nginx](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/nginxstatus_zpsdd9ljdem.png)
+
+![abrirpuertos](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/abrirpuertos_zpsi6kqt0ql.png)
+
+- En el navegador introducir el dominio de la máquina:
+
+![nginxfuncionando](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/nginx_zps2lbpgxpw.png)
+
+- Por último no olvidar apagar la máquina:
+```
+azure vm shutdown maquina-javi-ubu5
+```
+
+![apagar](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/apagar_zpsialecg36.png)
+
+
