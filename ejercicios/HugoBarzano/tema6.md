@@ -149,26 +149,28 @@ Apagar la máquina
 El playbook que he usado es el siguiente:
 
 	- hosts: azure
-  		sudo: yes
-  		remote_user: hugo
-  		tasks:
-  		- name: Instalar paquetes necesarios
-    		  apt: name=python-setuptools state=present
-    		  apt: name=build-essential state=present
-      		  apt: name=python-dev state=present
-    		  apt: name=git state=present
- 		- name: Obtener aplicacion de git
-    		  git: repo=https://github.com/hugobarzano/AplicacionDAI.git  dest=~/pruebaAnsible 
-  		- name: Dar permisos de ejecucion
-    		  command: chmod -R +x ~/pruebaAnsible
-  		- name: Instalar requisitos
-    		  command: sudo pip install -r pruebaAnsible/requirements.txt
-  		- name: ejecutar
-    		  command: sudo python pruebaAnsible/manage.py runserver 0.0.0.0:80
+  	  sudo: yes
+  	  remote_user: hugo
+  	  tasks:
+  	  - name: Instalar paquetes necesarios
+    	    apt: name=python-setuptools state=present
+    	    apt: name=build-essential state=present
+    	    apt: name=python-dev state=present
+    	    apt: name=git state=present
+  	  - name: Obtener aplicacion de git
+    	    git: repo=https://github.com/hugobarzano/AplicacionDAI.git  dest=~/pruebaAnsible clone=yes force=yes
+  	  - name: Dar permisos de ejecucion
+    	    command: chmod -R +x ~/pruebaAnsible
+  	  - name: Instalar requisitos
+    	    command: sudo pip install -r pruebaAnsible/requirements.txt
+  	  - name: ejecutar
+    	    command: nohup sudo python pruebaAnsible/manage.py runserver 0.0.0.0:80
 
 Podemos desplegar la aplicación con el mediante
 
 	 ansible-playbook -i inventario dai.yml
+
+nohup permite mantener la ejecución de un comando pese a salir de la terminal, ya que hace que se ejecute de forma independiente a la sesión. Por lo tanto al terminar el proceso con el que desplegamos el playbook, la ejecución se mantiene persistente. 
 
 ![imagen](https://www.dropbox.com/s/qfpk2po2p7pcoui/ansible3.png?dl=1)
 
