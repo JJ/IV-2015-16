@@ -215,7 +215,7 @@ $ azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-s
 
 ![vmshow](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vmshow_zpsakf8fyor.png)
 
-- El siguiente paso es crear la máquina virtual( con la localización "West Europe" da error):
+- El siguiente paso es crear la máquina virtual(con la localización "West Europe" da error):
 ```
 $ azure vm create maquina-javi-ubu5 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140414-en-us-30GB javi Clave#Javi#1 --location "Central US" --ssh
 ```
@@ -238,7 +238,7 @@ sudo apt-get install nginx
 
 ![instalarnginx](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalarnginx_zpsvysi5ora.png)
 
-- Lo siguiente es arrancar nginx y abrir el puerto 80 de la máquina:
+- Posteriormente se arranca nginx y se abre el puerto 80 de la máquina:
 ``` 
 sudo service nginx start
 azure vm endpoint create maquina-javi-ubu5 80 80
@@ -259,4 +259,163 @@ azure vm shutdown maquina-javi-ubu5
 
 ![apagar](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/apagar_zpsialecg36.png)
 
+### Ejercicio 6: Usar juju para hacer el ejercicio anterior.
 
+- El primer paso es instalar juju, para ello(añadir el repositorio no es necesario):
+```
+sudo add-apt-repository ppa:juju/stable
+sudo apt-get update && sudo apt-get install juju-core
+```
+- Posteriormente se inicia juju mediante el comando:
+```
+juju init
+```
+Tambien es válido el comando ` juju generate-config`
+
+![jujuinit](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/initjuju_zpsi45r1xcr.png)
+
+- Esto crea un archivo **/home/javi/.juju/environments.yaml** con el siguiente contenido para azure(hay para openstack, amazon, etc):
+```
+    # https://juju.ubuntu.com/docs/config-azure.html
+    azure:
+        type: azure
+    
+        # location specifies the place where instances will be started,
+        # for example: West US, North Europe.
+        #
+        location: West US
+    
+        # The following attributes specify Windows Azure Management
+        # information. See:
+        # http://msdn.microsoft.com/en-us/library/windowsazure
+        # for details.
+        #
+        management-subscription-id: 00000000-0000-0000-0000-000000000000
+        management-certificate-path: /home/me/azure.pem
+    
+        # storage-account-name holds Windows Azure Storage info.
+        #
+        storage-account-name: abcdefghijkl
+    
+        # force-image-name overrides the OS image selection to use a fixed
+        # image for all deployments. Most useful for developers.
+        #
+        # force-image-name: b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-13_10-amd64-server-DEVELOPMENT-20130713-Juju_ALPHA-en-us-30GB
+    
+        # image-stream chooses a simplestreams stream from which to select
+        # OS images, for example daily or released images (or any other stream
+        # available on simplestreams).
+        #
+        # image-stream: "released"
+    
+        # agent-stream chooses a simplestreams stream from which to select tools,
+        # for example released or proposed tools (or any other stream available
+        # on simplestreams).
+        #
+        # agent-stream: "released"
+    
+        # Whether or not to refresh the list of available updates for an
+        # OS. The default option of true is recommended for use in
+        # production systems, but disabling this can speed up local
+        # deployments for development or testing.
+        #
+        # enable-os-refresh-update: true
+    
+        # Whether or not to perform OS upgrades when machines are
+        # provisioned. The default option of true is recommended for use
+        # in production systems, but disabling this can speed up local
+        # deployments for development or testing.
+        #
+        # enable-os-upgrade: true
+```
+
+- A continuación se crea el certificado necesario para que juju conecte con Azure( en Common Name poner Juju, bonita experiencia tuve en SPSI con esto):
+```
+openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout azure.pem -out azure.pem
+openssl x509 -inform pem -in azure.pem -outform der -out azure.cer
+chmod 600 azure.pem
+```
+- Con esto se obtiene los dos certificados necesarios para la conexión:    
+
+![certificado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/certificado_zpsw9nsz0bi.png)
+
+![certificado2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/certificado2_zps6bwwhyqc.png)
+
+- Ahora se procede a configurar el archivo environments.yaml:
+```
+		management-subscription-id: 00000000-0000-0000-0000-000000000000
+        management-certificate-path: /home/me/azure.pem
+```
+- En **management-subscription-id** hay que poner la id que se obtiene de ejecutar `azure account list`
+- En **management-certificate-path** se pone la ruta hasta el certificado que se obtuvo en el paso anterior.
+- En **storage-account-name** se pone el nombre de almacenamiento obtenido de ejecutar `azure storage account list`
+- En **location** se pone la localización anterior.
+
+A continuación se sube el certificado **azure.cer** a la máquina Azure, puede usarse el siguiente enlace para ir directamente a la opción de subir [certificados](https://manage.windowsazure.com/)
+
+![subircertificado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/subircertificado_zpsinx9smwm.png)
+
+![subircertificado2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/subircertificado2_zpszglqxovg.png)
+
+![subircertificado3](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/subircertificado3_zpsshfamnp8.png)
+
+- A continuación se ejecuta este comando para trabajar sobre azure:
+```
+juju switch azure
+```
+- Con la ejecución del siguiente comando se crea el taper:
+```
+juju bootstrap
+```
+
+![jujuazure](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/jujuazure_zpshrwxpcdj.png)
+
+- El siguiente paso es instalar [nginx](https://jujucharms.com/u/imbrandon/nginx/precise/7)( puede realizarse tambien accediendo a la dirección que nos indica el comando anterior y hacerlo de mánera gráfica):
+```
+juju deploy cs:~imbrandon/precise/nginx-7
+```
+
+![jujunginx](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/jujunginx_zps7a7mlmqm.png)
+
+- El siguiente paso es publicar el servicio:
+```
+juju expose nginx
+```
+- Y se comprueba que nginx esta funcionando ejecutando(hay que esperar un poco):
+```
+juju status
+```
+
+![jujustatus](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/jujustatus_zps2wqm8auu.png)
+
+Se accede a la dirección que proporciona el servicio y se ve que efectivamente funciona.
+
+![navegador](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/navegador_zpsqs3kbb0c.png)
+
+
+
+### Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+
+Se procede a descargar la version 17.3 de [Linux Mint](http://www.linuxmint.com/edition.php?id=204), concretamente la versión Mate de "Rosa".
+- Al igual que en el ejercicio 2 se crea el espacio de almacenamiento:
+```
+$ qemu-img create -f qcow2 lmint.qcow2 10G
+```
+- Se instala la imagen:
+```
+$ qemu-system-x86_64 -machine accel=kvm -hda lmint.qcow2 -cdrom linuxmint-17.3-cinnamon-64bit.iso -m 1G -boot d
+```
+
+![instalarmint](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/instalarmint_zps0y7xbanq.png)
+
+Otra manera más automatizada es seguir los pasos que se sigue en la página oficial de [Debian](https://wiki.debian.org/VMBuilder):
+- Clonar el siguiente repositorio:
+```
+$ git clone git://git.debian.org/git/pkg-escience/vmbuilder.git
+```
+- Ejecutar la siguiente orden:
+```
+./debian-vm-builder kvm lenny --tmp=/var/tmp --mirror http://ftp.de.debian.org/debian --rootpass debian
+```
+
+Esto instala una versión Debian Lenny.
