@@ -70,3 +70,20 @@ sudo apt-get install -y nginx
 
 #Ejercicio 8:
 
+Para añadir el provisionamiento con ansible, abrimos el Vagrantfile que se ha creado en el ejercicio 6 y solo tenemos que incluir lo siguiente al final, tal y como dice en la [guía oficial de ansible](http://docs.ansible.com/ansible/guide_vagrant.html)
+
+```
+
+  config.vm.provision "ansible" do |ansible|
+    ansible.verbose = "v"
+    ansible.playbook = "playbook.yml"
+  end
+
+```
+De esta manera en el archivo playbook.yml se escribe la receta para el provisionamiento de la MV.
+
+Además, en dicho arvhivo tenemos que incluir al principio la dirección de la MV para poder hacer el provisionamiento, en mi caso:
+
+ `-hosts: 10.0.2.2`
+ 
+ De esta manera ansible se conecta a la MV en vagrant y permite provisionarla.
