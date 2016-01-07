@@ -1,6 +1,60 @@
 # Objetivos
 ==
 #Autor Rafael Lachica Garrido
+
+##TEMAS
+
+
+## Objetivos por Temas
+### Tema 1: Introducción a la infraestructura virtual: concepto y soporte físico
+
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación nube, Utility Computing, Software as a Service o Google AppSpot)
+
+- [x] Conocer el concepto de software libre y su importancia dentro de la computación nube.
+
+- [x] Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
+
+- [x] Usar el sistema de control de fuentes git para desarrollo colaborativo y para despliegue de aplicaciones en la nube.
+
+### Tema 2: Desarrollo basado en pruebas
+
+- [x] Entender el concepto de DevOps.
+
+- [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
+
+- [x] Aprender a usar integración continua en cualquier aplicación.
+
+### Tema 3: Creando aplicaciones en la nube: Uso de PaaS y SaaS
+####Objetivos específicos
+- [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+
+- [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
+
+- [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización. Por ejemplo tenemos varios trabajadores que tocan el mismo código, con la integración continua sabemos donde están los fallos, porque se producen y quien los provoca. Además podemos trabajar sobre la nube.
+
+### Tema 4: Virtualización ligera usando contenedores
+
+- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+
+- [x] Crear infraestructuras virtuales completas.
+
+- [x] Comprender los pasos necesarios para la configuración automática de las mismas.
+
+### Tema 5: Virtualización completa: uso de máquinas virtuales
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+- [x] Documentar y mantener una plataforma virtual.
+
+- [x] Realizar tareas de administración de infraestructuras virtuales.
+
+##SESIONES
 ## Semana del 23 al 30 de septiembre de 2015
 ==
 
@@ -91,7 +145,7 @@
 
 - [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
 
-- [ ] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+- [x] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
 
 - [x] Comprender los mecanismos de despliegue automático.
 
@@ -156,7 +210,7 @@
 
 - [x] Trabajar con los toolbelts de los diferentes PaaS.
 
-- [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+- [x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
 
 - [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
 
@@ -221,38 +275,6 @@ __________________________________________
 
 - [x] Realizar tareas de administración en infraestructura virtual.
 
-
-## Objetivos por Temas
-### Tema 1: Introducción a la infraestructura virtual: concepto y soporte físico
-
-- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación nube, Utility Computing, Software as a Service o Google AppSpot)
-
-- [x] Conocer el concepto de software libre y su importancia dentro de la computación nube.
-
-- [x] Entender el concepto de DevOps y las técnicas y tecnologías que cubre.
-
-- [x] Usar el sistema de control de fuentes git para desarrollo colaborativo y para despliegue de aplicaciones en la nube.
-
-### Tema 2: Desarrollo basado en pruebas
-
-- [x] Entender el concepto de DevOps.
-
-- [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
-
-- [x] Aprender a usar integración continua en cualquier aplicación.
-
-### Tema 3: Creando aplicaciones en la nube: Uso de PaaS y SaaS
-####Objetivos específicos
-- [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
-
-- [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
-
-- [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
-
-- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
-
-- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización. Por ejemplo tenemos varios trabajadores que tocan el mismo código, con la integración continua sabemos donde están los fallos, porque se producen y quien los provoca. Además podemos trabajar sobre la nube.
-
 ####Otros objetivos
 - [x] Darse de alta en Heroku y Openshift y aprender a usarlos.
 
@@ -295,11 +317,11 @@ __________________________________________
 ## Sesión 12: Semana del 16 al 23 de Diciembre de 2015
 ### Objetivos de la semana
 
-- [] Usar gestores de máquinas virtuales.
+- [x] Usar gestores de máquinas virtuales.
 
 ### Otros objetivos
 
-- [] Instalar clientes libres de infraestructura en la nube.
+- [x] Instalar clientes libres de infraestructura en la nube.
 
 - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
 
@@ -308,10 +330,12 @@ __________________________________________
 ## Sesión 13: Semana del 13 al 20 de Enero de 2016
 ### Objetivos de la semana
 
-- [] Usar infraestructura en la nube.
+- [x] Usar infraestructura en la nube.
+
+- [x] Aprender a manejar Azure a través de la línea de comandos con el cliente npm de Azure.
 
 ### Otros objetivos
 
-- [] Instalar clientes libres de infraestructura en la nube.
+- [x] Instalar clientes libres de infraestructura en la nube.
 
-- [] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
