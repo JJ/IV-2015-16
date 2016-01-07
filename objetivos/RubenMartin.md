@@ -211,48 +211,48 @@
 ## Sesión 11: Semana del 9 al 16 de Diciembre de 2015
 ### Objetivos de la semana
 
-- [ ] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+- [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
 
 ### Otros objetivos
 
-- [ ] Instalar hipervisores libres y trabajar con ellos.
+- [x] Instalar hipervisores libres y trabajar con ellos.
 
-- [ ] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
 
 ## Sesión 12: Semana del 16 al 23 de Diciembre de 2015
 ### Objetivos de la semana
 
-- [ ] Usar gestores de máquinas virtuales.
+- [x] Usar gestores de máquinas virtuales.
 
 ### Otros objetivos
 
-- [ ] Instalar clientes libres de infraestructura en la nube.
+- [x] Instalar clientes libres de infraestructura en la nube.
 
-- [ ] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
 
-- [ ] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+- [x] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
 
 ## Sesión 13: Semana del 13 al 20 de Enero de 2016
 ### Objetivos de la semana
 
-- [ ] Usar infraestructura en la nube.
+- [x] Usar infraestructura en la nube.
 
 ### Otros objetivos
 
-- [ ] Instalar clientes libres de infraestructura en la nube.
+- [x] Instalar clientes libres de infraestructura en la nube.
 
-- [ ] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
 
 ## Sesión 14: Semana del 20 al 27 de Enero de 2016
 ### Objetivos de la semana
 
-- [ ] Usar infraestructura en la nube.
+- [x] Usar infraestructura en la nube.
 
 ### Otros objetivos
 
-- [ ] Instalar clientes libres de infraestructura en la nube.
+- [x] Instalar clientes libres de infraestructura en la nube.
 
-- [ ] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
 
 ## Objetivos de la asignatura
 
@@ -317,13 +317,13 @@
 
 ### Tema 5: Virtualización completa: uso de máquinas virtuales
 
-- [ ] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
 
-- [ ] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
 
-- [ ] Documentar y mantener una plataforma virtual.
+- [x] Documentar y mantener una plataforma virtual.
 
-- [ ] Realizar tareas de administración de infraestructuras virtuales.
+- [x] Realizar tareas de administración de infraestructuras virtuales.
 
 ### Tema 6: Gestión de infraestructuras virtuales
 

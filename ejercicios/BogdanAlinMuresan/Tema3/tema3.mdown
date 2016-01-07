@@ -49,11 +49,11 @@ class UsuarioResource(ModelResource):
 6    url(r'^api/',include(usuario_resource.urls)),
 7 )
  ~~~
-De esta manera al escribir la url 
+De esta manera al escribir la url en el navegador
 
 	http://127.0.0.1:8000/api/usuarios/?format=json
 	
-como no tenemos ningún usuario en la base de datos ,obtenemos
+Obtenemos el resultado en json
 
 	{"meta": {"limit": 20, "next": null, "offset": 0, "previous": null, "total_count": 0}, "objects": []}
 	
@@ -94,7 +94,9 @@ Los pasos fundamentales a seguir se pueden encontrar en el siguiente enlace [pas
 La aplicación corriendo en heroku
 
 ![La aplicación corriendo en heroku](http://i1175.photobucket.com/albums/r624/Bob_Mures/appHerokuFuncionando_zpsdpnbzvhw.png)
-	
+
+
+[Mas info](https://github.com/bogdananas/proyectoIV-modulo2/blob/master/docs/heroku.md)
 
 ##Ejercicio 6
 ####Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.Como en todos los ejemplos anteriores, se puede cambiar “node” y “heroku” por la herramienta que se haya elegido. 
