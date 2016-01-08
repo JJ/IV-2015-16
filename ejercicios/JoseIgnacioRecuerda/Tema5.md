@@ -13,6 +13,23 @@ y obtenemos los siguientes resultados:
 
 
 
+##Ejercicio 2
+###1.- Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS (que sirve como soporte para Docker) GALPon Minino, hecha en Galicia para el mundo, Damn Small Linux, SliTaz (que cabe en 35 megas) y ttylinux (basado en línea de órdenes solo).
+modprobe: ERROR: could not insert 'kvm_intel': Operation not supported
+me da este error tanto en mac como en ubuntu
+
+###2.- Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
+He usado parallels para instalar Slitaz-4.0 que previamente me he descargado del [Sitio oficial de Slitaz](http://www.slitaz.org/en/)
+
+En primer lugar le he dado la configuracion de tamaño de disco y de número de procesadores que se puede ver en la imagen
+
+![Slitaz con parallels](2.2.1)
+
+Y aqui tenemos la máquina de Slitaz arrancada
+
+![Slitaz con parallels](2.2.2)
+
+
 
 
 
