@@ -134,3 +134,26 @@
 - [x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
 - [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
 - [x] Experimentar con el despliegue simultáneo a varios PaaS.
+
+## ---------------------------------------------------------------------------##
+
+# Tema 4
+
+## Objetivos, Cubre los siguientes objetivos de la asignatura
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+- [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+- [x] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+- [x] Documentar y mantener una plataforma virtual.
+- [x] Optimizar aplicaciones sobre plataformas virtuales.
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+- [x] Realizar tareas de administración en infraestructura virtual.
+
+## Otros objetivos
+
+- [x] 1. Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+
+- [x] 2. Crear infraestructuras virtuales completas.
+
+- [x] 3. Comprender los pasos necesarios para la configuración automática de las mismas.
