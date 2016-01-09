@@ -9,7 +9,7 @@ En primer lugar instalo KVM con el comando `sudo apt-get install cpu-checker` y 
 * `egrep -c '(vmx|svm)' /proc/cpuinfo`
 
 y obtenemos los siguientes resultados:
-![KVM](1.1)
+![KVM](https://www.dropbox.com/s/l86jzei9qx7k9zk/ejr1.1.png?dl=1)
 
 
 
@@ -23,11 +23,11 @@ He usado parallels para instalar Slitaz-4.0 que previamente me he descargado del
 
 En primer lugar le he dado la configuracion de tamaño de disco y de número de procesadores que se puede ver en la imagen
 
-![Slitaz con parallels](2.2.1)
+![Slitaz con parallels](https://www.dropbox.com/s/ur8u2p2d91cv8hc/ejr2.2.1.png?dl=1)
 
 Y aqui tenemos la máquina de Slitaz arrancada
 
-![Slitaz con parallels](2.2.2)
+![Slitaz con parallels](https://www.dropbox.com/s/deslflk6f4ntwht/ejr2.2.2.png?dl=1)
 
 
 
@@ -47,27 +47,27 @@ En primer lugar instalo el cliente de azure ejecutando el comando `sudo npm inst
 
 Una vez instalado ejecutamos `azure login` el cual nos da un enlace que tenemos que abrir en el navegador y un código que debemos de introducir en esa web para logearnos.
 
-![azure login](5.1)
+![azure login](https://www.dropbox.com/s/m69zvdm6l86wjoh/ejr5.1.png?dl=1)
 
 Una vez hecho esto y logeandonos en esta web nos muestra un mensaje de que se ha realizado satisfactoriamente
 
-![login ok](5.2)
+![login ok](https://www.dropbox.com/s/91evbzgzmavzyzr/ejr5.2.png?dl=1)
 
 A continuación creo un sitio web indicándole un nombre. El comando que he ejecutado para ellos ha sido `azure site create --location "West US" maquina-azure-ubuntu-14-ejr5`
 
-![Creo el sitio web](5.3)
+![Creo el sitio web](https://www.dropbox.com/s/qc7i56gqzg6bt0t/ejr5.3.png?dl=1)
 
 Comprobamos que efectivamente se ha creado bien entrando desde nuestro navegador a la URL que se nos menciona al crearse
 
-![Verifico la creacion del sitio web](5.4)
+![Verifico la creacion del sitio web](https://www.dropbox.com/s/t1odlaoiufhkrfo/ejr5.4.png?dl=1)
 
 Ahora creo la máquina en el sitio creado anteriormente. Voy a hacer uso de la máquina de Ubuntu 14_04_3 de Azure, para ello ejecuto el comando: `azure vm create maquina-azure-ubuntu-14-ejr5 b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB nacho Nacho@azure1 --location "Central US" --ssh`
 
-![Creo la maquina](5.5)
+![Creo la maquina](https://www.dropbox.com/s/y4g9v9uuhzs6d6n/ejr5.5.png?dl=1)
 
 Nos conectamos a la máquina por ssh 
 
-![Nos conectamos a la máquina por ssh](5.6)
+![Nos conectamos a la máquina por ssh](https://www.dropbox.com/s/iou8pmalfn3ftsi/ejr5.6.png?dl=1)
 
 Y ahora ejecuto los siguientes comandos para instalar nginx:
 
@@ -78,11 +78,11 @@ Y ahora ejecuto los siguientes comandos para instalar nginx:
 
 Nos desconectamos de ssh y ejecutamos `azure vm endpoint create maquina-azure-ubuntu-14-ejr5 80 80`
 
-![abrimos puerto 80](5.7)
+![abrimos puerto 80](https://www.dropbox.com/s/57l2nn53o020u18/ejr5.7.png?dl=1)
 
 Y por último nos vamos a nuestro navegador y comprobamos que nginx se ha instalado correctamente
 
-![comprobamos nginx](5.8)
+![comprobamos nginx](https://www.dropbox.com/s/we3wlcpfyp0fzwk/ejr5.8.png?dl=1)
 
 ##Ejercicio 6
 ###Usar juju para hacer el ejercicio anterior.
@@ -90,11 +90,11 @@ Para instalar Juju sigo los pasos del [tutorial se nos indica en el enunciado](h
 
 En primer lugar instalo Juju con el comando `brew install juju`
 
-![instalo juju](6.1)
+![instalo juju](https://www.dropbox.com/s/5g7359jukuc10nh/ejr6.1.png?dl=1)
 
 A continuación ejecuto el comando `juju init` que me crea el archivo /Users/joseignaciorecuerdacambil/.juju/environments.yaml
 
-![juju init](6.2)
+![juju init](https://www.dropbox.com/s/kmg3lj7t3inlkmi/ejr6.2.png?dl=1)
 
 
 ##Ejercicio 7
@@ -104,9 +104,9 @@ En primer lugar descargo el Sistema Operativo desde su [página oficial](http://
 
 Y lo instalo con Parallels dandole la siguiente configuración
 
-![Configuracion linux mind](7.1)
+![Configuracion linux mind](https://www.dropbox.com/s/uiopkryylmbiowq/ejr7.1.png?dl=1)
 
 Aquí se puede ver funcionando Linux Mint
 
-![Linux Mint funcionando](7.2)
+![Linux Mint funcionando](https://www.dropbox.com/s/ofqht33aarpgrh8/ejr7.2.png?dl=1)
 
