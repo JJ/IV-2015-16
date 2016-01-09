@@ -50,7 +50,7 @@ Optional dependencies for lxc
 ## Ejercicio 2
 ### Comprobar qué interfaces puente se han creado y explicarlos.
 
-Creamos el contenedor con la orden: `sudo lxc-create -t ubuntu -n ubuntu-box`
+Creamos el contenedor con la orden: `sudo lxc-create -t ubuntu -n caja-ubuntu`
 
 Tras la instalación nos aparece lo siguiente:
 
@@ -108,3 +108,19 @@ vethSNB9QG:
 ```
 
 Uno sirve para que la máquina creada tenga acceso a internet mientras que la segunda sirve para tener acceso entre varias instancias de contenedores.
+
+
+## Ejercicio 3
+#### Crear un contenedor basado en tu distribución y otro basado en otra que no sea la tuya.
+
+Con arch he tenido problemas así que he desistido.
+
+```
+sudo lxc-create -t debian -n caja-debian
+```
+
+Para crearo uno con fedora procedemos de la misma forma:
+
+```
+sudo lxc-create -t debian -n caja-fedora
+```
