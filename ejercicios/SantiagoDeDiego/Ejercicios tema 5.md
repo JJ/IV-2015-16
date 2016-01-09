@@ -1,0 +1,42 @@
+#Ejercicios tema 5
+
+##Ejercicio 1
+
+Volvemos a hacer lo mismo que hicimos en el primer tema, esto es, escribimos `sudo apt-get install cpu-checker` y luego: `sudo apt install qemu-kvm libvirt-bin`. Con esto ya tenemos instalado kvm 3n el equipo.
+
+##Ejercicio 2
+
+Ahora ejecutamos `sudo modprobe kvm-intel` para cargar el módulo de kvm. Ahora tenemos que descargar una imagen de [Minino](http://minino.galpon.org/es/descargas), en mi caso he escogido Ártabros. Esperamos a que se descargue y una vez descargada vamos a instalar un disco duro virtual con: `qemu-img create -f qcow2 disco.qcow2 3000M`.
+
+Una vez hecho esto vamos a instalar la MV con la ISO descargada y el disco creado con: `qemu-system-x86_64 -hda disco.qcow2 -cdrom minino-artabros-2.1_full.iso`. Nada más escribirlo nos aparece la siguiente imagen, para que instalemos el SO:
+
+![minino](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Captura%20de%20pantalla%20de%202016-01-09%20165713_zpssagsij8h.png)
+
+Para instalarlo en modo gráfico tenemos que entrar en la primera opción y una vez arranca la MV clicar en el instalador que aparece en el Escritorio.
+
+Para la segunda parte del ejercicio, voy a utilizar VirtualBox,ya que estoy más familiarizado con él. Primero de todo lo instalamos desde la [página oficial](https://www.virtualbox.org/wiki/Downloads)
+
+Una vez instalado VirtualBox voy a descargar una imagen de Ubuntu Desktop desde su [página oficial](http://www.ubuntu.com/download/desktop). Esperamos que se descargue y una vez hecho se lo asignamos a la Máquina virtual que hemos creado con VirtualBox clicando en Nueva. Ahora ya lo instalamos como si se tratase de instalarlo en nuestro propio ordenador y una vez instalado ya podemos entrar en nuestra MV.
+
+##Ejercicio 3
+
+##Ejercicio 4
+
+En este ejercicio voy a crear una máquina virtual con Lubuntu con VirtualBox. He escogido esta distribución porque viene con el entorno gráfico LXDE instalado por defecto. Primero me descargo una imagen de Lubuntu de 32 bits de [aquí](https://help.ubuntu.com/community/Lubuntu/GetLubuntu) y una vez descargada creamos una MV en VirtualBox. En mi caso le he dado una capacidad de disco duro de 5GB como podemos ver abajo ya que se necesitan mínimo 4.4 GB para su correcto funcionamiento:
+
+![disco duro](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Captura%20de%20pantalla%20de%202016-01-09%20173647_zpsfchdpvey.png)
+
+Una vez instalado vamos a conectarnos por ssh. Para ello, primero tenemos que añadir una nueva interfaz de red solo anfitrión para poder conectarnos a nuestra máquina:
+
+![nueva interfaz de red](http://s864.photobucket.com/user/Santiago_de_Diego/media/Captura%20de%20pantalla%20de%202016-01-09%20175021_zps8uer6ku1.png.html?sort=3&o=1)
+
+Ahora entramos en el archivo */etc/network/intefaces* y lo editamos como aparece en la siguiente imagen:
+
+![interfaces](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Captura%20de%20pantalla%20de%202016-01-09%20175556_zpsezdul17s.png)
+
+Ahora ya solo queda conectarnos por ssh a la MV como podemos ver:
+
+![ssh](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Captura%20de%20pantalla%20de%202016-01-09%20175921_zpsg1mcuqsp.png)
+
+
+
