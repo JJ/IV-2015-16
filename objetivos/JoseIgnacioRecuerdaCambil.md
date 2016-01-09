@@ -80,3 +80,8 @@ Optimizar aplicaciones sobre plataformas virtuales.
 - [X] Publicar imágenes de docker.
 - [X] Probar imágenes de docker publicadas.
 - [X] Trabajar con varias imágenes de docker conectadas.
+
+###Objetivos específicos tema 6
+- [X] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+- [X] Saber cómo aplicarlos en un caso determinado.
+- [X] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorizació más usados hoy en día.
