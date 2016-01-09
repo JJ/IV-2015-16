@@ -293,3 +293,55 @@ mongo               latest              cf55d61f5307        4 weeks ago         
 Si queremos ejecutar cualquiera de ellas usamos:
 
 ``` sudo docker run -i -t <nombre_maquina> /bin/bash ```
+
+## Ejercicio 8
+### Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+
+Los pasos a seguir son los siguientes:
+ - Iniciar la máquina deseada: `sudo docker run -i -t ubuntu /bin/bash`
+ - Obtenemos el prompt de la máquina: *root@f017aa228b10:/#*
+ - Añadimos un nuevo usuario:
+ ```
+ root@f9c448900c8e:/# useradd -d /home/dockuser -m dockuser
+root@f9c448900c8e:/# passwd dockuser
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+root@f9c448900c8e:/# adduser dockuser sudo
+Adding user `dockuser' to group `sudo' ...
+Adding user dockuser to group sudo
+Done.
+root@f9c448900c8e:/# su dockuser
+dockuser@f9c448900c8e:/$
+
+ ```
+ - Instalamos nginx
+ ```
+ sudo apt-get install software-properties-common
+ sudo add-apt-repository ppa:nginx/stable
+ sudo apt-get install nginx
+ sudo nginx
+ ```
+Para comprobar que todo funciona correctamente hacemos ifconfig e introducimos la ip en el navegador, vemos que está todo correcto
+
+![nginx docker](http://i.imgur.com/e081LRL.png)
+
+## Ejercicio 9
+### Crear a partir del contenedor anterior una imagen persistente con commit.
+
+El id del contenedor lo vemos con `sudo docker ps -a=false` en mi caso *f9c448900c8e*.
+
+Hacemos el commit con `sudo docker commit f9c448900c8e docommit` y comprobamos que se ha creado correctamente con `sudo docker images`
+
+```
+REPOSITORY          TAG                 IMAGE ID            CREATED       
+VIRTUAL SIZE
+docommit            latest              64fe41e564a7        24 seconds ago
+245.2 MB
+ubuntu              latest              c4bea91afef3        5 days ago    
+187.9 MB
+centos              latest              c8a648134623        2 weeks ago   
+196.6 MB
+mongo               latest              cf55d61f5307        4 weeks ago   
+316.9 MB
+```
