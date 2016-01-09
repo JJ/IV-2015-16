@@ -261,3 +261,61 @@ end
 ```
 
 Ejecutamos `vagrant provision` para recargar el nuevo Vagrantfile.
+
+### Ejercicio 8: Configurar tu máquina virtual usando Vagrant con el provisionador Ansible.
+
+Voy a configurar el Vagrantfile para crear una máquina de Azure y desplegar mi aplicación. 
+
+Empezamos instalando "Vagrant Azure Provider":
+
+ `vagrant plugin install vagrant-azure`
+ 
+![Instalando Vagrant Azure Provider](https://www.dropbox.com/s/vadcj09qjm6jieu/vagrantAzure.PNG?dl=1)
+
+Ya damos por hecho que además tenemos instalado VirtualBox, Vagrant, AzureCLI y que tenemos la máquina creada y configurada para acceder a ella. Todo esto lo hicimos en anteriores ejercicios.
+
+Desde el Vagrantfile crearemos la máquina de Azure y usaremos el archivo desplieguePLUCO.yml que hicimos en el ejercicio 6 para realizar el despliegue de la app.
+
+```
+VAGRANTFILE_API_VERSION = '2'
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = 'azure'
+  config.vm.provider :azure do |azure|
+    azure.mgmt_certificate = File.expand_path('~/azure.pem')
+    azure.mgmt_endpoint    = 'https://management.core.windows.net'
+    azure.subscription_id  = 'a5c45913-5302-4f3e-9ac2-77b0c0883196'
+
+    azure.cloud_service_name = 'pruebaiv-romi'
+    azure.storage_acct_name  = 'portalvhds1450737284938'
+    azure.deployment_name    = 'pruebaiv-romi'
+
+    azure.vm_name     = 'pruebaiv-romi'
+    azure.vm_image    = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB'
+    azure.vm_size     = 'Small'
+    azure.vm_location = 'North Europe'
+    
+    azure.vm_user = 'romi'
+
+    azure.ssh_port = '22'
+    azure.private_key_file = File.expand_path('~/azure.pem')
+
+    azure.tcp_endpoints = '8000:8000'
+  end
+
+  config.ssh.username = 'romi' 
+  config.ssh.password = 'Quillou14#'
+
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "desplieguePLUCO.yml" 
+  end
+end
+```
+
+Exportamos la variable de entorno de Ansible para que reconozca el host:
+
+ `export ANSIBLE_HOSTS=~/ansible_hosts`
+
+Y ahora ejecutamos:
+
+ `sudo vagrant up --provider=azure`
