@@ -102,7 +102,7 @@ A continuación ejecuto el comando `juju init` que me crea el archivo /Users/jos
 
 En primer lugar descargo el Sistema Operativo desde su [página oficial](http://www.linuxmint.com)
 
-Y lo instalo con Parallels dandole la siguiente configuración
+Y lo instalo con Parallels dándole la siguiente configuración
 
 ![Configuracion linux mind](https://www.dropbox.com/s/uiopkryylmbiowq/ejr7.1.png?dl=1)
 
