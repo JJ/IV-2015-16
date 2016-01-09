@@ -164,4 +164,132 @@ Para la jaula realizamos lo siguiente:
  Asumiendo que en ambos test usamos páginas estáticas, cuyo resultado puede variar en caso de que lo hagamos con otras de
  mayor envergadura los resultados para la jaula son más favorables debido a que la *virtualización* se hace de manera más liviana ya que la jaula aprovecha y dispone de más recursos del anfitrión generalmente.
 
- 
+## Ejercicio 6
+### Instalar docker
+
+Lo instalamos con:
+
+``` yaourt -S docker ```
+
+ Configuramos nuestro usuario:
+
+ ``` gpasswd -a jose docker && newgrp docker ```
+
+ Para lanzarlo, primero lanzamos el servicio y luego docker:
+
+  ``` systemctl start docker ```
+
+  ``` sudo docker -d & ```
+
+Para comprobar que está ejecutandose usamos *docker info*:
+
+```
+Containers: 0
+Images: 0
+Server Version: 1.9.1
+Storage Driver: devicemapper
+ Pool Name: docker-8:1-2104328-pool
+ Pool Blocksize: 65.54 kB
+ Base Device Size: 107.4 GB
+ Backing Filesystem: xfs
+ Data file: /dev/loop0
+ Metadata file: /dev/loop1
+ Data Space Used: 53.74 MB
+ Data Space Total: 107.4 GB
+ Data Space Available: 29.69 GB
+ Metadata Space Used: 606.2 kB
+ Metadata Space Total: 2.147 GB
+ Metadata Space Available: 2.147 GB
+ Udev Sync Supported: true
+ Deferred Removal Enabled: false
+ Deferred Deletion Enabled: false
+ Deferred Deleted Device Count: 0
+ Data loop file: /var/lib/docker/devicemapper/devicemapper/data
+ Metadata loop file: /var/lib/docker/devicemapper/devicemapper/metadata
+ Library Version: 1.02.113 (2015-12-05)
+Execution Driver: native-0.2
+Logging Driver: json-file
+Kernel Version: 4.3.3-2-ARCH
+Operating System: Arch Linux (containerized)
+CPUs: 2
+Total Memory: 3.864 GiB
+Name: tux2duo
+ID: QU4G:42ET:IFXH:SF6U:LH5G:7I7T:JCEI:DZT3:3MHC:MZL3:VGPJ:N6HK
+````
+
+## Ejercicio 7
+### Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+
+Una vez está corriendo lanzamos:
+
+ - ```sudo docker pull ubuntu ```
+
+```  
+Using default tag: latest
+latest: Pulling from library/ubuntu
+
+fcee8bcfe180: Pull complete
+4cdc0cbc1936: Pull complete
+d9e545b90db8: Pull complete
+c4bea91afef3: Pull complete
+Digest: sha256:b53bb7b0d18842214ac7472c2a8801e8682c247d30f1ba4bab0083a2e2e091ea
+Status: Downloaded newer image for ubuntu:latest
+
+```
+
+ - ```sudo docker pull centos```
+
+```  
+Using default tag: latest
+latest: Pulling from library/centos
+
+fa5be2806d4c: Pull complete
+2bf4902415e3: Pull complete
+86bcb57631bd: Pull complete
+c8a648134623: Pull complete
+Digest: sha256:8072bc7c66c3d5b633c3fddfc2bf12d5b4c2623f7004d9eed6aae70e0e99fbd7
+Status: Downloaded newer image for centos:latest
+
+```
+
+- ```sudo docker pull mongo```
+
+```
+Using default tag: latest
+latest: Pulling from library/mongo
+
+c950d63587be: Pull complete
+3ba3ba0cdebd: Pull complete
+788d70e76e3e: Pull complete
+c5c26aead75d: Pull complete
+42e04855676a: Pull complete
+76abcca5eddc: Pull complete
+db55d43af105: Pull complete
+fc9de0177f93: Pull complete
+c08fd20206bc: Pull complete
+d3efe0b8d0e8: Pull complete
+4e43baa24ed1: Pull complete
+9b527e45167a: Pull complete
+6838b2d1001f: Pull complete
+c867a3def62e: Pull complete
+17647169a815: Pull complete
+6293f12cb81c: Pull complete
+3e408cde1b7f: Pull complete
+cf55d61f5307: Pull complete
+Digest: sha256:8453d81cfe34363285a203720bf08b37dcbd622023ea2fe54c0de97d2e257281
+Status: Downloaded newer image for mongo:latest
+
+```
+Para comprobar las imagenes disponibles usamos *docker images*
+
+```
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ubuntu              latest              c4bea91afef3        5 days ago          187.9 MB
+centos              latest              c8a648134623        2 weeks ago         196.6 MB
+mongo               latest              cf55d61f5307        4 weeks ago         316.9 MB
+
+```
+
+Si queremos ejecutar cualquiera de ellas usamos:
+
+``` sudo docker run -i -t <nombre_maquina> /bin/bash ```
