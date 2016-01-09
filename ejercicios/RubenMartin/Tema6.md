@@ -199,3 +199,65 @@ Y vemos que todo se ejecuta correctamente:
 ### Ejercicio 5.2: ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?
 
 Ansible es mucho más flexible que Chef, ya que pueden ejecutarse las configuraciones desde fuera de la máquina, es decir, remotamente, mientras que Chef requiere configurarse y ejecutarse dentro del servidor. Además los playbooks de Ansible son mucho más sencillos de configurar y entender que la recetas de Chef. Por otra parte, Chef es más rápido pero Ansible ofrece una muy fácil gestión en múltiples máquinas al mismo tiempo.
+
+### Ejercicio 6: Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
+
+Primero instalamos Vagrant. Se puede hacer con:
+
+ `sudo apt-get install vagrant`
+ 
+Esto instala la versión 1.4.3. Pero para los ejercicios que hagamos con Azure, necesitaremos una versión posterior a las 1.6. 
+
+Podemos descargar la última versión 1.8.1 de [aquí](https://releases.hashicorp.com/vagrant/) y luego instalar el deb:
+
+ `sudo dpkg -i vagrant_1.8.1_x86_64.deb`
+ 
+En mi caso he tenido que reiniciar el sistema operativo para que me reconozca vagrant:
+
+![Version de Vagrant](https://www.dropbox.com/s/32xezyz1tmi8nz8/vagrantVersion.PNG?dl=1)
+ 
+También instalaremos Virtualbox, ya que usaremos una máquina que use este hipervisor:
+
+ `sudo apt-get install virtualbox virtualbox-dkms`
+
+Ahora elegimos una distribución Debian de la siguiente [lista](http://www.vagrantbox.es/) y la descargamos:
+
+ `vagrant box add debian http://static.gender-api.com/debian-8-jessie-rc2-x64-slim.box`
+ 
+![Descargar máquina Vagrant](https://www.dropbox.com/s/lelinuaxaeuzwpv/vagrantAdd.PNG?dl=1)
+ 
+Una vez termine la descarga, creamos un directorio donde vaya la máquina y dentro de ella hacemos lo siguiente:
+
+ `vagrant init debian`
+ 
+Esto crea el fichero "Vagrantfile" que permite trabajar y llevar a cabo cualquier configuración adicional. 
+
+![Creacion fichero Vagrantfile](https://www.dropbox.com/s/c6npqqr043gchp4/vagrantInit.PNG?dl=1)
+
+Ahora iniciamos la máquina:
+
+ `vagrant up`
+ 
+![Iniciamos la maquina Vagrant](https://www.dropbox.com/s/8rbnhfmo0ajoki2/vagrantUp.PNG?dl=1)
+ 
+Y ya podemos conectar con la máquina por SSH:
+
+ `vagrant ssh`
+
+### Ejercicio 7: Crear un script para provisionar "nginx" o cualquier otro servidor web que pueda ser útil para alguna otra práctica.
+
+Editamos el fichero Vagrantfile:
+
+```
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "debian"
+
+  config.vm.provision "shell",
+	inline: "sudo apt-get update && sudo apt-get install -y nginx && sudo service nginx start"
+
+end
+```
+
+Ejecutamos `vagrant provision` para recargar el nuevo Vagrantfile.
