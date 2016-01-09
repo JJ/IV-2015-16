@@ -131,7 +131,7 @@ sudo lxc-create -t debian -n caja-fedora
 Instalamos con `sudo wget https://lxc-webpanel.github.io/tools/install.sh -O - | sudo bash`
 
 La dirección de acceso es "http://localhost:5000/" y los credenciales "admin" "admin"
-![lxc web](http://imgur.com/FJR12Mc)
+![lxc web](http://i.imgur.com/FJR12Mc.png)
 
 Desde ahí podemos manipular las cajas creadas, ya sea su estado (iniciar, parar...) así como su configuración
 
