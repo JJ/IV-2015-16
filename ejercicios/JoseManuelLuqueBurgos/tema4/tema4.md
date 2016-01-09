@@ -136,3 +136,32 @@ La dirección de acceso es "http://localhost:5000/" y los credenciales "admin" "
 Desde ahí podemos manipular las cajas creadas, ya sea su estado (iniciar, parar...) así como su configuración
 
 Las opciones de CPU se configuran en el apartado de hardware, siempre y cuando la máquina se encuentre desconectada lógicamente.
+
+## Ejercicio 5
+### Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor usando nginx.
+
+Para hacer la comparativa usaremos AB (Apache Benchmark)
+
+Los pasos a seguir para el contenedor son:
+ - Arrancar el contenedor lxd:  ``` sudo lxc-start -n caja-ubuntu ```
+ - Instalar nginx: ``` sudo apt-get install nginx ```
+ - Instalar AB: ``` sudo apt-get install apache2-utils ```
+
+Como vimos en el ejercicio 2, tenemos una dirección ip para interactura con la caja, la usamos para ejecutar contra ella apache Benchmark
+ - ```ab -n 2000 -c 1000 http://10.0.3.1/  ```
+
+ ![ab contenedor](http://i.imgur.com/TCZX5XT.png)
+
+Para la jaula realizamos lo siguiente:
+ - Nos ayudamos de la herramienta **debootstrap** : ``` debootstrap --arch=i386 lucid /home/jose/jaula http://archive.ubuntu.com/ubuntu ```
+ - Hacemos chroot para acceder: ``` sudo chroot /home/jose/jaula ```
+ - Montamos */proc* para tener acceso a los útiles de red: ``` mount -t proc proc /proc ```
+ - Añadimos los repositorios de nginx en *apt-sources.list*, lo instalamos junto a AB y lanzamos nginx.
+ - Volvemos a usar ab, esta vez contra la jaula: ``` ab -n 2000 -c 1000 http://10.0.3.16/ ```
+
+ ![ab jaula](http://i.imgur.com/wtLLkwy.png)
+
+ Asumiendo que en ambos test usamos páginas estáticas, cuyo resultado puede variar en caso de que lo hagamos con otras de
+ mayor envergadura los resultados para la jaula son más favorables debido a que la *virtualización* se hace de manera más liviana ya que la jaula aprovecha y dispone de más recursos del anfitrión generalmente.
+
+ 
