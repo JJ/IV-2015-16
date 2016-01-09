@@ -97,7 +97,16 @@ A continuación ejecuto el comando `juju init` que me crea el archivo /Users/jos
 ![juju init](6.2)
 
 
+##Ejercicio 7
+###Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
 
+En primer lugar descargo el Sistema Operativo desde su [página oficial](http://www.linuxmint.com)
 
+Y lo instalo con Parallels dandole la siguiente configuración
 
+![Configuracion linux mind](7.1)
+
+Aquí se puede ver funcionando Linux Mint
+
+![Linux Mint funcionando](7.2)
 
