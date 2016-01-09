@@ -84,6 +84,20 @@ Y por último nos vamos a nuestro navegador y comprobamos que nginx se ha instal
 
 ![comprobamos nginx](5.8)
 
+##Ejercicio 6
+###Usar juju para hacer el ejercicio anterior.
+Para instalar Juju sigo los pasos del [tutorial se nos indica en el enunciado](https://jujucharms.com/docs/stable/getting-started) 
+
+En primer lugar instalo Juju con el comando `brew install juju`
+
+![instalo juju](6.1)
+
+A continuación ejecuto el comando `juju init` que me crea el archivo /Users/joseignaciorecuerdacambil/.juju/environments.yaml
+
+![juju init](6.2)
+
+
+
 
 
 
