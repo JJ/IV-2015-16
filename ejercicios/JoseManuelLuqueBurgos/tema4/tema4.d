@@ -113,7 +113,7 @@ Uno sirve para que la máquina creada tenga acceso a internet mientras que la se
 ## Ejercicio 3
 #### Crear un contenedor basado en tu distribución y otro basado en otra que no sea la tuya.
 
-Con arch he tenido problemas así que he desistido.
+Con arch he tenido problemas de varios tipos al instalar otras distribuciones así que he desistido, apartir de ahora uso con anfitrión Ubuntu.
 
 ```
 sudo lxc-create -t debian -n caja-debian
@@ -124,3 +124,15 @@ Para crearo uno con fedora procedemos de la misma forma:
 ```
 sudo lxc-create -t debian -n caja-fedora
 ```
+
+## Ejercicio 4
+### Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
+
+Instalamos con `sudo wget https://lxc-webpanel.github.io/tools/install.sh -O - | sudo bash`
+
+La dirección de acceso es "http://localhost:5000/" y los credenciales "admin" "admin"
+![lxc web](http://imgur.com/FJR12Mc)
+
+Desde ahí podemos manipular las cajas creadas, ya sea su estado (iniciar, parar...) así como su configuración
+
+Las opciones de CPU se configuran en el apartado de hardware, siempre y cuando la máquina se encuentre desconectada lógicamente.
