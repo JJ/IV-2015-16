@@ -238,3 +238,56 @@ Aprovisionamos la maquina y comprobamos el estado de nginx
 
 ##Ejercicio 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
 
+Voy a configurar una máquina virtual azure usando vagrant y despues provisionarla de la aplicación de Dai con ansible. Ya que esto mismo me
+será util en la práctica final.
+
+Partiendo de que tenemos instalado vagrant y azure-cli , lo primero que tenemos que hacer es instalar es el provisionador azure para vagrant
+
+	vagrant plugin install vagrant-azure
+
+![imagen](https://www.dropbox.com/s/z8pwe08h8npu79o/va.png?dl=1)
+
+Para poder toquetear las maquinas azure, tendremos que descargar el archivo de Configuración de publicación, que contiene credenciales seguras e información adicional acerca de nuestra suscripción Azure
+
+	azure login
+	azure account download 
+
+Debemos de abrir el enlace y descargar el archivo
+
+![imagen](https://www.dropbox.com/s/4wrainq0e9w9aid/va2.png?dl=1)
+
+Una vez que lo tengamos, debemos importarlo
+
+	 azure account import Pase\ para\ Azure-1-8-2016-credentials.publishsettings 
+
+Lo siguiente es obtener archivos PEM con las claves públicas y privadas, y los certificados X509
+
+	openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ~/.ssh/azurevagrant.key -out ~/.ssh/azurevagrant.key
+	chmod 600 ~/.ssh/azurevagrant.key
+	openssl x509 -inform pem -in ~/.ssh/azurevagrant.key -outform der -out ~/.ssh/azurevagrant.cer
+
+Para autenticar la maquina azure, necesitamos un archivo.pem para generarlo necesitamos ahcer un truco, primero ejecutar 
+
+	openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem
+
+y despues concatenarle el fichero.key 
+	
+	cat azurevagrant.key > azurevagrant.pem 
+
+Una vez creados, es necesario subirlos al portal de azure 
+
+![imagen](https://www.dropbox.com/s/nwjahryrdqu5506/va3.png?dl=1)
+
+Ta tenemos todo lo necesario para crear el Vagrantfile
+
+
+Ejecutamos export ANSIBLE_HOSTS=~/ansible_hosts
+
+ejecutamos vagrant up --provider=azure
+
+
+
+
+
+	
+
