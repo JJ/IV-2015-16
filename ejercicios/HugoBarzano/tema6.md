@@ -14,7 +14,7 @@ Podemos comprobar que la instalación se ha realizado correctamente mediante
 	
 
 ##Ejercicio 2: Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
-He decidico instalar nano como editor de texto. Para la receta, he creado la siguiente jerarquia de directorios:
+He decidido instalar nano como editor de texto. Para la receta, he creado la siguiente jerarquía de directorios:
 
 ![imagen](https://www.dropbox.com/s/2hteq1ky8kj4bm2/chef2.png?dl=1)
 
@@ -99,7 +99,7 @@ Configuro ssh
 	ssh-keygen -t dsa 
 	ssh-copy-id -i .ssh/id_dsa.pub hugo@maquina-hugo-ej5.cloudapp.net
 
-Comprobamos que hay conexion
+Comprobamos que hay conexión
 
 	ansible all -u hugo -i ansible_hosts -m ping
 
@@ -107,12 +107,12 @@ Comprobamos que hay conexion
 
 Ahora estamos en condiciones de desplegar la aplicación. Debemos de:
 
-Insntalar dependencias. En mi caso, el sistema base esta actualizado, pero si no tambien seria recomendable hacerlo.
+Instalar dependencias. En mi caso, el sistema base esta actualizado, pero si no también seria recomendable hacerlo.
 
 	ansible all -u hugo -m command -a "sudo apt-get install python-setuptools python-dev build-essential git -y"
 	ansible all -u hugo -m command -a "sudo easy_install pip" 
 
-Descargar la aplicación de git e intalar requisitos
+Descargar la aplicación de git e instalar requisitos
 
 	ansible all -u hugo -m git -a "repo=https://github.com/hugobarzano/AplicacionDAI.git  dest=~/pruebaAnsible version=HEAD"
 	ansible all -u hugo -m command -a "sudo pip install -r pruebaAnsible/requirements.txt"
@@ -208,7 +208,7 @@ Conectar con la máquina
 
 ##Ejercicio 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
 
-He modificado el Vagrantfile generado en el ejercicio anterior para que provisione nginx
+He modificado el Vagrantfile generado en el ejercicio anterior para que aprovisione nginx
 
  	#-*- mode: ruby -*-
  	#vi: set ft=ruby :
@@ -238,8 +238,8 @@ Aprovisionamos la maquina y comprobamos el estado de nginx
 
 ##Ejercicio 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
 
-Voy a configurar una máquina virtual azure usando vagrant y despues provisionarla de la aplicación de Dai con ansible. Ya que esto mismo me
-será util en la práctica final. Para llevarlo acabo, he combinado ideas de los siguientes tres enlaces:
+Voy a configurar una máquina virtual azure usando vagrant y después aprovisionarla de la aplicación de Dai con ansible. Ya que esto mismo me
+será útil en la práctica final. Para llevarlo acabo, he combinado ideas de los siguientes tres enlaces:
 
 	[configuración de host como localhost](http://renemoser.net/blog/2014/03/27/using-vagrant-for-ansible-roles/)
 	[Povisionamiento azure con vagrant](https://unindented.org/articles/provision-azure-boxes-with-vagrant/)
@@ -279,7 +279,7 @@ Para autenticar la maquina azure desde el Vagrantfile, necesitamos un archivo.pe
 
 	openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem
 
-para generarlo y despues concatenarle el fichero.key. Esto es necesario para que el fichero.pem contenga tanto la clave publica como la privada.  
+para generarlo y después concatenarle el fichero.key. Esto es necesario para que el fichero.pem contenga tanto la clave publica como la privada.  
 	
 	cat azurevagrant.key > azurevagrant.pem 
 
@@ -327,7 +327,7 @@ El Vagrantfile se caracteriza en 3 bloques principales, el primero:
     			l.vm.hostname = "localhost"
   	end 
 
-En el configuro propiedades de la mauina virtual como son su nombre, su red(privada y publica) los puertos y defino el localhost.
+En el configuro propiedades de la maquina virtual como son su nombre, su red(privada y publica) los puertos y defino el localhost.
 En el segundo bloque
 
 	config.vm.provider :azure do |azure, override| 
@@ -343,7 +343,7 @@ En el segundo bloque
  	end
 
 Configuro las propiedades, por decirlo de alguna manera, relativas al proveedor de servicio. En mi caso azure. En este bloque indico
-el archivo de autenticación, el id de mi subscripcion azure, la imagen que va a ser instalada, nombre y contraseña de la maquina, localización y puertos para ssh y tcp. Por último, en el tercer bloque:
+el archivo de autenticación, el id de mi subscripción azure, la imagen que va a ser instalada, nombre y contraseña de la maquina, localización y puertos para ssh y tcp. Por último, en el tercer bloque:
 
 	config.vm.provision "ansible" do |ansible|
     		ansible.sudo = true
@@ -352,7 +352,7 @@ el archivo de autenticación, el id de mi subscripcion azure, la imagen que va a
     		ansible.host_key_checking = false
   	end
 
-Configuro todo lo relativo al aprovisionamiento mediante la herramienta ansible, indicandole el playbook que va a ejecutar: 
+Configuro todo lo relativo al aprovisionamiento mediante la herramienta ansible, indicándole el playbook que va a ejecutar: 
 
 	- hosts: localhost
   	  sudo: yes
@@ -377,31 +377,24 @@ Configuro todo lo relativo al aprovisionamiento mediante la herramienta ansible,
   	- name: ejecutar
     	  command: nohup sudo python ~/pruebaAnsible/manage.py runserver 0.0.0.0:80
 
-El playbook se encarga de actualizar el sistema base, instalar dependencia, descargar la aplicación de git, instalar los requisitos necesario y ejecutarla. Es necesario tener en el mismo nivel un archivo al que he llamado ansible_host que contiene
+El playbook se encarga de actualizar el sistema base, instalar dependencia, descargar la aplicación de git, instalar los requisitos necesario y ejecutarla. Es aconsejable pero no necesario tener en el mismo nivel un archivo al que he llamado ansible_host que contiene
 
 	[localhost]
 	192.168.56.10
 
-Si nos fijamos, esta ip privada es la establacida para la maquina virtual en el vagrantfile. Para crear la maquina con vagrant, debemos ejecutar
+Si nos fijamos, esta ip privada es la establecida para la maquina virtual en el Vagrantfile. Para crear la maquina con vagrant, debemos ejecutar
 
 	vagrant up --provider=azure
 
 ![imagen](https://www.dropbox.com/s/v8dtc28xemx2jow/ej8.png?dl=1)
 
 
-==> localhost: Machine reached state ReadyRole nos indica que la máquina esta funcionando. El aprovisionamiento se lleva acabo tambien en esta ejecución, pero si queremos hacerlo despues, podemos utilizar 
+==> localhost: Machine reached state ReadyRole nos indica que la máquina esta funcionando. El aprovisionamiento se lleva acabo también en esta ejecución, pero si queremos hacerlo después, podemos utilizar 
 
 	vagrant provision
 
-Podemos comprobar que efectivamete el despliegue de la aplicación similar al ejercicio 5 se ha llevado a cabo correctamente con un navegador, visitando el dns del cloud-service que Vagrant a creado y asociaco a la máquina de manera automática. 
+Podemos comprobar que efectivamente el despliegue de la aplicación similar a la del ejercicio 5 se ha llevado a cabo correctamente con un navegador, visitando el dns del cloud-service que Vagrant a creado y asociado a la máquina de manera automática. 
 
 	http://maquinahugoej8-service-tvvyo.cloudapp.net/bares/
 
 ![imagen](https://www.dropbox.com/s/c972prq1ej67xhz/ej8_2.png?dl=1)
-
-
-
-
-
-	
-
