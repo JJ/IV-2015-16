@@ -66,3 +66,24 @@ Por último solo tengo que ejecutar el comando para que con el archivo solo.rb e
 
 ![comando que ejecuta las recetas](ejr2.2)
 
+##Ejercicio 3
+###Escribir en YAML la siguiente estructura de datos en JSON { uno: "dos",tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }
+
+YAML es un formato para el intercambio de información  en la web, como JSON y XML. La estructura del enunciado escrita en YAML quedaría así:
+
+
+	---
+		uno: "dos"
+		tres:
+			4
+			5
+			"Seis"
+			
+				siete: 8
+				nueve:
+					10
+					11
+	
+
+
+
