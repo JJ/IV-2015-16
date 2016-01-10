@@ -55,7 +55,7 @@ end
 ```
 ![default](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/defaultrb_zpsu6qkutwa.png)
 
-- Debo de asegurar que la carpeta Documentos existe sino hay que crearla, a continuación se crea el archivo **node.json** con el siguiente contenido:
+- Hay que asegurarse que la carpeta Documentos existe sino hay que crearla, a continuación se crea el archivo **node.json** con el siguiente contenido:
 ```
 {
     "run_list":["recipe[nginx]", "recipe[nano]"]
@@ -80,6 +80,23 @@ json_attribs "/home/javi/chef/node.json"
 ![comprobacion](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/comprobacion_zpsijvgs7n3.png)
 
 ![comprobacion2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/leeme_zpskb4jlndn.png)
-![comprobacion]()
 
 
+### Ejercicio 3: Escribir en YAML la siguiente estructura de datos en JSON
+### `{ uno: "dos",`
+### `tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }`
+
+El resultado es el siguiente:
+```
+---
+-uno:"dos"
+ tres:
+	- 4
+	- 5
+	- "Seis"
+	-
+		- siete: 8
+		  nueve:
+			- 10
+			- 11
+```	
