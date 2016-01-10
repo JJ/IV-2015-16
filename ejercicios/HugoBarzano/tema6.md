@@ -241,9 +241,9 @@ Aprovisionamos la maquina y comprobamos el estado de nginx
 Voy a configurar una máquina virtual azure usando vagrant y después aprovisionarla de la aplicación de Dai con ansible. Ya que esto mismo me
 será útil en la práctica final. Para llevarlo acabo, he combinado ideas de los siguientes tres enlaces:
 
-	[configuración de host como localhost](http://renemoser.net/blog/2014/03/27/using-vagrant-for-ansible-roles/)
-	[Povisionamiento azure con vagrant](https://unindented.org/articles/provision-azure-boxes-with-vagrant/)
-	[Plugin Vagrant Azure Provider](https://github.com/Azure/vagrant-azure)
+[Configuración de host como localhost](http://renemoser.net/blog/2014/03/27/using-vagrant-for-ansible-roles/)
+[Povisionamiento azure con vagrant](https://unindented.org/articles/provision-azure-boxes-with-vagrant/)
+[Plugin Vagrant Azure Provider](https://github.com/Azure/vagrant-azure)
 
 
 Partiendo de que tenemos instalado vagrant y azure-cli , lo primero que tenemos que hacer es instalar es el provisionador azure para vagrant
