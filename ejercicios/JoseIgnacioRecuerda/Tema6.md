@@ -33,6 +33,6 @@ Ahora incluyo el código de los archivos incluidos en esta estructura:
 * chef/ cookbooks/nano/recipes/default.rb
 
 ```
-	package 'nano'	directory '/home/parallels/Desktop/IV/nano' do    	owner"parallels"    	group"parallels"	    mode 00544    	action :create	end	file "/home/parallels/Desktop/IV/nano/LEEME" do    	owner"parallels"    	group"parallels"    	mode 00544    	action :create    	content "Haciendo prueba con chef"	end
+package 'nano'directory '/home/parallels/Desktop/IV/nano' do   	owner"parallels"   	group"parallels"    mode 00544   	action :createendfile "/home/parallels/Desktop/IV/nano/LEEME" do   	owner"parallels"   	group"parallels"   	mode 00544   	action :create    content "Haciendo prueba con chef"end
 ```
 
