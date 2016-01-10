@@ -239,7 +239,12 @@ Aprovisionamos la maquina y comprobamos el estado de nginx
 ##Ejercicio 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
 
 Voy a configurar una máquina virtual azure usando vagrant y despues provisionarla de la aplicación de Dai con ansible. Ya que esto mismo me
-será util en la práctica final.
+será util en la práctica final. Para llevarlo acabo, he combinado ideas de los siguientes tres enlaces:
+
+	[configuración de host como localhost](http://renemoser.net/blog/2014/03/27/using-vagrant-for-ansible-roles/)
+	[Povisionamiento azure con vagrant](https://unindented.org/articles/provision-azure-boxes-with-vagrant/)
+	[Plugin Vagrant Azure Provider](https://github.com/Azure/vagrant-azure)
+
 
 Partiendo de que tenemos instalado vagrant y azure-cli , lo primero que tenemos que hacer es instalar es el provisionador azure para vagrant
 
@@ -266,24 +271,133 @@ Lo siguiente es obtener archivos PEM con las claves públicas y privadas, y los 
 	chmod 600 ~/.ssh/azurevagrant.key
 	openssl x509 -inform pem -in ~/.ssh/azurevagrant.key -outform der -out ~/.ssh/azurevagrant.cer
 
-Para autenticar la maquina azure, necesitamos un archivo.pem para generarlo necesitamos ahcer un truco, primero ejecutar 
-
-	openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem
-
-y despues concatenarle el fichero.key 
-	
-	cat azurevagrant.key > azurevagrant.pem 
-
-Una vez creados, es necesario subirlos al portal de azure 
+Una vez creados, es necesario subir el certificado.cer al portal de azure 
 
 ![imagen](https://www.dropbox.com/s/nwjahryrdqu5506/va3.png?dl=1)
 
-Ta tenemos todo lo necesario para crear el Vagrantfile
+Para autenticar la maquina azure desde el Vagrantfile, necesitamos un archivo.pem. Para generarlo necesitamos hacer un truco, primero ejecutar 
+
+	openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem
+
+para generarlo y despues concatenarle el fichero.key. Esto es necesario para que el fichero.pem contenga tanto la clave publica como la privada.  
+	
+	cat azurevagrant.key > azurevagrant.pem 
 
 
-Ejecutamos export ANSIBLE_HOSTS=~/ansible_hosts
+Lo siguiente es crear el Vagrantfile
 
-ejecutamos vagrant up --provider=azure
+	Vagrant.configure('2') do |config|
+ 		config.vm.box = 'azure'
+		config.vm.network "public_network"
+ 		config.vm.network "private_network",ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"
+ 		config.vm.network "forwarded_port", guest: 80, host: 80
+ 		config.vm.define "localhost" do |l|
+    			l.vm.hostname = "localhost"
+  		end
+
+ 
+ 	config.vm.provider :azure do |azure, override| 
+ 		azure.mgmt_certificate = File.expand_path('~/.ssh/azurevagrant.pem') 
+ 		azure.mgmt_endpoint = 'https://management.core.windows.net'
+ 		azure.subscription_id = 'b0eda1f9-f644-4cfd-bc55-29015eed62c9'
+ 		azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_2-LTS-amd64-server-20150506-en-us-30GB'
+ 		azure.vm_name = 'maquinahugoej8' 
+ 		azure.vm_password = 'Clave#Hugo#1'
+ 		azure.vm_location = 'Central US' 
+ 		azure.ssh_port = '22'
+ 		azure.tcp_endpoints = '80:80'
+ 	end
+
+ 	config.vm.provision "ansible" do |ansible|
+    		ansible.sudo = true
+    		ansible.playbook = "playbook.yml"
+    		ansible.verbose = "v"
+    		ansible.host_key_checking = false
+  	end
+	end
+
+El Vagrantfile se caracteriza en 3 bloques principales, el primero:
+
+	Vagrant.configure('2') do |config|
+ 		config.vm.box = 'azure'
+		config.vm.network "public_network"
+ 		config.vm.network "private_network",ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"
+ 		config.vm.network "forwarded_port", guest: 80, host: 80
+ 		config.vm.define "localhost" do |l|
+    			l.vm.hostname = "localhost"
+  	end 
+
+En el configuro propiedades de la mauina virtual como son su nombre, su red(privada y publica) los puertos y defino el localhost.
+En el segundo bloque
+
+	config.vm.provider :azure do |azure, override| 
+ 		azure.mgmt_certificate = File.expand_path('~/.ssh/azurevagrant.pem') 
+ 		azure.mgmt_endpoint = 'https://management.core.windows.net'
+ 		azure.subscription_id = 'b0eda1f9-f644-4cfd-bc55-29015eed62c9'
+ 		azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_2-LTS-amd64-server-20150506-en-us-30GB'
+ 		azure.vm_name = 'maquinahugoej8' 
+ 		azure.vm_password = 'Clave#Hugo#1'
+ 		azure.vm_location = 'Central US' 
+ 		azure.ssh_port = '22'
+ 		azure.tcp_endpoints = '80:80'
+ 	end
+
+Configuro las propiedades, por decirlo de alguna manera, relativas al proveedor de servicio. En mi caso azure. En este bloque indico
+el archivo de autenticación, el id de mi subscripcion azure, la imagen que va a ser instalada, nombre y contraseña de la maquina, localización y puertos para ssh y tcp. Por último, en el tercer bloque:
+
+	config.vm.provision "ansible" do |ansible|
+    		ansible.sudo = true
+    		ansible.playbook = "playbook.yml"
+    		ansible.verbose = "v"
+    		ansible.host_key_checking = false
+  	end
+
+Configuro todo lo relativo al aprovisionamiento mediante la herramienta ansible, indicandole el playbook que va a ejecutar: 
+
+	- hosts: localhost
+  	  sudo: yes
+  	  remote_user: vagrant
+   	  tasks:
+  	- name: Actualizar sistema base
+    	  apt: update_cache=yes upgrade=dist 
+  	- name: Instalar paquetes necesarios
+    	  apt: name=python-setuptools state=present
+    	  apt: name=build-essential state=present
+    	  apt: name=python-dev state=present
+    	  apt: name=python-pip state=present
+    	  apt: name=git state=present
+  	- name: Install Python Pip
+    	  action: apt pkg=python-pip
+  	- name: Obtener aplicacion de git
+    	  git: repo=https://github.com/hugobarzano/AplicacionDAI.git  dest=~/pruebaAnsible clone=yes force=yes
+  	- name: Dar permisos de ejecucion
+    	  command: chmod -R +x ~/pruebaAnsible
+  	- name: Instalar requisitos de la aplicacion
+    	  pip: requirements=~/pruebaAnsible/requirements.txt
+  	- name: ejecutar
+    	  command: nohup sudo python ~/pruebaAnsible/manage.py runserver 0.0.0.0:80
+
+El playbook se encarga de actualizar el sistema base, instalar dependencia, descargar la aplicación de git, instalar los requisitos necesario y ejecutarla. Es necesario tener en el mismo nivel un archivo al que he llamado ansible_host que contiene
+
+	[localhost]
+	192.168.56.10
+
+Si nos fijamos, esta ip privada es la establacida para la maquina virtual en el vagrantfile. Para crear la maquina con vagrant, debemos ejecutar
+
+	vagrant up --provider=azure
+
+![imagen](https://www.dropbox.com/s/v8dtc28xemx2jow/ej8.png?dl=1)
+
+
+==> localhost: Machine reached state ReadyRole nos indica que la máquina esta funcionando. El aprovisionamiento se lleva acabo tambien en esta ejecución, pero si queremos hacerlo despues, podemos utilizar 
+
+	vagrant provision
+
+Podemos comprobar que efectivamete el despliegue de la aplicación similar al ejercicio 5 se ha llevado a cabo correctamente con un navegador, visitando el dns del cloud-service que Vagrant a creado y asociaco a la máquina de manera automática. 
+
+	http://maquinahugoej8-service-tvvyo.cloudapp.net/bares/
+
+![imagen](https://www.dropbox.com/s/c972prq1ej67xhz/ej8_2.png?dl=1)
 
 
 
