@@ -30,9 +30,39 @@ Para este ejercicio empiezo creando la estructura necesaria para poder realizarl
 
 Ahora incluyo el código de los archivos incluidos en esta estructura:
 
-* chef/ cookbooks/nano/recipes/default.rb
+* chef/cookbooks/nano/recipes/default.rb 
+
+Receta para nano
 
 ```
 package 'nano'directory '/home/parallels/Desktop/IV/nano' do   	owner"parallels"   	group"parallels"    mode 00544   	action :createendfile "/home/parallels/Desktop/IV/nano/LEEME" do   	owner"parallels"   	group"parallels"   	mode 00544   	action :create    content "Haciendo prueba con chef"end
 ```
+
+* chef/cookbooks/nginx/recipes/default.rb (
+
+Receta para nginx
+
+```
+package 'nginx'directory "/home/parallels/Desktop/IV/nginx"
+```
+
+* chef/node.json
+
+Este archivo contiene una lista con las recetas que debe de ejecutar
+
+```
+{    "run_list":["recipe[nginx]", "recipe[nano]"]}
+```
+
+* chef/solo.rb
+
+En este archivo se encuentran las rutas necesarias para ejecutar las recetas
+
+```
+file_cache_path "/home/parallels/chef" cookbook_path "/home/parallels/chef/cookbooks" json_attribs "/home/parallels/chef/node.json" 
+```
+
+Por último solo tengo que ejecutar el comando para que con el archivo solo.rb ejecute las recetas anteriormente descritas: `sudo chef-solo -c solo.rb` (estando situado dentro de la carpeta chef)
+
+![comando que ejecuta las recetas](ejr2.2)
 
