@@ -242,7 +242,9 @@ Voy a configurar una máquina virtual azure usando vagrant y después aprovision
 será útil en la práctica final. Para llevarlo acabo, he combinado ideas de los siguientes tres enlaces:
 
 [Configuración de host como localhost](http://renemoser.net/blog/2014/03/27/using-vagrant-for-ansible-roles/)
+
 [Povisionamiento azure con vagrant](https://unindented.org/articles/provision-azure-boxes-with-vagrant/)
+
 [Plugin Vagrant Azure Provider](https://github.com/Azure/vagrant-azure)
 
 
