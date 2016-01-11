@@ -58,7 +58,7 @@ Paso 5: Arrancar e instalar el SO
 
 ![imagen](https://i.gyazo.com/39223a82a4c4b6acc964d4eefac4cfae.png)
 
-####Ejercicio 3: Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con (qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img).
+###Ejercicio 3: Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con (qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img).
 
 He creado el siguiente [benchmark](https://github.com/manolotello7/IV-2015-16/blob/master/ejercicios/ManuelGutierrezDelgado/benchmark.cpp) utilizando la información que el sistema operativo almacena dentro del directorio **/proc**.
 La función **mem_total ()** devuelve la memoria total usada por el programa en kilobytes. Utiliza la librería **time.h** para medir el tiempo. 
