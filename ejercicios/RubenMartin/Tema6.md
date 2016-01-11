@@ -282,7 +282,7 @@ Conectamos a Azure con `azure login`:
 
 Desde el Vagrantfile crearemos la máquina de Azure y usaremos el archivo desplieguePLUCO.yml que hicimos en el ejercicio 6 para realizar el despliegue de la app.
 
-**Vagrantfile**
+**Vagrantfile:**
 
 ```
 VAGRANTFILE_API_VERSION = '2'
@@ -303,7 +303,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB'
     azure.vm_name = 'pruebaiv-romi'
     azure.vm_user = 'romi'
-    azure.vm_password = 'Quillou14#'
+    azure.vm_password = '***'
     azure.vm_location = 'Central US' 
     azure.ssh_port = '22'
     azure.tcp_endpoints = '8000:8000'
@@ -331,7 +331,7 @@ Editamos el nombre del host a localhost dentro del archivo ansible_hosts y lo ll
 127.0.0.1              ansible_connection=local
 ```
 
-**desplieguePLUCO.yml**
+**desplieguePLUCO.yml:**
 
 ```
 ---
