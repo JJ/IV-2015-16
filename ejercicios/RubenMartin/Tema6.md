@@ -173,7 +173,7 @@ Vamos a crear el playbook de Ansible llamado "desplieguePLUCO.yml" con el siguie
     apt: name=python-setuptools state=present
     apt: name=python-dev state=present
     apt: name=build-essential state=present
-    apt: name=git state=present state=present
+    apt: name=git state=present
     apt: name=libtiff4-dev state=present
     apt: name=libjpeg8-dev state=present
     apt: name=zlib1g-dev state=present
@@ -272,44 +272,87 @@ Empezamos instalando "Vagrant Azure Provider":
  
 ![Instalando Vagrant Azure Provider](https://www.dropbox.com/s/vadcj09qjm6jieu/vagrantAzure.PNG?dl=1)
 
-Ya damos por hecho que además tenemos instalado VirtualBox, Vagrant, AzureCLI y que tenemos la máquina creada y configurada para acceder a ella. Todo esto lo hicimos en anteriores ejercicios.
+Ya damos por hecho que además tenemos instalado VirtualBox, Vagrant, AzureCLI como hicimos en anteriores ejercicios.
+
+Configuramos el acceso a nuestra cuenta de Azure como hice en los [ejercicios 5 y 6 del tema anterior](https://github.com/romilgildo/IV-2015-16/blob/master/ejercicios/RubenMartin/Tema5.md#ejercicio-5-crear-una-máquina-virtual-ubuntu-en-azure-e-instalar-en-ella-un-servidor-nginx-para-poder-acceder-mediante-web) si todavía no lo hemos hecho.
+
+Conectamos a Azure con `azure login`:
+
+![Login a cuenta Azure](https://www.dropbox.com/s/zbji3o97ifwv88x/azureLogin.PNG?dl=1)
 
 Desde el Vagrantfile crearemos la máquina de Azure y usaremos el archivo desplieguePLUCO.yml que hicimos en el ejercicio 6 para realizar el despliegue de la app.
+
+**Vagrantfile**
 
 ```
 VAGRANTFILE_API_VERSION = '2'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = 'azure'
+  config.vm.network "public_network"
+  config.vm.network "private_network",ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"
+  config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.define "localhost" do |l|
+	l.vm.hostname = "localhost"
+  end
+    
   config.vm.provider :azure do |azure|
     azure.mgmt_certificate = File.expand_path('~/azure.pem')
-    azure.mgmt_endpoint    = 'https://management.core.windows.net'
-    azure.subscription_id  = 'a5c45913-5302-4f3e-9ac2-77b0c0883196'
-
-    azure.cloud_service_name = 'pruebaiv-romi'
-    azure.storage_acct_name  = 'portalvhds1450737284938'
-    azure.deployment_name    = 'pruebaiv-romi'
-
-    azure.vm_name     = 'pruebaiv-romi'
-    azure.vm_image    = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB'
-    azure.vm_size     = 'Small'
-    azure.vm_location = 'North Europe'
-    
+    azure.mgmt_endpoint = 'https://management.core.windows.net'
+    azure.subscription_id = 'a5c45913-5302-4f3e-9ac2-77b0c0883196'
+    azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB'
+    azure.vm_name = 'pruebaiv-romi'
     azure.vm_user = 'romi'
-
+    azure.vm_password = 'Quillou14#'
+    azure.vm_location = 'Central US' 
     azure.ssh_port = '22'
-    azure.private_key_file = File.expand_path('~/azure.pem')
-
     azure.tcp_endpoints = '8000:8000'
   end
-
+  
   config.ssh.username = 'romi' 
-  config.ssh.password = 'Quillou14#'
+  config.ssh.password = '***'
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "desplieguePLUCO.yml" 
+	ansible.sudo = true
+    ansible.playbook = "desplieguePLUCO.yml"
+	ansible.verbose = "v"
+	ansible.host_key_checking = false 
   end
 end
+
+```
+
+Editamos el nombre del host a localhost dentro del archivo ansible_hosts y lo llamaremos así en el playbook desplieguePLUCO.yml. Además le tenemos que añadir lo siguiente para que encuentre el host:
+
+**ansible_hosts:**
+
+```
+[localhost]
+127.0.0.1              ansible_connection=local
+```
+
+**desplieguePLUCO.yml**
+
+```
+---
+- hosts: localhost
+  sudo: yes
+  remote_user: romi
+  tasks:
+  - name: Actualizar sistema base
+    apt: update_cache=yes upgrade=dist 
+  - name: Instalar paquetes necesarios
+    apt: name=python-setuptools state=present
+    apt: name=python-dev state=present
+    apt: name=build-essential state=present
+    apt: name=git state=present
+    apt: name=make state=present
+  - name: Clonando repositorio desde git
+    git: repo=https://github.com/romilgildo/IV-PLUCO-RMH.git dest=IV-PLUCO-RMH clone=yes force=yes
+  - name: Instalar requisitos para la app
+    shell: cd IV-PLUCO-RMH && make install
+  - name: Ejecutar aplicacion
+    shell: cd IV-PLUCO-RMH && make run
 ```
 
 Exportamos la variable de entorno de Ansible para que reconozca el host:
@@ -319,3 +362,17 @@ Exportamos la variable de entorno de Ansible para que reconozca el host:
 Y ahora ejecutamos:
 
  `sudo vagrant up --provider=azure`
+ 
+Esto crea la máquina virtual en Azure y posteriormente despliega la app.
+
+![Ejecucion del comando Vagrant up](https://www.dropbox.com/s/xa4uj6ybnnczp9l/vagrantProvider.PNG?dl=1)
+ 
+O si solo queremos ejecutar la parte de despliegue (si ya tenemos la máquina creada), hacemos:
+
+ `sudo vagrant provision`
+ 
+![Ejecucion del comando Vagrant provision](https://www.dropbox.com/s/hsawekz91afgj81/vagrantProvision.PNG?dl=1)
+ 
+Aquí tenemos una prueba de la app desplegada en Azure usando Vagrant y funcionando:
+
+![Captura de la app desplegada con Vagrant](https://www.dropbox.com/s/j3ztwtpvmpmxbpn/vagrantPluco.PNG?dl=1)
