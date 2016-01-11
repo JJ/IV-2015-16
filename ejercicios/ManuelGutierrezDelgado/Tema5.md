@@ -63,7 +63,7 @@ Paso 5: Arrancar e instalar el SO
 He creado el siguiente [benchmark](https://github.com/manolotello7/IV-2015-16/blob/master/ejercicios/ManuelGutierrezDelgado/benchmark.cpp) utilizando la información que el sistema operativo almacena dentro del directorio **/proc**.
 La función **mem_total ()** devuelve la memoria total usada por el programa en kilobytes. Utiliza la librería **time.h** para medir el tiempo. 
 
-##Ejercicio 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
+###Ejercicio 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
 Para que el sistema unix tenga entorno gráfico LXDE, he decidido instalar Lubuntu. Podemos descargar la iso de [aquí](http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/).
 
@@ -81,7 +81,7 @@ Instalamos ssh en la maquina virtual y nos conectamos desde el anfitrión: **sud
 
 ![imagen](https://i.gyazo.com/97b694c1b4d7538c7ea4be163d288ac1.png)
 
-####Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
+###Ejercicio 7: Instalar una máquina virtual con Linux Mint para el hipervisor que tengas instalado.
 
 Descarga de la imagen de [Linux Mint](http://www.linuxmint.com/download.php)
 
