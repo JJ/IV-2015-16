@@ -74,8 +74,8 @@ Crear la maquina habilitando vnc: **qemu-system-x86_64 -cdrom lubuntu-14.04.3-de
 Para conectar por vnc voy a utilizar vinagre. Podemos instalarlo mediante: **sudo apt-get install vinagre**, **vinagre localhost:5901**.
 
 ![imagen](https://i.gyazo.com/be1407b0ea1c9f09f845cb4b4b20776c.png)
+
 ![imagen](https://i.gyazo.com/99e4095a10caec43d86b51eb8096af73.png)
-![imagen](https://i.gyazo.com/15f77154d0be053c3d03f403abcf7188.png)
 
 Instalamos ssh en la maquina virtual y nos conectamos desde el anfitrión: **sudo apt-get install openssh-server**.
 
