@@ -188,11 +188,11 @@ Y el proyecto de DAI funcionando:
 ### Ejercicio 5: 
 ### 1.Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
 
-El primer paso es definir el host, para ello en el archivo ansible hosts se define lo siguiente:
+El primer paso es definir el host, para ello en el archivo **ansible_hosts** se define lo siguiente:
 
 ![ansible_hosts](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ansiblehosts_zps5q8u3t5i.png)
 
-Posteriormente se define el archivo *.yml*, en mi caso lo he llamado *daiansible.yml* con el siguiente contenido:
+Posteriormente se define el archivo **.yml**, en mi caso lo he llamado **daiansible.yml** con el siguiente contenido:
 ```
 - hosts: azure
   sudo: yes
