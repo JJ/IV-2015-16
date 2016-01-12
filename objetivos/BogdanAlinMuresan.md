@@ -37,15 +37,13 @@
 
 [x]Manejar de forma básica la línea de órdenes de Linux.
 
-[ ]Aprender a instalar software libre en Linux.
+[x]Aprender a instalar software libre en Linux.
 
-[ ]Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
+[x]Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
 
-[ ]Usar git para hacer check-in en clase y expresar al final de cada sesión los objetivos alcanzados.
+[x]Usar git para hacer check-in en clase y expresar al final de cada sesión los objetivos alcanzados.
 
-[ ]Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
-
-[ ]Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
+[x]Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
 ###Objetivos Tema 2 
 ###Desarollo basado en pruebas.
@@ -86,10 +84,44 @@ Comprender el papel de las build tools o herramientas de automatización.
 
 [x]Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
 
-[ ]Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
+[x]Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
 
 [x]Comprender los mecanismos de despliegue automático.
 
 [x]Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
+###Objetivos Tema 3
+---------------------------------
+[x]Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 
+[x]Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+[x]Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
+
+[x]Aplicar el concepto de DevOps a este tipo específico de plataforma.
+
+[x]Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
+
+
+###Objetivos Sesión 5
+[x]Comprender las diferencias y parecidos entre diferentes sistemas PaaS comerciales.
+
+[x]Elegir uno o varios sistemas para llevar a cabo los ejercicios y proyecto de la asignatura.
+
+[x]Internalizar el concepto de PaaS, su aplicación y sus limitaciones.
+
+[x]Entender el concepto de despliegue y cómo la infraestructura virtual y su especificación son esenciales para el mismo.
+
+[x]Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
+
+[x]Resolver los problemas que surjan en los primeros despliegues de la asignatura
+###Objetivos Sesión 6
+[x]Darse de alta y probar diferentes servicios PaaS.
+
+[x]Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+
+[x]Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+
+[x]Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
+
+[x]Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.

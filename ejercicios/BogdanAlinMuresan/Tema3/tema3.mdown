@@ -1,0 +1,138 @@
+#Ejercicios tema 3 
+-----
+##Ejercicio 1 
+
+####Darse de alta en algún servicio PaaS tal como Heroku, Nodejitsu, BlueMix u OpenShift.
+
+Nos damos de alta en OpenShift ,sin antes ,leer las condiciones.
+
+##Ejercicio 2
+####Crear una aplicación en OpenShift y dentro de ella instalar WordPress.
+
+Para crear la aplicación introducimos las configuración adecuada ,tal como la url,el repositorio git  del código fuente, etc.
+
+![Panel de Administración de wordPress](http://i1175.photobucket.com/albums/r624/Bob_Mures/wordpress_zpswy6aqogb.png)
+
+##Ejercicio 3
+####Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.
+
+El marco elegido es Django.Para crear una Restfull API en Django he usado el módulo Testypie.
+
+Descargamos el módulo
+
+	pip install django-testypie	
+
+Para que la api nos devuelva información en json  tenemos hacer los siguiente.
+Crear un archivo api.py
+
+~~~
+
+#app/api.py
+from tastypie.resources import ModelResource
+from app.models import Usuario
+
+class UsuarioResource(ModelResource):
+	class Meta:
+		queryset=Usuario.objects.all()
+		resource_name='usuarios'
+~~~
+ Modificar el archivo urls.py ,añadiendo las línea 3 y 6
+ 
+ ~~~
+1 from django.conf.urls import url, patterns, include
+2 from app.api import UsuarioResource
+
+3 usuario_resource=UsuarioResource()
+
+4 urlpatterns = patterns('',
+5    url(r'^app/', include('app.urls')), # ADD THIS NEW TUPLE!
+6    url(r'^api/',include(usuario_resource.urls)),
+7 )
+ ~~~
+De esta manera al escribir la url en el navegador
+
+	http://127.0.0.1:8000/api/usuarios/?format=json
+	
+Obtenemos el resultado en json
+
+	{"meta": {"limit": 20, "next": null, "offset": 0, "previous": null, "total_count": 0}, "objects": []}
+	
+
+##Ejercicio 5
+####Instalar y echar a andar tu primera aplicación en Heroku	
+
+    Paso 1 	
+ Darse de alta en heroku
+    
+    Paso 2 
+Descargamos la herramienta de heroku para escritorio posteriormente hacemos el login  y creamos la app en heroku
+
+	Paso 3
+Configuramos nuestro proyecto Django,para eso es fundamental crear el archivo [Procfile](https://devcenter.heroku.com/articles/procfile) 
+    
+    web: gunicorn miprojecto.wsgi —log-file
+
+**Importante!!** Crear el archivo requierments.txt
+
+~~~
+
+Django==1.8
+django-tastypie==0.12.2
+djangorestframework==3.3.1
+gunicorn==19.4.1
+pymongo==3.2
+python-dateutil==2.4.2
+python-mimeparse==0.1.4
+six==1.10.0
+wheel==0.24.0
+whitenoise==2.0.6
+
+~~~
+
+Los pasos fundamentales a seguir se pueden encontrar en el siguiente enlace [pasos](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
+ 
+La aplicación corriendo en heroku
+
+![La aplicación corriendo en heroku](http://i1175.photobucket.com/albums/r624/Bob_Mures/appHerokuFuncionando_zpsdpnbzvhw.png)
+
+
+[Mas info](https://github.com/bogdananas/proyectoIV-modulo2/blob/master/docs/heroku.md)
+
+##Ejercicio 6
+####Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.Como en todos los ejemplos anteriores, se puede cambiar “node” y “heroku” por la herramienta que se haya elegido. 
+
+Heroku recomiendo que se use el comando :
+
+    heroku local web
+    
+   antes he tenido que instalar un entorno virtual dentro del repo
+   
+    virtaulenv venv
+    
+   Activamos el entorno 
+   
+       source bin/activate
+       
+  e instalamos dependencias
+  
+     pip install -r requirements.txt --allow-all-external
+     
+  Finalmente lanzamos la aplicación localmente,accedemos a ella en la dirección localhost:5000/app
+     
+         heroku local web 
+         
+ La aplicación ejecutandose localmente
+ 
+ ![app ejecutandose en local](http://i1175.photobucket.com/albums/r624/Bob_Mures/localhost-5000_zpskvk8u3ng.png)
+
+	
+##Ejercicio 7
+####Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow
+
+
+Para el depliegue automatico he usado Snap CI.
+La configuración es bastante intuitiva despúes de darnos de alta en la web.
+
+Yo he configurado dos niveles ,uno para las dependencias y edición y el otro para desarollo.
+En la imagen siguiente se observa el desplieque de los dos niveles y el correcto funcionamiento.
+![SnapCI](http://i1175.photobucket.com/albums/r624/Bob_Mures/snapCI_zpsldwylygu.png)
