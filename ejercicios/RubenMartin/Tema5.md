@@ -188,6 +188,8 @@ sudo npm install -g azure-cli
 
 Ahora vamos a conectar con nuestra cuenta de Azure:
 
+- Antes de todo deberíamos de hacer `azure config mode asm`.
+
 - Creamos la configuración pública para nuestra cuenta: `azure account download`
 
 ![Creación de claves Azure](https://www.dropbox.com/s/3lcu5ns8pkz28wm/creacionClavesAzure.PNG?dl=1)
@@ -196,11 +198,11 @@ Ahora vamos a conectar con nuestra cuenta de Azure:
 
 ![Obtención de claves Azure](https://www.dropbox.com/s/cxu5anvhz4f312s/clavesAzure.PNG?dl=1)
 
-- Importamos el pase de Azure que nos hemos descargado: `azure account import <file location>`. En <file location> ponemos la ubicación del archivo descargado.
+- Importamos el pase de Azure que nos hemos descargado: `azure account import <file location>`. En "file location" ponemos la ubicación del archivo descargado.
 
 ![Importar pase de Azure](https://www.dropbox.com/s/ofm30xuwoy5cwcf/ImportamospaseAzure.PNG?dl=1)
 
-- Creamos el sitio web con el comando `azure site create --location "West US" <web site>`. En <web site> ponemos el nombre que queremos que tenga la página que acceda a nuestra máquina virtual.
+- Creamos el sitio web con el comando `azure site create --location "West US" <web site>`. En "web site" ponemos el nombre que queremos que tenga la página que acceda a nuestra máquina virtual.
 
 ![Creación del sitio web](https://www.dropbox.com/s/w5uysgzon8dd11i/creacionwebAzure.PNG?dl=1)
 
