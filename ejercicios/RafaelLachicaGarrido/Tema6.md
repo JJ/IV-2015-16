@@ -195,3 +195,35 @@ ssh-copy-id -i ./clavePrueba.pub pluco@prueba-iv-rlg.cloudapp.net
 - Probamos ahora a hacerle ping:
 ![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-13%20135546_zps1qwmdl9i.png)
 **NOTA**: es importante que hayamos iniciado sesión por ssh en la máquina de Azure, sino da error.
+
+- Procedemos ahora a realizar el despliegue de la app de PLUCO.
+Como necesitaremos algunas cosas extras, como python, git y los paquetes básicos, los instalamos primero con Ansible.
+
+```
+ansible all -u pluco -a "sudo apt-get install -y python-setuptools python-dev build-essential python-pip git"
+
+```
+
+- Si todo ha sido instalado de forma correcta, procedemos a clonar la app en la máquina de azure:
+```
+ansible all -u pluco -m git -a "repo=https://github.com/rafaellg8/IV-PLUCO-RLG.git dest=~/plucoAnsible version=HEAD"
+```
+
+![resultado](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-13%20164013_zps0bvtqol1.png)
+
+[Fuente Asible con git](http://docs.ansible.com/ansible/git_module.html)
+
+- Ahora realizamos el Make install del repositorio que hemos clonado en la máquina de Azure en el paso anterior:
+```
+ansible all -m shell -a 'cd plucoAnsible && make install'
+```
+
+- Ejecutamos por último el servidor de Django a través del makefile:
+```
+ansible all -u pluco -m shell -a 'cd plucoAnsible && make run'
+```
+
+- Por último accedemos a través del navegador:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-13%20180111_zpsxk6nsh3b.png)
+
+Incluso si no tenemos ningún servicio en el puerto 80,(y si lo tenemos lo cerramos), nos funciona a través del puerto 80. 
