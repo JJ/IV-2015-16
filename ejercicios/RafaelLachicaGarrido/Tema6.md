@@ -44,3 +44,44 @@ Thank you for installing Chef!
 
 Ya tenemos instalado Chef.
 **NOTA**: he usado Azure porque en local, como tengo **Elementary OS**, dice que chef no tiene soporte.
+
+
+## Ejercicio 2: Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
+Primero hay que que crear los directorios, para poder tener las "recetas" de nginx allí. Uno lo uso para **Nginx**, y otro directorio para mi editor,
+**Atom**, el cual es libre y funciona bastante bien con los plugins que se pueden instalar. Pero en mi editor, como lo hago en azure, tendré que usarlo para "nano".
+
+```
+root@prueba-iv-rlg:/home/pluco# mkdir -p chef/recetario/nginx/recetas
+root@prueba-iv-rlg:/home/pluco# mkdir -p chef/recetario/nano/recetas
+```
+
+Ahora necesitamos configurar los ficheros que contengan las recetas de nginx y atom. Cada uno será default.rb de ruby,y hay que crear uno para cada fichero de los que hemos hecho antes.
+
+- Creamos el default.rb nginx:
+```
+package 'nginx'
+directory "/home/pluco/nginx"
+file "/home/pluco/nano/LEEME" do
+	owner "pluco"
+	group "pluco"
+	mode 00544
+	action :create
+	content "Directorio nginx"
+end
+
+```
+
+- Lo mismo, default.rb para nano:
+```
+package 'nano'
+directory "/home/pluco/nano"
+file "/home/pluco/nano/LEEME" do
+	owner "pluco"
+	group "pluco"
+	mode 00544
+	action :create
+	content "Directorio nano"
+end
+```
+
+Estos archivos nos van a instalar el paquete que hemos especificado, crea un directorio para nano o nginx, en cada caso, y dentro de él un fichero que contiene el Leeme.
