@@ -3,12 +3,12 @@
 ##Objetivos de la semana
 
 1. Usar infraestructura en la nube
+2. Entender el concepto de orquestación de máquinas virtuales.
 
 ##Otros objetivos
 
 1. Instalar clientes libres de infraestructura en la nube.
 2. Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
-
 
 ##Material para la clase
 
