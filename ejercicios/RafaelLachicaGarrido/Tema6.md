@@ -139,3 +139,26 @@ Ejecutamos chef, con ``` chef-solo -c solo.rb```:
       - siete: 8
         nueve: [10,11]
 ```
+
+## Ejercicio 4: Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
+
+Usaré mi proyecto de [IV-PLUCO-RLG](https://github.com/rafaellg8/IV-PLUCO-RLG).
+
+- Primero vamos a proceder a instalar Ansible usando pip:
+```
+sudo apt-get install python-pip
+
+sudo pip install paramiko PyYAML jinja2 httplib2 ansible
+```
+
+- Añadimos la máquina que vamos a usar de Azure, en el fichero **ansible_hosts**:
+```
+rafaellg8@system32:~/Desktop/varios$ echo "prueba-iv-rlg.cloudapp.net" > ~/ansible_hosts
+rafaellg8@system32:~/Desktop/varios$ cat ~/ansible_hosts
+prueba-iv-rlg.cloudapp.net
+
+```
+- Configuramos Ansible, y en la variable ANSIBLE_HOSTS le pasamos el fichero que acabamos de crear:
+```
+ export ANSIBLE_HOSTS=~/ansible_hosts
+ ```
