@@ -127,3 +127,15 @@ Ejecutamos chef, con ``` chef-solo -c solo.rb```:
 ![chef](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-13%20122443_zpsg9momu0l.png)
 
 ## Ejercicio 3: Escribir en YAML la siguiente estructura de datos en JSON "{ uno: "dos", tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }".
+
+```
+---
+- uno: "dos"
+  tres:
+    - 4
+    - 5
+    - "Seis"
+    -
+      - siete: 8
+        nueve: [10,11]
+```
