@@ -51,8 +51,8 @@ Primero hay que que crear los directorios, para poder tener las "recetas" de ngi
 **Atom**, el cual es libre y funciona bastante bien con los plugins que se pueden instalar. Pero en mi editor, como lo hago en azure, tendré que usarlo para "nano".
 
 ```
-root@prueba-iv-rlg:/home/pluco# mkdir -p chef/recetario/nginx/recetas
-root@prueba-iv-rlg:/home/pluco# mkdir -p chef/recetario/nano/recetas
+root@prueba-iv-rlg:/home/pluco# mkdir -p chef/cookbooks/nginx/recipes
+root@prueba-iv-rlg:/home/pluco# mkdir -p chef/cookbooks/nano/recipes
 ```
 
 Ahora necesitamos configurar los ficheros que contengan las recetas de nginx y atom. Cada uno será default.rb de ruby,y hay que crear uno para cada fichero de los que hemos hecho antes.
@@ -101,6 +101,29 @@ Por último creamos el archivo **solo.rb**, donde referenciamos a los archivos q
 **solo.rb**
 ```
 file_cache_path "/home/pluco/chef"
-cookbook_path "/home/pluco/chef/recetario"
+cookbook_path "/home/pluco/chef/cookbooks"
 json_attribs "/home/pluco/chef/node.json"
 ```
+
+Ejecutamos tree para ver la estructura de los directorios sean correctos:
+```
+root@prueba-iv-rlg:/home/pluco/chef# tree
+.
+├── chef-client-running.pid
+├── chef-stacktrace.out
+├── cookbooks
+│   ├── nano
+│   │   └── recipes
+│   │       └── default.rb
+│   ├── nginx
+│   │   └── recipes
+│   │       └── default.rb
+│   └── recipes
+├── node.json
+└── solo.rb
+```
+
+Ejecutamos chef, con ``` chef-solo -c solo.rb```:
+![chef](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-13%20122443_zpsg9momu0l.png)
+
+## Ejercicio 3: Escribir en YAML la siguiente estructura de datos en JSON "{ uno: "dos", tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }".
