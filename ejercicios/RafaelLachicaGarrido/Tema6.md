@@ -85,3 +85,22 @@ end
 ```
 
 Estos archivos nos van a instalar el paquete que hemos especificado, crea un directorio para nano o nginx, en cada caso, y dentro de él un fichero que contiene el Leeme.
+
+Ahora necesitamos configurar con una archivo **JSON**, para que ejecute las recetas que hemos creado. Este archivo debe ir en el directorio que hemos creado de chef.
+
+**node.json**:
+```
+{
+    "run_list":["recipe[nginx]", "recipe[nano]"]
+}
+
+```
+
+Por último creamos el archivo **solo.rb**, donde referenciamos a los archivos que hemos creado anteriormente:
+
+**solo.rb**
+```
+file_cache_path "/home/pluco/chef"
+cookbook_path "/home/pluco/chef/recetario"
+json_attribs "/home/pluco/chef/node.json"
+```
