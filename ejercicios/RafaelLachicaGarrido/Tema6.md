@@ -226,4 +226,46 @@ ansible all -u pluco -m shell -a 'cd plucoAnsible && make run'
 - Por último accedemos a través del navegador:
 ![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-13%20180111_zpsxk6nsh3b.png)
 
-Incluso si no tenemos ningún servicio en el puerto 80,(y si lo tenemos lo cerramos), nos funciona a través del puerto 80. 
+Incluso si no tenemos ningún servicio en el puerto 80,(y si lo tenemos lo cerramos), nos funciona a través del puerto 80.
+
+## Ejercicio 5.1: Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
+
+Creamos el archivo **ansible_hosts**:
+```
+[plucoPlayBook]
+prueba-iv-rlg.cloudapp.net
+```
+Donde añadimos el host de Azure.
+
+Ahora creamos el playbook de Ansible, y lo guardamos en el fichero deployBook.yml:
+
+```
+---
+- hosts: plucoPlayBook
+  sudo: yes
+  remote_user: pluco
+  tasks:
+  - name: Install
+    apt: name=python-setuptools state=present
+    apt: name=python-dev state=present
+    apt: name=build-essential state=present
+    apt: name=git state=present
+  - name: Git clone, pluco
+    git: repo=https://github.com/rafaellg8/IV-PLUCO-RLG.git dest=IV-PLUCO-RLG clone=yes force=yes
+  - name: Make install
+    shell: cd IV-PLUCO-RLG && make install
+  - name: Make run
+    shell: cd IV-PLUCO-RLG && make run
+
+```
+
+Ejecutamos ahora con ansible:
+```
+rafaellg8@system32:~$ ansible-playbook -u pluco -K deployBook.yml
+SUDO password:
+```
+
+
+## Ejercicio 5.2: ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?
+Ansible para mi es mucho más sencillo y flexible, necesitamos menos archivos para la configuración, y da menos problemas. Además las estructuras de archivos de recetas de chef es un poco más engorrosa.
+Por comodidad y facilidad de uso prefiero Ansible.
