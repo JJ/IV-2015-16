@@ -9,6 +9,7 @@
 
 1. Instalar clientes libres de infraestructura en la nube.
 2. Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+3. Trabajar y solucionar problemas con la infraestructura en la nube.
 
 ##Material para la clase
 
@@ -18,4 +19,4 @@ Continuamos con el tema dedicado a [uso de sistemas](http://jj.github.io/IV/docu
 
 ##Siguiente semana
 
-[Décimo tercera semana](13-semana.md). 
+[Décimo cuarta semana](14-semana.md). Despedida y cierre.  
