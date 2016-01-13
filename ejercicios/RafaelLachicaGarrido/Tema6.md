@@ -162,3 +162,36 @@ prueba-iv-rlg.cloudapp.net
 ```
  export ANSIBLE_HOSTS=~/ansible_hosts
  ```
+
+ - Nos logueamos y arrancamos la máquina virtual:
+```
+rafaellg8@system32:~/Desktop/varios$ azure login
+info:    Executing command login
+\info:    To sign in, use a web browser to open the page https://aka.ms/devicelogin. Enter the code DHMBBKD5W to authenticate. If you're signing in as an Azure AD application, use the --username and --password parameters.
+\info:    Added subscription Azure Pass
++
+info:    login command OK
+rafaellg8@system32:~/Desktop/varios$ azure vm start prueba-iv-rlg
+info:    Executing command vm start
++ Getting virtual machines                                                    + Starting VM                                                                  
+info:    vm start command OK
+```
+
+- Probamos a hacerle ping a la máquina ahora a través de Ansible:
+![azure](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-13%20131509_zpsiigu1zxs.png)
+
+- Configuramos un password para que se conecte directamente por ssh, que creo que es el problema:
+```
+ssh-keygen -t dsa
+```
+![key](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-13%20132131_zpsm6vf371x.png)
+Y ahora copiamos la clave:
+```
+ssh-copy-id -i ./clavePrueba.pub pluco@prueba-iv-rlg.cloudapp.net
+
+```
+![clave](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-13%20132243_zpszdosj9id.png)
+
+- Probamos ahora a hacerle ping:
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-13%20135546_zps1qwmdl9i.png)
+**NOTA**: es importante que hayamos iniciado sesión por ssh en la máquina de Azure, sino da error.
