@@ -91,15 +91,63 @@ Para restringir los recursos de un contenedor, primero debemos pararlo, y seguid
 ## Ejercicio 5.
 ### Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
 
-Para crear una jaula ejecutamos ```sudo debootstrap --arch=amd64 lucid /home/jaulas/lucid/ http://archive.ubuntu.com/ubuntu``` en el terminal.
+Para llevar a cabo éste ejercicio vamos a llevar a cabo los siguientes pasos:
 
-![Creación de Jaula](https://www.dropbox.com/s/fcyee1g0qlc1lbh/5.0.png?dl=1)
+### Contenedor
 
-Una vez creada, ejecutamos ```sudo chroot /home/jaulas/lucid/``` para configurarla.
-Una vez dentro, instalamos wget
-![Instalar wget](https://www.dropbox.com/s/4xs5iyngz08a1uv/5.1.png?dl=1)
+- Crear y arrancar el contenedor, en mi caso he creado uno nuevo de ubuntu. (Crear contenedor: ```sudo lxc-create -t ubuntu -n my-container``` Arrancar contenedor: ```sudo lxc-start -n my-container``` Usuario y pass: ```ubuntu```)
+
+Instalamos ahora nginx, ejecutando en el terminal, ```sudo apt-get install nginx```
+
+![Install nginx](https://www.dropbox.com/s/4xs5iyngz08a1uv/5.1.png?dl=1)
+
+Arrancamos el servicio ejecutando en el terminal ```sudo service nginx start```
+
+Instalar los paquetes necesarios para poder lanzar ab mediante ```sudo apt-get install apache2-utils```
+
+![Install apache2-utils](https://www.dropbox.com/s/5hef069tvu9llmo/5.2.png?dl=1)
+
+Ejecutar ```ifcongif -a```
+
+![ifconfig -a](https://www.dropbox.com/s/19yc4kyg31jjqqm/5.3.png?dl=1)
+
+Ahora desde otro terminal, ejecutamos ab -n 1000 -c 1000 http://10.0.3.236/.
 
 
+![ab my-container](https://www.dropbox.com/s/mtu9065bfzv6u9a/5.4.png?dl=1)
+
+### Jaula
+Para crear una jaula ejecutamos ```sudo debootstrap --arch=amd64 lucid /home/jaula/jaulaMAGV/ http://archive.ubuntu.com/ubuntu``` en el terminal.
+
+![Crear Jaula](https://www.dropbox.com/s/qhnbcjp6i327tky/5.5.png?dl=1)
+
+
+Una vez creado después de un tiempo, nos situamos en ```/home/jaula/jaulaMAGV```. En dicha carpeta ejecutamos ```sudo chroot /home/jaula/jaulaMAGV```.
+
+![Desde la Jaula](https://www.dropbox.com/s/d72cxu6d35pfh6b/5.6.png?dl=1)
+
+Ahora tenemos que instalar el paquete nginx ejecutando en el terminal ``` apt-get install nginx ```Una vez instalado, arrancamos el servicio nginx ejecutando en el terminal ```sudo service nginx start```
+
+Para poder hacer ifconfig -a, hay que montar el /proc, para ello debemos ejecutar ```mount -t proc proc /proc```
+Y ahora sí podemos ejecutar ```ifconfig -a```.
+
+![ifconfig -a Jaula](https://www.dropbox.com/s/ou6s7qhc9jyvaij/5.7.png?dl=1)
+
+Como anteriormente inicimos con el contenedor, hay que hacer con la jaula.
+
+Instalar los paquetes necesarios para poder lanzar ab mediante ```sudo apt-get install apache2-utils```
+
+![Install apache2-utils](https://www.dropbox.com/s/5hef069tvu9llmo/5.2.png?dl=1)
+
+Ejecutar ```ifcongif -a```
+
+![ifconfig -a](https://www.dropbox.com/s/19yc4kyg31jjqqm/5.3.png?dl=1)
+
+Ahora desde otro terminal, ejecutamos ab -n 1000 -c 1000 ab -n 1000 -c 1000 http://localhost/.
+
+![ab jaula](https://www.dropbox.com/s/mtu9065bfzv6u9a/5.4.png?dl=1)
+
+Los resultados son algo mejores en la jaula, aunque en este caso son muy parecidos porque se están utilizando una página estática de poco peso.
 
 ## Ejercicio 6.
 ### Instalar docker.
