@@ -65,3 +65,40 @@ Tras abrirla, probablemente informe que necesita algunos paquetes adicionales po
 Una vez finalizada la instalación, ya tenemos la interfaz lista para su uso:
 
 ![virt-manager1](http://i1016.photobucket.com/albums/af281/raperaco/virt-manager1_zps6o82yntt.png)
+
+
+###Ejercicio 2
+**1. Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar [CoreOS](https://coreos.com/) (que sirve como soporte para Docker), [GALPon Minino](http://minino.galpon.org/en), hecha en Galicia para el mundo, [Damn Small Linux](http://www.damnsmalllinux.org/download.html), [SliTaz](http://www.slitaz.org/en/) (que cabe en 35 megas) y [ttylinux](http://ttylinux.net/) (basado en línea de órdenes solo).**
+* **SliTaz**
+	* Creo el disco duro:
+	~~~
+    $ qemu-img create -f qcow2 slitaz.qcow2 8G
+    ~~~
+
+	* Creo la máquina virtual con la imagen de SliTaz:
+	~~~
+    $ qemu-system-x86_64 -hda slitaz.qcow2 -cdrom /home/alex/Escritorio/slitaz-4.0.iso
+    ~~~
+    ![slitaz_install](http://i1016.photobucket.com/albums/af281/raperaco/slitaz_install_zpse5npnmnb.png)
+    ![slitaz_install_finish](http://i1016.photobucket.com/albums/af281/raperaco/coreos_install_finish_zpsjhgdmgxm.png)
+    
+* **CoreOS**
+	* Creo el disco duro:
+	~~~
+    $ qemu-img create -f qcow2 coreos.qcow2 8G
+    ~~~
+    
+    * Creo la máquina virtual con la imagen de CoreOS e indicarle que tiene una memoria de 1G:
+	~~~
+    $ qemu-system-x86_64 -hda coreos.qcow2 -cdrom /home/alex/Escritorio/coreos_production_iso_image.iso -m 1G
+    ~~~
+    ![coreos_install](http://i1016.photobucket.com/albums/af281/raperaco/coreos_install_zps8tfbnfmq.png)
+    ![coreos_install_finish](http://i1016.photobucket.com/albums/af281/raperaco/coreos_install_finish_zpsjhgdmgxm.png)
+    
+**2. Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o
+Parallels.**
+Usaré VirtualBox e instalaré una imagen de SliTaz:
+![slitaz_virtualbox](http://i1016.photobucket.com/albums/af281/raperaco/slitaz_virtualbox_zps0xgjnghz.png)
+![slitaz_virtualbox_finish](http://i1016.photobucket.com/albums/af281/raperaco/slitaz_virtualbox_finish_zpslgcyams6.png)
+
+
