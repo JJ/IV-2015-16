@@ -83,8 +83,8 @@ json_attribs "/home/javi/chef/node.json"
 
 
 ### Ejercicio 3: Escribir en YAML la siguiente estructura de datos en JSON
-### `{ uno: "dos",`
-### `tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }`
+## `{ uno: "dos",`
+## `tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }`
 
 El resultado es el siguiente:
 ```
@@ -99,4 +99,132 @@ El resultado es el siguiente:
 		  nueve:
 			- 10
 			- 11
-```	
+```
+
+###	Ejercicio 4: Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
+
+El primer paso es instalar Ansible:
+```
+$ sudo pip install paramiko PyYAML jinja2 httplib2 ansible
+```
+El siguiente paso es crear el inventario añadiendo la máquina virtual Azure:
+```
+$ echo "maquina-javi-ubu5.cloudapp.net" > ~/ansible_hosts
+```
+Ahora se define la variable de entorno para que Ansible sepa donde se encuentra el fichero:
+```
+$ export ANSIBLE_HOSTS=~/ansible_hosts
+```
+
+![varansible](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/varansible_zpsrj43tixe.png)
+
+A continuación, arranco la máquina que utilicé en el ejercicio 5 del tema anterior:
+```
+$ azure login
+$ azure vm start maquina-javi-ubu5
+```
+
+![azurearranque](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/azurearranque_zpstgvnvgiy.png)
+
+El siguiente paso es configurar SSH para poder conectar con la máquina:
+```
+ssh-keygen -t dsa 
+ssh-copy-id -i .ssh/id_dsa.pub javi@maquina-javi-ubu5.cloudapp.net
+```
+
+![ssh](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ssh_zps2hjbaghm.png)
+
+Se comprueba que efectivamente ya no pide autenticación:
+
+![ssh2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ssh2_zpskv3rpk3p.png)
+
+El siguiente paso es comprobar que hay conexión con Ansible:
+```
+ansible all -u javi -i ansible_hosts -m ping
+```
+
+![pingansible](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/pruebaansible_zpsmpdomezy.png)
+
+El siguiente paso es instalar las dependencias necesarias en la máquina:
+```
+ansible all -u javi -m command -a "sudo apt-get install python-setuptools python-dev build-essential git -y"
+ansible all -u javi -m command -a "sudo easy_install pip" 
+```
+El siguiente paso es descargar la aplicación e instalar los requisitos:
+```
+ansible all -u javi -m git -a "repo=https://github.com/javiergarridomellado/DAI4.git  dest=~/pruebaDAI version=HEAD"
+ansible all -u javi -m command -a "sudo pip install -r pruebaDAI/requirements.txt"
+```
+
+![pruebaansible2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/pruebaansible2_zpsll3wx6hn.png)
+
+Por último se procede a ejecutar la aplicación:
+```
+ansible all -u javi -m command -a "sudo python pruebaDAI/manage.py runserver 0.0.0.0:80"
+```
+
+Es necesario hacer una serie de cosas para poder visualizarlo desde nuestro navegador.Liberar el puerto 80:
+```
+ansible all -u javi -m command -a "sudo fuser -k 80/tcp"
+```
+
+Comprobar el estado del servidor nginx( tiene que estar parado ):
+```
+ansible all -u javi -m command -a "sudo service nginx status"
+```
+Abrir trafico de azure(se hizo en el ejercicio 5 del tema anterior):
+```
+azure vm endpoint create maquina-javi-ubu5 80 80
+```
+Apagar la máquina(el crédito es limitado):
+```
+ azure vm shutdown maquina-javi-ubu5
+```
+
+Y el proyecto de DAI funcionando:
+
+![pagfunc](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/pagfuncionando_zpshvqhfhpa.png)
+
+### Ejercicio 5: 
+### 1.Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
+
+El primer paso es definir el host, para ello en el archivo **ansible_hosts** se define lo siguiente:
+
+![ansible_hosts](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ansiblehosts_zps5q8u3t5i.png)
+
+Posteriormente se define el archivo **.yml**, en mi caso lo he llamado **daiansible.yml** con el siguiente contenido:
+```
+- hosts: azure
+  sudo: yes
+  remote_user: javi
+  tasks:
+  - name: Instalar paquetes 
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=git state=present
+  - name: Obtener aplicacion de git
+    git: repo=https://github.com/javiergarridomellado/DAI.git  dest=DAI clone=yes force=yes
+  - name: Permisos de ejecucion
+    command: chmod -R +x DAI
+  - name: Instalar requisitos
+    command: sudo pip install -r DAI/requirements.txt
+  - name: ejecutar
+    command: nohup sudo python DAI/manage.py runserver 0.0.0.0:80
+```
+
+Lo he ejecutado con la orden `ansible-playbook -u javi daiansible.yml`
+
+![ansibleplaybook](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ansibleplaybook_zps7dsjypvz.png)
+
+Y el resultado es el mismo que en el ejercicio anterior con la salvedad de la automatización de ejecutar un solo script.
+
+![resultado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ansibleplaybook2_zps6qojylas.png)
+
+A tener en cuenta que el comando **nohup**  permite la ejecución de un comando pese a salir del terminal, ya que se ejecuta de manera independiente.Segun [linux.die](http://linux.die.net/man/1/nohup) -->**run a command immune to hangups, with output to a non-tty**
+
+### 2.¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
+
+La respuesta claramente es Ansible ya que permite ejecutarse desde fuera del servidor, por otra parte los **playbooks** de Ansible son más faciles de configurar que las recetas de Chef donde es necesario una jerarquización de directorios.
+
+    

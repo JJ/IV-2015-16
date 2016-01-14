@@ -327,8 +327,8 @@
 
 ### Tema 6: Gestión de infraestructuras virtuales
 
-- [ ] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+- [x] Aprender lenguajes de configuración usados en infraestructuras virtuales.
 
-- [ ] Saber cómo aplicarlos en un caso determinado.
+- [x] Saber cómo aplicarlos en un caso determinado.
 
-- [ ] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
+- [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
