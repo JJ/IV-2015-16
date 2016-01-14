@@ -227,4 +227,43 @@ A tener en cuenta que el comando **nohup**  permite la ejecución de un comando 
 
 La respuesta claramente es Ansible ya que permite ejecutarse desde fuera del servidor, por otra parte los **playbooks** de Ansible son más faciles de configurar que las recetas de Chef donde es necesario una jerarquización de directorios.
 
-    
+### Ejercicio 6:Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
+
+Estos son los pasos que se han seguido:
+- El primer paso es instalar Vagrant(este paso solo lo recomiendo si se tiene VirtualBox 4.0,4.1,4.2 o 4.3 sino como explico en el posterior paso):
+```
+sudo apt-get install vagrant
+```
+- Si se tiene la versión 5.0.x de VirtualBox hay que descargar el archivo [vagrant_1.8.1_x86_64.deb](https://releases.hashicorp.com/vagrant/1.8.1/) e instalar ejecutando:
+```
+sudo dpkg -i vagrant_1.8.1_x86_64.deb
+```
+
+
+- Ahora descargo la imagen de Debian tal y como se explica en los apuntes(he elegido una de 400MB,la primera que sale ocupa más):
+```
+vagrant box add debian https://github.com/holms/vagrant-jessie-box/releases/download/Jessie-v0.1/Debian-jessie-amd64-netboot.box
+```
+
+![descimg](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/descargaimg_zpsuc50tczo.png)
+
+- Creo el fichero Vagranfile:
+```
+vagrant init debian
+```
+
+- Se inicializa la máquina:
+```
+vagrant up
+```
+
+![vagrant](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vagrant_zpsyphtsjx3.png)
+
+![vagrantup](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vagrantup_zpslwkhwr90.png)
+
+- Y por ultimo se conecta con ella para trabajar:
+```
+vagrant ssh
+```
+
+![ssh](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ssh_zpshm7obabi.png)     
