@@ -65,15 +65,63 @@ Iniciamos el contenedor ejecutando en el terminal
 ## Ejercicio 4.
 ### 4.1 Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
 
+Para llevar a cabo éste ejercicio he seguido los pasos de LXC Web panel: https://lxc-webpanel.github.io/install.html
 
+- Ejecutamos en el terminal ```sudo su``` para ser root.
+- Ejecutar seguidamente  
+ ```wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash ```
+
+
+![Instalación lxc-webpanel](https://www.dropbox.com/s/614u2hfu0l9kv65/4.0.png?dl=1)
+
+Una vez termina la instalación en el navegador insertamos la dirección que nos indica y nos sale para loguearnos en LXC Web Panel. Insertamos como user y pass ```admin```.
+
+![localhost:5000](https://www.dropbox.com/s/xjekty9oj24oeao/4.1.png?dl=1)
+
+Una vez logueados entramos en el Panel de contenedores, donde podemos ver los contenedores que anteriormente hemos instalado.
+
+![Contenedores en Web Panel](https://www.dropbox.com/s/aglu0ceqefbc1nw/4.2.png?dl=1)
 
 ### 4.2 Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
+
+Para restringir los recursos de un contenedor, primero debemos pararlo, y seguidamente seleccionar el que queremos restringir, en mi caso he elegido el contenedor de Ubuntu, llamado ``` contenedorU ```
+
+![Restricción de recursos contenedorU](https://www.dropbox.com/s/ykdskxgqt0wqavw/4.3.png?dl=1)
 
 ## Ejercicio 5.
 ### Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
 
+Para crear una jaula ejecutamos ```sudo debootstrap --arch=amd64 lucid /home/jaulas/lucid/ http://archive.ubuntu.com/ubuntu``` en el terminal.
+
+![Creación de Jaula](https://www.dropbox.com/s/fcyee1g0qlc1lbh/5.0.png?dl=1)
+
+Una vez creada, ejecutamos ```sudo chroot /home/jaulas/lucid/``` para configurarla.
+Una vez dentro, instalamos wget
+![Instalar wget](https://www.dropbox.com/s/4xs5iyngz08a1uv/5.1.png?dl=1)
+
+
+
 ## Ejercicio 6.
 ### Instalar docker.
+
+Ejecutar en el terminal, ```sudo apt-get install docker.io```
+
+![Instalar Docker](https://www.dropbox.com/s/ucozw1eba90r7zi/6.0.png?dl=1)
+
+Comprobamos la versión y que está instalado con éxito, ejecutando en el terminal ```docker -v```
+
+![Docker](https://www.dropbox.com/s/v0z5585rr65cef0/6.2.png?dl=1)
+
+Para iniciar con daemon ejecutamos en el terminal ```sudo docker -d &```
+![Error](https://www.dropbox.com/s/tx98f72n8t3225b/6.3.png?dl=1)
+
+Esto nos da error, si existe el archivo docker.pid, debemos borrarlo antes de ejecutar el daemon. Para borrarlo ejecutamos ```sudo rm /var/run/docker.pid``` y seguidamente ejecutamos de nuevo ``` sudo docker -d &```
+
+
+![Daemon](https://www.dropbox.com/s/kyk0gilwrvdqmwg/6.1.png?dl=1)
+
+Comprobamos que ahora si, funciona.
+
 
 ## Ejercicio 7.
 
