@@ -143,7 +143,7 @@ Ejecutar ```ifcongif -a```
 
 ![ifconfig -a](https://www.dropbox.com/s/19yc4kyg31jjqqm/5.3.png?dl=1)
 
-Ahora desde otro terminal, ejecutamos ab -n 1000 -c 1000 ab -n 1000 -c 1000 http://localhost/.
+Ahora desde otro terminal, ejecutamos ```ab -n 1000 -c 1000 http://localhost/```.
 
 ![ab jaula](https://www.dropbox.com/s/mtu9065bfzv6u9a/5.4.png?dl=1)
 
@@ -175,13 +175,105 @@ Comprobamos que ahora si, funciona.
 
 ### 7.1 Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
 
+Lo primero es arrancar el servicio, ejecutando el comando ```sudo docker -d &```
+Seguidamente creamos la imagen ejecutando el siguiente comando ```sudo docker pull ubuntu```
+
+![Docker](https://www.dropbox.com/s/r5amn1s6b3y9nyj/7.1.png?dl=1)
+
+Podemos comprobar los tapers y la versión ejecutando ```sudo docker ps``` y a continuación ```sudo docker images```
+
+![Tapers](https://www.dropbox.com/s/6mzcykzkjknmvwr/7.2.png?dl=1)
+
+Ejecutamos ```sudo docker run -i -t ubuntu /bin/bash``` para arrancar el contenedor.
+![Arrancar contenedor](https://www.dropbox.com/s/miar8ymip7u9cy9/7.3.png?dl=1)
+
+Para paralo hay que ejecutar ```sudo docker stop id```
+
+Con CentOS es el mismo procedimiento.
+Pasos a seguir para en el caso centOS.
+- ```sudo docker pull centos```
+- ```sudo docker ps```
+- ```sudo docker images```
+- ```sudo docker run -i -t centos /bin/bash```
+
+![caso CentOS](https://www.dropbox.com/s/n0fw0byv2mu24t1/7.4.png?dl=1)
+
+
 ### 7.2 Buscar e instalar una imagen que incluya MongoDB.
+
+Con Mongo es el mismo procedimiento.
+Pasos a seguir para en el caso Mongo.
+- ```sudo docker pull mongo```
+- ```sudo docker ps```
+- ```sudo docker images```
+- ```sudo docker run -i -t mongo /bin/bash```
+
+![caso Mongo](https://www.dropbox.com/s/jjl0l5b3eqh2iov/7.5.png?dl=1)
+
 
 ## Ejercicio 8.
 ### Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
 
+Para poder llevar a cabo todo esto, debemos arrancar el contenedor ejecutando en el terminal:
+```sudo docker run -i -t ubuntu```
+
+Nos disponemos a crear un usuario, para ello, ejecutamos de forma independiente
+- useradd -d /home/us_docker -m us_docker (Creación usuario)
+- passwd us_docker (pass para el usuario)
+- sudo adduser us_docker sudo (privilegios para el usuario)
+
+Una vez el usuario está creado y con privilegios nos disponemos a loguearnos. Ejecutamos en el terminal ```login us_docker```
+
+Una vez logueado, instalamos nginx ejecutando en el terminal: ```sudo apt-get install nginx```
+
+![Crear usuario, login e instalación](https://www.dropbox.com/s/ehue4a6mquw2kth/8.1.png?dl=1)
+
 ## Ejercicio 9.
 ### Crear a partir del contenedor anterior una imagen persistente con commit.
 
+Vamos a coger el id del contenedor de Ubuntu que hemos utilizado anteriormente, para esto, debemos de ejecutar en el terminal ```sudo docker ps -a```. Arracamos el contenedor ejecutando en el terminal ```sudo docker start 6c9cd04e17db```
+
+![Id contenedores](https://www.dropbox.com/s/1f78s5ni20ynfnp/9.1.png?dl=1)
+
+Una vez arrancado nos disponemos a realizar el commit, ejecutando en el terminal ```sudo docker commit 6c9cd04e17db img_persistente```
+
+Una vez hemos ejecutado el commit vamos a comprobar si se ha realizado, ejecutando el comando ```sudo docker images``` y comprobamos que ahí está bajo el nombre img_persistente
+
+![Creación commit](https://www.dropbox.com/s/2w3k271jgcvnayi/9.2.png?dl=1)
+
 ## Ejercicio 10.
 ### Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección.
+
+Vamos a crear el fichero Dockerfile para mi proyecto InsertaLogo, en la carpeta previa al proyecto. Nuestro fichero Dockerfile
+
+    # Sistema operativo
+    FROM ubuntu:14.04
+
+    # Sistema operativo
+    FROM ubuntu:latest
+
+    # Autor
+    MAINTAINER Miguel Angel Garcia Villegas <magvugr@gmail.com>
+
+    # Instalacion
+    RUN sudo apt-get update
+    RUN sudo apt-get install -y git
+    RUN sudo apt-get install -y build-essential
+
+    # Descarga repositorio de la app
+    RUN sudo git clone https://github.com/magvugr/InsertaLogo
+
+    # Instalacion de la app y sus dependencias
+    RUN cd InsertaLogo && git pull
+    RUN cd InsertaLogo && make install
+
+
+Vamos a iniciar el servicio docker, ejecutando en el terminal ```sudo docker -d &```. Una vez arrancado dentro del directorio del proyecto crear la imagen ejecutando en el terminal el siguiente comando ```sudo docker build -f Dockerfile -t inserta_logo . ``` (importante, No mayusculas y añadir el punto del final)
+
+![Creación imaginsertalogo](https://www.dropbox.com/s/w4we57wfko6dsab/10.1.png?dl=1)
+
+Mediante el comando ```sudo docker images``` comprobamos que se ha creado con éxito.
+
+Arrancamos ahora la imagen ejecutando en el terminal ```sudo docker run -t -i inserta_logo /bin/bash```, hacemos un ```ifconfig -a``` para saber la ip, y nos vamos a la carpeta de nuestro proyecto.
+
+![insertalogo docker](https://www.dropbox.com/s/j1w8b3rultyo0u3/10.2.png?dl=1)
