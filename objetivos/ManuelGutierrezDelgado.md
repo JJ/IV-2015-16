@@ -145,6 +145,28 @@
  - [x] Probar imágenes de docker publicadas.
  - [x] Trabajar con varias imágenes de docker cokectadas.
 
+##Objetivos a cubrir en la sesión 11.
+  - [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+#### Otros objetivos.
+  - [x] Instalar hipervisores libres y trabajar con ellos.
+  - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+##Objetivos a cubrir en la sesión 12.
+  - [x] Usar gestores de máquinas virtuales
+
+#### Otros objetivos.
+  - [ ] Instalar clientes libres de infraestructura en la nube.
+  - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+  - [ ] similar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+##Objetivos a cubrir en la sesión 13.
+  - [ ] Usar infraestructura en la nube
+
+#### Otros objetivos.
+  - [ ] Instalar clientes libres de infraestructura en la nube.
+  - [ ] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 ## Tema 1
@@ -183,4 +205,12 @@
 
  - [x] Comprender los pasos necesarios para la configuración automática de las mismas.
 
+##Tema 5
 
+ - [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+ - [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+ - [x] Documentar y mantener una plataforma virtual.
+
+ - [x] Realizar tareas de administración de infraestructuras virtuales.

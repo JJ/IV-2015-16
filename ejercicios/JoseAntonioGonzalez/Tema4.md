@@ -8,7 +8,7 @@ Una vez instalado, con la siguiente orden comprobamos si nuestro kernel soporta 
 
 	lxc-checkconfig
 
-![](EJercicio1)
+![](https://www.dropbox.com/s/brgt2ttox2o6b7t/Ejercicio1.png?dl=1)
 
 EN nuestro caso, al estar todo en "Enabled", comprobamos que si que lo soporta.
 
@@ -20,7 +20,7 @@ SIguiendo los apuntes de la asignatura, vamos a crear un nuevo contenedor, llama
     
 Esto montará un contenedor basado en Ubuntu, y para ello, tendrá que descargar dicha distribución, tal y como vemos en la imagen:
 
-![](EJercicio2-1)
+![](https://www.dropbox.com/s/u9vdgokouyvl0i6/Ejercicio2-1.png?dl=1)
 
 Cuando se descargue y se cree el contenedor, entramos a él con la siguiente orden:
 
@@ -36,7 +36,7 @@ Cuando pida usuario y contraseña, introduciremos "ubuntu" como ambas, y una vez
 
 En nuestro caso, hay dos interfaces levantadas en el contenedor
 
-![](Ejercicio2-2)
+![](https://www.dropbox.com/s/dfe3r00tgryke0x/Ejercicio2-2.png?dl=1)
 
 #Ejercicio 3
 
@@ -69,6 +69,7 @@ Y ya podemos crearlo con la orden:
 
 	sudo lxc-create -t centos -n pruebacentos
     
+#Ejercicio 4
 #### 1. Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.
 
 Para instalar lxc-webpanel, descargamos el fichero de instalación (que es un script), y lo ejecutamos con permisos de administrador:
@@ -108,7 +109,7 @@ Ya está "el terreno" listo, ahora toca instalar el sistema de la jaula. En este
 	sudo debootstrap --arch=amd64 lucid $jaula http://archive.ubuntu.com/ubuntu
 
 Ahora nos aparecerá una imagen ya familiar: la descarga del sistema
-![](Ejercicio5)
+![](https://www.dropbox.com/s/zqs2uuj6hskoog0/Ejercicio5.png?dl=1)
 
 Mientras se instala Ubuntu en la jaula, ahorremos tiempo e instalemos Nginx en el contenedor que ya tenemos creado de los ejercicios anteriores. También en el de Ubuntu (recodremos que he nombrado como "pruebacontenedor" al contenedor que tiene Ubuntu instalado):
 
@@ -194,7 +195,7 @@ Para instalar Docker, ejecutamos el siguiente script:
 	#Instalación de Ubuntu
 	sudo docker pull ubuntu
     
-    
+![](https://www.dropbox.com/s/m82a77dmw3xorm6/Ejercicio6.png?dl=1)
 #Ejercicio 7
 
 #### 1. Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS

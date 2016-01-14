@@ -95,9 +95,57 @@ ordenador habitual lo usa.
 
 ### Objetivos séptima sesión
 
-  - [ ] Entender la base del aislamiento de recursos en el sistema operativo.
+  - [x] Entender la base del aislamiento de recursos en el sistema operativo.
+  - [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
 
-### Otros objetivos sexta sesión
+### Otros objetivos séptima sesión
 
-  - [ ] Instalar docker y trabajar con él.
+  - [x] Instalar docker y trabajar con él.
+  - [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+  - [x] Usar imágenes de docker publicadas.
 
+### Objetivos octava sesión
+
+  - [x] Uso de docker para creación de imágenes.
+  - [x] Entender el uso de docker en el contexto de una aplicación.
+  - [x] Analizar el resultado del último hito de las prácticas.
+
+### Otros objetivos octava sesión
+
+  - [x] Revisar los errores en la entrega de tercer hito.
+  - [x] Adoptar buenas prácticas en los repositorios git:
+  - [x] Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
+  - [x] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+  - [x] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+  - [ ] Asistir al taller de Telegram
+  - [ ] Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
+
+
+### Objetivos novena sesión
+
+  - [x] Usar docker en una aplicación real.
+
+### Otros objetivos novena sesión
+
+  - [x] Publicar imágenes de docker.
+  - [x] Probar imágenes de docker publicadas.
+  - [ ] Trabajar con varias imágenes de docker conectadas.
+
+### Objetivos décima sesión
+
+  - [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+### Otros objetivos décima sesión
+
+  - [x] Instalar hipervisores libres y trabajar con ellos.
+  - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+### Objetivos undécima sesión
+
+  - [x] Usar gestores de máquinas virtuales
+
+### Otros objetivos undécima sesión
+
+  - [ ] Instalar clientes libres de infraestructura en la nube.
+  - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+  - [ ] similar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
