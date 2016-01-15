@@ -40,9 +40,42 @@ Y por último, se han de reiniciar los módulos del kernel
 	modprobe -a kvm
 
 
+### Ejercicio 2
+
+**Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS (que sirve como soporte para Docker) GALPon Minino, hecha en Galicia para el mundo, Damn Small Linux, SliTaz (que cabe en 35 megas) y ttylinux (basado en línea de órdenes solo).**
+
+**Debian**
+
+Vamos a hacer una instalación de Debian con Quemu. Para ello necesitamos crear una imagen de disco virtual.
+
+	qemu-img create -f qcow2 ~/vmachines/ej1/debian.qcow 2G
+
+Y a continuación proceder a la instalación de Debian sobre el disco creado.
+
+	qemu-system-x86_64 -hda ~/vmachines/ej1/debian.qcow -cdrom ~/Downloads/debian-8.2.0-amd64-netinst.iso
 
 
+![quemu](https://www.dropbox.com/s/m7ktosbcwpppeol/qemu_debian.png?dl=1)
 
+A partir de este punto se puede seguir con la instalación como siempre.
+
+**CoreOS**
+
+Además de Debian, vamos a hacer una instalación de CoreOS, un SO diseñado para la contenerización.
+
+De nuevo, los comandos son muy parecidos:
+
+	qemu-img create -f qcow2 ~/vmachines/ej1/coreos.qcow 4G
+
+para crear el disco y
+
+	qemu-system-x86_64 -hda ~/vmachines/ej1/coreos.qcow -cdrom ~/Downloads/coreos_production_iso_image.iso -m 1G
+
+para proceder a la instalación. Si da un error relacionado con la memoria, se deberá asignar manualmente un tamaño de memoria virtual con el parámetro `-m`.
+
+![qemu_coreos](https://www.dropbox.com/s/wpqzso5vzv0ctmx/qemu_coreos.png?dl=1)
+
+![coreos](https://www.dropbox.com/s/96fjol62ge0i2oh/coreos.png?dl=1)
 
 
 
