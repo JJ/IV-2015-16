@@ -40,7 +40,7 @@ Y por último, se han de reiniciar los módulos del kernel
 	modprobe -a kvm
 
 
-### Ejercicio 2
+### Ejercicio 2.1
 
 **Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS (que sirve como soporte para Docker) GALPon Minino, hecha en Galicia para el mundo, Damn Small Linux, SliTaz (que cabe en 35 megas) y ttylinux (basado en línea de órdenes solo).**
 
@@ -78,6 +78,21 @@ para proceder a la instalación. Si da un error relacionado con la memoria, se d
 ![coreos](https://www.dropbox.com/s/96fjol62ge0i2oh/coreos.png?dl=1)
 
 
+### Ejercicio 2.2
+
+**Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.**
+
+Para este ejercicio vamos a instalar **slitaz** en una máquina virtual usando **VirtualBox**. Las siguientes imágenes muestran el proceso.
+
+![vb](https://www.dropbox.com/s/ayhbulx5u7dw8zx/vb_1.png?dl=1)
+
+![vb](https://www.dropbox.com/s/2mq4d8f9wu7bp3x/vb_2.png?dl=1)
+
+![vb](https://www.dropbox.com/s/7ubgmsz5s4x6ls0/vb_3.png?dl=1)
+
+![vb](https://www.dropbox.com/s/bnt57v9aqm8b4d4/vb_4.png?dl=1)
+
+![vb](https://www.dropbox.com/s/46vmwo0g3fa9g6k/vb_5.png?dl=1)
 
 
 
