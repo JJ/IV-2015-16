@@ -295,3 +295,7 @@ Una vez en nuestra carpeta de proyecto ejecutamos
 Nos vamos al navegador ponemos la dirección ip con el puerto indicado y el resultado :-)
 
 ![resultado](https://www.dropbox.com/s/5lf6l9ivkguuteh/Captura%20de%20pantalla%20de%202016-01-15%2013%3A17%3A14.png?dl=1)
+
+Si al arrancar el docker, este no tiene conexión a internet, podemos resolverlo editando /etc/NetworkManager/NetworkManager.conf y comentando la línea dns=dnsmask y tras esto, reiniciar el servicio con:
+
+sudo restart network-manager
