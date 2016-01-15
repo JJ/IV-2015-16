@@ -1,4 +1,4 @@
-#Duodécima semana, comienza el 13 de enero de 2015
+#Décimo tercera semana, comienza el 13 de enero de 2015
 
 ##Objetivos de la semana
 
