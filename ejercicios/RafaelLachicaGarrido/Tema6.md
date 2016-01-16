@@ -226,4 +226,137 @@ ansible all -u pluco -m shell -a 'cd plucoAnsible && make run'
 - Por último accedemos a través del navegador:
 ![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-13%20180111_zpsxk6nsh3b.png)
 
-Incluso si no tenemos ningún servicio en el puerto 80,(y si lo tenemos lo cerramos), nos funciona a través del puerto 80. 
+Incluso si no tenemos ningún servicio en el puerto 80,(y si lo tenemos lo cerramos), nos funciona a través del puerto 80.
+
+## Ejercicio 5.1: Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
+
+Creamos el archivo **ansible_hosts**:
+```
+[plucoPlayBook]
+prueba-iv-rlg.cloudapp.net
+```
+Donde añadimos el host de Azure.
+
+Ahora creamos el playbook de Ansible, y lo guardamos en el fichero deployBook.yml:
+
+```
+---
+- hosts: plucoPlayBook
+  sudo: yes
+  remote_user: pluco
+  tasks:
+  - name: Install
+    apt: name=python-setuptools state=present
+    apt: name=python-dev state=present
+    apt: name=build-essential state=present
+    apt: name=git state=present
+  - name: Git clone, pluco
+    git: repo=https://github.com/rafaellg8/IV-PLUCO-RLG.git dest=IV-PLUCO-RLG clone=yes force=yes
+  - name: Make install
+    shell: cd IV-PLUCO-RLG && make install
+  - name: Make run
+    shell: cd IV-PLUCO-RLG && make run
+
+```
+
+Ejecutamos ahora con ansible:
+```
+rafaellg8@system32:~$ ansible-playbook -u pluco -K deployBook.yml
+SUDO password:
+```
+
+
+## Ejercicio 5.2: ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?
+Ansible para mi es mucho más sencillo y flexible, necesitamos menos archivos para la configuración, y da menos problemas. Además las estructuras de archivos de recetas de chef es un poco más engorrosa.
+Por comodidad y facilidad de uso prefiero Ansible.
+
+## Ejercicio 6: Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
+
+Primero de todo, tenemos que tener vagrant en nuestra máquina local:
+```
+sudo apt-get install vagrant
+```
+
+Ahora descargamos una máquina de las "Vagrant box", en mi caso he elegido esta Debian : ![http://www.emken.biz/vagrant-boxes/debsqueeze64.box](http://www.emken.biz/vagrant-boxes/debsqueeze64.box)
+
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-16%20181125_zps4srpfwwt.png)
+
+Antes de arrancarla, tenemos que tener instalado **Virtual Box DKMS**. Lo hacemos también:
+```
+rafaellg8@system32:~$ sudo apt-get install virtualbox-dkms
+```
+
+Ahora la arrancamos, con vagrant init primero y vagrant up después:
+```
+rafaellg8@system32:~$ vagrant init debian-local
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+```
+Aquí nos informa de que sea a creado un archivo de configurción **Vagrantfile**, y que ya podemos arrancar la máquina.
+```
+vagrant up
+```
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-16%20185403_zpskxjz0vtt.png)
+
+Aquí vemos que nos abre el puerto 22 que es el de ssh, por lo que podemos conectarnos ahora a través de él.
+Lo comprobamos conectándonos:
+![vagrant ssh](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-16%20192728_zps2idjxheh.png)
+
+
+## Ejercicio 7: Crear un script para provisionar "nginx" o cualquier otro servidor web que pueda ser útil para alguna otra práctica.
+Modificamos el VagrantFile:
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # All Vagrant configuration is done here. The most common configuration
+  # options are documented and commented below. For a complete reference,
+  # please see the online documentation at vagrantup.com.
+
+  # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.box = "debian-local"
+
+config.vm.provision "shell",
+inline: "sudo apt-get update && sudo apt-get install -y nginx && sudo service nginx start"
+end
+```
+
+Ahora ejecutamos **vagrant provision**:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-16%20195347_zpsg4slfh9u.png)
+
+Y ya tenemos Nginx funcionando.
+
+## Ejercicio 8: Configurar tu máquina virtual usando Vagrant con el provisionador Ansible.
+
+Para este ejercicio he usado el siguiente tutorial que me ha resultado bastante bueno para usarlo con Azure y Vagrant [link](https://github.com/Azure/vagrant-azure).
+
+- Instalamos el plugin de vagrant-azure:
+```
+ vagrant plugin install vagrant-azure
+```
+
+Nos da un error, debido a que necesita una versión superior a la 1.7.
+Desde el link anterior podemos acceder a una nueva versión. La instalamos y ahora funciona todo correctamente:
+
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-16$ vagrant plugin install vagrant-azure
+Vagrant is upgrading some internal state for the latest version.
+Please do not quit Vagrant at this time. While upgrading, Vagrant
+will need to copy all your boxes, so it will use a considerable
+amount of disk space. After it is done upgrading, the temporary disk
+space will be freed.
+
+Press ctrl-c now to exit if you want to remove some boxes or free
+up some disk space.
+
+Press the Enter or Return key to continue.
+Installing the 'vagrant-azure' plugin. This can take a few minutes...
+Installed the plugin 'vagrant-azure (1.3.0)'!
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-1
+```
