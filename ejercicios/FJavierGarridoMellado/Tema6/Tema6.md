@@ -325,7 +325,6 @@ openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
 
 El siguiente paso es subir el archivo **.cer** a [Azure](https://manage.windowsazure.com/@franciscojaviergarmelhotmai.onmicrosoft.com#Workspaces/AdminTasks/ListManagementCertificates):
 
-![importarcredenciales2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/azureimport_zps463jgmqi.png)
 
 ![certificado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/subircredencial_zpshfktx7xg.png)
 
@@ -389,7 +388,7 @@ En el segundo bloque se procede a definir diferentes caracteristicas para usar e
 
 En el tercer bloque procedo a indicarle que provisione la máquina mediante ansible, el cual usa un archivo llamado **iv.yml**.
 
-Antes de ejecutar **vagrant provider** es necesario definir la variable de entorno, en mi caso ya que lo he hecho en el directorio **VagrantIV** defino de la siguiente manera:
+Antes de ejecutar **vagrant provider** es necesario definir la variable de entorno, en mi caso, ya que lo he hecho en el directorio **VagrantIV** lo defino de la siguiente manera:
 ```
 $ export ANSIBLE_HOSTS=~/Escritorio/VagrantIV/ansible_hosts
 ```
@@ -408,7 +407,7 @@ vagrant up --provider=azure
 
 Con esto, puede verse que ya se puede acceder a la aplicación a traves de la url que genera este paso.
 
-![desplegado]()
+![desplegado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/desplegado_zpseqavxjp3.png)
 
 
 
