@@ -292,3 +292,123 @@ $ sudo service nginx status
 ```
 
 ![compro](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vagrantnginx_zpsgbgykmnt.png)
+
+### Ejercicio 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
+
+El primer paso es instalar el provisionador de azure para vagrant
+```
+vagrant plugin install vagrant-azure
+```
+
+![installvagrantazure](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installvagranazure_zpsad7pzrjg.png)
+
+El siguiente paso es loguearse y conseguir información de las credenciales de Azure( al ejecutar **azure account download** hay que acceder al enlace que nos facilita):
+```
+azure login
+azure account download
+```
+
+Acto seguido importo a mi CLI de Azure mis credenciales:
+```
+azure account import Azure\ Pass-1-15-2016-credentials.publishsettings
+```
+
+![importarcredenciales](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/azureimport_zpsfwwiqjcc.png)
+
+
+El siguiente paso es generar los certificados que se van a subir a Azure y nos va a permitir interaccionar con el:
+```
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout azurevagrant.key -out azurevagrant.key
+chmod 600 ~/.ssh/azurevagrant.key
+openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
+```
+
+El siguiente paso es subir el archivo **.cer** a [Azure](https://manage.windowsazure.com/@franciscojaviergarmelhotmai.onmicrosoft.com#Workspaces/AdminTasks/ListManagementCertificates):
+
+![importarcredenciales2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/azureimport_zps463jgmqi.png)
+
+![certificado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/subircredencial_zpshfktx7xg.png)
+
+Para poder autenticar Azure desde Vagrantfile es necesario crear un archivo **.pem** y concatenarle el archivo **.key**, para ello:
+```
+openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem
+cat azurevagrant.key > azurevagrant.pem
+```
+
+El siguiente paso es crear el archivo **Vagrantfile**:
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+
+Vagrant.configure('2') do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = 'azure'
+  config.vm.network "public_network"
+  config.vm.network "private_network",ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"
+  config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.define "localhost" do |l|
+          l.vm.hostname = "localhost"
+   end
+
+  config.vm.provider :azure do |azure, override|
+      azure.mgmt_certificate = File.expand_path('/home/javi/Escritorio/VagrantIV/azurevagrant.pem') 
+      azure.mgmt_endpoint = 'https://management.core.windows.net'
+      azure.subscription_id = '477d87d6-b8d0-4025-8c1f-a3de5c520c99'
+      azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_2-LTS-amd64-server-20150506-en-us-30GB'
+      azure.vm_name = 'apuestas' 
+      azure.vm_password = 'Clave#Javi#1'
+      azure.vm_location = 'Central US' 
+      azure.ssh_port = '22'
+      azure.tcp_endpoints = '80:80'
+  end	
+
+  config.vm.provision "ansible" do |ansible|
+      ansible.sudo = true
+        ansible.playbook = "iv.yml"
+        ansible.verbose = "v"
+        ansible.host_key_checking = false
+  end
+end
+```
+
+Principalmente se compone de 3 bloques importantes:
+
+En el primer bloque se indica que la *box* que se va a usar es la de azure, que va a tener una red pública y una privada( la cual se define ), y ademas los puertos de redirección que va a usar.
+
+En el segundo bloque se procede a definir diferentes caracteristicas para usar el proveedor de servicios azure.
+
+En el tercer bloque procedo a indicarle que provisione la máquina mediante ansible, el cual usa un archivo llamado **iv.yml**.
+
+Antes de ejecutar **vagrant provider** es necesario definir la variable de entorno, en mi caso ya que lo he hecho en el directorio **VagrantIV** defino de la siguiente manera:
+```
+$ export ANSIBLE_HOSTS=~/Escritorio/VagrantIV/ansible_hosts
+```
+El siguiente paso es proveerse de la box de [Azure](https://github.com/Azure/vagrant-azure/blob/master/README.md), para ello:
+```
+vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
+```
+Ahora si puede procederse a ejecutar **provider** de la siguiente manera(puede hacerse un siguiente paso de provisionamiento con `vagrant provision` aunque en este caso no ha sido necesario):
+```
+vagrant up --provider=azure
+```
+
+![provider](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/provider_zpsygselitu.png)
+
+![provider2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/provider2_zpsjbspbrsb.png)
+
+Con esto, puede verse que ya se puede acceder a la aplicación a traves de la url que genera este paso.
+
+![desplegado]()
+
+
+
