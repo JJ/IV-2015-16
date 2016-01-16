@@ -331,3 +331,32 @@ Ahora ejecutamos **vagrant provision**:
 ![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-16%20195347_zpsg4slfh9u.png)
 
 Y ya tenemos Nginx funcionando.
+
+## Ejercicio 8: Configurar tu máquina virtual usando Vagrant con el provisionador Ansible.
+
+Para este ejercicio he usado el siguiente tutorial que me ha resultado bastante bueno para usarlo con Azure y Vagrant [link](https://github.com/Azure/vagrant-azure).
+
+- Instalamos el plugin de vagrant-azure:
+```
+ vagrant plugin install vagrant-azure
+```
+
+Nos da un error, debido a que necesita una versión superior a la 1.7.
+Desde el link anterior podemos acceder a una nueva versión. La instalamos y ahora funciona todo correctamente:
+
+```
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-16$ vagrant plugin install vagrant-azure
+Vagrant is upgrading some internal state for the latest version.
+Please do not quit Vagrant at this time. While upgrading, Vagrant
+will need to copy all your boxes, so it will use a considerable
+amount of disk space. After it is done upgrading, the temporary disk
+space will be freed.
+
+Press ctrl-c now to exit if you want to remove some boxes or free
+up some disk space.
+
+Press the Enter or Return key to continue.
+Installing the 'vagrant-azure' plugin. This can take a few minutes...
+Installed the plugin 'vagrant-azure (1.3.0)'!
+rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-1
+```
