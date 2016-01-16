@@ -303,3 +303,31 @@ vagrant up
 Aquí vemos que nos abre el puerto 22 que es el de ssh, por lo que podemos conectarnos ahora a través de él.
 Lo comprobamos conectándonos:
 ![vagrant ssh](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-16%20192728_zps2idjxheh.png)
+
+
+## Ejercicio 7: Crear un script para provisionar "nginx" o cualquier otro servidor web que pueda ser útil para alguna otra práctica.
+Modificamos el VagrantFile:
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # All Vagrant configuration is done here. The most common configuration
+  # options are documented and commented below. For a complete reference,
+  # please see the online documentation at vagrantup.com.
+
+  # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.box = "debian-local"
+
+config.vm.provision "shell",
+inline: "sudo apt-get update && sudo apt-get install -y nginx && sudo service nginx start"
+end
+```
+
+Ahora ejecutamos **vagrant provision**:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-16%20195347_zpsg4slfh9u.png)
+
+Y ya tenemos Nginx funcionando.
