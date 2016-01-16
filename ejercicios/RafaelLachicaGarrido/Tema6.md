@@ -283,5 +283,23 @@ Ahora descargamos una máquina de las "Vagrant box", en mi caso he elegido esta 
 
 Antes de arrancarla, tenemos que tener instalado **Virtual Box DKMS**. Lo hacemos también:
 ```
-rafaellg8@system32:~$ sudo apt-get install virtualbox-dkms 
+rafaellg8@system32:~$ sudo apt-get install virtualbox-dkms
 ```
+
+Ahora la arrancamos, con vagrant init primero y vagrant up después:
+```
+rafaellg8@system32:~$ vagrant init debian-local
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+```
+Aquí nos informa de que sea a creado un archivo de configurción **Vagrantfile**, y que ya podemos arrancar la máquina.
+```
+vagrant up
+```
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-16%20185403_zpskxjz0vtt.png)
+
+Aquí vemos que nos abre el puerto 22 que es el de ssh, por lo que podemos conectarnos ahora a través de él.
+Lo comprobamos conectándonos:
+![vagrant ssh](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-16%20192728_zps2idjxheh.png)
