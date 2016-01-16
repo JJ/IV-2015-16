@@ -295,6 +295,86 @@ $ sudo service nginx status
 
 ### Ejercicio 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
 
+Este ejercicio lo he realizado tanto para local(VirtualBox) como para desplegar la aplicación en Azure.
+
+- Local:
+
+El primer paso es instalar la box de Ubuntu mediante el siguiente comando:
+```
+vagrant box add ubuntu tps://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
+```
+
+El segundo paso es crear el Vagranfile:
+```
+Vagrant.configure('2') do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = 'ubuntu'
+  config.vm.network "forwarded_port", guest: 22, host:2222, id: "ssh", auto_correct: true
+  config.vm.network "forwarded_port", guest: 80, host:8080, id: "web", auto_correct: true
+  config.vm.define "localhost" do |l|
+          l.vm.hostname = "localhost"
+   end
+
+   config.vm.provision "ansible" do |ansible|
+      ansible.sudo = true
+      ansible.playbook = "iv.yml"
+      ansible.verbose = "v"
+      ansible.host_key_checking = false
+  end
+end
+```
+
+Donde se le indica que se la caja será una Ubuntu, que las redirecciones SSH de la máquina virtual se producen por el puerto 2222, que las redirecciones del puerto 80 se van a realizar por el puerto 8080(estas redirecciones se explican en el tema anterior), se define el nombre de la máquina como localhost.El siguiente bloque es el de provisionamiento, ahí le indico que con ansible provea la máquina segun lo especificado en el archivo **iv.yml**.
+
+El tercer paso es definir el archivo **iv.yml**:
+```
+- hosts: localhost
+  sudo: yes
+  remote_user: vagrant
+  tasks:
+  - name: Actualizar sistema 
+    apt: update_cache=yes upgrade=dist  
+  - name: Instalar paquetes
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=python-pip state=present
+    apt: name=git state=present
+  - name: Ins Pyp
+    action: apt pkg=python-pip
+  - name: Obtener aplicacion git
+    git: repo=https://github.com/javiergarridomellado/DAI.git  dest=DAI clone=yes force=yes
+  - name: Permisos de ejecucion
+    command: chmod -R +x DAI
+  - name: Instalar requisitos
+    command: sudo pip install -r DAI/requirements.txt
+  - name: ejecutar
+    command: nohup sudo python DAI/manage.py runserver 0.0.0.0:80
+```
+Puede verse que le indico que actualice el sistema, instale los paquetes necesarios, baje la aplicación y arranque la aplicación.
+
+El archivo ansible_host lo he definido de la siguiente manera:
+```
+localhost ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222
+``` 
+
+Ya solo basta ejecutar el vagrant mediante( no es necesario `vagrant provision`):
+```
+vagrant up
+```
+
+![vagrantup](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vagrantup_zpsnkjr43ry.png)
+
+Puede verse la aplicación ejecutada en local.
+
+![appdesplegada](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appdesplegada_zpsoijkga53.png)
+
+- Para Azure:
 El primer paso es instalar el provisionador de azure para vagrant
 ```
 vagrant plugin install vagrant-azure
@@ -392,6 +472,38 @@ Antes de ejecutar **vagrant provider** es necesario definir la variable de entor
 ```
 $ export ANSIBLE_HOSTS=~/Escritorio/VagrantIV/ansible_hosts
 ```
+Se define el archivo **iv.yml** que es el provee a la máquina Azure:
+```
+- hosts: localhost
+  sudo: yes
+  remote_user: vagrant
+  tasks:
+  - name: Actualizar sistema 
+    apt: update_cache=yes upgrade=dist    
+  - name: Instalar paquetes
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=python-pip state=present
+    apt: name=git state=present
+  - name: Ins Pyp
+    action: apt pkg=python-pip
+  - name: Obtener aplicacion git
+    git: repo=https://github.com/javiergarridomellado/DAI.git  dest=DAI clone=yes force=yes
+  - name: Permisos de ejecucion
+    command: chmod -R +x DAI
+  - name: Instalar requisitos
+    command: sudo pip install -r DAI/requirements.txt
+  - name: ejecutar
+    command: nohup sudo python DAI/manage.py runserver 0.0.0.0:80
+```
+
+A continuacion en el archivo ansible_host se le indica que se va a trabajar como una máquina localhost:
+```
+[localhost]
+192.168.56.10
+``` 
+
 El siguiente paso es proveerse de la box de [Azure](https://github.com/Azure/vagrant-azure/blob/master/README.md), para ello:
 ```
 vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
