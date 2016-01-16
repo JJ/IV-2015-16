@@ -269,3 +269,19 @@ SUDO password:
 ## Ejercicio 5.2: ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?
 Ansible para mi es mucho más sencillo y flexible, necesitamos menos archivos para la configuración, y da menos problemas. Además las estructuras de archivos de recetas de chef es un poco más engorrosa.
 Por comodidad y facilidad de uso prefiero Ansible.
+
+## Ejercicio 6: Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
+
+Primero de todo, tenemos que tener vagrant en nuestra máquina local:
+```
+sudo apt-get install vagrant
+```
+
+Ahora descargamos una máquina de las "Vagrant box", en mi caso he elegido esta Debian : ![http://www.emken.biz/vagrant-boxes/debsqueeze64.box](http://www.emken.biz/vagrant-boxes/debsqueeze64.box)
+
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-16%20181125_zps4srpfwwt.png)
+
+Antes de arrancarla, tenemos que tener instalado **Virtual Box DKMS**. Lo hacemos también:
+```
+rafaellg8@system32:~$ sudo apt-get install virtualbox-dkms 
+```
