@@ -334,7 +334,7 @@ Y ya tenemos Nginx funcionando.
 
 ## Ejercicio 8: Configurar tu máquina virtual usando Vagrant con el provisionador Ansible.
 
-Para este ejercicio he usado el siguiente tutorial que me ha resultado bastante bueno para usarlo con Azure y Vagrant [link](https://github.com/Azure/vagrant-azure).
+Para este ejercicio he usado el siguiente [tutorial](http://stapp.space/setup-vagrant-with-azure/) que me ha resultado bastante bueno para usarlo con Azure y Vagrant.
 
 - Instalamos el plugin de vagrant-azure:
 ```
@@ -358,5 +358,122 @@ up some disk space.
 Press the Enter or Return key to continue.
 Installing the 'vagrant-azure' plugin. This can take a few minutes...
 Installed the plugin 'vagrant-azure (1.3.0)'!
-rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-1
 ```
+
+Nos logueamos ahora, si no lo hemos hecho aún, en nuestra cuenta de azure a través de la terminal con **azure login**, que usaremos después para levantar las máquinas.
+
+Creamos el Vagrant File con nuestras necesidades. **NOTA** como indica el tutorial, hay que añadir nuestra cuenta de Azure y sus ficheros pem con el que usamos para el certificado y loguearnos:
+```
+VAGRANTFILE_API_VERSION = '2'
+  Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = 'azure'
+  config.vm.network "public_network"
+  config.vm.network "private_network",ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"
+  config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.define "localhost" do |l|
+    l.vm.hostname = "localhost"
+  end
+
+  config.vm.provider :azure do |azure|
+    azure.mgmt_certificate = File.expand_path('~/clavesAzure/azure.pem')
+    azure.mgmt_endpoint = 'https://management.core.windows.net'
+    azure.subscription_id = '2cc2475d-2e3d-4d07-b873-e46b595373f7'
+    azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB'
+    azure.vm_name = 'pluco'
+    azure.vm_user = 'pluco'
+    azure.vm_password = '***********'
+    azure.vm_location = 'Japan West'
+    azure.ssh_port = '22'
+    azure.tcp_endpoints = '8000:8000'
+    azure.tcp_endpoints = '80:80'
+  end
+
+  config.ssh.username = 'pluco'
+  config.ssh.password = '***********'
+
+  config.vm.provision "ansible" do |ansible|
+    ansible.sudo = true
+    ansible.playbook = "deployBook.yml"
+    ansible.verbose = "v"
+    ansible.host_key_checking = false
+  end
+end
+```
+
+Para el tema de la localización, la podemos seleccionar de aquí:
+![localizacion](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20100102_zpswxc4agio.png)
+
+Aquí vemos el private network, será la interfaz que nos conectará con la máquina virtual.
+La id de la suscripción  de Azure la podemos encontrar simplemente haciendo ```azure account show```, o en la configuración de Azure:
+![azureaccount](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20082950_zpstrzoxrfl.png)
+
+La azure.vm_image es la imagen que elegimos, mostrando la lista de máquinas de vagrant, como hicimos en los ejercicios anteriores.
+La demás configuración, son los nombres de usuario, los puertos que nos abrimos, y por último la configuración del deployBook que creamos antes.
+
+Ahora solo nos falta añadir en los ansible_hosts,el localhost, ya que se conectara dentro del mismo servidor a nuestra app de DJANGO, y crear nuestro deployBook, que en mi caso ya lo tengo.
+
+**ansible_hosts**:
+
+```
+
+[localhost]
+127.0.0.1       ansible_connection=local
+
+[plucoPlayBook]
+prueba-iv-rlg.cloudapp.net
+```
+
+Editamos el deployBook para que encuentre el localhost que hemos configurado:
+```
+---
+- hosts: localhost
+  sudo: yes
+  remote_user: pluco
+  tasks:
+  - name: Actualizar sistema base
+    apt: update_cache=yes upgrade=dist
+  - name: Instalar paquetes necesarios
+    action: apt pkg={{ item }} state=installed
+    with_items:
+      - python-setuptools
+      - python-dev
+      - build-essential
+      - git
+      - make
+  - name: Git clone, pluco
+    git: repo=https://github.com/rafaellg8/IV-PLUCO-RLG.git dest=IV-PLUCO-RLG clone=yes force=yes
+  - name: Make install
+    shell: cd IV-PLUCO-RLG && make install
+  - name: Make run
+    shell: cd IV-PLUCO-RLG && make run
+```
+
+Ahora simplemente nos queda exportar las variables de nuestro fichero de ansible_hosts a  **ANSIBLE_HOSTS**:
+```
+export ANSIBLE_HOSTS=~/ansible_hosts
+```
+
+Solo nos falta añadir una caja de azure para que no nos de error, tenemos una caja de pruebas que será donde instalaremos la de azure:
+```
+vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
+```
+Y ya podemos levantar nuestro servidor con:
+```
+sudo vagrant up --provider=azure
+```
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20104151_zpsgjms1ejz.png)
+
+**NOTA**: en el momento de la creación, tenía otro servicio en la nube llamado *pluco* de ahí que le llame después en el momento de la creación pluco-service-....
+
+Aquí vemos nuestro servidor creado:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20110255_zpsewvppjdu.png)
+
+Y nos podemos conectar a él por ssh:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20110944_zpsm1mcsbac.png)
+
+Una vez ha terminado el aprovisionamiento de vagranty y el despliegue de ansible, tenemos ya nuestro servidor pluco:
+![pluco](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20120716_zps1ad6ijgw.png)
+
+**NOTA**: lo voy a borrar, para realizar el despliegue correctamente con Pluco, a secas, borrando y limpiando cosas de azure.
+
+Si todo va bien, estará todo en [pluco.cloudapp.net](https://pluco.cloudapp.net)
