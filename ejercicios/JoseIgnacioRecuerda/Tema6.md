@@ -161,3 +161,26 @@ Este es el mismo ejercicio que el anterior (ejercicio 4), ya que este directamen
 Pues por la experiencia que he tenido en estos días tanto con Chef como con Ansible me quedo claramente con Ansible. Me parece más cómodo de usar los playbooks de Ansible que las recetas de Chef.
 
 
+##Ejercicio 6
+###Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
+Instalo Vagrant descargándomelo con el comando `sudo apt-get install vagrant`
+
+Con este comando se me instala la versión 1.4.3, pero necesito actualizarlo a la 1.8.1 . Para esto lo que hago es descarmarme el archivo vagrant_1.8.1_x86_64.deb de [aquí](https://releases.hashicorp.com/vagrant/1.8.1/) e instalarlo con el comando `sudo dpkg -i vagrant_1.8.1_x86_64.deb`
+
+![verifico versión 1.8.1 de vagrant](ejr6.1)
+
+Una vez tengo la version 1.8.1 de Vagrant me dispongo a bajar una de las máquina de la lista de [vagrantbox](http://www.vagrantbox.es) con el comando que se nos facilita en la práctica. Concretamente he ejecutado `vagrant box add debian https://github.com/holms/vagrant-jessie-box/releases/download/Jessie-v0.1/Debian-jessie-amd64-netboot.box`
+
+![descarga caja vagrant](ejr6.2)
+
+Antes de lanzar Vagrant tengo que instalar VirtualBox ya que me hace falta para ello. El comando que ejecuto es `sudo apt-get install virtualbox virtualbox-dkms`
+
+Ahora ejecuto el comando `vagrant init debian` en la raiz del proyecto que me va a crear el archivo Vagrantfile. Y inmediatamente despues ejecuto `vagrant up`
+
+![vagrant up](ejr6.3)
+
+Y por último nos conectamos por ssh a la máquina ejecutando el comando `vagrant ssh`
+
+
+
+
