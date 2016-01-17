@@ -147,4 +147,10 @@ A continuación abro mi navegador e introduzco la direccíon `http://maquina-ubu
 ![aplicación ejecutandose en azure](ejr4.4)
 
 
-
+
+
+##Ejercicio 5
+### 1.- Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
+
+Este es el mismo ejercicio que el anterior (ejercicio 4), ya que este directamente lo he hecho con playbook
+
