@@ -462,3 +462,18 @@ Y ya podemos levantar nuestro servidor con:
 sudo vagrant up --provider=azure
 ```
 ![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20104151_zpsgjms1ejz.png)
+
+**NOTA**: en el momento de la creación, tenía otro servicio en la nube llamado *pluco* de ahí que le llame después en el momento de la creación pluco-service-....
+
+Aquí vemos nuestro servidor creado:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20110255_zpsewvppjdu.png)
+
+Y nos podemos conectar a él por ssh:
+![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20110944_zpsm1mcsbac.png)
+
+Una vez ha terminado el aprovisionamiento de vagranty y el despliegue de ansible, tenemos ya nuestro servidor pluco:
+![pluco](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20120716_zps1ad6ijgw.png)
+
+**NOTA**: lo voy a borrar, para realizar el despliegue correctamente con Pluco, a secas, borrando y limpiando cosas de azure.
+
+Si todo va bien, estará todo en [pluco.cloudapp.net](https://pluco.cloudapp.net)
