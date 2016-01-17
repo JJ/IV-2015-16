@@ -408,3 +408,41 @@ La id de la suscripción  de Azure la podemos encontrar simplemente haciendo ```
 
 La azure.vm_image es la imagen que elegimos, mostrando la lista de máquinas de vagrant, como hicimos en los ejercicios anteriores.
 La demás configuración, son los nombres de usuario, los puertos que nos abrimos, y por último la configuración del deployBook que creamos antes.
+
+Ahora solo nos falta añadir en los ansible_hosts, nuestro propio localhost, y crear nuestro deployBook, que en mi caso ya lo tengo.
+
+**ansible_hosts**:
+
+```
+
+[localhost]
+127.0.0.1       ansible_connection=local
+
+[plucoPlayBook]
+prueba-iv-rlg.cloudapp.net
+```
+
+Editamos el deployBook para que encuentre el localhost que hemos configurado:
+```
+---
+- hosts: localhost
+  sudo: yes
+  remote_user: pluco
+  tasks:
+  - name: Actualizar sistema base
+    apt: update_cache=yes upgrade=dist
+  - name: Instalar paquetes necesarios
+    action: apt pkg={{ item }} state=installed
+    with_items:
+      - python-setuptools
+      - python-dev
+      - build-essential
+      - git
+      - make
+  - name: Git clone, pluco
+    git: repo=https://github.com/rafaellg8/IV-PLUCO-RLG.git dest=IV-PLUCO-RLG clone=yes force=yes
+  - name: Make install
+    shell: cd IV-PLUCO-RLG && make install
+  - name: Make run
+    shell: cd IV-PLUCO-RLG && make run
+```
