@@ -334,7 +334,7 @@ Y ya tenemos Nginx funcionando.
 
 ## Ejercicio 8: Configurar tu máquina virtual usando Vagrant con el provisionador Ansible.
 
-Para este ejercicio he usado el siguiente tutorial que me ha resultado bastante bueno para usarlo con Azure y Vagrant [link](https://github.com/Azure/vagrant-azure).
+Para este ejercicio he usado el siguiente [tutorial](http://stapp.space/setup-vagrant-with-azure/) que me ha resultado bastante bueno para usarlo con Azure y Vagrant.
 
 - Instalamos el plugin de vagrant-azure:
 ```
@@ -362,8 +362,6 @@ Installed the plugin 'vagrant-azure (1.3.0)'!
 
 Nos logueamos ahora, si no lo hemos hecho aún, en nuestra cuenta de azure a través de la terminal con **azure login**, que usaremos después para levantar las máquinas.
 
-Una vez hecho esto, el tutorial nos da la opción de añadir una caja, pero no lo vamos a hacer porque la vamos a crear nosotros mismos.
-
 Creamos el Vagrant File con nuestras necesidades. **NOTA** como indica el tutorial, hay que añadir nuestra cuenta de Azure y sus ficheros pem con el que usamos para el certificado y loguearnos:
 ```
 VAGRANTFILE_API_VERSION = '2'
@@ -384,7 +382,7 @@ VAGRANTFILE_API_VERSION = '2'
     azure.vm_name = 'pluco'
     azure.vm_user = 'pluco'
     azure.vm_password = '***********'
-    azure.vm_location = 'Central US'
+    azure.vm_location = 'Japan West'
     azure.ssh_port = '22'
     azure.tcp_endpoints = '8000:8000'
     azure.tcp_endpoints = '80:80'
@@ -402,6 +400,9 @@ VAGRANTFILE_API_VERSION = '2'
 end
 ```
 
+Para el tema de la localización, la podemos seleccionar de aquí:
+![localizacion](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20100102_zpswxc4agio.png)
+
 Aquí vemos el private network, será la interfaz que nos conectará con la máquina virtual.
 La id de la suscripción  de Azure la podemos encontrar simplemente haciendo ```azure account show```, o en la configuración de Azure:
 ![azureaccount](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20082950_zpstrzoxrfl.png)
@@ -409,7 +410,7 @@ La id de la suscripción  de Azure la podemos encontrar simplemente haciendo ```
 La azure.vm_image es la imagen que elegimos, mostrando la lista de máquinas de vagrant, como hicimos en los ejercicios anteriores.
 La demás configuración, son los nombres de usuario, los puertos que nos abrimos, y por último la configuración del deployBook que creamos antes.
 
-Ahora solo nos falta añadir en los ansible_hosts, nuestro propio localhost, y crear nuestro deployBook, que en mi caso ya lo tengo.
+Ahora solo nos falta añadir en los ansible_hosts,el localhost, ya que se conectara dentro del mismo servidor a nuestra app de DJANGO, y crear nuestro deployBook, que en mi caso ya lo tengo.
 
 **ansible_hosts**:
 
@@ -446,3 +447,18 @@ Editamos el deployBook para que encuentre el localhost que hemos configurado:
   - name: Make run
     shell: cd IV-PLUCO-RLG && make run
 ```
+
+Ahora simplemente nos queda exportar las variables de nuestro fichero de ansible_hosts a  **ANSIBLE_HOSTS**:
+```
+export ANSIBLE_HOSTS=~/ansible_hosts
+```
+
+Solo nos falta añadir una caja de azure para que no nos de error, tenemos una caja de pruebas que será donde instalaremos la de azure:
+```
+vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
+```
+Y ya podemos levantar nuestro servidor con:
+```
+sudo vagrant up --provider=azure
+```
+![imagen](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20104151_zpsgjms1ejz.png)
