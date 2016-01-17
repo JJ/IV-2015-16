@@ -154,3 +154,10 @@ A continuación abro mi navegador e introduzco la direccíon `http://maquina-ubu
 
 Este es el mismo ejercicio que el anterior (ejercicio 4), ya que este directamente lo he hecho con playbook
 
+
+
+### 2.- ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
+
+Pues por la experiencia que he tenido en estos días tanto con Chef como con Ansible me quedo claramente con Ansible. Me parece más cómodo de usar los playbooks de Ansible que las recetas de Chef.
+
+
