@@ -358,5 +358,53 @@ up some disk space.
 Press the Enter or Return key to continue.
 Installing the 'vagrant-azure' plugin. This can take a few minutes...
 Installed the plugin 'vagrant-azure (1.3.0)'!
-rafaellg8@system32:~/Documentos/GII/Cuarto/IV/IV-2015-1
 ```
+
+Nos logueamos ahora, si no lo hemos hecho aún, en nuestra cuenta de azure a través de la terminal con **azure login**, que usaremos después para levantar las máquinas.
+
+Una vez hecho esto, el tutorial nos da la opción de añadir una caja, pero no lo vamos a hacer porque la vamos a crear nosotros mismos.
+
+Creamos el Vagrant File con nuestras necesidades. **NOTA** como indica el tutorial, hay que añadir nuestra cuenta de Azure y sus ficheros pem con el que usamos para el certificado y loguearnos:
+```
+VAGRANTFILE_API_VERSION = '2'
+  Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = 'azure'
+  config.vm.network "public_network"
+  config.vm.network "private_network",ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"
+  config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.define "localhost" do |l|
+    l.vm.hostname = "localhost"
+  end
+
+  config.vm.provider :azure do |azure|
+    azure.mgmt_certificate = File.expand_path('~/clavesAzure/azure.pem')
+    azure.mgmt_endpoint = 'https://management.core.windows.net'
+    azure.subscription_id = '2cc2475d-2e3d-4d07-b873-e46b595373f7'
+    azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB'
+    azure.vm_name = 'pluco'
+    azure.vm_user = 'pluco'
+    azure.vm_password = '***********'
+    azure.vm_location = 'Central US'
+    azure.ssh_port = '22'
+    azure.tcp_endpoints = '8000:8000'
+    azure.tcp_endpoints = '80:80'
+  end
+
+  config.ssh.username = 'pluco'
+  config.ssh.password = '***********'
+
+  config.vm.provision "ansible" do |ansible|
+    ansible.sudo = true
+    ansible.playbook = "deployBook.yml"
+    ansible.verbose = "v"
+    ansible.host_key_checking = false
+  end
+end
+```
+
+Aquí vemos el private network, será la interfaz que nos conectará con la máquina virtual.
+La id de la suscripción  de Azure la podemos encontrar simplemente haciendo ```azure account show```, o en la configuración de Azure:
+![azureaccount](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/Captura%20de%20pantalla%20de%202016-01-17%20082950_zpstrzoxrfl.png)
+
+La azure.vm_image es la imagen que elegimos, mostrando la lista de máquinas de vagrant, como hicimos en los ejercicios anteriores.
+La demás configuración, son los nombres de usuario, los puertos que nos abrimos, y por último la configuración del deployBook que creamos antes.
