@@ -62,7 +62,7 @@ $ qemu-system-x86_64 -machine accel=kvm -hda coreos.qcow2 -cdrom coreos_producti
 ```
 ![CoreOs](https://www.dropbox.com/s/2e8louciqot9w6g/img8.png?dl=1)
 
-*Instalación Debian Stable:*
+*Instalación Slitaz:*
 
 Realizo los mismo pasos, pero con una imagen distinta:
 
@@ -71,7 +71,7 @@ Realizo los mismo pasos, pero con una imagen distinta:
 
 ### 2.Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
 
-He usado para este ejercicio VirtualBox, concretamente he instalado una Debian Stable como se aprecia en las imágenes.
+He usado para este ejercicio VirtualBox, concretamente he instalado una linux-mint como se aprecia en las imágenes.
 
 ![linux1](https://www.dropbox.com/s/3sebtththlzysdw/img10.png?dl=1)
 
@@ -79,7 +79,7 @@ He usado para este ejercicio VirtualBox, concretamente he instalado una Debian S
 
 ![linux3](https://www.dropbox.com/s/s1quaurfelk6jt6/img15.png?dl=1)
 
-![linux4](https://www.dropbox.com/s/ofriqa6iwv6xlp2/img17.png?dl=1)
+![linux4](https://www.dropbox.com/s/48shrapds7k3rqq/img16.png?dl=1)
 
 
 ### Ejercicio 5: Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
