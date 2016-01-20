@@ -105,11 +105,11 @@ Configuro la conexión ssh, para ello creo una clave `ssh-keygen -t dsa`
 
 ![creo la clave](https://www.dropbox.com/s/3fohcr07yjjtf59/ejr4.1.png?dl=1)
 
-y la copio a mi máquina de azure ``
+y la copio a mi máquina de azure `ssh-copy-id -i ~/.ssh/id_dsa_vagrant.pub  nacho@maquina-ubuntu.cloudapp.net`
 
 ![añado la clave a mi máquina](https://www.dropbox.com/s/qs8j4o7c8u9or2n/ejr4.2.png?dl=1)
 
-Ahora ya puedo conectarme a mi máquina tanto por ssh `ssh 'nacho@maquina-azure-ubuntu-14-ejr5.cloudapp.net'` como por ansible `ansible azureubuntu -u nacho -m ping`
+Ahora ya puedo conectarme a mi máquina tanto por ssh `ssh 'nacho@maquina-ubuntu.cloudapp.net'` como por ansible `ansible azureubuntu -u nacho -m ping`
 
 ![ping con ansible](https://www.dropbox.com/s/7umkv72uzshh8yh/ejr4.3.png?dl=1)
 
