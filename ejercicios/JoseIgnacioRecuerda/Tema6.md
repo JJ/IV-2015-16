@@ -12,13 +12,13 @@ Cierro la terminal y la vuelvo a abrir para poder hacer uso de rvm
 
 En el menú de la terminal entro en: edit/Profile Preferences  me voy a la pestaña Title and Command y selecciono la opción que pone "Run command as a login shell" como se puede ver en la captura
 
-![selecciono la opción del menú de la terminal](ejr1.1)
+![selecciono la opción del menú de la terminal](https://www.dropbox.com/s/s6dxufn7j8a3gfh/ejr1.1.png?dl=1)
 
 Selecciono la versión de ruby 2.2.1 con el comando `rvm use 2.2.1 --default`
 
 Una vez hecho esto ya tengo seleccionada la versión de ruby con la cual puedo instalar chef con el comando `curl -L https://www.opscode.com/chef/install.sh | sudo bash`
 
-![version de chef](ejr1.2)
+![version de chef](https://www.dropbox.com/s/rznx1anvfn1t862/ejr1.2.png?dl=1)
 
 
 ##Ejercicio 2
@@ -26,7 +26,7 @@ Una vez hecho esto ya tengo seleccionada la versión de ruby con la cual puedo i
 
 Para este ejercicio empiezo creando la estructura necesaria para poder realizarlo. Esta estructura es la siguiente:
 
-![estructura ejercicio 2](ejr2.1)
+![estructura ejercicio 2](https://www.dropbox.com/s/psq702twsk7upxr/ejr2.1.png?dl=1)
 
 Ahora incluyo el código de los archivos incluidos en esta estructura:
 
@@ -64,7 +64,7 @@ file_cache_path "/home/parallels/chef" cookbook_path "/home/parallels/chef/cook
 
 Por último solo tengo que ejecutar el comando para que con el archivo solo.rb ejecute las recetas anteriormente descritas: `sudo chef-solo -c solo.rb` (estando situado dentro de la carpeta chef)
 
-![comando que ejecuta las recetas](ejr2.2)
+![comando que ejecuta las recetas](https://www.dropbox.com/s/zrkrs27m1ir9pdm/ejr2.2.png?dl=1)
 
 ##Ejercicio 3
 ###Escribir en YAML la siguiente estructura de datos en JSON { uno: "dos",tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }
@@ -100,15 +100,15 @@ Arranco la máquina `azure vm start maquina-ubuntu`
 
 Configuro la conexión ssh, para ello creo una clave `ssh-keygen -t dsa` 
 
-![creo la clave](ejr4.1)
+![creo la clave](https://www.dropbox.com/s/3fohcr07yjjtf59/ejr4.1.png?dl=1)
 
 y la copio a mi máquina de azure ``
 
-![añado la clave a mi máquina](ejr4.2)
+![añado la clave a mi máquina](https://www.dropbox.com/s/qs8j4o7c8u9or2n/ejr4.2.png?dl=1)
 
 Ahora ya puedo conectarme a mi máquina tanto por ssh `ssh 'nacho@maquina-azure-ubuntu-14-ejr5.cloudapp.net'` como por ansible `ansible azureubuntu -u nacho -m ping`
 
-![ping con ansible](ejr4.3)
+![ping con ansible](https://www.dropbox.com/s/7umkv72uzshh8yh/ejr4.3.png?dl=1)
 
 Para automatizar toda la configuración de mi máquina de azure utilizo playbook de ansible que resulta mucho más cómodo. Para ello creo un archivo que se llama gestionPedidos.yml y tiene el siguiente contenido
 
@@ -144,8 +144,8 @@ Gracias a este playbooks instalo todas las dependencias, librerias necesarias y 
 
 A continuación abro mi navegador e introduzco la direccíon `http://maquina-ubuntu.cloudapp.net/gestionpedidos/` y en ella puedo ver mi aplicación desplegada.
 
-![ejecutando playbook](ejr4.4)
-![aplicación ejecutandose en azure](ejr4.5)
+![ejecutando playbook](https://www.dropbox.com/s/kfqft4k9xup44fv/ejr4.4.png?dl=1)
+![aplicación ejecutandose en azure](https://www.dropbox.com/s/cv43pfqltfl0r47/ejr4.5.png?dl=1)
 
 
 
@@ -168,24 +168,24 @@ Instalo Vagrant descargándomelo con el comando `sudo apt-get install vagrant`
 
 Con este comando se me instala la versión 1.4.3, pero necesito actualizarlo a la 1.8.1 . Para esto lo que hago es descarmarme el archivo vagrant_1.8.1_x86_64.deb de [aquí](https://releases.hashicorp.com/vagrant/1.8.1/) e instalarlo con el comando `sudo dpkg -i vagrant_1.8.1_x86_64.deb`
 
-![verifico versión 1.8.1 de vagrant](ejr6.1)
+![verifico versión 1.8.1 de vagrant](https://www.dropbox.com/s/xyx4gyk31hnrt5j/ejr6.1.png?dl=1)
 
 Una vez tengo la version 1.8.1 de Vagrant me dispongo a bajar una de las máquina de la lista de [vagrantbox](http://www.vagrantbox.es) con el comando que se nos facilita en la práctica. Concretamente he ejecutado `vagrant box add debian https://github.com/holms/vagrant-jessie-box/releases/download/Jessie-v0.1/Debian-jessie-amd64-netboot.box`
 
-![descarga caja vagrant](ejr6.2)
+![descarga caja vagrant](https://www.dropbox.com/s/pvom7qmjo1x4uvd/ejr6.2.png?dl=1)
 
 Antes de lanzar Vagrant tengo que instalar VirtualBox ya que me hace falta para ello. El comando que ejecuto es `sudo apt-get install virtualbox virtualbox-dkms`
 
 Ahora ejecuto el comando `vagrant init debian` en la raiz del proyecto que me va a crear el archivo Vagrantfile. Y inmediatamente despues ejecuto `vagrant up`
 
-![vagrant up](ejr6.3)
+![vagrant up](https://www.dropbox.com/s/4tecbxcnk0bv8z3/ejr6.3.png?dl=1)
 
 Y por último nos conectamos por ssh a la máquina ejecutando el comando `vagrant ssh`
 
 
 
 ##Ejercicio 7
-###Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
+###Crear un script para provisionar nginx o cualquier otro servidor web que pueda ser útil para alguna otra práctica
 
 
 ##Ejercicio 8
@@ -193,15 +193,15 @@ Y por último nos conectamos por ssh a la máquina ejecutando el comando `vagran
 
 En primer lugar instalo los plugin necesarios para que vagrant pueda conectarse con azure. Para ello ejecuto el comando `vagrant plugin install vagrant-azure`
 
-![plugin vagrant azure](ejr8.1)
+![plugin vagrant azure](https://www.dropbox.com/s/4uvf6ayptn1lmyd/ejr8.1.png?dl=1)
 
 Nos logeamos en azure con `azure login` y después ejecutamos el comando `azure account download` que nos dará un enlace que cuando abramos desde el navegador nos descargará un archivo
 
-![descargando archivo de suscripción azure](ejr8.2)
+![descargando archivo de suscripción azure](https://www.dropbox.com/s/sm1v2mie3l913en/ejr8.2.png?dl=1)
 
 Importo el archivo de suscripción que se me acaba de descargar con el comando `azure account import /media/psf/Google\ Drive/universidad/4INFORMATICA/DAI/Practicas/practica4/practica4MAC/Pase\ para\ Azure-1-17-2016-credentials.publishsettings`
 
-![importado archivo de suscripción azure](ejr8.3)
+![importado archivo de suscripción azure](https://www.dropbox.com/s/z619fddeduqups4/ejr8.3.png?dl=1)
 
 Ahora voy a generar un certificado que tendré que subir a Azure para poder interaccionar con el más adelante. Este lo genero ejecutando los siguientes comandos: 
 
@@ -213,9 +213,9 @@ Ahora voy a generar un certificado que tendré que subir a Azure para poder inte
 
 Para subir el certificado tenemos que entrar en el [portal de azure](https://manage.windowsazure.com/) ir al menú "Setting" y a conticuación en la pestaña "Management certificates". Ahora pulsamos la opción "upload" y buscamos el certificado creado anteriormente 
 
-![subo certificado a azure](ejr8.4)
+![subo certificado a azure](https://www.dropbox.com/s/nkrbfh2b8uevvla/ejr8.4.png?dl=1)
 
-![certificado subido](ejr8.5)
+![certificado subido](https://www.dropbox.com/s/8ahvbwb1oy2v6wz/ejr8.5.png?dl=1)
 
 Ahora necesito un archivo .pem para autenticar la máquina de azure desde nuestro fichero Vagrantfile, para ello ejecutamos estos dos comandos:
 
@@ -305,14 +305,13 @@ Una vez tengo el archivo preparado creo una box con una imagen de azure con el s
 `vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box`
 Para eliminar la maquina: vagrant box remove azure
 
-![añado box azure](ejr8.6)
+![añado box azure](https://www.dropbox.com/s/4bjx309j8cafc9q/ejr8.6.png?dl=1)
 
 
 Ahora crearemos la máquina con el comando `vagrant up --provider=azure`
 
 Si por el contrario ya tenemos la máquina creada y lo único que queremos es realizar el despliegue tendremos que usar el comando `vagrant provision`
 
-![aplicación ejecutandose con ansible y vagrant](ejr8.7)
-
+![aplicación ejecutandose con ansible y vagrant](https://www.dropbox.com/s/8y1d1dw48xdlmgz/ejr8.7.png?dl=1)
 
 
