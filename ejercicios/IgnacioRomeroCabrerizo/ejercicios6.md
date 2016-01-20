@@ -1,3 +1,85 @@
+###Ejercicio 1: Instalar chef en la máquina virtual que vayamos a usar.
+
+
+1. Descargamos el script de instalación de chef:
+
+	```curl -L https://www.opscode.com/chef/install.sh | bash```
+
+
+2. Comprobamos que se ha instalado chef correctamente:
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema6/chef.png)
+
+
+###Ejercicio 2: Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
+
+1. Crear los directorios necesarios:
+
+	- ```mkdir -p chef/cookbooks/nginx/recipes```
+	- ```mkdir -p chef/cookbooks/nano/recipes```
+	
+2. Crear los ficheros de configuración con las recetas para instalar nginx y nano:
+
+	- default.rb (nginx):
+	
+	```
+	package 'nginx'
+	directory "/home/nacho/Documentos/nginx"
+	file "/home/nacho/Documentos/nginx/LEEME" do
+    	owner "nacho"
+    	group "nacho"
+    	mode 00544
+    	action :create
+    	content "Directorio nginx"
+	end
+	```
+	
+	
+	- default.rb (nano):
+	
+	
+	```
+	package 'nano'
+	directory "/home/nacho/Documentos/nano"
+	file "/home/nacho/Documentos/nano/LEEME" do
+    	owner "nacho"
+    	group "nacho"
+    	mode 00544
+    	action :create
+    	content "Directorio nano"
+	end
+	```
+
+3. Crear el archivo **node.json**:
+
+	```
+{
+    "run_list":["recipe[nginx]", "recipe[nano]"]
+}
+	```
+
+4. Crear el archivo **solo.rb** con las referencias a los otros archivos creados:
+
+	```
+file_cache_path "/home/nacho/chef" 
+cookbook_path "/home/nacho/chef/cookbooks" 
+json_attribs "/home/nacho/chef/node.json" 
+	```
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema6/chef1.png)
+
+5. Ejecutar la orden **chef**:
+	```chef-solo -c solo.rb ```
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema6/chef2.png)
+
+
+
+
+
+
+
+
 ###Ejercicio 2.1: Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS, GALPon Minino, Damn Small Linux, SliTaz y ttylinux.
 
 
@@ -65,3 +147,8 @@ for i in range(1, 5000000):
 	3. Entraremos con: ``` ssh nacho@localhost -p 2121 ```
 
 	
+	
+	
+	https://github.com/JJ/IV-2015-16/blob/master/ejercicios/FJavierGarridoMellado/Tema5/Tema5.md
+	
+	https://github.com/JJ/IV-2015-16/blob/master/ejercicios/RafaelLachicaGarrido/Tema5.md
