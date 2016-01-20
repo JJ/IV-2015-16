@@ -30,7 +30,7 @@ Lo he realizado esta forma porque con la primera compruebo cómo subir una aplic
 
 - Lo primero que hay que hacer es crearse una cuenta en heroku
 - una vez hecho esto hay que descargarse la herramientas de heroku introduciendo lo siguiente: wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-- Hay que tener en cuenta que hacen falta más herramiento que ya instalaremos cómo son forema y ruby. En mi caso tuve un herro bastante grave con la instalación de las versiones de ruby al final instale apt-get install ruby1.9.1-full 
+- Hay que tener en cuenta que hacen falta más herramiento que ya instalaremos cómo son forema y ruby. En mi caso tuve un error bastante grave con la instalación de las versiones de ruby al final instale apt-get install ruby1.9.1-full 
 - Una vez realizadas todas las intalacione nos loguemaos en heroku introduciendo heroku login y dándole los datos que nos pidan.
 - Ahora nos introduciremos en la carpeta de nuestra aplicación o descargamos la de muestra de heroku.
 

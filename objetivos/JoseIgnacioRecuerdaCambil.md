@@ -44,3 +44,39 @@ Lista de objetivos de Jose Ignacio Recuerda Cambil
 - [X] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
 - [X] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
 - [X] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases...
+
+###Objetivos séptima semana
+- [X] Entender la base del aislamiento de recursos en el sistema operativo.
+- [X] Instalar docker y trabajar con él.
+
+###Objetivos octava semana
+- [X] Entender la base del aislamiento de recursos en el sistema operativo.
+- [X] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+###Objetivos ejercicios tema 4
+- [X] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [X] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+- [X] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+- [X] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+- [X] Documentar y mantener una plataforma virtual.
+Optimizar aplicaciones sobre plataformas virtuales.
+- [X] Realizar tareas de administración en infraestructura virtual.
+- [X] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+- [X] Crear infraestructuras virtuales completas.
+- [X] Comprender los pasos necesarios para la configuración automática de las mismas.
+
+###Objetivos novena semana
+- [X] Uso de docker para creación de imágenes.
+- [X] Entender el uso de docker en el contexto de una aplicación.
+- [X] Analizar el resultado del último hito de las prácticas.
+
+###Otros objetivos novena semana
+- [X] Revisar los errores en la entrega de tercer hito.
+
+###Objetivos décima semana
+- [X] Usar docker en una aplicación real.
+
+###Otros objetivos décima semana
+- [X] Publicar imágenes de docker.
+- [X] Probar imágenes de docker publicadas.
+- [X] Trabajar con varias imágenes de docker conectadas.

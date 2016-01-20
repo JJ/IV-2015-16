@@ -1,0 +1,132 @@
+## Ejericicio 1
+## Instala LXC en tu versión de Linux favorita. Normalmente la versión en desarrollo, disponible tanto en GitHub como en el sitio web está bastante más avanzada; para evitar problemas sobre todo con las herramientas que vamos a ver más adelante, conviene que te instales la última versión y si es posible una igual o mayor a la 1.0.  
+
+Para instalar la versión 1.0.7 he seguido el siguiente comando :
+
+`sudo apt-get install lxc`
+
+Ahora procedemos a ver si funciona de la siguiente manera:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/1_1_zpsk7ulm8dh.png)   
+La versión que estamos ejecutando es la siguiente:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/1_2_zpsuwovqkel.png)
+
+##Ejercicio 2
+##Comprobar qué interfaces puente se han creado y explicarlos.
+
+Primero debemos crear un contenedor en mi caso he escogido el de ubuntu:  
+`sudo lxc-create -t ubuntu -n una-caja`  
+Tras unos quince minutos ya lo tendremos creado por lo que ahora procederemos a arrancarlo y donde nos pediran login y contraseña en las que ambas deberemos poner ubuntu:  
+`sudo lxc-start -n una-caja`  
+Tras tener el contenedor arrancado abriremos otro terminal y haremos un ifconfig donde nos aparecerá dos nuevas interfaces.  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/2_zpsqrpftxiy.png)  
+- lxcbr0: Es una interfaz que sirve para suministrar internet a los contenedores.  
+- vethXIS9KH: Es una interfaz que sirve para que los contenedores puedan comunicarse entre si.
+
+##Ejercicio 3 
+###1 Crear y ejecutar un contenedor basado en Debian.
+Para crear el contenedor en Debian:  
+
+`sudo lxc-create -t debian -n una-caja-debian`  
+
+Y para ejecutarlo:  
+
+`sudo lxc-start -n una-caja-debian`  
+
+###2 Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora. 
+
+Yo he decido hacerlo con Centos que no causa ningun tipo de problema. El procedimiento es muy similar a los anteriores.  
+Primero creamos el contenedor de Centos:  
+`sudo lxc-create -t centos -n ContenedorCentos`  
+Ahora y la única diferencia con lo anterior es que nos indica como poner la contraseña:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/3_1_zpsbda6rvkn.png)  
+Tras escribir la contraseña ejecutamos el contenedor de forma normal:  
+`sudo lxc-start -n ContenedorCentos`   
+Tras introducir la contraseña ya tenemos nuestro contenedor en Centos funcionando:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/3_2_zpscbddnjse.png)
+## Ejercicio 4
+### 1 Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas.  
+Accedemos a la [página oficial](http://lxc-webpanel.github.io/) y nos vamos al apartado de comenzar donde nos indica que introduzca los siguientes comandos que deberemos ejecutar como super usario:    
+`wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash`  
+
+Tras esto accedemos a  la siguiente direccón 127.0.0.1:5000/ y tras loguearnos con el nombre de usuario admin y la contraseña admn podremos ver nuestros contenedores:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/4-1_zpsthpbgids.png)
+###2 Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/4_2_zpses6svidx.png)
+### Ejercicio 5
+### Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.  
+
+Primero accedemos al contenedor de ubuntu `sudo lxc-start -n una-caja` una vez dentro instalamos nginx de la siguiente manera:  
+`sudo apt-get install nginx`  
+Ahora ejecutamos el servidor con `service nginx start` y dentro del contenedor con ifconfig vemos la dirección ip de salida:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/5_1_zpsc5huwf6v.png)  
+Abrimos un terminal y comprobaremos como reacciona el contenedor con Apache Benchmark que ya tenía instalado. Su uso es el siguiente `ab -n 3000 -c 500 http://10.0.3.192/`:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/5_2_zps8ssixmol.png)  
+Ahora procemos a crear la jaula y una vez dentro intalar el nginx. Para crearla me he ayudado de este [tutorial](https://franciscojvasquezg.wordpress.com/2014/03/27/como-hacer-jaulas-chroot/). Una vez creada arracanmos nginx y vemos con ifconfig la dirección ip para comprobar si esta funcionando:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/5_3_zpslfv3jtg2.png)  
+Ahora utilizamos la misma sentencia de Apache Benchmark desde otra terminal para poder ver los resultados.  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/5_4_zps1v2ur5gx.png)  
+Como podemos ver los contenedores son más rápido que las jaulas.  
+## Ejercicio 6 
+## Instalar docker.
+Para instalar docker me he fijado en este [tutorial](http://codehero.co/como-instalar-y-usar-docker/).  
+- Añado el repositorio de Docker y sus llaves lista local de fuentes.
+- Actualizo los paquetes: `sudo apt-get update`  
+- Instalamos el docker:  ` sudo apt-get install lxc-docker`  
+Para verificar que los hemos instalado:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/6_zpsdtlaqirr.png)
+##Ejercicio 7
+### 1 Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS.
+He decidido instalar CentOS su instalación es muy sencilla:   
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/7_1_zpsgn3qa08i.png)  
+Comprobamos su instalación:    
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/7_2_zpsa91ax0ct.png) 
+### 2 Buscar e instalar una imagen que incluya MongoDB.    
+Procedimiento similar:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/7_3_zpsgzdxfy25.png)    
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/7_4_zpso4tc4txc.png)
+##Ejercicio 8
+##Crear un usuario propio e instalar nginx en el contenedor creado de esta forma. 
+Para entrar en el docker con la imagen de Ubuntu lo hacemos de la siguiente manera tal y como indica el tema `sudo docker run -i -t ubuntu /bin/bash`.  
+Una vez dentro pasamos a crear nuestro usuario de la siguiente manera:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/8_1_zpszeuaxjun.png)  
+Ahora procedo a intalar nginx en el contenedor salimos de nuestro usuario con exit e instalamos nginx como lo hemos instalado en ejercicios interiores. Aqui lo vemos funcionando:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/8_2_zpsvq1ge6x2.png)
+##Ejercicio 9
+## Crear a partir del contenedor anterior una imagen persistente con commit.
+Para poder hacer esto necesitamos ver el pid del contenedor anterior y asi poder crear una imagen persistente con commit para ello `sudo docker ps -a=false` como nos indica el tema.  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/9_1_zpsl0stwkbt.png)   
+Ahora procedo a realizar la persistencia con el pid obtenido `sudo docker commit 31d3c5da8ad4 ubuntu_commit1`.  
+Podemos ver como la operación ha tenido éxito:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/9_2_zpsk7rowr9o.png)
+##Ejercicio 10 
+## Crear una imagen con las herramientas necesarias para el proyecto de la asignatura sobre un sistema operativo de tu elección.
+He decidido hacerlo sobre el sistema operativo Ubuntu ya que es el que más conozco y más confianza me da.  
+Lo primero hay que crear un archivo Dockerfile que se encargará de desplegar la aplicación. El contenido de mi fichero es el siguiente:  
+```
+#Sistema operativo
+FROM ubuntu:14.04
+#Creador
+MAINTAINER Salvador Rueda Molina <salviwui@gmail.com>
+#Actualizamos los paquetes
+RUN sudo apt-get -y update
+#Instalamos herramienta GIT
+RUN sudo apt-get install -y git
+# Instalamos Python
+RUN sudo apt-get -y install python-setuptools
+RUN sudo apt-get -y install python-dev
+RUN sudo apt-get -y install build-essential
+RUN sudo apt-get -y install python-psycopg2
+RUN sudo apt-get -y install libpq-dev
+RUN sudo easy_install pip
+#Nos bajamos la aplicación
+RUN sudo git clone https://github.com/srmf9/Proyecto-IV.git
+#Instalamos las dependencias de la apliación
+RUN cd Proyecto-IV/ && sudo pip install -r requirements.txt
+RUN cd Proyecto-IV/ && python manage.py migrate --noinput
+#Para poder comprobar si la aplicación funciona
+RUN sudo apt-get -y install curl`  
+```
+Ahora procedemos a crear la imagen con el archivo Dockerfile de la siguiente manera:    
+`docker build -t encuesta .`    
+El punto es para que se cree en el directorio  actual. Ahora solo nos  queda probar su funcionamiento para ello nos conectamos a la imagen creada como siempre `sudo docker run -i -t encuesta /bin/bash` nos cambiamos al directorio de la aplicacion y lanzamos el servidor `python manage.py runserver &` y comprobamos con ifconfig por que dirección ip esta saliendo y asi poder ver su funcionamiento:  
+![imagen](http://i1028.photobucket.com/albums/y349/Salva_Rueda/10_zpsp6tikk8u.png)

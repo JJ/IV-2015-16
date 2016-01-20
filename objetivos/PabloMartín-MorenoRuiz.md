@@ -55,3 +55,28 @@
 - [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
 - [ ] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
 - [ ] Experimentar con el despliegue simultáneo a varios PaaS.
+
+## Objetivos Séptima semana
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+
+### Otros objetivos de la semana séptima
+- [x] Instalar docker y trabajar con él. 
+
+## Objetivos Octava semana
+- [x] Entender la base del aislamiento de recursos en el sistema operativo. 
+- [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos. 
+
+### Otros objetivos de la semana Octava
+- [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+- [x] Instalar docker y trabajar con él. 
+- [x] Usar imágenes de docker publicadas.  
+
+## Objetivos Novena semana
+- [x] Uso de docker para creación de imágenes.
+- [x] Entender el uso de docker en el contexto de una aplicación.
+- [x] Analizar el resultado del último hito de las prácticas. 
+
+### Otros objetivos de la semana Novena
+- [x] Adoptar buenas prácticas en los repositorios git: 
+- [x] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+ 
