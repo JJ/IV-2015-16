@@ -91,7 +91,10 @@ YAML es un formato para el intercambio de información  en la web, como JSON y X
 ###Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
 
 Modifico el archivo /etc/ansible/hosts y le indico la direccion del hosts
-```[azureubuntu]maquina-ubuntu.cloudapp.net```
+
+	[azureubuntu]
+	maquina-ubuntu.cloudapp.net
+
 
 
 Defino la variable de entorno para que Ansible `export ANSIBLE_HOSTS=/etc/ansible/hosts`
@@ -112,33 +115,33 @@ Ahora ya puedo conectarme a mi máquina tanto por ssh `ssh 'nacho@maquina-azure-
 
 Para automatizar toda la configuración de mi máquina de azure utilizo playbook de ansible que resulta mucho más cómodo. Para ello creo un archivo que se llama gestionPedidos.yml y tiene el siguiente contenido
 
-```
-- hosts: azureubuntu
-  sudo: yes
-  remote_user: nacho
-  tasks:
-  - name: Instalar todos los paquetes necesarios para la aplicacion
-    apt: name=python-setuptools state=present
-    apt: name=build-essential state=present
-    apt: name=python-dev state=present
-    apt: name=git state=present
-  - name: Clonar repositorio gestionPedidos de git
-    git: repo=https://github.com/ignaciorecuerda/gestionpedidos_django.git  dest=gestionPedidos version=HEAD force=yes
-  - name: Damos permisos de ejecucion a la carpeta gestionPedidos
-    command: chmod -R +x gestionPedidos
-  - name: Instala python-dev
-    command: sudo apt-get install python-dev -y
-  - name: Instala dependencias pillow
-    command: sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk -y
-  - name: instalo pip
-    apt: name=python-pip state=present
-  - name: instala pillow
-    command: sudo pip install pillow 
-  - name: Instalar todos los requeriments 
-    command: sudo pip install -r gestionPedidos/tango_with_django_project/requirements.txt
-  - name: lanzamos aplicacion
-    command: nohup sudo python gestionPedidos/tango_with_django_project/manage.py runserver 0.0.0.0:80
-```
+
+	- hosts: azureubuntu
+  		sudo: yes
+  		remote_user: nacho
+  		tasks:
+  		- name: Instalar todos los paquetes necesarios para la aplicacion
+    		apt: name=python-setuptools state=present
+    		apt: name=build-essential state=present
+    		apt: name=python-dev state=present
+    		apt: name=git state=present
+  		- name: Clonar repositorio gestionPedidos de git
+  		  git: repo=https://github.com/ignaciorecuerda/gestionpedidos_django.git dest=gestionPedidos version=HEAD force=yes
+  		- name: Damos permisos de ejecucion a la carpeta gestionPedidos
+    		command: chmod -R +x gestionPedidos
+  		- name: Instala python-dev
+    		command: sudo apt-get install python-dev -y
+  		- name: Instala dependencias pillow
+    		command: sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk -y
+  		- name: instalo pip
+    		apt: name=python-pip state=present
+  		- name: instala pillow
+    		command: sudo pip install pillow 
+  		- name: Instalar todos los requeriments 
+    		command: sudo pip install -r gestionPedidos/tango_with_django_project/		requirements.txt
+  		- name: lanzamos aplicacion
+   		 command: nohup sudo python gestionPedidos/tango_with_django_project/manage.py runserver 0.0.0.0:80
+
 
 Gracias a este playbooks instalo todas las dependencias, librerias necesarias y ejecuto la aplicación en el puerto 80. Para ejecutar el playbook me situo en la carpeta donde se encuentra gestionPedidos.yml y ejecuto el comando `ansible-playbook -u azureubuntu gestionPedidos.yml`
 
@@ -224,45 +227,46 @@ Ahora necesito un archivo .pem para autenticar la máquina de azure desde nuestr
 
 Ahora es el momento de crear mi archivo Vagrantfile. El contenido de este archivo es el siguiente:
 
-````
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
 
-Vagrant.configure(2) do |config|
-  config.vm.box = "azure"
-  config.vm.network "public_network"
-  config.vm.network "private_network",ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"
-  config.vm.network "forwarded_port", guest: 80, host: 80
-  config.vm.define "localhost" do |l|
+	# -*- mode: ruby -*-
+	# vi: set ft=ruby :
+
+	Vagrant.configure(2) do |config|
+  		config.vm.box = "azure"
+  		config.vm.network "public_network"
+  		config.vm.network "private_network",ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"
+  		config.vm.network "forwarded_port", guest: 80, host: 80
+  		config.vm.define "localhost" do |l|
           l.vm.hostname = "localhost"
-  end
+  		end
 
-  config.vm.provider :azure do |azure, override| 
-    azure.mgmt_certificate = File.expand_path('~/azurevagrant.pem') 
-    azure.mgmt_endpoint = 'https://management.core.windows.net'
-    azure.subscription_id = 'f60975a6-5737-46e7-a356-fb22242d94aa'
-    azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_2-LTS-amd64-server-20150506-en-us-30GB'
-    azure.vm_name = 'maquina-vagrant' 
-    azure.vm_password = 'Nacho@azure1'
-    azure.vm_location = 'Central US' 
-    azure.ssh_port = '22'
-    azure.tcp_endpoints = '80:80'
-  end
+  		config.vm.provider :azure do |azure, override| 
+    		azure.mgmt_certificate = File.expand_path('~/azurevagrant.pem') 
+    		azure.mgmt_endpoint = 'https://management.core.windows.net'
+    		azure.subscription_id = 'f60975a6-5737-46e7-a356-fb22242d94aa'
+    		azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_2-LTS-amd64-server-20150506-en-us-30GB'
+    		azure.vm_name = 'maquina-vagrant' 
+    		azure.vm_password = 'Nacho@azure1'
+    		azure.vm_location = 'Central US' 
+    		azure.ssh_port = '22'
+    		azure.tcp_endpoints = '80:80'
+  		end
 
-  config.vm.provision "ansible" do |ansible|
-        ansible.sudo = true
-        ansible.playbook = "vagrant.yml"
-        ansible.verbose = "v"
-        ansible.host_key_checking = false
-  end
-end
-```
+  		config.vm.provision "ansible" do |ansible|
+        	ansible.sudo = true
+        	ansible.playbook = "vagrant.yml"
+        	ansible.verbose = "v"
+        	ansible.host_key_checking = false
+  		end
+	end
+
 
 En el archivo ansible_hosts tengo:
 
-```
-[localhost]192.168.56.10
-```
+
+	[localhost]
+	192.168.56.10
+
 
 Y a continuación defino la variable de entorno necesaria para Ansible
 
@@ -270,35 +274,34 @@ Y a continuación defino la variable de entorno necesaria para Ansible
 
 Creo mi archivo *vagrant.yml* con todos los comandos necesarios para preparar el entorno donde se ejecutará mi aplicación. El contenido de este archivo es:
 
-```
-- hosts: localhost
-  sudo: yes
-  remote_user: vagrant
-  tasks:
-  - name: apt-get update
-    command: sudo apt-get update
-  - name: Instalar todos los paquetes necesarios para la aplicacion
-    apt: name=python-setuptools state=present
-    apt: name=build-essential state=present
-    apt: name=python-dev state=present
-    apt: name=git state=present
-  - name: Clonar repositorio gestionPedidos de git
-    git: repo=https://github.com/ignaciorecuerda/gestionpedidos_django.git  dest=gestionPedidos version=HEAD force=yes
-  - name: Damos permisos de ejecucion a la carpeta gestionPedidos
-    command: chmod -R +x gestionPedidos
-  - name: Instala python-dev
-    command: sudo apt-get install python-dev -y
-  - name: Instala dependencias pillow
-    command: sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk -y
-  - name: instalo pip
-    apt: name=python-pip state=present
-  - name: instala pillow
-    command: sudo pip install pillow 
-  - name: Instalar todos los requeriments 
-    command: sudo pip install -r gestionPedidos/tango_with_django_project/requirements.txt
-  - name: lanzamos aplicacion
-    command: nohup sudo python gestionPedidos/tango_with_django_project/manage.py runserver 0.0.0.0:80
-```
+	- hosts: localhost
+  		sudo: yes
+  		remote_user: vagrant
+  		tasks:
+  		- name: apt-get update
+    		command: sudo apt-get update
+  		- name: Instalar todos los paquetes necesarios para la aplicacion
+    		apt: name=python-setuptools state=present
+    		apt: name=build-essential state=present
+    		apt: name=python-dev state=present
+    		apt: name=git state=present
+ 		 - name: Clonar repositorio gestionPedidos de git
+    		git: repo=https://github.com/ignaciorecuerda/gestionpedidos_django.git  dest=gestionPedidos version=HEAD force=yes
+  		- name: Damos permisos de ejecucion a la carpeta gestionPedidos
+    		command: chmod -R +x gestionPedidos
+  		- name: Instala python-dev
+    		command: sudo apt-get install python-dev -y
+  		- name: Instala dependencias pillow
+    		command: sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk -y
+  		- name: instalo pip
+    		apt: name=python-pip state=present
+  		- name: instala pillow
+    		command: sudo pip install pillow 
+  		- name: Instalar todos los requeriments 
+    		command: sudo pip install -r gestionPedidos/tango_with_django_project/requirements.txt
+  		- name: lanzamos aplicacion
+    		command: nohup sudo python gestionPedidos/tango_with_django_project/manage.py runserver 0.0.0.0:80
+
 
 Una vez tengo el archivo preparado creo una box con una imagen de azure con el siguiente comando:
 
