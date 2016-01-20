@@ -95,6 +95,31 @@ Para este ejercicio vamos a instalar **slitaz** en una máquina virtual usando *
 ![vb](https://www.dropbox.com/s/46vmwo0g3fa9g6k/vb_5.png?dl=1)
 
 
+### Ejercicio 4
+
+**Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.**
+
+Para este ejercicio vamos a instalar `lubuntu`, una distribución de ubuntu que viene con LXDE preinstalado como gestor de ventanas por defecto.
+
+Igual que en el ejercicio anterior, creamos un disco duro para instalar ubuntu.
+
+	qemu-img create -f qcow2 lubuntu.img 4G
+
+Y a continuación se instala lubuntu con el comando
+
+	qemu-system-x86_64 -hda ~/vmachines/ej4/lubuntu.img -cdrom ~/Downloads/lubuntu-14.04.3-desktop-amd64.iso -boot d -vnc :1 -m 512M
+
+y nos podemos conectar a la máquina con vinagre
+
+	vinagre localhost:5901
+
+Para instalar vinagre se puede ejecutar el comando
+
+	sudo apt-get install vinagre
+
+![vinagre](https://www.dropbox.com/s/cem3duh553wj3ae/vinagre.png?dl=1)
+
+
 
 
 
