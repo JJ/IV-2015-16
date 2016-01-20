@@ -237,22 +237,32 @@
 
 - [x] Usar infraestructura en la nube.
 
+- [x] Entender el concepto de orquestación de máquinas virtuales.
+
 ### Otros objetivos
 
 - [x] Instalar clientes libres de infraestructura en la nube.
 
-- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+- [x] Trabajar y solucionar problemas con la infraestructura en la nube.
 
 ## Sesión 14: Semana del 20 al 27 de Enero de 2016
 ### Objetivos de la semana
 
-- [x] Usar infraestructura en la nube.
+- [x] Probar diferentes formas de desplegar en la nube.
+
+- [x] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
 
 ### Otros objetivos
 
-- [x] Instalar clientes libres de infraestructura en la nube.
+- [x] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
 
-- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [ ] Buscar alternativas a vagrant.
+
+- [ ] Usar diferentes infraestructuras en la nube.
+
+- [ ] Resolver dudas con respecto a la práctica final.
 
 ## Objetivos de la asignatura
 
