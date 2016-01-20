@@ -4,6 +4,8 @@ Los proyectos se entregan el día 8 y se presentan el día 8 o el 15. Por favor,
 
 ## Día 8
 
+Alejandro Casado Quijada
+
 
 ## Día 15
 
