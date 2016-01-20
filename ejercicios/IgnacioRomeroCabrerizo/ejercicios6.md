@@ -121,7 +121,7 @@ json_attribs "/home/nacho/chef/node.json"
 ssh-keygen -t dsa 
 ssh-copy-id -i .ssh/id_dsa.pub nacho@maquina-nacho-ubu.cloudapp.net 
 ```
-![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema6/ssh2.png)
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema6/ssh1.png)
 
 6. Conexión con Ansible
 ``` ansible all -u nacho -i ansible_hosts -m ping ```
