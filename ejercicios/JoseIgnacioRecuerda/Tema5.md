@@ -9,6 +9,7 @@ En primer lugar instalo KVM con el comando `sudo apt-get install cpu-checker` y 
 * `egrep -c '(vmx|svm)' /proc/cpuinfo`
 
 y obtenemos los siguientes resultados:
+
 ![KVM](https://www.dropbox.com/s/l86jzei9qx7k9zk/ejr1.1.png?dl=1)
 
 
