@@ -4,11 +4,10 @@ Los proyectos se entregan el día 8 y se presentan el día 8 o el 15. Por favor,
 
 ## Día 8
 
-<<<<<<< HEAD
-Ignacio Romero Cabrerizo - OpenGestion
 =======
 Alejandro Casado Quijada - [Aplicación bares](https://github.com/acasadoquijada/IV)
->>>>>>> JJ/master
+
+Ignacio Romero Cabrerizo - [openGestion](https://github.com/nachobit/IV_PR_OpenOrder)
 
 
 ## Día 15
