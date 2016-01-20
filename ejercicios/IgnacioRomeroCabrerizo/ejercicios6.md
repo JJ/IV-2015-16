@@ -5,7 +5,6 @@
 
 	```curl -L https://www.opscode.com/chef/install.sh | bash```
 
-
 2. Comprobamos que se ha instalado chef correctamente:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema6/chef.png)
@@ -75,80 +74,97 @@ json_attribs "/home/nacho/chef/node.json"
 
 
 
+###Ejercicio 3: Escribir en YAML la siguiente estructura de datos en JSON
 
 
-
-
-
-###Ejercicio 2.1: Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS, GALPon Minino, Damn Small Linux, SliTaz y ttylinux.
-
-
-- Activamos (en caso de que no lo esté) KVM en la CPU Intel:
-
-	```sudo modprobe kvm-intel ```
-
-- Creamos y configuramos un disco duro virtual para la imagen:
-
-	```qemu-img create -f qcow2 imagen-cow.qcow2 250M ```
-
-- Instalamos qemu:
-	```sudo apt-get install qemu-system ```
-	
-- Instalamos la iso descargada:
-	
-	```qemu-system-x86_64 -hda imagen-cow.qcow2 -cdrom ~/Documentos/minino-artabros-2.1_full.iso```
-	
-![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema5/mini0.png)
-
-
-###2.2: Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
-
-Mediante **Parallels** tengo virtualiza la última versión de Ubuntu:
-
-![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema5/para.png)
-
-
-###Ejercicio 3 Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img.
-
-Haremos uso del siguiente benchmark escrito en **Python** que realiza una operación matemática:
+{ uno: "dos", tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }
 
 ```
-import math
-d = {}
-for i in range(1, 5000000):
-        d[i] = math.log(i)
+--- 
+- uno: "dos" 
+  tres: 
+    - 4 
+    - 5 
+    - "Seis" 
+    - 
+      - siete: 8 
+        nueve: 
+          - 10 
+          - 11 
 ```
 
-###Ejercicio 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
-- Añadimos disco virtual:
-	```qemu-img create -f qcow2 lubuntu.qcow2 5G```
-	
-- Instalamos lubuntu:
-	
-	```qemu-system-x86_64 -hda lubuntu.qcow2 -cdrom ~/Documentos/lubuntu-15.10-desktop-amd64.iso -m 512M```
+###Ejercicio 4: Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
 
-![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema5/lubuntu.png)
 
-- Para el acceso VNC:
-	1. Instalamos la utilidad *Vinagre*:
-	```sudo apt-get install vinagre ```
-	
-	2. Accedemos mediante: ```vinagre localhost:1```
-	
-- Para el acceso SSH:
- 
-	1. Instalaremos la herramienta:
-	```sudo apt-get install ssh```
-	
-	2. Ejecutaremos **Qemu** con el puerto de acceso redireccionado: 
-	```qemu-system-x86_64 -hda lubuntu.qcow2 -m 512M -redir tcp:2121::22```
-	
-	3. Entraremos con: ``` ssh nacho@localhost -p 2121 ```
+1. Instalar Ansible:
 
+	``` sudo pip install paramiko PyYAML jinja2 httplib2 ansible ```
+	* En el caso de no tener previamente la herramienta pip instalada:
+	```sudo apt-get install python-pip python-dev build-essential ```
 	
+2. Crear el fichero "inventario" añadiendo la máquina en Azure:
+
+	```echo "maquina-nacho-ubu.cloudapp.net" > ~/ansible_hosts```
+
+3. Definir la variable de entorno con la ubicación del fichero:
+
+	```export ANSIBLE_HOSTS=~/ansible_hosts```
 	
+4. Iniciar la máquina virtual:
+
+	```azure vm start dai-nacho```
 	
-	https://github.com/JJ/IV-2015-16/blob/master/ejercicios/FJavierGarridoMellado/Tema5/Tema5.md
-	
-	https://github.com/JJ/IV-2015-16/blob/master/ejercicios/RafaelLachicaGarrido/Tema5.md
+5. Configurar ssh:
+
+``` 
+ssh-keygen -t dsa 
+ssh-copy-id -i .ssh/id_dsa.pub nacho@maquina-nacho-ubu.cloudapp.net 
+```
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema6/ssh2.png)
+
+6. Conexión con Ansible
+``` ansible all -u nacho -i ansible_hosts -m ping ```
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema6/ansible.png)
+
+7. Instalar dependencias necesarias en la máquina:
+
+```
+ansible all -u nacho -m command -a "sudo apt-get install python-setuptools python-dev build-essential git -y"
+
+ansible all -u nacho -m command -a "sudo easy_install pip" 
+```
+
+8. Clonar el repositorio de git en la máquina de Azure:
+
+```
+ansible all -u nacho -m git -a "repo=https://github.com/nachobit/DAI_bares.git dest=~/prAnsible version=HEAD"
+```
+```
+ansible all -u nacho -m command -a "sudo pip install -r prAnsible/requirements.txt"
+```
+
+---
+
+
+###Ejercicio 5. 
+####5.1.Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
+
+1. Definir el archivo anterior **ansible-hosts*:
+
+```
+[azure]maquina-nacho-ubu.cloudapp.net
+```
+
+2. Crear el **playbook** de Ansible (ansible.yml):
+
+```
+- hosts: azure  sudo: yes  remote_user: nacho  tasks:  - name: Instalar dependencias necesarias     apt: name=python-setuptools state=present    apt: name=build-essential state=present    apt: name=python-dev state=present    apt: name=git state=present  - name: Clonar repositorio de git    git: repo=https://github.com/nachobit/DAI_bares.git  dest=DAI_bares clone=yes force=yes  - name: Permisos de ejecucion    command: chmod -R +x DAI  - name: Instalar requisitos para la app    command: sudo pip install -r DAI_bares/requirements.txt  - name: Ejecutar app    command: nohup sudo python DAI_bares/manage.py runserver 0.0.0.0:80
+```
+3. Ejecutar el **playbook**:
+
+```ansible-playbook -u nacho ansible.yml```
+
+####Ejercicio 5.2: ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?
+

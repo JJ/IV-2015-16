@@ -64,4 +64,55 @@ for i in range(1, 5000000):
 	
 	3. Entraremos con: ``` ssh nacho@localhost -p 2121 ```
 
+		
+###Ejercicio 5: Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
+
+Se ha seguido el siguiente [tutorial](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-tutorial/).
+
+Instalar dependencias necesarias:
+
+1.  sudo apt-get install nodejs-legacy
+2.  sudo apt-get install npm
+3.  sudo npm install -g azure-cli
+
+Login en Azure, listado y creación de máquina virtual:
+
+4.  azure login  (*) 
+5.  azure vm image list westus ubuntuserver
+7.  azure vm create maquina-nacho-ubu b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151020-en-us-30GB nacho Nacho#16 --location "North Europe" --ssh
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema5/azure5.png)
+
+Arrancar máquina virtual y conectar por ssh:
+
+8.  azure vm start maquina-nacho-ubu
+9.  ssh nacho@maquina-nacho-ubu.cloudapp.net
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema5/ssh.png)
+
+Arrancar nginx y abrir puerto 80:
+
+10. sudo service nginx start
+11. azure vm endpoint create maquina-nacho-ubu 80 80
+
+Para apagar la máquina virtual:
+
+12. azure vm shutdown maquina-nacho-ubu
+
+
+(*) En este punto se pedirá abrir un link web con un código e iniciar sesión en Azure:
 	
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema5/azure1.png)
+
+La correcta configuración sería de la siguiente forma:
+
+1. azure config mode asm
+2. azure account download
+3. Descargar el fichero tras iniciar sesión en el link mostrado en terminal
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema5/azure4.png)
+4. azure account import <archivo-descargado>
+5. azure site create --location "West US" <nombre-web>
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema5/azure2.png)
+
+Tras estos pasos tendremos lista la máquina:
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema5/azure3.png)
