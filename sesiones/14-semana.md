@@ -8,6 +8,7 @@ Alejandro Casado Quijada - [Aplicación bares](https://github.com/acasadoquijada
 Ignacio Romero Cabrerizo - [openGestion](https://github.com/nachobit/IV_PR_OpenOrder)
 
 Rubén Martín Hidalgo - [Pluco-DB](https://github.com/romilgildo/IV-PLUCO-RMH)
+
 Rafael Lachica Garrido - [PLUCO](https://github.com/rafaellg8/IV-PLUCO-RLG)
 
 ## Día 15
