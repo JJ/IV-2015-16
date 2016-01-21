@@ -11,6 +11,8 @@ Rubén Martín Hidalgo - [Pluco-DB](https://github.com/romilgildo/IV-PLUCO-RMH)
 
 Rafael Lachica Garrido - [PLUCO](https://github.com/rafaellg8/IV-PLUCO-RLG)
 
+Manuel Alejandro Barranco Bailón - [TusPachangas](https://github.com/mabarrbai/TusPachangas)
+
 ## Día 15
 
 Santiago de Diego de Diego - [Landscapes](https://github.com/santidediego/Landscapes)
