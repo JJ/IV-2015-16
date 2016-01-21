@@ -9,6 +9,8 @@ Ignacio Romero Cabrerizo - [openGestion](https://github.com/nachobit/IV_PR_OpenO
 
 Rubén Martín Hidalgo - [Pluco-DB](https://github.com/romilgildo/IV-PLUCO-RMH)
 
+Rafael Lachica Garrido - [PLUCO](https://github.com/rafaellg8/IV-PLUCO-RLG)
+
 ## Día 15
 
 Santiago de Diego de Diego - [Landscapes](https://github.com/santidediego/Landscapes)
@@ -34,7 +36,7 @@ Lo más importante es que recordéis que el proyecto es un proyecto, no la suma 
 ##Objetivos de la semana
 
 1. Probar diferentes formas de desplegar en la nube.
-2. Depurar los scripts y añadirles funcionalidades para que sean servicios completos. 
+2. Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
 
 ##Otros objetivos
 
@@ -51,4 +53,3 @@ Finalizamos con el tema dedicado a [uso de sistemas](http://jj.github.io/IV/docu
 ## Ya no hay más semanas.
 
 Buena suerte con los exámenes y nos vemos por aquí.
-
