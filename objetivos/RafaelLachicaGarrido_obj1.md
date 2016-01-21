@@ -54,6 +54,15 @@
 
 - [x] Realizar tareas de administración de infraestructuras virtuales.
 
+### Tema 6: Gestión de infraestructuras virtuales
+
+- [x] Aprender lenguajes de configuración usados en infraestructuras virtuales, como YAML.
+
+- [x] Saber cómo aplicarlos en un caso determinado.
+
+- [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día, como Vagrant y Ansible.
+
+
 ==
 
 ## Objetivos de la asignatura
