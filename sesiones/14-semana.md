@@ -13,11 +13,13 @@ Rafael Lachica Garrido - [PLUCO](https://github.com/rafaellg8/IV-PLUCO-RLG)
 
 Manuel Alejandro Barranco Bailón - [TusPachangas](https://github.com/mabarrbai/TusPachangas)
 
+Francisco Javier Garrido Mellado - [Aplicación Bares](https://github.com/javiergarridomellado/DAI)
+
 ## Día 15
 
 Santiago de Diego de Diego - [Landscapes](https://github.com/santidediego/Landscapes)
 
-Francisco Javier Garrido Mellado - [Aplicación Bares](https://github.com/javiergarridomellado/DAI)
+
 
 
 ## Lista de comprobación del proyecto
