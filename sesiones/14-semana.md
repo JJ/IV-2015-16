@@ -20,6 +20,7 @@ Francisco Javier Garrido Mellado - [Aplicación Bares](https://github.com/javier
 Santiago de Diego de Diego - [Landscapes](https://github.com/santidediego/Landscapes)
 Antonio Miguel Pozo Cámara - [Bares](https://github.com/AntonioPozo/Bares)
 
+Jose Ignacio Recuerda Cambil - [Gestión de pedidos](https://github.com/ignaciorecuerda/gestionpedidos_django)
 
 
 
