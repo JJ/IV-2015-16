@@ -119,17 +119,49 @@ Para instalar vinagre se puede ejecutar el comando
 
 ![vinagre](https://www.dropbox.com/s/cem3duh553wj3ae/vinagre.png?dl=1)
 
+### Ejercicio 5
 
+**Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.**
 
+Empezamos instalando [**Azure CLI**](https://github.com/Azure/azure-xplat-cli) en nuestra máquina con los siguientes comandos (válidos para Ubuntu 14.04):
 
+	sudo apt-get install nodejs-legacy
+    sudo apt-get install npm
+    sudo npm install -g azure-cli
 
+Una vez instalados todos los paquetes, procedemos a autenticarnos con la cuenta Azure, con el comando `azure login` y seguimos las instrucciones que aparecen.
 
+![login](https://www.dropbox.com/s/muhx4v0up6bnn24/azure_login.png?dl=1)
 
+Con el comando `azure vm image list` podemos listar todas las imágenes disponibles en azure para crear una máquina virtual. Con el comando `azure vm image show azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20160119-en-us-30GB` podemos ver más información sobre la imagen respectiva.
 
+![list](https://www.dropbox.com/s/4lwv865b13j5fcq/show.png?dl=1)
 
+A continuación, ya que tenemos más detalles sobre la imagen, procedemos a crear una máquina virtual en nuestra cuenta azure a partir de dicha imagen, con el comando `azure vm create`.
 
+![create](https://www.dropbox.com/s/dpi6wdcrba3xbo1/create.png?dl=1)
 
+Una vez tenemos la confirmación de que la máquina se ha creado correctamente, probamos a ver si la conexión a través de ssh funciona.
 
+![ssh](https://www.dropbox.com/s/klgh630cduf9ioh/ssh.png?dl=1)
 
+A continuación instalamos el servicio `nginx` en la máquina virtual con `sudo apt-get install nxginx` y comprobamos que funciona correctamente.
 
+![curl](https://www.dropbox.com/s/yjbqnijggt8el68/curl.png?dl=1)
+
+Para permitir la conexión desde el exterior, se tiene que abrir el puerto 80, con el siguiente comando
+
+	azure vm endpoint create iv-t5-ej5 80 80
+
+![endpoint](https://www.dropbox.com/s/nisyl76lw8ojix3/endpoint.png?dl=1)
+
+Para ver que realmente funciona, accedemos a la máquina a través de un navegador.
+
+![nginx](https://www.dropbox.com/s/t1joebsg2l884r5/nginx.png?dl=1)
+
+Ya que hemos acabado con el ejercicio, procedemos a apagar la máquina para ahorrar recursos.
+
+	azure vm shutdown iv-t5-ej5
+
+![shutdown](https://www.dropbox.com/s/iuyp4jve2g2aorl/shutdown.png?dl=1)
 
