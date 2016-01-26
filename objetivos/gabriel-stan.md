@@ -16,22 +16,22 @@ Lista de objetivos de Gabriel Stan
 
 #Objetivos Tema 5
 
-- [ ] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
 - [ ] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
 - [ ] Documentar y mantener una plataforma virtual.
-- [ ] Realizar tareas de administración de infraestructuras virtuales.
+- [x] Realizar tareas de administración de infraestructuras virtuales.
 
 ### Objetivos de la Sesión 11
 
-- [ ] Comprender el concepto de hipervisor y los diferentes tipos que hay
-- [ ] Instalar hipervisores libres y trabajar con ellos.
-- [ ] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [x] Comprender el concepto de hipervisor y los diferentes tipos que hay
+- [x] Instalar hipervisores libres y trabajar con ellos.
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
 
 ### Objetivos de la Sesión 12
 
-- [ ] Instalar clientes libres de infraestructura en la nube.
-- [ ] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
-- [ ] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+- [x] Instalar clientes libres de infraestructura en la nube.
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [x] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
 
 ### Objetivos de la Sesión 13 y 14
 
