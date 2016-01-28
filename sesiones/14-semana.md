@@ -15,6 +15,9 @@ Manuel Alejandro Barranco Bailón - [TusPachangas](https://github.com/mabarrbai/
 
 Francisco Javier Garrido Mellado - [Aplicación Bares](https://github.com/javiergarridomellado/DAI)
 
+Javier Pérez García [SMS-BDyReplica](https://github.com/neon520/SMS-BDyReplica)
+
+José Antonio González Cervera [SMS_Estadisticas](https://github.com/JA-Gonz/SMS_Estadisticas)
 ## Día 15
 
 Santiago de Diego de Diego - [Landscapes](https://github.com/santidediego/Landscapes)
