@@ -326,3 +326,10 @@ He probado solo ejecutar con foreman, he instalado foreman ejecutando **sudo gem
 ###Ejercicio 8: Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido
 
 Una vez probado todo lo anterior solo queda hacer algun cambio y subirlo al repositorio, hacer un *git push heroku master* y rezar. Puede consultarse la app [desplegada](https://hidden-meadow-4203.herokuapp.com/) y el [Readme](https://github.com/javiergarridomellado/ej5.git) de la aplicación para consultar los enlaces a Travis y Snap. 
+
+
+
+
+
+
+
