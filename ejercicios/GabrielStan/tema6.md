@@ -95,12 +95,64 @@ Y a continuación podemos usar el módulo git para desplegar el proyecto y ejecu
 
 **Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.**
 
+Para ese ejercicio he creado un playbook de ansible que hace todos los pasos necesarios para desplegar la aplicación en un servidor.
+
+``` yaml
+---
+- hosts: local
+  remote_user: gaby
+  become: yes
+  become_method: sudo
+  tasks:
+
+  - name: Instalar dependencias
+    apt: package={{ item }}  update_cache=yes
+    with_items:
+      - python-setuptools
+      - build-essential
+      - python-dev
+      - make
+      - git
+    tags:
+      - dependencias
+
+  - name: Descargar fuentes
+    git: repo=https://github.com/gabriel-stan/gestion-tfg  dest=~/despliegue clone=yes force=yes
+    become_user: gaby
+    tags:
+      - git
+
+  - name: Make install-dependencias
+    command: chdir=/home/gaby/despliegue make install
+    tags:
+      - install
+
+  - name: Make install
+    command: chdir=~/despliegue make install
+    become_user: gaby
+    tags:
+      - install
+
+  - name: Make runserver
+    shell: chdir=/home/gaby/despliegue nohup make runserver
+    tags:
+      - runserver
+...
+```
+
+Este playbook se puede ejecutar con el comando 
+
+	ansible-playbook gestfg.yml --ask-become-pass
+
+y el resultado es el siguiente.
+
+![playbook](https://www.dropbox.com/s/kp9yytbnvhphi6s/playbook.png?dl=1)
 
 ### Ejercicio 5.2
 
 **¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.**
 
-
+Ansible, claramente. La flexibilidad y robustez de sus playbooks es indiscutible. Además, cuenta con Ansible Tower, interfaz gráfica para la administración de los diferentes nodos (gratuita hasta 10 nodos).
 
 
 
