@@ -91,6 +91,15 @@ Y a continuación podemos usar el módulo git para desplegar el proyecto y ejecu
 
 ![curl](https://www.dropbox.com/s/b84ce7ed7a4hl52/curl.png?dl=1)
 
+### EJercicio 5.1
+
+**Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.**
+
+
+### Ejercicio 5.2
+
+**¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.**
+
 
 
 
