@@ -155,6 +155,63 @@ y el resultado es el siguiente.
 Ansible, claramente. La flexibilidad y robustez de sus playbooks es indiscutible. Además, cuenta con Ansible Tower, interfaz gráfica para la administración de los diferentes nodos (gratuita hasta 10 nodos).
 
 
+### Ejercicio 6
+
+**Instalar una máquina virtual Debian usando Vagrant y conectar con ella.**
+
+Para empezar, tenemos que instalar vagrant. Se puede hacer mediante `apt`
+
+	sudo apt-get install vagrant
+
+Indicaciones:
+
+- Tener instalada una versión de VirtualBox 4.x
+- Instalar el plugin de Guest Additions de VirtualBox en vagrant. 
+
+Se puede hacer con el comando
+
+	vagrant plugin install vagrant-vbguest
+
+
+A continuación tenemos que descargar la imagen que vamos a utilizar para crear la máquina virtual, en este caso `Debian 7.8.0 amd64 netinst`.
+
+	vagrant box add debian https://github.com/kraksoft/vagrant-box-debian/releases/download/7.8.0/debian-7.8.0-amd64.box
+
+![boxadd](https://www.dropbox.com/s/3u8vh60400zvoi3/box-add.png?dl=1)
+
+Una vez descargada la imagen, podemos crear el fichero de configuración `Vagrantfile` con el comando
+
+	vagrant init debian
+
+que creará el fichero en el directorio en el que estamos, e iniciar la máquina virtual con
+
+	vagrant up
+
+![vagrant](https://www.dropbox.com/s/epyyylmpo4agdlb/up.png?dl=1)
+
+Y para conectarnos remotamente mediante ssh, podemos utilizar el comando
+
+	vagrant ssh
+
+![upandssh](https://www.dropbox.com/s/y0szx6upbtslsck/ssh.png?dl=1)
+
+Para finalizar, podemos apagar la máquina virtual con el comando
+
+	vagrant halt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
