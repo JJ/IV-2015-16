@@ -95,3 +95,9 @@ Optimizar aplicaciones sobre plataformas virtuales.
 - [X] Instalar clientes libres de infraestructura en la nube.
 - [X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
 - [X] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+###Objetivos décima tercera semana
+- [X] Usar infraestructura en la nube
+- [X] Entender el concepto de orquestación de máquinas virtuales.
+- [X] Trabajar y solucionar problemas con la infraestructura en la nube.
+
