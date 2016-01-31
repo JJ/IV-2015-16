@@ -185,6 +185,7 @@ Configuración, con direcciones IP y extremos añadidos:
 ![img](http://i1383.photobucket.com/albums/ah302/Rafael_Lachica_Garrido/36e5a0c3-3a83-44f2-a26b-dfd29e45980d_zpscafptotc.png)
 Ya tenemos más o menos toda la configuración, ahora necesitamos conectarnos por terminal a la máquina virtual.
 
+## AZURE CLI: Creación de una máquina virtual
 También se puede crear una máquina virtual en Azure a través de línea de comandos:
 
 1. Instalamos el cliente a través de npm:

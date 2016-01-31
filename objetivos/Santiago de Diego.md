@@ -157,3 +157,31 @@ Lista de objetivos de Santiago de Diego
 
 [X] Asistir al taller de Telegram
 
+[X] Usar docker en una aplicación real
+
+#Objetivos semanas 10-14
+
+[X] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+[X]Instalar hipervisores libres y trabajar con ellos.
+
+[X]Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+[X]Usar gestores de máquinas virtuales.
+
+[X]Instalar clientes libres de infraestructura en la nube.
+
+[X]Probar diferentes tipos de máquinas virtuales con sistemas 
+operativos libres.
+
+[X]Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+[X]Usar infraestructura en la nube
+[X]Entender el concepto de orquestación de máquinas virtuales.
+
+[X]Instalar clientes libres de infraestructura en la nube.
+[X]Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+[X]Trabajar y solucionar problemas con la infraestructura en la nube.
+
+

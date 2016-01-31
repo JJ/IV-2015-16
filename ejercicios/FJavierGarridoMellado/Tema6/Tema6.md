@@ -227,4 +227,299 @@ A tener en cuenta que el comando **nohup**  permite la ejecución de un comando 
 
 La respuesta claramente es Ansible ya que permite ejecutarse desde fuera del servidor, por otra parte los **playbooks** de Ansible son más faciles de configurar que las recetas de Chef donde es necesario una jerarquización de directorios.
 
-    
+### Ejercicio 6:Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
+
+Estos son los pasos que se han seguido:
+- El primer paso es instalar Vagrant( este paso solo lo recomiendo si se tiene VirtualBox 4.0,4.1,4.2 o 4.3,para una version posterior seguir el siguiente paso):
+```
+sudo apt-get install vagrant
+```
+- Si se tiene la versión 5.0.x de VirtualBox hay que descargar el archivo [vagrant_1.8.1_x86_64.deb](https://releases.hashicorp.com/vagrant/1.8.1/) e instalar ejecutando:
+```
+sudo dpkg -i vagrant_1.8.1_x86_64.deb
+```
+
+
+- Ahora descargo la imagen de Debian tal y como se explica en los apuntes( he elegido una de 400MB,la primera que sale ocupa más ):
+```
+vagrant box add debian https://github.com/holms/vagrant-jessie-box/releases/download/Jessie-v0.1/Debian-jessie-amd64-netboot.box
+```
+
+![descimg](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/descargaimg_zpsuc50tczo.png)
+
+- Creo el fichero Vagranfile:
+```
+vagrant init debian
+```
+
+- Se inicializa la máquina:
+```
+vagrant up
+```
+
+![vagrant](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vagrant_zpsyphtsjx3.png)
+
+![vagrantup](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vagrantup_zpslwkhwr90.png)
+
+- Y por ultimo se conecta con ella para trabajar:
+```
+vagrant ssh
+```
+
+![ssh](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/ssh_zpshm7obabi.png)     
+
+### Ejercicio 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
+
+- El primer paso es definir el archivo **Vagranfile**, para ello se le indica la máquina que se va a usar, en mi caso la Debian anterior y el provisionamiento:
+
+![provisionamiento](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vagrantfile_zpsgxc4hcz1.png)
+
+- Se arranca la máquina mediante `vagrant up` ( no instala el provisionamiento como pensaba, hay que hacerlo a posteriori) y se ejecuta la provisión mediante:
+```
+vagrant provision
+```
+
+![prov](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vagrantprovision_zpsbflbv7hx.png)
+
+
+- A continuación se conecta por ssh:
+```
+vagrant ssh
+```
+- Una vez conectado se comprueba que efectivamente se ha instalado y ha arrancado el servicio:
+```
+$ sudo service nginx status
+```
+
+![compro](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vagrantnginx_zpsgbgykmnt.png)
+
+### Ejercicio 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
+
+Este ejercicio lo he realizado tanto para local(VirtualBox) como para desplegar la aplicación en Azure.
+
+- Local:
+
+El primer paso es instalar la box de Ubuntu mediante el siguiente comando:
+```
+vagrant box add ubuntu tps://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
+```
+
+El segundo paso es crear el Vagranfile:
+```
+Vagrant.configure('2') do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = 'ubuntu'
+  config.vm.network "forwarded_port", guest: 22, host:2222, id: "ssh", auto_correct: true
+  config.vm.network "forwarded_port", guest: 80, host:8080, id: "web", auto_correct: true
+  config.vm.define "localhost" do |l|
+          l.vm.hostname = "localhost"
+   end
+
+   config.vm.provision "ansible" do |ansible|
+      ansible.sudo = true
+      ansible.playbook = "iv.yml"
+      ansible.verbose = "v"
+      ansible.host_key_checking = false
+  end
+end
+```
+
+Donde se le indica que se la caja será una Ubuntu, que las redirecciones SSH de la máquina virtual se producen por el puerto 2222, que las redirecciones del puerto 80 se van a realizar por el puerto 8080(estas redirecciones se explican en el tema anterior), se define el nombre de la máquina como localhost.El siguiente bloque es el de provisionamiento, ahí le indico que con ansible provea la máquina segun lo especificado en el archivo **iv.yml**.
+
+El tercer paso es definir el archivo **iv.yml**:
+```
+- hosts: localhost
+  sudo: yes
+  remote_user: vagrant
+  tasks:
+  - name: Actualizar sistema 
+    apt: update_cache=yes upgrade=dist  
+  - name: Instalar paquetes
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=python-pip state=present
+    apt: name=git state=present
+  - name: Ins Pyp
+    action: apt pkg=python-pip
+  - name: Obtener aplicacion git
+    git: repo=https://github.com/javiergarridomellado/DAI.git  dest=DAI clone=yes force=yes
+  - name: Permisos de ejecucion
+    command: chmod -R +x DAI
+  - name: Instalar requisitos
+    command: sudo pip install -r DAI/requirements.txt
+  - name: ejecutar
+    command: nohup sudo python DAI/manage.py runserver 0.0.0.0:80
+```
+Puede verse que le indico que actualice el sistema, instale los paquetes necesarios, baje la aplicación y arranque la aplicación.
+
+El archivo ansible_host lo he definido de la siguiente manera:
+```
+localhost ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222
+``` 
+
+Ya solo basta ejecutar el vagrant mediante( no es necesario `vagrant provision`):
+```
+vagrant up
+```
+
+![vagrantup](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/vagrantup_zpsnkjr43ry.png)
+
+Puede verse la aplicación ejecutada en local.
+
+![appdesplegada](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/appdesplegada_zpsoijkga53.png)
+
+- Para Azure:
+El primer paso es instalar el provisionador de azure para vagrant
+```
+vagrant plugin install vagrant-azure
+```
+
+![installvagrantazure](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/installvagranazure_zpsad7pzrjg.png)
+
+El siguiente paso es loguearse y conseguir información de las credenciales de Azure( al ejecutar **azure account download** hay que acceder al enlace que nos facilita):
+```
+azure login
+azure account download
+```
+
+Acto seguido importo a mi CLI de Azure mis credenciales:
+```
+azure account import Azure\ Pass-1-15-2016-credentials.publishsettings
+```
+
+![importarcredenciales](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/azureimport_zpsfwwiqjcc.png)
+
+
+El siguiente paso es generar los certificados que se van a subir a Azure y nos va a permitir interaccionar con el:
+```
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout azurevagrant.key -out azurevagrant.key
+chmod 600 ~/.ssh/azurevagrant.key
+openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
+```
+
+El siguiente paso es subir el archivo **.cer** a [Azure](https://manage.windowsazure.com/@franciscojaviergarmelhotmai.onmicrosoft.com#Workspaces/AdminTasks/ListManagementCertificates):
+
+
+![certificado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/subircredencial_zpshfktx7xg.png)
+
+Para poder autenticar Azure desde Vagrantfile es necesario crear un archivo **.pem** y concatenarle el archivo **.key**, para ello:
+```
+openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem
+cat azurevagrant.key > azurevagrant.pem
+```
+
+El siguiente paso es crear el archivo **Vagrantfile**:
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+
+Vagrant.configure('2') do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = 'azure'
+  config.vm.network "public_network"
+  config.vm.network "private_network",ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"
+  config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.define "localhost" do |l|
+          l.vm.hostname = "localhost"
+   end
+
+  config.vm.provider :azure do |azure, override|
+      azure.mgmt_certificate = File.expand_path('/home/javi/Escritorio/VagrantIV/azurevagrant.pem') 
+      azure.mgmt_endpoint = 'https://management.core.windows.net'
+      azure.subscription_id = '477d87d6-b8d0-4025-8c1f-a3de5c520c99'
+      azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_2-LTS-amd64-server-20150506-en-us-30GB'
+      azure.vm_name = 'apuestas' 
+      azure.vm_password = 'Clave#Javi#1'
+      azure.vm_location = 'Central US' 
+      azure.ssh_port = '22'
+      azure.tcp_endpoints = '80:80'
+  end	
+
+  config.vm.provision "ansible" do |ansible|
+      ansible.sudo = true
+        ansible.playbook = "iv.yml"
+        ansible.verbose = "v"
+        ansible.host_key_checking = false
+  end
+end
+```
+
+Principalmente se compone de 3 bloques importantes:
+
+En el primer bloque se indica que la *box* que se va a usar es la de azure, que va a tener una red pública y una privada( la cual se define ), y ademas los puertos de redirección que va a usar.
+
+En el segundo bloque se procede a definir diferentes caracteristicas para usar el proveedor de servicios azure.
+
+En el tercer bloque procedo a indicarle que provisione la máquina mediante ansible, el cual usa un archivo llamado **iv.yml**.
+
+Antes de ejecutar **vagrant provider** es necesario definir la variable de entorno, en mi caso, ya que lo he hecho en el directorio **VagrantIV** lo defino de la siguiente manera:
+```
+$ export ANSIBLE_HOSTS=~/Escritorio/VagrantIV/ansible_hosts
+```
+Se define el archivo **iv.yml** que es el provee a la máquina Azure:
+```
+- hosts: localhost
+  sudo: yes
+  remote_user: vagrant
+  tasks:
+  - name: Actualizar sistema 
+    apt: update_cache=yes upgrade=dist    
+  - name: Instalar paquetes
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=python-pip state=present
+    apt: name=git state=present
+  - name: Ins Pyp
+    action: apt pkg=python-pip
+  - name: Obtener aplicacion git
+    git: repo=https://github.com/javiergarridomellado/DAI.git  dest=DAI clone=yes force=yes
+  - name: Permisos de ejecucion
+    command: chmod -R +x DAI
+  - name: Instalar requisitos
+    command: sudo pip install -r DAI/requirements.txt
+  - name: ejecutar
+    command: nohup sudo python DAI/manage.py runserver 0.0.0.0:80
+```
+
+A continuacion en el archivo ansible_host se le indica que se va a trabajar como una máquina localhost:
+```
+[localhost]
+192.168.56.10
+``` 
+
+El siguiente paso es proveerse de la box de [Azure](https://github.com/Azure/vagrant-azure/blob/master/README.md), para ello:
+```
+vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
+```
+Ahora si puede procederse a ejecutar **provider** de la siguiente manera(puede hacerse un siguiente paso de provisionamiento con `vagrant provision` aunque en este caso no ha sido necesario):
+```
+vagrant up --provider=azure
+```
+
+![provider](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/provider_zpsygselitu.png)
+
+![provider2](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/provider2_zpsjbspbrsb.png)
+
+Con esto, puede verse que ya se puede acceder a la aplicación a traves de la url que genera este paso.
+
+![desplegado](http://i1045.photobucket.com/albums/b457/Francisco_Javier_G_M/desplegado_zpseqavxjp3.png)
+
+
+
