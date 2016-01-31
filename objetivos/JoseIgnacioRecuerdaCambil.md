@@ -101,3 +101,9 @@ Optimizar aplicaciones sobre plataformas virtuales.
 - [X] Entender el concepto de orquestación de máquinas virtuales.
 - [X] Trabajar y solucionar problemas con la infraestructura en la nube.
 
+###Objetivos décima cuarta semana
+- [X] Probar diferentes formas de desplegar en la nube.
+- [X] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+- [X] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+- [X] Buscar alternativas a vagrant.
+- [X] Usar diferentes infraestructuras en la nube.
