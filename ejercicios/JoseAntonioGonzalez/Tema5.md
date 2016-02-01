@@ -85,4 +85,51 @@ Lo que decimos con las últimas opciones de la órden, es que exista un usuario 
 
 De esta forma, nos conectamos a la máquina mediante la órden:
 	
-    ssh -p 3000 usuario@localhost
+    ssh -p 3000 usuario@
+    
+#Ejercicio 5
+
+Para poder utilizar Azure, haremos uso de los pases que se dieron a principio de curso. Creamos nuestra cuenta y asociamos el código proporcionado (fue necesario para el hito 4 de la asignatura).
+
+Para poder hacer uso de la máquina Azure mediante consola (es más cómodo y nos permitirá ganar experiencia para automatizar scripts de despliegue), instalamos Azure:
+
+	sudo apt-get install nodejs-legacy#Necesario para instalar azure
+	sudo apt-get install npm #Necesario para instalar azure
+    sudo npm install -g azure-cli
+    
+Instalado todo, conectaremos con la cuenta de azure en nuestra terminal. Para ello, primero configuramos asm de azure:
+
+	azure config mode asm
+    azure account download
+
+Esta última orden nos devolverá un enlace que debemos de seguir, y tras loguearnos en nuestra cuenta, nos redirigirá a una página de descarga de un archivo.
+
+![](Ejercicio5)
+
+Con este archivo descargado, lo importamos en azure:
+
+	azure account import ./Descargas/Pase\ para\ Azure-1-24-2016-credentials.publishsettings 
+
+Y nos devolverá un OK si todo va bien en la importación de credenciales
+
+![](Ejercicio5-2)
+
+Hecho todo, crearemos el sitio con la siguiente orden:
+
+	azure site create --location "West US" ejercicio5-IV-JAGonz
+    
+Donde ejercicio5-IV-JAGonz es el nombre del sitio web que estamos creando. Ya deberíamos poder acceder en el navegador [con el siguiente enlace](http://ejercicio5-iv-jagonz.azurewebsites.net/)
+
+![](Ejercicio5-3)
+
+El sitio web está creado, pero no cumple las condiciones del ejercicio aún.Instalaremos Ubuntu server en la máquina. Primero debemos saber la imagen a instalar, con la siguiente orden:
+
+	azure vm image list westus ubuntuserver
+    
+Nos devolverá una lista con todas las imágenes de ubuntu server disponibles. Nosotros instalamos una con nombre **b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20160119-en-us-30GB**
+
+Creamos la máquina virtual:
+
+	azure vm create ejercicio5-iv-jagonz b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20160119-en-us-30GB jagonz --location "West US" --ssh
+
+
