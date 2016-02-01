@@ -8,7 +8,7 @@ Compruebo que mi sistema es apto como se muestra en la siguiente figura:
 
 La siguiente captura es de SliTaz:
 
-![SliTaz](https://www.dropbox.com/s/braae7elkgbduoc/SliTaz.png?dl=0)
+![SliTaz](https://www.dropbox.com/s/braae7elkgbduoc/SliTaz.png?dl=1)
 
 La siguiente captura es de Ubuntu:
 
@@ -20,7 +20,7 @@ La siguiente captura es de Ubuntu:
 ### Ejercicio 2.2: Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
 
 a continuación se muestran diferentes máquinas virtuales que tengo instaladas con parallels:
-![centro de control de parallels](https://www.dropbox.com/s/mn7qpfa5tu4p1mp/parallels.png?dl=0)
+![centro de control de parallels](https://www.dropbox.com/s/mn7qpfa5tu4p1mp/parallels.png?dl=1)
 
 
 ### Ejercicio 3: Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img.
@@ -34,14 +34,45 @@ a continuación se muestran diferentes máquinas virtuales que tengo instaladas 
 
 ### Ejercicio 5: Crear una máquina virtual ubuntu en Azure e instalar en ella un servidor nginx para poder acceder mediante web.
 
-Para instalar la máquina virtual he utilizado la sección de Máquinas Virtuales del panel de control de manage.windowsazure.com.
-Una vez creada la máquina virtual, accedo a ella por ssh e instalo nginx:
+Primero instalamos y configuramos la herramienta azure en local para poder manejar azure desde la terminal local:
 
 ```
-ssh azureuser@ubuntudeapozo.cloudapp.net
+sudo apt-get install nodejs-legacy
+sudo apt-get install npm
+npm install-g  azure-cli
+azure config mode asm
+```
+Ahora nos conectamos con nuestra cuenta e introducimos los siguientes comandos para continuar:
+
+```
+azure login
+azure account download
+azure account import
+```
+Una vez hecho esto, creamos la máquina virtual con la siguiente orden:
+
+```
+azure vm create NOMBREMÁQUINA b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB USUARIO CONTRASEÑA --location "Central US" --ssh
+```
+Ahora nos conectamos a la máquina virtual por ssh para instalar nginx:
+
+```
+ssh apozo@baresmachine.cloudapp.net
+sudo apt-get update
 sudo apt-get install nginx
+sudo fuser -k 80/tcp
+sudo service nginx start
+```
+Ahora abrimos el puerto 80 con la herramienta azure desde local.
 
 ```
+azure vm endpoint create baresmachine 80 80
+
+```
+Se puede observar que el proceso anterior ha tenido éxito con la siguiente captura:
+
+![nginx funcionando en baresmachine](https://www.dropbox.com/s/l27ljqr7i1wawde/ej5.png?dl=1)
+
 
 
 ### Ejercicio 6: Usar juju para hacer el ejercicio anterior.
