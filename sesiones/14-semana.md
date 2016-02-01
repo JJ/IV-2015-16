@@ -21,6 +21,8 @@ José Antonio González Cervera [SMS_Estadisticas](https://github.com/JA-Gonz/SM
 
 Pablo Martín-Moreno Ruiz [Activento](https://github.com/pmmre/Activento-PabloMartin-MorenoRuiz)
 
+Álvaro Pérez Luque [AppPoll](https://github.com/alvaro-gr/proyecto-IV)
+
 ## Día 15
 
 Santiago de Diego de Diego - [Landscapes](https://github.com/santidediego/Landscapes)
