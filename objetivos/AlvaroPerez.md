@@ -218,11 +218,23 @@
 
 - [x] Usar infraestructura en la nube.
 
+- [x] Entender el concepto de orquestación de máquinas virtuales.
+
 #####Otros objetivos
 
-- [] Instalar clientes libres de infraestructura en la nube.
-- [] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [x] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+- [x] Trabajar y solucionar problemas con la infraestructura en la nube.
 
 ###Sesión 14 (Semana del 20 enero)
 
+- [x] Usar infraestructura en la nube.
+
+#####Otros objetivos
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
 
