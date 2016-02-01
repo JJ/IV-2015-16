@@ -199,7 +199,17 @@ Para finalizar, podemos apagar la máquina virtual con el comando
 
 	vagrant halt
 
+### Ejercicio 7
 
+**Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica**
+
+Para provisionar la máquina con el servidor web nginx, he añadido al Vagrantfile lo siguiente:
+
+```bash
+  # Provision via script
+  config.vm.provision "shell",
+    inline: "apt-get install nginx && service nginx start"
+```
 
 
 
