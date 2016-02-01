@@ -230,11 +230,18 @@
 
 ###Sesión 14 (Semana del 20 enero)
 
-- [x] Usar infraestructura en la nube.
+- [x] Probar diferentes formas de desplegar en la nube.
+
+- [x] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
 
 #####Otros objetivos
 
-- [x] Instalar clientes libres de infraestructura en la nube.
+- [x] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
 
-- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [x] Buscar alternativas a vagrant.
+
+- [x] Usar diferentes infraestructuras en la nube.
+
+- [x] Resolver dudas con respecto a la práctica final.
 
