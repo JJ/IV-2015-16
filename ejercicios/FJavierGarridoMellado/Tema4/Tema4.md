@@ -448,4 +448,7 @@ sudo restart network-manager
 ```
 
 
-
+##Con el siguiente comando limpiamos todos los contenedores en estado Exited:
+```
+docker rm $(sudo docker ps -a | grep Exit | cut -d ' ' -f 1)
+```
