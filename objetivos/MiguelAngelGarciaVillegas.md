@@ -246,17 +246,18 @@ Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairo
 - [x] 2. Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
 - [x] 3. Trabajar y solucionar problemas con la infraestructura en la nube.
 
-## Undécima semana, comienza el 13 de Enero
+## Décimo cuarta semana, comienza el 20 de enero de 2016. Última semana
 
 ## Objetivos de la Semana
-- [x] 1. Usar infraestructura en la nube
-- [x] 2. Entender el concepto de orquestación de máquinas virtuales.
+- [x] Probar diferentes formas de desplegar en la nube.
+- [x] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
 
 ## Otros Objetivos
 
-- [x] 1. Instalar clientes libres de infraestructura en la nube.
-- [x] 2. Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
-- [x] 3. Trabajar y solucionar problemas con la infraestructura en la nube.
+- [x] 1. Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+- [x] 2. Buscar alternativas a vagrant.
+- [x] 3. Usar diferentes infraestructuras en la nube.
+- [x] 4. Resolver dudas con respecto a la práctica final.
 
 # Virtualización completa: uso de máquinas virtuales
 ## http://jj.github.io/IV/documentos/temas/Uso_de_sistemas
