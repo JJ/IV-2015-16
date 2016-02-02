@@ -79,15 +79,15 @@
 - [X] Comprender los mecanismos de despliegue automático.
 - [X] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
-## Objetivos Segundo Hito: Integración continua
+### Objetivos Segundo Hito: Integración continua
 - [X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 
-## Objetivos Específicos Segundo Hito: Integración continua
+### Objetivos Específicos Segundo Hito: Integración continua
 - [X] Entender el concepto de DevOps.
 - [X] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
 - [X] Aprender a usar integración continua en cualquier aplicación.
 
-## Objetivos para el Proyecto
+### Objetivos para el Proyecto
 - [X] Además de realizar los Ejercicios, hemos realizado los ejercicios y una guía paso a paso también en el proyecto.
 
 ## ---------------------------------------------------------------------------##
@@ -99,7 +99,7 @@
 - [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 - [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
 
-## Objetivos específicos
+### Objetivos específicos
 
 - [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
 - [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
@@ -115,7 +115,7 @@
 - [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
 - [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
-## Otros objetivos
+### Otros objetivos
 
 - [x] Darse de alta y probar diferentes servicios PaaS.
 - [x] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
@@ -128,7 +128,7 @@
 - [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
 - [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
 
-## Otros objetivos
+### Otros objetivos
 
 - [x] Trabajar con los toolbelts de los diferentes PaaS.
 - [x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
@@ -139,7 +139,62 @@
 
 # Tema 4
 
-## Objetivos, Cubre los siguientes objetivos de la asignatura
+## Séptima semana, comienza el 11 de Noviembre
+
+### Objetivos de la Semana
+
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+
+### Otros Objetivos
+
+- [x] Instalar docker y trabajar con él.
+
+## Séptima semana, comienza el 18 de Noviembre
+
+### Objetivos de la Semana
+
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+- [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+
+### Otros Objetivos
+
+- [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+- [x] Instalar docker y trabajar con él.
+- [x] Usar imágenes de docker publicadas.
+
+## Séptima semana, comienza el 25 de Noviembre
+
+### Objetivos de la Semana
+
+- [x] Uso de docker para creación de imágenes.
+- [x] Entender el uso de docker en el contexto de una aplicación.
+- [x] Analizar el resultado del último hito de las prácticas.
+
+### Otros Objetivos
+
+- [x] Revisar los errores en la entrega de tercer hito.
+- [x] Adoptar buenas prácticas en los repositorios git:
+Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
+- [x] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+- [x] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+- [ ] Asistir al taller de Telegram
+- [ ] Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
+
+## Séptima semana, comienza el 2 de Diciembre
+
+### Objetivos de la Semana
+
+- [x] Usar docker en una aplicación real.
+
+### Otros Objetivos
+
+- [x] Publicar imágenes de docker.
+- [x] Probar imágenes de docker publicadas.
+- [x] Trabajar con varias imágenes de docker cokectadas.
+
+## Virtualización ligera usando contenedores
+
+### Objetivos, Cubre los siguientes objetivos de la asignatura
 
 - [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
 - [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
@@ -157,3 +212,76 @@
 - [x] 2. Crear infraestructuras virtuales completas.
 
 - [x] 3. Comprender los pasos necesarios para la configuración automática de las mismas.
+
+## Undécima semana, comienza el 9 de Diciembre
+
+## Objetivos de la Semana
+- [x] 1. Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+## Otros Objetivos
+
+- [x] 1. Instalar hipervisores libres y trabajar con ellos.
+- [x] 2. Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+## Undécima semana, comienza el 16 de Diciembre
+
+## Objetivos de la Semana
+- [x] Usar gestores de máquinas virtuales.
+
+## Otros Objetivos
+
+- [x] 1. Instalar clientes libres de infraestructura en la nube.
+- [x] 2. Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [x] 3. Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+## Undécima semana, comienza el 13 de Enero
+
+## Objetivos de la Semana
+- [x] 1. Usar infraestructura en la nube
+- [x] 2. Entender el concepto de orquestación de máquinas virtuales.
+
+## Otros Objetivos
+
+- [x] 1. Instalar clientes libres de infraestructura en la nube.
+- [x] 2. Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [x] 3. Trabajar y solucionar problemas con la infraestructura en la nube.
+
+## Décimo cuarta semana, comienza el 20 de enero de 2016. Última semana
+
+## Objetivos de la Semana
+- [x] Probar diferentes formas de desplegar en la nube.
+- [x] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
+## Otros Objetivos
+
+- [x] 1. Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+- [x] 2. Buscar alternativas a vagrant.
+- [x] 3. Usar diferentes infraestructuras en la nube.
+- [x] 4. Resolver dudas con respecto a la práctica final.
+
+# Virtualización completa: uso de máquinas virtuales
+## http://jj.github.io/IV/documentos/temas/Uso_de_sistemas
+
+## Objetivos
+
+- [x] 1. Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+- [x] 2. Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+- [x] 3. Documentar y mantener una plataforma virtual.
+
+- [x] 4. Realizar tareas de administración de infraestructuras virtuales.
+
+# Lista de comprobación del proyecto
+
+Lo más importante es que recordéis que el proyecto es un proyecto, no la suma de sus partes. Es decir, un proyecto que tenga una infraestructura compleja y sustancial y que se pueda desplegar con una sola orden o ejecutando varias órdenes. Por eso, conviene que comprobéis.
+
+- [x] 1. Que ejecutando una orden se despliega desde 0 el proyecto. Es decir, si yo me descargo el repo y ejecuto esa orden podré desplegar el proyecto en mi Azure.
+- [x] 2. Que el código que habéis usado es vuestro y solo vuestro. Que si os habéis inspirado en la de un compañero deberéis decir de quién es y aclarar los cambios que habéis hecho sobre el mismo.
+- [x] 3. Que la documentación de todo esté muy clara y no se llame "hito 5". Es un proyecto que debería ser fácil de desplegar para una persona que no sepa, ni le interese, que es un trabajo de una asignatura.
+- [x] 4. Que no hay errores de Travis o del sistema de CI que hayáis usado.
+- [x] 5. Que está todo en la rama master.
+- [x] 6. Que los commits del proyecto los habéis hecho vosotros con el usuario configurado correctamente. También la modificación del fichero de entrega.
+- [x] 7. Que lo entregáis a tiempo. En esta práctica no se admite retraso.
+- [x] 8. Que habéis entregado los ejercicios en el porcentaje suficiente para que se corrija esta práctica.
+- [x] 9. Que tenéis todos los hitos anteriores aprobados.
