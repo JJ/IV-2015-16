@@ -211,67 +211,90 @@
 
 #Objetivos de la Sesión 9
 
-[X] Uso de docker para creación de imágenes.
+- [X] Uso de docker para creación de imágenes.
     
-[X] Entender el uso de docker en el contexto de una aplicación.
+- [X] Entender el uso de docker en el contexto de una aplicación.
     
-[X] Analizar el resultado del último hito de las prácticas.
+- [X] Analizar el resultado del último hito de las prácticas.
 
 #Objetivos de la Sesion 10
 
-[X] Usar docker en una aplicación real. 
+- [X] Usar docker en una aplicación real. 
 
-[X] Publicar imágenes de docker.
+- [X] Publicar imágenes de docker.
     
-[X] Probar imágenes de docker publicadas.
+- [X] Probar imágenes de docker publicadas.
    
-[X] Trabajar con varias imágenes de docker cokectadas.
+- [X] Trabajar con varias imágenes de docker cokectadas.
 
 #Objetivos Tema 5
 
-[X] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [X] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
 
-[X] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [X] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
 
-[X] Documentar y mantener una plataforma virtual.
+- [X] Documentar y mantener una plataforma virtual.
 
-[X] Realizar tareas de administración de infraestructuras virtuales.
+- [X] Realizar tareas de administración de infraestructuras virtuales.
 
 #Objetivos de la Sesión 11
 
-[X] Comprender el concepto de hipervisor y los diferentes tipos que hay
+- [X] Comprender el concepto de hipervisor y los diferentes tipos que hay
 
-[X] Instalar hipervisores libres y trabajar con ellos.
+- [X] Instalar hipervisores libres y trabajar con ellos.
     
-[X] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
 
 #Objetivos de la Sesión 12
 
-[X] Instalar clientes libres de infraestructura en la nube.
+- [X] Usar gestores de máquinas virtuales.
+
+- [X] Instalar clientes libres de infraestructura en la nube.
     
-[X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
     
-[X] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+- [X] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
 
-#Objetivos de la Sesión 13 y 14
 
-[X] Usar infraestructura en la nube
+#Objetivos Tema 6
 
-#Objetivos Tema 6:
+- [X] Aprender lenguajes de configuración usados en infraestructuras virtuales.
 
-[X] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [X] Saber cómo aplicarlos en un caso determinado.
 
-[X] Documentar y mantener una plataforma virtual.
+- [X] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorizació más usados hoy en día.
 
-[X] Realizar tareas de administración en infraestructura virtual
 
-##Objetivos Especificos del tema 6
+#Objetivos de la Sesión 13
 
-[X] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+- [X] Usar infraestructura en la nube
 
-[X] Saber cómo aplicarlos en un caso determinado.
+- [X] Entender el concepto de orquestación de máquinas virtuales.
 
-[X] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
+- [X] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+
+##Otros objetivos
+
+- [X] Instalar clientes libres de infraestructura en la nube.
+
+- [X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+- [X] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+#Objetivos de la Sesión 14 
+
+- [X] Probar diferentes formas de desplegar en la nube.
+
+- [X] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
+##Otros objetivos
+
+- [X] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+
+- [X] Buscar alternativas a vagrant.
+
+- [X] Usar diferentes infraestructuras en la nube.
 
 
 
