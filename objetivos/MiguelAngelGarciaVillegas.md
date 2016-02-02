@@ -271,3 +271,17 @@ Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairo
 - [x] 3. Documentar y mantener una plataforma virtual.
 
 - [x] 4. Realizar tareas de administración de infraestructuras virtuales.
+
+# Lista de comprobación del proyecto
+
+Lo más importante es que recordéis que el proyecto es un proyecto, no la suma de sus partes. Es decir, un proyecto que tenga una infraestructura compleja y sustancial y que se pueda desplegar con una sola orden o ejecutando varias órdenes. Por eso, conviene que comprobéis.
+
+- [x] 1. Que ejecutando una orden se despliega desde 0 el proyecto. Es decir, si yo me descargo el repo y ejecuto esa orden podré desplegar el proyecto en mi Azure.
+- [x] 2. Que el código que habéis usado es vuestro y solo vuestro. Que si os habéis inspirado en la de un compañero deberéis decir de quién es y aclarar los cambios que habéis hecho sobre el mismo.
+- [x] 3. Que la documentación de todo esté muy clara y no se llame "hito 5". Es un proyecto que debería ser fácil de desplegar para una persona que no sepa, ni le interese, que es un trabajo de una asignatura.
+- [x] 4. Que no hay errores de Travis o del sistema de CI que hayáis usado.
+- [x] 5. Que está todo en la rama master.
+- [x] 6. Que los commits del proyecto los habéis hecho vosotros con el usuario configurado correctamente. También la modificación del fichero de entrega.
+- [x] 7. Que lo entregáis a tiempo. En esta práctica no se admite retraso.
+- [x] 8. Que habéis entregado los ejercicios en el porcentaje suficiente para que se corrija esta práctica.
+- [x] 9. Que tenéis todos los hitos anteriores aprobados.
