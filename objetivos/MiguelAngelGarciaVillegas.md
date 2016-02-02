@@ -223,6 +223,41 @@ Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairo
 - [x] 1. Instalar hipervisores libres y trabajar con ellos.
 - [x] 2. Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
 
+## Undécima semana, comienza el 16 de Diciembre
+
+## Objetivos de la Semana
+- [x] Usar gestores de máquinas virtuales.
+
+## Otros Objetivos
+
+- [x] 1. Instalar clientes libres de infraestructura en la nube.
+- [x] 2. Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [x] 3. Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+## Undécima semana, comienza el 13 de Enero
+
+## Objetivos de la Semana
+- [x] 1. Usar infraestructura en la nube
+- [x] 2. Entender el concepto de orquestación de máquinas virtuales.
+
+## Otros Objetivos
+
+- [x] 1. Instalar clientes libres de infraestructura en la nube.
+- [x] 2. Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [x] 3. Trabajar y solucionar problemas con la infraestructura en la nube.
+
+## Undécima semana, comienza el 13 de Enero
+
+## Objetivos de la Semana
+- [x] 1. Usar infraestructura en la nube
+- [x] 2. Entender el concepto de orquestación de máquinas virtuales.
+
+## Otros Objetivos
+
+- [x] 1. Instalar clientes libres de infraestructura en la nube.
+- [x] 2. Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [x] 3. Trabajar y solucionar problemas con la infraestructura en la nube.
+
 # Virtualización completa: uso de máquinas virtuales
 ## http://jj.github.io/IV/documentos/temas/Uso_de_sistemas
 
