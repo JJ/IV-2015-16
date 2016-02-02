@@ -5,6 +5,7 @@ Los proyectos se entregan el día 8 y se presentan el día 8 o el 15. Por favor,
 ## Día 8
 
 Alejandro Casado Quijada - [Aplicación bares](https://github.com/acasadoquijada/IV)
+
 Ignacio Romero Cabrerizo - [openGestion](https://github.com/nachobit/IV_PR_OpenOrder)
 
 Rubén Martín Hidalgo - [Pluco-DB](https://github.com/romilgildo/IV-PLUCO-RMH)
@@ -20,6 +21,8 @@ Javier Pérez García [SMS-BDyReplica](https://github.com/neon520/SMS-BDyReplica
 José Antonio González Cervera [SMS_Estadisticas](https://github.com/JA-Gonz/SMS_Estadisticas)
 
 Pablo Martín-Moreno Ruiz [Activento](https://github.com/pmmre/Activento-PabloMartin-MorenoRuiz)
+
+Álvaro Pérez Luque [AppPoll](https://github.com/alvaro-gr/proyecto-IV)
 
 ## Día 15
 
