@@ -211,13 +211,107 @@ Para provisionar la máquina con el servidor web nginx, he añadido al Vagrantfi
     inline: "apt-get install nginx && service nginx start"
 ```
 
+Y a continuación se ejecuta el provisionamiento con el comando
+
+	vagrant provision
+
+y se comprueba que el servicio se está ejecutando correctamente.
+
+![provision](https://www.dropbox.com/s/erewnyk9yf2unkm/provision.png?dl=1)
 
 
+### Ejercicio 8
 
+**Configurar tu máquina virtual usando vagrant con el provisionador ansible**
 
+Para configurar Vagrant para que use ansible como provisionador, he tenido que modificar el Vagrantfile y el playbook segun se muestra:
 
+Vagrantfile
 
+```bash
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "debian"
+
+  config.vm.network :private_network, ip: "192.168.56.150"
+
+  config.ssh.private_key_path = "~/.ssh/id_rsa"
+  config.ssh.forward_agent = true
+
+  config.vm.provision "file", source: "/home/gaby/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/me.pub"
+  config.vm.provision "shell", inline: "cat /home/vagrant/.ssh/me.pub >> /home/vagrant/.ssh/authorized_keys"
+
+  # Provision with Vagrant
+  config.vm.provision "ansible" do |ansible|
+    ansible.sudo = true
+    ansible.playbook = "gestfg-playbook.yml"
+    ansible.inventory_path = "/home/gaby/ansible/ansible_hosts"
+    ansible.verbose = "v"
+    ansible.host_key_checking = false
+  end
+end
+
+```
+
+playbook:
+
+```bash
+---
+- hosts: test
+
+  vars:
+    usuario_remoto: vagrant
+
+  remote_user: vagrant
+  become: yes
+  become_method: sudo
+  tasks:
+
+  - name: Test vars
+    command: echo un/{{ usuario_remoto }}/directorio
+    become_user: "{{ usuario_remoto }}"
+    tags:
+      - test
+
+  - name: Instalar dependencias
+    apt: package={{ item }}  update_cache=yes
+    with_items:
+      - python-setuptools
+      - build-essential
+      - python-dev
+      - make
+      - git
+    tags:
+      - dependencias
+
+  - name: Descargar fuentes
+    git: repo=https://github.com/gabriel-stan/gestion-tfg  dest=~/despliegue clone=yes force=yes
+    become_user: "{{ usuario_remoto }}"
+    tags:
+      - git
+
+  - name: Make install-dependencias
+    command: chdir=/home/{{ usuario_remoto }}/despliegue make install-packages
+    tags:
+      - install
+
+  - name: Make install
+    command: chdir=/home/{{ usuario_remoto }}/despliegue make install
+    become_user: "{{ usuario_remoto }}"
+    tags:
+      - install
+
+  - name: Make run
+    shell: chdir=/home/{{ usuario_remoto }}/despliegue nohup make run
+    tags:
+      - runserver
+...
+```
 
 
 
