@@ -12,7 +12,7 @@ La siguiente captura es de SliTaz:
 
 La siguiente captura es de Ubuntu:
 
-![ubuntu](https://www.dropbox.com/s/z8r4hnk7ahrplc9/ubuntu.png?dl=0)
+![ubuntu](https://www.dropbox.com/s/z8r4hnk7ahrplc9/ubuntu.png?dl=1)
 
 
 
@@ -84,4 +84,4 @@ Se puede observar que el proceso anterior ha tenido éxito con la siguiente capt
 
 La siguiente captura muestra Linux Mint funcionando con el hipervisor Parallels:
 
-![mint](https://www.dropbox.com/s/lt8nj5kzaa48vrm/mint.png?dl=0)
+![mint](https://www.dropbox.com/s/lt8nj5kzaa48vrm/mint.png?dl=1)
