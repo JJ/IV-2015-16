@@ -20,6 +20,14 @@ Una vez instalado VirtualBox voy a descargar una imagen de Ubuntu Desktop desde 
 
 ##Ejercicio 3
 
+Para este ejercicio voy a utilizar un Benchmark que desarrollé en la asignatura Ingeniería de servidores para comprobar diferentes sistemas de ficheros, aunque puede usarse para este propósito. Puede verse el benchmark [aquí](https://github.com/santidediego/Ingenieria-de-servidores/tree/master/Benchmark%20para%20medici%C3%B3n%20de%20velocidad%20de%20sistemas%20de%20ficheros). Lo único que he cambiado es que los resultados en lugar de exportarlos a un archivo .csv me los saque por terminal para mayor comodidad.
+
+Teniendo el benchmark, arranco la máquina virtual con Minino que cree anteriormente con `qemu-system-x86_64 -hda disco.qcow2`. Copiamos el Benchmark con ssh.
+
+Ahora hacemos lo mismo con la paravirtualización arrancando la máquina con `qemu-system-x86_64 -boot order=c -drive file=disco.qcow2,if=virtio`. Copiamos también el benchmark con ssh.
+
+En mi caso, he obtenido tiempos muy similares con ambos, aunque algo mejores en la caso de la paravirtualización, aunque la verdad que la diferencia no es significativa, quizá realizando más intentos puedan apreciarse más diferencias.
+
 ##Ejercicio 4
 
 En este ejercicio voy a crear una máquina virtual con Lubuntu con VirtualBox. He escogido esta distribución porque viene con el entorno gráfico LXDE instalado por defecto. Primero me descargo una imagen de Lubuntu de 32 bits de [aquí](https://help.ubuntu.com/community/Lubuntu/GetLubuntu) y una vez descargada creamos una MV en VirtualBox. En mi caso le he dado una capacidad de disco duro de 5GB como podemos ver abajo ya que se necesitan mínimo 4.4 GB para su correcto funcionamiento:
@@ -38,5 +46,8 @@ Ahora ya solo queda conectarnos por ssh a la MV como podemos ver:
 
 ![ssh](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Captura%20de%20pantalla%20de%202016-01-09%20175921_zpsg1mcuqsp.png)
 
+#Ejercicio 5:
+
+Primero de todo instalamos una máquina virtual con Ubuntu con VirtualBox. Seguimos los pasos de forma similar al ejercicio 4, Una vez instalada, vamos a configurar Nginx. Primero de todo lo instalamos con `sudo apt-get update && sudo apt-get install nginx`. En ubuntu, por defecto se arranca automáticamente sin tenerque hacer nada más. Por tanto ya lo tenemos
 
 
