@@ -50,25 +50,43 @@ Probamos que todo lo anterior ha ido bien:
 Instalamos git y clonamos el repositorio:
 
 ```
-sudo apt-get install git
-git clone https://github.com/AntonioPozo/Bares.git
+ansible all -u apozo -a "sudo apt-get install git"
+ansible all -u apozo -a "git clone https://github.com/AntonioPozo/Bares.git"
 ```
 
 Instalamos las herramientas necesarias en la máquina ansible:
 
 ```
-make install
+ansible all -u apozo -a "make install"
 ```
 He utilizado la interfaz web para abrir el puerto 8000
 
 Por último echamos a andar la aplicación:
 
 ```
-make run
+ansible all -u apozo -a "make run"
 ```
 ![salida comando make run](https://www.dropbox.com/s/790we6y9c3xhfpp/ej4.1.png?dl=1)
 
 ![interfaz de la web](https://www.dropbox.com/s/pjp27ebwt8c8enn/4.2.png?dl=1)
+
+
+###Ejercicio 5.1: Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
+
+Primero he editado el archivo ansible_hosts:
+
+```
+[baresmachine]baresmachine.cloudapp.net
+```
+A continuación he creado el playbook.yml, que tiene el siguiente aspecto:
+
+```
+---- hosts: baresmachine  sudo: yes  remote_user: apozo  tasks:  - name: Instalar paquetes necesarios    apt: name=python-setuptools state=present    apt: name=python-dev state=present    apt: name=build-essential state=present    apt: name=git state=present    apt: name=libtiff4-dev state=present    apt: name=libjpeg8-dev state=present    apt: name=zlib1g-dev state=present    apt: name=libfreetype6-dev state=present    apt: name=liblcms1-dev state=present    apt: name=libwebp-dev state=present  - name: Clonando repositorio desde git    git: repo=https://github.com/AntonioPozo/Bares.git dest=BaresDesarrollo version=HEAD force=yes  - name: Instalar requisitos para la app    shell: cd Bares && make install  - name: Ejecutar aplicacion    shell: cd Bares && make run
+```
+
+Por último he ejecutado el playbook como se muestra en la siguiente captura:
+
+![ejecutando playbook](https://www.dropbox.com/s/dt5f4psw284cy53/ej5.1.png?dl=1)
 
 
 ### Ejercicio 5.2: ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?
