@@ -243,9 +243,11 @@
 
 [X] Instalar hipervisores libres y trabajar con ellos.
     
-[X] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+[X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
 
 #Objetivos de la Sesión 12
+
+[X] Usar gestores de máquinas virtuales.
 
 [X] Instalar clientes libres de infraestructura en la nube.
     
@@ -253,25 +255,46 @@
     
 [X] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
 
-#Objetivos de la Sesión 13 y 14
 
-[X] Usar infraestructura en la nube
-
-#Objetivos Tema 6:
-
-[X] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
-
-[X] Documentar y mantener una plataforma virtual.
-
-[X] Realizar tareas de administración en infraestructura virtual
-
-##Objetivos Especificos del tema 6
+#Objetivos Tema 6
 
 [X] Aprender lenguajes de configuración usados en infraestructuras virtuales.
 
 [X] Saber cómo aplicarlos en un caso determinado.
 
-[X] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
+[X] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorizació más usados hoy en día.
+
+
+#Objetivos de la Sesión 13
+
+[X] Usar infraestructura en la nube
+
+[X] Entender el concepto de orquestación de máquinas virtuales.
+
+[X] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+
+##Otros objetivos
+
+[X] Instalar clientes libres de infraestructura en la nube.
+
+[X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+[X] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+#Objetivos de la Sesión 14 
+
+[X] Probar diferentes formas de desplegar en la nube.
+
+[X] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
+##Otros objetivos
+
+[X] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+
+[X] Buscar alternativas a vagrant.
+
+[X] Usar diferentes infraestructuras en la nube.
 
 
 
