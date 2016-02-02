@@ -36,7 +36,7 @@ En este ejercicio voy a crear una máquina virtual con Lubuntu con VirtualBox. H
 
 Una vez instalado vamos a conectarnos por ssh. Para ello, primero tenemos que añadir una nueva interfaz de red solo anfitrión para poder conectarnos a nuestra máquina:
 
-![nueva interfaz de red](http://s864.photobucket.com/user/Santiago_de_Diego/media/Captura%20de%20pantalla%20de%202016-01-09%20175021_zps8uer6ku1.png.html?sort=3&o=1)
+![nueva interfaz de red](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Captura%20de%20pantalla%20de%202016-01-09%20175021_zps8uer6ku1.png)
 
 Ahora entramos en el archivo */etc/network/intefaces* y lo editamos como aparece en la siguiente imagen:
 
