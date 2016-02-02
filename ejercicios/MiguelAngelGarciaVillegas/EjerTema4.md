@@ -247,33 +247,55 @@ Una vez hemos ejecutado el commit vamos a comprobar si se ha realizado, ejecutan
 Vamos a crear el fichero Dockerfile para mi proyecto InsertaLogo, en la carpeta previa al proyecto. Nuestro fichero Dockerfile
 
     # Sistema operativo
-    FROM ubuntu:14.04
-
-    # Sistema operativo
     FROM ubuntu:latest
 
     # Autor
     MAINTAINER Miguel Angel Garcia Villegas <magvugr@gmail.com>
 
-    # Instalacion
-    RUN sudo apt-get update
-    RUN sudo apt-get install -y git
-    RUN sudo apt-get install -y build-essential
+    #Actualizar Sistema Base
+    RUN sudo apt-get -y update
 
-    # Descarga repositorio de la app
+    # Instalacion
+    RUN sudo apt-get install -y git
     RUN sudo git clone https://github.com/magvugr/InsertaLogo
 
-    # Instalacion de la app y sus dependencias
-    RUN cd InsertaLogo && git pull
-    RUN cd InsertaLogo && make install
+    #Instalar python
+    RUN sudo apt-get -y install python-dev
+    RUN sudo apt-get install -y python-setuptools
+    RUN sudo apt-get install -y build-essential
+    RUN sudo apt-get -y install python-psycopg2
+    RUN sudo apt-get -y install libpq-dev
+    RUN sudo easy_install pip
+    RUN sudo pip install --upgrade pip
+
+    WORKDIR InsertaLogo
+    # Instalacion de las dependencias del proyecto
+    RUN pip install -r requirements.txt
+
+    EXPOSE 8000
+    CMD python manage.py runserver
 
 
-Vamos a iniciar el servicio docker, ejecutando en el terminal ```sudo docker -d &```. Una vez arrancado dentro del directorio del proyecto crear la imagen ejecutando en el terminal el siguiente comando ```sudo docker build -f Dockerfile -t inserta_logo . ``` (importante, No mayusculas y añadir el punto del final)
+Vamos a iniciar el servicio docker, ejecutando en el terminal ```sudo docker -d &```. Una vez arrancado dentro del directorio del proyecto crear la imagen ejecutando en el terminal el siguiente comando ```sudo docker build -f Dockerfile -t insertalogo . ``` (importante, No mayusculas y añadir el punto del final)
 
-![Creación imaginsertalogo](https://www.dropbox.com/s/w4we57wfko6dsab/10.1.png?dl=1)
+![Creación imaginsertalogo](https://www.dropbox.com/s/kusvur9wtbyc542/10.6.png?dl=1)
 
 Mediante el comando ```sudo docker images``` comprobamos que se ha creado con éxito.
 
+![imagen docker insertalogo](https://www.dropbox.com/s/5alveu8mtjrosj4/10.7.png?dl=1)
+
 Arrancamos ahora la imagen ejecutando en el terminal ```sudo docker run -t -i inserta_logo /bin/bash```, hacemos un ```ifconfig -a``` para saber la ip, y nos vamos a la carpeta de nuestro proyecto.
 
-![insertalogo docker](https://www.dropbox.com/s/j1w8b3rultyo0u3/10.2.png?dl=1)
+![insertalogo docker](https://www.dropbox.com/s/vhp4v72sszpwf7w/10.5.png?dl=1)
+
+Una vez en nuestra carpeta de proyecto ejecutamos
+
+![python manage.py](https://www.dropbox.com/s/0vrifpy3ailwgkm/10.4.png?dl=1)
+
+Nos vamos al navegador ponemos la dirección ip con el puerto indicado y el resultado :-)
+
+![resultado](https://www.dropbox.com/s/5lf6l9ivkguuteh/Captura%20de%20pantalla%20de%202016-01-15%2013%3A17%3A14.png?dl=1)
+
+Si al arrancar el docker, este no tiene conexión a internet, podemos resolverlo editando /etc/NetworkManager/NetworkManager.conf y comentando la línea dns=dnsmask y tras esto, reiniciar el servicio con:
+
+sudo restart network-manager

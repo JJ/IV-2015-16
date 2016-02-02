@@ -9,11 +9,31 @@ Alejandro Casado Quijada - [Aplicación bares](https://github.com/acasadoquijada
 
 Ignacio Romero Cabrerizo - [openGestion](https://github.com/nachobit/IV_PR_OpenOrder)
 
+<<<<<<< HEAD
+=======
+Rubén Martín Hidalgo - [Pluco-DB](https://github.com/romilgildo/IV-PLUCO-RMH)
+
+Rafael Lachica Garrido - [PLUCO](https://github.com/rafaellg8/IV-PLUCO-RLG)
+
+Manuel Alejandro Barranco Bailón - [TusPachangas](https://github.com/mabarrbai/TusPachangas)
+
+Francisco Javier Garrido Mellado - [Aplicación Bares](https://github.com/javiergarridomellado/DAI)
+
+Javier Pérez García [SMS-BDyReplica](https://github.com/neon520/SMS-BDyReplica)
+
+José Antonio González Cervera [SMS_Estadisticas](https://github.com/JA-Gonz/SMS_Estadisticas)
+
+Pablo Martín-Moreno Ruiz [Activento](https://github.com/pmmre/Activento-PabloMartin-MorenoRuiz)
+
+Álvaro Pérez Luque [AppPoll](https://github.com/alvaro-gr/proyecto-IV)
+>>>>>>> upstream/master
 
 ## Día 15
 
 Santiago de Diego de Diego - [Landscapes](https://github.com/santidediego/Landscapes)
+Antonio Miguel Pozo Cámara - [Bares](https://github.com/AntonioPozo/Bares)
 
+Jose Ignacio Recuerda Cambil - [Gestión de pedidos](https://github.com/ignaciorecuerda/gestionpedidos_django)
 
 
 
@@ -35,7 +55,7 @@ Lo más importante es que recordéis que el proyecto es un proyecto, no la suma 
 ##Objetivos de la semana
 
 1. Probar diferentes formas de desplegar en la nube.
-2. Depurar los scripts y añadirles funcionalidades para que sean servicios completos. 
+2. Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
 
 ##Otros objetivos
 
@@ -52,4 +72,3 @@ Finalizamos con el tema dedicado a [uso de sistemas](http://jj.github.io/IV/docu
 ## Ya no hay más semanas.
 
 Buena suerte con los exámenes y nos vemos por aquí.
-

@@ -146,26 +146,37 @@
  - [x] Trabajar con varias imágenes de docker cokectadas.
 
 ##Objetivos a cubrir en la sesión 11.
-  - [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+ - [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
 
 #### Otros objetivos.
-  - [x] Instalar hipervisores libres y trabajar con ellos.
-  - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+ - [x] Instalar hipervisores libres y trabajar con ellos.
+ - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
 
 ##Objetivos a cubrir en la sesión 12.
-  - [x] Usar gestores de máquinas virtuales
+ - [x] Usar gestores de máquinas virtuales
 
 #### Otros objetivos.
-  - [ ] Instalar clientes libres de infraestructura en la nube.
-  - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
-  - [ ] similar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+ - [x] Instalar clientes libres de infraestructura en la nube.
+ - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+ - [ ] similar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
 
 ##Objetivos a cubrir en la sesión 13.
-  - [ ] Usar infraestructura en la nube
+ - [x] Usar infraestructura en la nube
 
 #### Otros objetivos.
-  - [ ] Instalar clientes libres de infraestructura en la nube.
-  - [ ] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+ - [x] Instalar clientes libres de infraestructura en la nube.
+ - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+ - [x] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+##Objetivos a cubrir en la sesión 14.
+ - [x] Probar diferentes formas de desplegar en la nube.
+ - [x] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
+#### Otros objetivos
+ - [x] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+ - [x] Buscar alternativas a vagrant.
+ - [x] Usar diferentes infraestructuras en la nube.
+ - [x] Resolver dudas con respecto a la práctica final.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -214,3 +225,19 @@
  - [x] Documentar y mantener una plataforma virtual.
 
  - [x] Realizar tareas de administración de infraestructuras virtuales.
+
+##Tema 6
+
+ - [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+ - [x] Documentar y mantener una plataforma virtual.
+
+ - [x] Realizar tareas de administración en infraestructura virtual
+
+####Objetivos Especificos del tema 6
+
+ - [x] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+
+ - [x] Saber cómo aplicarlos en un caso determinado.
+
+ - [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorizació más usados hoy en día.

@@ -80,3 +80,30 @@ Optimizar aplicaciones sobre plataformas virtuales.
 - [X] Publicar imágenes de docker.
 - [X] Probar imágenes de docker publicadas.
 - [X] Trabajar con varias imágenes de docker conectadas.
+
+###Objetivos específicos tema 6
+- [X] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+- [X] Saber cómo aplicarlos en un caso determinado.
+- [X] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorizació más usados hoy en día.
+
+###Objetivos undécima semana
+- [X] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+- [X] Instalar hipervisores libres y trabajar con ellos.
+
+###Objetivos duodécima semana
+- [X] Usar gestores de máquinas virtuales.
+- [X] Instalar clientes libres de infraestructura en la nube.
+- [X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [X] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+###Objetivos décima tercera semana
+- [X] Usar infraestructura en la nube
+- [X] Entender el concepto de orquestación de máquinas virtuales.
+- [X] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+###Objetivos décima cuarta semana
+- [X] Probar diferentes formas de desplegar en la nube.
+- [X] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+- [X] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+- [X] Buscar alternativas a vagrant.
+- [X] Usar diferentes infraestructuras en la nube.
