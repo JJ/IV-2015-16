@@ -4,15 +4,15 @@ Lista de objetivos de Gabriel Stan
 
 # Objetivos Tema 6:
 
-- [ ] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
 - [ ] Documentar y mantener una plataforma virtual.
-- [ ] Realizar tareas de administración en infraestructura virtual
+- [x] Realizar tareas de administración en infraestructura virtual
 
 ##Objetivos Especificos del tema 6
 
-- [ ] Aprender lenguajes de configuración usados en infraestructuras virtuales.
-- [ ] Saber cómo aplicarlos en un caso determinado.
-- [ ] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
+- [x] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+- [x] Saber cómo aplicarlos en un caso determinado.
+- [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
 
 #Objetivos Tema 5
 
