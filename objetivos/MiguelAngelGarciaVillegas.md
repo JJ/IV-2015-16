@@ -79,15 +79,15 @@
 - [X] Comprender los mecanismos de despliegue automático.
 - [X] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
-## Objetivos Segundo Hito: Integración continua
+### Objetivos Segundo Hito: Integración continua
 - [X] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 
-## Objetivos Específicos Segundo Hito: Integración continua
+### Objetivos Específicos Segundo Hito: Integración continua
 - [X] Entender el concepto de DevOps.
 - [X] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
 - [X] Aprender a usar integración continua en cualquier aplicación.
 
-## Objetivos para el Proyecto
+### Objetivos para el Proyecto
 - [X] Además de realizar los Ejercicios, hemos realizado los ejercicios y una guía paso a paso también en el proyecto.
 
 ## ---------------------------------------------------------------------------##
@@ -99,7 +99,7 @@
 - [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 - [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
 
-## Objetivos específicos
+### Objetivos específicos
 
 - [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS
 - [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
@@ -115,7 +115,7 @@
 - [x] Comprender qué herramientas de desarrollo y lenguajes de programación se pueden usar en diferentes PaaS con facilidad.
 - [x] Resolver los problemas que surjan en los primeros despliegues de la asignatura
 
-## Otros objetivos
+### Otros objetivos
 
 - [x] Darse de alta y probar diferentes servicios PaaS.
 - [x] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
@@ -128,7 +128,7 @@
 - [x] Probar diferentes PaaS con sus sistemas de despliegue correspondientes.
 - [x] Probar diferentes formas de desplegar aplicaciones desde línea de órdenes y repositorios.
 
-## Otros objetivos
+### Otros objetivos
 
 - [x] Trabajar con los toolbelts de los diferentes PaaS.
 - [x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
@@ -139,7 +139,19 @@
 
 # Tema 4
 
-## Objetivos, Cubre los siguientes objetivos de la asignatura
+## Séptima semana, comienza el 11 de Noviembre
+
+### Objetivos de la Semana
+
+- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+
+### Otros Objetivos
+
+- [x] Instalar docker y trabajar con él.
+
+## Virtualización ligera usando contenedores
+
+### Objetivos, Cubre los siguientes objetivos de la asignatura
 
 - [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
 - [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
@@ -157,3 +169,26 @@
 - [x] 2. Crear infraestructuras virtuales completas.
 
 - [x] 3. Comprender los pasos necesarios para la configuración automática de las mismas.
+
+## Undécima semana, comienza el 9 de Diciembre
+
+## Objetivos de la Semana
+- [x] 1. Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+## Otros Objetivos
+
+- [x] 1. Instalar hipervisores libres y trabajar con ellos.
+- [x] 2. Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+# Virtualización completa: uso de máquinas virtuales
+## http://jj.github.io/IV/documentos/temas/Uso_de_sistemas
+
+## Objetivos
+
+- [x] 1. Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+- [x] 2. Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+- [x] 3. Documentar y mantener una plataforma virtual.
+
+- [x] 4. Realizar tareas de administración de infraestructuras virtuales.
