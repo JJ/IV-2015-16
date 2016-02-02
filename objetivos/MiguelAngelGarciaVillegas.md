@@ -162,6 +162,36 @@
 - [x] Instalar docker y trabajar con él.
 - [x] Usar imágenes de docker publicadas.
 
+## Séptima semana, comienza el 25 de Noviembre
+
+### Objetivos de la Semana
+
+- [x] Uso de docker para creación de imágenes.
+- [x] Entender el uso de docker en el contexto de una aplicación.
+- [x] Analizar el resultado del último hito de las prácticas.
+
+### Otros Objetivos
+
+- [x] Revisar los errores en la entrega de tercer hito.
+- [x] Adoptar buenas prácticas en los repositorios git:
+Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
+- [x] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+- [x] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+- [ ] Asistir al taller de Telegram
+- [ ] Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
+
+## Séptima semana, comienza el 2 de Diciembre
+
+### Objetivos de la Semana
+
+- [x] Usar docker en una aplicación real.
+
+### Otros Objetivos
+
+- [x] Publicar imágenes de docker.
+- [x] Probar imágenes de docker publicadas.
+- [x] Trabajar con varias imágenes de docker cokectadas.
+
 ## Virtualización ligera usando contenedores
 
 ### Objetivos, Cubre los siguientes objetivos de la asignatura
