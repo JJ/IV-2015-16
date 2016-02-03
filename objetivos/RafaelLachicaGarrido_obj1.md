@@ -54,6 +54,44 @@
 
 - [x] Realizar tareas de administración de infraestructuras virtuales.
 
+### Tema 6: Gestión de infraestructuras virtuales
+
+- [x] Aprender lenguajes de configuración usados en infraestructuras virtuales, como YAML.
+
+- [x] Saber cómo aplicarlos en un caso determinado.
+
+- [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día, como Vagrant y Ansible.
+
+
+==
+
+## Objetivos de la asignatura
+
+- [x] Conocer la historia de la Computación Virtual, sus orígenes y razones de su existencia.
+
+- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+
+- [x] Comprender la diferencia entre infraestructura virtual y real.
+
+- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+
+- [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+
+- [x] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+
+- [x] Documentar y mantener una plataforma virtual.
+
+- [x] Optimizar aplicaciones sobre plataformas virtuales.
+
+- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
+
+- [x] Realizar tareas de administración en infraestructura virtual.
+
+
 ##SESIONES
 ## Semana del 23 al 30 de septiembre de 2015
 ==
@@ -222,15 +260,6 @@
 
 __________________________________________
 
-## Objetivos de la asignatura
-
-- [x] Conocer la historia de la Computación Virtual, sus orígenes y razones de su existencia.
-
-- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
-
-- [x] Comprender la diferencia entre infraestructura virtual y real.
-
-- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización.
 
 ## Sesión 8: Semana del 18 al 25 de noviembre de 2015
 ### Objetivos de la semana
@@ -339,3 +368,22 @@ __________________________________________
 - [x] Instalar clientes libres de infraestructura en la nube.
 
 - [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+## Sesión 14: Semana del 20 al 27 de Enero de 2016
+### Objetivos de la semana
+
+- [x] Probar las diferentes formas que tenemos de desplegar en la nube.
+
+- [x] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
+### Otros objetivos
+
+- [x] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+
+- [] Buscar alternativas a vagrant.
+
+- [ ] Usar diferentes infraestructuras en la nube.
+
+- [x] Resolver dudas con respecto a la práctica final.
+
+- [x] Asistir al Hackaton y presentar lo que será mi proyecto final.

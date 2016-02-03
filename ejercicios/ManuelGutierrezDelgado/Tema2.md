@@ -48,3 +48,28 @@ Instalamos docco con el comando **sudo npm install docco grunt-docco --save-dev*
 ![https://gyazo.com/e688adf370bb87ec39645e140a4240ea](https://i.gyazo.com/e688adf370bb87ec39645e140a4240ea.png)
 
 Al terminal de instalar, para generar la documentación hacemos: **docco *js** y se genera por cada **.js** un fichero **html**.
+
+#Ejercicio 6
+##Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga (vamos, lo que viene siendo TDD).
+
+Se ha añadido una aserción que comprueba si el comentario introducido es nulo o no:
+
+![Aserción](https://i.gyazo.com/0f3e4876522bd061219adeee6dcba0b0.png)
+
+#Ejercicio 7
+##Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
+
+Instalamos mocha con: **npm install -g mocha**. Creamos un directorio en el que vamos a alojar los tests, y dentro de este, el fichero test.js que tiene el siguiente contenido:
+
+```
+var assert = require("assert");
+miweb = require(__dirname+"/../app.js");
+
+describe('Miweb', function(){
+    describe('Comentar', function(){
+        it('Debe cargar el programa', function(){
+            assert(miweb, "Cargado");
+        });
+    });
+});
+```
