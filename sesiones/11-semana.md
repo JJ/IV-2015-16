@@ -12,7 +12,7 @@
 
 ##Material para la clase
 
-Tema dedicado a [uso de sistemas](http://jj.github.io/IV/documentos/temas/Uso_de_sistemas.
+Tema dedicado a [uso de sistemas](http://jj.github.io/IV/documentos/temas/Uso_de_sistemas).
 
 Antes de esta clase se tendrá que haber entregado la práctica.
 
