@@ -175,17 +175,48 @@
 - [x] Comprender el concepto de hipervisor y los diferentes tipos que hay
 
 ###Otros objetivos
-- [ ] Instalar hipervisores libres y trabajar con ellos.
-- [ ] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+- [x] Instalar hipervisores libres y trabajar con ellos.
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
 
 
 ##Duodécima semana, comienza el 16 de Diciembre
-- [ ] Usar gestores de máquinas virtuales
+- [x] Usar gestores de máquinas virtuales
 
 ###Otros objetivos
 
-- [ ] Instalar clientes libres de infraestructura en la nube.
-- [ ] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [x] Instalar clientes libres de infraestructura en la nube.
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
 - [ ] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+##Objetivos del tema 5
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [x] Documentar y mantener una plataforma virtual.
+- [x] Realizar tareas de administración de infraestructuras virtuales.
+
+
+##Décimo tercera semana, comienza el 13 de enero de 2015
+
+- [x] Usar infraestructura en la nube.
+- [x] Entender el concepto de orquestación de máquinas virtuales
+
+###Otros objetivos
+- [x] Instalar clientes libres de infraestructura en la nube
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres
+- [x] Trabajar y solucionar problemas con la infraestructura en la nube 
+
+
+##Objetivos de la asignatura
+
+- [ ] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual
+- [x] Documentar y mantener una plataforma virtual
+- [x] Realizar tareas de administración en infraestructura virtual
+
+##Objetivos específicos
+
+- [ ] Aprender lenguajes de configuración usados en infraestructuras virtuales
+- [ ] Saber cómo aplicarlos en un caso determinado.
+- [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
 
 
