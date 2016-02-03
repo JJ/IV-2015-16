@@ -83,13 +83,12 @@ La representación correcta de la estructura de datos en JSON es:
 ~~~
 
 {
-"uno": "dos",
-"tres": [4, 5, "Seis", {
-"siete": 8,
-"nueve": [10, 11]
-}]
+	"uno": "dos",
+	"tres": [4, 5, "Seis", {
+		"siete": 8,
+		"nueve": [10, 11]
+	}]
 }
-
 ~~~
 
 Y para pasarla a YAML he usado un convertidor online llamado [jsontoyaml](http://jsontoyaml.com/)
@@ -98,16 +97,17 @@ Esta es la estructura de datos representada en YAML
 
 ~~~
 ---
-uno: "dos"
-tres: 
-- 4
-- 5
-- "Seis"
-- 
-siete: 8
-nueve: 
-- 10
-- 11
+  uno: "dos"
+  tres: 
+    - 4
+    - 5
+    - "Seis"
+    - 
+      siete: 8
+      nueve: 
+        - 10
+        - 11
+
 
 ~~~
 
