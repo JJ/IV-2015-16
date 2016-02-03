@@ -106,8 +106,8 @@
 ###Otros objetivos
 
  - [x] Darse de alta y probar diferentes servicios PaaS.
- - [ ] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
- - [ ] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
+ - [x] Instalar los toolbelt de los diferentes servicios para poder manejarlos con facilidad.
+ - [x] Prepararse para la gestión de diferentes puntos de despliegue remoto con push.
  - [x] Aprender buenas prácticas en entornos con integración y despliegue continuo: uso de ramas en el código, uso de tags para releases... Antes de clase se debería haber entregado la revisión del primer hito del proyecto antes del principio de la clase, para un coeficiente de 0.8. A partir del principio de la clase, el coeficiente será de 0.7.
 
 ##Objetivos a cubrir en la sesión 6.
@@ -116,59 +116,109 @@
 
 ####Otros objetivos
  - [x] Trabajar con los toolbelts de los diferentes PaaS.
- - [ ] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
- - [ ] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
+ - [x] Hacer pruebas de rendimiento para su posible uso dentro y fuera de la asignatura.
+ - [x] Volver a probar herramientas de integración continua para ver cuál funciona mejor con cada PaaS.
  - [x] Experimentar con el despliegue simultáneo a varios PaaS.
 
 ###Sesión 7.
 
-- [x] Entender la base del aislamiento de recursos en el sistema operativo.
+ - [x] Entender la base del aislamiento de recursos en el sistema operativo.
     
-- [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
+ - [x] Entender las diferentes formas de aislar recursos en Linux u otros sistemas operativos.
 
 #####Otros objetivos
 
-- [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
+ - [x] Poner a punto la instalación de Linux si no se ha hecho hasta ahora.
 
-- [x] Instalar docker y trabajar con él.
+ - [x] Instalar docker y trabajar con él.
     
-- [ ] Usar imágenes de docker publicadas.
+ - [x] Usar imágenes de docker publicadas.
 
 ###Sesión 9.
 
-- [x] Uso de docker para creación de imágenes.
+ - [x] Uso de docker para creación de imágenes.
 
-- [x] Entender el uso de docker en el contexto de una aplicación.
+ - [x] Entender el uso de docker en el contexto de una aplicación.
 
-- [ ] Analizar el resultado del último hito de las prácticas.
+ - [x] Analizar el resultado del último hito de las prácticas.
 
 #####Otros objetivos
 
-- [x] Revisar los errores en la entrega de tercer hito.
+ - [x] Revisar los errores en la entrega de tercer hito.
 
-- [x] Adoptar buenas prácticas en los repositorios git:
+ - [x] Adoptar buenas prácticas en los repositorios git:
 
-- [ ] Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
+ - [x] Usar .gitignore para no añadir accidentalmente ficheros generados o innecesairos. Borrar los existentes.
 
-- [x] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
+ - [x] Usar prácticas habituales en el layout del proyecto: usar nombres de directorio estándar y los ficheros necesarios para despliegue en el directorio principal.
 
-- [ ] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
+ - [x] Interiorizar el sistema de desarrollo basado en tests, TDD o BDD, creando tests a la vez que se va añadiendo nueva funcionalidad a las aplicaciones.
     
-- [ ] Asistir al taller de Telegram
+ - [x] Asistir al taller de Telegram
 
-- [ ]  Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
+ - [x]  Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
 
 ###Sesión 10.
 
-- [x] Usar docker en una aplicación real. 
+ - [x] Usar docker en una aplicación real. 
 
 #####Otros objetivos
 
-- [x] Publicar imágenes de docker.
+ - [x] Publicar imágenes de docker.
     
-- [x] Probar imágenes de docker publicadas.
+ - [x] Probar imágenes de docker publicadas.
     
-- [x] Trabajar con varias imágenes de docker cokectadas.
+ - [x] Trabajar con varias imágenes de docker cokectadas.
+
+###Sesión 11.
+
+ - [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+#####Otros objetivos
+
+ - [x] Instalar hipervisores libres y trabajar con ellos.
+
+ - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+###Sesión 12.
+
+ - [x] Usar gestores de máquinas virtuales
+
+#####Otros objetivos
+
+ - [x] Instalar clientes libres de infraestructura en la nube.
+
+ - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+ - [x] similar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+###Sesión 13.
+
+ - [x] Usar infraestructura en la nube
+
+#####Otros objetivos
+
+ - [x] Instalar clientes libres de infraestructura en la nube.
+ 
+ - [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+ - [x] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+###Sesión 14.
+ 
+ - [x] Probar diferentes formas de desplegar en la nube.
+
+ - [x] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
+#####Otros objetivos
+
+ - [x] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+
+ - [x] Buscar alternativas a vagrant.
+
+ - [x] Usar diferentes infraestructuras en la nube.
+ 
+ - [x] Resolver dudas con respecto a la práctica final.
 
 ## Tema 1
 
@@ -201,50 +251,75 @@
 
  - [x] Aplicar el sistema de control de fuentes git para despliegue de aplicaciones en la nube.
 
-- [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
+ - [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 
-- [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización. Por ejemplo tenemos varios trabajadores que tocan el mismo código, con la integración continua sabemos donde están los fallos, porque se producen y quien los provoca. Además podemos trabajar sobre la nube.
+ - [x] Justificar la necesidad de procesamiento virtual frente a real en el contexto de una infraestructura TIC de una organización. Por ejemplo tenemos varios trabajadores que tocan el mismo código, con la integración continua sabemos donde están los fallos, porque se producen y quien los provoca. Además podemos trabajar sobre la nube.
 
 ####Otros objetivos
-- [x] Darse de alta en Heroku y Openshift y aprender a usarlos.
 
-- [x] Crear una aplicación Wordpress dentro de Openshift.
+ - [x] Darse de alta en Heroku y Openshift y aprender a usarlos.
 
-- [x] Realizar una app en Heroku.
+ - [x] Crear una aplicación Wordpress dentro de Openshift.
 
-- [x] Crear pruebas para la app y verlas en la integración continua.
+ - [x] Realizar una app en Heroku.
 
-- [x] Asistir al taller de Telegram
+ - [x] Crear pruebas para la app y verlas en la integración continua.
 
-- [x] Añadir documentacion al proyecto y ordenarla.
+ - [x] Asistir al taller de Telegram
 
-- [x] Migrar mi aplicacion del proyecto a Django
+ - [x] Añadir documentacion al proyecto y ordenarla.
+
+ - [x] Migrar mi aplicacion del proyecto a Django
 
 ##Tema 4
 
+ - [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
 
-- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+ - [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
 
-- [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
+ - [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
 
-- [ ] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
+ - [x] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
 
-- [ ] Diseñar, implementar y construir un centro de procesamiento de datos virtual.
+ - [x] Documentar y mantener una plataforma virtual.
 
-- [ ] Documentar y mantener una plataforma virtual.
+ - [x] Optimizar aplicaciones sobre plataformas virtuales.
 
-- [ ] Optimizar aplicaciones sobre plataformas virtuales.
+ - [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
 
-- [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
-
-- [x] Realizar tareas de administración en infraestructura virtual.
+ - [x] Realizar tareas de administración en infraestructura virtual.
 
 ####Otros objetivos
 
-- [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
+ - [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
 
-- [ ] Crear infraestructuras virtuales completas.
+ - [x] Crear infraestructuras virtuales completas.
 
-- [ ] Comprender los pasos necesarios para la configuración automática de las mismas.
+ - [x] Comprender los pasos necesarios para la configuración automática de las mismas.
 
+##Tema 5
+
+ - [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+ - [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+ - [x] Documentar y mantener una plataforma virtual.
+
+ - [x] Realizar tareas de administración de infraestructuras virtuales.
+
+##Tema 6
+
+ - [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+ - [x] Documentar y mantener una plataforma virtual.
+
+ - [x] Realizar tareas de administración en infraestructura virtual
+
+####Objetivos Especificos del tema 6
+
+ - [x] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+
+ - [x] Saber cómo aplicarlos en un caso determinado.
+
+ - [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
 
