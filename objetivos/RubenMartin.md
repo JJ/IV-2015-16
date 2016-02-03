@@ -237,32 +237,22 @@
 
 - [x] Usar infraestructura en la nube.
 
-- [x] Entender el concepto de orquestación de máquinas virtuales.
+### Otros objetivos
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+## Sesión 14: Semana del 20 al 27 de Enero de 2016
+### Objetivos de la semana
+
+- [x] Usar infraestructura en la nube.
 
 ### Otros objetivos
 
 - [x] Instalar clientes libres de infraestructura en la nube.
 
-- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
-
-- [x] Trabajar y solucionar problemas con la infraestructura en la nube.
-
-## Sesión 14: Semana del 20 al 27 de Enero de 2016
-### Objetivos de la semana
-
-- [x] Probar diferentes formas de desplegar en la nube.
-
-- [x] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
-
-### Otros objetivos
-
-- [x] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
-
-- [ ] Buscar alternativas a vagrant.
-
-- [ ] Usar diferentes infraestructuras en la nube.
-
-- [ ] Resolver dudas con respecto a la práctica final.
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
 
 ## Objetivos de la asignatura
 
@@ -337,8 +327,8 @@
 
 ### Tema 6: Gestión de infraestructuras virtuales
 
-- [x] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+- [ ] Aprender lenguajes de configuración usados en infraestructuras virtuales.
 
-- [x] Saber cómo aplicarlos en un caso determinado.
+- [ ] Saber cómo aplicarlos en un caso determinado.
 
-- [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
+- [ ] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
