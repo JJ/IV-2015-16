@@ -2,7 +2,7 @@
 
 ##Ejercicio 1
 
-Volvemos a hacer lo mismo que hicimos en el primer tema, esto es, escribimos `sudo apt-get install cpu-checker` y luego: `sudo apt install qemu-kvm libvirt-bin`. Con esto ya tenemos instalado kvm 3n el equipo.
+Volvemos a hacer lo mismo que hicimos en el primer tema, esto es, escribimos `sudo apt-get install cpu-checker` y luego: `sudo apt install qemu-kvm libvirt-bin`. Con esto ya tenemos instalado kvm en el equipo.
 
 ##Ejercicio 2
 
@@ -49,5 +49,13 @@ Ahora ya solo queda conectarnos por ssh a la MV como podemos ver:
 #Ejercicio 5:
 
 Primero de todo instalamos una máquina virtual con Ubuntu con VirtualBox. Seguimos los pasos de forma similar al ejercicio 4, Una vez instalada, vamos a configurar Nginx. Primero de todo lo instalamos con `sudo apt-get update && sudo apt-get install nginx`. En ubuntu, por defecto se arranca automáticamente sin tenerque hacer nada más. Por tanto ya lo tenemos
+
+#Ejercicio 7:
+
+Primero de todo creamos una máquina virtual en VirtualBox de la misma manera que antes, solo que ahora marcaremos Linux 2.6 y pondremos la versión de 32 bits para que sea más ligera. Después seleccionamos la imagen de Linux Mint descargada y arrancamos la MV. Nos aparece la siguiente pantalla:
+
+![linux mint](http://i864.photobucket.com/albums/ab201/Santiago_de_Diego/Captura%20de%20pantalla%20de%202016-02-02%20152900_zps2qdsjkyi.png)
+
+Podemos entrar en la primera opción y después clicar en el instalador para comenzar a instalar la distribución, de forma similar a como lo hacemos en Ubuntu.
 
 
