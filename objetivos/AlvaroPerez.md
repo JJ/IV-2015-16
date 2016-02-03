@@ -188,7 +188,60 @@
     
 - [x] Probar imágenes de docker publicadas.
     
-- [x] Trabajar con varias imágenes de docker cokectadas.
+- [x] Trabajar con varias imágenes de docker cokectadas
 
 
+###Sesión 11 (Semana del 9 diciembre al 16 de diciembre 2015)
+
+- [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+
+#####Otros objetivos
+
+- [x] Instalar hipervisores libres y trabajar con ellos.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+
+###Sesión 12 (Semana del 16 diciembre 2015 al 13 de enero 2016)
+
+- [x] Usar gestores de máquinas virtuales.
+
+#####Otros objetivos
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+    
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+- [x] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+###Sesión 13 (Semana del 13 enero al 20 de enero 2016)
+
+- [x] Usar infraestructura en la nube.
+
+- [x] Entender el concepto de orquestación de máquinas virtuales.
+
+#####Otros objetivos
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+- [x] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+###Sesión 14 (Semana del 20 enero)
+
+- [x] Probar diferentes formas de desplegar en la nube.
+
+- [x] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
+
+#####Otros objetivos
+
+- [x] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+
+- [x] Buscar alternativas a vagrant.
+
+- [x] Usar diferentes infraestructuras en la nube.
+
+- [x] Resolver dudas con respecto a la práctica final.
 

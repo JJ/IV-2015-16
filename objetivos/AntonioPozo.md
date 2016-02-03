@@ -171,5 +171,21 @@
 - [ ] Trabajar con varias imágenes de docker cokectadas
 
 
+##Undécima semana, comienza el 9 de Diciembre
+- [x] Comprender el concepto de hipervisor y los diferentes tipos que hay
+
+###Otros objetivos
+- [ ] Instalar hipervisores libres y trabajar con ellos.
+- [ ] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+
+##Duodécima semana, comienza el 16 de Diciembre
+- [ ] Usar gestores de máquinas virtuales
+
+###Otros objetivos
+
+- [ ] Instalar clientes libres de infraestructura en la nube.
+- [ ] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [ ] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
 
 
