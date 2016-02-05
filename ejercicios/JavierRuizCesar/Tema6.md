@@ -9,7 +9,7 @@ Podemos comprobar la instalación mediante:
 chef-solo -v
 ```
 
-![chef](ejer1)
+![chef](http://i64.tinypic.com/730wfq.png)
 
 
 ### Ejercicio 2: Crear una receta para instalar nginx, tu editor favorito y algún directorio y fichero que uses de forma habitual.
