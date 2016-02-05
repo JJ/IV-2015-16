@@ -40,6 +40,9 @@ Jesús Ángel González Novez - [Try-2-Learn](https://github.com/jesusgn90/Try-2
 Miguel Ángel García Villegas - [InsertaLogo](https://github.com/magvugr/InsertaLogo)
 
 
+César Albusac Jorge - [App Bares y tapas](https://github.com/cesar2/DAI-BARES)
+
+
 
 ## Lista de comprobación del proyecto
 

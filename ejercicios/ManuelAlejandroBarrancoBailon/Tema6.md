@@ -154,7 +154,7 @@ ansible all -u alex -m command -a "sudo python ~/appDAI/manage.py runserver 0.0.
 
 
 ###Ejercicio 5
-**Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.**
+####1. Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
 El playbook que he creado para el despliegue de mi aplicación ha sido:
 ~~~
 - hosts: azure
@@ -209,3 +209,7 @@ ansible-playbook playbookTusPachangas.yml
 
 Y se puede comprobar como la aplicación está desplegada
 ![ansibleAppDesplegada](http://i1016.photobucket.com/albums/af281/raperaco/ansibleAppDesplegada_zps5agmlryv.png)
+
+####2. ¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
+Aunque las dos tienen funcionalidades similares y fáciles de comprender, personalmente me ha gustado más Ansible, ya que veo una mejor estructura y un mejor control desde un único fichero **playbook** que desde múltiples recetas en Chef. Además Ansible se conecta a los nodos mediante SSH para realizar las configuraciones teniendo la posibilidad de organizar los nodos en grupos y dirigirte a unos específicos, a un grupo o a todos, mientras que con Chef, la estructura de directorios y las recetas tienen que estar en las máquinas a configurar.
+Por tanto, **Ansible**.
