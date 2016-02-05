@@ -262,7 +262,7 @@
 
 - [ ] Usar diferentes infraestructuras en la nube.
 
-- [ ] Resolver dudas con respecto a la práctica final.
+- [x] Resolver dudas con respecto a la práctica final.
 
 ## Objetivos de la asignatura
 
