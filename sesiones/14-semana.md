@@ -29,7 +29,7 @@ Pablo Martín-Moreno Ruiz [Activento](https://github.com/pmmre/Activento-PabloMa
 
 Salvador Rueda Molina [aplicación bares DAI](https://github.com/srmf9/Proyecto-IV)  
 
-
+Ángel Valera Motos - [Aplicación de DAI, bares y tapas](https://github.com/AngelValera/bares-y-tapas-DAI)
 
 Hugo Bárzano Cruz - [Computer-Management](https://github.com/hugobarzano/osl-computer-management)
 ## Día 15
