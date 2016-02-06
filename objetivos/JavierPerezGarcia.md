@@ -29,15 +29,15 @@ Probando corregir a otro alumno
 
 ### Otros objetivos
 
-- [x] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige. 
+- [x] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige.
 
-- [x] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (**no*[] https).
+- [x] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (**no**[] https).
 
-- [x] Tener configurdos los dos repositorios (`origin`, el propio, `upstream`, el del resto de la clase). 
+- [x] Tener configurdos los dos repositorios (`origin`, el propio, `upstream`, el del resto de la clase).
 
 - [x] Tener a punto una instalación Linux para llevar a cabo las actividades de la asignatura. Si necesitas ayuda para instalarlo, los jueves a partir de las 12:30 está la OSL en la sala de reuniones.
 
-- [x] Comenzar a usar los métodos de entrega de ejercicios propuestos para la asignatura [usando GitHub](../ejercicios/README.md). 
+- [x] Comenzar a usar los métodos de entrega de ejercicios propuestos para la asignatura [usando GitHub](../ejercicios/README.md).
 
 - [x] Manejar de forma básica la línea de órdenes de Linux.
 
@@ -45,7 +45,7 @@ Probando corregir a otro alumno
 
 - [x] Entender el concepto de sistema de ficheros virtual usado en Linux para diferentes menesteres.
 
-- [x] Usar git para hacer *check-in[] en clase y [expresar al final de cada sesión los objetivos alcanzados](Cumpliendo_Objetivos.md).
+- [x] Usar git para hacer *check-in[]* en clase y [expresar al final de cada sesión los objetivos alcanzados](Cumpliendo_Objetivos.md).
 
 - [x] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 
@@ -165,6 +165,34 @@ Probando corregir a otro alumno
 - [x] Asistir al taller de Telegram
 - [ ] Asistir al seminario de PaaS (aula 1.6, 18:30, miércoles 23).
 
+## Objetivos de la décima semana
+
+### Objetivos principales
+
+- [x] Usar docker en una aplicación real.
+
+### Otros objetivos
+
+- [x] Publicar imágenes de docker.
+- [x] Probar imágenes de docker publicadas.
+- [ ] Trabajar con varias imágenes de docker conectadas.
+
+## Objetivos de la undécima semana
+
+- [x] Comprender el concepto de hipervisor y los diferentes tipos que hay.
+- [x] Instalar hipervisores libres y trabajar con ellos.
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+## Objetivos de la duodécima semana
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+- [x] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+## Objetivos de la decimotercera semana (y de la decimocuarta)
+
+- [x] Usar infraestructura en la nube
+
 
 Lista de objetivos del temario
 ==============================
@@ -219,8 +247,6 @@ Lista de objetivos del temario
 
 # Objetivos del tema 4
 
-### Objetivos generales
-
 - [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
 - [x] Instalar, configurar, evaluar y optimizar las prestaciones de un servidor virtual.
 - [x] Configurar los diferentes dispositivos físicos para acceso a los servidores virtuales: acceso de usuarios, redes de comunicaciones o entrada/salida.
@@ -230,14 +256,35 @@ Lista de objetivos del temario
 - [x] Conocer diferentes tecnologías relacionadas con la virtualización (Computación Nube, Utility Computing, Software as a Service) e implementaciones tales como Google AppSpot, OpenShift o Heroku.
 - [x] Realizar tareas de administración en infraestructura virtual.
 
-### Objetivos específicos
+#### Objetivos específicos
 
 - [x] Entender cómo las diferentes tecnologías de virtualización se integran en la creación de contenedores.
 - [x] Crear infraestructuras virtuales completas.
 - [x] Comprender los pasos necesarios para la configuración automática de las mismas.
 
+#Objetivos Tema 5
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [x] Documentar y mantener una plataforma virtual.
+- [x] Realizar tareas de administración de infraestructuras virtuales.
+
+# Objetivos Tema 6:
+
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [x] Documentar y mantener una plataforma virtual.
+- [x] Realizar tareas de administración en infraestructura virtual
+
+####Objetivos Especificos del tema 6
+
+- [x] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+- [x] Saber cómo aplicarlos en un caso determinado.
+- [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
+
 Lista de objetivos del extra
 ============================
 
+- [x] Asistir al Google IO Extended (GDG Granada)
 - [x] Asistir al seminario de bots de Telegram.
 - [x] Participar activamente en la circolab de miniblip
+- [x] Asistencia a la Ubuntu&Beers
