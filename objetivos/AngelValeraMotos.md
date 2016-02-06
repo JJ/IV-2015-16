@@ -280,3 +280,95 @@
 
 - [x] Comprender los pasos necesarios para la configuración automática de las mismas.
 
+##**Sesión 11: Objetivos de la semana** ##
+###**9 de diciembre** ###
+
+- [x] Instalar hipervisores libres y trabajar con ellos.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+
+##**Sesión 12: Objetivos de la semana** ##
+###**16 de diciembre** ###
+
+
+- [x] Usar gestores de máquinas virtuales.
+
+###Otros Objetivos 
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
+
+- [ ] Asimilar el concepto de herramienta de despliegue y probar alguna como Capistrano o Fabric.
+
+##**Sesión 13: Objetivos de la semana** ##
+###**13 de enero** ###
+
+- [x] Usar infraestructura en la nube
+
+- [x] Entender el concepto de orquestación de máquinas virtuales.
+
+###Otros Objetivos 
+
+- [x] Instalar clientes libres de infraestructura en la nube.
+
+- [x] Probar diferentes tipos de máquinas virttuales con sistemas operativos libres.
+
+- [x] Trabajar y solucionar problemas con la infraestructura en la nube.
+
+
+##**Sesión 14: Objetivos de la semana** ##
+###**20 de enero** ###
+
+- [x] Probar diferentes formas de desplegar en la nube.
+
+- [x] Depurar los scripts y añadirles funcionalidades para que sean servicios completos.
+
+###Otros Objetivos 
+
+
+- [x] Testear herramientas de provisionamiento diferentes. No centrarse en Ansible.
+
+- [ ] Buscar alternativas a vagrant.
+
+- [x] Usar diferentes infraestructuras en la nube.
+
+- [x] Resolver dudas con respecto a la práctica final.
+
+
+
+##**Tema 5: Virtualización completa: uso de máquinas virtuales** ##
+
+
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+- [x] Documentar y mantener una plataforma virtual.
+
+- [x] Realizar tareas de administración de infraestructuras virtuales.
+
+
+##**Tema 6: Gestión de infraestructuras virtuales** ##
+
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+
+- [x] Documentar y mantener una plataforma virtual.
+
+- [x] Realizar tareas de administración en infraestructura virtual.
+
+
+
+###Objetivos específicos
+
+
+- [x] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+
+- [x] Saber cómo aplicarlos en un caso determinado.
+
+- [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorizació más usados hoy en día.
+
+
+
+

@@ -10,6 +10,7 @@ Jesús Prieto López - [ProyectoIVDAI Bares](https://github.com/JesGor/Proyecto-
 
 Ignacio Romero Cabrerizo - [openGestion](https://github.com/nachobit/IV_PR_OpenOrder)
 
+Ángel Valera Motos -[MERKA](https://github.com/AngelValera/proyectoIV-Modulo-1.git)
 
 Rubén Martín Hidalgo - [Pluco-DB](https://github.com/romilgildo/IV-PLUCO-RMH)
 
