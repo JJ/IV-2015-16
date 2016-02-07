@@ -79,6 +79,7 @@ José Manuel Luque Burgos -
 Mariano Palomo Villafranca -
 [Hearcloud](https://github.com/mpvillafranca/hear-cloud) 12:45
 
+Lorenzo Manuel Rosas Rodríguez[Tiendas](https://github.com/lorenmanu/Tiendas)
 ## Lista de comprobación del proyecto
 
 Lo más importante es que recordéis que el proyecto es un proyecto, no la suma de sus partes. Es decir, un proyecto que tenga una infraestructura compleja y sustancial y que se pueda desplegar con una sola orden o ejecutando varias órdenes. Por eso, conviene que comprobéis.
