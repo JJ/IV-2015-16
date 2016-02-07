@@ -33,7 +33,7 @@ José Antonio González Cervera
 [SMS_Estadisticas](https://github.com/JA-Gonz/SMS_Estadisticas) 13:00
 
 Pablo Martín-Moreno Ruiz
-[Activento](https://github.com/pmmre/Activento-PabloMartin-MorenoRuiz) 13:15
+[Aplicación Bares](https://github.com/pmmre/Bares) 13:15
 
 Álvaro Pérez Luque [AppPoll](https://github.com/alvaro-gr/proyecto-IV) 13:30
 
