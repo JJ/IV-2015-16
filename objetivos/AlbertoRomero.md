@@ -174,7 +174,18 @@ ordenador habitual lo usa.
 - [x] Probar imágenes de docker publicadas
 
 
+## Tema 5: Virtualización completa: uso de máquinas virtuales
 
+- [x] Conocer las diferentes tecnologías y herramientas de virtualización tanto para procesamiento, comunicación y almacenamiento.
+- [x] Diseñar, construir y analizar las prestaciones de un centro de proceso de datos virtual.
+- [x] Documentar y mantener una plataforma virtual.
+- [x] Realizar tareas de administración de infraestructuras virtuales.
+
+## Tema 6: Gestión de infraestructuras virtuales
+
+- [x] Aprender lenguajes de configuración usados en infraestructuras virtuales.
+- [x] Saber cómo aplicarlos en un caso determinado.
+- [x] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorización más usados hoy en día.
 
 
 
